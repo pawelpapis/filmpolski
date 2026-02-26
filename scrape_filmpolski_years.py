@@ -10,7 +10,7 @@ import time
 from dataclasses import dataclass, field
 from html import unescape
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin
 from urllib.request import Request, urlopen
@@ -21,9 +21,7 @@ LI_PATTERN = re.compile(r"<li>\s*<span class=\"ikony\".*?</li>", re.DOTALL | re.
 TITLE_DIV_PATTERN = re.compile(r'<div class="tytul">(.*?)</div>', re.DOTALL | re.IGNORECASE)
 RODZAJ_PATTERN = re.compile(r'<div class="rodzajfilmu">(.*?)</div>', re.DOTALL | re.IGNORECASE)
 ANCHOR_PATTERN = re.compile(r'<a\s+href="(index\.php/\d+)"[^>]*>(.*?)</a>', re.DOTALL | re.IGNORECASE)
-ALT_TITLE_PATTERN = re.compile(
-    r'<span class="tytulnieindeksowany">(.*?)</span>', re.DOTALL | re.IGNORECASE
-)
+ALT_TITLE_PATTERN = re.compile(r'<span class="tytulnieindeksowany">(.*?)</span>', re.DOTALL | re.IGNORECASE)
 TAG_PATTERN = re.compile(r"<[^>]+>")
 ARTICLE_PATTERN = re.compile(r'<article\s+id="film"[^>]*>(.*?)</article>', re.DOTALL | re.IGNORECASE)
 H1_PATTERN = re.compile(r"<h1[^>]*>(.*?)</h1>", re.DOTALL | re.IGNORECASE)
@@ -38,9 +36,7 @@ PERSON_BLOCK_PATTERN = re.compile(
     r'<div class="(?P<class_attr>ekipa_(?:osoba|opis)[^"]*)"[^>]*>(?P<content>.*?)</div>',
     re.DOTALL | re.IGNORECASE,
 )
-FUNKCJA_PATTERN = re.compile(
-    r'<div class="ekipa_funkcja[^"]*">(.*?)</div>', re.DOTALL | re.IGNORECASE
-)
+FUNKCJA_PATTERN = re.compile(r'<div class="ekipa_funkcja[^"]*">(.*?)</div>', re.DOTALL | re.IGNORECASE)
 LI_ITEM_PATTERN = re.compile(r"<li[^>]*>(.*?)</li>", re.DOTALL | re.IGNORECASE)
 
 
@@ -79,11 +75,7 @@ def parse_rodzaj(rodzaj_html: str) -> Dict[str, Optional[str]]:
     if len(parts) == 1:
         return {"film_type": parts[0] or None, "text_author": None, "creators": None}
     if len(parts) == 2:
-        return {
-            "film_type": parts[0] or None,
-            "text_author": None,
-            "creators": parts[1] or None,
-        }
+        return {"film_type": parts[0] or None, "text_author": None, "creators": parts[1] or None}
 
     return {
         "film_type": parts[0] or None,
@@ -124,18 +116,62 @@ def extract_films_from_html(html: str) -> List[Dict[str, object]]:
                 text_author=parsed_rodzaj["text_author"],
                 creators=parsed_rodzaj["creators"],
             )
-        else:
-            existing = films[film_id]
-            if not existing.title and linked_title:
-                existing.title = linked_title
-            for alt in alt_titles:
-                if alt not in existing.alternate_titles and alt != existing.title:
-                    existing.alternate_titles.append(alt)
-            for key in ("film_type", "text_author", "creators"):
-                if getattr(existing, key) in (None, "") and parsed_rodzaj[key] not in (None, ""):
-                    setattr(existing, key, parsed_rodzaj[key])
+            continue
+
+        existing = films[film_id]
+        if not existing.title and linked_title:
+            existing.title = linked_title
+        for alt in alt_titles:
+            if alt not in existing.alternate_titles and alt != existing.title:
+                existing.alternate_titles.append(alt)
+        for key in ("film_type", "text_author", "creators"):
+            if getattr(existing, key) in (None, "") and parsed_rodzaj[key] not in (None, ""):
+                setattr(existing, key, parsed_rodzaj[key])
 
     return [film.to_dict() for film in sorted(films.values(), key=lambda x: int(x.film_id))]
+
+
+def split_outside_parentheses(text: str) -> List[str]:
+    parts: List[str] = []
+    current: List[str] = []
+    depth = 0
+    for ch in text:
+        if ch == "(":
+            depth += 1
+        elif ch == ")" and depth > 0:
+            depth -= 1
+
+        if ch == "," and depth == 0:
+            segment = "".join(current).strip()
+            if segment:
+                parts.append(segment)
+            current = []
+        else:
+            current.append(ch)
+
+    tail = "".join(current).strip()
+    if tail:
+        parts.append(tail)
+    return parts
+
+
+def normalize_location_entry(entry: str) -> List[str]:
+    entry = entry.strip()
+    open_idx = entry.find("(")
+    close_idx = entry.rfind(")")
+    if open_idx == -1 or close_idx <= open_idx:
+        return [entry]
+
+    city = entry[:open_idx].strip().rstrip(",")
+    inside = entry[open_idx + 1 : close_idx].strip()
+    if not city or not inside:
+        return [entry]
+
+    inner_parts = [p.strip() for p in split_outside_parentheses(inside) if p.strip()]
+    if len(inner_parts) <= 1:
+        return [entry]
+
+    return [f"{city} ({part})" for part in inner_parts]
 
 
 def parse_locations_from_tech3(tech3_html: str) -> List[str]:
@@ -143,11 +179,15 @@ def parse_locations_from_tech3(tech3_html: str) -> List[str]:
     match = re.search(r"Lokacje:\s*(.+)$", tech3_text, re.IGNORECASE)
     if not match:
         return []
+
     locations_raw = re.sub(r"\.$", "", match.group(1)).strip()
-    return [loc.strip() for loc in locations_raw.split(",") if loc.strip()]
+    result: List[str] = []
+    for chunk in split_outside_parentheses(locations_raw):
+        result.extend(normalize_location_entry(chunk))
+    return [item for item in result if item]
 
 
-def parse_cast_people(li_html: str) -> List[Dict[str, Optional[str]]]:
+def parse_people_with_roles(li_html: str) -> List[Dict[str, Optional[str]]]:
     people: List[Dict[str, Optional[str]]] = []
     pending_person: Optional[Dict[str, Optional[str]]] = None
 
@@ -157,15 +197,16 @@ def parse_cast_people(li_html: str) -> List[Dict[str, Optional[str]]]:
 
         if class_attr.startswith("ekipa_osoba"):
             a_match = ANCHOR_PATTERN.search(content)
-            if a_match:
-                href, name_html = a_match.groups()
-                pending_person = {
-                    "name": clean_text(name_html),
-                    "id": href.rsplit("/", 1)[-1],
-                    "character": None,
-                    "main": False,
-                }
-                people.append(pending_person)
+            if not a_match:
+                continue
+            href, name_html = a_match.groups()
+            pending_person = {
+                "name": clean_text(name_html),
+                "id": href.rsplit("/", 1)[-1],
+                "character": None,
+                "main": False,
+            }
+            people.append(pending_person)
             continue
 
         if class_attr.startswith("ekipa_opis") and pending_person is not None:
@@ -174,6 +215,17 @@ def parse_cast_people(li_html: str) -> List[Dict[str, Optional[str]]]:
             pending_person = None
 
     return people
+
+
+def dedupe_people(items: List[Dict[str, Optional[str]]]) -> List[Dict[str, Optional[str]]]:
+    unique: Dict[str, Dict[str, Optional[str]]] = {}
+    for item in items:
+        person_id = str(item.get("id") or "")
+        if not person_id:
+            continue
+        if person_id not in unique:
+            unique[person_id] = {"name": item.get("name"), "id": person_id}
+    return list(unique.values())
 
 
 def extract_movie_details_from_html(html: str) -> Dict[str, object]:
@@ -205,9 +257,9 @@ def extract_movie_details_from_html(html: str) -> Dict[str, object]:
             href, _ = links[-1]
             gallery_link = urljoin(BASE_SITE, href)
 
-    directors: List[str] = []
-    screenplay: List[str] = []
-    cinematography: List[str] = []
+    directors: List[Dict[str, Optional[str]]] = []
+    screenwriters: List[Dict[str, Optional[str]]] = []
+    cinematographers: List[Dict[str, Optional[str]]] = []
     cast_main: List[Dict[str, Optional[str]]] = []
     cast_other: List[Dict[str, Optional[str]]] = []
 
@@ -216,21 +268,28 @@ def extract_movie_details_from_html(html: str) -> Dict[str, object]:
         if not func_match:
             continue
         role = clean_text(func_match.group(1)).lower()
+        people = parse_people_with_roles(li_html)
 
         if role == "reżyseria":
-            directors.extend([p["name"] for p in parse_cast_people(li_html)])
+            directors.extend(people)
         elif role == "scenariusz":
-            screenplay.extend([p["name"] for p in parse_cast_people(li_html)])
+            screenwriters.extend(people)
         elif role == "zdjęcia":
-            cinematography.extend([p["name"] for p in parse_cast_people(li_html)])
+            cinematographers.extend(people)
         elif role == "obsada aktorska":
-            all_cast = parse_cast_people(li_html)
-            for person in all_cast:
-                payload = {k: person[k] for k in ("name", "id", "character")}
+            for person in people:
+                payload = {"name": person.get("name"), "id": person.get("id"), "character": person.get("character")}
                 if person.get("main"):
                     cast_main.append(payload)
                 else:
                     cast_other.append(payload)
+
+    directors_out = dedupe_people(directors)
+    screenwriters_out = dedupe_people(screenwriters)
+    cinematographers_out = dedupe_people(cinematographers)
+
+    cast_main_ids = {str(actor.get("id") or "") for actor in cast_main}
+    cast_other_out = [actor for actor in cast_other if str(actor.get("id") or "") not in cast_main_ids]
 
     return {
         "title": title,
@@ -238,11 +297,11 @@ def extract_movie_details_from_html(html: str) -> Dict[str, object]:
         "locations": locations,
         "description": description,
         "gallery_link": gallery_link,
-        "directors": directors,
-        "screenwriters": screenplay,
-        "cinematographers": cinematography,
+        "directors": directors_out,
+        "screenwriters": screenwriters_out,
+        "cinematographers": cinematographers_out,
         "cast_main": cast_main,
-        "cast_other": cast_other,
+        "cast_other": cast_other_out,
     }
 
 
@@ -279,7 +338,12 @@ def process_year(year: int, output_dir: Path, pause_s: float) -> List[Dict[str, 
 
 def matches_type(film: Dict[str, object], download_types: List[str]) -> bool:
     film_type = str(film.get("film_type") or "").strip().lower()
-    return film_type in {value.strip().lower() for value in download_types}
+    normalized = {value.strip().lower() for value in download_types}
+    return film_type in normalized
+
+
+def is_movie_downloaded(year_dir: Path, film_id: str) -> bool:
+    return (year_dir / f"{film_id}.html").exists() and (year_dir / f"{film_id}.json").exists()
 
 
 def process_movie_pages(
@@ -288,21 +352,27 @@ def process_movie_pages(
     download_types: List[str],
     movies_dir: Path,
     pause_s: float,
-) -> None:
+) -> Tuple[int, int, int]:
     year_dir = movies_dir / str(year)
     year_dir.mkdir(parents=True, exist_ok=True)
 
-    for film in films:
-        if not matches_type(film, download_types):
-            continue
+    planned = [film for film in films if matches_type(film, download_types)]
+    downloaded = 0
+    skipped_existing = 0
+    total = len(planned)
 
+    for idx, film in enumerate(planned, start=1):
         film_id = str(film["film_id"])
         link = str(film["link"])
-        html = download_html(link)
-
         html_path = year_dir / f"{film_id}.html"
         json_path = year_dir / f"{film_id}.json"
 
+        if is_movie_downloaded(year_dir, film_id):
+            skipped_existing += 1
+            print(f"[MOVIES] {year}: {idx}/{total} (pobrane: {downloaded}, pominięte: {skipped_existing}) - ID {film_id} już istnieje")
+            continue
+
+        html = download_html(link)
         html_path.write_text(html, encoding="utf-8")
 
         details = extract_movie_details_from_html(html)
@@ -311,14 +381,16 @@ def process_movie_pages(
         details["year_from_listing"] = year
         json_path.write_text(json.dumps(details, ensure_ascii=False, indent=2), encoding="utf-8")
 
+        downloaded += 1
+        print(f"[MOVIES] {year}: {idx}/{total} (pobrane: {downloaded}, pominięte: {skipped_existing})")
         if pause_s > 0:
             time.sleep(pause_s)
 
+    return downloaded, skipped_existing, total
+
 
 def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Pobiera strony Filmpolski dla zakresu lat i tworzy JSON z filmami."
-    )
+    parser = argparse.ArgumentParser(description="Pobiera strony Filmpolski dla zakresu lat i tworzy JSON z filmami.")
     parser.add_argument("--start-year", type=int, default=1911)
     parser.add_argument("--end-year", type=int, default=2026)
     parser.add_argument("--output-dir", type=Path, default=Path("data/years"))
@@ -347,9 +419,16 @@ def main() -> int:
     for year in range(args.start_year, args.end_year + 1):
         try:
             films = process_year(year, args.output_dir, args.pause)
+            downloaded = skipped = total = 0
             if args.download_movies:
-                process_movie_pages(year, films, args.download_movies, args.movies_dir, args.pause)
-            print(f"[OK] {year}")
+                downloaded, skipped, total = process_movie_pages(
+                    year, films, args.download_movies, args.movies_dir, args.pause
+                )
+                print(
+                    f"[OK] {year} | filmy: pobrane {downloaded}/{total}, pominięte {skipped}"
+                )
+            else:
+                print(f"[OK] {year}")
         except (HTTPError, URLError, TimeoutError) as exc:
             failures.append((year, str(exc)))
             print(f"[ERR] {year}: {exc}")
