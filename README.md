@@ -13,10 +13,37 @@ Domyślnie skrypt:
 - zapisuje surowy HTML do `data/years/YEAR.html`,
 - generuje JSON do `data/years/YEAR.json`.
 
-### Opcje
+## Pobieranie stron filmów wybranego rodzaju
 
 ```bash
-python3 scrape_filmpolski_years.py --start-year 1946 --end-year 1950 --pause 0.1
+python3 scrape_filmpolski_years.py --start-year 2021 --end-year 2021 --download-movies "Serial fabularny"
+```
+
+Po użyciu `--download-movies TYPE` skrypt dla filmów z pasującym `film_type` zapisuje:
+- `movies/YEAR/ID.html`
+- `movies/YEAR/ID.json`
+
+Plik `movies/YEAR/ID.json` zawiera (o ile dostępne):
+- `title`
+- `production_years`
+- `locations` (lista)
+- `description`
+- `gallery_link`
+- `directors`
+- `screenwriters`
+- `cinematographers`
+- `cast_main`
+- `cast_other`
+
+Każdy aktor w `cast_main` / `cast_other` ma pola:
+- `name`
+- `id`
+- `character`
+
+## Opcje
+
+```bash
+python3 scrape_filmpolski_years.py --start-year 1946 --end-year 1950 --pause 0.1 --download-movies "Film fabularny"
 ```
 
 Dostępne flagi:
@@ -24,8 +51,10 @@ Dostępne flagi:
 - `--end-year`
 - `--output-dir`
 - `--pause`
+- `--download-movies` (można podać wiele razy)
+- `--movies-dir`
 
-## Struktura JSON
+## Struktura JSON dla roczników
 
 Każdy film (unikalny po ID z linku `index.php/<id>`) zawiera:
 - `film_id`

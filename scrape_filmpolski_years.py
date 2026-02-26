@@ -25,6 +25,23 @@ ALT_TITLE_PATTERN = re.compile(
     r'<span class="tytulnieindeksowany">(.*?)</span>', re.DOTALL | re.IGNORECASE
 )
 TAG_PATTERN = re.compile(r"<[^>]+>")
+ARTICLE_PATTERN = re.compile(r'<article\s+id="film"[^>]*>(.*?)</article>', re.DOTALL | re.IGNORECASE)
+H1_PATTERN = re.compile(r"<h1[^>]*>(.*?)</h1>", re.DOTALL | re.IGNORECASE)
+TECH1_PATTERN = re.compile(
+    r'<div class="film_tech1">\s*(.*?)\s*</div>\s*<div class="film_tech2">\s*(.*?)\s*</div>',
+    re.DOTALL | re.IGNORECASE,
+)
+TECH3_PATTERN = re.compile(r'<div class="film_tech3">(.*?)</div>', re.DOTALL | re.IGNORECASE)
+DESCRIPTION_PATTERN = re.compile(r'<p class="opis">(.*?)</p>', re.DOTALL | re.IGNORECASE)
+GALLERY_PATTERN = re.compile(r'<div class="galeria_mala">(.*?)</div>', re.DOTALL | re.IGNORECASE)
+PERSON_BLOCK_PATTERN = re.compile(
+    r'<div class="(?P<class_attr>ekipa_(?:osoba|opis)[^"]*)"[^>]*>(?P<content>.*?)</div>',
+    re.DOTALL | re.IGNORECASE,
+)
+FUNKCJA_PATTERN = re.compile(
+    r'<div class="ekipa_funkcja[^"]*">(.*?)</div>', re.DOTALL | re.IGNORECASE
+)
+LI_ITEM_PATTERN = re.compile(r"<li[^>]*>(.*?)</li>", re.DOTALL | re.IGNORECASE)
 
 
 @dataclass
@@ -50,9 +67,9 @@ class FilmEntry:
 
 
 def clean_text(text: str) -> str:
+    text = re.sub(r"<br\s*/?>", " ", text, flags=re.IGNORECASE)
     text = unescape(TAG_PATTERN.sub("", text))
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def parse_rodzaj(rodzaj_html: str) -> Dict[str, Optional[str]]:
@@ -68,7 +85,6 @@ def parse_rodzaj(rodzaj_html: str) -> Dict[str, Optional[str]]:
             "creators": parts[1] or None,
         }
 
-    # Dla >= 3 części: łączymy wszystko po drugim ukośniku do twórców.
     return {
         "film_type": parts[0] or None,
         "text_author": parts[1] or None,
@@ -82,13 +98,11 @@ def extract_films_from_html(html: str) -> List[Dict[str, object]]:
     for li_html in LI_PATTERN.findall(html):
         title_match = TITLE_DIV_PATTERN.search(li_html)
         rodzaj_match = RODZAJ_PATTERN.search(li_html)
-
         if not title_match:
             continue
 
         title_html = title_match.group(1)
         rodzaj_html = rodzaj_match.group(1) if rodzaj_match else ""
-
         anchors = ANCHOR_PATTERN.findall(title_html)
         if not anchors:
             continue
@@ -98,7 +112,6 @@ def extract_films_from_html(html: str) -> List[Dict[str, object]]:
         linked_title = clean_text(linked_title_html)
         alt_titles = [clean_text(t) for t in ALT_TITLE_PATTERN.findall(title_html)]
         alt_titles = [t for t in alt_titles if t and t != linked_title]
-
         parsed_rodzaj = parse_rodzaj(rodzaj_html)
 
         if film_id not in films:
@@ -111,25 +124,129 @@ def extract_films_from_html(html: str) -> List[Dict[str, object]]:
                 text_author=parsed_rodzaj["text_author"],
                 creators=parsed_rodzaj["creators"],
             )
-            continue
-
-        existing = films[film_id]
-        if not existing.title and linked_title:
-            existing.title = linked_title
-
-        for alt in alt_titles:
-            if alt not in existing.alternate_titles and alt != existing.title:
-                existing.alternate_titles.append(alt)
-
-        for key in ("film_type", "text_author", "creators"):
-            if getattr(existing, key) in (None, "") and parsed_rodzaj[key] not in (None, ""):
-                setattr(existing, key, parsed_rodzaj[key])
+        else:
+            existing = films[film_id]
+            if not existing.title and linked_title:
+                existing.title = linked_title
+            for alt in alt_titles:
+                if alt not in existing.alternate_titles and alt != existing.title:
+                    existing.alternate_titles.append(alt)
+            for key in ("film_type", "text_author", "creators"):
+                if getattr(existing, key) in (None, "") and parsed_rodzaj[key] not in (None, ""):
+                    setattr(existing, key, parsed_rodzaj[key])
 
     return [film.to_dict() for film in sorted(films.values(), key=lambda x: int(x.film_id))]
 
 
-def download_year_html(year: int) -> str:
-    url = BASE_URL.format(year=year)
+def parse_locations_from_tech3(tech3_html: str) -> List[str]:
+    tech3_text = clean_text(tech3_html)
+    match = re.search(r"Lokacje:\s*(.+)$", tech3_text, re.IGNORECASE)
+    if not match:
+        return []
+    locations_raw = re.sub(r"\.$", "", match.group(1)).strip()
+    return [loc.strip() for loc in locations_raw.split(",") if loc.strip()]
+
+
+def parse_cast_people(li_html: str) -> List[Dict[str, Optional[str]]]:
+    people: List[Dict[str, Optional[str]]] = []
+    pending_person: Optional[Dict[str, Optional[str]]] = None
+
+    for match in PERSON_BLOCK_PATTERN.finditer(li_html):
+        class_attr = match.group("class_attr")
+        content = match.group("content")
+
+        if class_attr.startswith("ekipa_osoba"):
+            a_match = ANCHOR_PATTERN.search(content)
+            if a_match:
+                href, name_html = a_match.groups()
+                pending_person = {
+                    "name": clean_text(name_html),
+                    "id": href.rsplit("/", 1)[-1],
+                    "character": None,
+                    "main": False,
+                }
+                people.append(pending_person)
+            continue
+
+        if class_attr.startswith("ekipa_opis") and pending_person is not None:
+            pending_person["character"] = clean_text(content) or None
+            pending_person["main"] = "wyroznienie" in class_attr
+            pending_person = None
+
+    return people
+
+
+def extract_movie_details_from_html(html: str) -> Dict[str, object]:
+    article_match = ARTICLE_PATTERN.search(html)
+    if not article_match:
+        return {}
+    article_html = article_match.group(1)
+
+    title_match = H1_PATTERN.search(article_html)
+    title = clean_text(title_match.group(1)) if title_match else None
+
+    years = None
+    for label_html, value_html in TECH1_PATTERN.findall(article_html):
+        label = clean_text(label_html).rstrip(":").lower()
+        if label == "rok produkcji":
+            years = clean_text(value_html) or None
+
+    tech3_match = TECH3_PATTERN.search(article_html)
+    locations = parse_locations_from_tech3(tech3_match.group(1)) if tech3_match else []
+
+    description_match = DESCRIPTION_PATTERN.search(article_html)
+    description = clean_text(description_match.group(1)) if description_match else None
+
+    gallery_link = None
+    gallery_match = GALLERY_PATTERN.search(article_html)
+    if gallery_match:
+        links = ANCHOR_PATTERN.findall(gallery_match.group(1))
+        if links:
+            href, _ = links[-1]
+            gallery_link = urljoin(BASE_SITE, href)
+
+    directors: List[str] = []
+    screenplay: List[str] = []
+    cinematography: List[str] = []
+    cast_main: List[Dict[str, Optional[str]]] = []
+    cast_other: List[Dict[str, Optional[str]]] = []
+
+    for li_html in LI_ITEM_PATTERN.findall(article_html):
+        func_match = FUNKCJA_PATTERN.search(li_html)
+        if not func_match:
+            continue
+        role = clean_text(func_match.group(1)).lower()
+
+        if role == "reżyseria":
+            directors.extend([p["name"] for p in parse_cast_people(li_html)])
+        elif role == "scenariusz":
+            screenplay.extend([p["name"] for p in parse_cast_people(li_html)])
+        elif role == "zdjęcia":
+            cinematography.extend([p["name"] for p in parse_cast_people(li_html)])
+        elif role == "obsada aktorska":
+            all_cast = parse_cast_people(li_html)
+            for person in all_cast:
+                payload = {k: person[k] for k in ("name", "id", "character")}
+                if person.get("main"):
+                    cast_main.append(payload)
+                else:
+                    cast_other.append(payload)
+
+    return {
+        "title": title,
+        "production_years": years,
+        "locations": locations,
+        "description": description,
+        "gallery_link": gallery_link,
+        "directors": directors,
+        "screenwriters": screenplay,
+        "cinematographers": cinematography,
+        "cast_main": cast_main,
+        "cast_other": cast_other,
+    }
+
+
+def download_html(url: str) -> str:
     req = Request(
         url,
         headers={
@@ -140,7 +257,11 @@ def download_year_html(year: int) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
-def process_year(year: int, output_dir: Path, pause_s: float) -> None:
+def download_year_html(year: int) -> str:
+    return download_html(BASE_URL.format(year=year))
+
+
+def process_year(year: int, output_dir: Path, pause_s: float) -> List[Dict[str, object]]:
     html_path = output_dir / f"{year}.html"
     json_path = output_dir / f"{year}.json"
 
@@ -153,6 +274,45 @@ def process_year(year: int, output_dir: Path, pause_s: float) -> None:
 
     if pause_s > 0:
         time.sleep(pause_s)
+    return films
+
+
+def matches_type(film: Dict[str, object], download_types: List[str]) -> bool:
+    film_type = str(film.get("film_type") or "").strip().lower()
+    return film_type in {value.strip().lower() for value in download_types}
+
+
+def process_movie_pages(
+    year: int,
+    films: List[Dict[str, object]],
+    download_types: List[str],
+    movies_dir: Path,
+    pause_s: float,
+) -> None:
+    year_dir = movies_dir / str(year)
+    year_dir.mkdir(parents=True, exist_ok=True)
+
+    for film in films:
+        if not matches_type(film, download_types):
+            continue
+
+        film_id = str(film["film_id"])
+        link = str(film["link"])
+        html = download_html(link)
+
+        html_path = year_dir / f"{film_id}.html"
+        json_path = year_dir / f"{film_id}.json"
+
+        html_path.write_text(html, encoding="utf-8")
+
+        details = extract_movie_details_from_html(html)
+        details["film_id"] = film_id
+        details["link"] = link
+        details["year_from_listing"] = year
+        json_path.write_text(json.dumps(details, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        if pause_s > 0:
+            time.sleep(pause_s)
 
 
 def main() -> int:
@@ -163,17 +323,32 @@ def main() -> int:
     parser.add_argument("--end-year", type=int, default=2026)
     parser.add_argument("--output-dir", type=Path, default=Path("data/years"))
     parser.add_argument("--pause", type=float, default=0.2, help="Pauza między requestami w sekundach")
+    parser.add_argument(
+        "--download-movies",
+        action="append",
+        default=[],
+        metavar="TYPE",
+        help="Pobiera strony filmów tylko dla podanego film_type (można podać wiele razy).",
+    )
+    parser.add_argument(
+        "--movies-dir",
+        type=Path,
+        default=Path("movies"),
+        help="Katalog docelowy dla stron i JSON-ów filmów: movies/YEAR/ID.(html|json)",
+    )
     args = parser.parse_args()
 
     if args.start_year > args.end_year:
         raise SystemExit("--start-year nie może być większy niż --end-year")
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-
     failures = []
+
     for year in range(args.start_year, args.end_year + 1):
         try:
-            process_year(year, args.output_dir, args.pause)
+            films = process_year(year, args.output_dir, args.pause)
+            if args.download_movies:
+                process_movie_pages(year, films, args.download_movies, args.movies_dir, args.pause)
             print(f"[OK] {year}")
         except (HTTPError, URLError, TimeoutError) as exc:
             failures.append((year, str(exc)))
