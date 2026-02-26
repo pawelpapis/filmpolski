@@ -23,19 +23,15 @@ Po użyciu `--download-movies TYPE` skrypt dla filmów z pasującym `film_type` 
 - `movies/YEAR/ID.html`
 - `movies/YEAR/ID.json`
 
-Dodatkowo:
-- wypisuje postęp pobierania filmów w obrębie roku (`pobrane/planowane`),
-- nie pobiera ponownie filmu, jeżeli istnieją oba pliki: `ID.html` i `ID.json`.
-
 Plik `movies/YEAR/ID.json` zawiera (o ile dostępne):
 - `title`
 - `production_years`
 - `locations` (lista)
 - `description`
 - `gallery_link`
-- `directors` (lista unikalnych obiektów `name`, `id`)
-- `screenwriters` (lista unikalnych obiektów `name`, `id`)
-- `cinematographers` (lista unikalnych obiektów `name`, `id`)
+- `directors`
+- `screenwriters`
+- `cinematographers`
 - `cast_main`
 - `cast_other`
 
@@ -43,8 +39,6 @@ Każdy aktor w `cast_main` / `cast_other` ma pola:
 - `name`
 - `id`
 - `character`
-
-Aktor nie może wystąpić jednocześnie w `cast_main` i `cast_other`.
 
 ## Opcje
 
