@@ -40,6 +40,10 @@ PERSON_BLOCK_PATTERN = re.compile(
 )
 FUNKCJA_PATTERN = re.compile(r'<div class="ekipa_funkcja[^"]*">(.*?)</div>', re.DOTALL | re.IGNORECASE)
 LI_ITEM_PATTERN = re.compile(r"<li[^>]*>(.*?)</li>", re.DOTALL | re.IGNORECASE)
+GALLERY_ARTICLE_PATTERN = re.compile(
+    r'<article\s+id="galeria_filmu"[^>]*>(.*?)</article>', re.DOTALL | re.IGNORECASE
+)
+IMG_SRC_PATTERN = re.compile(r'<img[^>]+src="([^"]+)"', re.DOTALL | re.IGNORECASE)
 
 
 @dataclass
@@ -82,6 +86,17 @@ def download_html(url: str) -> str:
     )
     with urlopen(req, timeout=30) as response:
         return response.read().decode("utf-8", errors="replace")
+
+
+def download_bytes(url: str) -> bytes:
+    req = Request(
+        url,
+        headers={
+            "User-Agent": "Mozilla/5.0 (compatible; filmpolski-scraper/1.0; +https://filmpolski.pl)",
+        },
+    )
+    with urlopen(req, timeout=30) as response:
+        return response.read()
 
 
 def year_range(start_year: int, end_year: int) -> Iterable[int]:
@@ -473,11 +488,102 @@ def parse_movie_pages(start_year: int, end_year: int, movies_dir: Path, overwrit
         print(f"[MOVIES->JSON] {year}: zapisano {converted}, pominięto {skipped}")
 
 
+def build_gallery_page_url(gallery_link: str) -> Optional[str]:
+    match = re.search(r"index\.php/(\d+)", gallery_link)
+    if not match:
+        return None
+    gallery_id = match.group(1)
+    return f"{BASE_SITE}index.php?galeria_filmu={gallery_id}"
+
+
+def extract_gallery_image_urls(gallery_html: str) -> List[str]:
+    article_match = GALLERY_ARTICLE_PATTERN.search(gallery_html)
+    if not article_match:
+        return []
+
+    article = article_match.group(1)
+    urls = []
+    for src in IMG_SRC_PATTERN.findall(article):
+        normalized = src.strip()
+        normalized = re.sub(r"/(\d+)i/", r"/\1z/", normalized)
+        urls.append(urljoin(BASE_SITE, normalized))
+    return urls
+
+
+def download_galleries(
+    start_year: int,
+    end_year: int,
+    movies_dir: Path,
+    pause_s: float,
+    overwrite: bool,
+) -> None:
+    for year in year_range(start_year, end_year):
+        year_dir = movies_dir / str(year)
+        if not year_dir.exists():
+            print(f"[GALLERIES] {year}: brak katalogu {year_dir}")
+            continue
+
+        movie_json_files = sorted(
+            year_dir.glob("*.json"), key=lambda p: int(p.stem) if p.stem.isdigit() else p.stem
+        )
+        if not movie_json_files:
+            print(f"[GALLERIES] {year}: brak plików JSON filmów")
+            continue
+
+        total_movies = len(movie_json_files)
+        for movie_index, json_path in enumerate(movie_json_files, start=1):
+            film_id = json_path.stem
+            payload = json.loads(json_path.read_text(encoding="utf-8"))
+            gallery_link = str(payload.get("gallery_link") or "").strip()
+            if not gallery_link:
+                print(f"[GALLERIES] {year} film {movie_index}/{total_movies} ID {film_id}: brak gallery_link")
+                continue
+
+            gallery_page_url = build_gallery_page_url(gallery_link)
+            if not gallery_page_url:
+                print(f"[GALLERIES] {year} film {movie_index}/{total_movies} ID {film_id}: nieprawidłowy gallery_link")
+                continue
+
+            film_gallery_dir = movies_dir / film_id
+            film_gallery_dir.mkdir(parents=True, exist_ok=True)
+            gallery_html_path = film_gallery_dir / f"gallery_{film_id}.html"
+
+            if gallery_html_path.exists() and not overwrite:
+                gallery_html = gallery_html_path.read_text(encoding="utf-8")
+            else:
+                gallery_html = download_html(gallery_page_url)
+                gallery_html_path.write_text(gallery_html, encoding="utf-8")
+
+            image_urls = extract_gallery_image_urls(gallery_html)
+            if not image_urls:
+                print(f"[GALLERIES] {year} film {movie_index}/{total_movies} ID {film_id}: brak zdjęć")
+                continue
+
+            total_images = len(image_urls)
+            for image_index, image_url in enumerate(image_urls, start=1):
+                image_name = Path(image_url).name
+                image_path = film_gallery_dir / image_name
+
+                if image_path.exists() and not overwrite:
+                    print(
+                        f"[GALLERIES] {year} film {movie_index}/{total_movies} ID {film_id} | zdjęcie {image_index}/{total_images}: pominięto"
+                    )
+                    continue
+
+                image_bytes = download_bytes(image_url)
+                image_path.write_bytes(image_bytes)
+                print(
+                    f"[GALLERIES] {year} film {movie_index}/{total_movies} ID {film_id} | zdjęcie {image_index}/{total_images}: pobrano"
+                )
+                if pause_s > 0:
+                    time.sleep(pause_s)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
             "Pobieranie i przetwarzanie FilmPolski. Akcje można łączyć: "
-            "--download-years, --parse-years, --download-movies, --parse-movies."
+            "--download-years, --parse-years, --download-movies, --parse-movies, --download-galleries."
         )
     )
     parser.add_argument("--start-year", type=int, default=1911)
@@ -491,6 +597,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--parse-years", action="store_true", help="Przetwórz years-dir/*.html do years-dir/*.json")
     parser.add_argument("--download-movies", action="store_true", help="Pobierz strony filmów do movies-dir/YEAR/ID.html")
     parser.add_argument("--parse-movies", action="store_true", help="Przetwórz movies-dir/YEAR/*.html do *.json")
+    parser.add_argument(
+        "--download-galleries",
+        action="store_true",
+        help="Pobierz galerie zdjęć do movies/ID/ (gallery_ID.html + pliki jpg)",
+    )
 
     parser.add_argument(
         "--movie-type",
@@ -506,10 +617,16 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
 
-    actions = [args.download_years, args.parse_years, args.download_movies, args.parse_movies]
+    actions = [
+        args.download_years,
+        args.parse_years,
+        args.download_movies,
+        args.parse_movies,
+        args.download_galleries,
+    ]
     if not any(actions):
         raise SystemExit(
-            "Nie wybrano akcji. Użyj co najmniej jednej: --download-years, --parse-years, --download-movies, --parse-movies"
+            "Nie wybrano akcji. Użyj co najmniej jednej: --download-years, --parse-years, --download-movies, --parse-movies, --download-galleries"
         )
 
     try:
@@ -532,6 +649,9 @@ def main() -> int:
 
         if args.parse_movies:
             parse_movie_pages(args.start_year, args.end_year, args.movies_dir, args.overwrite)
+
+        if args.download_galleries:
+            download_galleries(args.start_year, args.end_year, args.movies_dir, args.pause, args.overwrite)
 
     except (HTTPError, URLError, TimeoutError) as exc:
         print(f"[ERR] {exc}")

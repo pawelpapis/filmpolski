@@ -1,7 +1,9 @@
 import unittest
 
 from scrape_filmpolski_years import (
+    build_gallery_page_url,
     extract_films_from_html,
+    extract_gallery_image_urls,
     extract_movie_details_from_html,
     parse_locations_from_tech3,
 )
@@ -31,6 +33,13 @@ SAMPLE_MOVIE_HTML = '''
 <li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1142176">Piotr Sobociński jr</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
 <li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114681">Arkadiusz Jakubik</a></div><div class="ekipa_opis wyroznienie">psycholog więzienny Rafał Wejman</div><div class="ekipa_osoba"><a href="index.php/114681">Arkadiusz Jakubik</a></div><div class="ekipa_opis">psycholog więzienny Rafał Wejman</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis">Magda Wejman</div></li>
 </ul>
+</article>
+'''
+
+SAMPLE_GALLERY_HTML = '''
+<article id="galeria_filmu">
+<img src="/z1/17i/5617_1.jpg">
+<img src="/z1/117i/5617_2.jpg">
 </article>
 '''
 
@@ -81,6 +90,19 @@ class ParserTests(unittest.TestCase):
         cast_other_ids = {a["id"] for a in details["cast_other"]}
         self.assertNotIn("114681", cast_other_ids)
         self.assertIn("1119917", cast_other_ids)
+
+    def test_gallery_utils(self):
+        self.assertEqual(
+            "https://filmpolski.pl/fp/index.php?galeria_filmu=155617",
+            build_gallery_page_url("https://filmpolski.pl/fp/index.php/155617"),
+        )
+        self.assertEqual(
+            [
+                "https://filmpolski.pl/z1/17z/5617_1.jpg",
+                "https://filmpolski.pl/z1/117z/5617_2.jpg",
+            ],
+            extract_gallery_image_urls(SAMPLE_GALLERY_HTML),
+        )
 
 
 if __name__ == "__main__":

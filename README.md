@@ -5,14 +5,15 @@ Uporządkowany skrypt CLI do pracy na danych FilmPolski. Działa etapami, które
 1. pobieranie stron roczników,
 2. parsowanie roczników do JSON,
 3. pobieranie stron filmów,
-4. parsowanie stron filmów do JSON.
+4. parsowanie stron filmów do JSON,
+5. pobieranie galerii zdjęć.
 
 Plik: `scrape_filmpolski_years.py`.
 
 ## Najważniejsze założenia
 
 - Zakres lat wybierasz przez `--start-year` i `--end-year`.
-- Każdy etap uruchamiasz osobną flagą: `--download-years`, `--parse-years`, `--download-movies`, `--parse-movies`.
+- Każdy etap uruchamiasz osobną flagą: `--download-years`, `--parse-years`, `--download-movies`, `--parse-movies`, `--download-galleries`.
 - Etapy można łączyć w jednym uruchomieniu.
 - Domyślnie istniejące pliki są **pomijane** (brak ponownego pobierania/przetwarzania).
 - Użyj `--overwrite`, aby wymusić nadpisanie.
@@ -22,11 +23,14 @@ Plik: `scrape_filmpolski_years.py`.
 - roczniki: `data/years`
   - `YEAR.html`
   - `YEAR.json`
-- filmy: `movies`
+- filmy (strony i JSON): `movies/YEAR`
   - `movies/YEAR/ID.html`
   - `movies/YEAR/ID.json`
+- galerie zdjęć: `movies/ID`
+  - `movies/ID/gallery_ID.html`
+  - `movies/ID/*.jpg`
 
-Możesz je zmienić przez:
+Możesz zmienić katalogi przez:
 - `--years-dir`
 - `--movies-dir`
 
@@ -64,17 +68,36 @@ W trakcie pobierania filmów skrypt wypisuje postęp: ile pobrano i ile pominię
 python3 scrape_filmpolski_years.py --parse-movies --start-year 2000 --end-year 2005
 ```
 
-### 5) Łączenie etapów w jednym wywołaniu
+### 5) Pobieranie galerii zdjęć
+
+```bash
+python3 scrape_filmpolski_years.py --download-galleries --start-year 2000 --end-year 2005
+```
+
+Jak działa `--download-galleries`:
+- dla każdego `movies/YEAR/ID.json` bierze pole `gallery_link`,
+- jeśli `gallery_link` ma postać `https://filmpolski.pl/fp/index.php/<GALERIA_ID>`, pobiera stronę:
+  - `https://filmpolski.pl/fp/index.php?galeria_filmu=<GALERIA_ID>`
+- zapisuje ją jako `movies/ID/gallery_ID.html`,
+- z `<article id="galeria_filmu">` zbiera wszystkie `<img src="...">`,
+- w ścieżce obrazka zamienia segment `.../<liczba>i/...` na `.../<liczba>z/...`,
+- pobiera zdjęcia do `movies/ID/`.
+
+W logu postępu podaje:
+- który film jest aktualnie przetwarzany w danym roku,
+- które zdjęcie (x/y) jest aktualnie pobierane.
+
+### 6) Łączenie etapów w jednym wywołaniu
 
 ```bash
 python3 scrape_filmpolski_years.py \
   --download-years --parse-years \
-  --download-movies --parse-movies \
+  --download-movies --parse-movies --download-galleries \
   --movie-type "Film fabularny" \
   --start-year 2020 --end-year 2021
 ```
 
-### 6) Wymuszenie nadpisania
+### 7) Wymuszenie nadpisania
 
 ```bash
 python3 scrape_filmpolski_years.py --download-years --overwrite
