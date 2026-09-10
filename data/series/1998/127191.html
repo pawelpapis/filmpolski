@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - SIEDLISKO</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>SIEDLISKO</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1998</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">1999. 01. 02</div></li>
+<li><div class="film_tech3">Barwny (Kodak), 9 odcinków x ok. 50 min<br /><br />
+Lokacje: Laśmiady, Stare Juchy, Bałamutowo, Ełk, Warszawa.<br /><br />
+W filmie wykorzystano obrazy Marcina Kołpanowicza oraz fotogramy Zbigniewa Gucwy.</div></li>
+</ul>
+<p class="opis">"Jest to opowieść o ludziach dojrzałych, którzy po trzydziestu latach małżeństwa przenoszą się na wieś i odkrywają na nowo łączącą ich miłość" - tak krótko scharakteryzował "Siedlisko" <a href="index.php/112312">Janusz Majewski</a>. Nie krył przy tym, że jego najnowszy serial jest utworem na poły autobiograficznym. Dość przypomnieć, że zdjęcia do cyklu powstawały w okolicach Starych Juch na Mazurach, gdzie reżyser ma posiadłość, którą sam przebudowywał i remontował. Zaangażował się nawet w życie lokalnej społeczności. Wszystko to, odpowiednio wymieszane z fabularną fikcją, znalazło wyraz w "Siedlisku". Reżyser zadbał też o należyte wyeksponowanie mazurskiej przyrody, ciągle pięknej, mimo licznych szkód i dewastacji spowodowanych przez niefrasobliwych turystów. Dlatego, podobnie jak w <a href="index.php/12134">"Chłopach"</a> <a href="index.php/11888">Jana Rybkowskiego</a>, rytm akcji w serialu podporządkowany został naturalnemu biegowi pór roku.</p><div class="galeria_mala"><a href="index.php?fotos=167191_1&galeria=157191"><img class="bezcienia" src="../z1/91i/7191_1.jpg" height="60"></a><a href="index.php?fotos=167191_2&galeria=157191"><img class="bezcienia" src="../z1/91i/7191_2.jpg" height="60"></a><a href="index.php?fotos=167191_3&galeria=157191"><img class="bezcienia" src="../z1/91i/7191_3.jpg" height="60"></a><a href="index.php?fotos=167191_4&galeria=157191"><img class="bezcienia" src="../z1/91i/7191_4.jpg" height="60"></a><a href="index.php?fotos=167191_5&galeria=157191"><img class="bezcienia" src="../z1/91i/7191_5.jpg" height="60"></a><a href="index.php?fotos=167191_6&galeria=157191"><img class="bezcienia" src="../z1/91i/7191_6.jpg" height="60"></a><a href="index.php/157191" title="Galeria zdjęć (20)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki127191" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna127191','ekipa_skrocona127191','ekipa127191','ekipa_schowaj127191','ekipa_schowaj_krotki127191','ekipa_schowaj_pelny127191','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny127191" class="jslink" onclick="pzf('ekipa_skrocona127191','ekipa_pelna127191','ekipa127191','ekipa_schowaj127191','ekipa_schowaj_pelny127191','ekipa_schowaj_krotki127191','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj127191"127191" class="jslink" onclick="pzz('ekipa127191','ekipa_schowaj127191')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa127191" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna127191">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112312">Janusz Majewski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/112145">Alicja Tołwińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1119000">Mirosława Panas</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113658">Wanda Majerówna</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124967">Zofia Nasierowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dialogi</div><div class="ekipa_osoba"><a href="index.php/112312">Janusz Majewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111726">Witold Adamek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1113056">Krzysztof Ciołkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123773">Andrzej Pieczyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117584">Janusz Wojtczak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123776">Dariusz Maliński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127258">Piotr Kunowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126800">Tomasz Głuchowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123644">Tadeusz Ostrowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114038">Eugeniusz Kaczmarek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124398">Maciej Krzepkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127196">Leszek Zygarłowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1123643">Łukasz Komisarczyk</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1127259">Wanda Gruszkowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Laboratorium</div><div class="ekipa_osoba"><a href="index.php/111141">Telewizja Polska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11592">Tadeusz Kosarewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/1110403">Bogdan Zajączkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1121690">Dorota Jędrkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115879">Jarosław Pieńkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116101">Zdzisław Kobyliński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118167">Wiesław Paraszczak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126096">Sławomir Wielądek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112079">Teresa Gruber</a></div><div class="ekipa_opis wyroznienie"> w napisach błędnie podano imię:  Aleksandra</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1172">Elżbieta Radke</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126681">Natasza Eichelkraut-Galimska</a></div><div class="ekipa_opis wyroznienie"> kostiumy Anny Dymnej</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1125424">Jolanta Wieczorek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115536">Anna Kowalska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117085">Monika Jagodzińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127256">Magdalena Wolna</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111797">Janina Dybowska-Person</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1127255">Małgorzata Tomczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11258">Jerzy Matuszkiewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba"><a href="index.php/11258">Jerzy Matuszkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/114997">Zbigniew Zbrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115870">Wiesław Znyk</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1125243">Sławomir Ciołkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1122875">Adam Padamczyk</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Imitator dźwięku</div><div class="ekipa_osoba"><a href="index.php/1161">Henryk Zastróżny</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1123794">Grzegorz Lindemann</a></div><div class="ekipa_opis"> studio "Sonoria"</div><div class="ekipa_osoba"><a href="index.php/1125482">Michał Dominowski</a></div><div class="ekipa_opis"> studio "Sonoria"</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118782">Ewa Różewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1114121">Elżbieta Jankowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Izabella Byczot</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/111701">Renata Pajchel</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie graficzne</div><div class="ekipa_osoba"><a href="index.php/1116361">Marta Precht</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111389">Tadeusz Drewno</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Organizacja produkcji</div><div class="ekipa_osoba"><a href="index.php/111391">Halina Słobodzin</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118794">Roman Sawka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1124658">Wiesław Kardaś</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113757">Małgorzata Powałka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126432">Renata Rogala</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127198">Iwona Żygadło</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111726">Witold Adamek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111701">Renata Pajchel</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121561">Close-Up Productions</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Telewizyjna Agencja Produkcji Teatralnej i Filmowej</div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis wyroznienie"> Marianna Kalinowska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11931">Leonard Pietraszak</a></div><div class="ekipa_opis wyroznienie"> Krzysztof Kalinowski, mąż Marianny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113861">Agnieszka Wagner</a></div><div class="ekipa_opis wyroznienie"> Katarzyna, córka Kalinowskich</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115796">Piotr Machalica</a></div><div class="ekipa_opis wyroznienie"> Robert Zborowski, mąż Katarzyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118894">Renata Dancewicz</a></div><div class="ekipa_opis wyroznienie"> Iza, żona Jacka</div><div class="ekipa_osoba"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis"> Jacek, syn Kalinowskich</div><div class="ekipa_osoba"><a href="index.php/112331">Michał Pawlicki</a></div><div class="ekipa_opis"> Gustaw Józef Wolf; bohater sam przedstawia się jako Gustaw, ale w napisach końcowych prz ynazwisku Michała Pawlickiego pojawia się imię Józef</div><div class="ekipa_osoba"><a href="index.php/111507">Marian Opania</a></div><div class="ekipa_opis"> Wacław Kotula, sołtys Panistrugi</div><div class="ekipa_osoba"><a href="index.php/111460">Stanisława Celińska</a></div><div class="ekipa_opis"> Helena Misztal, gosposia Kalinowskich  w Panistrudze</div><div class="ekipa_osoba"><a href="index.php/1120450">Leszek Zduń</a></div><div class="ekipa_opis"> Józek, syn pani Heleny</div><div class="ekipa_osoba"><a href="index.php/112289">Magdalena Cielecka</a></div><div class="ekipa_opis"> Basia, doktorantka Kalinowskiego</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> profesor Wiesław Wanat</div><div class="ekipa_osoba"><a href="index.php/111917">Danuta Szaflarska</a></div><div class="ekipa_opis"> ciotka Emilia</div><div class="ekipa_osoba"><a href="index.php/113658">Wanda Majerówna</a></div><div class="ekipa_opis"> ciotka Malwina</div><div class="ekipa_osoba"><a href="index.php/112243">Zofia Merle</a></div><div class="ekipa_opis"> ciotka Teodora</div><div class="ekipa_osoba"><a href="index.php/1124968">Łukasz Mechanicki</a></div><div class="ekipa_opis"> Jasio, wnuk Kalinowskich</div><div class="ekipa_osoba"><a href="index.php/111236">Igor Przegrodzki</a></div><div class="ekipa_opis"> organista Gabriel Piórkowski</div><div class="ekipa_osoba"><a href="index.php/11283">Lech Ordon</a></div><div class="ekipa_opis"> kościelny Frankowski</div><div class="ekipa_osoba"><a href="index.php/111640">Jerzy Zelnik</a></div><div class="ekipa_opis"> Witek Jaszczuk, biznesmen</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Wojciech Kula, ordynator w szpitalu w Ełku,  przyjaciel Kalinowskiego z czasów  studenckich</div><div class="ekipa_osoba"><a href="index.php/111932">Olgierd Łukaszewicz</a></div><div class="ekipa_opis"> Piotr Zarzycki, przyjaciel Kalinowskich</div><div class="ekipa_osoba"><a href="index.php/116371">Grażyna Marzec</a></div><div class="ekipa_opis"> Danuta Zarzycka, przyjaciółka Kalinowskich</div><div class="ekipa_osoba"><a href="index.php/113265">Grażyna Szapołowska</a></div><div class="ekipa_opis"> aktorka Eleonora Stern</div><div class="ekipa_osoba"><a href="index.php/111162">Marek Kondrat</a></div><div class="ekipa_opis"> aktor Artur</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Zuza, właścicielka galerii</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> dziekan, przyjaciel Kalinowskiego</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> dzwoniący do Ameryki</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> dzwoniący do Ameryki</div><div class="ekipa_osoba"><a href="index.php/111316">Stanisław Brejdygant</a></div><div class="ekipa_opis"> ksiądz proboszcz</div><div class="ekipa_osoba"><a href="index.php/1111833">Piotr Gąsowski</a></div><div class="ekipa_opis"> Edzio, syn ciotki Teodory</div><div class="ekipa_osoba"><a href="index.php/114064">Stanisław Brudny</a></div><div class="ekipa_opis"> majster Wójcik</div><div class="ekipa_osoba"><a href="index.php/111533">Krystyna Kołodziejczyk</a></div><div class="ekipa_opis"> Aleksandra Kotulowa</div><div class="ekipa_osoba">Karolina Lubańska</div><div class="ekipa_opis"> Justyna, dziewczyna pomagająca  Kalinowskiej w kuchni</div><div class="ekipa_osoba"><a href="index.php/1110945">Jarosław Gruda</a></div><div class="ekipa_opis"> Józef Kowal</div><div class="ekipa_osoba"><a href="index.php/1115133">Bożena Robakowska</a></div><div class="ekipa_opis"> Kowalowa</div><div class="ekipa_osoba"><a href="index.php/112073">Marcin Troński</a></div><div class="ekipa_opis"> notariusz Zdzisław (Adam) Duży</div><div class="ekipa_osoba"><a href="index.php/1112918">Jacek Wójcicki</a></div><div class="ekipa_opis"> kominiarz</div><div class="ekipa_osoba"><a href="index.php/115986">Stanisław Jaskułka</a></div><div class="ekipa_opis"> listonosz Pacała</div><div class="ekipa_osoba"><a href="index.php/1110421">Stanisław Penksyk</a></div><div class="ekipa_opis"> Władek Bugała, majster remontujący dom  Kalinowskich</div><div class="ekipa_osoba"><a href="index.php/1119156">Dariusz Gnatowski</a></div><div class="ekipa_opis"> weterynarz Krycha</div><div class="ekipa_osoba"><a href="index.php/1119244">Maria Winiarska</a></div><div class="ekipa_opis"> Wiśniewska, sąsiadka Kalinowskich na wsi</div><div class="ekipa_osoba"><a href="index.php/1113875">Robert Rozmus</a></div><div class="ekipa_opis"> pracownik zakładu doświadczalnego  Akademii Rolniczej</div><div class="ekipa_osoba"><a href="index.php/1117033">Barbara Baryżewska</a></div><div class="ekipa_opis"> Leokadia Wójcikowa</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> Misiakowa, urzędniczka na poczcie</div><div class="ekipa_osoba"><a href="index.php/1127230">Ewa Awramik</a></div><div class="ekipa_opis"> urzędniczka</div><div class="ekipa_osoba"><a href="index.php/1126450">Maciej Borowski</a></div><div class="ekipa_opis"> kolejarz</div><div class="ekipa_osoba"><a href="index.php/1127231">Marcin Borowski</a></div><div class="ekipa_opis"> kolejarz</div><div class="ekipa_osoba"><a href="index.php/1127232">Krzysztof Dąbrowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Eryka Jelonek</div><div class="ekipa_opis"> Jelonkowa, matka Kowalowej</div><div class="ekipa_osoba">Reinhold Jelonek</div><div class="ekipa_opis"> Reinhold Jelonek, emerytowany leśnik,  ojciec Kowalowej</div><div class="ekipa_osoba"><a href="index.php/112733">Jerzy Karaszkiewicz</a></div><div class="ekipa_opis"> pan Stefan, sąsiad Kalinowskich w  Warszawie</div><div class="ekipa_osoba"><a href="index.php/1127235">Piotr Kowalewski</a></div><div class="ekipa_opis"> nauczyciel Artur Kołodziejczyk</div><div class="ekipa_osoba">Jacek Kołaciński</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Sabina Kozłowska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111849">Ewa Miller</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127238">Robert Ninkiewicz</a></div><div class="ekipa_opis"> tragarz z firmy przeprowadzkowej</div><div class="ekipa_osoba">Bożena Nowacka</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Jacek Olchunowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123644">Tadeusz Ostrowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Marian Podlecki</div><div class="ekipa_opis"> nadleśniczy Marian Podlecki</div><div class="ekipa_osoba">Janusz Piela</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Andrzej Rymarowicz</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126924">Grzegorz Sierzputowski</a></div><div class="ekipa_opis"> ministrant</div><div class="ekipa_osoba"><a href="index.php/112145">Alicja Tołwińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116771">Anna Waszczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Natalia Wawrusiewicz</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127245">Dorota Wiszowata</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115870">Wiesław Znyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127196">Leszek Zygarłowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Tadeusz Kowalewski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Zdzisław Sobolewski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Franciszek Wileński</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Czesław Fiedorowicz</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Bartek Borzych</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Adam Mielnik</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Mikołaj Wierniszewski</div><div class="ekipa_opis">&nbsp;</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona127191">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/112312">Janusz Majewski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/113658">Wanda Majerówna</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1124967">Zofia Nasierowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/111726">Witold Adamek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/11592">Tadeusz Kosarewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/112079">Teresa Gruber</a></div><div class="ekipa_opis"> w napisach błędnie podano imię:  Aleksandra</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1172">Elżbieta Radke</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126681">Natasza Eichelkraut-Galimska</a></div><div class="ekipa_opis"> kostiumy Anny Dymnej</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/111797">Janina Dybowska-Person</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/11258">Jerzy Matuszkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1115870">Wiesław Znyk</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1118782">Ewa Różewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/111389">Tadeusz Drewno</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/111726">Witold Adamek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111701">Renata Pajchel</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1121561">Close-Up Productions</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Telewizyjna Agencja Produkcji Teatralnej i Filmowej</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Marianna Kalinowska</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11931">Leonard Pietraszak</a></div><div class="ekipa_opis"> Krzysztof Kalinowski, mąż Marianny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1113861">Agnieszka Wagner</a></div><div class="ekipa_opis"> Katarzyna, córka Kalinowskich</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/115796">Piotr Machalica</a></div><div class="ekipa_opis"> Robert Zborowski, mąż Katarzyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1118894">Renata Dancewicz</a></div><div class="ekipa_opis"> Iza, żona Jacka</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj127191" class="jslink" onclick="pzz1('varia127191','varia_schowaj127191')">pokaż</span></div></h2>
+<table id="varia127191" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">PRZYNIOSŁY NAS BOCIANY  
+    </td></tr>
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1127253">Ełckie Centrum Kultury (Ełk)</a></td><td class="varia_osoba_opis">chór</td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">TOCATTA I FUGA D-MOLL BWV. 565  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/111634">Johann Sebastian Bach</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwory muzyczne</td></tr><tr><td colspan="3" class="varia_tytul">AVE MARIA  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+          
+        </td><td class="varia_osoba"><a href="index.php/111634">Johann Sebastian Bach</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/11109776">Franz Schubert</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">TORNA A SURRIENTO  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1127261">Ernesto De Curtis</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">PIGUŁKA  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/11258">Jerzy Matuszkiewicz</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/113658">Wanda Majerówna</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">NA POŻEGNANIE  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1127262">Franciszek Leśniak</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1127262">Franciszek Leśniak</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">GDY SIĘ CHRYSTUS RODZI  
+    </td></tr>
+<tr><td class="varia_funkcja">Opracowanie muzyczne  
+        </td><td class="varia_osoba"><a href="index.php/1127263">Andrzej Jagodziński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">GDYBYM RANNYM SŁONKIEM - aria z opery "Halka"  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/111757">Stanisław Moniuszko</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Libretto  
+        </td><td class="varia_osoba">Włodzimierz Wolski</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">LA DONNA E MOBILE - aria z opery "Rigoletto"  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba">Giuseppe Verdi</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Libretto  
+        </td><td class="varia_osoba"><a href="index.php/1127264">Francesco Maria Piave</a></td><td class="varia_osoba_opis"></td></tr>
+</table><div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">49 min</div></li>
+</ul>
+<p class="opis">Bohaterami "Siedliska" są malarka Marianna i jej mąż Krzysztof. Pewnego dnia dowiadują się, że Marianna otrzymała w spadku po zmarłej ciotce Róży nieruchomość na Mazurach. W pierwszej chwili nawykli do miejskiego życia małżonkowie chcą spieniężyć posiadłość. W tym celu jadą do Ełku, by załatwić sprawę w majestacie prawa. Jednak powodowana sentymentem Marianna pragnie najpierw zobaczyć dom Róży, w którym przed laty spędzała wakacje. Niestety, upływ lat sprawił, że niedokładnie pamięta drogę. Na szczęście w lesie spotykają niejakiego Wolfa, dość tajemniczego osobnika, który wskazuje im właściwą drogę do Panistrugi.</p>
+<h2>1 w internecie</h2>
+<ul class="point">
+<li><a href="https://cybra.lodz.pl/dlibra/publication/31689/edition/28110/content" target="_blank">Przeczytaj scenopis odcinka</a></li>
+</ul>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">49 min</div></li>
+</ul>
+<p class="opis">Marianna z Krzysztofem wybierają się do mieszkania syna Jacka, by przypilnować wnuka Jasia. Jego rodzice bowiem idą na premierę filmu w kinie. Niedługo po wyjściu młodych dziadkowie usypiają chłopca. Czekanie na powrót dzieci umila im gra w "Scrabble". Wspólnie starają się znaleźć właściwą definicję słowa "siedlisko". Wkrótce znów wyjeżdżają na Mazury. Panistruga żyje chrztem synka Kowalów i uświetniającą tę uroczystość zabawą. W zagrodzie Róży, Krzysztof, naprawiając płot, niespodziewania wpada do dołu po bimbrze. Z opresji ratują go Marianna i Józek. Niebawem w odwiedziny przyjeżdża Jacek z żoną i synkiem. Jasio znika gdzieś z psem. Zaniepokojony Krzysztof rusza na poszukiwania wnuka.</p>
+<h2>2 w internecie</h2>
+<ul class="point">
+<li><a href="https://cybra.lodz.pl/dlibra/publication/31690/edition/28111/content" target="_blank">Przeczytaj scenopis odcinka</a></li>
+</ul>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">50 min</div></li>
+</ul>
+<p class="opis">Trwa remont i rozbudowa domu odziedziczonego po pani Róży. Wraz z pracami budowlanymi pojawiają się liczne kłopoty, które spadają na głowę Marianny. Nie dość, że użera się z robotnikami, to jeszcze musi przyprowadzić furmankę cementu, gdyż sołtys Kotula wprowadził się w stan ciężkiego upojenia alkoholowego. Wódka staje się przekleństwem Marianny, ale i ważnym argumentem w negocjacjach z majstrem Bugałą, na którym umęczona kobieta usiłuje wymóc bardziej efektywną pracę. Na tym jednak nie kończą się kłopoty państwa Kalinowskich. Pewnego dnia Krzysztof odkrywa, że w pobliskim jeziorze rozpleniło się podejrzane zielsko. Zaniepokojony jedzie wraz z żoną na przeciwległy brzeg, gdzie znajduje się zakład doświadczalny Akademii Rolniczej. Tam poznają profesora Wanata, którego przywożą do Panistrugi na wizję lokalną. Ku uciesze Kalinowskich uczony stwierdza, że wodorosty są oznaką czystej wody. Marianna i Krzysztof zapraszają profesora na uroczysty obiad z udziałem całej rodziny, dla uczczenia 30. rocznicy ich poznania się.</p><span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">49 min</div></li>
+</ul>
+<p class="opis">Do Panistrugi przyjeżdża Basia Resko, doktorantka Krzysztofa. Przywozi ją samochodem jej przyjaciel, biznesmen Witold Jaszczuk. Urodziwa Basia okazuje wyraźne zainteresowanie swym promotorem, co wzbudza niepokój Marianny. Mimo to pozwala, by mąż popłynął z dziewczyną do profesora Wanata na konsultacje. Zostaje sama z Witoldem, który próbuje ją uwodzić, a nawet obiecuje kupno kilkunastu obrazów do swojego banku. Wieczorem nadciąga silna burza. Mimo to Krzysztof i Basia decydują się wracać łodzią. Niestety, silnik szybko odmawia posłuszeństwa i pan Kalinowski musi chwytać za wiosła, co kończy się dlań atakiem serca. W jakiś czas potem Marianna odbiera telefon, że mąż w stanie ciężkim przebywa w szpitalu w Ełku. Zdenerwowana jedzie co tchu do lecznicy. Na miejscu przekonuje się jednak, że zdrowiu Krzysztofa nie zagraża niebezpieczeństwo. Co więcej, jej małżonek rozpoznał w jednym z lekarzy szkolnego kolegę, co stało się dogodnym pretekstem do wspólnych śpiewów i tańców.</p><span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">50 min</div></li>
+</ul>
+<p class="opis">Trwa rozbudowa domu. Marianna jedzie do Ełku i z tamtejszej poczty dzwoni do Witolda, prosząc o przesłanie zaliczki. Wkrótce do Panistrugi przyjeżdżają Zarzyccy z prezentami. Piękno okolicy robi na nich wielkie wrażenie. Podczas poświęcenia kapliczki, ufundowanej przez Kalinowskich przed figurką zbiera się grupa ludzi ze wsi. Korzystając z okazji Marianna zaprasza na obiad Gustawa Wolfa, który opowiada jej historię majątku ciotki Róży. W Kalinowskich z wolna dojrzewa myśl o Bożym Narodzeniu spędzonym w Panistrudze wspólnie z rodziną. Marzenia rychło przerywa tzw. proza życia. Tym razem Marianna musi jechać do chorej stryjenki.</p><span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">50 min</div></li>
+</ul>
+<p class="opis">Marianna w pracowni kopiuje obrazy. Bliźniacy spotykają Krzysztofa na torach i przypominają mu o imieninach Marii. Krzysztof wraca do domu z kwiatami dla żony. Listonosz przywozi telegram z wiadomością, że Iza złamała nogę. W związku z tym Marianna postanawia zabrać Jasia do siebie. Chłopca przywozi samolotem Piotr Zarzycki. Podczas gdy Krzysztof z Piotrem wspólnie podziwiają Mazury z lotu ptaka, Marianna wypływa z wnukiem na jezioro. Spotykają Wolfa, łowiącego ryby. Następnego dnia dzwoni Jacek z hiobową wieścią - właściciel wyrzuca ich z mieszkania. Krzysztof i Marianna decydują się na przeprowadzkę do Panistrugi i oddanie swojego warszawskiego mieszkania Jackowi i Izie. Jadą do Warszawy. Krzysztof wpada na UW, by porozumieć się z dziekanem co do zmiany trybu swoich zajęć i spotyka tu Basię. Marianna zaś idzie do galerii, której właścicielka kupuje od niej obrazy. Spotyka swojego znajomego, Witolda Jaszczuka, od niedawna kochanka pani Zuzy. Po załatwieniu drobnych sprawunków organizują przeprowadzkę najważniejszych rzeczy, zwłaszcza książek, do Panistrugi. Tuż po powrocie gospodarzy, przyjeżdża weterynarz, żeby zaszczepić psa. Szczepienie ma niecodzienny przebieg.</p><span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">50 min</div></li>
+</ul>
+<p class="opis">Marianna planuje zburzenie jednej ze ścian i budowę kominka. Do wykonania tej pracy zamierza zaangażować fachowca. Helena proponuje, by zamiast niego zatrudnić Józka i Wójcika. Krzysztof jedzie do miasta po zakupy. Po drodze spotyka Kotulę, u którego zamawia cement i cegły. Przed bankiem natrafia na dr. Kulę. Wspomina z nim dawne, dobre, studenckie czasy. Zwierza się, że otrzymuje regularne listy od doktorantki Basi. Kula zaś prosi Kalinowskiego o pomoc w organizowanej przez siebie aukcji, z której dochód chce przeznaczyć na zakup ultrasonografu. Wie bowiem, że syn Krzysztofa jest filmowcem i zna wielu sławnych aktorów. Może jeden z nich dałby się namówić na poprowadzenie aukcji, przez co znacznie zyskałaby na atrakcyjności. Wkrótce do Panistrugi przyjeżdżają Kasia z Robertem. Kasia z pasją uprawia swój zawód artysty fotografika i na razie nie myśli o powiększeniu rodziny. Podczas spaceru Marianna przeprowadza z córką poważną rozmowę na temat wiary i szczęścia. Namawia ją też, by zaryzykowała i zdecydowała się na dziecko. Po obiedzie Helena okazuje zaniepokojenie długą nieobecnością Wolfa. Złe przeczucia zaczynają też trapić Mariannę, która postanawia sprawdzić, dlaczego ich znajomy tak długo nie daje znaku życia.</p><span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">49 min</div></li>
+</ul>
+<p class="opis">Listonosz Pacała przywozi pocztę. Wśród korespondencji Marianna znajduje list Basi do Krzysztofa. Zdenerwowana jedzie rowerem do profesora Wanata. Zastaje u niego doktorantkę Krzysztofa. Odbywa z dziewczyną poważną rozmowę. W drodze powrotnej spotyka męża i zaczyna mu robić wymówki. Krzysztof, zaskoczony zazdrością żony, wsadza ją do samochodu i zabiera do domu. Nazajutrz po małżeńskim konflikcie nie ma śladu. Kalinowscy w błogim nastroju spożywają śniadanie. Idyllę przerywa krzyk pobitej przez męża Kotulowej. Wkrótce zjawia się sam Kotula z furmanką pełną prosiąt, gęsi i kaczek. Zamierza to wszystko sprzedać, by zdobyć pieniądze na wysyłkę do firmy, która obiecała mu wielką wygraną. Kalinowscy usiłują mu wytłumaczyć, że najprawdopodobniej padł ofiarą oszustwa. Tymczasem Wolf zostaje wypisany ze szpitala. Marianna z Krzysztofem zabierają go do siebie i otaczają niezwykle troskliwą opieką. Mimo to starzec niebawem umiera. Po pogrzebie zwraca się do Kalinowskich mec. Duży. Okazuje się, że Wolf zapisał w testamencie Mariannie lasy, ziemie i browar, zarekwirowane przez państwo w 1945 r. W łóżku Wolfa zaś Kalinowscy znajdują szkatułkę pełną złotych carskich pięciorublówek, tzw. świnek.</p>
+<h2>8 w internecie</h2>
+<ul class="point">
+<li><a href="https://cybra.lodz.pl/dlibra/publication/31691/edition/28112/content" target="_blank">Przeczytaj scenariusz odcinka</a></li>
+</ul>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">50 min</div></li>
+</ul>
+<p class="opis">W domu trwają przygotowania do świąt Bożego Narodzenia. Na podwórze zajeżdża traktorzysta i organista z opłatkiem. Marianna zaprasza ich na poczęstunek. W gabinecie Krzysztofa malarka przygotowuje ozdoby choinkowe. Mąż zaś umila jej czas, snując ciekawe opowieści na temat historii herbaty. Nadchodzi Wigilia. Do Panistrugi przyjeżdżają dzieci, ciotki i Zarzyccy. Marianna z Jasiem ubierają choinkę. Malwina z Teodorą wspominają młode lata. Edzio gra na fortepianie kolędę "Gdy się Chrystus rodzi". Wreszcie wszyscy zbierają się w salonie, składają sobie wigilijne życzenia. Kaśka ma dla rodziców wspaniałą niespodziankę.</p><span class="clear"></span></div><div id="czasgen">2026.05.08 03:10:26</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

@@ -1,0 +1,794 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - INSTYNKT</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>INSTYNKT</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1227272" selected >1</option><option value="1227272_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1227272_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1227272_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2011</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2011. 03. 03</div></li>
+<li><div class="film_tech3">Barwny, 13 odcinków x ok. 44 min <br /><br />
+Okres zdjęciowy: 3 grudnia 2010 - 7 kwietnia 2011.</div></li>
+</ul>
+<p class="opis">Współczesny serial kryminalny z intrygującą kobiecą bohaterką w roli głównej. Anna Oster (w tej roli Danuta Stenka) to tajemnicza i atrakcyjna pani komisarz z wydziału dochodzeniowo-śledczego stołecznej komendy policji. Dzięki swemu wyjątkowemu instynktowi komisarz Oster rozwiązuje, wraz ze swoim młodszym partnerem, Piotrem Tarkowskim (Szymon Bobrowski), skomplikowane zagadki kryminalne. 
+Pojawienie się Anny w wydziale dochodzeniowo-śledczym wywołuje spore zamieszanie. Decyzją komendanta Jana Rogoża (Paweł Królikowski) dotychczasowa partnerka Tarkowskiego Aleksandra Lewicka (Marieta Żukowska) zostaje przeniesiona na stanowisko oficera prasowego, a on sam zacznie się obawiać utraty pozycji. 
+Cechą szczególną Anny Oster jest jej tajemnicza przeszłość, która powoli będzie odsłaniać się przed widzem i... przed nią samą. 
+Co kryje przeszłość pani komisarz? Jakie wydarzenia zaważyły na jej życiu? "Instynkt" to serial z podwójną tajemnicą: w każdym odcinku zostaje rozwikłana zagadka zbrodni, a kolejne epizody zbliżają nas do poznania tajemnicy głównej bohaterki.</p><div class="galeria_mala"><a href="index.php?fotos=1627272_1&galeria=1527272"><img class="bezcienia" src="../z1/72i/27272_1.jpg" height="60"></a><a href="index.php?fotos=1627272_2&galeria=1527272"><img class="bezcienia" src="../z1/72i/27272_2.jpg" height="60"></a><a href="index.php?fotos=1627272_3&galeria=1527272"><img class="bezcienia" src="../z1/72i/27272_3.jpg" height="60"></a><a href="index.php?fotos=1627272_4&galeria=1527272"><img class="bezcienia" src="../z1/72i/27272_4.jpg" height="60"></a><a href="index.php/1527272" title="Galeria zdjęć (4)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1227272" class="jslink" onclick="pzz('trailery1227272','trailery_schowaj1227272')">pokaż</span></div></h2><div id="trailery1227272" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:512px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="512">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/instynkt.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=512" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227272" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227272','ekipa_skrocona1227272','ekipa1227272','ekipa_schowaj1227272','ekipa_schowaj_krotki1227272','ekipa_schowaj_pelny1227272','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227272" class="jslink" onclick="pzf('ekipa_skrocona1227272','ekipa_pelna1227272','ekipa1227272','ekipa_schowaj1227272','ekipa_schowaj_pelny1227272','ekipa_schowaj_krotki1227272','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227272"1227272" class="jslink" onclick="pzz('ekipa1227272','ekipa_schowaj1227272')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227272" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227272">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132535">Patryk Vega</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyseria (II ekipa)</div><div class="ekipa_osoba"><a href="index.php/1134921">Michał Ozierow</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1134921">Michał Ozierow</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128597">Aleksandra Grażewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/1154116">Kaja d' Erceville</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129413">Agnieszka Olejnik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172001">Anna Soszyńska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118307">Magdalena Szwarcbart</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1127809">Andrzej Gołda</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132644">Krzysztof Mieszkowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1138914">Artur Żurawski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 11, 13</div></li>
+<li><div class="ekipa_funkcja">Zdjęcia (II ekipa)</div><div class="ekipa_osoba"><a href="index.php/1140094">Norbert Modrzejewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1150800">Mateusz Skalski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135220">Sebastian Twarogal</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1140094">Norbert Modrzejewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135220">Sebastian Twarogal</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1150129">Sebastian Wojtarowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1133438">Seweryn Kukliński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123824">Marcin Owczarek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152497">Maciej Berski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128242">Sebastian Frąc</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133645">Radosław Poręba</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154808">Piotr Matuszewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1144199">Sebastian Ronowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1116095">Grzegorz Bieler</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1129310">Andrzej Bąkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126430">Grzegorz Burchard</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132143">Michał Górski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111318">Piotr Obłoza</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129309">Leszek Plak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123201">Krzysztof Wacholski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133875">Artur Weber</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117584">Janusz Wojtczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1145853">Tomasz Deres</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Krany kamerowe</div><div class="ekipa_osoba"><a href="index.php/1157207">Klimex</a></div><div class="ekipa_opis"> podnośniki</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1132981">Studio Besta</a></div><div class="ekipa_opis"> zdjęciowy</div><div class="ekipa_osoba"><a href="index.php/1132359">Flash</a></div><div class="ekipa_opis"> oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/117686">Stanisław Świątek</a></div><div class="ekipa_opis"> oświetleniowy</div></li>
+<li><div class="ekipa_funkcja">Postprodukcja obrazu</div><div class="ekipa_osoba"><a href="index.php/1132981">Studio Besta</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">On-line</div><div class="ekipa_osoba"><a href="index.php/1141354">Mateusz Kiełbowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1155222">Paweł Syrzycki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116826">Agata Stróżyńska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/1126110">Marcin Aziukiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172002">Studio Artis</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/1154418">Dorota Sławecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1125956">Adam Nowakowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145865">Wojciech Kostrzewa</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1159629">Bogdan Kostrzewa</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Budowa dekoracji</div><div class="ekipa_osoba"><a href="index.php/1160645">Ryszard Kempa</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1156913">Agnieszka Werner-Szyrle</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1161480">Liliana Zabłocka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126174">Anna Janowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1137369">Małgorzata Polak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1145288">Łukasz Targosz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba"><a href="index.php/1145291">Jacek Tarkowski</a></div><div class="ekipa_opis"> fortepian</div><div class="ekipa_osoba"><a href="index.php/1145288">Łukasz Targosz</a></div><div class="ekipa_opis"> gitara</div><div class="ekipa_osoba"><a href="index.php/1129645">Magda Mitoń</a></div><div class="ekipa_opis"> wokal</div><div class="ekipa_osoba"><a href="index.php/1158831">Michał Ostrowski</a></div><div class="ekipa_opis"> skrzypce, altówka, wokal</div></li>
+<li><div class="ekipa_funkcja">Producent muzyczny</div><div class="ekipa_osoba"><a href="index.php/1145288">Łukasz Targosz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145291">Jacek Tarkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/1139181">Anna Malarowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132545">Monika Krzanowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1134271">Piotr Krzanowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114130">Tomasz Kamiński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1135541">Marcin Jachyra</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172003">Łukasz Tuński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/1132692">Błażej Kukla</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128471">Urszula Zaręba</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1132692">Błażej Kukla</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128471">Urszula Zaręba</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty synchroniczne</div><div class="ekipa_osoba"><a href="index.php/1168148">Jarosław Kędzierski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125691">Marcin Pilich</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1144665">Maciej Pawliński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137932">Tomasz Ostrowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1156073">Przemysław Wąsowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Montaż czołówki</div><div class="ekipa_osoba"><a href="index.php/1137932">Tomasz Ostrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126724">Marcin Rodak</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1112307">Katarzyna Foltyńska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1162282">Beata Milik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty pirotechniczne</div><div class="ekipa_osoba"><a href="index.php/1127528">Leszek Olbiński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty wizualne</div><div class="ekipa_osoba"><a href="index.php/1167184">Alien FX</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172013">Ryszard Rogucki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1122693">Wojciech Konkol</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156041">Beata Krzemińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162014">Marek Łempicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172007">Sylwia Tarka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145212">Gabriel Zalewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Koordynacja kaskaderska</div><div class="ekipa_osoba"><a href="index.php/1191">Ryszard Janikowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/1170000">Independent Stunt Team</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163312">Barbara Chojnacka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125978">Robert Cichoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1170002">Bartosz Gadziomski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133712">Andrzej Grigoriew</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1144419">Marek Mireński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132896">Jacek Rathe</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132468">Zbigniew Świderski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172008">Kamil Tyza</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1152447">Grupa XXI</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/115211">Tomasz Matusiak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1167632">Monika Zielska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Promocja</div><div class="ekipa_osoba"><a href="index.php/1153255">Ewa Ogórek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172012">Justyna Ganczarek-Jach</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1155007">Dariusz Ciołek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172010">Paweł Grószczyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1139072">Bogdan Kamiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1169479">Jarosław Marecki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154808">Piotr Matuszewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161227">Andrzej Przybyszewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172009">Lech Rothe</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1159152">Piotr Sochanek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138619">Krzysztof Tusiński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1166280">Marek Koźbiał</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172011">Aneta Korzeniewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Redakcja</div><div class="ekipa_osoba"><a href="index.php/1160883">Krzysztof Tyszowiecki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo postprodukcji</div><div class="ekipa_osoba"><a href="index.php/1123852">Rafał Golis</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161632">Jolanta Zaorska-Wert</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121692">Wiesław Łysakowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114843">Robert Feluch</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1124678">Elżbieta Kręciejewska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156589">Oliwia Przecherska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172004">Olga Pakina</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1172006">Justyna Dolecińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1175563">Katarzyna Rosłan</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1129766">Ryszard Brożek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133439">Piotr Zimoń</a></div><div class="ekipa_opis"> II ekipa</div><div class="ekipa_osoba"><a href="index.php/1162092">Krzysztof Jerzak</a></div><div class="ekipa_opis"> II ekipa</div><div class="ekipa_osoba"><a href="index.php/1157017">Jakub Razowski</a></div><div class="ekipa_opis"> II ekipa</div><div class="ekipa_osoba"><a href="index.php/1158383">Łukasz Dobosz</a></div><div class="ekipa_opis"> II ekipa</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1133439">Piotr Zimoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162092">Krzysztof Jerzak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158383">Łukasz Dobosz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1153958">Marta Proch</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent prowadzący</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126476">Anna Kępińska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1161416">Maciej Kubicki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115629">Stanisław Krzemiński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126476">Anna Kępińska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1161416">Maciej Kubicki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1158894">Małgorzata Górzańska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1160883">Krzysztof Tyszowiecki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1153597">Telemark</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis wyroznienie"> komisarz Anna Oster</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis wyroznienie"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis wyroznienie"> komendant Jan Rogoż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis wyroznienie"> podkomisarz Aleksandra Lewicka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227272">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1132535">Patryk Vega</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/118307">Magdalena Szwarcbart</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1127809">Andrzej Gołda</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1132644">Krzysztof Mieszkowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1138914">Artur Żurawski</a></div><div class="ekipa_opis"> odcinki: 11, 13</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1116826">Agata Stróżyńska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1156913">Agnieszka Werner-Szyrle</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/1145288">Łukasz Targosz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1132545">Monika Krzanowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1134271">Piotr Krzanowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114130">Tomasz Kamiński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1144665">Maciej Pawliński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137932">Tomasz Ostrowski</a></div><div class="ekipa_opis"> odcinki: 2-</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1126724">Marcin Rodak</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1112307">Katarzyna Foltyńska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1121692">Wiesław Łysakowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114843">Robert Feluch</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent prowadzący</div><div class="ekipa_osoba"><a href="index.php/1126476">Anna Kępińska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1161416">Maciej Kubicki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/115629">Stanisław Krzemiński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126476">Anna Kępińska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1161416">Maciej Kubicki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1158894">Małgorzata Górzańska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1160883">Krzysztof Tyszowiecki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1153597">Telemark</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Nagrody<div class="sterowanie"><span id="nagrody_schowaj1227272" class="jslink" onclick="pzz('nagrody1227272','nagrody_schowaj1227272')">schowaj</span></div></h2>
+<ul class="nagrody" id="nagrody1227272" style="display:block;">
+<li><div class="nagrody_data">2012</div><div class="nagrody-nazwa">Hugo Television Awards-Złoty Hugo <br /><span class="nagrody-opis">w kategorii: daytime drama series</span></div></li>
+</ul>
+
+<h2>INSTYNKT w internecie</h2>
+<ul class="point">
+<li><a href="http://www.tvp.pl/seriale/sensacyjne/instynkt" target="_blank">Oficjalna strona serialu</a></li>
+</ul>
+<div class="podzbior"><h1>DIABELSKIE SZTUCZKI (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Do stołecznej komendy trafia nowa policjantka Anna Oster, która ma współpracować z podkomisarzem Krzysztofem Tarkowskim - dotychczasową gwiazdą wydziału dochodzeniowo - śledczego. Anna zajmuje miejsce Oli Lewickiej, która została przeniesiona do biura prasowego komendy. Pani komisarz Oster prosto z pociągu z parasolką i bagażem trafia na miejsce zbrodni, wywołując u nowych kolegów po fachu drwiący uśmiech. Ale rzednie im mina, kiedy nowa partnerka Tarkowskiego, obdarzona niezwykłą intuicją, od razu odkrywa ważne dowody w śledztwie prowadzonym w sprawie samobójstwa znanego profesora. Przed wieloma laty jego córka zginęła w tajemniczych okolicznościach. Sprawca morderstwa do dziś przebywa na wolności. 
+Śmierć profesora stanie się nieoczekiwanie punktem wyjścia do nierozwiązanej zagadki kryminalnej sprzed lat. [TVP]</p><div class="galeria_mala"><a href="index.php?fotos=1627331_1&galeria=1527331"><img class="bezcienia" src="../z1/31i/27331_1.jpg" height="60"></a><a href="index.php?fotos=1627331_2&galeria=1527331"><img class="bezcienia" src="../z1/31i/27331_2.jpg" height="60"></a><a href="index.php/1527331" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227331" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227331','ekipa_skrocona1227331','ekipa1227331','ekipa_schowaj1227331','ekipa_schowaj_krotki1227331','ekipa_schowaj_pelny1227331','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227331" class="jslink" onclick="pzf('ekipa_skrocona1227331','ekipa_pelna1227331','ekipa1227331','ekipa_schowaj1227331','ekipa_schowaj_pelny1227331','ekipa_schowaj_krotki1227331','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227331"1227331" class="jslink" onclick="pzz('ekipa1227331','ekipa_schowaj1227331')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227331" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227331">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1129648">Jarosław Budnik</a></div><div class="ekipa_opis"> reporter</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1168961">Marek Gałęziowski</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1123852">Rafał Golis</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/114061">Władysław Kowalski</a></div><div class="ekipa_opis"> profesor Leon Adler</div><div class="ekipa_osoba"><a href="index.php/113542">Marek Lewandowski</a></div><div class="ekipa_opis"> Roman Przybylski</div><div class="ekipa_osoba"><a href="index.php/1119164">Ewa Oksza-Łapicka</a></div><div class="ekipa_opis"> gosposia Adlera</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> Szymon Jakubik, chłopak Justyny Adler</div><div class="ekipa_osoba"><a href="index.php/1172000">Joanna Racewicz</a></div><div class="ekipa_opis"> dziennikarka TVP 2</div><div class="ekipa_osoba"><a href="index.php/1155975">Marcin Rams</a></div><div class="ekipa_opis"> Rafał Przybylski, syn Romana</div><div class="ekipa_osoba"><a href="index.php/1145935">Jacek Reda</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1141493">Beata Strecker</a></div><div class="ekipa_opis"> Sylwia Przybylska, żona Romana</div><div class="ekipa_osoba"><a href="index.php/1161703">Zbigniew Wróżek</a></div><div class="ekipa_opis"> współwięzień Przybylskiego</div><div class="ekipa_osoba"><a href="index.php/114193">Ewa Złotowska</a></div><div class="ekipa_opis"> patolog</div><div class="ekipa_osoba"><a href="index.php/1171801">Damian Jankowski</a></div><div class="ekipa_opis"> dziennikarz na konferencji Aleksandry; nie  występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227331">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Policjanci przyjmują zgłoszenie o zaginięciu Kamila Małeckiego, współwłaściciela znanej agencji reklamowej. Zawiadomienie składa jego matka, która martwi się o cierpiącego na epilepsję syna. Nie wrócił na noc do domu, czego nigdy wcześniej nie robił bez uprzedzenia. Funkcjonariusze początkowo bagatelizują sprawę, zresztą na rozpoczęcie poszukiwań mają 48 godzin. 
+Kamil był w Gdańsku ze swoim wspólnikiem. W drodze powrotnej dzwonił około czwartej z zajazdu. Potem nie dał już znaku życia. W trakcie śledztwa nadzorowanego przez komisarz Oster ujawnia dramatyczne wydarzenia, jakie rozegrały się w dniu zaginięcia Kamila. 
+Konflikt Tarkowskiego z Oster nasila się. Dochodzi do z Rogożem, który prosi podkomisarza o spokój i kredyt zaufania dla nowej partnerki. Jednocześnie zacieśnia się relacja Tarkowskiego z Olą, która próbuje zwrócić uwagę ukochanego, że nowa pani komisarz ma wyraźnie coś do ukrycia. [TVP]</p><div class="galeria_mala"><a href="index.php?fotos=1627323_1&galeria=1527323"><img class="bezcienia" src="../z1/23i/27323_1.jpg" height="60"></a><a href="index.php?fotos=1627323_2&galeria=1527323"><img class="bezcienia" src="../z1/23i/27323_2.jpg" height="60"></a><a href="index.php/1527323" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227323" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227323','ekipa_skrocona1227323','ekipa1227323','ekipa_schowaj1227323','ekipa_schowaj_krotki1227323','ekipa_schowaj_pelny1227323','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227323" class="jslink" onclick="pzf('ekipa_skrocona1227323','ekipa_pelna1227323','ekipa1227323','ekipa_schowaj1227323','ekipa_schowaj_pelny1227323','ekipa_schowaj_krotki1227323','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227323"1227323" class="jslink" onclick="pzz('ekipa1227323','ekipa_schowaj1227323')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227323" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227323">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1137442">Maciej Brzoska</a></div><div class="ekipa_opis"> Gerard Nadolski, wspólnik Kamila  Małeckiego</div><div class="ekipa_osoba"><a href="index.php/11221">Witold Dębicki</a></div><div class="ekipa_opis"> "Kulawy"</div><div class="ekipa_osoba"><a href="index.php/1155017">Marta Dobecka</a></div><div class="ekipa_opis"> Dominika Stec</div><div class="ekipa_osoba"><a href="index.php/1166078">Józef Grzymała</a></div><div class="ekipa_opis"> Patryk Małecki, brat Kamila</div><div class="ekipa_osoba"><a href="index.php/1143917">Klaudiusz Kaufmann</a></div><div class="ekipa_opis"> oficer dyżurny</div><div class="ekipa_osoba"><a href="index.php/111704">Anna Nehrebecka</a></div><div class="ekipa_opis"> Małecka, matka Kamila</div><div class="ekipa_osoba"><a href="index.php/119020">Henryk Niebudek</a></div><div class="ekipa_opis"> komendant Grzela</div><div class="ekipa_osoba"><a href="index.php/1134711">Antoni Pawlicki</a></div><div class="ekipa_opis"> Kamil Małecki</div><div class="ekipa_osoba">Jakub Sitowski</div><div class="ekipa_opis"> "Łysol"</div><div class="ekipa_osoba"><a href="index.php/1164373">Anna Szymańczyk</a></div><div class="ekipa_opis"> kelnerka w zajeździe</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227323">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>ZŁAMANE SERCE (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">W centrum miasta wybucha samochód, a w jego wnętrzu ginie chłopiec. Chłopcem w tym czasie opiekował się ojciec. Ma on nienaganną opinię żony, sąsiadów i szkoły. Uwagę policjantów przyciąga żona, przewrażliwiona na punkcie ich drugiego dziecka, niedawno narodzonej córeczki. Oster uważa jednak, że ten trop jest mylny. W wyniku śledztwa wychodzi na jaw rodzinny dramat... 
+Ola ma obsesję na punkcie Oster i podsyca niezdrowe zainteresowanie u Tarkowskiego. W efekcie prywatnego śledztwa Tarkowki odkrywa, że Oster nie jest wobec niego uczciwa. Ich konflikt eskaluje... [TVP]</p><div class="galeria_mala"><a href="index.php?fotos=1627430_1&galeria=1527430"><img class="bezcienia" src="../z1/30i/27430_1.jpg" height="60"></a><a href="index.php?fotos=1627430_2&galeria=1527430"><img class="bezcienia" src="../z1/30i/27430_2.jpg" height="60"></a><a href="index.php/1527430" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227430" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227430','ekipa_skrocona1227430','ekipa1227430','ekipa_schowaj1227430','ekipa_schowaj_krotki1227430','ekipa_schowaj_pelny1227430','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227430" class="jslink" onclick="pzf('ekipa_skrocona1227430','ekipa_pelna1227430','ekipa1227430','ekipa_schowaj1227430','ekipa_schowaj_pelny1227430','ekipa_schowaj_krotki1227430','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227430"1227430" class="jslink" onclick="pzz('ekipa1227430','ekipa_schowaj1227430')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227430" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227430">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1168961">Marek Gałęziowski</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1159776">Edmund Kopp</a></div><div class="ekipa_opis"> sprzątacz</div><div class="ekipa_osoba"><a href="index.php/1143364">Weronika Książkiewicz</a></div><div class="ekipa_opis"> Aldona Pałys</div><div class="ekipa_osoba"><a href="index.php/1157767">Ilona Kucińska-Boberek</a></div><div class="ekipa_opis"> nauczycielka Adasia</div><div class="ekipa_osoba"><a href="index.php/1128652">Tomasz Mandes</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/1128303">Robert Ostolski</a></div><div class="ekipa_opis"> oficer</div><div class="ekipa_osoba"><a href="index.php/1145935">Jacek Reda</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1172189">Bartosz Rymski</a></div><div class="ekipa_opis"> Adaś Pałys</div><div class="ekipa_osoba"><a href="index.php/1138716">Grzegorz Stelmaszewski</a></div><div class="ekipa_opis"> Henryk Knapik</div><div class="ekipa_osoba"><a href="index.php/1148321">Piotr Pamuła</a></div><div class="ekipa_opis"> Wasiak, kochanek Pałysowej; w napisach  nazwisko: Stramowski</div><div class="ekipa_osoba"><a href="index.php/1115867">Mirosław Zbrojewicz</a></div><div class="ekipa_opis"> Pałys</div><div class="ekipa_osoba">Melania Żukowska</div><div class="ekipa_opis"> Zuzia</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227430">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>ZNAK LUCYFERA (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Przy podwarszawskiej szosie zostaje znalezione ciało pracownicy okolicznego banku. Prowadząc śledztwo w sprawie zabójstwa, policjanci wpadają na trop tragicznej w skutkach malwersacji finansowej. 
+Tarkowski pod wpływem Rogoża nabiera zaufania do komisarz Oster. Powstrzymuje Olę przed dalszym śledztwem, czym tylko rozjusza dziewczynę. Pogłębia się konflikt między kochankami. Zazdrosna o Tarkowskiego Ola idzie do prokuratora Wójcika z propozycją inwigilacji komisarz Oster. [TVP]</p><div class="galeria_mala"><a href="index.php?fotos=1627448_1&galeria=1527448"><img class="bezcienia" src="../z1/48i/27448_1.jpg" height="60"></a><a href="index.php?fotos=1627448_2&galeria=1527448"><img class="bezcienia" src="../z1/48i/27448_2.jpg" height="60"></a><a href="index.php/1527448" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227448" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227448','ekipa_skrocona1227448','ekipa1227448','ekipa_schowaj1227448','ekipa_schowaj_krotki1227448','ekipa_schowaj_pelny1227448','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227448" class="jslink" onclick="pzf('ekipa_skrocona1227448','ekipa_pelna1227448','ekipa1227448','ekipa_schowaj1227448','ekipa_schowaj_pelny1227448','ekipa_schowaj_krotki1227448','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227448"1227448" class="jslink" onclick="pzz('ekipa1227448','ekipa_schowaj1227448')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227448" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227448">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/11221">Witold Dębicki</a></div><div class="ekipa_opis"> "Kulawy"</div><div class="ekipa_osoba"><a href="index.php/1140050">Liwiusz Falak</a></div><div class="ekipa_opis"> Nosul, szwagiel Michty</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> Rylski, ojciec Celiny</div><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> Ilona Michta</div><div class="ekipa_osoba"><a href="index.php/116920">Marian Krawczyk</a></div><div class="ekipa_opis"> dyrektor banku</div><div class="ekipa_osoba"><a href="index.php/1175491">Maria Magdalena Modzelewska</a></div><div class="ekipa_opis"> Iwona, kochanka Chojeckiego; w napisach nazwisko: Modrzejewska</div><div class="ekipa_osoba"><a href="index.php/1131542">Marta Nieradkiewicz</a></div><div class="ekipa_opis"> Celina Rylska, kuzynka Michty</div><div class="ekipa_osoba"><a href="index.php/111598">Małgorzata Rożniatowska</a></div><div class="ekipa_opis"> pani Koza, sąsiadka Michty</div><div class="ekipa_osoba"><a href="index.php/1140611">Modest Ruciński</a></div><div class="ekipa_opis"> Kostek</div><div class="ekipa_osoba"><a href="index.php/1143084">Michał Sitarski</a></div><div class="ekipa_opis"> Adam, ksiądz egzorcysta</div><div class="ekipa_osoba"><a href="index.php/1156006">Tomasz Solich</a></div><div class="ekipa_opis"> kierownik Witecki, kochanek Michty</div><div class="ekipa_osoba"><a href="index.php/114193">Ewa Złotowska</a></div><div class="ekipa_opis"> patolog; nie wystépuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227448">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>TEN PIERWSZY RAZ (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">W jednym z mieszkań luksusowego apartamentowca znaleziono ciało nastolatka Eryka. Został zabity uderzeniem w głowę. Na miejscu nie ma śladów włamania. Policjanci wykluczają motyw rabunkowy. Zginął jedynie laptop ofiary. 
+Po wywiad środowiskowym w szkole policjanci mają nowy trop. Okazuje się, że ofiara przyjaźniła się z Marcinem Bieńkiem. Chłopcy bardzo się różnili. Eryk był arogancki i zarozumiały, a Marcin jest nieśmiały i skromny. 
+Wizyta w domu Marcina Bieńka przynosi nowe odkrycie. Chłopak pochodzi z patologicznej rodziny. Tarkowski domyśla się, że Marcin i Eryk brali narkotyki. W końcu chłopak wyznaje, że dilerem jest niejaki Grucha. Policjanci organizują na niego obławę w nocnym klubie Hades. 
+Okazuje się, że komisarz Oster zna Hartmana, właściciela klubu. Chce się z nim jak najszybciej spotkać. Tarkowski widzi dziwną rozmowę Oster i rusza w ślad za nią. Gdy Oster dociera do Hadesu, właściciel już nie żyje. Tarkowski zastaje panią komisarz nad zwłokami Hartmana. [TVP]</p><div class="galeria_mala"><a href="index.php?fotos=1627518_1&galeria=1527518"><img class="bezcienia" src="../z1/18i/27518_1.jpg" height="60"></a><a href="index.php?fotos=1627518_2&galeria=1527518"><img class="bezcienia" src="../z1/18i/27518_2.jpg" height="60"></a><a href="index.php?fotos=1627518_3&galeria=1527518"><img class="bezcienia" src="../z1/18i/27518_3.jpg" height="60"></a><a href="index.php?fotos=1627518_4&galeria=1527518"><img class="bezcienia" src="../z1/18i/27518_4.jpg" height="60"></a><a href="index.php?fotos=1627518_5&galeria=1527518"><img class="bezcienia" src="../z1/18i/27518_5.jpg" height="60"></a><a href="index.php/1527518" title="Galeria zdjęć (5)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227518" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227518','ekipa_skrocona1227518','ekipa1227518','ekipa_schowaj1227518','ekipa_schowaj_krotki1227518','ekipa_schowaj_pelny1227518','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227518" class="jslink" onclick="pzf('ekipa_skrocona1227518','ekipa_pelna1227518','ekipa1227518','ekipa_schowaj1227518','ekipa_schowaj_pelny1227518','ekipa_schowaj_krotki1227518','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227518"1227518" class="jslink" onclick="pzz('ekipa1227518','ekipa_schowaj1227518')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227518" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227518">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1121688">Jarosław Boberek</a></div><div class="ekipa_opis"> Bieniek, ojciec Marcina</div><div class="ekipa_osoba"><a href="index.php/1133348">Roman Bugaj</a></div><div class="ekipa_opis"> "Budzik"</div><div class="ekipa_osoba"><a href="index.php/113296">Grzegorz Gadziomski</a></div><div class="ekipa_opis"> Wijas, ojciec Eryka</div><div class="ekipa_osoba"><a href="index.php/1168961">Marek Gałęziowski</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1161158">Miron Jagniewski</a></div><div class="ekipa_opis"> Eryk Wijas</div><div class="ekipa_osoba"><a href="index.php/116144">Elżbieta Kijowska</a></div><div class="ekipa_opis"> wychowawczyni Eryka</div><div class="ekipa_osoba"><a href="index.php/1127336">Jolanta Mrotek</a></div><div class="ekipa_opis"> Krystyna Bieniek, matka Marcina</div><div class="ekipa_osoba"><a href="index.php/113762">Bożena Mrowińska</a></div><div class="ekipa_opis"> sąsiadka Wijasów</div><div class="ekipa_osoba"><a href="index.php/1113960">Andrzej Niemirski</a></div><div class="ekipa_opis"> Leon Hartman</div><div class="ekipa_osoba"><a href="index.php/1169416">Filip Pławiak</a></div><div class="ekipa_opis"> Marcin Bieniek</div><div class="ekipa_osoba"><a href="index.php/1113702">Marek Pyś</a></div><div class="ekipa_opis"> Sylwester</div><div class="ekipa_osoba"><a href="index.php/1145935">Jacek Reda</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1172426">Jerzy Szynkiewicz</a></div><div class="ekipa_opis"> sąsiad Wijasów; w napisach nazwisko:  Szymkiewicz</div><div class="ekipa_osoba"><a href="index.php/1158322">Radosław Tropisz</a></div><div class="ekipa_opis"> Artur Gruszecki "Grucha"</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227518">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>BILET DO SŁAWY (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Komisarz Oster i Tarkowski są przesłuchiwani przez prokuratora Wójcika, który prowadzi wewnętrzne śledztwo w sprawie tajemniczej śmierci Hartmana. Przesłuchanie przerywa telefon "z góry". Są zastrzeżenia do pytań zadawanych przez prokuratora. Za tą interwencją stoi Kulawy. 
+Na pobliskich nieużytkach zostaje znalezione ciało listonosza. Sekcja zwłok wskazuje, że mężczyzna zginął od uderzeń tępym narzędziem w tył głowy. Zatrzymani mają jednak żelazne alibi. 
+Na ubraniu listonosza policjanci znajdują plamę o specyficznym składzie chemicznym. Trop prowadzi do pobliskiego szpitala, gdzie lekarze przepisywali pacjentom taki specyfik. Komisarz Oster prosi o listę pacjentów. Okazuje się, że w ostatnim miesiącu ten lek przepisano tylko jednej osobie - babci Przemka. Policjanci zatrzymują Przemka i jego dziewczynę. 
+Rogoż zabiera Oster do leśniczówki, którą opiekował się pod jej nieobecność. Tam dochodzi do próby zbliżenia. Rogoż wciąż kocha byłą żonę, ale pani komisarz nie chce wracać do przeszłości. Po powrocie do miasta Oster wyprowadza się od byłego męża. [TVP]</p><div class="galeria_mala"><a href="index.php?fotos=1627559_1&galeria=1527559"><img class="bezcienia" src="../z1/59i/27559_1.jpg" height="60"></a><a href="index.php?fotos=1627559_2&galeria=1527559"><img class="bezcienia" src="../z1/59i/27559_2.jpg" height="60"></a><a href="index.php/1527559" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227559" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227559','ekipa_skrocona1227559','ekipa1227559','ekipa_schowaj1227559','ekipa_schowaj_krotki1227559','ekipa_schowaj_pelny1227559','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227559" class="jslink" onclick="pzf('ekipa_skrocona1227559','ekipa_pelna1227559','ekipa1227559','ekipa_schowaj1227559','ekipa_schowaj_pelny1227559','ekipa_schowaj_krotki1227559','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227559"1227559" class="jslink" onclick="pzz('ekipa1227559','ekipa_schowaj1227559')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227559" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227559">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1148742">Stanisław Borkowski</a></div><div class="ekipa_opis"> sąsiad Heleny Skiby</div><div class="ekipa_osoba"><a href="index.php/1113274">Danuta Borsuk</a></div><div class="ekipa_opis"> dyrektor poprawczaka</div><div class="ekipa_osoba"><a href="index.php/1133348">Roman Bugaj</a></div><div class="ekipa_opis"> "Budzik"</div><div class="ekipa_osoba"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis"> pani Kmita</div><div class="ekipa_osoba"><a href="index.php/11221">Witold Dębicki</a></div><div class="ekipa_opis"> "Kulawy"</div><div class="ekipa_osoba"><a href="index.php/1154536">Sławomir Drygalski</a></div><div class="ekipa_opis"> kierownik poczty</div><div class="ekipa_osoba"><a href="index.php/1110239">Lech Dyblik</a></div><div class="ekipa_opis"> "wujek" Lidii</div><div class="ekipa_osoba"><a href="index.php/1168961">Marek Gałęziowski</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1110945">Jarosław Gruda</a></div><div class="ekipa_opis"> pan Kmita</div><div class="ekipa_osoba"><a href="index.php/1150362">Olga Kalicka</a></div><div class="ekipa_opis"> Lidia "Andżelika" Rychter</div><div class="ekipa_osoba"><a href="index.php/1167596">Anna Konieczna</a></div><div class="ekipa_opis"> sąsiadka Heleny Skiby</div><div class="ekipa_osoba"><a href="index.php/1152770">Marek Kossakowski</a></div><div class="ekipa_opis"> "Suchy"</div><div class="ekipa_osoba"><a href="index.php/1153468">Paweł Parczewski</a></div><div class="ekipa_opis"> "Kaczor"</div><div class="ekipa_osoba"><a href="index.php/1145935">Jacek Reda</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1166919">Piotr Trojan</a></div><div class="ekipa_opis"> Przemek Skiba</div><div class="ekipa_osoba"><a href="index.php/1172008">Kamil Tyza</a></div><div class="ekipa_opis"> "Roki"</div><div class="ekipa_osoba"><a href="index.php/1172551">Magdalena Warzyńska</a></div><div class="ekipa_opis"> pani Kawecka</div><div class="ekipa_osoba"><a href="index.php/1146705">Michał Zenka</a></div><div class="ekipa_opis"> dzielnicowy z Koziej</div><div class="ekipa_osoba"><a href="index.php/1171399">Diana Hoffmann</a></div><div class="ekipa_opis"> naga kobieta na ulicy; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227559">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KLĄTWA (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Z balkonu na ostatnim piętrze wieżowca wypada 40 - letnia Magda Janik, instruktorka w miejscowym domu kultury. W mieszkaniu ofiary policjanci znajdują ręcznik ze śladami krwi, a na frontowych drzwiach krwawy odcisk dłoni. 
+Sąsiadka ofiary widziała, jak pół godziny przed tragicznym zdarzeniem dobijał się do niej jakiś mężczyzna. Jej koleżanka wskazuje Kacpra, jednego z wychowanków, który był z Magdą najbliżej. 
+Komisarz Oster jedzie na spotkanie z Kacprem, którego łączył z Magdą intymny związek. W domu kultury spotyka matkę Kacpra. Kobieta dziwnie się zachowuje. 
+W rozmowie z bratem Magdy, Oster orientuje się, że to on dobijał się do drzwi siostry. Janik przyznaje, że próbował ją odszukać. Chciał przekonać Magdę, aby wybaczyła ojcu i braciom, że przed laty wyrzucili ją z domu, kiedy była w ciąży. Janik wierzy, że tylko siostra może zdjąć klątwę z rodziny. 
+W trakcie przesłuchania Kacpra na komendzie policjanci dowiadują się, że w dniu śmierci chłopak był u Magdy. Doszło między nimi do zbliżenia. 
+W prywatnym śledztwie Ola trafia za Oster do szpitala. Pani komisarz spotyka się z doktorem Kalitą. Przed szpitalem dołącza do Oli Wójcik. Oboje próbują się włamać się do szpitalnego archiwum. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227603" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227603','ekipa_skrocona1227603','ekipa1227603','ekipa_schowaj1227603','ekipa_schowaj_krotki1227603','ekipa_schowaj_pelny1227603','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227603" class="jslink" onclick="pzf('ekipa_skrocona1227603','ekipa_pelna1227603','ekipa1227603','ekipa_schowaj1227603','ekipa_schowaj_pelny1227603','ekipa_schowaj_krotki1227603','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227603"1227603" class="jslink" onclick="pzz('ekipa1227603','ekipa_schowaj1227603')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227603" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227603">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1172917">Paweł Bielecki</a></div><div class="ekipa_opis"> szef techników</div><div class="ekipa_osoba"><a href="index.php/11221">Witold Dębicki</a></div><div class="ekipa_opis"> "Kulawy"</div><div class="ekipa_osoba"><a href="index.php/1168961">Marek Gałęziowski</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba">Martyna Grenkowicz</div><div class="ekipa_opis"> dziewczyna</div><div class="ekipa_osoba">Halina Januszewicz</div><div class="ekipa_opis"> sąsiadka Magdy Janik</div><div class="ekipa_osoba"><a href="index.php/1115288">Beata Kawka</a></div><div class="ekipa_opis"> Lisiecka, matka Kacpra</div><div class="ekipa_osoba"><a href="index.php/1172621">Melania Kowalczyk</a></div><div class="ekipa_opis"> dziewczyna</div><div class="ekipa_osoba"><a href="index.php/1144726">Jacek Król</a></div><div class="ekipa_opis"> Ryszard Janik, brat Magdy</div><div class="ekipa_osoba"><a href="index.php/1172622">Eryk Lenartowicz</a></div><div class="ekipa_opis"> chłopak</div><div class="ekipa_osoba"><a href="index.php/113599">Jerzy Łapiński</a></div><div class="ekipa_opis"> ksiądz</div><div class="ekipa_osoba"><a href="index.php/1128233">Marcin Perchuć</a></div><div class="ekipa_opis"> doktor Andrzej Kalita</div><div class="ekipa_osoba"><a href="index.php/1111931">Dorota Piasecka</a></div><div class="ekipa_opis"> Pliszka, sąsiadka Magdy Janik</div><div class="ekipa_osoba"><a href="index.php/1145935">Jacek Reda</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/11932">Ryszard Ronczewski</a></div><div class="ekipa_opis"> Stefan Janik, ojciec Magdy</div><div class="ekipa_osoba"><a href="index.php/1172623">Rafał Trzaska</a></div><div class="ekipa_opis"> sąsiad Magdy Janik</div><div class="ekipa_osoba"><a href="index.php/1138634">Magdalena Walach</a></div><div class="ekipa_opis"> Magda Janik</div><div class="ekipa_osoba"><a href="index.php/1161201">Wacław Warchoł</a></div><div class="ekipa_opis"> Kacper Lisiecki</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> kierowniczka domu kultury</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227603">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WIATR WE WŁOSACH (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Pod mostem w podwarszawskiej wsi przypadkowy przechodzień znajduje ciało Anety Lato, pracownicy salonu sprzedaży telefonów komórkowych w stolicy. Ofiara miała złamany kręgosłup i była nafaszerowana kokainą. 
+Kierownik salonu Kremer niedawno musiał zwolnić Anetę, po kolejnej awanturze z klientem i nadpobudliwym zachowaniu pracownicy. Komisarz Oster przepytuje personel salonu. Młody sprzedawca mówi o Izie, która kręciłą się przy szafce ofiary. Ktoś inny widział Anetę w dniu jej śmierci, jak odjeżdżała z pracy na motorze. 
+Wizyta w domu Izy rzuca nowe światło na sprawę. Policjanci znajdują u niej te same środki psychotropowe, którymi była nafaszerowana Aneta. Przesłuchiwana Iza przyznaje się do winy, że podtruwała kolejne dziewczyny. Zaprzecza jednak, że miała coś wspólnego ze śmiercią Anety. 
+Policjanci docierają do chłopaka Anety, Darka Siudy, który ma za sobą przeszłość kryminalną. Jest przesłuchiwany i nie ma dobrego alibi. Siuda atakuje Wójcika, a następnie barykaduje się w pokoju przesłuchań. Dopiero negocjacje z komisarz Oster i interwencja grupy AT doprowadzają do jego obezwładnienia. Oster wątpi jednak w winnę Darka. 
+Tymczasem Ola spotyka się w szpitalu z doktorem Kalitą, chce od niego wyciągnąć informacje o komisarz Oster. Wspólne śledztwo Oli i Wójcika mylnie odczytuje Tarkowski. Staje się zazdrosny. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227671" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227671','ekipa_skrocona1227671','ekipa1227671','ekipa_schowaj1227671','ekipa_schowaj_krotki1227671','ekipa_schowaj_pelny1227671','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227671" class="jslink" onclick="pzf('ekipa_skrocona1227671','ekipa_pelna1227671','ekipa1227671','ekipa_schowaj1227671','ekipa_schowaj_pelny1227671','ekipa_schowaj_krotki1227671','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227671"1227671" class="jslink" onclick="pzz('ekipa1227671','ekipa_schowaj1227671')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227671" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227671">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1120841">Tomasz Bednarek</a></div><div class="ekipa_opis"> Lesław Kremer</div><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> matka Izy Grabek</div><div class="ekipa_osoba"><a href="index.php/1130734">Michał Kruk</a></div><div class="ekipa_opis"> Adam Zięba</div><div class="ekipa_osoba"><a href="index.php/1135921">Wojciech Mecwaldowski</a></div><div class="ekipa_opis"> Darek Siuda</div><div class="ekipa_osoba"><a href="index.php/1172691">Martyna Mosiołek</a></div><div class="ekipa_opis"> Marta</div><div class="ekipa_osoba"><a href="index.php/1118314">Andrzej Nejman</a></div><div class="ekipa_opis"> Jerzy Grela</div><div class="ekipa_osoba"><a href="index.php/1123931">Maria Niklińska</a></div><div class="ekipa_opis"> Iza Grabek</div><div class="ekipa_osoba"><a href="index.php/1128233">Marcin Perchuć</a></div><div class="ekipa_opis"> doktor Andrzej Kalita</div><div class="ekipa_osoba"><a href="index.php/1159863">Jarosław Polak</a></div><div class="ekipa_opis"> dowódca antyterrorystów</div><div class="ekipa_osoba"><a href="index.php/1148818">Justyna Sieniawska</a></div><div class="ekipa_opis"> Aneta Lato</div><div class="ekipa_osoba"><a href="index.php/113289">Wojciech Skibiński</a></div><div class="ekipa_opis"> klient w salonie</div><div class="ekipa_osoba"><a href="index.php/1172001">Anna Soszyńska</a></div><div class="ekipa_opis"> Lidka</div><div class="ekipa_osoba"><a href="index.php/1172000">Joanna Racewicz</a></div><div class="ekipa_opis"> dziennikarka TVP 2; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/114193">Ewa Złotowska</a></div><div class="ekipa_opis"> patolog; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227671">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>SĄSIEDZI (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">W mieszkaniu znaleziono ciało Adama Chojeckiego, znanego komentatora sportowego. Mężczyzna był nagi w wannie. Zginął od porażenia prądem z suszarki. Po przybyciu policjantów na miejscu zdarzenia była jego kochanka. Kobieta znalazła ciało. Była umówiona z Chojeckim. Uprzejmy i kulturalny mężczyzna był lubiany przez sąsiadów. Wszyscy też wiedzieli, że kręciło się wokół niego wiele kobiet. 
+Policjanci docierają do kolejnych narzeczonych Chojeckiego. Okazuje się, że szukał towarzystwa kobiet, co kompensowało mu utratę popularności po zakończeniu kariery telewizyjnej. Nie snuł jednak poważnych rodzinnych planów. Często kończył romanse w momencie, kiedy kobieta zaczynała oczekiwać czegoś więcej. 
+W mieszkaniu Chojeckiego technicy znajdują linie papilarne osoby o małych dłoniach. Komisarz Oster zostaje w zaplombowanym mieszkaniu ofiary. W nocy ktoś, kto ma klucze, wchodzi do środka. Niestety, zostaje spłoszony przez Oster. 
+Ola kontynuuje swoje prywatne śledztwo i wykrada ze szpitala akta komisarz Oster. Gdy dociera z nimi do domu, zostaje zaatakowana przez tajemniczych napastników. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227712" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227712','ekipa_skrocona1227712','ekipa1227712','ekipa_schowaj1227712','ekipa_schowaj_krotki1227712','ekipa_schowaj_pelny1227712','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227712" class="jslink" onclick="pzf('ekipa_skrocona1227712','ekipa_pelna1227712','ekipa1227712','ekipa_schowaj1227712','ekipa_schowaj_pelny1227712','ekipa_schowaj_krotki1227712','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227712"1227712" class="jslink" onclick="pzz('ekipa1227712','ekipa_schowaj1227712')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227712" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227712">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> sąsiadka Chojeckiego</div><div class="ekipa_osoba"><a href="index.php/1164138">Karolina Bąk</a></div><div class="ekipa_opis"> Grażynka Karlikówna</div><div class="ekipa_osoba"><a href="index.php/1154401">Karolina Buzar</a></div><div class="ekipa_opis"> Edyta</div><div class="ekipa_osoba"><a href="index.php/1123752">Janusz Chabior</a></div><div class="ekipa_opis"> dozorca Karlik</div><div class="ekipa_osoba"><a href="index.php/11221">Witold Dębicki</a></div><div class="ekipa_opis"> "Kulawy"</div><div class="ekipa_osoba"><a href="index.php/1131652">Urszula Grabowska</a></div><div class="ekipa_opis"> dziennikarka, była narzeczona Chojeckiego</div><div class="ekipa_osoba"><a href="index.php/118894">Jacek Kawalec</a></div><div class="ekipa_opis"> Adam Chojecki</div><div class="ekipa_osoba"><a href="index.php/1134154">Robert Kibalski</a></div><div class="ekipa_opis"> ekspert daktyloskopii</div><div class="ekipa_osoba"><a href="index.php/1127404">Beata Kozikowska</a></div><div class="ekipa_opis"> głos Iwony</div><div class="ekipa_osoba"><a href="index.php/113302">Grzegorz Kucias</a></div><div class="ekipa_opis"> pan Okoń</div><div class="ekipa_osoba"><a href="index.php/1152119">Monika Laskowska</a></div><div class="ekipa_opis"> pielęgniarka</div><div class="ekipa_osoba"><a href="index.php/1126553">Dawid Łepkowski</a></div><div class="ekipa_opis"> Sylwuś</div><div class="ekipa_osoba"><a href="index.php/1150789">Maciej Łuczkowski</a></div><div class="ekipa_opis"> pan Pyszny</div><div class="ekipa_osoba"><a href="index.php/1175491">Maria Magdalena Modzelewska</a></div><div class="ekipa_opis"> Iwona, kochanka Chojeckiego</div><div class="ekipa_osoba"><a href="index.php/1171263">Jan Oskroba</a></div><div class="ekipa_opis"> chłopak</div><div class="ekipa_osoba">Martyna Pietrzak</div><div class="ekipa_opis"> Dominika Karlikówna</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> dzielnicowy</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Karlikowa</div><div class="ekipa_osoba"><a href="index.php/1134653">Joanna Sydor</a></div><div class="ekipa_opis"> Biernacka</div><div class="ekipa_osoba"><a href="index.php/1147006">Robert Rogalski</a></div><div class="ekipa_opis"> ochroniarz w Instytucie Psychiatrii; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227712">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>ŁAGODNA (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Ola atakuje komisarz Oster, obwiniając ją o śmierć psa i wszystkie zagadkowe zdarzenia. 
+W tym samym czasie Tarkowski jedzie do rezydencji znanego finansisty Ryszarda Sobeckiego. Policję wezwała siostra żony finansisty. W domu było dużo krwi. Sobecki prawdopodobnie wyjechał w delegację, ale nikt nie wie gdzie jest jego żona. 
+Z laboratorium przychodzi potwierdzenie, że krew znaleziona w domu finansisty należy do Mileny Sobeckiej. 
+Oster z Tarkowskim muszą rozwiązać kolejną zagadkę. Mimo że atmosfera na komendzie się zagęszcza. Komistarz Oster po raz kolejny prosi o spotkanie z Kulawym. Wobec braku realnej pomocy ze strony Rogoża, postanawia odejść z policji. Oddaje broń i odznakę. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1227715" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1227715','ekipa_skrocona1227715','ekipa1227715','ekipa_schowaj1227715','ekipa_schowaj_krotki1227715','ekipa_schowaj_pelny1227715','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1227715" class="jslink" onclick="pzf('ekipa_skrocona1227715','ekipa_pelna1227715','ekipa1227715','ekipa_schowaj1227715','ekipa_schowaj_pelny1227715','ekipa_schowaj_krotki1227715','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1227715"1227715" class="jslink" onclick="pzz('ekipa1227715','ekipa_schowaj1227715')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1227715" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1227715">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118269">Danuta Stenka</a></div><div class="ekipa_opis"> komisarz Anna Oster</div><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> podkomisarz Krzysztof Tarkowski</div><div class="ekipa_osoba"><a href="index.php/1143603">Piotr Głowacki</a></div><div class="ekipa_opis"> prokurator Grzegorz Wójcik</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> komendant Jan Rogoż</div><div class="ekipa_osoba"><a href="index.php/1146616">Marieta Żukowska</a></div><div class="ekipa_opis"> podkomisarz Aleksandra Lewicka</div><div class="ekipa_osoba"><a href="index.php/1167187">Grzegorz Ciągardlak</a></div><div class="ekipa_opis"> starszy aspirant Wodiczko</div><div class="ekipa_osoba"><a href="index.php/1172917">Paweł Bielecki</a></div><div class="ekipa_opis"> szef techników</div><div class="ekipa_osoba"><a href="index.php/1124974">Andrzej Burzyński</a></div><div class="ekipa_opis"> adwokat Sobeckiego</div><div class="ekipa_osoba"><a href="index.php/11221">Witold Dębicki</a></div><div class="ekipa_opis"> "Kulawy"</div><div class="ekipa_osoba"><a href="index.php/1154347">Sławomir Doliniec</a></div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba"><a href="index.php/1144552">Rafał Gerlach</a></div><div class="ekipa_opis"> ginekolog</div><div class="ekipa_osoba"><a href="index.php/1154139">Ewa Kania</a></div><div class="ekipa_opis"> Roksana Graczyk</div><div class="ekipa_osoba"><a href="index.php/117771">Eugeniusz Karczewski</a></div><div class="ekipa_opis"> sąsiad Oli</div><div class="ekipa_osoba">Paweł Kozłowski</div><div class="ekipa_opis"> taksówkarz</div><div class="ekipa_osoba"><a href="index.php/1144223">Adrian Perdjon</a></div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba"><a href="index.php/1124366">Daniela Popławska</a></div><div class="ekipa_opis"> Danuta, siostra Mileny</div><div class="ekipa_osoba"><a href="index.php/1145935">Jacek Reda</a></div><div class="ekipa_opis"> technik policyjny</div><div class="ekipa_osoba"><a href="index.php/1152831">Krzysztof Sosnowski</a></div><div class="ekipa_opis"> wspólnik Sobeckiego</div><div class="ekipa_osoba"><a href="index.php/1160982">Zygmunt Śmiłek</a></div><div class="ekipa_opis"> sąsiad Sobeckich</div><div class="ekipa_osoba"><a href="index.php/1122672">Bartłomiej Świderski</a></div><div class="ekipa_opis"> Ryszard Sobecki</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Milena Sobecka, żona Ryszarda</div><div class="ekipa_osoba"><a href="index.php/1130488">Monika Zalewska</a></div><div class="ekipa_opis"> Joanna Kudrycka, przyjaciółka Mileny</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1227715">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1227272" selected >1</option><option value="1227272_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1227272_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1227272_2"></a> 
+</nav><div id="czasgen">2026.05.08 04:45:17</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

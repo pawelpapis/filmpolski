@@ -514,6 +514,7 @@ def download_galleries(
     start_year: int,
     end_year: int,
     movies_dir: Path,
+    galleries_dir: Path,
     pause_s: float,
     overwrite: bool,
 ) -> None:
@@ -544,7 +545,7 @@ def download_galleries(
                 print(f"[GALLERIES] {year} film {movie_index}/{total_movies} ID {film_id}: nieprawidłowy gallery_link")
                 continue
 
-            film_gallery_dir = movies_dir / film_id
+            film_gallery_dir = galleries_dir / film_id
             film_gallery_dir.mkdir(parents=True, exist_ok=True)
             gallery_html_path = film_gallery_dir / f"gallery_{film_id}.html"
 
@@ -590,7 +591,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--end-year", type=int, default=2026)
 
     parser.add_argument("--years-dir", type=Path, default=Path("data/years"))
-    parser.add_argument("--movies-dir", type=Path, default=Path("movies"))
+    parser.add_argument("--movies-dir", type=Path, default=Path("data/movies"))
+    parser.add_argument("--galleries-dir", type=Path, default=Path("data/galleries"))
     parser.add_argument("--pause", type=float, default=0.2, help="Pauza między requestami w sekundach")
 
     parser.add_argument("--download-years", action="store_true", help="Pobierz strony roczników do years-dir")
@@ -600,7 +602,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--download-galleries",
         action="store_true",
-        help="Pobierz galerie zdjęć do movies/ID/ (gallery_ID.html + pliki jpg)",
+        help="Pobierz galerie zdjęć do galleries-dir/ID/ (gallery_ID.html + pliki jpg)",
     )
 
     parser.add_argument(
@@ -651,7 +653,9 @@ def main() -> int:
             parse_movie_pages(args.start_year, args.end_year, args.movies_dir, args.overwrite)
 
         if args.download_galleries:
-            download_galleries(args.start_year, args.end_year, args.movies_dir, args.pause, args.overwrite)
+            download_galleries(
+                args.start_year, args.end_year, args.movies_dir, args.galleries_dir, args.pause, args.overwrite
+            )
 
     except (HTTPError, URLError, TimeoutError) as exc:
         print(f"[ERR] {exc}")

@@ -1,0 +1,855 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - AŻ PO SUFIT!</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>AŻ PO SUFIT!</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1237971" selected >1</option><option value="1237971_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1237971_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1237971_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2015</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2015. 09. 01</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film obyczajowy</div></li>
+<li><div class="film_tech3">Barwny, 13 odcinków x ok. 43 min<br /><br />
+Lokacje: Warszawa, Gdynia.<br /><br />
+Emisja: 1 września - 24 listopada 2015.<br /><br />
+Serial jest adaptacją australijskiego serialu <a href="http://www.imdb.com/title/tt1132600/?ref_=fn_al_tt_1" target="_blank">"Packed to the Rafters"</a> realizowanego w latach 2008-2013.</div></li>
+</ul>
+<p class="opis">Joanna i Andrzej Domirscy to szczęśliwe małżeństwo z 25-letnim stażem i trójką dorosłych dzieci. Poznajemy ich w dniu, kiedy zaczynają nowy etap życia. Z dużego rodzinnego domu w Gdyni wyprowadza się ostanie dziecko Domirskich, 23-letni Tomek. Ich córka Kama od dawna już jest na swoim; także najmłodszy syn Łukasz wraz z żoną Natalią mieszkają osobno i rozwijają swój biznes w Gdańsku. Dzieci są zatem odchowane, samodzielne, szczęśliwe, dorosłe. Cóż więcej mogą zrobić rodzice? Joanna i Andrzej są dumni ze swojej rodziny, a jednocześnie wiedzą, że od teraz znowu będą mogli w pełni cieszyć się życiem jako para i skupić na sobie. Odzyskali dom tylko dla siebie, w planach mają romantyczne kolacje przy świecach, długie relaksujące kąpiele i dalekie podróże. 	Jednakże w ciągu 48 godzin ich dom ponownie zapełni się domownikami. Młodzi Domirscy, jedno po drugim, zaczną pukać do drzwi rodzinnego domu, by u rodziców schować się przed problemami, Kama - miłosnymi, a Łukasz z żoną - finansowymi. Do tego okazuje się, że Tomek zamieszkał w domu swego najlepszego przyjaciela, czyli… tuż obok Domirskich. A zatem choć się wyprowadził, to i tak rodzinny dom (a szczególnie kuchnia mamy) jest zbyt blisko, by nie wpadać tam bez zaproszenia. Joanna i Andrzej muszą zatem odstawić na bok swoje potrzeby i przyjść z pomocą swoim dzieciom. Pępowina została więc teoretycznie odcięta, ale okazuje się, że nie do końca…  W domu Domirskich znajdzie się również miejsce dla dziadka Tadeusza - ojca Joanny, który nie może się pozbierać po śmierci ukochanej żony.<br />
+Pod jednym sufitem spotykają różne osobowości i temperamenty. Wszyscy się ścierają, ale w tej - czasem słodkiej, czasem gorzkiej - sadze rodzinnej cały czas towarzyszy nam przeświadczenie: ci ludzie naprawdę się kochają!</p><div class="galeria_mala"><a href="index.php?fotos=1637971_1&galeria=1537971"><img class="bezcienia" src="../z1/71i/37971_1.jpg" height="60"></a><a href="index.php?fotos=1637971_2&galeria=1537971"><img class="bezcienia" src="../z1/71i/37971_2.jpg" height="60"></a><a href="index.php?fotos=1637971_3&galeria=1537971"><img class="bezcienia" src="../z1/71i/37971_3.jpg" height="60"></a><a href="index.php?fotos=1637971_4&galeria=1537971"><img class="bezcienia" src="../z1/71i/37971_4.jpg" height="60"></a><a href="index.php?fotos=1637971_5&galeria=1537971"><img class="bezcienia" src="../z1/71i/37971_5.jpg" height="60"></a><a href="index.php?fotos=1637971_6&galeria=1537971"><img class="bezcienia" src="../z1/71i/37971_6.jpg" height="60"></a><a href="index.php/1537971" title="Galeria zdjęć (13)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237971" class="jslink" onclick="pzz('trailery1237971','trailery_schowaj1237971')">pokaż</span></div></h2><div id="trailery1237971" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/azposufit.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237971" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237971','ekipa_skrocona1237971','ekipa1237971','ekipa_schowaj1237971','ekipa_schowaj_krotki1237971','ekipa_schowaj_pelny1237971','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237971" class="jslink" onclick="pzf('ekipa_skrocona1237971','ekipa_pelna1237971','ekipa1237971','ekipa_schowaj1237971','ekipa_schowaj_pelny1237971','ekipa_schowaj_krotki1237971','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237971"1237971" class="jslink" onclick="pzz('ekipa1237971','ekipa_schowaj1237971')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237971" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237971">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1136125">Bartosz Konopka</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-4, 9-13</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117537">Julia Kolberger</a></div><div class="ekipa_opis wyroznienie"> odcinki: 5-8</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1129579">Iwona Kegler</a></div><div class="ekipa_opis"> biuro</div><div class="ekipa_osoba"><a href="index.php/1172202">Wioletta Paluch</a></div><div class="ekipa_opis"> plan</div><div class="ekipa_osoba"><a href="index.php/1122566">Bruno Borchólski</a></div><div class="ekipa_opis"> plan</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1159850">Katarzyna Buda</a></div><div class="ekipa_opis"> II</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125163">Marcin Baczyński</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 3, 5, 10, 13; także główny adaptator oryginalnego scenariusza serialu</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11125862">Mariusz Kuczewski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2, 6-7, 11</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1153602">Joanna Wilczewska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 4, 8-9, 12</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenariuszowa</div><div class="ekipa_osoba"><a href="index.php/1140263">Dorota Chamczyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nadzór scenariuszowy</div><div class="ekipa_osoba"><a href="index.php/1140263">Dorota Chamczyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Koordynacja prac literackich</div><div class="ekipa_osoba"><a href="index.php/11143102">Karolina Kulikowska</a></div><div class="ekipa_opis"> redakcja i koordynacja prac scenariuszowych</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128529">Jeremi Prokopowicz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-8</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121549">Tomasz Dobrowolski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/11120391">Janusz Julo Sus</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125805">Klaudiusz Warszewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172476">Mikołaj Syguła</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158056">Michał Dobrowolski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/118305">Jerzy Rudziński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11140608">Maciej Bińczyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora obrazu</div><div class="ekipa_osoba"><a href="index.php/1133435">Michał Pruski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132870">Filip Baczuń</a></div><div class="ekipa_opis"> ostrzyciel</div><div class="ekipa_osoba"><a href="index.php/1139818">Dominik Męczyński</a></div><div class="ekipa_opis"> ostrzyciel</div></li>
+<li><div class="ekipa_funkcja">Asystent techniczny kamery</div><div class="ekipa_osoba"><a href="index.php/1158347">Grzegorz Suchocki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161221">Jakub Ścisłowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157113">Maksim Najdienow</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1146834">Adam Ziomek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zdjęcia lotnicze</div><div class="ekipa_osoba"><a href="index.php/11143088">Paweł Sudoł</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1128148">Paweł Skrobot</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1139180">Dariusz Lisowski</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1173734">Michał Kozon</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128147">Adam Karczewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154882">Maciej Konopczyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1166616">Marcin Macioszek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1133544">Paweł Piastowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1119565">Michał Szymański</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124546">Robert Szymański</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Obsługa agregatu</div><div class="ekipa_osoba"><a href="index.php/1153904">Rafał Tokarski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1145838">Film Ilumination</a></div><div class="ekipa_opis"> oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/1118594">Cezary Lisowski</a></div><div class="ekipa_opis"> oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/1113660">Krzysztof Koperski</a></div><div class="ekipa_opis"> oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/1117039">Paweł Pasek-Paszkowski</a></div><div class="ekipa_opis"> oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/1165274">Safe Trans</a></div><div class="ekipa_opis"> agregaty</div><div class="ekipa_osoba"><a href="index.php/1166143">Jacek Kucharski</a></div><div class="ekipa_opis"> agregaty</div><div class="ekipa_osoba"><a href="index.php/1157207">Klimex</a></div><div class="ekipa_opis"> podnośniki</div><div class="ekipa_osoba"><a href="index.php/1174738">Michał Maj</a></div><div class="ekipa_opis"> podnośniki</div><div class="ekipa_osoba"><a href="index.php/11121266">Amar</a></div><div class="ekipa_opis"> podnośniki</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/11143089">Bartosz Skorupa</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11143090">Aleksander Pławski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11143091">ICE</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1144188">Aleksandra Kraus</a></div><div class="ekipa_opis"> kolorystka</div></li>
+<li><div class="ekipa_funkcja">Efekty specjalne</div><div class="ekipa_osoba"><a href="index.php/1141727">Marcin Malewski</a></div><div class="ekipa_opis"> VFX</div><div class="ekipa_osoba"><a href="index.php/11127392">Jakub Golis</a></div><div class="ekipa_opis"> VFX</div><div class="ekipa_osoba"><a href="index.php/1174352">Lumicon FX</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110228">Barbara Ostapowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/11138929">Marianna Mikołajczak-Lisiecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf planu</div><div class="ekipa_osoba"><a href="index.php/1134846">Waldemar Drabek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1156829">Aleksandra Kierzkowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1144540">Wojciech Matysiak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizytor planu</div><div class="ekipa_osoba"><a href="index.php/1140780">Mariusz Borowiec</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca rekwizytorska</div><div class="ekipa_osoba"><a href="index.php/11151836">Marcin Majewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1177781">Tomasz Suska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Budowa dekoracji</div><div class="ekipa_osoba"><a href="index.php/11134813">Sceno Kreacje</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1149600">Bronisław Krawczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1177783">Paweł Pszczółkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11134812">Paweł Krawczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154886">MIM</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1137504">Ryszard Idzik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1148900">Paweł Moczarski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123014">Tarcyzjusz Michalski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1139688">Aleksandra Staszko</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/1161225">Krystyna Gwiazdowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent kostiumografa</div><div class="ekipa_osoba"><a href="index.php/11136438">Magdalena Adamczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126174">Anna Janowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1152961">Marcin Macuk</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie muzyczne</div><div class="ekipa_osoba"><a href="index.php/1135879">Patrycja Bukowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Realizacja dźwięku</div><div class="ekipa_osoba"><a href="index.php/1149419">Tomasz Bargieł</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161213">Rafał Lenart</a></div><div class="ekipa_opis"> II</div></li>
+<li><div class="ekipa_funkcja">Mikrofoniarz</div><div class="ekipa_osoba"><a href="index.php/1161216">Mateusz Koprowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116773">Ryszard Wysocki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Montaż dialogów</div><div class="ekipa_osoba"><a href="index.php/1145930">Karol Mańka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1145930">Karol Mańka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty dźwiękowe</div><div class="ekipa_osoba"><a href="index.php/1177780">Iga Kałduńska</a></div><div class="ekipa_opis"> montaż</div></li>
+<li><div class="ekipa_funkcja">Efekty synchroniczne</div><div class="ekipa_osoba"><a href="index.php/1155594">Grzegorz Sieradzki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158912">Grzegorz Koniarz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145287">Robert Docew</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1149438">Studio Spot</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1127197">Krzysztof Boroń</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 3, 5, 7, 9, 11, 13</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1138862">Piotr Kmiecik</a></div><div class="ekipa_opis wyroznienie"> odcinki: 2, 4, 6, 8, 10, 12</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1129582">Adam Kałuski</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1155550">Mirela Zawiszewska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Charakteryzator II</div><div class="ekipa_osoba"><a href="index.php/1158725">Justyna Osińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11123792">Sylwia Zawiszewska-Woźny</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1173602">Aneta Malesa</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1178388">Eliza Bergchauzen</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Make-up bus</div><div class="ekipa_osoba"><a href="index.php/1142941">Wojciech Orzechowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Campery</div><div class="ekipa_osoba"><a href="index.php/1162095">Andrzej Karkosz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1129165">Kamil Miondlikowski</a></div><div class="ekipa_opis"> ds. samochodów; Diamond Cars</div><div class="ekipa_osoba"><a href="index.php/1122693">Wojciech Konkol</a></div><div class="ekipa_opis"> ds. BHP</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1150455">Piotr Litwic</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11137077">Maciej Hachlica</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1155589">Joanna Górska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11143098">Magdalena Belka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155843">Anna Kowalska</a></div><div class="ekipa_opis"> komunikacja ds. serialu</div><div class="ekipa_osoba"><a href="index.php/11143099">Aleksandra Raczkowska</a></div><div class="ekipa_opis"> strona www, facebook</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/1136125">Bartosz Konopka</a></div><div class="ekipa_opis"> pomysł</div><div class="ekipa_osoba"><a href="index.php/1174354">Oskar Podolski</a></div><div class="ekipa_opis"> realizacja</div><div class="ekipa_osoba"><a href="index.php/1150455">Piotr Litwic</a></div><div class="ekipa_opis"> zdjęcia, fotosy</div><div class="ekipa_osoba"><a href="index.php/1128529">Jeremi Prokopowicz</a></div><div class="ekipa_opis"> zdjęcia, fotosy</div><div class="ekipa_osoba"><a href="index.php/1152961">Marcin Macuk</a></div><div class="ekipa_opis"> muzyka</div><div class="ekipa_osoba"><a href="index.php/1172346">Krystian Łochowski</a></div><div class="ekipa_opis"> montaż</div></li>
+<li><div class="ekipa_funkcja">Grafika</div><div class="ekipa_osoba"><a href="index.php/11130037">EternalMonkeys</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Logo</div><div class="ekipa_osoba"><a href="index.php/1174354">Oskar Podolski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Napisy</div><div class="ekipa_osoba"><a href="index.php/1141727">Marcin Malewski</a></div><div class="ekipa_opis"> końcowe</div><div class="ekipa_osoba"><a href="index.php/1174352">Lumicon FX</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Koordynacja kaskaderska</div><div class="ekipa_osoba"><a href="index.php/1120072">Jacek Jeleń</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Obsługa prawna</div><div class="ekipa_osoba"><a href="index.php/1155379">Magdalena Kruszewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1138812">Anna Chojnacka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11120885">Daniel Stępiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163331">Archetyp</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Redakcja</div><div class="ekipa_osoba"><a href="index.php/1158412">Tomasz Cichoń</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Tłumaczenie</div><div class="ekipa_osoba"><a href="index.php/1167486">Aleksandra Cichoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11143103">Kamil Virag</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ochrona planu</div><div class="ekipa_osoba"><a href="index.php/1167994">Krzysztof Roman</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162097">Secu-Rom</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11143100">Robert Krzan</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11143101">Biuro Ochrony Mustang</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zabezpieczenie przeciwpożarowe</div><div class="ekipa_osoba"><a href="index.php/1140086">Zbigniew Zawiślak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1151301">Danuta Tokarska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153904">Rafał Tokarski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11123794">Dorota Jezierska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152203">Dana Catering</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1150654">Renata Simon</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11123796">Mateusz Kacprzak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11134813">Sceno Kreacje</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1122743">Janusz Filipek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157026">Jacek Hernik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1171324">Norbert Zawada</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153902">Marek Zawadka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1153851">Przemysław Malec</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1158338">Magdalena Karpisz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163373">Anna Drajewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154409">Magdalena Hołdun</a></div><div class="ekipa_opis"> ds. obiektów</div><div class="ekipa_osoba"><a href="index.php/11144940">Dorota Melak</a></div><div class="ekipa_opis"> ds. obiektów</div><div class="ekipa_osoba"><a href="index.php/1167991">Joanna Jakimowicz</a></div><div class="ekipa_opis"> ds. postprodukcji</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1165851">Maciej Zwarycz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11122337">Tomasz Łukasiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1168341">Julia Zwierzewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1129766">Ryszard Brożek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153653">Łukasz Kongiel</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1150697">Tomasz Malec</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1154879">Maciej Sitek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1144946">Marcin Sitek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1155836">Grażyna Ostrowska-Szutta</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/1161943">Anna Dobies</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kontrola finansowa</div><div class="ekipa_osoba"><a href="index.php/1173471">Aneta Świechowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opieka literacka</div><div class="ekipa_osoba"><a href="index.php/1177778">Barbara Palka</a></div><div class="ekipa_opis"> szef zespołu literackiego</div></li>
+<li><div class="ekipa_funkcja">Nadzór produkcyjny</div><div class="ekipa_osoba"><a href="index.php/1166044">Marta Grela-Gorostiza</a></div><div class="ekipa_opis"> szef zespołu produkcyjnego</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140263">Dorota Chamczyk</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent producenta</div><div class="ekipa_osoba"><a href="index.php/1167991">Joanna Jakimowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124990">TVN</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis wyroznienie"> Joanna Domirska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1111508">Cezary Pazura</a></div><div class="ekipa_opis wyroznienie"> Andrzej Domirski, mąż Joanny</div><div class="ekipa_osoba"><a href="index.php/11125136">Karolina Staniec</a></div><div class="ekipa_opis"> Kama Domirska, córka Joanny i Andrzeja</div><div class="ekipa_osoba"><a href="index.php/1154948">Kamil Szeptycki</a></div><div class="ekipa_opis"> Tomek Domirski, syn Joanny i Andrzeja</div><div class="ekipa_osoba"><a href="index.php/1165147">Krzysztof Chodorowski</a></div><div class="ekipa_opis"> Łukasz Domirski, syn Joanny i Andrzeja</div><div class="ekipa_osoba"><a href="index.php/11132825">Erika Karkuszewska</a></div><div class="ekipa_opis"> Natalia Domirska, żona Łukasza</div><div class="ekipa_osoba"><a href="index.php/111234">Tadeusz Borowski</a></div><div class="ekipa_opis"> Tadeusz Treder, ojciec Joanny</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237971">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1136125">Bartosz Konopka</a></div><div class="ekipa_opis"> odcinki: 1-4, 9-13</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1117537">Julia Kolberger</a></div><div class="ekipa_opis"> odcinki: 5-8</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1125163">Marcin Baczyński</a></div><div class="ekipa_opis"> odcinki: 1, 3, 5, 10, 13; także główny adaptator oryginalnego scenariusza serialu</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11125862">Mariusz Kuczewski</a></div><div class="ekipa_opis"> odcinki: 1-2, 6-7, 11</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1153602">Joanna Wilczewska</a></div><div class="ekipa_opis"> odcinki: 1, 4, 8-9, 12</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1128529">Jeremi Prokopowicz</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1121549">Tomasz Dobrowolski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1110228">Barbara Ostapowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/1156829">Aleksandra Kierzkowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1139688">Aleksandra Staszko</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/1152961">Marcin Macuk</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1127197">Krzysztof Boroń</a></div><div class="ekipa_opis"> odcinki: 1, 3, 5, 7, 9, 11, 13</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1138862">Piotr Kmiecik</a></div><div class="ekipa_opis"> odcinki: 2, 4, 6, 8, 10, 12</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1155550">Mirela Zawiszewska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1153851">Przemysław Malec</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1140263">Dorota Chamczyk</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/1124990">TVN</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> Joanna Domirska</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1111508">Cezary Pazura</a></div><div class="ekipa_opis"> Andrzej Domirski, mąż Joanny</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>AŻ PO SUFIT! w internecie</h2>
+<ul class="point">
+<li><a href="http://azposufit.tvn.pl/" target="_blank">Oficjalna strona serialu</a></li>
+</ul>
+<div class="podzbior"><h1>NIE MA JAK W DOMU (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Joanna i Andrzej Domirscy to szczęśliwe małżeństwo z 25-letnim stażem i trójką dorosłych dzieci. Mieszkają w Gdyni, we własnoręcznie wybudowanym domu. Poznajemy ich w dniu, kiedy zaczynają nowy etap życia. Z rodzinnego gniazda wyprowadza się ostanie dziecko Domirskich, 23-letni Tomek. <br />
+Joanna przy okazji przypomina sobie wcześniejsze pożegnania z dziećmi. Wraca do chwil, kiedy płakała, gdy najstarsza córka Kama wyjeżdżała na studia i kiedy udzielała ostatnich wskazówek na drogę najmłodszemu synowi Łukaszowi, gdy ten wyfruwał do akademika. Domirscy wiedzą, że ich dzieci muszą wziąć odpowiedzialność za swoje życie i - pełni dobrych myśli - żegnają Tomka. Andrzej pomaga mu pakować rzeczy do samochodu, Joanna życzy szerokiej drogi. Tomek obiecuje zadzwonić, gdy dojedzie do swojego nowego domu, po czym - ku zaskoczeniu machających mu na pożegnanie rodziców - parkuje… przed domem obok. Z szelmowskim uśmiechem oznajmia rodzicom, że wprowadza się do sąsiada, swego najlepszego kumpla, Milo, który po wyprowadzce rodziców do Grecji ma całą wolną chatę. <br />
+Domirscy również mają teraz dom tylko dla siebie i zamierzają korzystać z odzyskanej swobody. W planach mają romantyczne kolacje przy świecach, długie relaksujące kąpiele i dalekie podróże. Jednakże ich pierwszy od lat nastrojowy wieczór we dwoje psują hałasy dochodzące z domu sąsiadów, czyli imprezy urządzonej przez Tomka i Milo. Joanna interweniuje i nakrywa syna w niedwuznacznej sytuacji z koleżanką. W domu Andrzej droczy się z nią i wypomina, że wciąż traktuje Tomka jak niesfornego 7-letniego chłopca. Mężczyzna czule przytula żonę i składa jej gratulacje z okazji 25. rocznicy małżeństwa. Na szyi Joanny zawiesza przepiękny naszyjnik, dziękując jej za ich wspólne życie. <br />
+Następnego dnia w domu Milo i Tomka widać skutki wczorajszej parapetówki. Bałagan w całym domu stresuje młodego Domirskiego, jednak Milo nie wydaje się tym poruszony. Przypadkowy telefon staje się inspiracją dla szalonego pomysłu. <br />
+Wieczorem wszyscy Domirscy spotykają się w ulubionej restauracji rodziców -  tawernie Zęza, by świętować srebrne gody. Przy stole obok Joanny i Andrzeja  zasiadają: Tomek, ojciec Joanny - Tadeusz oraz Kama ze swoim chłopakiem Danielem. Brakuje tylko Łukasza z żoną Natalią; niestety, zapracowany Łukasz wysyła SMS, że musi zostać dłużej w pracy.<br />
+Joanna wyczuwa napięcie między córką a jej chłopakiem, ale Kama uspokaja ją i twierdzi, że nic złego się nie dzieje. Punktem kulminacyjnym przyjęcia jest występ Andrzeja. Specjalnie dla Joanny rozbrzmiewa piosenka "Niewiele ci mogę dać", a na scenie Domirskiemu towarzyszą Kama i Tomek. Wzruszeni małżonkowie zdmuchują świeczki na pięknym torcie i dziękują sobie za te lata szczęścia. <br />
+Po powrocie do domu Joanna i Andrzej planują dalej świętować, ale już tylko we dwoje. Kobieta w seksownej bieliźnie czeka na męża w sypialni. Andrzej - chcąc, by ten wieczór był naprawdę niezapomniany - postanawia się wspomóc niebieskimi pastylkami. Z pewnością jedna by wystarczyła, ale on woli mieć pewność, że będzie w formie - jak za pierwszym razem - i bierze kilka!<br />
+Podczas miłosnych uniesień małżonków ktoś wielokrotnie dzwoni do drzwi. W progu domu późno w nocy stają Łukasz i Natalia. Wręczają zaskoczonej Joannie szampana i słodycze, przepraszając za swoją nieobecność na przyjęciu. Pytają, czy mogą wejść, by poważnie porozmawiać z rodzicami. Joanna zaprasza ich do środka, wkrótce dołącza do nich Andrzej, próbując zasłonić swoją… świetną formę. Ale to nie koniec niespodzianek tego wieczoru. Łukasz i Natalia oznajmiają rodzicom, że chcieliby się do nich wprowadzić - zamiast wynajmować kosztowne mieszkanie w Gdańsku, mogliby odłożyć na własne M-4. Zaskoczeni Joanna i Andrzej proszą o czas do namysłu. Po wyjściu syna Domirski już nie może wytrzymać i mówi żonie, że muszą jechać do szpitala. Niebieskie tabletki działają aż za dobrze, nie ma już przyjemności, tylko uporczywy ból… W szpitalu zawstydzonym Andrzejem opiekuje się młoda, seksowna pielęgniarka Zośka.<br />
+Następnego dnia Joanna i Andrzej pojawiają się w pracy, czyli w firmie Velmis, oferującej usługi elektryczne, w której oboje pracują od lat: Joanna jako księgowa, Andrzej jako elektryk. Beata, przyjaciółka Joanny, a także koleżanka z biura, wypytuje o szczegóły rocznicowego wieczoru. Z kolei Leszek - biurowy zakała i intrygant - dość złośliwie przekomarza się z Andrzejem. Niestety, to nie jest najszczęśliwszy dzień Domirskiego - szef proponuje mu zmianę warunków pracy. Andrzej nie zgadza się na propozycję i zdenerwowany nielojalnością wieloletniego przyjaciela Waldka, z którym od zera budował firmę, wychodzi z biura. Upokorzony i zły wraca do domu, gdzie swoją złość wyładowuje, kosząc trawnik. Nagle zaskoczony zauważa pielęgniarkę ze szpitala - Zośkę. Okazuje się, że dziewczyna jest nową współlokatorką Tomka i Milo. <br />
+W nocy Joanna długo nie może zasnąć. Martwi się o Andrzeja i ich wspólną przyszłość, a także  o Kamę oraz swojego tatę, który nie umie sobie poradzić z samotnością po stracie ukochanej żony. Ostatecznie Joanna i Andrzej podejmują wspólnie decyzję: zgadzają się na przeprowadzkę Łukasza i Natalii. Joanna zapewnia Andrzeja, że jest dumna z tego, jak zachował się w Velmisie i obiecuje mu, że cokolwiek się wydarzy, nawet jeśli mąż zdecyduje się odejść z firmy, to razem przejdą przez problemy. Joanna zaprasza również do rodzinnego domu ojca, oferując mu wsparcie w trudnym dla niego czasie. Dom Domirskich powoli znowu się zapełnia. Wieczorem do drzwi puka Kama. Jest zapłakana i pobita…</p><div class="galeria_mala"><a href="index.php?fotos=1638289_1&galeria=1538289"><img class="bezcienia" src="../z1/89i/38289_1.jpg" height="60"></a><a href="index.php?fotos=1638289_2&galeria=1538289"><img class="bezcienia" src="../z1/89i/38289_2.jpg" height="60"></a><a href="index.php?fotos=1638289_3&galeria=1538289"><img class="bezcienia" src="../z1/89i/38289_3.jpg" height="60"></a><a href="index.php?fotos=1638289_4&galeria=1538289"><img class="bezcienia" src="../z1/89i/38289_4.jpg" height="60"></a><a href="index.php?fotos=1638289_5&galeria=1538289"><img class="bezcienia" src="../z1/89i/38289_5.jpg" height="60"></a><a href="index.php?fotos=1638289_6&galeria=1538289"><img class="bezcienia" src="../z1/89i/38289_6.jpg" height="60"></a><a href="index.php/1538289" title="Galeria zdjęć (33)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238289" class="jslink" onclick="pzz('trailery1238289','trailery_schowaj1238289')">pokaż</span></div></h2><div id="trailery1238289" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/aps1.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238289" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238289','ekipa_skrocona1238289','ekipa1238289','ekipa_schowaj1238289','ekipa_schowaj_krotki1238289','ekipa_schowaj_pelny1238289','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238289" class="jslink" onclick="pzf('ekipa_skrocona1238289','ekipa_pelna1238289','ekipa1238289','ekipa_schowaj1238289','ekipa_schowaj_pelny1238289','ekipa_schowaj_krotki1238289','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238289"1238289" class="jslink" onclick="pzz('ekipa1238289','ekipa_schowaj1238289')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238289" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238289">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1125749">Małgorzata Foremniak</a></div><div class="ekipa_opis"> Beata Kobiałka, przyjaciółka Joanny Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1154520">Tomasz Drabek</a></div><div class="ekipa_opis"> Leszek, kolega Domirskich z pracy</div><div class="ekipa_osoba"><a href="index.php/1121301">Szymon Kuśmider</a></div><div class="ekipa_opis"> Waldek, szef Andrzeja Domirskiego</div><div class="ekipa_osoba"><a href="index.php/1134708">Cezary Łukaszewicz</a></div><div class="ekipa_opis"> Daniel, partner Kamy Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1126686">Karina Seweryn</a></div><div class="ekipa_opis"> pielęgniarka</div><div class="ekipa_osoba"><a href="index.php/1126922">Kinga Ciesielska</a></div><div class="ekipa_opis"> sąsiadka Tadeusza</div><div class="ekipa_osoba"><a href="index.php/1165066">Dawid Czupryński</a></div><div class="ekipa_opis"> chłopak na imprezie u Mila</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238289">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KAPITAN (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Andrzej w biurze Velmisu pakuje swoje rzeczy do pudełka - złożył bowiem wypowiedzenie z pracy po tym, jak szef Waldek zaproponował mu nowe, niekorzystne warunki zatrudnienia. Domirski uniósł się honorem, ale bardziej niż utrata pracy boli go utrata przyjaciela. Jednak Andrzej się nie podda, to nie w jego stylu. Planuje założyć nową firmę i pracować tylko na swoje nazwisko. Zachowanie byłego szefa bardzo go wzburzyło, tym bardziej że wspólnie stworzyli Velmis, grali w jednej drużynie przez 20 lat. Teraz Domirski czuje się sfaulowany i niepotrzebny. Do tego zostaje bez samochodu, służbowy transit zostawia na parkingu przed biurem. Zrezygnowany musi wracać taksówką.<br />
+Kiedy podjeżdża pod dom, widzi, że Łukasz i Natalia wypakowują z samochodu pudła pełne swoich rzeczy. W drzwiach Andrzej mija się z Tomkiem, który mimo iż mieszka u Milo, korzysta z przywilejów domownika i… zmywarki. U Domirskich znowu mnóstwo ludzi i ich spraw. Miało być drugie, lepsze życie, a wygląda na to, że Andrzej nie może liczyć na chwilę spokoju nawet w swojej odskoczni - garażu. Mężczyzna jest przygnębiony i zmartwiony zmienioną sytuacją rodzinną. Wszyscy zamykają przed nim drzwi, chroniąc swoją prywatność i swoje sekrety. Andrzej czuje, że traci pozycję kapitana domu. Jego bezsilność potęgują problemy Kamy - ukochana córka wróciła do domu pobita przez swojego chłopaka, Daniela. Andrzej po poważnej rozmowie z Kamą obiecuje, że nie będzie się wtrącał, choć bardzo chciałby dostać Daniela w swoje ręce. Dziewczyna nie chce również zawiadamiać policji, ale przyznaje, że chłopak ma problemy  i że nie jest już tym mężczyzną, którego tak mocno pokochała. Andrzej obiecuje, że nie będzie go szukał, ale kiedy słyszy, jak w nocy w swoim dawnym pokoju Kama płacze, nie wytrzymuje. Niestety, agresywny chłopak córki okazuje się za mocnym przeciwnikiem dla Andrzeja. W czasie bijatyki z kieszeni Daniela wypada torebeczka z białymi kryształkami. Domirski zabiera ją i podczas kolejnej "ratunkowej" wizyty u Zośki w szpitalu prosi o rozpoznanie specyfiku. Okazuje się, że to metaamfetamina. Andrzej i Joanna są bardzo zaniepokojeni; zastanawiają się, czy Daniel nie wciągnął Kamy w narkotyki. Joanna postanawia porozmawiać poważnie z córką, jednak Kama zaprzecza podejrzeniom. Później samotnie w pokoju płacze i pije alkohol.<br />
+Następnego dnia Tomek wraz z Milo wybierają się na mecz piłkarski oldboyów, by dopingować Domirskiego, który gra w jednej z drużyn. W czasie meczu uwagę Milo przyciąga Beata, przyjaciółka Joanny. Dla Andrzeja mecz kończy się moralnym zwycięstwem, dzięki czemu odzyskuje pewność siebie na boisku i poza nim. Wreszcie wie, co musi zrobić, by pomóc zarówno swoim najbliższym, jak i samemu sobie…</p><div class="galeria_mala"><a href="index.php?fotos=1638284_1&galeria=1538284"><img class="bezcienia" src="../z1/84i/38284_1.jpg" height="60"></a><a href="index.php?fotos=1638284_2&galeria=1538284"><img class="bezcienia" src="../z1/84i/38284_2.jpg" height="60"></a><a href="index.php?fotos=1638284_3&galeria=1538284"><img class="bezcienia" src="../z1/84i/38284_3.jpg" height="60"></a><a href="index.php?fotos=1638284_4&galeria=1538284"><img class="bezcienia" src="../z1/84i/38284_4.jpg" height="60"></a><a href="index.php?fotos=1638284_5&galeria=1538284"><img class="bezcienia" src="../z1/84i/38284_5.jpg" height="60"></a><a href="index.php?fotos=1638284_6&galeria=1538284"><img class="bezcienia" src="../z1/84i/38284_6.jpg" height="60"></a><a href="index.php/1538284" title="Galeria zdjęć (17)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238284" class="jslink" onclick="pzz('trailery1238284','trailery_schowaj1238284')">pokaż</span></div></h2><div id="trailery1238284" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/aps2.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238284" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238284','ekipa_skrocona1238284','ekipa1238284','ekipa_schowaj1238284','ekipa_schowaj_krotki1238284','ekipa_schowaj_pelny1238284','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238284" class="jslink" onclick="pzf('ekipa_skrocona1238284','ekipa_pelna1238284','ekipa1238284','ekipa_schowaj1238284','ekipa_schowaj_pelny1238284','ekipa_schowaj_krotki1238284','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238284"1238284" class="jslink" onclick="pzz('ekipa1238284','ekipa_schowaj1238284')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238284" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238284">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1125749">Małgorzata Foremniak</a></div><div class="ekipa_opis"> Beata Kobiałka, przyjaciółka Joanny Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1154520">Tomasz Drabek</a></div><div class="ekipa_opis"> Leszek, kolega Domirskich z pracy</div><div class="ekipa_osoba"><a href="index.php/1121301">Szymon Kuśmider</a></div><div class="ekipa_opis"> Waldek, szef Andrzeja Domirskiego</div><div class="ekipa_osoba"><a href="index.php/1134708">Cezary Łukaszewicz</a></div><div class="ekipa_opis"> Daniel, partner Kamy Domirskiej</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238284">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KROK W DOROSŁOŚĆ (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Tomek cieszy się swoją upragnioną wolnością i swobodą dorosłego życia. Mieszka teraz w domu przyjaciela Milo, a ich współlokatorką jest Zośka, bardzo seksowna pielęgniarka. Milo zgodził się wynająć jej pokój, sądząc, że dziewczyna zajmie się również sprzątaniem mieszkania. Chłopak uważa, że żadna kobieta nie jest w stanie żyć pośród brudu i bałaganu, a zatem prędzej czy później po prostu zacznie robić porządki. Dlatego Milo i Tomek zawierają pakt: żaden z nich, jak to ujmuje Milo, nie bzyknie się z nową lokatorką. Zośka musi być ich kumpelą, bo jeśli któryś złamie umowę, to będą z tego tylko kłopoty - dziewczyna wyprowadzi się, a oni znowu będą mieszkać w bałaganie. Jednakże w przypadku Zośki obrana strategia jest mało skuteczna. Tomkowi coraz bardziej miękną nogi na widok seksownej współlokatorki, a do tego pielęgniarka bałagani tak samo jak chłopaki. W efekcie ich wspólny dom zaczyna przypominać pobojowisko: w kuchni brud i sterta niezmytych naczyń, a w lodówce pustka. W poszukiwaniu kawy i mleka Tomek udaje się do rodzinnego domu, jednak Andrzej wskazuje mu pobliski sklep spożywczy jako bardziej odpowiednie miejsce dla znalezienia potrzebnych produktów.<br />
+Kama, siostra Tomka, prosi go o pomoc. Na wieczór umawia się w pubie ze swoim byłym chłopakiem Danielem i chce, aby brat był obok, jeśli pojawiłyby się kłopoty. Daniel przeprasza Kamę za swoje zachowanie, błaga o wybaczenie i obiecuje poprawę. Tomek obserwuje z niepokojem rozwój sytuacji; boi się, że siostra ulegnie i zechce wrócić do chłopaka, który nie jest jej wart. Kama ostatecznie odzyskuje siły i zdrowy rozsądek, każe Danielowi wyjść, oznajmiając mu, że już go nie potrzebuje, że to koniec. Resztę wieczoru rodzeństwo spędza razem. Dziewczyna - niestety - przesadza z alkoholem i do domu transportuje ją brat. Tomek czuje, że z Kamą nie jest najlepiej; zaczyna bacznie przyglądać się siostrze, jest gotowy w razie czego być w pobliżu.<br />
+Następnego dnia Tomek korzysta ze sprzyjających okoliczności i udaje mu się umówić na randkę z Zośką. Niestety, tym razem chłopak musi zrezygnować z romantycznego "tete a tete" gdyż dołącza do nich Kama. Zośka namawia rodzeństwo Domirskich na spacer nad morze; cała trójka spędza czas na klifie, obserwując wodę i rozmawiając. Kama wspomina, jak w dzieciństwie przychodziła na ten klif z babcią i obie wypatrywały wracającego z podróży dziadka. Niestety, babcia wypłynęła już w ostatni rejs i bliskim pozostaje tylko za nią tęsknić i ją wspominać.<br />
+Joanna widzi, że jej ojciec przeżywa bardzo trudny okres: nie umie pogodzić się ze stratą żony. Poza tym odkrywa, że Tadeusz otrzymał filmik, na którym widać, że został zabrany do szpitala w sukience jej mamy. Czy dlatego mężczyzna nie chce wrócić do swojego mieszkania? Ze wstydu przed sąsiadami?<br />
+Milo wciąż narzeka na bałaganiarstwo Zośki i oskarża Tomka o to, że się w niej podkochuje. Ten odpowiada, że wolałby mieć syf w kuchni, a Zośkę w sypialni, bo teraz ma syf i wydany przez Milo zakaz bzykania. Niestety Zośka daje mu odczuć, że widzi w nim tylko sympatycznego kumpla. Po południu w domu Domirskich ma się odbyć sobotni rodzinny obiad - grill. Andrzej przygotowuje swoją specjalność - wędzone ryby. Joanna nie może dobudzić Kamy; w jej pokoju zauważa pustą butelkę po alkoholu. Kiedy wreszcie dziewczyna pojawia się w kuchni, zdenerwowana Joanna stanowczo rozmawia z córką. Ta odpiera ataki i wyrzuca matce, że w tym domu nikt nie jest szczery, więc czemu od niej oczekuje się takiej postawy. Zdenerwowana Kama pyta, dlaczego dziadek musiał z nimi zamieszkać i z jakiego powodu był w szpitalu. Matka unika odpowiedzi, zasłaniając się wykrętem, że to sprawa osobista dziadka.<br />
+Wspólny obiad zaczyna się w dość nerwowej atmosferze. Joanna strofuje Kamę, bacznie obserwując, ile wina pije córka. Z kolei Natalia i Łukasz jak zwykle wpadają spóźnieni i od progu informują wszystkich, że nie mogą długo zostać. Nim zakończy się rodzinne spotkanie, na jaw wyjdą skrywane tajemnice. Jednakże Domirscy będą musieli odłożyć na bok spory i pośpieszyć na ratunek Tadeuszowi.</p><div class="galeria_mala"><a href="index.php?fotos=1638369_1&galeria=1538369"><img class="bezcienia" src="../z1/69i/38369_1.jpg" height="60"></a><a href="index.php?fotos=1638369_2&galeria=1538369"><img class="bezcienia" src="../z1/69i/38369_2.jpg" height="60"></a><a href="index.php?fotos=1638369_3&galeria=1538369"><img class="bezcienia" src="../z1/69i/38369_3.jpg" height="60"></a><a href="index.php?fotos=1638369_4&galeria=1538369"><img class="bezcienia" src="../z1/69i/38369_4.jpg" height="60"></a><a href="index.php?fotos=1638369_5&galeria=1538369"><img class="bezcienia" src="../z1/69i/38369_5.jpg" height="60"></a><a href="index.php?fotos=1638369_6&galeria=1538369"><img class="bezcienia" src="../z1/69i/38369_6.jpg" height="60"></a><a href="index.php/1538369" title="Galeria zdjęć (11)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238369" class="jslink" onclick="pzz('trailery1238369','trailery_schowaj1238369')">pokaż</span></div></h2><div id="trailery1238369" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/aps3.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238369" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238369','ekipa_skrocona1238369','ekipa1238369','ekipa_schowaj1238369','ekipa_schowaj_krotki1238369','ekipa_schowaj_pelny1238369','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238369" class="jslink" onclick="pzf('ekipa_skrocona1238369','ekipa_pelna1238369','ekipa1238369','ekipa_schowaj1238369','ekipa_schowaj_pelny1238369','ekipa_schowaj_krotki1238369','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238369"1238369" class="jslink" onclick="pzz('ekipa1238369','ekipa_schowaj1238369')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238369" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238369">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1134708">Cezary Łukaszewicz</a></div><div class="ekipa_opis"> Daniel, partner Kamy Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1174807">Aleksandra Adamska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11143567">Anita Zaboroś</a></div><div class="ekipa_opis"> bliźniaczka</div><div class="ekipa_osoba"><a href="index.php/11143568">Edyta Zaboroś</a></div><div class="ekipa_opis"> bliźniaczka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238369">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WIELKIE MARZENIA (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Łukasz i jego żona, Natalia, wprowadzili się z powrotem do domu rodzinnego. Mężczyzna nie jest z tego zadowolony, ma poczucie życiowej porażki i niewykorzystania szans, które dostał od losu. Wszystko przecież miało być inaczej - on dziecko szczęścia, predestynowany do osiągania wielkich sukcesów. Sądzi, że zawiódł wszystkich najbliższych, a najbardziej Natalię. Łukasz wraca myślami do początku znajomości z Natalią: sylwestrowa noc 18 miesięcy wcześniej, elegancka restauracja, wspaniałe przyjęcie - wtedy właśnie zobaczył kobietę swojego życia, Natalię. Początkowo nie sądził, że będzie miał u niej jakiekolwiek szanse. Nawet jego kumple od razu stwierdzili, że dziewczyna nie jest z jego ligi, ale tego dnia Łukasz czuł, że sprzyja mu wyjątkowe szczęście.<br />
+Okazało się, że Natalia wcale nie jest zwykłą dziewczyną. Jej rodzice to milionerzy, ojciec ma najlepiej prosperującą firmę deweloperską na całym Pomorzu. Ich dom rodzinny to luksusowa rezydencja, w której do kolacji usługują domownikom służący. Łukasz jest bardzo zdenerwowany i żałuje, że zamiast grzybków i domowego wina od babci nie przyniósł ze sobą kawioru. W czasie eleganckiej kolacji Tamara i Krzysztof Maierowie bacznie przyglądają się mężczyźnie, którego przedstawiła im córka. Atmosfera spotkania jest bardzo formalna, jednakże Łukaszowi udaje się nawiązać nić porozumienia z ojcem swojej wybranki. Z kolei pierwsze spotkanie Natalii z Domirskimi wyglądało zupełnie inaczej…<br />
+Od chwili, kiedy rodzina Łukasza zaakceptowała i pokochała przyszłą synową, sprawy potoczyły się błyskawicznie. Zaręczyny, kolacja zapoznawcza rodziców i wreszcie dzień ślubu. Młodzi promienieją szczęściem, kiedy w otoczeniu rodziny i przyjaciół składają przysięgę małżeńską. Niestety, ich wielki dzień nie kończy się szczęśliwie… Ojciec Natalii składa Łukaszowi propozycję nie do odrzucenia - pracę w jego firmie. Chłopak uważa, że to szansa na rozwój zawodowy, Natalia jednak się sprzeciwia, twierdząc, że ojciec w ten sposób chce ich kontrolować. Młodzi odrzucają propozycję Maiera i wierzą, że sami sobie poradzą. Okazuje się jednak, że nie jest to proste…</p><div class="galeria_mala"><a href="index.php?fotos=1638370_1&galeria=1538370"><img class="bezcienia" src="../z1/70i/38370_1.jpg" height="60"></a><a href="index.php?fotos=1638370_2&galeria=1538370"><img class="bezcienia" src="../z1/70i/38370_2.jpg" height="60"></a><a href="index.php?fotos=1638370_3&galeria=1538370"><img class="bezcienia" src="../z1/70i/38370_3.jpg" height="60"></a><a href="index.php?fotos=1638370_4&galeria=1538370"><img class="bezcienia" src="../z1/70i/38370_4.jpg" height="60"></a><a href="index.php?fotos=1638370_5&galeria=1538370"><img class="bezcienia" src="../z1/70i/38370_5.jpg" height="60"></a><a href="index.php?fotos=1638370_6&galeria=1538370"><img class="bezcienia" src="../z1/70i/38370_6.jpg" height="60"></a><a href="index.php/1538370" title="Galeria zdjęć (23)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238370" class="jslink" onclick="pzz('trailery1238370','trailery_schowaj1238370')">pokaż</span></div></h2><div id="trailery1238370" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<iframe width="640" height="360" src="https://www.youtube.com/embed/HzDhvdujEEA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238370" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238370','ekipa_skrocona1238370','ekipa1238370','ekipa_schowaj1238370','ekipa_schowaj_krotki1238370','ekipa_schowaj_pelny1238370','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238370" class="jslink" onclick="pzf('ekipa_skrocona1238370','ekipa_pelna1238370','ekipa1238370','ekipa_schowaj1238370','ekipa_schowaj_pelny1238370','ekipa_schowaj_krotki1238370','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238370"1238370" class="jslink" onclick="pzz('ekipa1238370','ekipa_schowaj1238370')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238370" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238370">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/112732">Małgorzata Niemirska</a></div><div class="ekipa_opis"> Wanda Treder, matka Natalii</div><div class="ekipa_osoba"><a href="index.php/1111606">Mariusz Bonaszewski</a></div><div class="ekipa_opis"> Krzysztof Maier, ojciec Natalii</div><div class="ekipa_osoba"><a href="index.php/1114605">Dorota Segda</a></div><div class="ekipa_opis"> Tamara Maier, matka Natalii</div><div class="ekipa_osoba"><a href="index.php/1134708">Cezary Łukaszewicz</a></div><div class="ekipa_opis"> Daniel, partner Kamy Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1174287">Joanna Opozda</a></div><div class="ekipa_opis"> Monika, koleżanka Natalii</div><div class="ekipa_osoba"><a href="index.php/11120193">Bartosz Żuchowski</a></div><div class="ekipa_opis"> Oliwier</div><div class="ekipa_osoba"><a href="index.php/1150455">Piotr Litwic</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1170795">Hanna Małkus</a></div><div class="ekipa_opis"> Nadia, służąca Maierów</div><div class="ekipa_osoba">Edmund Skalski</div><div class="ekipa_opis"> ksiądz na ślubie Natalii i Łukaza</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238370">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>PRIORYTETY (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Teść Łukasza, bardzo wpływowy i bogaty biznesmen obchodzi 50 rocznicę urodzin. Zaproszenie na wystawną imprezę otrzymują również rodzice Łukasza, Joanna i Andrzej. Łukasz jednak obawia się, czy jego prostolinijni, zwyczajni rodzice będą umieli dobrze wypaść na tle śmietanki towarzyskiej Trójmiasta. Łukasz uważa, że świat jego rodziny jest bardzo różny od świata w którym żyją rodzice Natalii. Czy tak rzeczywiście jest? Czy wyznacznikiem szczęścia i powodzenia w życiu są wyłącznie sukces zawodowy i pieniądze? 
+Aspirujący do wielkich sukcesów Łukasz dostanie od od swoich „zwyczajnych” rodziców życiową lekcję i przekona się co tak naprawdę świadczy o wartości człowieka.</p>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238656" class="jslink" onclick="pzz('trailery1238656','trailery_schowaj1238656')">pokaż</span></div></h2><div id="trailery1238656" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/aps5.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238656" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238656','ekipa_skrocona1238656','ekipa1238656','ekipa_schowaj1238656','ekipa_schowaj_krotki1238656','ekipa_schowaj_pelny1238656','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238656" class="jslink" onclick="pzf('ekipa_skrocona1238656','ekipa_pelna1238656','ekipa1238656','ekipa_schowaj1238656','ekipa_schowaj_pelny1238656','ekipa_schowaj_krotki1238656','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238656"1238656" class="jslink" onclick="pzz('ekipa1238656','ekipa_schowaj1238656')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238656" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238656">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/112732">Małgorzata Niemirska</a></div><div class="ekipa_opis"> Wanda Treder, matka Natalii</div><div class="ekipa_osoba"><a href="index.php/1125749">Małgorzata Foremniak</a></div><div class="ekipa_opis"> Beata Kobiałka, przyjaciółka Joanny Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1111606">Mariusz Bonaszewski</a></div><div class="ekipa_opis"> Krzysztof Maier, ojciec Natalii</div><div class="ekipa_osoba"><a href="index.php/1114605">Dorota Segda</a></div><div class="ekipa_opis"> Tamara Maier, matka Natalii</div><div class="ekipa_osoba"><a href="index.php/1154520">Tomasz Drabek</a></div><div class="ekipa_opis"> Leszek, kolega Domirskich z pracy</div><div class="ekipa_osoba"><a href="index.php/11120193">Bartosz Żuchowski</a></div><div class="ekipa_opis"> Oliwier</div><div class="ekipa_osoba"><a href="index.php/11148998">Adam Mickiewicz</a></div><div class="ekipa_opis"> Oliwier w młodości</div><div class="ekipa_osoba"><a href="index.php/11127960">Piotr Kaczyński</a></div><div class="ekipa_opis"> Łukasz w młodości</div><div class="ekipa_osoba"><a href="index.php/11144017">Zofia Wojciechowska</a></div><div class="ekipa_opis"> Kama w młodości</div><div class="ekipa_osoba"><a href="index.php/11139966">Maksymilian Dobrowolski</a></div><div class="ekipa_opis"> Tomek w młodości</div><div class="ekipa_osoba">Dorota Jankowska</div><div class="ekipa_opis"> członkini kwartetu smyczkowego</div><div class="ekipa_osoba"><a href="index.php/11135670">Kamila Malik</a></div><div class="ekipa_opis"> członkini kwartetu smyczkowego</div><div class="ekipa_osoba">Justyna Bogusiewicz</div><div class="ekipa_opis"> członkini kwartetu smyczkowego</div><div class="ekipa_osoba"><a href="index.php/11128665">Anna Adamczuk</a></div><div class="ekipa_opis"> członkini kwartetu smyczkowego</div><div class="ekipa_osoba"><a href="index.php/1154974">Paulina Marciniak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11144020">Rafał Baszczyński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238656">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>JAK KUMPLE (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Marzenie Tomka wreszcie się spełnia i chłopak budzi się rano obok Zośki. Czy upojną noc po imprezie zakrapianej alkoholem można nazwać romantycznym początkiem związku? Raczej nie tak to sobie Tomek wyobrażał. Ostateczny cios w serce zakochanego Tomka zadaje Zośka, która od razu oznajmia, że to co się stało to błąd i najlepiej będzie jeśli skupią się na przyjaźni. Tomek zamierza walczyć o uczucie dziewczyny i podda Zośkę pewnemu testowi… by przekonać się, czy zazdrość rzeczywiście jest niezwykłym afrodyzjakiem.
+Więcej szczęścia z kobietami będzie miał przyjaciel i współlokator Tomka, Milo. Pasja motoryzacji połączy go z Beatą, przyjaciółką mamy Tomka. Wspólne przejażdżki, wieczorne gry komputerowe, przyjacielskie kolacje – pomimo tak dużej różnicy wieku tych dwoje świetnie czuje się w swoim towarzystwie. Czy ta relacja ma szansę zamienić się w coś więcej niż przyjaźń?
+Telewizyjny wywiad Olivera Janiaka z pewną gwiazdą muzyczną przypomina Andrzejowi o jego przeszłości i pasji do muzyki. W szczerej rozmowie z Kamą, Domirski przyznaje, że nie żałuje, że to właśnie dla rodziny poświęcił swoje marzenia.</p>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238657" class="jslink" onclick="pzz('trailery1238657','trailery_schowaj1238657')">pokaż</span></div></h2><div id="trailery1238657" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/aps6.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238657" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238657','ekipa_skrocona1238657','ekipa1238657','ekipa_schowaj1238657','ekipa_schowaj_krotki1238657','ekipa_schowaj_pelny1238657','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238657" class="jslink" onclick="pzf('ekipa_skrocona1238657','ekipa_pelna1238657','ekipa1238657','ekipa_schowaj1238657','ekipa_schowaj_pelny1238657','ekipa_schowaj_krotki1238657','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238657"1238657" class="jslink" onclick="pzz('ekipa1238657','ekipa_schowaj1238657')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238657" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238657">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1125749">Małgorzata Foremniak</a></div><div class="ekipa_opis"> Beata Kobiałka, przyjaciółka Joanny Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> muzyk Grzegorz Marzec</div><div class="ekipa_osoba"><a href="index.php/1133687">Ewa Porębska</a></div><div class="ekipa_opis"> Olga</div><div class="ekipa_osoba"><a href="index.php/11125137">Filip Gurłacz</a></div><div class="ekipa_opis"> Paweł, chłopak Olgi</div><div class="ekipa_osoba"><a href="index.php/11109212">Mateusz Rzeźniczak</a></div><div class="ekipa_opis"> chłopak zaczepiający Olgę</div><div class="ekipa_osoba"><a href="index.php/11124867">Julian Świeżewski</a></div><div class="ekipa_opis"> doktor Mateusz, znajomy Zosi</div><div class="ekipa_osoba"><a href="index.php/1152906">Olivier Janiak</a></div><div class="ekipa_opis"> występuje w roli samego siebie, dziennikarza rozmawiającego z Marcem</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238657">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>STRACH SIĘ BAĆ (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Sytuacja finansowa Domirskich spędza sen z powiek Joanny. Odkąd Andrzej postanowił odejść z Velmisu, utrzymanie domu spadło w całości na Domirską. Joanna kolejny wieczór spędza nad rachunkami zastanawiając się, jak związać koniec z końcem. Jej niepokoju nie podziela Andrzej, który nad wyraz optymistycznie patrzy w przyszłość i wciąż zapewnia żonę, że pracuje nad tym, by pozyskać klientów dla swojej nowej firmy. Niestety jego metody okazują się nieskuteczne i mało profesjonalne przez co Andrzej wpada tylko w kłopoty. Joanna jest niezadowolona, kiedy mąż bez jej wiedzy nadwyręża domowy budżet, kupując używane auto. W tej trudnej sytuacji Joanna zaczyna nawet szukać dodatkowych zleceń jako księgowa, nie mówi jednak o tym mężowi, nie chcąc podcinać mu skrzydeł. Joanna stara się dopingować i wspierać Andrzeja, widzi bowiem jego starania i zapał. Andrzej jednak zachowuje się dość niefrasobliwie. Nie zarejestrował jeszcze działalności gospodarczej, nie ma biznesplanu ani pomysłu jak zdobyć klientów i zlecenia. Na pomoc Andrzejowi rusza Kama. Projektuje dla jego nowej firmy profesjonalne materiały reklamowe, rejestruje domenę w sieci. Tymczasem Tomek odkrywa sekret Kamy, który jeśli ujrzy światło dzienne może zniszczyć reputację młodej Domirskiej i zranić uczucia bliskich jej osób. Tomek postanawia działać i ochronić siostrę przed kompromitacją. Do pomocy angażuje Mila, Zośkę oraz… Beatę. Okazuje się bowiem, że muszą "włamać się" do Velmisu i do komputera służbowego Joanny, by przechwycić maila, którego do bliskich Kamy wysłał Daniel. Mail zawiera wybuchowe, erotyczne video z Kamą w roli głównej… Czy Tomkowi uda się kolejny raz zapobiec rodzinnemu kryzysowi? [TVN]</p><div class="galeria_mala"><a href="index.php?fotos=1638528_1&galeria=1538528"><img class="bezcienia" src="../z1/28i/38528_1.jpg" height="60"></a><a href="index.php?fotos=1638528_2&galeria=1538528"><img class="bezcienia" src="../z1/28i/38528_2.jpg" height="60"></a><a href="index.php?fotos=1638528_3&galeria=1538528"><img class="bezcienia" src="../z1/28i/38528_3.jpg" height="60"></a><a href="index.php?fotos=1638528_4&galeria=1538528"><img class="bezcienia" src="../z1/28i/38528_4.jpg" height="60"></a><a href="index.php?fotos=1638528_5&galeria=1538528"><img class="bezcienia" src="../z1/28i/38528_5.jpg" height="60"></a><a href="index.php?fotos=1638528_6&galeria=1538528"><img class="bezcienia" src="../z1/28i/38528_6.jpg" height="60"></a><a href="index.php/1538528" title="Galeria zdjęć (11)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238528" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238528','ekipa_skrocona1238528','ekipa1238528','ekipa_schowaj1238528','ekipa_schowaj_krotki1238528','ekipa_schowaj_pelny1238528','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238528" class="jslink" onclick="pzf('ekipa_skrocona1238528','ekipa_pelna1238528','ekipa1238528','ekipa_schowaj1238528','ekipa_schowaj_pelny1238528','ekipa_schowaj_krotki1238528','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238528"1238528" class="jslink" onclick="pzz('ekipa1238528','ekipa_schowaj1238528')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238528" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238528">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1125749">Małgorzata Foremniak</a></div><div class="ekipa_opis"> Beata Kobiałka, przyjaciółka Joanny Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1154520">Tomasz Drabek</a></div><div class="ekipa_opis"> Leszek, kolega Domirskich z pracy</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238528">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>NAGA PRAWDA (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">W poprzednim odcinku na jaw wyszły sekrety Kamy. Cała rodzina Domirskich dostała od jej byłego chłopaka maila z tytułem "Takiej Kamy jeszcze nie widzieliście". Mail zawierał seks-video Kamy i Daniela. Jakimś cudem Tomek, brat Kamy zdołał skasować maila z poczty służbowej Joanny i na szczęście rodzice nie zobaczyli intymnego nagrania swojej córki. Niestety mail dotarł do ukochanego dziadka Kamy. Teraz młoda Domirska musi mu spojrzeć prosto w oczy i wyznać całą prawdę o swoim toksycznym związku z Danielem. Dlaczego znalazła się w takiej sytuacji? Kama opowiada Tadeuszowi początek całej historii. Dwa lata temu spełniło się jej zawodowe marzenie. Dostała pracę w uznanej agencji reklamowej i właśnie tam pierwszy raz zobaczyła Daniela - przystojnego, charyzmatycznego dyrektora artystycznego. Od razu wpadli sobie w oko, a częste spotkania całego zespołu agencji po pracy pomogły w zawarciu bliższej znajomości. Tempo pracy w branży reklamowej sprzyjało prowadzeniu intensywnego życia. Wspólna praca nad projektami, wspólne imprezy, wspólne noce. Kama była zauroczona znajomością z Danielem. W końcu zdecydowała się przedstawić go całej rodzinie Domirskich. Początkowo Daniel zrobił na wszystkich bardzo dobre wrażenie, dlatego szybki rozwój ich związku i w konsekwencji decyzja o wspólnym zamieszkaniu nikogo nie zdziwiła. Domirscy kibicowali ich miłości, a Andrzej i Tomek pomagali Kamie w przeprowadzce do wielkiego apartamentu Daniela. Zakochani świętowali swoje szczęście szampanem, a Kama zaczęła wreszcie wierzyć w swoją dobrą gwiazdę. Wkrótce jednak ich związek zaczął przypominać jazdę na rollercoasterze, a Daniel pokazał ciemną i niebezpieczną stronę charakteru… Czy po wyznaniu dziadkowi całej prawdy Kama znajdzie siłę by odrzucić to co złe i podnieść się po upadku? Czy będzie umiała zmierzyć się z prawdą o sobie samej? [TVN]</p><div class="galeria_mala"><a href="index.php?fotos=1638527_1&galeria=1538527"><img class="bezcienia" src="../z1/27i/38527_1.jpg" height="60"></a><a href="index.php?fotos=1638527_2&galeria=1538527"><img class="bezcienia" src="../z1/27i/38527_2.jpg" height="60"></a><a href="index.php?fotos=1638527_3&galeria=1538527"><img class="bezcienia" src="../z1/27i/38527_3.jpg" height="60"></a><a href="index.php?fotos=1638527_4&galeria=1538527"><img class="bezcienia" src="../z1/27i/38527_4.jpg" height="60"></a><a href="index.php?fotos=1638527_5&galeria=1538527"><img class="bezcienia" src="../z1/27i/38527_5.jpg" height="60"></a><a href="index.php?fotos=1638527_6&galeria=1538527"><img class="bezcienia" src="../z1/27i/38527_6.jpg" height="60"></a><a href="index.php/1538527" title="Galeria zdjęć (47)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238527" class="jslink" onclick="pzz('trailery1238527','trailery_schowaj1238527')">pokaż</span></div></h2><div id="trailery1238527" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/aps8.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238527" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238527','ekipa_skrocona1238527','ekipa1238527','ekipa_schowaj1238527','ekipa_schowaj_krotki1238527','ekipa_schowaj_pelny1238527','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238527" class="jslink" onclick="pzf('ekipa_skrocona1238527','ekipa_pelna1238527','ekipa1238527','ekipa_schowaj1238527','ekipa_schowaj_pelny1238527','ekipa_schowaj_krotki1238527','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238527"1238527" class="jslink" onclick="pzz('ekipa1238527','ekipa_schowaj1238527')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238527" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238527">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/112732">Małgorzata Niemirska</a></div><div class="ekipa_opis"> Wanda Treder, matka Natalii</div><div class="ekipa_osoba"><a href="index.php/1134708">Cezary Łukaszewicz</a></div><div class="ekipa_opis"> Daniel, partner Kamy Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1121574">Norbert Rakowski</a></div><div class="ekipa_opis"> Krystian, szef agencji</div><div class="ekipa_osoba"><a href="index.php/1159108">Anna Smołowik</a></div><div class="ekipa_opis"> Inga, pracownica agencji</div><div class="ekipa_osoba"><a href="index.php/11117688">Tomasz Włosok</a></div><div class="ekipa_opis"> Jurek, pracownik agencji</div><div class="ekipa_osoba"><a href="index.php/1126922">Kinga Ciesielska</a></div><div class="ekipa_opis"> sąsiadka Tadeusza</div><div class="ekipa_osoba"><a href="index.php/1171521">Alicja Gwiazda</a></div><div class="ekipa_opis"> terapeutka</div><div class="ekipa_osoba"><a href="index.php/114847">Anna Łopatowska</a></div><div class="ekipa_opis"> sąsiadka Tadeusza</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238527">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>MÓJ KAWAŁEK PODŁOGI (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul><div class="galeria_mala"><a href="index.php?fotos=1638850_1&galeria=1538850"><img class="bezcienia" src="../z1/50i/38850_1.jpg" height="60"></a><a href="index.php?fotos=1638850_2&galeria=1538850"><img class="bezcienia" src="../z1/50i/38850_2.jpg" height="60"></a><a href="index.php?fotos=1638850_3&galeria=1538850"><img class="bezcienia" src="../z1/50i/38850_3.jpg" height="60"></a><a href="index.php?fotos=1638850_4&galeria=1538850"><img class="bezcienia" src="../z1/50i/38850_4.jpg" height="60"></a><a href="index.php?fotos=1638850_5&galeria=1538850"><img class="bezcienia" src="../z1/50i/38850_5.jpg" height="60"></a><a href="index.php?fotos=1638850_6&galeria=1538850"><img class="bezcienia" src="../z1/50i/38850_6.jpg" height="60"></a><a href="index.php/1538850" title="Galeria zdjęć (22)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238850" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238850','ekipa_skrocona1238850','ekipa1238850','ekipa_schowaj1238850','ekipa_schowaj_krotki1238850','ekipa_schowaj_pelny1238850','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238850" class="jslink" onclick="pzf('ekipa_skrocona1238850','ekipa_pelna1238850','ekipa1238850','ekipa_schowaj1238850','ekipa_schowaj_pelny1238850','ekipa_schowaj_krotki1238850','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238850"1238850" class="jslink" onclick="pzz('ekipa1238850','ekipa_schowaj1238850')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238850" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238850">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1125749">Małgorzata Foremniak</a></div><div class="ekipa_opis"> Beata Kobiałka, przyjaciółka Joanny Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1154520">Tomasz Drabek</a></div><div class="ekipa_opis"> Leszek, kolega Domirskich z pracy</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> muzyk Grzegorz Marzec</div><div class="ekipa_osoba"><a href="index.php/1122141">Grzegorz Gzyl</a></div><div class="ekipa_opis"> Gryga</div><div class="ekipa_osoba"><a href="index.php/11141241">Justyna Jeleń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11140729">Dominika Kachlik</a></div><div class="ekipa_opis"> asystentka Marca</div><div class="ekipa_osoba"><a href="index.php/1144547">Magdalena Modra</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1159080">Filip Kuncewicz</a></div><div class="ekipa_opis"> muzyk</div><div class="ekipa_osoba"><a href="index.php/1173325">Krzysztof Kwiatkowski</a></div><div class="ekipa_opis"> muzyk</div><div class="ekipa_osoba"><a href="index.php/1175740">Paweł Piecuch</a></div><div class="ekipa_opis"> muzyk</div><div class="ekipa_osoba"><a href="index.php/1125419">Wojciech Ruciński</a></div><div class="ekipa_opis"> muzyk</div><div class="ekipa_osoba">Przemysław Wojsław</div><div class="ekipa_opis"> muzyk</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238850">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WSZYSTKO POD KONTROLĄ (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Kama wraz z przyjaciółką planuje wakacje marzeń- wspólny wyjazd do Azji. Jednakże wszelkie plany i wizje przyszłości idą w kąt, kiedy uświadamia sobie, że może być w ciąży z Danielem! Młoda Domirska jest załamana… Nie chce by ojcem jej dziecka był mężczyzna, z którym właśnie się rozstała i który jest uzależniony od narkotyków. Kama zwierza się ze swoich podejrzeń Zośce, która kupuje dla niej test ciążowy. Dziewczyna zwleka jednak z wykonaniem testu… Natalia jest już zmęczona rygorem oszczędności, jaki narzucili sobie z Łukaszem i daje się ponieść zakupowemu szaleństwu. Poważnie nadwyręża skromny, domowy budżet. Łukasz jest jednak nieugięty - każe żonie zwrócić zakupy. Niespodziewanie Natalia dostaje bardzo ciekawą propozycję pracy. Wiąże się ona jednak z wyjazdem za granicę! Czy dla polepszenia swojej sytuacji finansowej dziewczyna zdecyduje się na rozłąkę z Łukaszem? Beata podejmuje decyzją dotyczącą jej związku z Milo. Czy Beata pójdzie za głosem serca czy rozsądku?</p><div class="galeria_mala"><a href="index.php?fotos=1638810_1&galeria=1538810"><img class="bezcienia" src="../z1/10i/38810_1.jpg" height="60"></a><a href="index.php?fotos=1638810_2&galeria=1538810"><img class="bezcienia" src="../z1/10i/38810_2.jpg" height="60"></a><a href="index.php?fotos=1638810_3&galeria=1538810"><img class="bezcienia" src="../z1/10i/38810_3.jpg" height="60"></a><a href="index.php?fotos=1638810_4&galeria=1538810"><img class="bezcienia" src="../z1/10i/38810_4.jpg" height="60"></a><a href="index.php?fotos=1638810_5&galeria=1538810"><img class="bezcienia" src="../z1/10i/38810_5.jpg" height="60"></a><a href="index.php?fotos=1638810_6&galeria=1538810"><img class="bezcienia" src="../z1/10i/38810_6.jpg" height="60"></a><a href="index.php/1538810" title="Galeria zdjęć (34)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1238810" class="jslink" onclick="pzz('trailery1238810','trailery_schowaj1238810')">pokaż</span></div></h2><div id="trailery1238810" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/aps10.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1238810" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1238810','ekipa_skrocona1238810','ekipa1238810','ekipa_schowaj1238810','ekipa_schowaj_krotki1238810','ekipa_schowaj_pelny1238810','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1238810" class="jslink" onclick="pzf('ekipa_skrocona1238810','ekipa_pelna1238810','ekipa1238810','ekipa_schowaj1238810','ekipa_schowaj_pelny1238810','ekipa_schowaj_krotki1238810','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1238810"1238810" class="jslink" onclick="pzz('ekipa1238810','ekipa_schowaj1238810')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1238810" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1238810">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1125749">Małgorzata Foremniak</a></div><div class="ekipa_opis"> Beata Kobiałka, przyjaciółka Joanny Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1156715">Piotr Żurawski</a></div><div class="ekipa_opis"> Milo Karandonis, przyjaciel Tomka Domirskiego</div><div class="ekipa_osoba"><a href="index.php/11123890">Alicja Juszkiewicz</a></div><div class="ekipa_opis"> pielęgniarka Zosia Kaczmarek, współlokatorka Mila i Tomka</div><div class="ekipa_osoba"><a href="index.php/1134708">Cezary Łukaszewicz</a></div><div class="ekipa_opis"> Daniel, partner Kamy Domirskiej</div><div class="ekipa_osoba"><a href="index.php/1145058">Krystian Wieczorek</a></div><div class="ekipa_opis"> Rafał Stec</div><div class="ekipa_osoba"><a href="index.php/11144864">Maria Grzegorczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11144865">Sara Piasta</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Borys Solecki</div><div class="ekipa_opis">&nbsp;</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1238810">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1237971" selected >1</option><option value="1237971_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1237971_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1237971_2"></a> 
+</nav><div id="czasgen">2026.05.08 01:45:55</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl </title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=02.26">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Luty</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1273129">KRUK Z TOWER (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1272930">DALEJ JAZDA! 2</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul">ORZEŁEK IGGY (film animowany)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (serial tv; TVN)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273295">OŁOWIANE DZIECI (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul" href="index.php/1271961">PIEP*ZYĆ MICKIEWICZA 3</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul" href="index.php/1273516">DODA (serial dokumentalny; Amazon Prime)</a></li>
+<li class="w1"><div class="dzien">20</div> <strong><a class="tytul" href="index.php/1269943">GLORIOUS SUMMER</a></strong></li>
+<li class="w1"><div class="dzien">20</div> <strong><a class="tytul" href="index.php/1265824">KICIA KOCIA W PODRÓŻY (film animowany)</a></strong></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul" href="index.php/1273515">MORDERCA SZYTY NA MIARĘ (serial dokumentalny; HBO Max)</a></li>
+<li class="w1"><div class="dzien">20</div> <strong><a class="tytul" href="index.php/1271315"> ZIMA POD ZNAKIEM WRONY </a></strong></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1272816">EZI (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1272813">DZIKI</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1256274">KLANGOR (seria 2; Canal+)</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1272814">KRÓLOWA MIŁOŚCI (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1273240">PSOTY</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1267070">ŻYCIE I ŚMIERCI MAXA LINDERA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1271318">HOTEL ZNP (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1267934">WIELKA WARSZAWSKA</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1270020">PAN MAMA (seria 3; TVP 2)</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul" href="index.php/1272815">DZIEŃ LISTOPADOWY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1272926">33 ZDJĘCIA Z GETTA (film dokumentalny; HBO Max)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273285">PUNKTY TKLIWE (spektakl Teatru tv; TVP Kultura)</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1273354">BAŚKA (Amazon Prime)</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1273355">BAŚKA 2 (Amazon Prime)</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271679">CHCĘ WIĘCEJ</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271647">ZAPISKI ŚMIERTELNIKA</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/115105"><img src="zmarli/MKrawczyk.jpg"><br><strong>Mirosław Krawczyk<br />(1953 - 2026)</strong></a></p>
+<br />
+<h2>Luty</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul"href="index.php/1158481">Janusz Hetman</a></li>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/116275">Jerzy Suchocki</a></li>
+<li class="w1"><div class="dzien">3</div> <a class="tytul"href="index.php/11127511">Zbigniew M. Dowgiałło</a></li>
+<li class="w1"><div class="dzien">3</div> <a class="tytul"href="index.php/11108452">Wacław Romański</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/111215">Zdzisław Kaczmarek</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/113933">Janina Borońska</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111773">Ryszard Jasiński</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/1138862">Piotr Kmiecik</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/1148274">Kazimierz Szyszka</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/117919">Tadeusz Kondziela</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul"href="index.php/1121864">Zbigniew Karpowicz</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul"href="index.php/1116017">Edward Linde-Lubaszenko</a></li>
+<li class="w1"><div class="dzien">10</div> <a class="tytul"href="index.php/1194967">Łucja Kossakowska</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1178307">Michał Frydrych</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul"href="index.php/11576">Bożena Dykiel</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul"href="index.php/1114854">Jerzy Słonka</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/11243244">Hanna Szymańska</a></li>
+<li class="w1"><div class="dzien">21</div> <strong><a class="tytul"href="index.php/115105">Mirosław Krawczyk</a></strong></li>
+<li class="w1"><div class="dzien">21</div> <strong><a class="tytul"href="index.php/1142903">Stanisław Krawczyński</a></strong></li>
+<li class="w1"><div class="dzien">21</div> <strong><a class="tytul"href="index.php/119783">Adam Sandurski</a></strong></li>
+<li class="w1"><div class="dzien">22</div> <strong><a class="tytul"href="index.php/1111527">Jolanta Szwed</a></strong></li>
+</ol>
+<h2>Styczeń</h2>
+<ol>
+<li class="w1"><div class="dzien">3</div> <a class="tytul"href="index.php/1116797">Andrzej Paczkowski</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul"href="index.php/1116455">Ewa Sałużanka</a></li>
+<li class="w1"><div class="dzien">10</div> <a class="tytul"href="index.php/115712">Maria Pakuła</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/112755">Joanna Pindelska</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul"href="index.php/1186619">Halina Filek-Marszałek</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul"href="index.php/11100696">Urszula Mazurek</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1116321">Agnieszka Byrska</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/113360">Wojciech Michniewski</a></li>
+</ol></div></div><div class="br kontener"><h1>26 lutego</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1910</span> <a href="index.php/11626">Aleksander Fogiel</a></li><li class="w1"><span class="rok">1927</span> <a href="index.php/1187882">Witold Giersz</a></li><li class="w1"><span class="rok">1973</span> <a href="index.php/1129570">Małgorzata Szumowska</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=02.26">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Luty</h2>
+<ol>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1267753">POJEDYNEK</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 18; TVP 2)</a></li>
+</ol>
+<h2>Marzec</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1273378">BEZIMIENNE DZIEŁO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 3; TV 4)</a></li>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 3; TVN)</a></li>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 5; TV 4)</a></li>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">EDYTA GÓRNIAK (film dokumentalny; SkyShowtime)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 35; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1272899">DOBRY CHŁOPIEC</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1270214">PIEKŁO KOBIET (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1270966">ZA DUŻY NA BAJKI 3</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 26; TVP 1)</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1271276">WOJNA ZASTĘPCZA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1273130">PEWNOŚĆ (spektakl Teatru tv; TVP Kultura)</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul" href="index.php/1261215">KRÓL DOPALACZY</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul" href="index.php/1271240">NIE MA DUCHÓW W MIESZKANIU NA DOBREJ</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1273288">WSZYSTKO NA SPRZEDAŻ (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">FLEAK. FUTRZAK I JA (film animowany)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul" href="index.php/1271510">TO SIĘ NIE DZIEJE</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1265139">ANIOŁ MORSKI</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273379">STARA KOBIETA WYSIADUJE (spektakl Teatru tv; TVP Kultura)</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1273381">STAN PODGORĄCZKOWY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Kwiecień</h2>
+<ol>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">MARYJA. MATKA PAPIEŻA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">PUCIO (film animowany)</a></li>
+</ol>
+<h2>Maj</h2>
+<ol>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 3 (film animowany)</a></li>
+</ol>
+<h2>Czerwiec</h2>
+<ol>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">CHŁOPIEC NA KRAŃCACH ŚWIATA (film animowany)</a></li>
+</ol>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4 (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul">NASZA REWOLUCJA</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1273520">ADAM</a></li><li><a href="index.php/1273521">DOBRE CHŁOPAKI</a></li><li><a href="index.php/1273543">VIOLETTA VILLAS</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1273520">ADAM</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1269943">GLORIOUS SUMMER</a></li><li><a href="index.php/1272899">GOOD BOY</a></li><li><a href="index.php/1261215">KRÓL DOPALACZY</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1271240">NIE MA DUCHÓW W MIESZKANIU NA DOBREJ</a></li><li><a href="index.php/1270214">PIEKŁO KOBIET</a></li><li><a href="index.php/1267753">POJEDYNEK</a></li><li><a href="index.php/1271315">WINTER OF THE CROW</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<div id="filmy_z_roku">
+
+<script type="text/javascript">
+function pokazRodzaj($rodzaj) {
+	$('#filmy_z_roku_wg_rodzajow > div').removeClass('visibletext');
+	document.getElementById($rodzaj).classList.add('visibletext');
+	$.post("fzr_rodzaj.php", {"fzr_rodzaj": $rodzaj});
+};
+</script>
+
+<div class="nawigacja"><span class="rok">Filmy z roku 1989</span><div class="nawigacja-filmyzroku"><a href="index.php?filmy_z_roku=1988&typ=2"><img src="img1/poprzedni2.png"></a>
+<form action="index.php?filmy_z_roku=d&typ=d" method="post" class="form-data">
+	<fieldset>		
+    	<input type="hidden" name="typ" value="2">
+	    <select name="rok" onchange="this.form.submit();" class="select-rok">
+<option value="1902">1902</option><option value="1908">1908</option><option value="1911">1911</option><option value="1912">1912</option><option value="1913">1913</option><option value="1914">1914</option><option value="1915">1915</option><option value="1916">1916</option><option value="1917">1917</option><option value="1918">1918</option><option value="1919">1919</option><option value="1920">1920</option><option value="1921">1921</option><option value="1922">1922</option><option value="1923">1923</option><option value="1924">1924</option><option value="1925">1925</option><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989"selected>1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2029">2029</option>    
+		</select>
+	</fieldset>
+</form>
+
+
+<a href="index.php?filmy_z_roku=1990&typ=2"><img src="img1/nastepny2.png"></a></div>  <!--nawigacja-filmyzroku-->
+</div>  <!--nawigacja-->
+
+<nav id="fzr_panel1"><span class="przelacznik activetab"><a href="index.php?filmy_z_roku=1989&typ=2&l=A">alfabetycznie</a></span><span class="przelacznik "><a href="index.php?filmy_z_roku=1989&typ=1">wg rodzajów</a></span></nav><h2><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=A">A </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=B">B </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=C">C </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=D">D </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=E">E </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=F">F </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=G">G </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=H">H </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=I">I </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=J">J </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=K">K </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=L">L </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=M">M </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=N">N </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=O">O </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=P">P </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=Q">Q </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=R">R </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=S">S </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=T">T </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=U">U </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=V">V </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=W">W </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=X">X </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=Y">Y </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=Z">Z </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=1">1 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=2">2 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=3">3 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=4">4 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=5">5 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=6">6 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=7">7 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=8">8 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=9">9 </a><a class="fzr_lit" href="index.php?filmy_z_roku=1989&typ=2&l=0">0 </a><a href="index.php?filmy_z_roku=1989&typ=2">...</a></h2><ul class="wynikifilmyzroku"><li><span class="ikony"></span><div class="tytul"><a href="index.php/4220091">.!?</a></div><div class="rodzajfilmu">Film animowany / Jacek Adamczak  Maciej Ćwiek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1261293">1 SIERPNIA</a></div><div class="rodzajfilmu">Film dokumentalny / Alina Czerniakowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4218742">1000 LAT JAZDY POLSKIEJ</a></div><div class="rodzajfilmu">Film dokumentalny / Edmund Zbigniew Szaniawski</div></li>
+<li><span class="ikony"><a href="index.php/423924" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '423924')" onmouseout="PokZdj(this, 423924)"></a></span><div class="tytul"><a href="index.php/423924">2 KOTY + 1 PIES</a></div><div class="rodzajfilmu">Serial animowany</div><div class="odcinki">CUDOWNE LEKARSTWO, SPAGHETTI</div></li>
+<li><span class="ikony"><a href="index.php/123106" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123106')" onmouseout="PokZdj(this, 123106)"></a></span><div class="tytul"><a href="index.php/123106">300 MIL DO NIEBA</a></div><div class="rodzajfilmu">Film fabularny / Maciej Dejczer</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220266">ABC... ITD</a></div><div class="rodzajfilmu">Serial animowany</div><div class="odcinki">LITERA A, LITERA B, LITERA C</div></li>
+<li><span class="ikony"><a href="index.php/128812" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '128812')" onmouseout="PokZdj(this, 128812)"></a></span><div class="tytul"><span class="tytulnieindeksowany">ACQUE DI PRIMAVERA</span> patrz <a href="index.php/128812">TORRENTS OF SPRING</a></div><div class="rodzajfilmu">Film fabularny / Jerzy Skolimowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222517">ADAM</a></div><div class="rodzajfilmu">Film dokumentalny / Franciszek Kuduk</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4217549">ADAM BIEŃ Z OSSALI</a></div><div class="rodzajfilmu">Film dokumentalny / Joanna Wierzbicka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221879">AGNIESZKA</a></div><div class="rodzajfilmu">Film dokumentalny / Grażyna Pieczuro</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522419">AKTORKI</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Feliks Falk / Sławomir Kryński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220701">ALBUM ZIEMIAN KALISKICH</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej E. Androchowicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1272934">AMERICA BLUES</a></div><div class="rodzajfilmu">Film dokumentalny / Jacek Talczewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522547">ANATOL</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Artur Schnitzler / Bogdan Hussakowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4212675">ANDRZEJ WAJDA - PORTRET</a></div><div class="rodzajfilmu">Film dokumentalny / Ewa Lachnit</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322689">APT. 113</a></div><div class="rodzajfilmu">Etiuda szkolna / Tomasz Bałuk</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322785">AURELIANO</a></div><div class="rodzajfilmu">Etiuda szkolna / Chaouki Mejeri</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4215679">AN AUSCHWITZ LOVE STORY</a></div><div class="rodzajfilmu">Film dokumentalny / Jacek Bławut  Michał Żarnecki</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">AUTOBIOGRAFIA POŚMIERTNA BRUNONA S. NAUCZYCIELA RYSUNKÓW Z MIASTA DROHOBYCZ</span> patrz <a href="index.php/522533">BRUNO</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Henryk Dederko / Henryk Dederko</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521691">AWANTURY I WYBRYKI MAŁEJ MAŁPKI FIKI-MIKI</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Kornel Makuszyński / Jan Polewka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425059">AZYL DLA WIĘKSZOŚCI</a></div><div class="rodzajfilmu">Film dokumentalny / Olaf Olszewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/125136">BABISIA</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Krzysztof Żurowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428850">BADINERIE Z II SUITY ORKIESTROWEJ H-MOLL BWV 1067</a></div><div class="rodzajfilmu">Film animowany / Maciej Ćwiek</div></li>
+<li><span class="ikony"><a href="index.php/123058" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123058')" onmouseout="PokZdj(this, 123058)"></a></span><div class="tytul"><a href="index.php/123058">BAL NA DWORCU W KOLUSZKACH</a></div><div class="rodzajfilmu">Film fabularny / Filip Bajon</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222279">BARBARZYŃCA Z PALETĄ. JÓZEF CHEŁMOŃSKI</a></div><div class="rodzajfilmu">Film dokumentalny / Maria Mrozek</div></li>
+<li><span class="ikony"><a href="index.php/1273126" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '1273126')" onmouseout="PokZdj(this, 1273126)"></a></span><div class="tytul"><a href="index.php/1273126">BIAŁA BLUZKA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Agnieszka Osiecka / Magda Umer</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425051">BO WOLNOŚĆ KRZYŻAMI SIĘ MIERZY... GENERAŁ ANDERS</a></div><div class="rodzajfilmu">Film dokumentalny / Krzysztof Szmagier</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/129061">BORIS GODUNOV</a></div><div class="rodzajfilmu">Film fabularny / Andrzej Żuławski</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">BORYS GODUNOW</span> patrz <a href="index.php/129061">BORIS GODUNOV</a></div><div class="rodzajfilmu">Film fabularny / Andrzej Żuławski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522034">BÓG</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Woody Allen / Wojciech Biedroń</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425061">"BÓG STWORZYŁ ŚWIAT I DAŁ GO CZŁOWIEKOWI"</a></div><div class="rodzajfilmu">Film dokumentalny / Roman Dębski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522533">BRUNO</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Henryk Dederko / Henryk Dederko</div></li>
+<li><span class="ikony"><a href="index.php/322432" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '322432')" onmouseout="PokZdj(this, 322432)"></a></span><div class="tytul"><a href="index.php/322432">BUMERANG</a></div><div class="rodzajfilmu">Etiuda szkolna / Marcin Ziębiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/327930">BYĆ KOBIETĄ</a></div><div class="rodzajfilmu">Etiuda szkolna / Grzegorz Kruszewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1214101">BYE BYE CHAPERON ROUGE</a></div><div class="rodzajfilmu">Film fabularny / Marta Meszaros</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323160">THE CAGE OF THE TIGER</a></div><div class="rodzajfilmu">Etiuda szkolna / Grzegorz Kempinsky</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1242102">LES CAVALIERS DE L'ORAGE</a></div><div class="rodzajfilmu">Film dokumentalny / Edward Porembny</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325835">CHANDRA. NOŻE W NASZYCH</a></div><div class="rodzajfilmu">Etiuda szkolna / Tomasz Czerniejewski</div></li>
+<li><span class="ikony"><a href="index.php/123089" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123089')" onmouseout="PokZdj(this, 123089)"></a></span><div class="tytul"><a href="index.php/123089">CHCE MI SIĘ WYĆ</a></div><div class="rodzajfilmu">Film fabularny / Jacek Skalski</div></li>
+<li><span class="ikony"><a href="index.php/521671" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '521671')" onmouseout="PokZdj(this, 521671)"></a></span><div class="tytul"><a href="index.php/521671">CHŁODNA JESIEŃ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Eustachy Rylski / Janusz Zaorski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322790">CHŁÓD</a></div><div class="rodzajfilmu">Etiuda szkolna / Urszula Urbaniak</div></li>
+<li><span class="ikony"><a href="index.php/125148" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '125148')" onmouseout="PokZdj(this, 125148)"></a></span><div class="tytul"><a href="index.php/125148">CHWILA</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Waldemar Śmigasiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425055">CICHOCIEMNI</a></div><div class="rodzajfilmu">Film dokumentalny / Marek Widarski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325672">CIEMNOŚCI KRYJĄ ZIEMIĘ</a></div><div class="rodzajfilmu">Etiuda szkolna / Grzegorz Kruszewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325718">CO JA BYM ZROBIŁ NA TRZEŹWO ?</a></div><div class="rodzajfilmu">Etiuda szkolna / Mariusz Michalik</div></li>
+<li><span class="ikony"><a href="index.php/122943" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '122943')" onmouseout="PokZdj(this, 122943)"></a></span><div class="tytul"><a href="index.php/122943">CO LUBIĄ TYGRYSY</a></div><div class="rodzajfilmu">Film fabularny / Krzysztof Nowak</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425067">COLLAGE PĘDZLEM MALOWANY</a></div><div class="rodzajfilmu">Film animowany / Zbigniew Kotecki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322876">CONCERTO GROSSO</a></div><div class="rodzajfilmu">Etiuda szkolna / Tomasz Dobrowolski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/125116">COŚ FANTASTYCZNEGO</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Michał Juszczakiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522344">CYGANERIA WARSZAWSKA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Adolf Nowaczyński / Krzysztof Rościszewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522032">CYKLOP</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Władysław Terlecki / Izabella Cywińska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522030">CYLINDER</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Eduardo De Filippo / Tadeusz Junak</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4217718">CYWILIZACJA</a></div><div class="rodzajfilmu">Serial animowany</div><div class="odcinki">KOŁO, MODA, ZBOŻE, ROPA NAFTOWA</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323156">CZARNA GÓRA</a></div><div class="rodzajfilmu">Etiuda szkolna / Maria Warsiński</div></li>
+<li><span class="ikony"><a href="index.php/122995" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '122995')" onmouseout="PokZdj(this, 122995)"></a></span><div class="tytul"><a href="index.php/122995">CZARNY WĄWÓZ</a></div><div class="rodzajfilmu">Film fabularny / Janusz Majewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220272">CZARODZIEJSKIE GARNKI</a></div><div class="rodzajfilmu">Film animowany / Roman Huszczo</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">CZERWONY KAPTUREK I WILK</span> patrz <a href="index.php/1214101">BYE BYE CHAPERON ROUGE</a></div><div class="rodzajfilmu">Film fabularny / Marta Meszaros</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/423421">CZUWANIE</a></div><div class="rodzajfilmu">Film dokumentalny / Ignacy Szczepański</div></li>
+<li><span class="ikony"><a href="index.php/322755" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322755">ĆWICZENIE DOKUMENTALNE</a></div><div class="rodzajfilmu">Etiuda szkolna / Ewa Gaulis</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325727">DAŁA ŻYCIE . . .</a></div><div class="rodzajfilmu">Etiuda szkolna / Maria Warsiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/423387">DEFILADA</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Fidyk</div></li>
+<li><span class="ikony"><a href="index.php/123112" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123112')" onmouseout="PokZdj(this, 123112)"></a></span><div class="tytul"><a href="index.php/123112">DEJA VU</a></div><div class="rodzajfilmu">Film fabularny / Juliusz Machulski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522544">DIABOLIADA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Michaił Bułhakow / Waldemar Śmigasiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4216072">DIASPORA</a></div><div class="rodzajfilmu">Cykl dokumentalny / Leopold Rene Nowak</div><div class="odcinki">EPILOG</div></li>
+<li><span class="ikony"><a href="index.php/322691" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322691">DISCOPATIA</a></div><div class="rodzajfilmu">Etiuda szkolna / Piotr Trzaskalski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221679">DNO PIEKŁA</a></div><div class="rodzajfilmu">Film dokumentalny / Maciej Sieński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/424993">DO BRONI</a></div><div class="rodzajfilmu">Film dokumentalny / Tomasz Wiszniewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521065">DO PIACHU...</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Tadeusz Różewicz / Kazimierz Kutz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1252738">DROGA DO ŚRODKA</a></div><div class="rodzajfilmu">Film dokumentalny / Dariusz Król</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427300">DRZWI</a></div><div class="rodzajfilmu">Serial animowany</div><div class="odcinki">DRZWI 15, DRZWI 16</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521692">DRZWI MUSZĄ BYĆ ALBO OTWARTE, ALBO ZAMKNIĘTE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Alfred de Musset / Michał Kwieciński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522549">DWAJ PANOWIE B. CZYLI JEJ PIERWSZY KOCHANEK</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Marian Hemar / Janusz Majewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325713">DWOJE PISARZY</a></div><div class="rodzajfilmu">Etiuda szkolna / Zdzisław Styś</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522539">DZIECI ARBATU</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Anatolij Rybakow / Kazimierz Kutz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/42129">DZIEJE KULTURY POLSKIEJ</a></div><div class="rodzajfilmu">Cykl dokumentalny / Jan Jakub Kolski  Leszek Skrzydło  Andrzej Sapija</div><div class="odcinki">KRZYWOUSTY I JEGO SYNOWIE</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/124700">DZIEŃ DOBRY I DO WIDZENIA</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Andrzej Domalik</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428679">DZIESIĘĆ SIOSTRZYCZEK</a></div><div class="rodzajfilmu">Film animowany / Janusz Galewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4217609">DZWONY ŚW. KATARZYNY</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Soroczyński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325789">EASILY HAD</a></div><div class="rodzajfilmu">Etiuda szkolna / Bartłomiej Maj</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325701">ELEGIA DLA JEDNEJ PANI</a></div><div class="rodzajfilmu">Etiuda szkolna / Dariusz Jabłoński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221051">EPIZOD Z ŻYCIA ARTYSTKI...</a></div><div class="rodzajfilmu">Film dokumentalny / Stanisław Trzaska</div></li>
+<li><span class="ikony"><a href="index.php/322796" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322796">ERITIS SICUT DEUS</a></div><div class="rodzajfilmu">Etiuda szkolna / Natasza Ziółkowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221267">FELEK TRĄBKA</a></div><div class="rodzajfilmu">Film animowany / Witold Giersz</div><div class="odcinki">FAJKA, ŚWIECA, OGNISKO, PIORUNOCHRON</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219647">FINAŁ</a></div><div class="rodzajfilmu">Film animowany / Krzysztof Dębowski</div></li>
+<li><span class="ikony"><a href="index.php/123118" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123118')" onmouseout="PokZdj(this, 123118)"></a></span><div class="tytul"><a href="index.php/123118">GALIMATIAS CZYLI KOGEL-MOGEL II</a></div><div class="rodzajfilmu">Film fabularny / Roman Załuski</div></li>
+<li><span class="ikony"><a href="index.php/126219" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '126219')" onmouseout="PokZdj(this, 126219)"></a></span><div class="tytul"><a href="index.php/126219">GDAŃSK 39</a></div><div class="rodzajfilmu">Serial fabularny / Zbigniew Kuźmiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522530">GDZIE DIABEŁ NIE MOŻE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Roman Niewiarowicz / Janusz Kidawa</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427309">GENERACJA</a></div><div class="rodzajfilmu">Film animowany / Krzysztof Kiwerski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4214736">GENEZA I ROZWÓJ BAZYLIKI</a></div><div class="rodzajfilmu">Film dokumentalny / Antoni Orwiński</div></li>
+<li><span class="ikony"><a href="index.php/123393" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123393')" onmouseout="PokZdj(this, 123393)"></a></span><div class="tytul"><a href="index.php/123393">GŁUCHY TELEFON</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Piotr Mikucki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4213112">GNIEZNO ZNACZY GNIAZDO</a></div><div class="rodzajfilmu">Film dokumentalny / Leszek Skrzydło</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/127096">GORYL, CZYLI OSTATNIE ZADANIE...</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Janusz Zaorski</div></li>
+<li><span class="ikony"><a href="index.php/123174" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123174')" onmouseout="PokZdj(this, 123174)"></a></span><div class="tytul"><a href="index.php/123174">GORZKA MIŁOŚĆ</a></div><div class="rodzajfilmu">Film fabularny / Czesław Petelski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/124703">GORZKA MIŁOŚĆ</a></div><div class="rodzajfilmu">Serial fabularny / Czesław Petelski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428672">GOŚCIE W GLINIANYM GARNKU</a></div><div class="rodzajfilmu">Film animowany / Lucjan Dembiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/423395">GÓRNICY '88</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Piekutowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220275">GRAND PRIX</a></div><div class="rodzajfilmu">Film animowany / Stefan Szwakopf</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219745">GRANICA</a></div><div class="rodzajfilmu">Film dokumentalny / Maria Zmarz-Koczanowicz  Dorota Wardęszkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427311">GRUNT TO ZDROWIE</a></div><div class="rodzajfilmu">Film animowany / Krzysztof Raynoch</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522525">HISTORIA WITOLDA GOMBROWICZA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Waldemar Żyszkiewicz / Andrzej Maj</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522527">HISTORIA Z METRAMPAŻEM</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Aleksander Wampiłow / Andrzej Rozhin</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522535">IDĘ ŁĄKO KU TOBIE CZYLI IŁŻECKI ROMANS B. LEŚMIANA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Andrzej Maj</div></li>
+<li><span class="ikony"><a href="index.php/521772" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '521772')" onmouseout="PokZdj(this, 521772)"></a></span><div class="tytul"><a href="index.php/521772">IDZIEMY DO WUJKA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Jerzy Zawieyski / Zdzisław Wardejn</div></li>
+<li><span class="ikony"><a href="index.php/423377" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '423377')" onmouseout="PokZdj(this, 423377)"></a></span><div class="tytul"><a href="index.php/423377">IDŹ</a></div><div class="rodzajfilmu">Film dokumentalny / Grzegorz Królikiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322775">ILD</a></div><div class="rodzajfilmu">Etiuda szkolna / Ellen Sophie Lande</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/423424">ILINX</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Kraszewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427312">IMAGES</a></div><div class="rodzajfilmu">Film animowany / Agnieszka Ziobrowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521693">INDYK</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Sławomir Mrożek / Maciej Wojtyszko</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4223686">THE ISLAND</a></div><div class="rodzajfilmu">Film dokumentalny / Tadeusz Jaworski</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">JA, GOMBROWICZ</span> patrz <a href="index.php/4218814">MOI, GOMBROWICZ</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Wolski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522512">JACOBOWSKY I PUŁKOWNIK</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Franz Werfel / Edward Dziewoński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522510">JACUŚ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Edward Lubowski / Janusz Bukowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1247466">JAK ORŁY...</a></div><div class="rodzajfilmu">Film dokumentalny / Włodzimierz Stępiński</div></li>
+<li><span class="ikony"><a href="index.php/124599" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '124599')" onmouseout="PokZdj(this, 124599)"></a></span><div class="tytul"><a href="index.php/124599">JANKA</a></div><div class="rodzajfilmu">Serial fabularny / Janusz Łęski  Adam Iwiński</div></li>
+<li><span class="ikony"><a href="index.php/124599" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '124599')" onmouseout="PokZdj(this, 124599)"></a></span><div class="tytul"><span class="tytulnieindeksowany">JANNA</span> patrz <a href="index.php/124599">JANKA</a></div><div class="rodzajfilmu">Serial fabularny / Janusz Łęski  Adam Iwiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325795">JASNOŚĆ</a></div><div class="rodzajfilmu">Etiuda szkolna / Piotr Trzaskalski</div></li>
+<li><span class="ikony"><a href="index.php/123250" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123250')" onmouseout="PokZdj(this, 123250)"></a></span><div class="tytul"><a href="index.php/123250">JASTRZĘBIA MĄDROŚĆ</a></div><div class="rodzajfilmu">Film fabularny / Vladimir Drha</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322589">JATKA</a></div><div class="rodzajfilmu">Etiuda szkolna / Paweł Łoziński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322760">JAZDA</a></div><div class="rodzajfilmu">Etiuda szkolna / Jerzy Salamon</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1235485">JEDNA Z ŻOŁNIERSKICH DRÓG</a></div><div class="rodzajfilmu">Film dokumentalny / Ludomir Motylski</div></li>
+<li><span class="ikony"><a href="index.php/122997" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '122997')" onmouseout="PokZdj(this, 122997)"></a></span><div class="tytul"><a href="index.php/122997">JENIEC EUROPY</a></div><div class="rodzajfilmu">Film fabularny / Jerzy Kawalerowicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521770">JESIENNE MANEWRY</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Peter Coke / Krzysztof Szuster</div></li>
+<li><span class="ikony"><a href="index.php/123250" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123250')" onmouseout="PokZdj(this, 123250)"></a></span><div class="tytul"><span class="tytulnieindeksowany">JESTRABI MOUDROST</span> patrz <a href="index.php/123250">JASTRZĘBIA MĄDROŚĆ</a></div><div class="rodzajfilmu">Film fabularny / Vladimir Drha</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322792">JEZUSOWI JEST ZIMNO</a></div><div class="rodzajfilmu">Etiuda szkolna / Mariusz Grzegorzek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4213662">JÓZEF CZAPSKI - ŚWIADEK HISTORII</a></div><div class="rodzajfilmu">Film dokumentalny / Ewa Cendrowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428673">KACZOREK FELUŚ</a></div><div class="rodzajfilmu">Film animowany / Wadim Berestowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221243">KALEIDOSCOPE DE PARIS</a></div><div class="rodzajfilmu">Film dokumentalny / Piotr Weychert</div></li>
+<li><span class="ikony"><a href="index.php/4214734" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '4214734')" onmouseout="PokZdj(this, 4214734)"></a></span><div class="tytul"><a href="index.php/4214734">KALISZ POPRZEZ WIEKI</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej B. Czulda</div></li>
+<li><span class="ikony"><a href="index.php/124829" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '124829')" onmouseout="PokZdj(this, 124829)"></a></span><div class="tytul"><a href="index.php/124829">KANCLERZ</a></div><div class="rodzajfilmu">Serial fabularny / Ryszard Ber</div></li>
+<li><span class="ikony"><a href="index.php/123135" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123135')" onmouseout="PokZdj(this, 123135)"></a></span><div class="tytul"><a href="index.php/123135">KAPITAŁ, CZYLI JAK ZROBIĆ PIENIĄDZE W POLSCE...</a></div><div class="rodzajfilmu">Film fabularny / Feliks Falk</div></li>
+<li><span class="ikony"><a href="index.php/322833" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322833">KARTKI 89</a></div><div class="rodzajfilmu">Etiuda szkolna / Witold Iwaszkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/126992">KAWALERKI</a></div><div class="rodzajfilmu">Cykl fabularny</div><div class="odcinki">BABISIA, COŚ FANTASTYCZNEGO, SŁODKIEGO, MIŁEGO ŻYCIA, YACHT, CHWILA</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1232584">KIERUNEK - BRAZYLIA!</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Chiczewski</div></li>
+<li><span class="ikony"><a href="index.php/322887" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322887">KILKA PRZYPADKÓW</a></div><div class="rodzajfilmu">Etiuda szkolna / Robert Kaczmarek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322889">KINEZA</a></div><div class="rodzajfilmu">Etiuda szkolna / Andrzej Wojciechowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">KLATKA TYGRYSA</span> patrz <a href="index.php/323160">THE CAGE OF THE TIGER</a></div><div class="rodzajfilmu">Etiuda szkolna / Grzegorz Kempinsky</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/52893">KOCHANE MALEŃSTWA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Randa Lemoine / Maciej Leszczyński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1234166">KOCHANY TATUSIU...</a></div><div class="rodzajfilmu">Film dokumentalny / Blanka Danilewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4217736">KOLOROWA ŁĄKA</a></div><div class="rodzajfilmu">Serial animowany / Edward Wątor</div><div class="odcinki">SKRZYPCE PASIKONIKA, PAŹ KRÓLOWEJ</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322835">KOŁYSANKA</a></div><div class="rodzajfilmu">Etiuda szkolna / Rafael Marziano-Tinoco</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4217573">KOŁYSANKA Z ŁEZKĄ</a></div><div class="rodzajfilmu">Film animowany / Aniela Lubieniecka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222412">KOMAR I ORKIESTRA</a></div><div class="rodzajfilmu">Film animowany / Józef Byrdy</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522028">KONCERT ŚWIĘTEGO OWIDIUSZA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Antonio Buero Vallejo / Piotr Mikucki</div></li>
+<li><span class="ikony"><a href="index.php/122967" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '122967')" onmouseout="PokZdj(this, 122967)"></a></span><div class="tytul"><a href="index.php/122967">KONSUL</a></div><div class="rodzajfilmu">Film fabularny / Mirosław Bork</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521694">KONTRAKT</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Sławomir Mrożek / Kazimierz Dejmek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325963">KONTROLA</a></div><div class="rodzajfilmu">Etiuda szkolna / Piotr Kuziński</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">KROPKA, WYKRZYKNIK, ZNAK ZAPYTANIA</span> patrz <a href="index.php/4220091">.!?</a></div><div class="rodzajfilmu">Film animowany / Jacek Adamczak  Maciej Ćwiek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4223716">KRÓL BASÓW. BERNARD ŁADYSZ</a></div><div class="rodzajfilmu">Film dokumentalny / Anna Brzozowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4217550">KRWAWA IŁAWA</a></div><div class="rodzajfilmu">Film dokumentalny / Joanna Wierzbicka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325698">KRZYSZTOF KĄKOLEWSKI</a></div><div class="rodzajfilmu">Etiuda szkolna / Grażyna Szynkiewicz-Kruszewska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4213113">KRZYWOUSTY I JEGO SYNOWIE</a></div><div class="rodzajfilmu">Film dokumentalny / Leszek Skrzydło</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219763">KTO TY JESTEŚ...</a></div><div class="rodzajfilmu">Film dokumentalny / Janusz Chodnikiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322869">KTO ZABIŁ MOJĄ MAMĘ?</a></div><div class="rodzajfilmu">Etiuda szkolna / Marcin Ziębiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1231608">KUBA</a></div><div class="rodzajfilmu">Cykl dokumentalny / Tadeusz Kraśko</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522540">KWARTET</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Tomasz Zygadło / Tomasz Zygadło</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322884">KWK - WUJEK</a></div><div class="rodzajfilmu">Etiuda szkolna / Andrzej Gajewski</div></li>
+<li><span class="ikony"><a href="index.php/122997" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '122997')" onmouseout="PokZdj(this, 122997)"></a></span><div class="tytul"><span class="tytulnieindeksowany">L' OTAGE DE L' EUROPE</span> patrz <a href="index.php/122997">JENIEC EUROPY</a></div><div class="rodzajfilmu">Film fabularny / Jerzy Kawalerowicz</div></li>
+<li><span class="ikony"><a href="index.php/12298" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a><a href="index.php/12298" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '12298')" onmouseout="PokZdj(this, 12298)"></a></span><div class="tytul"><a href="index.php/12298">LAWA</a></div><div class="rodzajfilmu">Film fabularny / Tadeusz Konwicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220051">LEBENSTEIN</a></div><div class="rodzajfilmu">Film dokumentalny / Joanna Żamojdo</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1272337">LEGENDA PAMIĘCI JÓZEFA PIŁSUDSKIEGO</a></div><div class="rodzajfilmu">Film dokumentalny / Mikołaj Haremski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1264055">LEKARZ TRZECH POKOLEŃ</a></div><div class="rodzajfilmu">Film dokumentalny / Lena Skwirtniańska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428666">LEŚNY KONKURS</a></div><div class="rodzajfilmu">Film animowany / Teresa Puchowska-Sturlis</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322885">LINIA ŻYCIA</a></div><div class="rodzajfilmu">Etiuda szkolna / Witold Świętnicki</div></li>
+<li><span class="ikony"><a href="index.php/4214735" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '4214735')" onmouseout="PokZdj(this, 4214735)"></a></span><div class="tytul"><a href="index.php/4214735">LUBLIN MOJE MIASTO</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej B. Czulda</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1251780">LUDZIE CESARZA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Zygmunt Hubner / Marek Okopiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220864">LUNAPARK</a></div><div class="rodzajfilmu">Film animowany / Kazimierz Urbański</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325992">ŁÓDŹ FABRYCZNA</a></div><div class="rodzajfilmu">Etiuda szkolna / Witold Iwaszkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325552">ŁÓDŹ, LIPIEC 1989</a></div><div class="rodzajfilmu">Etiuda szkolna / Robert Moroń</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425000">MAJOR ALBO REWOLUCJA KRASNOLUDKÓW</a></div><div class="rodzajfilmu">Film dokumentalny / Maria Zmarz-Koczanowicz</div></li>
+<li><span class="ikony"><a href="index.php/421633" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '421633')" onmouseout="PokZdj(this, 421633)"></a></span><div class="tytul"><a href="index.php/421633">MAŁY PINGWIN PIK-POK</a></div><div class="rodzajfilmu">Serial animowany / Eugeniusz Ignaciuk i in.</div><div class="odcinki">SPOTKANIE Z WIELORYBEM (1), LATAJĄCY PINGWIN (2), UKARANE ŁAKOMSTWO (3), FIOŁKI I SŁOWIKI (4), W NIEWOLI U RYBAKA (5), LODY PINGWIN (6), WIZYTA W ZOO (7), KOLEGA KIWI (8), ZGUBIONY KLUCZ (9), PODWIECZOREK Z KROKODYLEM (10)</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219990">MAŁY STRES</a></div><div class="rodzajfilmu">Film dokumentalny / Michał Bukojemski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522536">MAŁŻEŃSTWO MARII KOWALSKIEJ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Maria Nurowska / Piotr Cieślak</div></li>
+<li><span class="ikony"><a href="index.php/123162" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123162')" onmouseout="PokZdj(this, 123162)"></a></span><div class="tytul"><a href="index.php/123162">MARCOWE MIGDAŁY</a></div><div class="rodzajfilmu">Film fabularny / Radosław Piwowarski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428592">MAURYCY I HAWRANEK</a></div><div class="rodzajfilmu">Serial animowany / Marian Kiełbaszczak i in.</div><div class="odcinki">SPOSÓB NA MRÓWKI (7), PIĄTA KLEPKA (8), PLIMPLAN (9), URODZINY (10), PUŁAPKA (11)</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/125648">MEFISTO WALC</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Marek Wortman</div></li>
+<li><span class="ikony"><a href="index.php/129069" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '129069')" onmouseout="PokZdj(this, 129069)"></a></span><div class="tytul"><a href="index.php/129069">MES NUITS SONT PLUS BELLES QUE VOS JOURS</a></div><div class="rodzajfilmu">Film fabularny / Andrzej Żuławski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322764">MILCZENIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Natasza Ziółkowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522466">MILCZENIE MORZA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Jean Bruller / Jan Bratkowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/525111">MISSA PAGANA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Edward Stachura / Krzysztof Bukowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522468">MISTERIUM WIELKANOCNE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Leon Schiller / Jan Skotnicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325964">MODEL</a></div><div class="rodzajfilmu">Etiuda szkolna / Andrzej Musiał</div></li>
+<li><span class="ikony"><a href="index.php/123358" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123358')" onmouseout="PokZdj(this, 123358)"></a></span><div class="tytul"><a href="index.php/123358">MODRZEJEWSKA</a></div><div class="rodzajfilmu">Serial fabularny / Jan Łomnicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4218814">MOI, GOMBROWICZ</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Wolski</div></li>
+<li><span class="ikony"><a href="index.php/129069" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '129069')" onmouseout="PokZdj(this, 129069)"></a></span><div class="tytul"><span class="tytulnieindeksowany">MOJE NOCE SĄ PIĘKNIEJSZE NIŻ TWOJE DNI</span> patrz <a href="index.php/129069">MES NUITS SONT PLUS BELLES QUE VOS JOURS</a></div><div class="rodzajfilmu">Film fabularny / Andrzej Żuławski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427314">MÓJ PORTRET</a></div><div class="rodzajfilmu">Film krótkometrażowy / Andrzej Warchał</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322891">MROK</a></div><div class="rodzajfilmu">Etiuda szkolna / Jacek Łechtański</div></li>
+<li><span class="ikony"><a href="index.php/323002" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/323002">MSP</a></div><div class="rodzajfilmu">Etiuda szkolna / Rafał Mierzejewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325909">MYJNIA</a></div><div class="rodzajfilmu">Etiuda szkolna / Andreas Glatzel</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322798">NA ROGU</a></div><div class="rodzajfilmu">Etiuda szkolna / Jerzy Salamon</div></li>
+<li><span class="ikony"><a href="index.php/322892" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322892">NADZIEJA</a></div><div class="rodzajfilmu">Etiuda szkolna / Faycal Hassairi</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1240325">NANDA DEVI BOGINI ZWYCIĘSTWA</a></div><div class="rodzajfilmu">Film dokumentalny / Anna Teresa Pietraszek</div></li>
+<li><span class="ikony"><a href="index.php/322784" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '322784')" onmouseout="PokZdj(this, 322784)"></a></span><div class="tytul"><a href="index.php/322784">NAPRZÓD!</a></div><div class="rodzajfilmu">Etiuda szkolna / Wanda Pietrzak</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522501">NARODZINY I DZIEJE LEGENDY CZYLI RZECZ O...</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Franciszek Ziejka / Stefan Szlachtycz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427316">NASZ NOWY HYMN</a></div><div class="rodzajfilmu">Film animowany / Józef Dutkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522538">NASZ SKŁAD</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Ludmiła Pietruszewska / Jan Buchwald</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219438">NAUKA I LEGENDA</a></div><div class="rodzajfilmu">Cykl animowany</div><div class="odcinki">O SZLACHETNYM HORUSIE I ZŁYM SECIE</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4214098">NEW JAZZ MEETING</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Wasylewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/423271">NIECH TAM ZOSTANIE!</a></div><div class="rodzajfilmu">Film fabularny - krótkometrażowy / Ryszard Moch</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521677">NIGDY WIĘCEJ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / John Whiting / Krzysztof Nazar</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4211822">" NIM SŁOŃCE WEJDZIE..."</a></div><div class="rodzajfilmu">Film dokumentalny / Jerzy Sztwiertnia</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323206">NOCLEG</a></div><div class="rodzajfilmu">Etiuda szkolna / Kamil Turowski</div></li>
+<li><span class="ikony"><a href="index.php/123157" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123157')" onmouseout="PokZdj(this, 123157)"></a></span><div class="tytul"><a href="index.php/123157">NOCNY GOŚĆ</a></div><div class="rodzajfilmu">Film fabularny / Stanisław Różewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522511">NORMALNE SERCE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Larry Kramer / Grzegorz Mrówczyński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325786">NOWA</a></div><div class="rodzajfilmu">Etiuda szkolna / Jacek Łechtański</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/424056">O DWÓCH TAKICH CO UKRADLI KSIĘŻYC</a></div><div class="rodzajfilmu">Serial animowany / Leszek Marek Gałysz</div><div class="odcinki">POWRÓT (4)</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219440">O SZLACHETNYM HORUSIE I ZŁYM SECIE</a></div><div class="rodzajfilmu">Film animowany / Czesława Stefańska</div></li>
+<li><span class="ikony"><a href="index.php/322894" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322894">OCZEKIWANIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Urszula Urbaniak</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/125921">ODBICIA</a></div><div class="rodzajfilmu">Serial fabularny / Jakub Z. Ruciński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/424992">ODLOT</a></div><div class="rodzajfilmu">Film dokumentalny / Maria Oberman</div></li>
+<li><span class="ikony"><a href="index.php/127245" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '127245')" onmouseout="PokZdj(this, 127245)"></a></span><div class="tytul"><a href="index.php/127245">OKO CYKLONU</a></div><div class="rodzajfilmu">Film fabularny / Henry Kostrubiec</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425968">OKRĄGŁY STÓŁ. POLSKA EWOLUCJA 1989 ROKU</a></div><div class="rodzajfilmu">Film dokumentalny / Tadeusz Pałka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220274">OŁOWIANY ŻOŁNIERZYK</a></div><div class="rodzajfilmu">Film animowany / Jerzy Kruczkowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221015">OPOWIEŚCI OKRĄGŁEGO STOŁU</a></div><div class="rodzajfilmu">Film dokumentalny / Piotr Bikont</div></li>
+<li><span class="ikony"><a href="index.php/12298" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a><a href="index.php/12298" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '12298')" onmouseout="PokZdj(this, 12298)"></a></span><div class="tytul"><span class="tytulnieindeksowany">OPOWIEŚĆ O "DZIADACH" ADAMA MICKIEWICZA</span> patrz <a href="index.php/12298">LAWA</a></div><div class="rodzajfilmu">Film fabularny / Tadeusz Konwicki</div></li>
+<li><span class="ikony"><a href="index.php/123049" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123049')" onmouseout="PokZdj(this, 123049)"></a></span><div class="tytul"><a href="index.php/123049">OSTATNI DZWONEK</a></div><div class="rodzajfilmu">Film fabularny / Magdalena Łazarkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1233865">OSTATNI LEGIONIŚCI</a></div><div class="rodzajfilmu">Film dokumentalny / Alina Czerniakowska</div></li>
+<li><span class="ikony"><a href="index.php/123122" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123122')" onmouseout="PokZdj(this, 123122)"></a></span><div class="tytul"><a href="index.php/123122">OSTATNI PROM</a></div><div class="rodzajfilmu">Film fabularny / Waldemar Krzystek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521695">OSTATNIA TAŚMA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Samuel Beckett / Antoni Libera</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322899">OSTATNIA WOLA</a></div><div class="rodzajfilmu">Etiuda szkolna / Athanasios Nasos Sklias</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522431">OSTATNIE LATO ALBO PIERWSZA PIECZĘĆ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Jacek Antoni Zieliński / Mikołaj Grabowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323106">OSTATNIE ŚNIADANIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Faycal Hassairi</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521696">PALCEM PO MAPIE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Barbara Borys-Damięcka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522517">PAN INSPEKTOR PRZYSZEDŁ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / John Boynton Priestley / Konrad Szołajski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521806">PARA ZA PARĄ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Andrzej Zakrzewski</div></li>
+<li><span class="ikony"><a href="index.php/325790" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/325790">PAROWE OSTATKI</a></div><div class="rodzajfilmu">Etiuda szkolna / Janusz Kasprzak</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322840">PASOS</a></div><div class="rodzajfilmu">Etiuda szkolna / Ellen Sophie Lande</div></li>
+<li><span class="ikony"><a href="index.php/126025" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '126025')" onmouseout="PokZdj(this, 126025)"></a></span><div class="tytul"><a href="index.php/126025">PAZIOWIE</a></div><div class="rodzajfilmu">Serial fabularny / Grzegorz Warchoł</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522542">PIĄTEK, DZIEŃ MIŁOŚCI</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Hugo Claus / Magdalena Łazarkiewicz</div></li>
+<li><span class="ikony"><a href="index.php/325791" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/325791">PIĄTKOWE WYDARZENIA</a></div><div class="rodzajfilmu">Etiuda szkolna / Rainer Schaupp</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322845">PIEKŁO I NIEBO</a></div><div class="rodzajfilmu">Etiuda szkolna / Tomasz Dobrowolski</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">PIERWSZY SIERPNIA</span> patrz <a href="index.php/1261293">1 SIERPNIA</a></div><div class="rodzajfilmu">Film dokumentalny / Alina Czerniakowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4210963">PIOTR MICHAŁOWSKI</a></div><div class="rodzajfilmu">Film dokumentalny - fabularyzowany / Paweł Unrug</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">PIROSKA ES FARKAS</span> patrz <a href="index.php/1214101">BYE BYE CHAPERON ROUGE</a></div><div class="rodzajfilmu">Film fabularny / Marta Meszaros</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425510">PLASTELINKI</a></div><div class="rodzajfilmu">Serial animowany</div><div class="odcinki">LUSTRO (14)</div></li>
+<li><span class="ikony"><a href="index.php/322910" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322910">PO MIEŚCIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Robert Moroń</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1263294">PO PROSTU TRUTEŃ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Bruno Winawer / Marek Nowicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/123204">PO UPADKU</a></div><div class="rodzajfilmu">Film fabularny / Andrzej Trzos-Rastawiecki</div></li>
+<li><span class="ikony"><a href="index.php/123520" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123520')" onmouseout="PokZdj(this, 123520)"></a></span><div class="tytul"><a href="index.php/123520">PO WŁASNYM POGRZEBIE</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Stanisław Jędryka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325974">POCZĄTEK</a></div><div class="rodzajfilmu">Etiuda szkolna / Dariusz Kuciewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4215968">POCZTA LOTNICZA</a></div><div class="rodzajfilmu">Film animowany / Andrzej Barański</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1247652">PODRÓŻE DO BAJEK</a></div><div class="rodzajfilmu">Serial animowany / Aleksandra Magnuszewska-Oczko i in.</div><div class="odcinki">...O RYBAKU (1), KSIĘŻNICZKA I... SMOK (2)</div></li>
+<li><span class="ikony"><a href="index.php/4212482" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '4212482')" onmouseout="PokZdj(this, 4212482)"></a></span><div class="tytul"><a href="index.php/4212482">PODRÓŻE KAPITANA KLIPERA</a></div><div class="rodzajfilmu">Serial animowany</div><div class="odcinki">FAWORYT CESARZA, ZŁOTO NA PIASKU, 99 WĘZŁÓW</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4212210">POETA SZCZĘŚLIWY</a></div><div class="rodzajfilmu">Film dokumentalny / Marian Kubera</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325712">POKÓJ</a></div><div class="rodzajfilmu">Etiuda szkolna / Andrzej Gajewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1236032">POLE CHWAŁY</a></div><div class="rodzajfilmu">Film dokumentalny / Mieczysław Siemieński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522469">POLKA PROSTO Z KRAJU</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Stanisław Baliński / Anna Minkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4213664">POLSKIE ŚLADY POD PINIORAMI</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Chiczewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428677">POMOCNIK</a></div><div class="rodzajfilmu">Film animowany / Wacław Fedak</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522541">PONAD ŚNIEG BIELSZYM SIĘ STANĘ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Stefan Żeromski / Krzysztof Babicki</div></li>
+<li><span class="ikony"><a href="index.php/123094" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123094')" onmouseout="PokZdj(this, 123094)"></a></span><div class="tytul"><a href="index.php/123094">PORNO</a></div><div class="rodzajfilmu">Film fabularny / Marek Koterski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219736">POSPOLITE RUSZENIE KOŚCIOŁÓW</a></div><div class="rodzajfilmu">Film dokumentalny / Michał Góral</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322999">POSZUKIWANIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Stefan Nitosławski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427473">POWOLNY DOJAZD DO CENTRUM MIASTA</a></div><div class="rodzajfilmu">Film animowany / Andrzej Warchał</div></li>
+<li><span class="ikony"><a href="index.php/127301" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '127301')" onmouseout="PokZdj(this, 127301)"></a></span><div class="tytul"><a href="index.php/127301">POWROTY</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Andrzej Mol</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/326002">POWRÓT</a></div><div class="rodzajfilmu">Etiuda szkolna / Witold Iwaszkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">POWRÓT ARSENA LUPIN</span> patrz <a href="index.php/129664">LE RETOUR D'ARSENE LUPIN</a></div><div class="rodzajfilmu">Serial fabularny</div></li>
+<li><span class="ikony"><a href="index.php/323738" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/323738">POWRÓT DO "EDENU"</a></div><div class="rodzajfilmu">Etiuda szkolna / Żivota Saratlić</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222925">POWRÓT ODYSA. TADEUSZA KANTORA NOTATKI Z PRÓB</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Sapija</div></li>
+<li><span class="ikony"><a href="index.php/123055" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123055')" onmouseout="PokZdj(this, 123055)"></a></span><div class="tytul"><a href="index.php/123055">POWRÓT WABISZCZURA</a></div><div class="rodzajfilmu">Film fabularny / Zbigniew Rebzda</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1241010">POWSTANIE WARSZAWSKIE</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Chiczewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1237384">...POZNAŁEM GO W LOS ANGELES...</a></div><div class="rodzajfilmu">Film dokumentalny - fabularyzowany / Jerzy Obłamski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323105">POŻEGNANIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Ute Hirschberg</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428849">PRZĄŚNICZKA</a></div><div class="rodzajfilmu">Film animowany / Aleksandra Korejwo</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522465">PRZEBUDZENIE WIOSNY</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Frank Wedekind / Piotr Cieślak</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425065">PRZEJŚCIE</a></div><div class="rodzajfilmu">Film animowany / Ewa Ziobrowska</div></li>
+<li><span class="ikony"><a href="index.php/322906" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322906">PRZERWAĆ ZAPIS</a></div><div class="rodzajfilmu">Etiuda szkolna / Marcin Ziębiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4215198">PRZYCZYNY WYPADKÓW W ROLNICTWIE</a></div><div class="rodzajfilmu">Film dokumentalny / Antoni Orwiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428525">PRZYGÓD KILKA WRÓBLA ĆWIRKA</a></div><div class="rodzajfilmu">Serial animowany / Ireneusz Czesny i in.</div><div class="odcinki">ODMIENIEC (36), TO MOJE PODWÓRKO (37), CZARODZIEJKA (38), KURACJA (39)</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521697">PSIE SERCE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Michaił Bułhakow / Rudolf Zioło</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/128924">QUI VIVRA VERRA... KTO PRZEŻYJE ZOBACZY</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Lucyna Smolińska  Mieczysław Sroka</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522038">REFORMATOR</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Mykoła Kulisz / Krzysztof Orzechowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220249">REKORD</a></div><div class="rodzajfilmu">Film animowany / Bogdan Nowicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1257671">REKSIO I PTAKI</a></div><div class="rodzajfilmu">Serial animowany / Ryszard Lepióra i in.</div><div class="odcinki">REKSIO I KRUK (6), REKSIO I KAWKI (7)</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325703">REPLAY</a></div><div class="rodzajfilmu">Etiuda szkolna / Ewa Gaulis</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/129664">LE RETOUR D'ARSENE LUPIN</a></div><div class="rodzajfilmu">Serial fabularny</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427516">RETUSZER</a></div><div class="rodzajfilmu">Film animowany / Dominik Kozioł</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325033">RĘCE</a></div><div class="rodzajfilmu">Etiuda szkolna / Michał Zabłocki</div></li>
+<li><span class="ikony"><a href="index.php/124719" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '124719')" onmouseout="PokZdj(this, 124719)"></a></span><div class="tytul"><a href="index.php/124719">RIFIFI PO SZEŚĆDZIESIĄTCE</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Paweł Trzaska</div></li>
+<li><span class="ikony"><a href="index.php/127087" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '127087')" onmouseout="PokZdj(this, 127087)"></a></span><div class="tytul"><a href="index.php/127087">RING</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Andrzej Barszczyński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221101">ROWECKI GROT</a></div><div class="rodzajfilmu">Film dokumentalny / Stanisław Trzaska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521698">RYSZARD III</a></div><div class="rodzajfilmu">Spektakl telewizyjny / William Shakespeare / Feliks Falk</div></li>
+<li><span class="ikony"><a href="index.php/124603" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '124603')" onmouseout="PokZdj(this, 124603)"></a></span><div class="tytul"><a href="index.php/124603">SCENY NOCNE</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Marek Nowicki</div></li>
+<li><span class="ikony"><a href="index.php/322903" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/322903">SCIENCE FICTION</a></div><div class="rodzajfilmu">Etiuda szkolna / Grzegorz Płocha</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522537">SĘDZIA I JEGO KAT</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Friedrich Durrenmatt / Wojciech Adamczyk</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325699">SKĄD KRASNOLUDKI WZIĘŁY SWOJE CZERWONE KAPTURKI ?</a></div><div class="rodzajfilmu">Etiuda szkolna / Witold Iwaszkiewicz</div></li>
+<li><span class="ikony"><a href="index.php/125134" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '125134')" onmouseout="PokZdj(this, 125134)"></a></span><div class="tytul"><a href="index.php/125134">SŁODKIEGO, MIŁEGO ŻYCIA</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Paweł Trzaska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522526">SMAK MIODU</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Shelagh Delaney / Jacek Witkowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427290">SMOCZEK ŻARŁOCZEK</a></div><div class="rodzajfilmu">Film animowany / Paweł Nowosławski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522027">SPAGHETTI I MIECZ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Tadeusz Różewicz / Józef Czernecki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522430">SPOŁECZNOŚĆ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Marek Koterski / Marek Koterski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522550">SPOTKANIA ZE SZWEJKIEM</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Jaroslav Hasek / Paweł Trzaska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220050">SPOTKANIE W PRACOWNI</a></div><div class="rodzajfilmu">Film dokumentalny / Joanna Żamojdo</div></li>
+<li><span class="ikony"><a href="index.php/123099" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123099')" onmouseout="PokZdj(this, 123099)"></a></span><div class="tytul"><a href="index.php/123099">STAN POSIADANIA</a></div><div class="rodzajfilmu">Film fabularny / Krzysztof Zanussi</div></li>
+<li><span class="ikony"><a href="index.php/123126" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123126')" onmouseout="PokZdj(this, 123126)"></a></span><div class="tytul"><a href="index.php/123126">STAN STRACHU</a></div><div class="rodzajfilmu">Film fabularny / Janusz Kijowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322846">A STANDING STONE</a></div><div class="rodzajfilmu">Etiuda szkolna / Aleta Pierce</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1271326">STANISŁAW TOŁPA</a></div><div class="rodzajfilmu">Film dokumentalny / Stanisław Suchoń  Krystyna Suchoń</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/525154">STANISŁAWA PRZYBYSZEWSKA - LISTY</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Stanisława Przybyszewska / Krzysztof Bukowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222602">STARE KULTURY MEKSYKAŃSKIE</a></div><div class="rodzajfilmu">Cykl dokumentalny</div><div class="odcinki">ZAPOMNIANY ŚWIAT MAJÓW</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325667">STEREOMETRIA</a></div><div class="rodzajfilmu">Widowisko telewizyjne / Robert Kaczmarek</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">STOJĄCE KAMIENIE</span> patrz <a href="index.php/322846">A STANDING STONE</a></div><div class="rodzajfilmu">Etiuda szkolna / Aleta Pierce</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/326007">STRACHY</a></div><div class="rodzajfilmu">Etiuda szkolna / Mirosław Dembiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322994">STRUKTURA</a></div><div class="rodzajfilmu">Etiuda szkolna / Paweł Łoziński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222879">STRUKTURA CZŁOWIEKA</a></div><div class="rodzajfilmu">Film dokumentalny / Grażyna Banaszkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325700">STUDIO Q</a></div><div class="rodzajfilmu">Etiuda szkolna / Ruben Balderas Salas</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322998">STUTTGART</a></div><div class="rodzajfilmu">Etiuda szkolna / Mirosław Dembiński</div></li>
+<li><span class="ikony"><a href="index.php/323685" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/323685">STWORZENIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Grzegorz Kruszewski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/424989">STYGMATYCZKA</a></div><div class="rodzajfilmu">Film dokumentalny / Paweł Sala</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428851">SYMFONIA DZIECIĘCA</a></div><div class="rodzajfilmu">Film animowany / Hieronim Neumann</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323076">SYNDROM</a></div><div class="rodzajfilmu">Etiuda szkolna / Jorg Buhlmann</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522514">SZALEŃSTWO WE DWOJE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Eugene Ionesco / Stanisław Mączyński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522545">SZCZEGÓLNY DZIEŃ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Ettore Scola / Grzegorz Warchoł</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4212068">SZEREG HOMOLOGICZNY ALKOHOLI</a></div><div class="rodzajfilmu">Film dokumentalny / Janusz Tylman</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4218771">SZESNASTU</a></div><div class="rodzajfilmu">Film dokumentalny / Włodzimierz Dusiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/125808">SZKLANY DOM</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Małgorzata Kopernik</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/123104">SZLACHETNA KREW</a></div><div class="rodzajfilmu">Film fabularny / Wiktor Turow</div></li>
+<li><span class="ikony"><a href="index.php/122945" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '122945')" onmouseout="PokZdj(this, 122945)"></a></span><div class="tytul"><a href="index.php/122945">SZTUKA KOCHANIA</a></div><div class="rodzajfilmu">Film fabularny / Jacek Bromski</div></li>
+<li><span class="ikony"><a href="index.php/323006" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/323006">ŚLADY</a></div><div class="rodzajfilmu">Etiuda szkolna / Leonardo Palleja</div></li>
+<li><span class="ikony"><a href="index.php/122998" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '122998')" onmouseout="PokZdj(this, 122998)"></a></span><div class="tytul"><a href="index.php/122998">ŚWIATŁO ODBITE</a></div><div class="rodzajfilmu">Film fabularny / Andrzej Titkow</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522546">TAJNY WIĘZIEŃ STANU</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Kazimierz Radowicz / Bohdan Poręba</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521927">TEATR CUDÓW</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Miguel de Cervantes Saavedre / Maciej Wojtyszko</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323386">TEDANT</a></div><div class="rodzajfilmu">Etiuda szkolna / Piotr Trzaskalski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521699">TERCET</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Alfredo Arias  Kado Kostzer / Magdalena Łazarkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222309">THEATRUM WYOBRAŹNI HENRYKA SIEMIRADZKIEGO</a></div><div class="rodzajfilmu">Film dokumentalny / Maria Mrozek</div></li>
+<li><span class="ikony"><a href="index.php/128812" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '128812')" onmouseout="PokZdj(this, 128812)"></a></span><div class="tytul"><a href="index.php/128812">TORRENTS OF SPRING</a></div><div class="rodzajfilmu">Film fabularny / Jerzy Skolimowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428674">TORT URODZINOWY</a></div><div class="rodzajfilmu">Film animowany / Marek Skrobecki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1237866">TOWARZYSZE</a></div><div class="rodzajfilmu">Etiuda szkolna / Igor Mołodecki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/322841">TRISMUS</a></div><div class="rodzajfilmu">Etiuda szkolna / Andrzej Czeranowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">TRIUMF DUCHA</span> patrz <a href="index.php/128837">TRIUMPH OF THE SPIRIT</a></div><div class="rodzajfilmu">Film fabularny / Robert M. Young</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/128837">TRIUMPH OF THE SPIRIT</a></div><div class="rodzajfilmu">Film fabularny / Robert M. Young</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1252448">TROCHĘ SZCZĘŚCIA</a></div><div class="rodzajfilmu">Film dokumentalny / Dariusz Król</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">TRYUMF DUCHA</span> patrz <a href="index.php/128837">TRIUMPH OF THE SPIRIT</a></div><div class="rodzajfilmu">Film fabularny / Robert M. Young</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325723">TRZECH IDZIE</a></div><div class="rodzajfilmu">Etiuda szkolna / Rainer Schaupp</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4217578">TRZY OBLICZA KRAKOWA</a></div><div class="rodzajfilmu">Film dokumentalny / Tomisław Wasilewicz</div></li>
+<li><span class="ikony"><a href="index.php/123106" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123106')" onmouseout="PokZdj(this, 123106)"></a></span><div class="tytul"><span class="tytulnieindeksowany">TRZYSTA MIL DO NIEBA</span> patrz <a href="index.php/123106">300 MIL DO NIEBA</a></div><div class="rodzajfilmu">Film fabularny / Maciej Dejczer</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/129071">TUTAJOSOK</a></div><div class="rodzajfilmu">Film fabularny / Judit Elek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427291">TWIERDZA</a></div><div class="rodzajfilmu">Film animowany / Krzysztof Raynoch</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/423427">TWÓJ BRAT</a></div><div class="rodzajfilmu">Film dokumentalny / Grażyna Bryżuk</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">TYSIĄC LAT JAZDY POLSKIEJ</span> patrz <a href="index.php/4218742">1000 LAT JAZDY POLSKIEJ</a></div><div class="rodzajfilmu">Film dokumentalny / Edmund Zbigniew Szaniawski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219977">TYTUS, ROMEK I A'TOMEK</a></div><div class="rodzajfilmu">Serial animowany / Krzysztof Giersz  Waldemar Szajkowski</div><div class="odcinki">NARODZINY TYTUSA (1)</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/325905">ULICA</a></div><div class="rodzajfilmu">Etiuda szkolna / Łukasz Kośmicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220443">ULICA O KTÓREJ TROCHĘ WIEM</a></div><div class="rodzajfilmu">Film dokumentalny / Antoni Halor</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522516">UMIERANIE WIEKU</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Osip Mandelsztam / Krzysztof Orzechowski</div></li>
+<li><span class="ikony"><a href="index.php/123530" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123530')" onmouseout="PokZdj(this, 123530)"></a></span><div class="tytul"><a href="index.php/123530">URODZONY PO RAZ TRZECI</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Stanisław Jędryka</div></li>
+<li><span class="ikony"><a href="index.php/521700" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '521700')" onmouseout="PokZdj(this, 521700)"></a></span><div class="tytul"><a href="index.php/521700">VATZLAV</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Sławomir Mrożek / Kazimierz Dejmek</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/125435">VIRTUTI</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Jacek Butrymowicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/427522">W CZASIE I PRZESTRZENI</a></div><div class="rodzajfilmu">Film animowany / Zbigniew Szymański</div></li>
+<li><span class="ikony"><a href="index.php/425538" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '425538')" onmouseout="PokZdj(this, 425538)"></a></span><div class="tytul"><a href="index.php/425538">W KRAINIE CZARNOKSIĘŻNIKA OZA</a></div><div class="rodzajfilmu">Serial animowany / Alina Kotowska i in.</div><div class="odcinki">KTO MÓWI PRAWDĘ (12)</div></li>
+<li><span class="ikony"><a href="index.php/125274" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '125274')" onmouseout="PokZdj(this, 125274)"></a></span><div class="tytul"><a href="index.php/125274">W LABIRYNCIE</a></div><div class="rodzajfilmu">Serial fabularny / Paweł Karpiński</div><div class="odcinki">KWIATEK DLA EWY (10), ODJAZD STO PIĘĆDZIESIĄT (11), LIST Z AMERYKI (12), ZABIEG (13), POJEDNANIE (14), WYZNANIE (15), NIE JESTEŚ MOIM OJCEM (16), GDZIE JEST MAMUSIA (17), ZDRADA TAJEMNICY (18), PORTRET PAMIĘCIOWY (19), POCAŁUNEK NA POWITANIE (20), SIOSTRZYCZKA (21), DZIEŃ DZIECKA (22), KTO PRZYCHODZI NOCĄ (23), PAN MI SIĘ PODOBA (24), PRECZ Z MOJEGO DOMU (25), SREBRNA IKONA (26), RYWALKI (27), KTO ZDAŁ EGZAMIN (28), WYWIAD (29), NAGŁY PORÓD (30), ROCZNICA (31), UCIECZKA (32), WŁAMANIE (33), KŁOPOTY PANI WANDY (34), OJCIEC (35), ALIBI (36), DIAGNOZA (37), GDZIE JEST MOJE DZIECKO? (38), NOWORODEK (39), DLACZEGO? (40), DLA SIEBIE PRZEZNACZENI (41), OPERACJA (42), NA RATUNEK (43), MATKA (44), LIST (45), WYBUCH (46), OBIETNICA (47), SPRAWA MIESZKANIOWA (48), MATEUSZ (49), FOTOGRAFIA (50), ŚWIĘTA (51), MIŁOŚĆ (52)</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522543">WALLENSTEIN</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Fryderyk Schiller / Krzysztof Babicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/128856">WAR AND REMEMBRANCE</a></div><div class="rodzajfilmu">Serial fabularny / Dan Curtis</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220019">WARSZAWA WALCZY!</a></div><div class="rodzajfilmu">Film dokumentalny / Stefan Bagiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1270920">WARSZAWSKIE PRZEDSIĘBIORSTWO KONSTRUKCJI STALOWYCH URZĄDZEŃ PRZEMYSŁOWYCH "MOSTOSTAL"</a></div><div class="rodzajfilmu">Film dokumentalny / Ryszard Wyrzykowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522428">WESELE</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Elias Canetti / Bogdan Hussakowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/127092">WIATRAKI Z RANLEY</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Juliusz Janicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/423385">WIELKI BOOM</a></div><div class="rodzajfilmu">Film animowany / Stefan Janik</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522502">WIELKI PEEPERKORN</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Tomasz Mann / Tomasz Zygadło</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323083">WIETNAM</a></div><div class="rodzajfilmu">Etiuda szkolna / Igor Olech</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219867">WILEGIATURA</a></div><div class="rodzajfilmu">Film dokumentalny / Andrzej Piekutowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219531">WILKI</a></div><div class="rodzajfilmu">Film animowany / Maciej Ćwiek</div></li>
+<li><span class="ikony"><a href="index.php/128812" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '128812')" onmouseout="PokZdj(this, 128812)"></a></span><div class="tytul"><span class="tytulnieindeksowany">WIOSENNE WODY</span> patrz <a href="index.php/128812">TORRENTS OF SPRING</a></div><div class="rodzajfilmu">Film fabularny / Jerzy Skolimowski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221025">WITKACEGO WYWOŁYWANIE DUCHÓW</a></div><div class="rodzajfilmu">Film animowany / Kazimierz Urbański</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522528">WNIEBOWZIĘCIE SZUBIENICZNEJ TONI</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Egon Erwin Kisch / Laco Adamik</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323084">WNUK</a></div><div class="rodzajfilmu">Etiuda szkolna / Leonardo Palleja</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">WOJNA I PAMIĘĆ</span> patrz <a href="index.php/128856">WAR AND REMEMBRANCE</a></div><div class="rodzajfilmu">Serial fabularny / Dan Curtis</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/326001">WRONY</a></div><div class="rodzajfilmu">Etiuda szkolna / Rainer Schaupp</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4221798">WSPOMNIJ MNIE</a></div><div class="rodzajfilmu">Film dokumentalny / Marian Kubera</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/323290">WYROK</a></div><div class="rodzajfilmu">Etiuda szkolna / Mariusz Michalik</div></li>
+<li><span class="ikony"></span><div class="tytul"><span class="tytulnieindeksowany">WYSOKAJA KROW</span> patrz <a href="index.php/123104">SZLACHETNA KREW</a></div><div class="rodzajfilmu">Film fabularny / Wiktor Turow</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425028">WYSPA</a></div><div class="rodzajfilmu">Film animowany / Józef Ćwiertnia</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428667">WYSTARCZY POLUBIĆ DESZCZ</a></div><div class="rodzajfilmu">Film animowany / Ireneusz Czesny</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/425012">WYŚCIG</a></div><div class="rodzajfilmu">Film animowany / Marek Serafiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1260510">WYŚCIGI</a></div><div class="rodzajfilmu">Cykl animowany</div><div class="odcinki">GRAND PRIX</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/12155">YACHT</a></div><div class="rodzajfilmu">Film fabularny - telewizyjny / Maciej Wojtyszko</div></li>
+<li><span class="ikony"><a href="index.php/425014" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '425014')" onmouseout="PokZdj(this, 425014)"></a></span><div class="tytul"><a href="index.php/425014">Z ARCHIPELAGU GUŁAG</a></div><div class="rodzajfilmu">Film dokumentalny / Józef Gębski</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222880">Z RZECZYWISTOŚCI</a></div><div class="rodzajfilmu">Film dokumentalny / Grażyna Banaszkiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1231359">Z ZIEMI POLSKIEJ...</a></div><div class="rodzajfilmu">Cykl dokumentalny</div><div class="odcinki">POLSKIE ŚLADY POD PINIORAMI, KIERUNEK - BRAZYLIA!</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4219764">ZA NIEMCA IDZIE?</a></div><div class="rodzajfilmu">Film dokumentalny / Janusz Chodnikiewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4224466">ZABAWY W DOROSŁYCH CIĄG DALSZY</a></div><div class="rodzajfilmu">Film dokumentalny / Jadwiga Żukowska</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/521664">ZAMEK</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Franz Kafka / Marek Grzesiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1263573">ZAMEK Z BŁOTA</a></div><div class="rodzajfilmu">Film dokumentalny / Wojciech Iwański</div></li>
+<li><span class="ikony"><a href="index.php/323072" class="ikony-klaps"><img src="img1/klaps.png" alt="zwiastun" title="Zwiastun"></a></span><div class="tytul"><a href="index.php/323072">ZAPACH ISLAMU</a></div><div class="rodzajfilmu">Etiuda szkolna / Chaouki Mejeri</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4222608">ZAPOMNIANY ŚWIAT MAJÓW</a></div><div class="rodzajfilmu">Film dokumentalny</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522036">ZAWIŚĆ</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Murray Schisgal / Marcin Sławiński</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/428668">ZŁOTY DZBAN</a></div><div class="rodzajfilmu">Film animowany / Janusz Galewicz</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/4220273">ZNAKI DROGOWE</a></div><div class="rodzajfilmu">Film animowany / Adam Łowicki</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522031">ŻANNA</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Aleksander Galin / Andrzej Szymański</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/522119">ŻEGNAJ, LALECZKO</a></div><div class="rodzajfilmu">Spektakl telewizyjny / Raymond Chandler / Laco Adamik</div></li>
+<li><span class="ikony"><a href="index.php/123109" class="ikony-zdjecie"><img src="img1/zdjecie.png" alt="zdjecie"  onmouseover="return PokZdj(this, '123109')" onmouseout="PokZdj(this, 123109)"></a></span><div class="tytul"><a href="index.php/123109">ŻELAZNĄ RĘKĄ</a></div><div class="rodzajfilmu">Film fabularny / Ryszard Ber</div></li>
+<li><span class="ikony"></span><div class="tytul"><a href="index.php/1233482">ŻOŁNIERZE GEN. KLEEBERGA</a></div><div class="rodzajfilmu">Film dokumentalny / Jacek Sawicki</div></li>
+</ul>
+
+
+</div>  <!--filmy_z_roku-->
+
+
+
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

@@ -1,0 +1,787 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - STACYJKA</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>STACYJKA</h1><ul class="innenazwiska"><li>Podtytuł: BALLADA W 13 OBRAZACH</li></ul><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1213057" selected >1</option><option value="1213057_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1213057_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1213057_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2004</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2004. 09. 12</div></li>
+<li><div class="film_tech3">Barwny, 13 odcinków x 55 min <br /><br />
+Okres zdjęciowy rozpoczął się 3 października 2003.<br />
+Lokacje: Jeziorany k. Olsztyna, Pasłęk.</div></li>
+</ul>
+<p class="opis">Nowy serial komediowy, utrzymany w balladowo-satyrycznym tonie, nawiązujący klimatem do słynnego amerykańskiego "Przystanku Alaska". Opowiada o perypetiach mieszkańców Rogoży, miasteczka na Mazurach, którego nie ma na żadnej mapie. Na początku XIX w. spalono w nim ostatnią w Europie czarownicę. Wiedźma, już na stosie, rzuciła klątwę i od tego czasu nic w miasteczku nie może się udać. Jej duch błąka się zresztą po obrzeżach Rogoży, przybierając postać niedźwiedzia. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=1613057_1&galeria=1513057"><img class="bezcienia" src="../z1/57i/13057_1.jpg" height="60"></a><a href="index.php?fotos=1613057_2&galeria=1513057"><img class="bezcienia" src="../z1/57i/13057_2.jpg" height="60"></a><a href="index.php?fotos=1613057_3&galeria=1513057"><img class="bezcienia" src="../z1/57i/13057_3.jpg" height="60"></a><a href="index.php?fotos=1613057_4&galeria=1513057"><img class="bezcienia" src="../z1/57i/13057_4.jpg" height="60"></a><a href="index.php?fotos=1613057_5&galeria=1513057"><img class="bezcienia" src="../z1/57i/13057_5.jpg" height="60"></a><a href="index.php?fotos=1613057_6&galeria=1513057"><img class="bezcienia" src="../z1/57i/13057_6.jpg" height="60"></a><a href="index.php/1513057" title="Galeria zdjęć (55)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1213057" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1213057','ekipa_skrocona1213057','ekipa1213057','ekipa_schowaj1213057','ekipa_schowaj_krotki1213057','ekipa_schowaj_pelny1213057','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1213057" class="jslink" onclick="pzf('ekipa_skrocona1213057','ekipa_pelna1213057','ekipa1213057','ekipa_schowaj1213057','ekipa_schowaj_pelny1213057','ekipa_schowaj_krotki1213057','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1213057"1213057" class="jslink" onclick="pzz('ekipa1213057','ekipa_schowaj1213057')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1213057" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1213057">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114502">Wojciech Biedroń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132915">Katarzyna Janicka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117315">Karina Piwowarska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1141625">Marta Reiff</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133761">Magdalena Daniel</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115692">Jerzy Niemczuk</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121943">Arkadiusz Tomiak</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1128146">Dariusz Jadach</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1143601">Artur Zdral</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1127417">Marcin Szulski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124392">Grzegorz Stankiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1143461">Kamil Hasiuk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1143459">Łukasz Kowalczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1143991">Paweł Kajszczak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145052">Dariusz Kijek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1116829">Zbigniew Wróblewski</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1110623">Wiesław Horodyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136127">Janusz Michalski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1118023">Janusz Kopiowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1143176">Bartosz Lewandowski</a></div><div class="ekipa_opis"> współpraca; w napisach imię: Bartłomiej</div></li>
+<li><div class="ekipa_funkcja">Obsługa agregatu</div><div class="ekipa_osoba"><a href="index.php/1116577">Mirosław Bielecki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1129765">Marek Peuker</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114789">Magdalena Dipont</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121944">Michał Hrisulidis</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111802">Andrzej Płocki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/113234">Robert Czesak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent scenografa</div><div class="ekipa_osoba"><a href="index.php/1145050">Barbara Uhryn</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136186">Grzegorz Skawiński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny scenograficzny</div><div class="ekipa_osoba"><a href="index.php/1138646">Krzysztof Ochenkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11685">Wiesława Chojkowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1124638">Wojciech Kocemba</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11872">Grzegorz Rzepecki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113948">Edward Koralewski</a></div><div class="ekipa_opis"> rekwizytor planowy</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo budowy dekoracji</div><div class="ekipa_osoba"><a href="index.php/113236">Waldemar Weiss</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113239">Małgorzata Obłoza</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/1128442">Elżbieta Kaczmarska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent kostiumografa</div><div class="ekipa_osoba"><a href="index.php/119009">Anna Banasiak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Taper</div><div class="ekipa_osoba"><a href="index.php/114997">Zbigniew Zbrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Śpiew</div><div class="ekipa_osoba"><a href="index.php/1136117">Małgorzata Walewska</a></div><div class="ekipa_opis"> utwory śpiewane przez "Andę Szulc"</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113974">Andrzej Bohdanowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126218">Michał Muzyka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora dźwięku</div><div class="ekipa_osoba"><a href="index.php/1125243">Sławomir Ciołkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1122374">Rafał Piłkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1142677">Michał Pracz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty dźwiękowe</div><div class="ekipa_osoba"><a href="index.php/117691">Włodzimierz Kazimierczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1126218">Michał Muzyka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Montaż dźwięku</div><div class="ekipa_osoba"><a href="index.php/1132692">Błażej Kukla</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113974">Andrzej Bohdanowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115072">Milenia Fiedler</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114820">Grażyna Gradoń</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1124296">Robert Mańkowski</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div></li>
+<li><div class="ekipa_funkcja">On-line</div><div class="ekipa_osoba"><a href="index.php/1119292">Hanna Kobus</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Montaż on-line</div><div class="ekipa_osoba"><a href="index.php/1119293">Iwona Rudnicka</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Montaż on-line</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123244">Tomasz Matraszek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Charakteryzator II</div><div class="ekipa_osoba"><a href="index.php/1140753">Anita Kruszewska-Staniak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1145891">Dominika Papieżyńska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145890">Beata Pawłowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1145893">Marzanna Rudnicka</a></div><div class="ekipa_opis"> ds. śpiewu</div><div class="ekipa_osoba">Gabriela Kołodziej</div><div class="ekipa_opis"> ds. języka duńskiego</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1127549">Barbara Muzyka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/11947">Jerzy Celiński</a></div><div class="ekipa_opis"> kaskaderska</div><div class="ekipa_osoba"><a href="index.php/1191">Ryszard Janikowski</a></div><div class="ekipa_opis"> kaskaderska</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1139075">Wojciech Filipek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163726">Robert Górczyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1139074">Piotr Niewiadomski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1126263">Marta Wal</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126262">Ryszard Wal</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138207">Zbigniew Kocyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1128146">Dariusz Jadach</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Tresura</div><div class="ekipa_osoba"><a href="index.php/1145895">Urszula Charytonik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty specjalne</div><div class="ekipa_osoba"><a href="index.php/1121258">Mirosław Bartosik</a></div><div class="ekipa_opis"> kostium niedźwiedzia</div></li>
+<li><div class="ekipa_funkcja">Opracowanie graficzne</div><div class="ekipa_osoba"><a href="index.php/1121944">Michał Hrisulidis</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127470">Kamil Przełęcki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty komputerowe</div><div class="ekipa_osoba"><a href="index.php/117438">Krzysztof Ciesielski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145892">Przemysław Sieheń</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1127470">Kamil Przełęcki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1125236">Magdalena Badura</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135386">Dagmara Bończyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111392">Robert Lipiński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1143600">Aleksandra Frosztęga</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129305">Maria Nowocień</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123817">Maryna Cichoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133760">Joanna Słonina</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1123199">Jerzy Mizak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1141506">Piotr Dziwulski</a></div><div class="ekipa_opis"> współpraca</div></li>
+<li><div class="ekipa_funkcja">Asystent kierownika planu</div><div class="ekipa_osoba">Tomasz Barczak</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1144742">Michał Olejnik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1142676">Tomasz Kotuliński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127891">Remigiusz Kubiak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1142673">Małgorzata Roszkowska-Kazała</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/1134309">Gabriela Ciechanowiecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kasjer</div><div class="ekipa_osoba"><a href="index.php/1145888">Mirosława Piłat</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opieka literacka</div><div class="ekipa_osoba"><a href="index.php/1116837">Hanna Probulska-Dzisiów</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114889">Wojciech Jędrkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis wyroznienie"> Program 1</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis wyroznienie"> Ziemowit Szulc, mąż Andy, burmistrz Rogoży</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis wyroznienie"> Winicjusz Misiak</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110302">Anna Polony</a></div><div class="ekipa_opis wyroznienie"> Zofia Wielska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1143364">Weronika Książkiewicz</a></div><div class="ekipa_opis wyroznienie"> kelnerka Iga Szulc, córka burmistrza</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1213057">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1115692">Jerzy Niemczuk</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1121943">Arkadiusz Tomiak</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/114789">Magdalena Dipont</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1121944">Michał Hrisulidis</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111802">Andrzej Płocki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/11685">Wiesława Chojkowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/113239">Małgorzata Obłoza</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/113974">Andrzej Bohdanowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126218">Michał Muzyka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1115072">Milenia Fiedler</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114820">Grażyna Gradoń</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1123244">Tomasz Matraszek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1127470">Kamil Przełęcki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis"> Program 1</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ziemowit Szulc, mąż Andy, burmistrz Rogoży</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Winicjusz Misiak</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1110302">Anna Polony</a></div><div class="ekipa_opis"> Zofia Wielska</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1143364">Weronika Książkiewicz</a></div><div class="ekipa_opis"> kelnerka Iga Szulc, córka burmistrza</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>STACYJKA w internecie</h2>
+<ul class="point">
+<li><a href="http://www.obiektywna.republika.pl/" target="_blank">więcej zdjęć z planu serialu</a></li>
+<li><a href="http://www.tvp.pl/seriale/obyczajowe/stacyjka" target="_blank">oficjalna strona serialu</a></li>
+</ul>
+<div class="podzbior"><h1>PRZEKLĘTE MIEJSCE (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">54 min</div></li>
+</ul>
+<p class="opis">Narratorem opowieści jest Winicjusz Misiak (Topa) - młody filmowiec amator, który zarabia na życie rejestrowaniem na wideo wesel, chrztów i komunii. Chłopak pragnie wyrwać się z miasteczka i wyjechać w świat, najlepiej do Hollywood. Jego przyjaciel, Huba, którego los uwięził na wózku inwalidzkim, otrzymuje pewnego dnia e-maila od Wolfganga Maretzky'ego - pisarza noblisty urodzonego na Mazurach, a obecnie mieszkającego w Niemczech. Maretzky, który otrzymał najważniejszą nagrodę literackiego za powieść o rodzinnych stronach pt. "Przeklęte miejsce", zamierza wkrótce odwiedzić swoje rodzinne miasto - Rogożę. Huba przekazuje natychmiast tę sensacyjną wiadomość pani Zofii Wielskiej (Polony) - emerytowanej nauczycielce, u której mieszka, a ta z kolei zawiadamia radnego Buczka (Stroiński) - erudytę i znawcę sztuki. 
+Oboje dochodzą do wniosku, że wizyta tak szacownego gościa mogłaby uświetnić obchody 660-lecia miasta, trzeba tylko Rogożę odpowiednio przygotować na ten przyjazd. Delegacja udaje się więc do burmistrza Ziemowita Szulca (Charewicz), aby przekonać go do tego pomysłu. Z pomocą Andy (Figura) - pięknej i egzaltowanej żony burmistrza, w której kocha się Buczek, uzyskują jego zgodę. Pomysł trafia pod obrady rady miejskiej i zostaje przegłosowany. Teraz trzeba jeszcze wyremontować dom, w którym urodził się noblista. Walącą się ruderę zamieszkuje obecnie pijaczek i bywalec okolicznych śmietnisk, Szczapek (Trela), który od razu zaczyna liczyć, ile zarobi na goszczeniu u siebie zagranicznego lokatora.
+Tymczasem jeden z miejscowych małorolnych, Henryk Krupa (Grabowski), były pracownik pegeeru, na wieść o przejęciu zrujnowanego gospodarstwa przez duńskich inwestorów, postanawia uratować stamtąd co się da, zanim wszystko przechwyci obcy kapitał. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214232" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214232','ekipa_skrocona1214232','ekipa1214232','ekipa_schowaj1214232','ekipa_schowaj_krotki1214232','ekipa_schowaj_pelny1214232','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214232" class="jslink" onclick="pzf('ekipa_skrocona1214232','ekipa_pelna1214232','ekipa1214232','ekipa_schowaj1214232','ekipa_schowaj_pelny1214232','ekipa_schowaj_krotki1214232','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214232"1214232" class="jslink" onclick="pzz('ekipa1214232','ekipa_schowaj1214232')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214232" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214232">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis wyroznienie"> Huba</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis wyroznienie"> radny Wacław Buczek</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis wyroznienie"> Wiesław Drożyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis wyroznienie"> Wojciech Liwicz, mąż Marty</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Wyrobkowa, radna Koła Kobiet Polskich</div><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div class="ekipa_osoba"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis"> Teresa Krupa, żona Henryka</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> radny Benecki, właściciel zakładu  pogrzegowego i kwiaciarni</div><div class="ekipa_osoba"><a href="index.php/1125655">Joanna Kreft-Baka</a></div><div class="ekipa_opis"> radna Dadaj z Koła Nowej Lewicy  Europejskiej</div><div class="ekipa_osoba"><a href="index.php/1145881">Marek Jędrzejczyk</a></div><div class="ekipa_opis"> radny Mąka, kierownik marketu</div><div class="ekipa_osoba"><a href="index.php/117922">Zofia Jamry</a></div><div class="ekipa_opis"> Millerowa, szefowa kuchni w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1127658">Magdalena Emilianowicz</a></div><div class="ekipa_opis"> licencjatka Mariola, stażystka w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/116330">Jerzy Matysiak</a></div><div class="ekipa_opis"> Wargosz</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> kolejarka</div><div class="ekipa_osoba"><a href="index.php/1113851">Tomasz Budyta</a></div><div class="ekipa_opis"> pastor</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Julio Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba"><a href="index.php/1145966">Mikołaj Dawidowski</a></div><div class="ekipa_opis"> Kevin Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba"><a href="index.php/1145883">Makymilian Pietrzak</a></div><div class="ekipa_opis"> Maksio, syn Marty i Wojciecha</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Fredzia, bufetowa w karczmie "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis"> posterunkowy Mierzej</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214232">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis"> Wojciech Liwicz, mąż Marty</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WIZYTA NOBLISTY (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Dla uczczenia 660-lecia Rogoży jeden z mieszkańców, dość leciwy już Wiesław Więcek, postanawia obiec miasteczko 660 razy i tym samym wpisać się do Księgi Rekordów Guinnessa. Poruszający się na wózku inwalidzkim Huba w tajemnicy przed wszystkimi uczy się chodzić. Chłopak otrzymuje kolejny mail od Maretzkiego, w którym noblista zawiadamia, że miał wypadek i dlatego nie może odwiedzić swojego rodzinnego miasta. Huba informuje o tym Misiaka, obaj usiłują przekazać tę smutną wieść pani Zofii, ale nie wiedzą, jak to zrobić, żeby nie przeżyła szoku. 
+Tymczasem w miasteczku idą pełną parą przygotowania do jubileuszu i przyjęcia szacownego gościa. Anda ćwiczy arię Gildy z "Rigoletta", ekipa remontuje dom, w którym urodził się Maretzki, kamieniarz sporządza tablicę pamiątkową, a Nowicki - właściciel karczmy, szykuje wielkie przyjęcie ze specjałami polskiej kuchni i występami jodłujących artystek.
+Kiedy sekretarka burmistrza, Halinka, otrzymuje od posterunkowego zaszyfrowaną wiadomość telefoniczną, że do miasta zbliżają się zagraniczni goście, wychodzi im naprzeciw delegacja powitalna. Co prawda, dwoje młodych cudzoziemców z dzieckiem zupełnie nie przypomina sędziwego noblisty, ale wszyscy robią dobrą minę do złej gry. Dopiero pani Zofia na widok przybyszów zdecydowanie protestuje. Pomyłka wkrótce się wyjaśnia. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214230" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214230','ekipa_skrocona1214230','ekipa1214230','ekipa_schowaj1214230','ekipa_schowaj_krotki1214230','ekipa_schowaj_pelny1214230','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214230" class="jslink" onclick="pzf('ekipa_skrocona1214230','ekipa_pelna1214230','ekipa1214230','ekipa_schowaj1214230','ekipa_schowaj_pelny1214230','ekipa_schowaj_krotki1214230','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214230"1214230" class="jslink" onclick="pzz('ekipa1214230','ekipa_schowaj1214230')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214230" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214230">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis wyroznienie"> Huba</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis wyroznienie"> Henryk Krupa</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis wyroznienie"> Grete Hansen</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124178">Arkadiusz Janiczek</a></div><div class="ekipa_opis wyroznienie"> Fritz Hansen, mąż Grety</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis"> posterunkowy Mierzej</div><div class="ekipa_osoba"><a href="index.php/114064">Stanisław Brudny</a></div><div class="ekipa_opis"> rekordzista Wacław Więcek</div><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Wyrobkowa, radna Koła Kobiet Polskich</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> radny Benecki, właściciel zakładu  pogrzegowego i kwiaciarni</div><div class="ekipa_osoba"><a href="index.php/1145881">Marek Jędrzejczyk</a></div><div class="ekipa_opis"> radny Mąka, kierownik marketu</div><div class="ekipa_osoba"><a href="index.php/1116108">Barbara Babilińska</a></div><div class="ekipa_opis"> Bronka, pielęgniarka w szpitalu i sędzia  kolarska</div><div class="ekipa_osoba"><a href="index.php/1113851">Tomasz Budyta</a></div><div class="ekipa_opis"> pastor</div><div class="ekipa_osoba"><a href="index.php/11948">Ryszard Francman</a></div><div class="ekipa_opis"> kamieniarz</div><div class="ekipa_osoba"><a href="index.php/1127658">Magdalena Emilianowicz</a></div><div class="ekipa_opis"> licencjatka Mariola, stażystka w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1128452">Wojciech Billip</a></div><div class="ekipa_opis"> lekarz w szpitalu</div><div class="ekipa_osoba"><a href="index.php/117922">Zofia Jamry</a></div><div class="ekipa_opis"> Millerowa, szefowa kuchni w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Albin Por, właściciel kablówki "PorKab"</div><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> dentystka Sandra Por, żona Albina</div><div class="ekipa_osoba"><a href="index.php/1145882">Aleksandra Korycka</a></div><div class="ekipa_opis"> siostra "Wielkoludka"</div><div class="ekipa_osoba"><a href="index.php/1131650">Iwo Pawłowski</a></div><div class="ekipa_opis"> siostra Józefa</div><div class="ekipa_osoba"><a href="index.php/1124507">Aldona Orman</a></div><div class="ekipa_opis"> elegantka</div><div class="ekipa_osoba"><a href="index.php/1145883">Makymilian Pietrzak</a></div><div class="ekipa_opis"> Maksio, syn Marty i Wojciecha</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Fredzia, bufetowa w karczmie "Hubertus"</div><div class="ekipa_osoba">zespół cheerleaderek z Olsztyna</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">orkiestra dęta (Pasłęk)</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1145886">Jezioranki (zespół)</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis"> niedźwiedź</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214230">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Grete Hansen</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1124178">Arkadiusz Janiczek</a></div><div class="ekipa_opis"> Fritz Hansen, mąż Grety</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>REKORDZISTA (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">55 min</div></li>
+</ul>
+<p class="opis">Obiegający miasto 660 razy Wiesław Więcek jest już o krok od pobicia rekordu. Ku zdumieniu wszystkich po 660 okrążeniu biegnący od siedmiu tygodni zawodnik nie zatrzymuje się, ale kontynuuje swój wyczyn. Komisję i kibiców ogarnia konsternacja. W karczmie "Hubertus" burmistrz zwołuje nawet specjalne posiedzenie rady miejskiej, by ustalić sposób zatrzymania wciąż biegnącego Więcka.
+Pani Zofia leży w szpitalu, brak jej chęci do życia. Tyle starań o godne przyjęcie Maretzky'ego spełzło na niczym. Krystyna, mama Huby, i inżynier Okoń niemal siłą przywożą ją do domu. Ale tam też panuje niewesoła atmosfera. Akwizytor Wojtek, mąż Marty, w tajemnicy porzucił ją i wyjechał w nieznanym kierunku, zostawiając Marcie tylko list pożegnalny. Zapłakana Marta zwierza się ze swojego zmartwienia Krystynie i Hubie. Wszyscy jednak starają się utrzymywać ten fakt w tajemnicy przez panią profesor, by jej dodatkowo nie przygnębiać. Niestety, prawda szybko wychodzi na jaw.
+Tymczasem do Rogoży przybywa adwokat z Warszawy,  mecenas Misiorny. Oznajmia zdumionej Zofii, że wyrokiem sądu stała się praktycznie właścicielką połowy miasta. Do niej bowiem należy teraz plac, na którym większość miejscowych notabli ma swoje nieruchomości. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214259" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214259','ekipa_skrocona1214259','ekipa1214259','ekipa_schowaj1214259','ekipa_schowaj_krotki1214259','ekipa_schowaj_pelny1214259','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214259" class="jslink" onclick="pzf('ekipa_skrocona1214259','ekipa_pelna1214259','ekipa1214259','ekipa_schowaj1214259','ekipa_schowaj_pelny1214259','ekipa_schowaj_krotki1214259','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214259"1214259" class="jslink" onclick="pzz('ekipa1214259','ekipa_schowaj1214259')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214259" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214259">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114064">Stanisław Brudny</a></div><div class="ekipa_opis wyroznienie"> rekordzista Wacław Więcek</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis wyroznienie"> Wiesław Drożyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis wyroznienie"> Wojciech Liwicz, mąż Marty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis wyroznienie"> Marta Liwicz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba"><a href="index.php/1143602">Andrzej Bienias</a></div><div class="ekipa_opis"> mecenas Misiorny</div><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div class="ekipa_osoba"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis"> inżynier Jan Okoń</div><div class="ekipa_osoba"><a href="index.php/1124178">Arkadiusz Janiczek</a></div><div class="ekipa_opis"> Fritz Hansen, mąż Grety</div><div class="ekipa_osoba"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis"> posterunkowy Mierzej</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div class="ekipa_osoba"><a href="index.php/116330">Jerzy Matysiak</a></div><div class="ekipa_opis"> Wargosz</div><div class="ekipa_osoba"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis"> Teresa Krupa, żona Henryka</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Grete Hansen</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Wyrobkowa, radna Koła Kobiet Polskich</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> radny Benecki, właściciel zakładu  pogrzegowego i kwiaciarni</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/1125655">Joanna Kreft-Baka</a></div><div class="ekipa_opis"> radna Dadaj z Koła Nowej Lewicy  Europejskiej</div><div class="ekipa_osoba"><a href="index.php/1145881">Marek Jędrzejczyk</a></div><div class="ekipa_opis"> radny Mąka, kierownik marketu</div><div class="ekipa_osoba"><a href="index.php/111402">Jan Jurewicz</a></div><div class="ekipa_opis"> pułkownik z Wojewódzkiego Sztabu  Kryzysowego</div><div class="ekipa_osoba"><a href="index.php/1132915">Katarzyna Janicka</a></div><div class="ekipa_opis"> siostra przełożona</div><div class="ekipa_osoba"><a href="index.php/1131650">Iwo Pawłowski</a></div><div class="ekipa_opis"> siostra Józefa</div><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div class="ekipa_osoba"><a href="index.php/1129194">Elżbieta Wróblewska</a></div><div class="ekipa_opis"> kobieta z oranżadą</div><div class="ekipa_osoba"><a href="index.php/1116108">Barbara Babilińska</a></div><div class="ekipa_opis"> Bronka, pielęgniarka w szpitalu i sędzia  kolarska</div><div class="ekipa_osoba"><a href="index.php/1128452">Wojciech Billip</a></div><div class="ekipa_opis"> lekarz w szpitalu</div><div class="ekipa_osoba"><a href="index.php/1127658">Magdalena Emilianowicz</a></div><div class="ekipa_opis"> licencjatka Mariola, stażystka w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1145987">Teresa Konstant</a></div><div class="ekipa_opis"> kobieta na schodach</div><div class="ekipa_osoba">Małgorzata Adamkiewicz</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba">Agnieszka Aleksandrowicz</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba">Żaneta Fiedorow</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba">Iza Króliczak</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba">Jolanta Prus</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba"><a href="index.php/1136032">Magdalena Różczka</a></div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba">Ewa Szemplińska</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba">Sylwia Szuwalska</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba">Agnieszka Tomiak</div><div class="ekipa_opis"> dziewczyna w "łodzi marzeń"</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Fredzia, bufetowa w karczmie "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis"> niedźwiedź</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214259">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/114064">Stanisław Brudny</a></div><div class="ekipa_opis"> rekordzista Wacław Więcek</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis"> Wojciech Liwicz, mąż Marty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WIZJA (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">54 min</div></li>
+</ul>
+<p class="opis">Zniechęcony niepowodzeniami Winicjusz Misiak zamierza potajemnie wyjechać z Rogoży. Powstrzymuje go przed tym pani Zofia, która wyjawia mu, że wyrokiem sądu przywracającego jej rodzinne mienie stała się bardzo bogata - należy do niej pół miasta. Misiak nie bardzo w to wierzy, jest przekonany, że emerytowana nauczycielka zwariowała. Jej propozycja, żeby znalazł dobry pomysł na wykorzystanie tego bogactwa, a w zamian zostanie jej wspólnikiem, zapada mu jednak w pamięć.
+Również burmistrz dowiaduje się od restauratora Nowickiego, że nauczycielka jest teraz najważniejszą osobą w mieście. Wraz z innymi radnymi obaj zastanawiają się, jaką w tej sytuacji obrać taktykę, by nie stracić nic ze swego stanu posiadania. Po kilku głębszych mają gotowy plan.
+Teresa Krupowa pracuje jako pomoc domowa u Hansenów. Ale Henryk uważa, że żona, która "służy u obcych" uwłacza jego honorowi i nakazuje jej rzucić to zajęcie. Jej miejsce z radością zajmuje Marta, którą mąż pozostawił bez środków do życia.
+Inżynier Okoń i Krystyna urządzają sobie schadzkę na działkach. Tymczasem wszyscy mieszkańcy miasteczka uczestniczą w pogrzebie rekordzisty Wiesława Więcka. Zwieńczeniem uroczystości jest występ Andy, która pieśnią "Ave Maria" pragnie uczcić pamięć najstarszego obywatela Rogoży. 
+W czasie burzy Misiak nagle doznaje olśnienia: już wie, jak można spożytkować pieniądze pani Zofii. Przedstawia pani Wielskiej swoją wizję. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214293" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214293','ekipa_skrocona1214293','ekipa1214293','ekipa_schowaj1214293','ekipa_schowaj_krotki1214293','ekipa_schowaj_pelny1214293','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214293" class="jslink" onclick="pzf('ekipa_skrocona1214293','ekipa_pelna1214293','ekipa1214293','ekipa_schowaj1214293','ekipa_schowaj_pelny1214293','ekipa_schowaj_krotki1214293','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214293"1214293" class="jslink" onclick="pzz('ekipa1214293','ekipa_schowaj1214293')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214293" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214293">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis wyroznienie"> Henryk Krupa</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis wyroznienie"> Teresa Krupa, żona Henryka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis wyroznienie"> Krystyna, matka Huby</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis wyroznienie"> inżynier Jan Okoń</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> kolejarka</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Wyrobkowa, radna Koła Kobiet Polskich</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> radny Benecki, właściciel zakładu  pogrzegowego i kwiaciarni</div><div class="ekipa_osoba"><a href="index.php/1145881">Marek Jędrzejczyk</a></div><div class="ekipa_opis"> radny Mąka, kierownik marketu</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Grete Hansen</div><div class="ekipa_osoba"><a href="index.php/1124178">Arkadiusz Janiczek</a></div><div class="ekipa_opis"> Fritz Hansen, mąż Grety</div><div class="ekipa_osoba"><a href="index.php/1116108">Barbara Babilińska</a></div><div class="ekipa_opis"> Bronka, pielęgniarka w szpitalu i sędzia  kolarska</div><div class="ekipa_osoba">Kazimierz Ignatowicz</div><div class="ekipa_opis"> ksiądz</div><div class="ekipa_osoba"><a href="index.php/1145882">Aleksandra Korycka</a></div><div class="ekipa_opis"> siostra "Wielkoludka"</div><div class="ekipa_osoba"><a href="index.php/1131650">Iwo Pawłowski</a></div><div class="ekipa_opis"> siostra Józefa</div><div class="ekipa_osoba"><a href="index.php/1145883">Makymilian Pietrzak</a></div><div class="ekipa_opis"> Maksio, syn Marty i Wojciecha</div><div class="ekipa_osoba"><a href="index.php/1145886">Jezioranki (zespół)</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Fredzia, bufetowa w karczmie "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis"> niedźwiedź</div><div class="ekipa_osoba"><a href="index.php/1126603">Violetta Arlak</a></div><div class="ekipa_opis"> uczestniczka pogrzebu Wacława  Więcka; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214293">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis"> Teresa Krupa, żona Henryka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis"> inżynier Jan Okoń</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>BUNT TERESY (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Huba stawia w lesie kolejne samodzielne kroki. Głęboko wierzy, że będzie normalnie chodził i że uda mu się to osiągnąć, zanim ojciec, mieszkający od 17 lat w Kanadzie, wróci do Polski. Dlatego chłopak jest przeciwny związkowi matki z inżynierem Okoniem, zwłaszcza że formalnie Krystyna jest nadal mężatką. 
+Tymczasem Misiak i pani Zofia snują plany dotyczące działalności ich przyszłej stacji telewizyjnej, ustalają jej lokalizację. Młody filmowiec przygotowuje spis potrzebnego sprzętu i wstępny kosztorys. Pani Zofia, która nie ma głowy do rachunków, wtajemnicza w całe przedsięwzięcie Krystynę. Jako zawodowa księgowa może im być bardzo przydatna. Misiak odwiedza również Albina Pora - właściciela firmy instalującej w Rogoży telewizję kablową. Chce go wciągnąć do spółki, żeby dzięki temu nowa stacja mogła nadawać swój program w jego sieci. Negocjacje z kablowcem utrudnia fakt, że nieszczęśnika prześladują wszystkie zwierzęta, jakie tylko napotyka na swej drodze, rzucając się na niego z pazurami, kłami, dziobami itp. Jak na złość, żona Albina, dentystka Stenia, wyjątkowo kocha wszelkie okazy fauny.
+Teresa Krupowa nie może odżałować porzuconej posady u Hansenów. Z zazdrością zerka na Magdę, która zajęła jej miejsce i od razu znalazła wspólny język ze swoją pracodawczynią Grete Hansen. Teresa ma żal do mężą, który wymógł na niej odejście z pracy, i w odwecie organizuje strajk domowy. Odmawia gotowania, sprzątania, pracy w obejściu. Krupa próbuje ją przekonać, żeby wzięła się do roboty, ale ona trwa przy swoim. W końcu, elegancko ubrana, wyrusza na spacer do lasu. Kiedy nie wraca na noc, mąż udaje się na jej poszukiwanie. Na leśnej polanie znajduje tylko jej buty. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214357" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214357','ekipa_skrocona1214357','ekipa1214357','ekipa_schowaj1214357','ekipa_schowaj_krotki1214357','ekipa_schowaj_pelny1214357','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214357" class="jslink" onclick="pzf('ekipa_skrocona1214357','ekipa_pelna1214357','ekipa1214357','ekipa_schowaj1214357','ekipa_schowaj_pelny1214357','ekipa_schowaj_krotki1214357','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214357"1214357" class="jslink" onclick="pzz('ekipa1214357','ekipa_schowaj1214357')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214357" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214357">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis wyroznienie"> Henryk Krupa</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis wyroznienie"> Teresa Krupa, żona Henryka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis wyroznienie"> Krystyna, matka Huby</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis wyroznienie"> inżynier Jan Okoń</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Albin Por, właściciel kablówki "PorKab"</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Grete Hansen</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> dentystka Sandra Por, żona Albina</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/1127658">Magdalena Emilianowicz</a></div><div class="ekipa_opis"> licencjatka Mariola, stażystka w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1146374">Malwina Rak</a></div><div class="ekipa_opis"> Daria Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1146375">Joanna Brodzka</a></div><div class="ekipa_opis"> Nika Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Julio Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba"><a href="index.php/1145966">Mikołaj Dawidowski</a></div><div class="ekipa_opis"> Kevin Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis"> niedźwiedź</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214357">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis"> Teresa Krupa, żona Henryka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis"> inżynier Jan Okoń</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>LUDZIE TELEWIZJI (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">54 min</div></li>
+</ul>
+<p class="opis">Henryk Krupa, zaniepokojony zniknięciem żony, zgłasza w komisariacie jej zaginięcie. Posterunkowy Mierzej nie chce jednak przyjąć zgłoszenia, twierdząc, że Krupowa na pewno poszła na spacer albo może zakochała się w kimś. Krupa zwierza się ze swojego kłopotu Szczapkowi, który podsuwa mu myśl, że Teresę mogli porwać kosmici.
+Anda, podlewając trawnik, śpiewa w ogródku i oblewa wodą zasłuchanego radnego Buczka. Ten, szczękając zębami, łamie sobie protezę. Niestety, protetyczka właśnie pojechała rodzić, więc nieszczęśnik udaje się po pomoc do Drożyny, miejscowej "złotej rączki". Drożyna skleja mu protezę klejem szybkoschnącym, ale skutki tego zabiegu są dość nieoczekiwane. W trakcie nadzwyczajnego posiedzenia rady miejskiej Buczek zachowuje się, jakby był pijany, bezładnie rzuca cytatami z Szekspira, wywołując oburzenie pozostałych radnych. To wszystko nagrywa na taśmę Misiak, który przybył z panią Zofią na posiedzenie. Właścicielka rogożańskiej telewizji chciała bowiem poznać oczekiwania władz miasta co do tego przedsięwzięcia. Oboje przeprowadzają także sondę wśród mieszkańców miasteczka, ale niewiele z niej wynika. Ma być ciekawie, różnorodnie, prawdziwie.
+Misiak poznaje Marzenę Cichą - dziewczynę sprzedającą lody w supermarkecie. Urzeczony jej innością, umawia się z nią po pracy. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214392" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214392','ekipa_skrocona1214392','ekipa1214392','ekipa_schowaj1214392','ekipa_schowaj_krotki1214392','ekipa_schowaj_pelny1214392','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214392" class="jslink" onclick="pzf('ekipa_skrocona1214392','ekipa_pelna1214392','ekipa1214392','ekipa_schowaj1214392','ekipa_schowaj_pelny1214392','ekipa_schowaj_krotki1214392','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214392"1214392" class="jslink" onclick="pzz('ekipa1214392','ekipa_schowaj1214392')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214392" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214392">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis wyroznienie"> radny Wacław Buczek</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis wyroznienie"> Wiesław Drożyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis wyroznienie"> Szczapek</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis wyroznienie"> Henryk Krupa</div><div class="ekipa_osoba"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis"> posterunkowy Mierzej</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Marzenka Cicha, ekspedientka w markecie</div><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Grete Hansen</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Wyrobkowa, radna Koła Kobiet Polskich</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> radny Benecki, właściciel zakładu  pogrzegowego i kwiaciarni</div><div class="ekipa_osoba"><a href="index.php/1145881">Marek Jędrzejczyk</a></div><div class="ekipa_opis"> radny Mąka, kierownik marketu</div><div class="ekipa_osoba"><a href="index.php/1125655">Joanna Kreft-Baka</a></div><div class="ekipa_opis"> radna Dadaj z Koła Nowej Lewicy  Europejskiej</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div class="ekipa_osoba"><a href="index.php/1124178">Arkadiusz Janiczek</a></div><div class="ekipa_opis"> Fritz Hansen, mąż Grety</div><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> dentystka Sandra Por, żona Albina</div><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Albin Por, właściciel kablówki "PorKab"</div><div class="ekipa_osoba"><a href="index.php/1146375">Joanna Brodzka</a></div><div class="ekipa_opis"> Nika Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1146374">Malwina Rak</a></div><div class="ekipa_opis"> Daria Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1114502">Wojciech Biedroń</a></div><div class="ekipa_opis"> Marian Dedoń, dyskryminowany mężczyzna</div><div class="ekipa_osoba">Józef Bojar</div><div class="ekipa_opis"> kolega Dedonia</div><div class="ekipa_osoba"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis"> inżynier Jan Okoń</div><div class="ekipa_osoba"><a href="index.php/1128452">Wojciech Billip</a></div><div class="ekipa_opis"> lekarz w szpitalu</div><div class="ekipa_osoba"><a href="index.php/1127658">Magdalena Emilianowicz</a></div><div class="ekipa_opis"> licencjatka Mariola, stażystka w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/1110827">Mirosław Siedler</a></div><div class="ekipa_opis"> kierowca przewodniczącej Krajowej Rady  Radiofonii i Telewizji</div><div class="ekipa_osoba"><a href="index.php/112351">Eugeniusz Priwieziencew</a></div><div class="ekipa_opis"> dziadek</div><div class="ekipa_osoba"><a href="index.php/1146473">Joanna Boruta</a></div><div class="ekipa_opis"> wnuczka</div><div class="ekipa_osoba"><a href="index.php/1124507">Aldona Orman</a></div><div class="ekipa_opis"> elegantka</div><div class="ekipa_osoba"><a href="index.php/1128450">Sylwia Stankiewicz</a></div><div class="ekipa_opis"> protetyczka Sylwia</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Julio Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba"><a href="index.php/1145966">Mikołaj Dawidowski</a></div><div class="ekipa_opis"> Kevin Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba"><a href="index.php/1145883">Makymilian Pietrzak</a></div><div class="ekipa_opis"> Maksio, syn Marty i Wojciecha</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214392">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>CASTING (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">55 min</div></li>
+</ul>
+<p class="opis">Komendant Mierzej zastawia pułapkę na tajemniczego graficiarza. W pułapkę wpada Krupa, który twierdzi, że w stojącym na rynku samolocie szukał zaginionej żony.
+Pani Zofia i Misiak zjawiają się u burmistrza, domagając się interwencji władzy w sprawie szlabanu postawionego na drodze przez Krupę i opłat pobieranych za przejście kilkudziesięciu metrów po "jego" drodze. Krupa niewiele sobie jednak robi z nakazów burmistrza.
+Pani Zofia i Misiak oraz utworzone na tę okazję kilkuosobowe jury organizuje casting na prezenterkę rogożańskiej telewizji. Wzbudza to ogromne zainteresowanie wszystkich kobiet w mieście i okolicy. Pokusie wystąpienia przed kamerą nie potrafi się oprzeć nawet piękna pani burmistrzowa. Jury jest pod wrażeniem różnorodności kandydatek, które dają z siebie wszystko. Wybór jest bardzo trudny. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214444" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214444','ekipa_skrocona1214444','ekipa1214444','ekipa_schowaj1214444','ekipa_schowaj_krotki1214444','ekipa_schowaj_pelny1214444','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214444" class="jslink" onclick="pzf('ekipa_skrocona1214444','ekipa_pelna1214444','ekipa1214444','ekipa_schowaj1214444','ekipa_schowaj_pelny1214444','ekipa_schowaj_krotki1214444','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214444"1214444" class="jslink" onclick="pzz('ekipa1214444','ekipa_schowaj1214444')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214444" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214444">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis wyroznienie"> Henryk Krupa</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis wyroznienie"> posterunkowy Mierzej</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis wyroznienie"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis wyroznienie"> Albin Por, właściciel kablówki "PorKab"</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Marzenka Cicha, ekspedientka w markecie</div><div class="ekipa_osoba"><a href="index.php/1127658">Magdalena Emilianowicz</a></div><div class="ekipa_opis"> licencjatka Mariola, stażystka w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Grete Hansen</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/1136032">Magdalena Różczka</a></div><div class="ekipa_opis"> Jola, uczestniczka castingu</div><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> dentystka Sandra Por, żona Albina</div><div class="ekipa_osoba"><a href="index.php/1129194">Elżbieta Wróblewska</a></div><div class="ekipa_opis"> Elżbieta Wyrwas, nerwowa uczestniczka  castingu</div><div class="ekipa_osoba"><a href="index.php/117922">Zofia Jamry</a></div><div class="ekipa_opis"> Millerowa, szefowa kuchni w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1146520">Natalia Szyguła</a></div><div class="ekipa_opis"> Aneta Oberek, uczestniczka castingu</div><div class="ekipa_osoba"><a href="index.php/1146521">Marzena Popowska</a></div><div class="ekipa_opis"> akrobatka, uczestniczka castingu</div><div class="ekipa_osoba"><a href="index.php/1114502">Wojciech Biedroń</a></div><div class="ekipa_opis"> Marian Dedoń, dyskryminowany mężczyzna</div><div class="ekipa_osoba"><a href="index.php/1128442">Elżbieta Kaczmarska</a></div><div class="ekipa_opis"> była sekserka</div><div class="ekipa_osoba">Agnieszka Aleksandrowicz</div><div class="ekipa_opis"> uczestniczka castingu</div><div class="ekipa_osoba"><a href="index.php/1146522">Elżbieta Gruca</a></div><div class="ekipa_opis"> uczestniczka castingu</div><div class="ekipa_osoba"><a href="index.php/1145987">Teresa Konstant</a></div><div class="ekipa_opis"> uczestniczka castingu</div><div class="ekipa_osoba">Iza Króliczak</div><div class="ekipa_opis"> uczestniczka castingu</div><div class="ekipa_osoba"><a href="index.php/119135">Jowita Miondlikowska</a></div><div class="ekipa_opis"> uczestniczka castingu</div><div class="ekipa_osoba">Dominika Rawa</div><div class="ekipa_opis"> uczestniczka castingu</div><div class="ekipa_osoba"><a href="index.php/1142673">Małgorzata Roszkowska-Kazała</a></div><div class="ekipa_opis"> uczestniczka castingu</div><div class="ekipa_osoba">Aniela Złotucha</div><div class="ekipa_opis"> uczestniczka castingu</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214444">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis"> posterunkowy Mierzej</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Albin Por, właściciel kablówki "PorKab"</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>PREMIERA (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Marta próbuje swoich sił jako prezenterka Telewizji Rogoża, ale idzie jej nie najlepiej. Misiak zabiera Marzenkę na randkę nad jezioro. Miłe chwile przerywa im pojawienie się na niebie... latającego talerza. Zafascynowany Misiak rejestruje go na taśmie i uszczęśliwiony pędzi z kamerą do Huby. Jest przekonany, że opublikowanie tak niezwykłego materiału pozwoli im "ustawić się" do końca życia. Ale czeka ich obu wielkie zaskoczenie.
+W studiu telewizyjnym trwają gorączkowe przygotowania do uroczystej inauguracji działalności nowej telewizji. Pani Zofia jest bardzo zdenerwowana, nie uspokoiła jej nawet wizyta u fryzjera. Nadchodzi godzina rozpoczęcia nadawania, a Albina Pora i kaset emisyjnych ciągle nie ma w studiu. Zdesperowana Zofia postanawia więc wystąpić na żywo. Przed telewizorami siedzą wszyscy mieszkańcy Rogoży. Kiedy wreszcie zjawia się Albin, okazuje się, że pomylił kasety. Na ekranie ukazują się zupełnie inne programy niż te, które były zaplanowane. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214478" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214478','ekipa_skrocona1214478','ekipa1214478','ekipa_schowaj1214478','ekipa_schowaj_krotki1214478','ekipa_schowaj_pelny1214478','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214478" class="jslink" onclick="pzf('ekipa_skrocona1214478','ekipa_pelna1214478','ekipa1214478','ekipa_schowaj1214478','ekipa_schowaj_pelny1214478','ekipa_schowaj_krotki1214478','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214478"1214478" class="jslink" onclick="pzz('ekipa1214478','ekipa_schowaj1214478')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214478" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214478">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis wyroznienie"> Marzenka Cicha, ekspedientka w markecie</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis wyroznienie"> Huba</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis wyroznienie"> Albin Por, właściciel kablówki "PorKab"</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> dentystka Sandra Por, żona Albina</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis wyroznienie"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis"> Wojciech Liwicz, mąż Marty</div><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis"> kierowca</div><div class="ekipa_osoba"><a href="index.php/1128450">Sylwia Stankiewicz</a></div><div class="ekipa_opis"> dziewczyna z kotkiem</div><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div class="ekipa_osoba"><a href="index.php/1124178">Arkadiusz Janiczek</a></div><div class="ekipa_opis"> Fritz Hansen, mąż Grety</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Grete Hansen</div><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div class="ekipa_osoba"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis"> inżynier Jan Okoń</div><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Wyrobkowa, radna Koła Kobiet Polskich</div><div class="ekipa_osoba"><a href="index.php/1114502">Wojciech Biedroń</a></div><div class="ekipa_opis"> Marian Dedoń, dyskryminowany mężczyzna</div><div class="ekipa_osoba"><a href="index.php/1146375">Joanna Brodzka</a></div><div class="ekipa_opis"> Nika Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/112351">Eugeniusz Priwieziencew</a></div><div class="ekipa_opis"> dziadek</div><div class="ekipa_osoba"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis"> posterunkowy Mierzej</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1145881">Marek Jędrzejczyk</a></div><div class="ekipa_opis"> radny Mąka, kierownik marketu</div><div class="ekipa_osoba"><a href="index.php/1127658">Magdalena Emilianowicz</a></div><div class="ekipa_opis"> licencjatka Mariola, stażystka w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1125655">Joanna Kreft-Baka</a></div><div class="ekipa_opis"> radna Dadaj z Koła Nowej Lewicy  Europejskiej</div><div class="ekipa_osoba"><a href="index.php/117922">Zofia Jamry</a></div><div class="ekipa_opis"> Millerowa, szefowa kuchni w karczmie  "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Fredzia, bufetowa w karczmie "Hubertus"</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214478">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Marzenka Cicha, ekspedientka w markecie</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Albin Por, właściciel kablówki "PorKab"</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> dentystka Sandra Por, żona Albina</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>POWRÓT TATY (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Po niefortunnej inauguracji Telewizji Rogoża pani Zofia przez następne dni nie wychodzi z domu, wstydząc się porażki swojego przedsięwzięcia. Tymczasem Krupa po niezamierzonym "występie" na ekranie staje się sławny i sprzedaje autografy.
+Krystyna z synem czekają na dworcu na przyjazd ojca, który niespodziewanie wraca z Kanady. Kiedy Karol wysiada z pociągu, Huba wstaje z wózka inwalidzkiego i o własnych siłach podchodzi do wyczekiwanego od tak dawna rodzica. Ale w domu, przy zastawionym stole, okazuje się, że po 15 latach rozłąki małżonkowie nie potrafią już znaleźć wspólnego języka. Co więcej, Karol ma już w Kanadzie drugą rodzinę. Przed jego wyjazdem Krystyna wyraża zgodę na rozwód.
+Tymczasem Marzenka gniewa się na Misiaka, który niechcący pokazał w telewizji jej "walory". [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214524" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214524','ekipa_skrocona1214524','ekipa1214524','ekipa_schowaj1214524','ekipa_schowaj_krotki1214524','ekipa_schowaj_pelny1214524','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214524" class="jslink" onclick="pzf('ekipa_skrocona1214524','ekipa_pelna1214524','ekipa1214524','ekipa_schowaj1214524','ekipa_schowaj_pelny1214524','ekipa_schowaj_krotki1214524','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214524"1214524" class="jslink" onclick="pzz('ekipa1214524','ekipa_schowaj1214524')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214524" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214524">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis wyroznienie"> Krystyna, matka Huby</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis wyroznienie"> Karol, mąż Krystyny, ojciec Huby</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis wyroznienie"> Huba</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis wyroznienie"> Henryk Krupa</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis wyroznienie"> inżynier Jan Okoń</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Marzenka Cicha, ekspedientka w markecie</div><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> kolejarka</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Wyrobkowa, radna Koła Kobiet Polskich</div><div class="ekipa_osoba"><a href="index.php/118803">Andrzej Gałła</a></div><div class="ekipa_opis"> Miłosz Nowicki, właściciel hurtowni i  karczmy "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> radny Benecki, właściciel zakładu  pogrzegowego i kwiaciarni</div><div class="ekipa_osoba"><a href="index.php/1125655">Joanna Kreft-Baka</a></div><div class="ekipa_opis"> radna Dadaj z Koła Nowej Lewicy  Europejskiej</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/116330">Jerzy Matysiak</a></div><div class="ekipa_opis"> Winnetou</div><div class="ekipa_osoba"><a href="index.php/1145881">Marek Jędrzejczyk</a></div><div class="ekipa_opis"> radny Mąka, kierownik marketu</div><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Albin Por, właściciel kablówki "PorKab"</div><div class="ekipa_osoba"><a href="index.php/1146375">Joanna Brodzka</a></div><div class="ekipa_opis"> Nika Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1146374">Malwina Rak</a></div><div class="ekipa_opis"> Daria Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Julio Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba"><a href="index.php/1145966">Mikołaj Dawidowski</a></div><div class="ekipa_opis"> Kevin Krupa, syn Teresy i Henryka</div><div class="ekipa_osoba">Mateusz Arnista</div><div class="ekipa_opis"> chłopak</div><div class="ekipa_osoba"><a href="index.php/1141506">Piotr Dziwulski</a></div><div class="ekipa_opis"> wyrośnięty chłopak</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Fredzia, bufetowa w karczmie "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis"> niedźwiedź</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214524">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Karol, mąż Krystyny, ojciec Huby</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> Henryk Krupa</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis"> inżynier Jan Okoń</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>RYCERZE I DZIEWICE (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Do Rogoży przybywają dwaj rycerze: Artur i Zbig. Artur jest krewnym Andy. Przybysze postanawiają wykorzystać swoje rycerskie umiejętności jako chwyt marketingowy i odbywają pokazową walkę przed restauracją "Hubertus". Nieoczekiwanie zostają pokonani przez Igę, córkę burmistrza, i pojmani przez posterunkowego Mierzeja.
+Do Marty przyjeżdża niejaka Dana Kierska, kochanka i najpewniej "sponsorka" Wojtka. Marta jest załamana jej wizytą.
+Nika i Daria, córki inżyniera Okonia, urządzają uroczystą koalcję, aby dowiedzieć się, co zamierzają ojciec i pani Krystyna.
+Rycerze trenują w lesie. Ich zmagania przerywa nagle pojawienie się niedźwiedzia. Obaj z przerażeniem uciekają na drzewo. Dochodzą do wniosku, że przydałyby im się konie. Zaczepiają więc jadącego furmanką Woźniaka. Kiedy wreszcie udaje się wydalić ich z miasta, burmistrz oddycha z ulgą i po raz pierwszy jest dumny z Igi. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1214561" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1214561','ekipa_skrocona1214561','ekipa1214561','ekipa_schowaj1214561','ekipa_schowaj_krotki1214561','ekipa_schowaj_pelny1214561','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1214561" class="jslink" onclick="pzf('ekipa_skrocona1214561','ekipa_pelna1214561','ekipa1214561','ekipa_schowaj1214561','ekipa_schowaj_pelny1214561','ekipa_schowaj_krotki1214561','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1214561"1214561" class="jslink" onclick="pzz('ekipa1214561','ekipa_schowaj1214561')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1214561" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1214561">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis wyroznienie"> farmaceutka Anda Szulc, żona burmistrza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis wyroznienie"> "rycerz" Zbig</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1139699">Michał Taran</a></div><div class="ekipa_opis wyroznienie"> "rycerz" Artur Jabłoński, bratanek Andy  Szulc</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114871">Maciej Damięcki</a></div><div class="ekipa_opis wyroznienie"> Woźniak</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis wyroznienie"> posterunkowy Mierzej</div><div class="ekipa_osoba"><a href="index.php/1144724">Rafał Sadowski</a></div><div class="ekipa_opis"> Huba</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Marzenka Cicha, ekspedientka w markecie</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> pani Halinka, asystentka burmistrza Szulca</div><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Krystyna, matka Huby</div><div class="ekipa_osoba"><a href="index.php/1129387">Bogdan Kalus</a></div><div class="ekipa_opis"> inżynier Jan Okoń</div><div class="ekipa_osoba"><a href="index.php/11388">Krzysztof Stroiński</a></div><div class="ekipa_opis"> radny Wacław Buczek</div><div class="ekipa_osoba"><a href="index.php/112508">Roman Kłosowski</a></div><div class="ekipa_opis"> Wiesław Drożyna</div><div class="ekipa_osoba"><a href="index.php/1134919">Anna Dereszowska</a></div><div class="ekipa_opis"> Dana Kierska, kochanka Wojtka Liwicza</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Marta Liwicz</div><div class="ekipa_osoba"><a href="index.php/11803">Jerzy Trela</a></div><div class="ekipa_opis"> Szczapek</div><div class="ekipa_osoba"><a href="index.php/1146375">Joanna Brodzka</a></div><div class="ekipa_opis"> Nika Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1146374">Malwina Rak</a></div><div class="ekipa_opis"> Daria Okoń, córka inżyniera</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> kolejarka</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Fredzia, bufetowa w karczmie "Hubertus"</div><div class="ekipa_osoba"><a href="index.php/1139050">Michał Piłat</a></div><div class="ekipa_opis"> niedźwiedź</div><div class="ekipa_osoba"><a href="index.php/1145883">Makymilian Pietrzak</a></div><div class="ekipa_opis"> Maksio, syn Marty i Wojciecha</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1214561">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/116549">Katarzyna Figura</a></div><div class="ekipa_opis"> farmaceutka Anda Szulc, żona burmistrza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> "rycerz" Zbig</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1139699">Michał Taran</a></div><div class="ekipa_opis"> "rycerz" Artur Jabłoński, bratanek Andy  Szulc</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114871">Maciej Damięcki</a></div><div class="ekipa_opis"> Woźniak</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114380">Sławomir Pacek</a></div><div class="ekipa_opis"> posterunkowy Mierzej</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1213057" selected >1</option><option value="1213057_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1213057_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1213057_2"></a> 
+</nav><div id="czasgen">2026.05.08 03:51:23</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - SFORA</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>SFORA</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2002</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2002. 10. 06</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film sensacyjny</div></li>
+<li><div class="film_tech3">Barwny (negatyw: Kodak Vision 16 mm), 9 odcinków x ok. 55 min<br /><br />
+Okres zdjęciowy: 16 października 2001 - luty 2002.<br />
+Lokacje: Warszawa, Słubice (przejście graniczne), Cieszyn (przejście graniczne).</div></li>
+</ul>
+<p class="opis">Tytułowa sfora to grupa przyjaciół, z których trzej pracują w policji, a jeden w prokuraturze. Od lat młodzieńczych, niczym Dumasowscy muszkieterowie, starają się przestrzegać zasady: "Jeden za wszystkich, wszyscy za jednego". Kiedy ginie Sulima, Komendant Główny Policji, pozostała trójka postanawia wydać prywatną wojnę mafijnemu bossowi Starewiczowi, który zlecił to morderstwo. By dopiąć celu Olbrycht, Duch i Nowicki muszą niejednokrotnie naginać, czy wręcz łamać prawo. Wiedzą bowiem doskonale, że w otaczającym ich świecie nie sposób inaczej dojść sprawiedliwości. Jednak metody działania "sfory" tylko z pozoru przypominają sposób pracy "brudnego Harry'ego" i jego niezliczonych naśladowców. Serial Wójcika to z pewnością nie bezmyślna galopada strzelanin, pościgów, eksplozji i bijatyk, choć - rzecz jasna - bez nich obejść się nie mogło. Pojedynek trójki "muszkieterów" z mafią Starewicza vel "Starego" toczy się przede wszystkim na mózgi. Realizatorzy zadbali o to, by każdy z bohaterów stanowił odrębną, intrygującą indywidualność. I tak Olbrycht, którego ciężarna żona zginęła w zamachu, ma w sobie coś z Riggsa z pierwszej części "Zabójczej broni". Rozpacz z powodu straty ukochanej kobiety, przeradza się w nim w głuchą nienawiść oraz skłonność do agresji i lekceważenia ryzyka. Duch również jest psychicznie "obciążony". Zawiodła go czujność i być może nadmierna pewność siebie. W rezultacie nie jest do końca uczciwy wobec swych partnerów. Prokurator Nowicki jest najbardziej zwyczajny z całej trójki. Jednak i on udowodni, że potrafi być kimś niezwykłym, zdolnym do prawdziwie szlachetnego gestu. W toku akcji do "sfory" dołączy tajemniczy "kontakt" Sulimy, piękna Nika, którą z kolei zainteresuje się genialny haker, pracujący dla Starego. <br />
+Równolegle z opowieścią o trzech przyjaciołach szukających sprawiedliwości, twórcy snują inne, niejako uzupełniające wątki: walki o władzę wewnątrz mafii, powiązań środowisk przestępczych ze światem polityki i biznesu. Świat przedstawiony w "Sforze", podobnie jak w "Ekstradycji", nie wystawia dobrego świadectwa polskiej współczesności. "Sfora" jest może nawet jeszcze mroczniejsza, mniej tu złudzeń, a więcej pesymizmu. Znalazło się wszakże miejsce zarówno na humor, jak i niosące nadzieję przesłanie, że pomimo wszystko wciąż warto dochowywać wierności pewnym zasadom, takim jak wierność, sprawiedliwość, lojalność. Jeśli bowiem ich zabraknie, cóż pozostanie? [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=1610684_1&galeria=1510684"><img class="bezcienia" src="../z1/84i/10684_1.jpg" height="60"></a><a href="index.php?fotos=1610684_2&galeria=1510684"><img class="bezcienia" src="../z1/84i/10684_2.jpg" height="60"></a><a href="index.php?fotos=1610684_3&galeria=1510684"><img class="bezcienia" src="../z1/84i/10684_3.jpg" height="60"></a><a href="index.php?fotos=1610684_4&galeria=1510684"><img class="bezcienia" src="../z1/84i/10684_4.jpg" height="60"></a><a href="index.php?fotos=1610684_5&galeria=1510684"><img class="bezcienia" src="../z1/84i/10684_5.jpg" height="60"></a><a href="index.php?fotos=1610684_6&galeria=1510684"><img class="bezcienia" src="../z1/84i/10684_6.jpg" height="60"></a><a href="index.php/1510684" title="Galeria zdjęć (12)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1210684" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1210684','ekipa_skrocona1210684','ekipa1210684','ekipa_schowaj1210684','ekipa_schowaj_krotki1210684','ekipa_schowaj_pelny1210684','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1210684" class="jslink" onclick="pzf('ekipa_skrocona1210684','ekipa_pelna1210684','ekipa1210684','ekipa_schowaj1210684','ekipa_schowaj_pelny1210684','ekipa_schowaj_krotki1210684','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1210684"1210684" class="jslink" onclick="pzz('ekipa1210684','ekipa_schowaj1210684')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1210684" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1210684">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112">Wojciech Wójcik</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1136719">Ewa Andrzejewska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113393">Marek Nowakowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/1124065">Marcin Szczerbic</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112">Wojciech Wójcik</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenariuszowa</div><div class="ekipa_osoba"><a href="index.php/117326">Maciej Świerkocki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nowela</div><div class="ekipa_osoba"><a href="index.php/1139239">Bogdan Lata</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110964">Piotr Wojtowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1110964">Piotr Wojtowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125487">Marcin Figurski</a></div><div class="ekipa_opis"> II</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora obrazu</div><div class="ekipa_osoba"><a href="index.php/111414">Wiktor Nitkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1129764">Paweł Żelasko</a></div><div class="ekipa_opis"> w napisach nazwisko: Żelazko</div><div class="ekipa_osoba"><a href="index.php/1129762">Tomasz Karnowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124717">Krzysztof Kubiak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127891">Remigiusz Kubiak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1110623">Wiesław Horodyński</a></div><div class="ekipa_opis"> główny oświetlacz; od odcinka 2 określenie  funkcji: współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1139227">Marek Bystrosz</a></div><div class="ekipa_opis"> od odcinka 2 określenie funkcji: współpraca  operatorska</div><div class="ekipa_osoba"><a href="index.php/1116829">Zbigniew Wróblewski</a></div><div class="ekipa_opis"> od odcinka 2 określenie funkcji: współpraca  operatorska</div><div class="ekipa_osoba"><a href="index.php/1139257">Paweł Cichocki</a></div><div class="ekipa_opis"> od odcinka 2 określenie funkcji: współpraca  operatorska</div></li>
+<li><div class="ekipa_funkcja">Obsługa agregatu</div><div class="ekipa_osoba"><a href="index.php/1116577">Mirosław Bielecki</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1122475">Aleksander Winecki</a></div><div class="ekipa_opis"> od odcinka 2 nie występuje w napisach; w  napisach nazwisko: Winiecki</div></li>
+<li><div class="ekipa_funkcja">Transfer</div><div class="ekipa_osoba"><a href="index.php/1134639">Chimney Poland</a></div><div class="ekipa_opis"> od odcinka 2 nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Laboratorium</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1135206">Joanna Macha</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/1112044">Kamil Kuc</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123533">Włodzimierz Szyrle</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/1139228">Anatol Godlewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133439">Piotr Zimoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116563">Marek Pląsek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113441">Lech Traut</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114914">Roman Strumiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133440">Wojciech Czeczot</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111082">Albina Barańska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1137374">Wojciech Ponczek</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1172">Elżbieta Radke</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent kostiumografa</div><div class="ekipa_osoba"><a href="index.php/1139230">Marta Joanna Bryś</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1139258">Julita Kiryluk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba">Orkiestra Kameralna Leopolis (Lwów)</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyrygent</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo artystyczne orkiestry</div><div class="ekipa_osoba">Jaroslaw Myhal</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba">Jaroslaw Myhal</div><div class="ekipa_opis"> wiolonczela; od odcinka 2 nie występuje w napisach</div><div class="ekipa_osoba">Maciej Skała</div><div class="ekipa_opis"> saksofon; od odcinka 2 nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1128045">Tomasz Chmielarz</a></div><div class="ekipa_opis"> trąbka; od odcinka 2 nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1115259">Dariusz Kozakiewicz</a></div><div class="ekipa_opis"> gitara; od odcinka 2 nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1122480">Adam Zemła</a></div><div class="ekipa_opis"> akordeon; od odcinka 2 nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis"> fortepian; od odcinka 2 nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1126342">Zbigniew Wrombel</a></div><div class="ekipa_opis"> gitara basowa; od odcinka 2 nie występuje  w napisach</div><div class="ekipa_osoba"><a href="index.php/1126341">Krzysztof Przybyłowicz</a></div><div class="ekipa_opis"> perkusja; od odcinka 2 nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Dyrygent</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Aranżacja</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis"> od odcinka 2 nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/1139261">Andrzej Milanowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nagranie muzyki</div><div class="ekipa_osoba"><a href="index.php/1122853">Robert Mościcki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125691">Marcin Pilich</a></div><div class="ekipa_opis"> od odcinka 2 nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113950">Piotr Domaradzki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator dźwięku II</div><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128733">Piotr Roguś</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty dźwiękowe</div><div class="ekipa_osoba"><a href="index.php/1161">Henryk Zastróżny</a></div><div class="ekipa_opis"> Studio Filmowe Łódź; od odcinka 2  określenie funkcji: postprodukcja dźwięku</div></li>
+<li><div class="ekipa_funkcja">Postsynchrony</div><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis"> nagranie; od odcinka 2 określenie funkcji:  postprodukcja dźwięku</div><div class="ekipa_osoba"><a href="index.php/1125691">Marcin Pilich</a></div><div class="ekipa_opis"> nagranie i montaż; od odcinka 2 określenie  funkcji: postprodukcja dźwięku</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/113950">Piotr Domaradzki</a></div><div class="ekipa_opis"> Stereo</div><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis"> Stereo</div></li>
+<li><div class="ekipa_funkcja">Montaż dźwięku</div><div class="ekipa_osoba"><a href="index.php/1124813">Michał Kosterkiewicz</a></div><div class="ekipa_opis"> od odcinka 2 określenie funkcji:  postprodukcja dźwięku</div><div class="ekipa_osoba"><a href="index.php/1139259">Piotr Domaradzki jr</a></div><div class="ekipa_opis"> od odcinka 2 określenie funkcji:  postprodukcja dźwięku</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118335">Ewa Romanowska-Różewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1119293">Iwona Rudnicka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1119292">Hanna Kobus</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1137237">Grzegorz Kulka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112784">Magdalena Łęcka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123244">Tomasz Matraszek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opieka literacka</div><div class="ekipa_osoba"><a href="index.php/1114889">Wojciech Jędrkiewicz</a></div><div class="ekipa_opis"> Agencja Filmowa TVP</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1129665">Kinga Domagała</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie graficzne</div><div class="ekipa_osoba"><a href="index.php/1139238">Adam Keller</a></div><div class="ekipa_opis"> od odcinka 2 nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Koordynacja kaskaderska</div><div class="ekipa_osoba"><a href="index.php/1191">Ryszard Janikowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/1125978">Robert Cichoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132468">Zbigniew Świderski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty pirotechniczne</div><div class="ekipa_osoba"><a href="index.php/115837">Kazimierz Wróblewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118592">Arkadiusz Rośczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1132830">Robert Sarek</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1178">Joanna Kopczyńska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1110055">Teresa Paszkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111138">Dorota Sierakiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1135311">Joanna Węglarz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114880">Ewa Kaczmarek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112782">Anna Kryszkowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1114843">Robert Feluch</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123042">Cezary Busiło</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/111409">Dorota Grieser</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/115167">Piotr Dejmek</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1122464">Andrzej Terej</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1131193">Sławomir Rogowski</a></div><div class="ekipa_opis wyroznienie"> Agencja Filmowa TVP</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121566">Studio D.T. Film</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111141">Telewizja Polska</a></div><div class="ekipa_opis wyroznienie"> Agencja Filmowa</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis wyroznienie"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis wyroznienie"> Stanisław Olbrycht</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis wyroznienie"> Jan Sulima, komendant główny policji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis wyroznienie"> Walerian Duch</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis wyroznienie"> prokurator Grzegorz Nowicki</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1210684">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/112">Wojciech Wójcik</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/112">Wojciech Wójcik</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1110964">Piotr Wojtowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1135206">Joanna Macha</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/111082">Albina Barańska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1172">Elżbieta Radke</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/113950">Piotr Domaradzki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1118335">Ewa Romanowska-Różewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/112784">Magdalena Łęcka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123244">Tomasz Matraszek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1178">Joanna Kopczyńska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1131193">Sławomir Rogowski</a></div><div class="ekipa_opis"> Agencja Filmowa TVP</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1121566">Studio D.T. Film</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/111141">Telewizja Polska</a></div><div class="ekipa_opis"> Agencja Filmowa</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Jan Sulima, komendant główny policji</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1210684" class="jslink" onclick="pzz1('varia1210684','varia_schowaj1210684')">pokaż</span></div></h2>
+<table id="varia1210684" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">NIE OD RAZU RAJ  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/118379">Krzesimir Dębski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/116476">Andrzej Mogielnicki</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1125612">Artur Gadowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">YOU DON'T KNOW ME  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1139237">Jarosław Weber</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">WAY TO LOVE  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+          
+        </td><td class="varia_osoba"><a href="index.php/1139261">Andrzej Milanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1125134">Zbigniew Stelmasiak</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">JEDEN KRÓTKI DZIEŃ  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1139355">Filip Siejka</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1129117">Ryszard Kunce</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/111843">Zbigniew Wodecki</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">CZASEM  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1110033">Wojciech Borkowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/115889">Marcin Sosnowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1123781">Katarzyna Groniec</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">GAMA DWÓJKI  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+          
+        </td><td class="varia_osoba"><a href="index.php/1139261">Andrzej Milanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1125134">Zbigniew Stelmasiak</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">BIZZARAMENTE  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/118379">Krzesimir Dębski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba">String Connection (zespół)</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">TOWER OF OLD POWER  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/118379">Krzesimir Dębski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba">String Connection (zespół)</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">KIEDYŚ SIĘ ODNAJDZIEMY  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1139504">Tomasz Pacanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1139505">Ewelina Kordy</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1139237">Jarosław Weber</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">AMAPOLA  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba">La Calle</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Aranżacja  
+        </td><td class="varia_osoba"><a href="index.php/118379">Krzesimir Dębski</a></td><td class="varia_osoba_opis"></td></tr>
+</table>
+<h2>Patrz także:<div class="sterowanie"><span id="klamry_schowaj1210684" class="jslink" onclick="pzz1('klamry1210684','klamry_schowaj1210684')">schowaj</span></div></h2>
+<ul class="klamry" id="klamry1210684">
+<li><div class="rok">2002</div><div class="tytul"><a href="index.php/1211631">BEZ LITOŚCI</a></div><div class="wyroznik">Film fabularny / Wojciech Wójcik</div></li>
+<li><div class="rok">2006</div><div class="tytul"><a href="index.php/1217338">FAŁSZERZE. POWRÓT SFORY</a></div><div class="wyroznik">Serial fabularny / Wojciech Wójcik</div></li>
+</ul>
+<div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Olbrycht, Sulima, Duch i Nowicki zawodowo zajmują się walką z przestępczością zorganizowaną. Szef jednego z gangów, Starewicz, zleca zabójstwo Sulimy, który jako Komendant Główny Policji, zdecydowanie za mocno depcze mu po piętach. Kiedy Sulima ginie w zamachu, jego przyjaciele postanawiają zrobić wszystko, by Starewicz wylądował za kratkami. Nie będzie to jednak łatwe. Na zebraniu mafijnych bossów w Warszawie następuje pojednanie. Starewicz, uśpiwszy w ten sposób czujność konkurencji, eliminuje najgroźniejszego rywala - Twardego. Pozostali muszą się podporządkować nowemu szefowi. Starewicz zostaje przestępczym królem Warszawy. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211549" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211549','ekipa_skrocona1211549','ekipa1211549','ekipa_schowaj1211549','ekipa_schowaj_krotki1211549','ekipa_schowaj_pelny1211549','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211549" class="jslink" onclick="pzf('ekipa_skrocona1211549','ekipa_pelna1211549','ekipa1211549','ekipa_schowaj1211549','ekipa_schowaj_pelny1211549','ekipa_schowaj_krotki1211549','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211549"1211549" class="jslink" onclick="pzz('ekipa1211549','ekipa_schowaj1211549')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211549" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211549">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1115332">Marek Kalita</a></div><div class="ekipa_opis"> Jan Sulima, komendant główny policji</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Basia, żona Olbrychta</div><div class="ekipa_osoba"><a href="index.php/1128768">Anita Sokołowska</a></div><div class="ekipa_opis"> Anita, żona Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> żona Sulimy</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/112069">Joachim Lamża</a></div><div class="ekipa_opis"> "Twardy", rywal Starewicza</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/113278">Dariusz Biskupski</a></div><div class="ekipa_opis"> Piotr T. "Tomahawk", człowiek  "Twardego", potem Starewicza</div><div class="ekipa_osoba"><a href="index.php/1118891">Robert Więckiewicz</a></div><div class="ekipa_opis"> Dziubiński "Dziobaty", człowiek Starewicza,  morderca "Twardego" i Basi Olbrycht</div><div class="ekipa_osoba"><a href="index.php/111651">Antoni Ostrouch</a></div><div class="ekipa_opis"> Piotr Grauber "Gruby", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1139224">Tomasz Mycan</a></div><div class="ekipa_opis"> "Szprycha", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1134482">Tomasz Tyndyk</a></div><div class="ekipa_opis"> "Chamulec", człowiek "Twardego", potem  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1133408">Artur Sokołowski</a></div><div class="ekipa_opis"> Leonard Kolski "Laluś", człowiek  "Twardego", potem Starewicza</div><div class="ekipa_osoba"><a href="index.php/1115867">Mirosław Zbrojewicz</a></div><div class="ekipa_opis"> inspektor Walas prowadzący śledztwo w  sprawie zabójstwa Sulimy</div><div class="ekipa_osoba"><a href="index.php/116">Jerzy Braszka</a></div><div class="ekipa_opis"> prezes dający Nowickiemu łapówkę</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/1118893">Paweł Burczyk</a></div><div class="ekipa_opis"> Romek, informator Olbrychta</div><div class="ekipa_osoba"><a href="index.php/1139223">Sławomir Jeneralski</a></div><div class="ekipa_opis"> prezenter "Wiadomości"</div><div class="ekipa_osoba"><a href="index.php/116065">Sławomir Małyszko</a></div><div class="ekipa_opis"> "Kicha"</div><div class="ekipa_osoba"><a href="index.php/1136483">Milan Skrobic</a></div><div class="ekipa_opis"> rezydent "Rio", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis"> skrzypek</div><div class="ekipa_osoba"><a href="index.php/1139225">Jacek Porębski</a></div><div class="ekipa_opis"> Marek, syn Sulimy</div><div class="ekipa_osoba"><a href="index.php/1110039">Marek Cichucki</a></div><div class="ekipa_opis"> "naukowiec" zagłuszający podsłuch policji na spotkaniu Starewicza z "Twardym"; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1139256">Aleksander Józefowski</a></div><div class="ekipa_opis"> Jan Sulima w dzieciństwie; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211549">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1211549" class="jslink" onclick="pzz1('varia1211549','varia_schowaj1211549')">pokaż</span></div></h2>
+<table id="varia1211549" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Cytat filmowy</td></tr><tr><td colspan="3" class="varia_tytul">ŻĄDŁO (THE STING)</td></tr></table><span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">52 min</div></li>
+</ul>
+<p class="opis">Na pogrzebie Sulimy niespodziewanie pojawia się Starewicz. Zbulwersowany Olbrycht wyprowadza mafiosa z kościoła i miażdży mu dłoń. Żądny zemsty gangster zleca zamordowanie Olbrychta. Zamach jednak nie do końca się udaje i zamiast policjanta ginie jego żona Basia. Zrozpaczony Olbrycht, przesłuchując podejrzanego o dokonanie morderstwa, zabija go. W efekcie zostaje wydalony z policji i osadzony w więzieniu. W celi poznaje niejakiego Pawła Lipskiego, genialnego hakera, odsiadującego wyrok za kradzież 500 tysięcy złotych z banku. Tymczasem Duch i Nowicki starają się uzyskać dla Olbrychta przedterminowe zwolnienie. Metody, które stosują, nie mają wiele wspólnego z prawem. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211590" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211590','ekipa_skrocona1211590','ekipa1211590','ekipa_schowaj1211590','ekipa_schowaj_krotki1211590','ekipa_schowaj_pelny1211590','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211590" class="jslink" onclick="pzf('ekipa_skrocona1211590','ekipa_pelna1211590','ekipa1211590','ekipa_schowaj1211590','ekipa_schowaj_pelny1211590','ekipa_schowaj_krotki1211590','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211590"1211590" class="jslink" onclick="pzz('ekipa1211590','ekipa_schowaj1211590')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211590" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211590">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Basia, żona Olbrychta</div><div class="ekipa_osoba"><a href="index.php/1128768">Anita Sokołowska</a></div><div class="ekipa_opis"> Anita, żona Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> żona Sulimy</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/118633">Dariusz Jakubowski</a></div><div class="ekipa_opis"> profesor Stroliński, lekarz Starewicza</div><div class="ekipa_osoba"><a href="index.php/1116280">Jarosław Gajewski</a></div><div class="ekipa_opis"> adwokat Starewicza</div><div class="ekipa_osoba"><a href="index.php/1118891">Robert Więckiewicz</a></div><div class="ekipa_opis"> Dziubiński "Dziobaty", człowiek Starewicza,  morderca "Twardego" i Basi Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1139224">Tomasz Mycan</a></div><div class="ekipa_opis"> "Szprycha", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1134482">Tomasz Tyndyk</a></div><div class="ekipa_opis"> "Chamulec", człowiek "Twardego", potem  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1133408">Artur Sokołowski</a></div><div class="ekipa_opis"> Leonard Kolski "Laluś", człowiek  "Twardego", potem Starewicza</div><div class="ekipa_osoba"><a href="index.php/1115867">Mirosław Zbrojewicz</a></div><div class="ekipa_opis"> inspektor Walas prowadzący śledztwo w  sprawie zabójstwa Sulimy</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> podkomisarz Połomski</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> handlarz narkotykami</div><div class="ekipa_osoba"><a href="index.php/1118893">Paweł Burczyk</a></div><div class="ekipa_opis"> Romek, informator Olbrychta</div><div class="ekipa_osoba"><a href="index.php/1122672">Bartłomiej Świderski</a></div><div class="ekipa_opis"> asystent Walasa, informator mafii</div><div class="ekipa_osoba"><a href="index.php/1139256">Aleksander Józefowski</a></div><div class="ekipa_opis"> Jan Sulima w dzieciństwie</div><div class="ekipa_osoba"><a href="index.php/1139225">Jacek Porębski</a></div><div class="ekipa_opis"> Marek, syn Sulimy; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211590">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">54 min</div></li>
+</ul>
+<p class="opis">Starewicz odwiedza sędziego Chwalbę i nakłania go do przedterminowego zwolnienia Pawła Lipskiego. Chwalbie potrzebna jest przychylność Nowickiego, więc zgadza się wypuścić hakera, ale tylko razem z Olbrychtem. W rezultacie obaj wychodzą na wolność. Do Nowickiego zgłasza się Nika, współpracowniczka generała Sulimy. Dziewczyna boi się o swoje życie i prosi o pomoc. W domu Starewicza Lipski dowiaduje się, że ceną za jego zwolnienie jest odczytanie policyjnego dysku komputerowego. Duch dysponuje już pokaźną sumą pieniędzy, więc wynajmuje duże mieszkanie. Ma ono służyć za schronienie dla członków "sfory", do której dołącza Nika. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211589" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211589','ekipa_skrocona1211589','ekipa1211589','ekipa_schowaj1211589','ekipa_schowaj_krotki1211589','ekipa_schowaj_pelny1211589','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211589" class="jslink" onclick="pzf('ekipa_skrocona1211589','ekipa_pelna1211589','ekipa1211589','ekipa_schowaj1211589','ekipa_schowaj_pelny1211589','ekipa_schowaj_krotki1211589','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211589"1211589" class="jslink" onclick="pzz('ekipa1211589','ekipa_schowaj1211589')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211589" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211589">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/113594">Janusz R. Nowicki</a></div><div class="ekipa_opis"> sędzia Chwalba</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1115867">Mirosław Zbrojewicz</a></div><div class="ekipa_opis"> inspektor Walas prowadzący śledztwo w  sprawie zabójstwa Sulimy</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/1139224">Tomasz Mycan</a></div><div class="ekipa_opis"> "Szprycha", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1134482">Tomasz Tyndyk</a></div><div class="ekipa_opis"> "Chamulec", człowiek "Twardego", potem  Starewicza</div><div class="ekipa_osoba"><a href="index.php/118148">Piotr Siwkiewicz</a></div><div class="ekipa_opis"> podkomisarz Połomski</div><div class="ekipa_osoba"><a href="index.php/1122433">Michał Bukowski</a></div><div class="ekipa_opis"> komisarz</div><div class="ekipa_osoba"><a href="index.php/1115288">Beata Kawka</a></div><div class="ekipa_opis"> sekretarka Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1129127">Borys Szyc</a></div><div class="ekipa_opis"> "Glut", złodziej samochodów</div><div class="ekipa_osoba"><a href="index.php/118599">Witold Bieliński</a></div><div class="ekipa_opis"> policjant dyżurny w budynku policji</div><div class="ekipa_osoba"><a href="index.php/1128452">Wojciech Billip</a></div><div class="ekipa_opis"> recepcjonista w hotelu</div><div class="ekipa_osoba"><a href="index.php/1122782">Rafał Mohr</a></div><div class="ekipa_opis"> dealer narkotyków</div><div class="ekipa_osoba"><a href="index.php/1117648">Janusz Hamerszmit</a></div><div class="ekipa_opis"> strażnik więzienny; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211589">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">54 min</div></li>
+</ul>
+<p class="opis">Podczas pracy nad dyskiem Lipski zaczyna podejrzewać, że Nika może być jego siostrą, z którą utracił kontakt w dzieciństwie. W "Rio", knajpie Starewicza, odbywa się sąd nad dwoma gangsterami, odpowiedzialnymi za stratę miliona złotych i heroiny. Członkowie "sfory" zaczynają pomału osaczać Starego. Olbrycht kupuje nierejestrowaną broń. Duch zdobywa wysokiej klasy urządzenia elektroniczne i podsłuchowe. Starewicz zleca Killerowi zabójstwo Niki, lecz gdy dowiaduje się o podejrzeniach Lipskiego, w ostatniej chwili odwołuje wykonanie wyroku. Duch z Olbrychtem instalują urządzenia, dzięki którym dom Starewicza przestaje mieć dla nich tajemnice. Wdowa po Sulimie próbuje się dowiedzieć, kto przesłał jej dużą sumę pieniędzy. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211630" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211630','ekipa_skrocona1211630','ekipa1211630','ekipa_schowaj1211630','ekipa_schowaj_krotki1211630','ekipa_schowaj_pelny1211630','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211630" class="jslink" onclick="pzf('ekipa_skrocona1211630','ekipa_pelna1211630','ekipa1211630','ekipa_schowaj1211630','ekipa_schowaj_pelny1211630','ekipa_schowaj_krotki1211630','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211630"1211630" class="jslink" onclick="pzz('ekipa1211630','ekipa_schowaj1211630')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211630" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211630">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/1128768">Anita Sokołowska</a></div><div class="ekipa_opis"> Anita, żona Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> żona Sulimy</div><div class="ekipa_osoba"><a href="index.php/1121951">Agnieszka Schimscheiner</a></div><div class="ekipa_opis"> żona "Lalusia"</div><div class="ekipa_osoba"><a href="index.php/1134653">Joanna Sydor</a></div><div class="ekipa_opis"> kobieta "Szprychy"</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> kobieta "Chamulca"</div><div class="ekipa_osoba"><a href="index.php/1118765">Katarzyna Kwiatkowska</a></div><div class="ekipa_opis"> kierowniczka agencji</div><div class="ekipa_osoba"><a href="index.php/113278">Dariusz Biskupski</a></div><div class="ekipa_opis"> Piotr T. "Tomahawk", człowiek  "Twardego", potem Starewicza</div><div class="ekipa_osoba"><a href="index.php/111651">Antoni Ostrouch</a></div><div class="ekipa_opis"> Piotr Grauber "Gruby", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1133408">Artur Sokołowski</a></div><div class="ekipa_opis"> Leonard Kolski "Laluś", człowiek  "Twardego", potem Starewicza</div><div class="ekipa_osoba"><a href="index.php/1139224">Tomasz Mycan</a></div><div class="ekipa_opis"> "Szprycha", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1134482">Tomasz Tyndyk</a></div><div class="ekipa_opis"> "Chamulec", człowiek "Twardego", potem  Starewicza</div><div class="ekipa_osoba"><a href="index.php/116065">Sławomir Małyszko</a></div><div class="ekipa_opis"> "Kicha"</div><div class="ekipa_osoba"><a href="index.php/112570">Zdzisław Rychter</a></div><div class="ekipa_opis"> handlarz bronią</div><div class="ekipa_osoba"><a href="index.php/1127311">Paweł Szwed</a></div><div class="ekipa_opis"> sprzedawca sprzętu komputerowego</div><div class="ekipa_osoba"><a href="index.php/111404">Jacek Kałucki</a></div><div class="ekipa_opis"> właściciel sklepu ze sprzętem  elektronicznym</div><div class="ekipa_osoba"><a href="index.php/1136483">Milan Skrobic</a></div><div class="ekipa_opis"> rezydent "Rio", człowiek Starewicza</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211630">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">54 min</div></li>
+</ul>
+<p class="opis">Paweł Lipski spotyka się ze swoimi wspólnikami. Żąda od nich wypłacenia swojej części z ukradzionych w banku pieniędzy. Przez cały czas śledzi go Buba, zaufany żołnierz Starewicza. Olbrycht odkrywa, że Starewicz jest członkiem rady nadzorczej Globobanku. Lipski zostaje kurierem organizacji, jego zadaniem jest odbiór pieniędzy z nielegalnej wytwórni wódek. Tymczasem Buba, na polecenie szefa, masakruje wspólników młodego hakera. Prokuratora Nowickiego opuszcza żona. Paweł odwiedza w szpitalu ciężko pobitych kolegów. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211649" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211649','ekipa_skrocona1211649','ekipa1211649','ekipa_schowaj1211649','ekipa_schowaj_krotki1211649','ekipa_schowaj_pelny1211649','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211649" class="jslink" onclick="pzf('ekipa_skrocona1211649','ekipa_pelna1211649','ekipa1211649','ekipa_schowaj1211649','ekipa_schowaj_pelny1211649','ekipa_schowaj_krotki1211649','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211649"1211649" class="jslink" onclick="pzz('ekipa1211649','ekipa_schowaj1211649')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211649" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211649">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/1128768">Anita Sokołowska</a></div><div class="ekipa_opis"> Anita, żona Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1139451">Łukasz Simlat</a></div><div class="ekipa_opis"> "Bakłan", właściciel hurtowni</div><div class="ekipa_osoba"><a href="index.php/1115867">Mirosław Zbrojewicz</a></div><div class="ekipa_opis"> inspektor Walas prowadzący śledztwo w  sprawie zabójstwa Sulimy</div><div class="ekipa_osoba"><a href="index.php/115105">Mirosław Krawczyk</a></div><div class="ekipa_opis"> komendant główny policji</div><div class="ekipa_osoba"><a href="index.php/1122672">Bartłomiej Świderski</a></div><div class="ekipa_opis"> asystent Walasa, informator mafii</div><div class="ekipa_osoba"><a href="index.php/113278">Dariusz Biskupski</a></div><div class="ekipa_opis"> Piotr T. "Tomahawk", człowiek  "Twardego", potem Starewicza</div><div class="ekipa_osoba"><a href="index.php/111651">Antoni Ostrouch</a></div><div class="ekipa_opis"> Piotr Grauber "Gruby", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1133408">Artur Sokołowski</a></div><div class="ekipa_opis"> Leonard Kolski "Laluś", człowiek  "Twardego", potem Starewicza</div><div class="ekipa_osoba"><a href="index.php/113287">Piotr Polk</a></div><div class="ekipa_opis"> lekarz dyżurny w Szpitalu Wolskim</div><div class="ekipa_osoba"><a href="index.php/1138329">Maciej Makowski</a></div><div class="ekipa_opis"> wspólnik Lipskiego</div><div class="ekipa_osoba"><a href="index.php/1134800">Marcin Kwaśny</a></div><div class="ekipa_opis"> wspólnik Lipskiego</div><div class="ekipa_osoba"><a href="index.php/1136653">Maciej Zakościelny</a></div><div class="ekipa_opis"> wspólnik Lipskiego; w napisach imię: Marcin</div><div class="ekipa_osoba"><a href="index.php/1111928">Maria Mielnikow-Krawczyk</a></div><div class="ekipa_opis"> matka jednego ze wspólników Lipskiego</div><div class="ekipa_osoba"><a href="index.php/1134919">Anna Dereszowska</a></div><div class="ekipa_opis"> prostytutka pomagająca w zabiciu  "Grubego"</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> aplikant, człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1113312">Sebastian Chondrokostas</a></div><div class="ekipa_opis"> interesant w willi Starewicza</div><div class="ekipa_osoba"><a href="index.php/1127474">Andrzej Andrzejewski</a></div><div class="ekipa_opis"> interesant w willi Starewicza</div><div class="ekipa_osoba"><a href="index.php/1126163">Arkadiusz Detmer</a></div><div class="ekipa_opis"> interesant w willi Starewicza</div><div class="ekipa_osoba"><a href="index.php/118806">Andrzej Musiał</a></div><div class="ekipa_opis"> oficer dyżurny</div><div class="ekipa_osoba"><a href="index.php/113288">Maciej Robakiewicz</a></div><div class="ekipa_opis"> "Blondyn", członek Rady Nadzorczej Globo  Banku, informator Niki</div><div class="ekipa_osoba"><a href="index.php/111068">Andrzej Żółkiewski</a></div><div class="ekipa_opis"> prezes Globo Banku</div><div class="ekipa_osoba"><a href="index.php/1136483">Milan Skrobic</a></div><div class="ekipa_opis"> rezydent "Rio", człowiek Starewicza</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211649">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Olbrychtowi udaje się rozbroić bombę, podłożoną pod samochodem Nowickiej. Starewicz zaczyna likwidować tych ze swoich ludzi, którzy mogliby dostarczyć policji dowody jego przestępczej działalności. Duch odwiedza w szpitalu kolegów Lipskiego, a potem aranżuje jego spotkanie z kuratorem sądowym. UOP przejmuje od policji akta operacyjne Starewicza. Od tej chwili członkowie sfory działają poza oficjalnymi strukturami. Lipski decyduje się na współpracę z Duchem, zakłada podsłuch w domu Starewicza. Ten zaś, wiedząc o kłopotach chłopaka, prosi Ducha o pozostawienie go w spokoju. Wyznaje mu pewną tajemnicę. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211672" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211672','ekipa_skrocona1211672','ekipa1211672','ekipa_schowaj1211672','ekipa_schowaj_krotki1211672','ekipa_schowaj_pelny1211672','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211672" class="jslink" onclick="pzf('ekipa_skrocona1211672','ekipa_pelna1211672','ekipa1211672','ekipa_schowaj1211672','ekipa_schowaj_pelny1211672','ekipa_schowaj_krotki1211672','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211672"1211672" class="jslink" onclick="pzz('ekipa1211672','ekipa_schowaj1211672')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211672" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211672">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/118015">Andrzej Krukowski</a></div><div class="ekipa_opis"> Franco Botti, delegat nowojorskiej mafii na  Europę Wschodnią</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/1128561">Hubert Zduniak</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/113368">Mirosław Konarowski</a></div><div class="ekipa_opis"> kurator sądowy</div><div class="ekipa_osoba"><a href="index.php/117193">Aleksander Mikołajczak</a></div><div class="ekipa_opis"> Chryń, przełożony Ducha</div><div class="ekipa_osoba"><a href="index.php/113287">Piotr Polk</a></div><div class="ekipa_opis"> lekarz dyżurny w Szpitalu Wolskim</div><div class="ekipa_osoba"><a href="index.php/1139451">Łukasz Simlat</a></div><div class="ekipa_opis"> "Bakłan", właściciel hurtowni</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/1139223">Sławomir Jeneralski</a></div><div class="ekipa_opis"> prezenter "Wiadomości"</div><div class="ekipa_osoba"><a href="index.php/116145">Danuta Rynkiewicz</a></div><div class="ekipa_opis"> policyjna archiwistka</div><div class="ekipa_osoba"><a href="index.php/116505">Czesław Nogacki</a></div><div class="ekipa_opis"> złodziej na cmentarzu</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> aplikant, człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1136653">Maciej Zakościelny</a></div><div class="ekipa_opis"> wspólnik Lipskiego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1138329">Maciej Makowski</a></div><div class="ekipa_opis"> wspólnik Lipskiego; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211672">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">52 min</div></li>
+</ul>
+<p class="opis">Nika opowiada Olbrychtowi o swoim dzieciństwie. Wie, że ma brata, ale nie ma pojęcia, co się z nim dzieje. Starewicz i Buba szykują się do wyjazdu za granicę. Operacja przerzutu dużej sumy brudnych pieniędzy wchodzi w fazę realizacji. Olbrycht aranżuje spotkanie Niki i Lipskiego. Młodzi na szczęście nie są rodzeństwem. Nowicki odbywa dramatyczną rozmowę z prokuratorem okręgowym. Otrzymuje cichą zgodę na swoje nie całkiem legalne działania. Nika obezwładnia dwóch funkcjonariuszy UOP, którzy trafili na ślad Sfory. Starewicz wyznaje Lipskiemu, że jest jego ojcem. Lipski jest w szoku, decyduje się na ucieczkę z domu Starewicza. Przed odejściem zdejmuje podsłuch. Starewicz i Buba ruszają w podróż za granicę. Lipski i Nika umawiają się na spotkanie. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211694" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211694','ekipa_skrocona1211694','ekipa1211694','ekipa_schowaj1211694','ekipa_schowaj_krotki1211694','ekipa_schowaj_pelny1211694','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211694" class="jslink" onclick="pzf('ekipa_skrocona1211694','ekipa_pelna1211694','ekipa1211694','ekipa_schowaj1211694','ekipa_schowaj_pelny1211694','ekipa_schowaj_krotki1211694','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211694"1211694" class="jslink" onclick="pzz('ekipa1211694','ekipa_schowaj1211694')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211694" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211694">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/118015">Andrzej Krukowski</a></div><div class="ekipa_opis"> Franco Botti, delegat nowojorskiej mafii na  Europę Wschodnią</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1117684">Krzysztof Dracz</a></div><div class="ekipa_opis"> prokurator okręgowy, zwierzchnik Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1116280">Jarosław Gajewski</a></div><div class="ekipa_opis"> adwokat Starewicza</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/1128561">Hubert Zduniak</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/1128768">Anita Sokołowska</a></div><div class="ekipa_opis"> Anita, żona Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> "partner" Anity Nowickiej</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis"> skrzypek</div><div class="ekipa_osoba"><a href="index.php/113393">Marek Nowakowski</a></div><div class="ekipa_opis"> celnik</div><div class="ekipa_osoba"><a href="index.php/1122464">Andrzej Terej</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1134976">Jacek Traut</a></div><div class="ekipa_opis"> kurier</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211694">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">54 min</div></li>
+</ul>
+<p class="opis">Wzajemna fascynacja Lipskiego i Niki przeradza się w miłość. Młodzi spędzają noc w hotelu. Brudne pieniądze są już w Polsce. Członkowie sfory nie spuszczają z oka samochodu z tym trefnym towarem. Pieniądze trafiają do firmy Globo-import. Kiler likwiduje przewożących i kurierów. Z sejfu Globo-importu gotówka wędruje do skarbca Globobanku, potem kilka operacji komputerowych - i forsa jest wyprana. Cała operacja jest nadzorowana przez Franka Bottiego - emisariusza nowojorskiej mafii. Ale i Sfora sporo już wie na ten temat. Starewicz poddaje się zabiegowi wymiany rozrusznika serca. Nika tłumaczy Nowickiemu, jak, dzięki sprytnym operacjom komputerowym w systemie bankowym, można wyprać brudne pieniądze. Olbrycht i Duch przygotowują operację, w wyniku której mają nadzieję przekonać Bubę do współpracy. Starewicz wyczuwa, że pętla wokół niego się zacieśnia. Informuje VIP-a, że zamierza wycofać się z interesów. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211713" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211713','ekipa_skrocona1211713','ekipa1211713','ekipa_schowaj1211713','ekipa_schowaj_krotki1211713','ekipa_schowaj_pelny1211713','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211713" class="jslink" onclick="pzf('ekipa_skrocona1211713','ekipa_pelna1211713','ekipa1211713','ekipa_schowaj1211713','ekipa_schowaj_pelny1211713','ekipa_schowaj_krotki1211713','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211713"1211713" class="jslink" onclick="pzz('ekipa1211713','ekipa_schowaj1211713')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211713" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211713">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/118015">Andrzej Krukowski</a></div><div class="ekipa_opis"> Franco Botti, delegat nowojorskiej mafii na  Europę Wschodnią</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1117684">Krzysztof Dracz</a></div><div class="ekipa_opis"> prokurator okręgowy, zwierzchnik Nowickiego</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/1128561">Hubert Zduniak</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/118633">Dariusz Jakubowski</a></div><div class="ekipa_opis"> profesor Stroliński, lekarz Starewicza</div><div class="ekipa_osoba"><a href="index.php/1128768">Anita Sokołowska</a></div><div class="ekipa_opis"> Anita, żona Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> "partner" Anity Nowickiej</div><div class="ekipa_osoba"><a href="index.php/112760">Sylwester Maciejewski</a></div><div class="ekipa_opis"> Górko, menel wynajęty przez sforę</div><div class="ekipa_osoba"><a href="index.php/1127215">Piotr Nowak</a></div><div class="ekipa_opis"> partner "Buby"</div><div class="ekipa_osoba"><a href="index.php/1136483">Milan Skrobic</a></div><div class="ekipa_opis"> rezydent "Rio", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1110657">Leszek Abrahamowicz</a></div><div class="ekipa_opis"> kierownik sali</div><div class="ekipa_osoba"><a href="index.php/115043">Janusz Chlebowski</a></div><div class="ekipa_opis"> ochroniarz "Buby"</div><div class="ekipa_osoba"><a href="index.php/1122464">Andrzej Terej</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1134976">Jacek Traut</a></div><div class="ekipa_opis"> kurier</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211713">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">58 min</div></li>
+</ul>
+<p class="opis">Wojna Sfory ze Starewiczem weszła w fazę decydującą. Nowicki przekazuje szefowi rady polityki pieniężnej dowody na przestępczą działalność Globobanku. Duch uzyskuje od Buby informację o kolejnym transporcie brudnych pieniędzy. Sfora decyduje się na zorganizowanie pułapki. Franco Botti zostaje aresztowany. Zmiana rozrusznika serca i odpowiednie zapisy w dokumentacji szpitalnej pozwalają Starewiczowi na zaaranżowanie własnej śmierci. Wcześniej jednak zleca zabójstwo Buby i Ducha. Duch ochrania Bubę własnym ciałem, jest ciężko ranny. W szpitalu opowiada przyjaciołom ze Sfory o swojej współpracy z UOP-em i Starewiczem. Jest pewien, że Starewicz żyje. Olbrycht i Nika odkrywają, że szukając tropów Starewicza zaniedbali jeden szczegół. Jadą do podwarszawskiego miasteczka, w którym spodziewają się znaleźć kryjówkę gangstera. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1211766" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1211766','ekipa_skrocona1211766','ekipa1211766','ekipa_schowaj1211766','ekipa_schowaj_krotki1211766','ekipa_schowaj_pelny1211766','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1211766" class="jslink" onclick="pzf('ekipa_skrocona1211766','ekipa_pelna1211766','ekipa1211766','ekipa_schowaj1211766','ekipa_schowaj_pelny1211766','ekipa_schowaj_krotki1211766','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1211766"1211766" class="jslink" onclick="pzz('ekipa1211766','ekipa_schowaj1211766')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1211766" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1211766">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Olbrycht</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> Walerian Duch</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> prokurator Grzegorz Nowicki</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> Ryszard Starewicz "Stary", szef mafii</div><div class="ekipa_osoba"><a href="index.php/1125380">Karolina Gruszka</a></div><div class="ekipa_opis"> Joanna "Nika" Różycka</div><div class="ekipa_osoba"><a href="index.php/1124978">Łukasz Garlicki</a></div><div class="ekipa_opis"> haker Paweł Lipski "Młody", syn Starewicza</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> Jerzy Bublewicz "Buba", człowiek Starewicza</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> VIP, wspólnik Starewicza</div><div class="ekipa_osoba"><a href="index.php/118015">Andrzej Krukowski</a></div><div class="ekipa_opis"> Franco Botti, delegat nowojorskiej mafii na  Europę Wschodnią</div><div class="ekipa_osoba"><a href="index.php/113510">Andrzej Pieczyński</a></div><div class="ekipa_opis"> zawodowy morderca pracujący dla  Starewicza</div><div class="ekipa_osoba"><a href="index.php/1117684">Krzysztof Dracz</a></div><div class="ekipa_opis"> prokurator okręgowy, zwierzchnik Nowickiego; nazwisko aktora pojawia się w napisach odcinka, choć w rzeczywistości w nim nie wystąpił</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> pan Józef, służący Starewicza</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/1128561">Hubert Zduniak</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/1115867">Mirosław Zbrojewicz</a></div><div class="ekipa_opis"> inspektor Walas prowadzący śledztwo w  sprawie zabójstwa Sulimy</div><div class="ekipa_osoba"><a href="index.php/1194">Artur Żmijewski</a></div><div class="ekipa_opis"> Roman Kruk, nowy współpracownik  Olbrychta</div><div class="ekipa_osoba"><a href="index.php/118633">Dariusz Jakubowski</a></div><div class="ekipa_opis"> profesor Stroliński, lekarz Starewicza</div><div class="ekipa_osoba"><a href="index.php/1128768">Anita Sokołowska</a></div><div class="ekipa_opis"> Anita, żona Nowickiego</div><div class="ekipa_osoba"><a href="index.php/1128121">Marta Dąbrowa</a></div><div class="ekipa_opis"> Joasia, córka Starewicza, siostra Pawła  Lipskiego</div><div class="ekipa_osoba"><a href="index.php/1139650">Sylwia Stępniak</a></div><div class="ekipa_opis"> sekretarka profesora Strolińskiego</div><div class="ekipa_osoba"><a href="index.php/1123241">Ewa Szawłowska</a></div><div class="ekipa_opis"> żona VIP-a</div><div class="ekipa_osoba"><a href="index.php/1117557">Borys Jaźnicki</a></div><div class="ekipa_opis"> pracownik banku</div><div class="ekipa_osoba"><a href="index.php/1139223">Sławomir Jeneralski</a></div><div class="ekipa_opis"> prezenter "Wiadomości"</div><div class="ekipa_osoba"><a href="index.php/113393">Marek Nowakowski</a></div><div class="ekipa_opis"> celnik</div><div class="ekipa_osoba"><a href="index.php/114023">Andrzej Precigs</a></div><div class="ekipa_opis"> lekarz operujący Ducha</div><div class="ekipa_osoba"><a href="index.php/113288">Maciej Robakiewicz</a></div><div class="ekipa_opis"> "Blondyn", członek Rady Nadzorczej Globo  Banku, informator Niki</div><div class="ekipa_osoba"><a href="index.php/111068">Andrzej Żółkiewski</a></div><div class="ekipa_opis"> prezes Globo Banku</div><div class="ekipa_osoba"><a href="index.php/111234">Tadeusz Borowski</a></div><div class="ekipa_opis"> członek Rady Polityki Pieniężnej; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1211766">
+</ul>
+</div>
+<span class="clear"></span></div><div id="czasgen">2026.05.08 03:31:08</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

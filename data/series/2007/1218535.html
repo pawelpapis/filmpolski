@@ -1,0 +1,810 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - DETERMINATOR</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>DETERMINATOR</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1218535" selected >1</option><option value="1218535_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1218535_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1218535_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2007</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2008. 01. 04</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film sensacyjny</div></li>
+<li><div class="film_tech3">Barwny, 13 odcinków x ok. 45 min<br /><br />
+Lokacje: Lublin (Stare Miasto, ulica Grodzka, Brama Krakowska, Plac Łokietka, Krakowskie Przedmieście, Plac Litewski, Kościół pw. Św. Mikołaja na Wzgórzu Czwartkowym, Nowy Ratusz, Cafe Vanilla, ul. Braci Wieniawskich, Wzgórze Zamkowe).<br /><br />
+Emisja: 4 stycznia - 28 marca 2008.</div></li>
+</ul>
+<p class="opis">Współczesny serial kryminalno-obyczajowy ukazujący funkcjonowanie nieformalnych układów biznesowo-polityczno-towarzyskich, balansujących na granicy prawa. Z takim układem przyjdzie się zmierzyć bohaterowi serialu, zdolnemu, młodemu chirurgowi Piotrowi Skotnickiemu, idealiście, który mimo niesprawiedliwości, jakich doświadczył, nadal wierzy w uczciwość i porządek. Szybko przekona się, jak niewiele znaczą te pojęcia i jak wysoką cenę trzeba zapłacić za trwanie przy swoich zasadach. [TVP]</p><div class="galeria_mala"><a href="index.php?fotos=1618535_1&galeria=1518535"><img class="bezcienia" src="../z1/35i/18535_1.jpg" height="60"></a><a href="index.php?fotos=1618535_2&galeria=1518535"><img class="bezcienia" src="../z1/35i/18535_2.jpg" height="60"></a><a href="index.php?fotos=1618535_3&galeria=1518535"><img class="bezcienia" src="../z1/35i/18535_3.jpg" height="60"></a><a href="index.php?fotos=1618535_4&galeria=1518535"><img class="bezcienia" src="../z1/35i/18535_4.jpg" height="60"></a><a href="index.php?fotos=1618535_5&galeria=1518535"><img class="bezcienia" src="../z1/35i/18535_5.jpg" height="60"></a><a href="index.php?fotos=1618535_6&galeria=1518535"><img class="bezcienia" src="../z1/35i/18535_6.jpg" height="60"></a><a href="index.php/1518535" title="Galeria zdjęć (40)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1218535" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1218535','ekipa_skrocona1218535','ekipa1218535','ekipa_schowaj1218535','ekipa_schowaj_krotki1218535','ekipa_schowaj_pelny1218535','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1218535" class="jslink" onclick="pzf('ekipa_skrocona1218535','ekipa_pelna1218535','ekipa1218535','ekipa_schowaj1218535','ekipa_schowaj_pelny1218535','ekipa_schowaj_krotki1218535','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1218535"1218535" class="jslink" onclick="pzz('ekipa1218535','ekipa_schowaj1218535')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1218535" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1218535">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1111673">Mirosław Gronowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1132915">Katarzyna Janicka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1122565">Adam Santura</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/1156035">Agnieszka Lipiec-Wróblewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1156036">Karolina Aleksa</a></div><div class="ekipa_opis"> biuro</div><div class="ekipa_osoba"><a href="index.php/1154373">Ewa Ratusińska</a></div><div class="ekipa_opis"> plan</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115767">Teresa Violetta Buhl</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116387">Jacek Indelak</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Pomysł</div><div class="ekipa_osoba"><a href="index.php/1123274">Maciej Strzembosz</a></div><div class="ekipa_opis"> serialu</div><div class="ekipa_osoba"><a href="index.php/1113635">Jarosław Żamojda</a></div><div class="ekipa_opis"> serialu</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11588">Andrzej Ramlau</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137701">Paweł Flis</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1137701">Paweł Flis</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1139779">Michał Popiel-Machnicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133434">Maciej Fijałkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153161">Tomasz Szołtys</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora kamery</div><div class="ekipa_osoba"><a href="index.php/1153717">Michał Malanowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157098">Michał Paluch</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156037">Konrad Przyłucki</a></div><div class="ekipa_opis"> w napisach nazwisko: Przyłudzki</div><div class="ekipa_osoba"><a href="index.php/1147171">Piotr Fiedziukiewicz</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Operator CCU</div><div class="ekipa_osoba"><a href="index.php/1137254">Konrad Podnajmer</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1116829">Zbigniew Wróblewski</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1154376">Łukasz Fantoli</a></div><div class="ekipa_opis"> w napisach nazwisko: Fantos</div><div class="ekipa_osoba"><a href="index.php/1127337">Robert Kuliś</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1151235">Jarosław Szenajch</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1146790">Adam Wojczakowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1133645">Radosław Poręba</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153208">Łukasz Gapiński</a></div><div class="ekipa_opis"> asystent</div></li>
+<li><div class="ekipa_funkcja">Grip</div><div class="ekipa_osoba"><a href="index.php/1124302">Paweł Dylik</a></div><div class="ekipa_opis"> samochodowy</div></li>
+<li><div class="ekipa_funkcja">Obsługa agregatu</div><div class="ekipa_osoba"><a href="index.php/1116577">Mirosław Bielecki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1147778">Maciej Bogdan</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1132954">Gamma</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1137264">Marek Kloska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1137263">Gabriel Kossowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1156803">Monika Budnik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155222">Paweł Syrzycki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">On-line</div><div class="ekipa_osoba"><a href="index.php/1132933">Jacek Kołtunowicz</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Montaż on-line</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121944">Michał Hrisulidis</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/1137344">Dorota Dąbrowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent scenografa</div><div class="ekipa_osoba"><a href="index.php/1156040">Michał Bojara</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/1153988">Marcin Polkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121944">Michał Hrisulidis</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1154418">Dorota Sławecka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1125956">Adam Nowakowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizytor planu</div><div class="ekipa_osoba"><a href="index.php/1151177">Tomasz Bartczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo budowy dekoracji</div><div class="ekipa_osoba"><a href="index.php/1115879">Jarosław Pieńkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117917">Małgorzata Gwiazdecka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/1144143">Joanna Pamuła</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136777">Alicja Hornostaj</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1156038">Dorota Ziółkowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116760">Jerzy Satanowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/1139181">Anna Malarowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1134271">Piotr Krzanowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora dźwięku</div><div class="ekipa_osoba"><a href="index.php/1134156">Mariusz Wysocki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1137755">Remigiusz Botiuk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116773">Ryszard Wysocki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty dźwiękowe</div><div class="ekipa_osoba"><a href="index.php/1117325">Stefan Chomnicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161">Henryk Zastróżny</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/1129583">Dariusz Stanek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138252">Aleksandra Janikowska</a></div><div class="ekipa_opis"> w napisach nazwisko: Jankowska</div><div class="ekipa_osoba"><a href="index.php/1146642">Dorota Orłowska</a></div><div class="ekipa_opis"> współpraca</div><div class="ekipa_osoba"><a href="index.php/1129897">Łukasz Rydzewski</a></div><div class="ekipa_opis"> współpraca</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1129583">Dariusz Stanek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138252">Aleksandra Janikowska</a></div><div class="ekipa_opis"> w napisach nazwisko: Jankowska</div><div class="ekipa_osoba"><a href="index.php/1146642">Dorota Orłowska</a></div><div class="ekipa_opis"> współpraca</div><div class="ekipa_osoba"><a href="index.php/1129897">Łukasz Rydzewski</a></div><div class="ekipa_opis"> współpraca</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118813">Katarzyna Rudnik</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1147633">Paweł Potocki</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116764">Izabela Andrys</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1147019">Katarzyna Twardoch</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1156039">Anna Dowhań</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Make-up bus</div><div class="ekipa_osoba"><a href="index.php/1142941">Wojciech Orzechowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1158221">Jadwiga Indelak</a></div><div class="ekipa_opis"> medyczna</div></li>
+<li><div class="ekipa_funkcja">Redakcja</div><div class="ekipa_osoba"><a href="index.php/1114889">Wojciech Jędrkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1156817">Anna Hoddle</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1143275">Fabryka Obrazu</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138513">Marcin Makowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/1127470">Kamil Przełęcki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opieka medyczna</div><div class="ekipa_osoba"><a href="index.php/1127598">Tomasz Trojnar</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158222">Leszek Musur</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Koordynacja kaskaderska</div><div class="ekipa_osoba"><a href="index.php/1191">Ryszard Janikowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/1128399">Piotr Cichoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125978">Robert Cichoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155369">Michał Derlicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135403">Andrzej Kociubiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132368">Waldemar Malinowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1147647">Robert Popławski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1132468">Zbigniew Świderski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1144419">Marek Mireński</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1148982">Łukasz Lipiarz</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1135264">Grzegorz Kulesza</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1155778">Jarosław Olszewski</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1150390">Jarosław Wrzosek</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Efekty pirotechniczne</div><div class="ekipa_osoba"><a href="index.php/118592">Arkadiusz Rośczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1113432">Eliza Korbońska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Tresura</div><div class="ekipa_osoba"><a href="index.php/1156041">Beata Krzemińska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ochrona planu</div><div class="ekipa_osoba"><a href="index.php/1153278">Jacek Gawęcki</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1139075">Wojciech Filipek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1139074">Piotr Niewiadomski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1134509">Waldemar Węglewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152900">Robert Gałecki</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1156042">Grzegorz Żylicz</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1134009">Danuta Zarębska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125236">Magdalena Badura</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1135386">Dagmara Bończyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1146760">Magdalena Jaworska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1142953">Maja Zupok</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent kierownika produkcji</div><div class="ekipa_osoba"><a href="index.php/1156156">Jarosław Jakubiec</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1154377">Maciej Mystkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1123199">Jerzy Mizak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1146703">Wojciech Duszyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136185">Piotr Karolak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1127891">Remigiusz Kubiak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1121792">Adam Nawrocki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1134502">Robert Baczyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135599">Paweł Walendzik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1135702">Beata Krękiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/1134309">Gabriela Ciechanowiecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kasjer</div><div class="ekipa_osoba"><a href="index.php/1145888">Mirosława Piłat</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Koordynacja postprodukcyjna</div><div class="ekipa_osoba"><a href="index.php/1128774">Monika Lang</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis wyroznienie"> doktor Piotr Skotnicki</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis wyroznienie"> doktor Anka Jarzębska, partnerka Skotnickiego</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis wyroznienie"> Ewa Kopacka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis wyroznienie"> Paula Gutowska, kochanka Zaremby</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis wyroznienie"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis wyroznienie"> Jerzy Michta "Macher"</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis wyroznienie"> inspektor Artur Wejman</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis wyroznienie"> Cezary Bogucki</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis wyroznienie"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis wyroznienie"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis wyroznienie"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis wyroznienie"> Tadeusz Dorenda, dyrektor szpitala</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis wyroznienie"> sierżant Stefan Kręgiel</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1218535">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1111673">Mirosław Gronowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/115767">Teresa Violetta Buhl</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1116387">Jacek Indelak</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/11588">Andrzej Ramlau</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137701">Paweł Flis</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1121944">Michał Hrisulidis</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/1121944">Michał Hrisulidis</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1154418">Dorota Sławecka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1117917">Małgorzata Gwiazdecka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/116760">Jerzy Satanowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1134271">Piotr Krzanowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/118813">Katarzyna Rudnik</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/116764">Izabela Andrys</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1147019">Katarzyna Twardoch</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1125236">Magdalena Badura</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka Skotnickiego</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Paula Gutowska, kochanka Zaremby</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis"> Tadeusz Dorenda, dyrektor szpitala</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div style="display:block;" /></li>
+</ul>
+</div>
+<div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Jedno z dużych polskich miast. Życie toczy się tu z pozoru zwyczajnym rytmem. W rzeczywistości o wszystkim decyduje miejscowa koteria, do której należą wysocy urzędnicy państwowi, prezesi, dyrektorzy i najbogatsi biznesmeni - skorumpowani, cyniczni, bezwzględni. Tworzą oni  klub "Solary" oficjalnie działający na rzecz miasta i jego obywateli, ale w praktyce troszczący się tylko o interesy jego członków.  
+Piotr Skotnicki nigdy nie należał do "Solary", pewnie nawet nie wie o jego istnieniu. Nieporozumienie z dyrekcją szpitala przypłacił degradacją # z oddziału chirurgicznego trafił do prosektorium w podziemiach placówki, gdzie przeprowadza sekcje zwłok. Teraz zabiega o przywrócenie do dawnych obowiązków, ale nie jest pewny efektu swoich starań. Jego dziewczyna, Anna, psycholog z zawodu, dostała właśnie pracę w pogotowiu. Oboje mieszkają w niewielkim domku na przedmieściach, należącym do matki Piotra, emerytowanej nauczycielki. Przy marnych zarobkach w służbie zdrowia nie mają zbyt wielkich szans na własne mieszkanie. 
+Pewnego dnia do szpitala trafia pobity młody mężczyzna, Zbigniew Domański, mafijny kurier. Mimo wysiłków lekarzy pacjent umiera. Piotr ma przeprowadzić jego sekcję. Po ciało i rzeczy Domańskiego zgłaszają się do niego niebawem dwaj gangsterzy, Włodek i Olo, podający się za członków rodziny zmarłego, a w rzeczywistości pracujący dla miejscowego bogacza, Jerzego Michty. Mimo że oferują lekarzowi znaczną sumę za odstąpienie od sekcji zwłok, ten stanowczo odmawia przyjęcia pieniędzy i wydania ciała. W sprawie Domańskiego interweniuje więc u dyrektora szpitala sam Michta, ale tymczasem Piotr podczas sekcji znajduje w żołądku denata kilka plastikowych woreczków z narkotykiem. W czasie bójki jeden z nich pękł i to stało się przyczyną śmierci kuriera. W szpitalu zjawia się policja, funkcjonariusze też dopytują się o znalezione narkotyki, lecz chirurg odmawia udostępnienia czegokolwiek bez oficjalnego protokołu. 
+Wieczorem Michta wysyła Włodka i Ola do mieszkania Domańskiego. Gdy mężczyźni wchodzą do środka, zostają zaatakowani przez dwóch uzbrojonych i zamaskowanych osobników, którzy byli tam przed nimi. Włodek i Olo giną, konkurenci znikają, zabierając z mieszkania znaczne ilości narkotyków. Nie wiedzą, że ktoś obserwował całe zajście. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1220760" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1220760','ekipa_skrocona1220760','ekipa1220760','ekipa_schowaj1220760','ekipa_schowaj_krotki1220760','ekipa_schowaj_pelny1220760','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1220760" class="jslink" onclick="pzf('ekipa_skrocona1220760','ekipa_pelna1220760','ekipa1220760','ekipa_schowaj1220760','ekipa_schowaj_pelny1220760','ekipa_schowaj_krotki1220760','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1220760"1220760" class="jslink" onclick="pzz('ekipa1220760','ekipa_schowaj1220760')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1220760" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1220760">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/114064">Stanisław Brudny</a></div><div class="ekipa_opis"> podglądacz</div><div class="ekipa_osoba"><a href="index.php/1150814">Marcin Chabowski</a></div><div class="ekipa_opis"> Robert W. "Włodek", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125978">Robert Cichoń</a></div><div class="ekipa_opis"> Zbigniew Domański</div><div class="ekipa_osoba"><a href="index.php/1147882">Michał Czernecki</a></div><div class="ekipa_opis"> dziennikarz Marcin Krubski</div><div class="ekipa_osoba"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis"> Tadeusz Dorenda, dyrektor szpitala</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> aspirant Prusak</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> Leon Rawicz, były dyrektor banku</div><div class="ekipa_osoba"><a href="index.php/113298">Grzegorz Gierak</a></div><div class="ekipa_opis"> doktor Adam Grodek</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/1145544">Mateusz Janicki</a></div><div class="ekipa_opis"> Robert Stelmaszczyk, asystent Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Rysiek Gawrysiak</div><div class="ekipa_osoba"><a href="index.php/119151">Marcin Jędrzejewski</a></div><div class="ekipa_opis"> "Grzechu", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125118">Marek Karpowicz</a></div><div class="ekipa_opis"> radny Antosik</div><div class="ekipa_osoba"><a href="index.php/1119385">Tomasz Ignaczak</a></div><div class="ekipa_opis"> Siwy</div><div class="ekipa_osoba"><a href="index.php/117030">Wanda Koczeska</a></div><div class="ekipa_opis"> Skotnicka, matka Piotra</div><div class="ekipa_osoba"><a href="index.php/116801">Katarzyna Kozak</a></div><div class="ekipa_opis"> Zofia, sekretarka dyrektora szpitala</div><div class="ekipa_osoba"><a href="index.php/1149412">Emilia Król</a></div><div class="ekipa_opis"> Krystyna, żona Ola</div><div class="ekipa_osoba"><a href="index.php/1115232">Tomasz Kozłowicz</a></div><div class="ekipa_opis"> Eugeniusz Bedoń, zastępca dyrektora  szpitala</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1119809">Robert Mazurkiewicz</a></div><div class="ekipa_opis"> Cecot</div><div class="ekipa_osoba"><a href="index.php/1128282">Andrzej Młynarczyk</a></div><div class="ekipa_opis"> policjant Andrzej Brzostek</div><div class="ekipa_osoba"><a href="index.php/1127215">Piotr Nowak</a></div><div class="ekipa_opis"> Waldemar Peć, właściciel sklepu</div><div class="ekipa_osoba"><a href="index.php/1128874">Paweł Okraska</a></div><div class="ekipa_opis"> Ryszard S. "Olo", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1155982">Dorota Pieńkos</a></div><div class="ekipa_opis"> Angorka</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1132767">Aneta Todorczuk</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/111407">Tadeusz Wojtych</a></div><div class="ekipa_opis"> Franek, pracownik prosektorium</div><div class="ekipa_osoba"><a href="index.php/1150624">Julia Wróblewska</a></div><div class="ekipa_opis"> Julcia, córka Ewy Kopackiej</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Matczakowa, sąsiadka Skotnickich</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1158216">Filip Buhl</a></div><div class="ekipa_opis"> syn Ola</div><div class="ekipa_osoba"><a href="index.php/1136828">Beata Fido</a></div><div class="ekipa_opis"> Majka, ekspedientka w sklepie Pecia</div><div class="ekipa_osoba"><a href="index.php/1118374">Teresa Filarska</a></div><div class="ekipa_opis"> pielęgniarka Alinka</div><div class="ekipa_osoba"><a href="index.php/1155984">Jolanta Juszkiewicz</a></div><div class="ekipa_opis"> szatniarka na siłowni; w napisach nazwisko: Jurkiewicz</div><div class="ekipa_osoba"><a href="index.php/1120236">Katarzyna Kurylońska</a></div><div class="ekipa_opis"> Kasia, właścicielka siłowni</div><div class="ekipa_osoba"><a href="index.php/1144223">Adrian Perdjon</a></div><div class="ekipa_opis"> prezenter tv; w napisach nazwisko: Perdion</div><div class="ekipa_osoba"><a href="index.php/1147249">Maciej Półtorak</a></div><div class="ekipa_opis"> Paweł Dorenda, syn Tadeusza</div><div class="ekipa_osoba"><a href="index.php/1158218">Nikola Przanowska</a></div><div class="ekipa_opis"> córka Ola</div><div class="ekipa_osoba"><a href="index.php/1147247">Iwona Sitkowska</a></div><div class="ekipa_opis"> Barbara, ekspedientka w sklepie Pecia</div><div class="ekipa_osoba"><a href="index.php/1155977">Olga Szostak</a></div><div class="ekipa_opis"> Magda, koleżanka Kasi</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1220760">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Jerzy Michta bardzo się przejął śmiercią swojego siostrzeńca, Ola. Wdowie po nim, Krystynie, obiecuje, że będzie się opiekował nią i jej dziećmi. Nakazuje swoim ludziom, żeby wywiedzieli się na mieście, kto stoi za zabójstwem Ola i Włodka. Gangsterzy porywają sprzed szpitala studenta Roberta, stażystę, który pracował w szpitalu pod okiem Piotra Skotnickiego. Niebawem pobity, nieprzytomny chłopak zostaje znaleziony w ruinach fabrycznej hali.
+Policyjna ekipa pod dowództwem Gołębiowskiego dokonuje nalotu na hurtownię niejakiego Grubego. Rekwirują wielki transport papierosów.
+Rysiek, biznesmen i przyjaciel Piotra, odwiedza go w domu. Umawia się z nim na wspólny weekend. Pokazuje mu swój nowy nabytek # piękny motel, w którym właśnie kończy remont. Tymczasem Michta, coraz bardziej zdenerwowany, odgraża się #doktorkowi#, twierdząc, że ten już nie zazna spokoju.
+Inspektor Wejman z policji, który niedawno przyjechał do miasta, składa Piotrowi wizytę w prosektorium. Wypytuje go o stażystę, u którego znaleziono narkotyki skradzione po sekcji zwłok Domańskiego. Pyta też o samego Domańskiego, Ola i Włodka.
+Z aresztu wychodzi za kaucją dyrektor banku, Rawicz. Za pięć dni ma stanąć przed prokuratorem. Wszystko wskazuje na to, że będzie zeznawał, a swoimi zeznaniami może pogrążyć wielu wpływowych ludzi. Jego wyjście na wolność obserwuje z daleka biznesmen Cezary Bogucki. Kiedy Bogucki dowiaduje się o pogróżkach Rawicza pod adresem prezydenta miasta, Kmiecika, prosi telefonicznie o przysłanie dwóch sprawdzonych ludzi.
+Na siłowni Piotr poznaje Radka Strumiłło, przechodzi z nim na ty. 
+Zamaskowani ludzie Michty przetrząsają dom Piotra. Gdy jego matka wraca do domu, zostaje przez nich pobita i związana. Znajduje ją Piotr. Wkrótce on sam zostaje zaatakowany na ulicy. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1220762" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1220762','ekipa_skrocona1220762','ekipa1220762','ekipa_schowaj1220762','ekipa_schowaj_krotki1220762','ekipa_schowaj_pelny1220762','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1220762" class="jslink" onclick="pzf('ekipa_skrocona1220762','ekipa_pelna1220762','ekipa1220762','ekipa_schowaj1220762','ekipa_schowaj_pelny1220762','ekipa_schowaj_krotki1220762','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1220762"1220762" class="jslink" onclick="pzz('ekipa1220762','ekipa_schowaj1220762')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1220762" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1220762">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1134372">Magdalena Boczarska</a></div><div class="ekipa_opis"> dziennikarka Marzena Pietruszko</div><div class="ekipa_osoba"><a href="index.php/1147882">Michał Czernecki</a></div><div class="ekipa_opis"> dziennikarz Marcin Krubski</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> aspirant Prusak</div><div class="ekipa_osoba"><a href="index.php/117291">Hanna Dunowska</a></div><div class="ekipa_opis"> Teresa Rawicz, żona Leona</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> Leon Rawicz, były dyrektor banku</div><div class="ekipa_osoba"><a href="index.php/113298">Grzegorz Gierak</a></div><div class="ekipa_opis"> doktor Adam Grodek</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/111952">Dymitr Hołówko</a></div><div class="ekipa_opis"> Czesio</div><div class="ekipa_osoba"><a href="index.php/1145544">Mateusz Janicki</a></div><div class="ekipa_opis"> Robert Stelmaszczyk, asystent Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Rysiek Gawrysiak</div><div class="ekipa_osoba"><a href="index.php/119151">Marcin Jędrzejewski</a></div><div class="ekipa_opis"> "Grzechu", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/117030">Wanda Koczeska</a></div><div class="ekipa_opis"> Skotnicka, matka Piotra</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Jakub Rawicz, syn Leona</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1149412">Emilia Król</a></div><div class="ekipa_opis"> Krystyna, żona Ola</div><div class="ekipa_osoba"><a href="index.php/1147248">Juliusz Kubiak</a></div><div class="ekipa_opis"> Kopacki, były mąż Ewy</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1128282">Andrzej Młynarczyk</a></div><div class="ekipa_opis"> policjant Andrzej Brzostek</div><div class="ekipa_osoba"><a href="index.php/1127215">Piotr Nowak</a></div><div class="ekipa_opis"> Waldemar Peć, właściciel sklepu</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1135923">Piotr Rękawik</a></div><div class="ekipa_opis"> Karol Wioncek, mąż Renaty</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1132767">Aneta Todorczuk</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/111407">Tadeusz Wojtych</a></div><div class="ekipa_opis"> Franek, pracownik prosektorium</div><div class="ekipa_osoba"><a href="index.php/1150624">Julia Wróblewska</a></div><div class="ekipa_opis"> Julcia, córka Ewy Kopackiej</div><div class="ekipa_osoba"><a href="index.php/1130488">Monika Zalewska</a></div><div class="ekipa_opis"> Renata Wioncek, córka Wojciecha  Kmiecika</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1158216">Filip Buhl</a></div><div class="ekipa_opis"> syn Ola; w napisach imię: Piotr</div><div class="ekipa_osoba"><a href="index.php/1136828">Beata Fido</a></div><div class="ekipa_opis"> Majka, ekspedientka w sklepie Pecia</div><div class="ekipa_osoba"><a href="index.php/1120236">Katarzyna Kurylońska</a></div><div class="ekipa_opis"> Kasia, właścicielka siłowni</div><div class="ekipa_osoba"><a href="index.php/1158218">Nikola Przanowska</a></div><div class="ekipa_opis"> córka Ola</div><div class="ekipa_osoba"><a href="index.php/1147247">Iwona Sitkowska</a></div><div class="ekipa_opis"> Barbara, ekspedientka w sklepie Pecia</div><div class="ekipa_osoba"><a href="index.php/114136">Jolanta Żółkowska</a></div><div class="ekipa_opis"> Barbara, pacjentka Anki Jarzębskiej</div><div class="ekipa_osoba"><a href="index.php/1152973">Piotr Koresendowicz</a></div><div class="ekipa_opis"> operator; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1144746">Cezary Krajewski</a></div><div class="ekipa_opis"> gangster Michty; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1220762">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Michta ze sztabem gangu analizują zaistniałą sytuację: wpadka Grubego, sprawa Domańskiego i wcześniejsze wydarzenia nasuwają wniosek, że wewnątrz gangu prawdopodobnie działa zdrajca.
+Anka wraca do domu, zauważa bałagan, ślady krwi i kartkę od Piotra, że pojechał z matką do szpitala. Jest przerażona. Nieco później w domu pojawia się policja # ekipa pod dowództwem sierżanta Kręgiela. Anka domaga się wyjaśnień od Piotra: chce wiedzieć, w co się wpakował, ale on zapewnia, że też nie ma pojęcia, o co w tym wszystkim chodzi. Wierzy, że padł ofiarą fatalnej pomyłki. W prosektorium odbiera jednak telefon od wdowy po Olu, która grozi mu zemstą za śmierć swego męża. Nie wie, że porwany przez gangsterów student obciążył go fałszywymi zeznaniami. 
+Ludzie Boguckiego, Eliza i Jojo, nachodzą Ryśka w jego biurze. Oferują ochronę w zamian za haracz. Rysiek odrzuca ofertę.
+Tymczasem Rawicz spotyka się z Boguckim w ustronnym miejscu. Uprzedza, że swoimi zeznaniami obciąży wielu ludzi z układu i że zrobił kopie posiadanych dokumentów. W domu Rawicz zapisuje w komputerze pliki z ważnymi danymi, później dzwoni do niejakiego Józefa Zaremby, ostrzega go przed grożącym niebezpieczeństwem. Zaremba wręcza swojej młodej kochance Pauli klucz do skrytki dworcowej. W razie, gdyby coś mu się stało, Paula ma zatrzymać zdeponowane w skrytce pieniądze, a dokumenty przekazać Rawiczowi. Niebawem dwaj płatni zabójcy przetrząsają mieszkanie Rawiczów. Wymontowują twardy dysk z jego komputera. Gdy po powrocie do domu Rawicz widzi skutki "rewizji", umawia się z Boguckim na spotkanie.
+Ludzie Michty czekają na Piotra przed budynkiem siłowni. Mają go porwać. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1220763" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1220763','ekipa_skrocona1220763','ekipa1220763','ekipa_schowaj1220763','ekipa_schowaj_krotki1220763','ekipa_schowaj_pelny1220763','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1220763" class="jslink" onclick="pzf('ekipa_skrocona1220763','ekipa_pelna1220763','ekipa1220763','ekipa_schowaj1220763','ekipa_schowaj_pelny1220763','ekipa_schowaj_krotki1220763','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1220763"1220763" class="jslink" onclick="pzz('ekipa1220763','ekipa_schowaj1220763')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1220763" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1220763">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115260">Krzysztof Bauman</a></div><div class="ekipa_opis"> policjant Jarosław Nowak</div><div class="ekipa_osoba"><a href="index.php/1134373">Magdalena Czerwińska</a></div><div class="ekipa_opis"> Beata Koper vel Eliza Koperska</div><div class="ekipa_osoba"><a href="index.php/117291">Hanna Dunowska</a></div><div class="ekipa_opis"> Teresa Rawicz, żona Leona</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> Leon Rawicz, były dyrektor banku</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/1145544">Mateusz Janicki</a></div><div class="ekipa_opis"> Robert Stelmaszczyk, asystent Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Rysiek Gawrysiak</div><div class="ekipa_osoba"><a href="index.php/114918">Marian Jaskulski</a></div><div class="ekipa_opis"> "Domino"</div><div class="ekipa_osoba"><a href="index.php/119151">Marcin Jędrzejewski</a></div><div class="ekipa_opis"> "Grzechu", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1129643">Dariusz Juzyszyn</a></div><div class="ekipa_opis"> "Giewont"</div><div class="ekipa_osoba"><a href="index.php/11222">Krzysztof Kalczyński</a></div><div class="ekipa_opis"> "Szpula"</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/117030">Wanda Koczeska</a></div><div class="ekipa_opis"> Skotnicka, matka Piotra</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Jakub Rawicz, syn Leona</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1149412">Emilia Król</a></div><div class="ekipa_opis"> Krystyna, żona Ola</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1126647">Eryk Lubos</a></div><div class="ekipa_opis"> "Neon"</div><div class="ekipa_osoba"><a href="index.php/1126152">Piotr Martin</a></div><div class="ekipa_opis"> "Kasjer"</div><div class="ekipa_osoba"><a href="index.php/1128282">Andrzej Młynarczyk</a></div><div class="ekipa_opis"> policjant Andrzej Brzostek</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1135406">Michał Piela</a></div><div class="ekipa_opis"> "Jojo", człowiek Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1157229">Gennadij Rozenberg</a></div><div class="ekipa_opis"> mecenas; w napisach nazwisko: Rosenberg</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1117909">Zygmunt Sierakowski</a></div><div class="ekipa_opis"> Józef Zaremba</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Paula Gutowska, kochanka Zaremby</div><div class="ekipa_osoba"><a href="index.php/1134653">Joanna Sydor</a></div><div class="ekipa_opis"> Dorota Brzostek, żona Andrzeja</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/111407">Tadeusz Wojtych</a></div><div class="ekipa_opis"> Franek, pracownik prosektorium</div><div class="ekipa_osoba"><a href="index.php/1150624">Julia Wróblewska</a></div><div class="ekipa_opis"> Julcia, córka Ewy Kopackiej</div><div class="ekipa_osoba"><a href="index.php/111428">Halina Wyrodek</a></div><div class="ekipa_opis"> Matczakowa, sąsiadka Skotnickich</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1158216">Filip Buhl</a></div><div class="ekipa_opis"> syn Ola</div><div class="ekipa_osoba"><a href="index.php/111764">Krzysztof Janczar</a></div><div class="ekipa_opis"> mechanik</div><div class="ekipa_osoba"><a href="index.php/1158218">Nikola Przanowska</a></div><div class="ekipa_opis"> córka Ola</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1220763">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Komisarz Gołębiowski spotyka się w restauracji z prawnikiem pracującym dla Boguckiego, niejakim Menago. Dostaje od niego dużą kopertę.
+Piotr Skotnicki ma przeprowadzić kolejną sekcję - spalonych zwłok ofiary wypadku samochodowego, byłego dyrektora banku, Rawicza. Po przeprowadzeniu sekcji Skotnicki ma jednak liczne wątpliwości, które próbuje przekazać dyrektorowi szpitala. Uważa, że zwłoki trzeba poddać dalszym badaniom. Nazajutrz dyrektor Dorenda informuje go, że szczątki Rawicza przekazano już do zakładu medycyny sądowej, a Piotr ma wziąć urlop, żeby mógł się zająć poturbowaną matką.     
+Telewizja Echo podaje zupełnie inne powody wypadku i śmierci Rawicza, niż te, które Piotr ustalił podczas sekcji. Skotnicki odwiedza w telewizji redaktor Marzenę Pietruszko, zarzuca jej kłamstwo, ale dziewczyna nie chce go słuchać. Rewelacjami Piotra zaczyna się jednak interesować jej redakcyjny kolega, Marcin. Tymczasem Marzena opowiada o wizycie Piotra prezesowi Boguckiemu. Na polecenie Boguckiego Dorenda zwalnia Piotra dyscyplinarnie z pracy.
+Z pomocą Menago Bogucki przejmuje kolejne obiekty i firmy w centrum miasta.  
+Nadchodzi dzień pogrzebu Ola i Włodka. Na cmentarzu zjawia się cały gangsterski światek. Przyjeżdża też Piotr, ponaglony "zaproszeniem" od wdowy po jednym z zabitych. Towarzyszy mu spotkany po drodze Radek. Grupa komisarza Gołębiowskiego dokonuje tymczasem nalotu na agencję towarzyską. Policjanci przechwytują dużą sumę pieniędzy i znaczne ilości narkotyków. Zaalarmowani telefonicznie gangsterzy pospiesznie opuszczają cmentarz.
+Na Radka i Piotra napadają ludzie Michty. Po akcji Piotr ze zdumieniem dowiaduje się, kim naprawdę jest Radek. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1220818" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1220818','ekipa_skrocona1220818','ekipa1220818','ekipa_schowaj1220818','ekipa_schowaj_krotki1220818','ekipa_schowaj_pelny1220818','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1220818" class="jslink" onclick="pzf('ekipa_skrocona1220818','ekipa_pelna1220818','ekipa1220818','ekipa_schowaj1220818','ekipa_schowaj_pelny1220818','ekipa_schowaj_krotki1220818','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1220818"1220818" class="jslink" onclick="pzz('ekipa1220818','ekipa_schowaj1220818')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1220818" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1220818">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1134372">Magdalena Boczarska</a></div><div class="ekipa_opis"> dziennikarka Marzena Pietruszko</div><div class="ekipa_osoba"><a href="index.php/1147882">Michał Czernecki</a></div><div class="ekipa_opis"> dziennikarz Marcin Krubski</div><div class="ekipa_osoba"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis"> Tadeusz Dorenda, dyrektor szpitala</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> aspirant Prusak</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/113298">Grzegorz Gierak</a></div><div class="ekipa_opis"> doktor Adam Grodek</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Rysiek Gawrysiak</div><div class="ekipa_osoba"><a href="index.php/119151">Marcin Jędrzejewski</a></div><div class="ekipa_opis"> "Grzechu", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> Aneta, sekretarka Boguckiego</div><div class="ekipa_osoba"><a href="index.php/117030">Wanda Koczeska</a></div><div class="ekipa_opis"> Skotnicka, matka Piotra</div><div class="ekipa_osoba"><a href="index.php/116801">Katarzyna Kozak</a></div><div class="ekipa_opis"> Zofia, sekretarka dyrektora szpitala</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1149412">Emilia Król</a></div><div class="ekipa_opis"> Krystyna, żona Ola</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1128282">Andrzej Młynarczyk</a></div><div class="ekipa_opis"> policjant Andrzej Brzostek</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1135406">Michał Piela</a></div><div class="ekipa_opis"> "Jojo", człowiek Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> barman Stanisław Martynek "Biedrona"</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/111407">Tadeusz Wojtych</a></div><div class="ekipa_opis"> Franek, pracownik prosektorium</div><div class="ekipa_osoba"><a href="index.php/1150624">Julia Wróblewska</a></div><div class="ekipa_opis"> Julcia, córka Ewy Kopackiej</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1158216">Filip Buhl</a></div><div class="ekipa_opis"> syn Ola</div><div class="ekipa_osoba"><a href="index.php/1142614">Mateusz Dewera</a></div><div class="ekipa_opis"> ochroniarz Zenek</div><div class="ekipa_osoba"><a href="index.php/1118374">Teresa Filarska</a></div><div class="ekipa_opis"> pielęgniarka Alinka</div><div class="ekipa_osoba"><a href="index.php/1116334">Dorota Kawęcka</a></div><div class="ekipa_opis"> Halina, siostra Michty</div><div class="ekipa_osoba"><a href="index.php/1144223">Adrian Perdjon</a></div><div class="ekipa_opis"> prezenter tv</div><div class="ekipa_osoba"><a href="index.php/1158218">Nikola Przanowska</a></div><div class="ekipa_opis"> córka Ola</div><div class="ekipa_osoba"><a href="index.php/118827">Stanisław Wolski</a></div><div class="ekipa_opis"> ojciec Piotra</div><div class="ekipa_osoba">Małgorzata Dziwulska</div><div class="ekipa_opis"> prostytutka w agencji; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1140116">Krystyna Górska</a></div><div class="ekipa_opis"> prostytutka w agencji; nie występuje w napisach</div><div class="ekipa_osoba">Marta Jelonek</div><div class="ekipa_opis"> prostytutka w agencji; nie występuje w napisach</div><div class="ekipa_osoba">Agnieszka Misiek</div><div class="ekipa_opis"> prostytutka w agencji; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1140128">Anna Wójcik</a></div><div class="ekipa_opis"> prostytutka w agencji; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1220818">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Paula jest świadkiem zabójstwa Zaremby. Ukryta w łazience dziewczyna z trudem powstrzymuje krzyk przerażenia, widząc morderców. Później pospiesznie ucieka z hotelu. Ze skrytki, o której kiedyś wspomniał jej Zaremba, zabiera pieniądze i dokumenty. Dokumenty próbuje przekazać Rawiczowi, ale od jego syna dowiaduje się, że były dyrektor banku już nie żyje. Coraz bardziej wystraszona dziewczyna opuszcza miasto. Dociera do leśniczówki Borowy Dwór.
+Michta zastanawia się, jak pozbyć się doktora Skotnickiego. Studiuje jego życiorys, szukając punktów zaczepienia.
+Redaktor Marzena Pietruszko odwiedza prezesa Boguckiego. Informuje go, że budowa obwodnicy na dwa lata pozbawi supermarket "Hipersol" normalnego dojazdu. Dla Boguckiego to bardzo cenna wiadomość. Chce przejąć tereny wokół "Hipersolu", kupując gminne grunty poza oficjalnym przetargiem. Leży to w gestii wiceprezydenta miasta, Kmiecika. Aby być pewnym sukcesu, Bogucki szykuje "haka" na jego syna, Maćka.
+Piotr i Radek odbierają telefoniczne pogróżki. Później ludzie Michty kradną samochód Anki, który porzucają na skarpie. Anka musi zapłacić mandat. Co gorsza, jej pacjentki nagle rezygnują z jej usług.
+Michta jedzie na spotkanie z lokalnym bossem mafijnym, niejakim "Wujem". Ten ponagla go do szybszego działania. Michta zapewnia, że już namierza zdrajcę. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1220915" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1220915','ekipa_skrocona1220915','ekipa1220915','ekipa_schowaj1220915','ekipa_schowaj_krotki1220915','ekipa_schowaj_pelny1220915','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1220915" class="jslink" onclick="pzf('ekipa_skrocona1220915','ekipa_pelna1220915','ekipa1220915','ekipa_schowaj1220915','ekipa_schowaj_pelny1220915','ekipa_schowaj_krotki1220915','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1220915"1220915" class="jslink" onclick="pzz('ekipa1220915','ekipa_schowaj1220915')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1220915" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1220915">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1134372">Magdalena Boczarska</a></div><div class="ekipa_opis"> dziennikarka Marzena Pietruszko</div><div class="ekipa_osoba"><a href="index.php/1147882">Michał Czernecki</a></div><div class="ekipa_opis"> dziennikarz Marcin Krubski</div><div class="ekipa_osoba"><a href="index.php/1134373">Magdalena Czerwińska</a></div><div class="ekipa_opis"> Beata Koper vel Eliza Koperska</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> aspirant Prusak</div><div class="ekipa_osoba"><a href="index.php/117291">Hanna Dunowska</a></div><div class="ekipa_opis"> Teresa Rawicz, żona Leona</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/1129643">Dariusz Juzyszyn</a></div><div class="ekipa_opis"> "Giewont"</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125118">Marek Karpowicz</a></div><div class="ekipa_opis"> radny Antosik</div><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> Aneta, sekretarka Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Jakub Rawicz, syn Leona</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1126647">Eryk Lubos</a></div><div class="ekipa_opis"> "Neon"</div><div class="ekipa_osoba"><a href="index.php/117991">Filip Łobodziński</a></div><div class="ekipa_opis"> Marian Rychlik</div><div class="ekipa_osoba"><a href="index.php/1148122">Jakub Mazurek</a></div><div class="ekipa_opis"> Maciek Kmiecik, syn prezydenta</div><div class="ekipa_osoba"><a href="index.php/1119809">Robert Mazurkiewicz</a></div><div class="ekipa_opis"> Cecot</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> "Wujo"</div><div class="ekipa_osoba"><a href="index.php/1122776">Mariusz Sibiga</a></div><div class="ekipa_opis"> Gilbert</div><div class="ekipa_osoba"><a href="index.php/1117909">Zygmunt Sierakowski</a></div><div class="ekipa_opis"> Józef Zaremba</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Paula Gutowska, kochanka Zaremby</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1128320">Mirosław Bieliński</a></div><div class="ekipa_opis"> leśniczy</div><div class="ekipa_osoba"><a href="index.php/1136537">Joanna Fidler</a></div><div class="ekipa_opis"> policjantka Dominiak</div><div class="ekipa_osoba"><a href="index.php/1137345">Piotr Grabowski</a></div><div class="ekipa_opis"> policjant Pawłowski</div><div class="ekipa_osoba"><a href="index.php/115248">Maciej Grzybowski</a></div><div class="ekipa_opis"> Mieczysław Gutowski, ojciec Pauliny</div><div class="ekipa_osoba"><a href="index.php/1116884">Mirosława Olbińska</a></div><div class="ekipa_opis"> leśniczyna Krystyna</div><div class="ekipa_osoba"><a href="index.php/112366">Jolanta Wołłejko</a></div><div class="ekipa_opis"> Helena Gutowska, matka Pauliny</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1220915">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Anka daje Piotrowi do przesłuchania kolejne nagranie z automatycznej sekretarki. Tajemniczy głos instruuje doktora, że jeśli chce się poddać, ma dać do gazety ogłoszenie o wskazanej treści. Piotr jest gotowy spełnić żądanie, Anka uważa jednak, że to kolejna pułapka.
+Inspektor Wejman przypadkowo słyszy na korytarzu komendy rozmowę Gołębiowskiego ze swoim podwładnym o planowanej interwencji u "doktorka". Niebawem w domu Anki i Piotra faktycznie zjawia się brygada antyterrorystyczna i Gołębiowski ze swoimi ludźmi. "Znajdują" w domu narkotyki i broń. 
+Przesłuchiwany przez Wejmana Piotr relacjonuje mu wszystko, co go do tej pory spotkało. Dziwny ciąg nieoczekiwanych wydarzeń układa się jednak w logiczną całość.
+Po powrocie z urlopu Piotr dowiaduje się, że został zwolniony dyscyplinarnie. Niestety, nie może rozmawiać w tej sprawie z nieosiągalnym tego dnia dyrektorem Dorendą.
+Waldemar Peć, drobny sklepikarz, który ośmielił się sprzeciwić prezesowi Boguckiemu, jest ścigany przez jego ludzi. O pomoc prosi zauważonego przypadkowo na ulicy znajomego doktora Skotnickiego. Piotr wywozi go za miasto, pomaga uciec. Waldek zostawia mu swój numer telefonu i klucze od mieszkania, bo tylko jemu może teraz ufać.
+Wskutek bandyckich pogróżek Anka traci wszystkie dotychczasowe pacjentki. Jest załamana. Zdesperowany Piotr wreszcie decyduje się działać. Daje do gazety ogłoszenie o żądanej treści, zaczynając w ten sposób prywatną wojnę z gangsterami. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1220921" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1220921','ekipa_skrocona1220921','ekipa1220921','ekipa_schowaj1220921','ekipa_schowaj_krotki1220921','ekipa_schowaj_pelny1220921','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1220921" class="jslink" onclick="pzf('ekipa_skrocona1220921','ekipa_pelna1220921','ekipa1220921','ekipa_schowaj1220921','ekipa_schowaj_pelny1220921','ekipa_schowaj_krotki1220921','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1220921"1220921" class="jslink" onclick="pzz('ekipa1220921','ekipa_schowaj1220921')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1220921" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1220921">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1134372">Magdalena Boczarska</a></div><div class="ekipa_opis"> dziennikarka Marzena Pietruszko</div><div class="ekipa_osoba"><a href="index.php/1134373">Magdalena Czerwińska</a></div><div class="ekipa_opis"> Beata Koper vel Eliza Koperska</div><div class="ekipa_osoba"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis"> Tadeusz Dorenda, dyrektor szpitala</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> aspirant Prusak</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/113298">Grzegorz Gierak</a></div><div class="ekipa_opis"> doktor Adam Grodek</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/119151">Marcin Jędrzejewski</a></div><div class="ekipa_opis"> "Grzechu", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125118">Marek Karpowicz</a></div><div class="ekipa_opis"> radny Antosik</div><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> Aneta, sekretarka Boguckiego</div><div class="ekipa_osoba"><a href="index.php/117030">Wanda Koczeska</a></div><div class="ekipa_opis"> Skotnicka, matka Piotra</div><div class="ekipa_osoba"><a href="index.php/116801">Katarzyna Kozak</a></div><div class="ekipa_opis"> Zofia, sekretarka dyrektora szpitala</div><div class="ekipa_osoba"><a href="index.php/1115232">Tomasz Kozłowicz</a></div><div class="ekipa_opis"> Eugeniusz Bedoń, zastępca dyrektora  szpitala</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/117991">Filip Łobodziński</a></div><div class="ekipa_opis"> Marian Rychlik</div><div class="ekipa_osoba"><a href="index.php/1148122">Jakub Mazurek</a></div><div class="ekipa_opis"> Maciek Kmiecik, syn prezydenta</div><div class="ekipa_osoba"><a href="index.php/1119809">Robert Mazurkiewicz</a></div><div class="ekipa_opis"> Cecot</div><div class="ekipa_osoba"><a href="index.php/1127215">Piotr Nowak</a></div><div class="ekipa_opis"> Waldemar Peć, właściciel sklepu</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1135406">Michał Piela</a></div><div class="ekipa_opis"> "Jojo", człowiek Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1147249">Maciej Półtorak</a></div><div class="ekipa_opis"> Paweł Dorenda, syn Tadeusza</div><div class="ekipa_osoba"><a href="index.php/1135923">Piotr Rękawik</a></div><div class="ekipa_opis"> Karol Wioncek, mąż Renaty</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> barman Stanisław Martynek "Biedrona"</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/1130488">Monika Zalewska</a></div><div class="ekipa_opis"> Renata Wioncek, córka Wojciecha  Kmiecika</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1142614">Mateusz Dewera</a></div><div class="ekipa_opis"> ochroniarz Zenek</div><div class="ekipa_osoba"><a href="index.php/1118374">Teresa Filarska</a></div><div class="ekipa_opis"> pielęgniarka Alinka</div><div class="ekipa_osoba"><a href="index.php/114918">Marian Jaskulski</a></div><div class="ekipa_opis"> "Domino"</div><div class="ekipa_osoba"><a href="index.php/1146760">Magdalena Jaworska</a></div><div class="ekipa_opis"> lekarka</div><div class="ekipa_osoba"><a href="index.php/11222">Krzysztof Kalczyński</a></div><div class="ekipa_opis"> "Szpula"</div><div class="ekipa_osoba"><a href="index.php/1140538">Zygmunt Kocoń</a></div><div class="ekipa_opis"> portier</div><div class="ekipa_osoba"><a href="index.php/1140131">Jerzy Kurczuk</a></div><div class="ekipa_opis"> urzędnik</div><div class="ekipa_osoba"><a href="index.php/1126152">Piotr Martin</a></div><div class="ekipa_opis"> "Kasjer"</div><div class="ekipa_osoba"><a href="index.php/1144628">Krzysztof Olchawa</a></div><div class="ekipa_opis"> taksówkarz</div><div class="ekipa_osoba"><a href="index.php/1137401">Marta Raczkowska</a></div><div class="ekipa_opis"> dziewczyna Pawła Dorendy</div><div class="ekipa_osoba"><a href="index.php/1157229">Gennadij Rozenberg</a></div><div class="ekipa_opis"> mecenas; w napisach nazwisko: Rosenberg</div><div class="ekipa_osoba"><a href="index.php/113613">Jan Skotnicki</a></div><div class="ekipa_opis"> ojciec Radka</div><div class="ekipa_osoba">Katarzyna Frankowska</div><div class="ekipa_opis"> członkini kwartetu smyczkowego; nie występuje w napisach</div><div class="ekipa_osoba">Agnieszka Kiniorska</div><div class="ekipa_opis"> członkini kwartetu smyczkowego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1148982">Łukasz Lipiarz</a></div><div class="ekipa_opis"> człowiek Boguckiego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1122784">Jan Mancewicz</a></div><div class="ekipa_opis"> policjant Matys; nie występuje w napisach</div><div class="ekipa_osoba">Urszula Prądzyńska</div><div class="ekipa_opis"> członkini kwartetu smyczkowego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1147006">Robert Rogalski</a></div><div class="ekipa_opis"> ochroniarz Boguckiego; nie występuje w  napisach</div><div class="ekipa_osoba"><a href="index.php/1154863">Sylwia Wrońska</a></div><div class="ekipa_opis"> dziewczyna "Biedrony"; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1156028">Agnieszka Zagroba</a></div><div class="ekipa_opis"> członkini kwartetu smyczkowego; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1220921">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Po kolejnym włamaniu do domu Piotr, niespokojny o Ankę, dzwoni do Radka, informując go, że dziewczynę trzeba ukryć dla jej bezpieczeństwa. Anka ma zamieszkać na pewien czas w motelu Ryśka.
+Michta cieszy się, że "doktorek" dał ogłoszenie, bo to znaczy, że wreszcie się ugiął. Skotnicki dostaje telefonicznie instrukcje, co ma dalej robić. W zrujnowanej hali na odludziu po raz pierwszy dowiaduje się, o co jest "oskarżany". Po powrocie relacjonuje Radkowi i sąsiadce, Ewie, czego się dowiedział.
+Sekretarka dyrektora Dorendy wyjawia Skotnickiemu, że to prezes Bogucki wywierał na dyrektora naciski w sprawie sekcji zwłok Rawicza i to za jego sprawą Piotr stracił pracę.
+Bogucki ze swoim prawnikiem oglądają wizualizację głównej ulicy w mieście należącej już teraz praktycznie do Boguckiego. Jedyną niezajętą przez niego placówką jest mały sklep spożywczy Waldemara Pecia, ale ten zniknął bez śladu. Piotr umawia się z Waldkiem telefonicznie, ma mu przywieźć jakieś ważne papiery.
+Na polecenie Boguckiego Eliza obserwuje mieszkanie Pecia. Zauważa wychodzącego stamtąd Skotnickiego. Próbuje od niego dowiedzieć się, gdzie przebywa Waldek, podając się za jego siostrę. Piotr nie wierzy w jej opowieść. Chcąc wybadać, kim dziewczyna naprawdę jest, umawia się z nią w kawiarni. Radek robi im zdjęcia z ukrycia, później śledzi Elizę na ulicy. Odkrywa, że dziewczyna ma bardzo dziwne powiązania, prawdopodobnie pracuje dla Boguckiego. 
+Piotr i Radek odwiedzają Waldka w jego kryjówce. Nie wiedzą, że śledzi ich Eliza. Dziewczyna zawiadamia szefa o efektach swojej misji. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1221004" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1221004','ekipa_skrocona1221004','ekipa1221004','ekipa_schowaj1221004','ekipa_schowaj_krotki1221004','ekipa_schowaj_pelny1221004','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1221004" class="jslink" onclick="pzf('ekipa_skrocona1221004','ekipa_pelna1221004','ekipa1221004','ekipa_schowaj1221004','ekipa_schowaj_pelny1221004','ekipa_schowaj_krotki1221004','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1221004"1221004" class="jslink" onclick="pzz('ekipa1221004','ekipa_schowaj1221004')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1221004" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1221004">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/114064">Stanisław Brudny</a></div><div class="ekipa_opis"> podglądacz</div><div class="ekipa_osoba"><a href="index.php/1134373">Magdalena Czerwińska</a></div><div class="ekipa_opis"> Beata Koper vel Eliza Koperska</div><div class="ekipa_osoba"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis"> Tadeusz Dorenda, dyrektor szpitala</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/111952">Dymitr Hołówko</a></div><div class="ekipa_opis"> Czesio</div><div class="ekipa_osoba"><a href="index.php/1145544">Mateusz Janicki</a></div><div class="ekipa_opis"> Robert Stelmaszczyk, asystent Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Rysiek Gawrysiak</div><div class="ekipa_osoba"><a href="index.php/1129643">Dariusz Juzyszyn</a></div><div class="ekipa_opis"> "Giewont"</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125118">Marek Karpowicz</a></div><div class="ekipa_opis"> radny Antosik</div><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> Aneta, sekretarka Boguckiego</div><div class="ekipa_osoba"><a href="index.php/116801">Katarzyna Kozak</a></div><div class="ekipa_opis"> Zofia, sekretarka dyrektora szpitala</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1123270">Wenanty Nosul</a></div><div class="ekipa_opis"> "Neon"</div><div class="ekipa_osoba"><a href="index.php/1127215">Piotr Nowak</a></div><div class="ekipa_opis"> Waldemar Peć, właściciel sklepu</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/1135406">Michał Piela</a></div><div class="ekipa_opis"> "Jojo", człowiek Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1155982">Dorota Pieńkos</a></div><div class="ekipa_opis"> Angorka</div><div class="ekipa_osoba"><a href="index.php/1147249">Maciej Półtorak</a></div><div class="ekipa_opis"> Paweł Dorenda, syn Tadeusza</div><div class="ekipa_osoba"><a href="index.php/1135923">Piotr Rękawik</a></div><div class="ekipa_opis"> Karol Wioncek, partner Renaty Kmiecik</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/111407">Tadeusz Wojtych</a></div><div class="ekipa_opis"> Franek, pracownik prosektorium</div><div class="ekipa_osoba"><a href="index.php/11188379">Jolanta Deszcz</a></div><div class="ekipa_opis"> Kulewiakowa, kuzynka Pecia</div><div class="ekipa_osoba"><a href="index.php/112173">Andrzej Golejewski</a></div><div class="ekipa_opis"> Kulewiak, kuzyn Pecia</div><div class="ekipa_osoba"><a href="index.php/1136777">Alicja Hornostaj</a></div><div class="ekipa_opis"> dozorczyni w kamienicy Pecia</div><div class="ekipa_osoba"><a href="index.php/1116741">Mirosław Jękot</a></div><div class="ekipa_opis"> dyrektor "Hipersolu"</div><div class="ekipa_osoba"><a href="index.php/1116763">Rafał Żabiński</a></div><div class="ekipa_opis"> producent</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1221004">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Ludzie Boguckiego dopadają Waldemara Pecia w jego rodzinnej wiosce i zmuszają do podpisania umowy "sprzedaży" sklepu. Na szczęście, w porę nadciągają posiłki ze wsi: gromada rolników uzbrojonych w widły, kosy, szpadle itp. Przeganiają gangsterów. Ale ci nie zamierzają odpuścić. Postanawiają w inny sposób "wykurzyć" Waldka z jego sklepu.
+Anka źle znosi rozdzielenie z Piotrem i samotność w motelu. Rysiek chciałby ją pocieszyć, oboje obawiają się jednak, by nie posunąć się o krok za daleko.
+Inspektor Wejman i sierżant Kręgiel przesłuchują Elizę w jej mieszkaniu. Jojo zauważa ich, gdy wychodzą. Przekonany, że Eliza współpracuje z policją, natychmiast donosi o tym szefowi. Bogucki poleca sprzątnąć dziewczynę.
+Piotr, przekonany, że to Bogucki groził mu przez telefon, zjawia się w jego firmie, ostrzegając, że nie da się dłużej zastraszać. Zostaje jednak pobity przez ochroniarzy prezesa "Megarolu".
+W budynku telewizji Echo Piotr rozmawia z młodym dziennikarzem Krubskim o gangsterskiej działalności Boguckiego. Okazuje się, że w latach 90. Bogucki i Gołębiowski prowadzili razem firmę ochroniarską. Dobrze się więc znają i cały czas wspierają.
+Po rozmowie z synem dyrektora Rawicza Piotr i Radek wyruszają na poszukiwanie dziewczyny, która widnieje na wspólnym zdjęciu ze starym Rawiczem i Zarembą. Może jej grozić śmiertelne niebezpieczeństwo, zwłaszcza jeśli wie ona coś, co mogłoby zagrozić gangsterom. Na wybrzeżu natrafiają na ślad niejakiej Pauli Gutowskiej. Prawdopodobnie dziewczyna była świadkiem śmierci Zaremby, który miał zeznawać w sprawie afery bankowej. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1221062" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1221062','ekipa_skrocona1221062','ekipa1221062','ekipa_schowaj1221062','ekipa_schowaj_krotki1221062','ekipa_schowaj_pelny1221062','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1221062" class="jslink" onclick="pzf('ekipa_skrocona1221062','ekipa_pelna1221062','ekipa1221062','ekipa_schowaj1221062','ekipa_schowaj_pelny1221062','ekipa_schowaj_krotki1221062','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1221062"1221062" class="jslink" onclick="pzz('ekipa1221062','ekipa_schowaj1221062')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1221062" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1221062">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1147882">Michał Czernecki</a></div><div class="ekipa_opis"> dziennikarz Marcin Krubski</div><div class="ekipa_osoba"><a href="index.php/1134373">Magdalena Czerwińska</a></div><div class="ekipa_opis"> Beata Koper vel Eliza Koperska</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Rysiek Gawrysiak</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125118">Marek Karpowicz</a></div><div class="ekipa_opis"> radny Antosik</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Jakub Rawicz, syn Leona</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1149412">Emilia Król</a></div><div class="ekipa_opis"> Krystyna, żona Ola</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1119809">Robert Mazurkiewicz</a></div><div class="ekipa_opis"> Cecot</div><div class="ekipa_osoba"><a href="index.php/1127215">Piotr Nowak</a></div><div class="ekipa_opis"> Waldemar Peć, właściciel sklepu</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1135406">Michał Piela</a></div><div class="ekipa_opis"> "Jojo", człowiek Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1122776">Mariusz Sibiga</a></div><div class="ekipa_opis"> Gilbert</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Paula Gutowska, kochanka Zaremby</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/1150624">Julia Wróblewska</a></div><div class="ekipa_opis"> Julcia, córka Ewy Kopackiej</div><div class="ekipa_osoba"><a href="index.php/1143104">Anna Bojara</a></div><div class="ekipa_opis"> zakonnica</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> kierowca autobusu</div><div class="ekipa_osoba"><a href="index.php/1128364">Marta Dąbrowska</a></div><div class="ekipa_opis"> kelnerka Marta z hotelu "Classic"</div><div class="ekipa_osoba"><a href="index.php/11188379">Jolanta Deszcz</a></div><div class="ekipa_opis"> Kulewiakowa, kuzynka Pecia</div><div class="ekipa_osoba"><a href="index.php/112173">Andrzej Golejewski</a></div><div class="ekipa_opis"> Kulewiak, kuzyn Pecia</div><div class="ekipa_osoba"><a href="index.php/1125654">Grzegorz Jurkiewicz</a></div><div class="ekipa_opis"> taksówkarz Maniek</div><div class="ekipa_osoba"><a href="index.php/116144">Elżbieta Kijowska</a></div><div class="ekipa_opis"> Krystyna Kopka, znajoma Pauli</div><div class="ekipa_osoba"><a href="index.php/1134647">Beata Kolak</a></div><div class="ekipa_opis"> bibliotekarka</div><div class="ekipa_osoba">Marek Konopiński</div><div class="ekipa_opis"> kierowca autobusu</div><div class="ekipa_osoba"><a href="index.php/1155803">Bartłomiej Nowosielski</a></div><div class="ekipa_opis"> taksówkarz Karol</div><div class="ekipa_osoba"><a href="index.php/1135167">Gabriela Pietrucha</a></div><div class="ekipa_opis"> Natalia, córka Krystyny Kopki</div><div class="ekipa_osoba"><a href="index.php/113613">Jan Skotnicki</a></div><div class="ekipa_opis"> ojciec Radka</div><div class="ekipa_osoba"><a href="index.php/1148982">Łukasz Lipiarz</a></div><div class="ekipa_opis"> człowiek Boguckiego; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1221062">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Piotr i Radek wyruszają na poszukiwanie Pauli Gutowskiej. Jej ojciec nie chce z nimi rozmawiać, ale matka podsuwa obu mężczyznom wskazówkę, która naprowadza ich na ślad dziewczyny. Paula opowiada im o okolicznościach śmierci Zaremby.
+Piotr nabiera przekonania, że Rawicz nadal żyje, tylko się ukrywa. Swoimi przypuszczeniami dzieli się z inspektorem Wejmanem. Wkrótce udaje się im wspólnie ustalić, kto faktycznie zginął tego dnia w spalonym samochodzie.
+Bogucki dowiaduje się, że Ryszard Gawrysiak to przyjaciel doktora Skotnickiego. Z pomocą Gołębiowskiego postanawia dać mu nauczkę. Zdesperowany Rysiek decyduje się przenieść swoje interesy na Wybrzeże. Następną ofiarą gangsterów ma być Anka, ale dziewczyna w porę opuszcza motel Ryśka i wraca do domu.
+Piotr i Radek odnajdują Rawicza ukrywającego się w domku letniskowym. Były dyrektor banku jest gotowy oddać się w ręce policji i złożyć zeznania obciążające elity ich miasta. Niespodziewanie w domku pojawia się Bogucki. W ręce trzyma pistolet. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1221065" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1221065','ekipa_skrocona1221065','ekipa1221065','ekipa_schowaj1221065','ekipa_schowaj_krotki1221065','ekipa_schowaj_pelny1221065','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1221065" class="jslink" onclick="pzf('ekipa_skrocona1221065','ekipa_pelna1221065','ekipa1221065','ekipa_schowaj1221065','ekipa_schowaj_pelny1221065','ekipa_schowaj_krotki1221065','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1221065"1221065" class="jslink" onclick="pzz('ekipa1221065','ekipa_schowaj1221065')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1221065" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1221065">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1134372">Magdalena Boczarska</a></div><div class="ekipa_opis"> dziennikarka Marzena Pietruszko</div><div class="ekipa_osoba"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis"> Tadeusz Dorenda, dyrektor szpitala</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> aspirant Prusak</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> Leon Rawicz, były dyrektor banku</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Rysiek Gawrysiak</div><div class="ekipa_osoba"><a href="index.php/119151">Marcin Jędrzejewski</a></div><div class="ekipa_opis"> "Grzechu", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125118">Marek Karpowicz</a></div><div class="ekipa_opis"> radny Antosik</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Jakub Rawicz, syn Leona</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1119809">Robert Mazurkiewicz</a></div><div class="ekipa_opis"> Cecot</div><div class="ekipa_osoba"><a href="index.php/1128282">Andrzej Młynarczyk</a></div><div class="ekipa_opis"> policjant Andrzej Brzostek</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1135406">Michał Piela</a></div><div class="ekipa_opis"> "Jojo", człowiek Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1135923">Piotr Rękawik</a></div><div class="ekipa_opis"> Karol Wioncek, mąż Renaty</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1125321">Małgorzata Socha</a></div><div class="ekipa_opis"> Paula Gutowska, kochanka Zaremby</div><div class="ekipa_osoba"><a href="index.php/1132767">Aneta Todorczuk</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/111407">Tadeusz Wojtych</a></div><div class="ekipa_opis"> Franek, pracownik prosektorium</div><div class="ekipa_osoba"><a href="index.php/1150624">Julia Wróblewska</a></div><div class="ekipa_opis"> Julcia, córka Ewy Kopackiej</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1128320">Mirosław Bieliński</a></div><div class="ekipa_opis"> leśniczy</div><div class="ekipa_osoba"><a href="index.php/1136537">Joanna Fidler</a></div><div class="ekipa_opis"> policjantka Dominiak</div><div class="ekipa_osoba"><a href="index.php/1137345">Piotr Grabowski</a></div><div class="ekipa_opis"> policjant Pawłowski</div><div class="ekipa_osoba"><a href="index.php/115248">Maciej Grzybowski</a></div><div class="ekipa_opis"> Mieczysław Gutowski, ojciec Pauliny</div><div class="ekipa_osoba"><a href="index.php/111952">Dymitr Hołówko</a></div><div class="ekipa_opis"> Czesio</div><div class="ekipa_osoba"><a href="index.php/113618">Jan Jeruzal</a></div><div class="ekipa_opis"> portier w szpitalu</div><div class="ekipa_osoba"><a href="index.php/1116884">Mirosława Olbińska</a></div><div class="ekipa_opis"> leśniczyna Krystyna</div><div class="ekipa_osoba"><a href="index.php/1132968">Zofia Tomaszewska-Charewicz</a></div><div class="ekipa_opis"> Kutrzebina</div><div class="ekipa_osoba"><a href="index.php/1152008">Paweł Tomaszewski</a></div><div class="ekipa_opis"> wiejski głupek</div><div class="ekipa_osoba"><a href="index.php/112366">Jolanta Wołłejko</a></div><div class="ekipa_opis"> Helena Gutowska, matka Pauliny</div><div class="ekipa_osoba"><a href="index.php/1187125">Bogumił Fruziński</a></div><div class="ekipa_opis"> chłop w Tarczynku; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1125722">Marek Grabowski</a></div><div class="ekipa_opis"> chłop w Tarczynku; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1119385">Tomasz Ignaczak</a></div><div class="ekipa_opis"> Siwy; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1221065">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>10</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Wasiak, jeden z ludzi komisarza Gołębiowskiego, zaczyna coraz bardziej obawiać się, że śledztwo prowadzone przez inspektora Wejmana doprowadzi do zdemaskowania niezgodnych z prawem działań grupy policjantów. 
+Inspektor wychodzi coś zjeść, w tym czasie Rawicz zostaje przywieziony przed czasem do komendy, gdzie ma go przesłuchać Wejman. W ślad za Rawiczem do budynku wkraczają Giewont i Leon przebrani w policyjne mundury. Dochodzi do tragedii.
+Radek i Wejman przeglądają na plebanii materiały otrzymane od Rawicza. Są zaskoczeni faktem, jak wiele osób one obciążają. 
+Michta po raz kolejny dzwoni do Piotra z pogróżkami. Sierżant Kręgiel podaje lekarzowi dokładną godzinę masakry w mieszkaniu Domańskiego. Piotr uświadamia sobie, że być może znalazł mimowolnego świadka całego zajścia. Staruszek podglądacz przyznaje, że faktycznie widział całą tragedię i mógłby nawet rozpoznać sprawcę na zdjęciu. 
+Po powrocie do domu Piotr nie zastaje Anki, za to znajduje pożegnalny list i rozrzucone rzeczy. Jest przekonany, że dziewczyna odeszła od niego. Sąsiadka Ewa jest przekonana, że Ankę porwano. 
+Wejman wyraża zgodę na założenie podsłuchu w telefonie Piotra. Niebawem lekarz odbiera wiadomość i jedzie za miasto zgodnie z otrzymanymi wskazówkami. Po drodze przekazuje wszystkie dane Radkowi, który rusza w ślad za nim. Do spotkania z gangsterami jednak nie dochodzi. Piotra zatrzymują policyjne radiowozy, ale Radkowi udaje się sfotografować z daleka rozmówców Skotnickiego. Wiadomo już na pewno, że to Michta, a nie Bogucki szantażował lekarza. Piotr postanawia zagrać z Michtą w otwarte karty. Odwiedza go z Radkiem. Informuje, że morderstwa w mieszkaniu Domańskiego dokonał ktoś z policji, a on zna jego nazwisko. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1221067" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1221067','ekipa_skrocona1221067','ekipa1221067','ekipa_schowaj1221067','ekipa_schowaj_krotki1221067','ekipa_schowaj_pelny1221067','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1221067" class="jslink" onclick="pzf('ekipa_skrocona1221067','ekipa_pelna1221067','ekipa1221067','ekipa_schowaj1221067','ekipa_schowaj_pelny1221067','ekipa_schowaj_krotki1221067','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1221067"1221067" class="jslink" onclick="pzz('ekipa1221067','ekipa_schowaj1221067')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1221067" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1221067">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/114064">Stanisław Brudny</a></div><div class="ekipa_opis"> podglądacz</div><div class="ekipa_osoba"><a href="index.php/116093">Tomasz Dedek</a></div><div class="ekipa_opis"> Tadeusz Dorenda, dyrektor szpitala</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> aspirant Prusak</div><div class="ekipa_osoba"><a href="index.php/118478">Marian Dziędziel</a></div><div class="ekipa_opis"> Jerzy Michta "Macher"</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> Leon Rawicz, były dyrektor banku</div><div class="ekipa_osoba"><a href="index.php/113172">Krzysztof Globisz</a></div><div class="ekipa_opis"> Wojciech Kmiecik, wiceprezydent miasta</div><div class="ekipa_osoba"><a href="index.php/11101">Robert Gonera</a></div><div class="ekipa_opis"> doktor Piotr Skotnicki</div><div class="ekipa_osoba"><a href="index.php/119151">Marcin Jędrzejewski</a></div><div class="ekipa_opis"> "Grzechu", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1129643">Dariusz Juzyszyn</a></div><div class="ekipa_opis"> "Giewont"</div><div class="ekipa_osoba"><a href="index.php/1131197">Tomasz Karolak</a></div><div class="ekipa_opis"> "Tomcio", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1125118">Marek Karpowicz</a></div><div class="ekipa_opis"> radny Antosik</div><div class="ekipa_osoba"><a href="index.php/117030">Wanda Koczeska</a></div><div class="ekipa_opis"> Skotnicka, matka Piotra</div><div class="ekipa_osoba"><a href="index.php/113283">Piotr Kozłowski</a></div><div class="ekipa_opis"> Czesław Brodowski "Menago", człowiek  Boguckiego</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> inspektor Artur Wejman</div><div class="ekipa_osoba"><a href="index.php/1122784">Jan Mancewicz</a></div><div class="ekipa_opis"> policjant Matys</div><div class="ekipa_osoba"><a href="index.php/1128282">Andrzej Młynarczyk</a></div><div class="ekipa_opis"> policjant Andrzej Brzostek</div><div class="ekipa_osoba"><a href="index.php/1123270">Wenanty Nosul</a></div><div class="ekipa_opis"> "Neon"</div><div class="ekipa_osoba"><a href="index.php/1119764">Edyta Olszówka</a></div><div class="ekipa_opis"> doktor Anka Jarzębska, partnerka  Skotnickiego</div><div class="ekipa_osoba"><a href="index.php/11108">Sławomir Orzechowski</a></div><div class="ekipa_opis"> komisarz Henryk Gołębiowski</div><div class="ekipa_osoba"><a href="index.php/1155982">Dorota Pieńkos</a></div><div class="ekipa_opis"> Angorka</div><div class="ekipa_osoba"><a href="index.php/1147236">Krzysztof Pluskota</a></div><div class="ekipa_opis"> sierżant Stefan Kręgiel</div><div class="ekipa_osoba"><a href="index.php/1144684">Sławomir Popek</a></div><div class="ekipa_opis"> policjant Adam Wasiak</div><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Cezary Bogucki</div><div class="ekipa_osoba"><a href="index.php/1140642">Aneta Todorczuk-Perchuć</a></div><div class="ekipa_opis"> Ewa Kopacka</div><div class="ekipa_osoba"><a href="index.php/1123749">Jan Wieczorkowski</a></div><div class="ekipa_opis"> ksiądz Radek Strumiłło</div><div class="ekipa_osoba"><a href="index.php/1131205">Dawid Zawadzki</a></div><div class="ekipa_opis"> "Złotousty", człowiek Michty</div><div class="ekipa_osoba"><a href="index.php/1143104">Anna Bojara</a></div><div class="ekipa_opis"> zakonnica</div><div class="ekipa_osoba"><a href="index.php/1152805">Aleksander Fiałek</a></div><div class="ekipa_opis"> policjant Połomski</div><div class="ekipa_osoba"><a href="index.php/1146822">Marek Galas</a></div><div class="ekipa_opis"> funkcjonariusz</div><div class="ekipa_osoba">Mirosław Karwowski</div><div class="ekipa_opis"> funkcjonariusz</div><div class="ekipa_osoba"><a href="index.php/113613">Jan Skotnicki</a></div><div class="ekipa_opis"> ojciec Radka</div><div class="ekipa_osoba"><a href="index.php/1149808">Paweł Czajor</a></div><div class="ekipa_opis"> technik; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1221067">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1218535" selected >1</option><option value="1218535_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1218535_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1218535_2"></a> 
+</nav><div id="czasgen">2026.05.08 04:07:32</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

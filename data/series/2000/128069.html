@@ -1,0 +1,886 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - PRZEPROWADZKI</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>PRZEPROWADZKI</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000-2001</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2001. 09. 02</div></li>
+<li><div class="film_tech3">Barwny (negatyw: Kodak), 10 odcinków x ok. 50 min<br /><br />
+Lokacje: Piotrków Trybunalski, Warszawa, Oporów (zamek), Konstancin-Jeziorna (willa "Natemi" przy ul. Sienkiewicza 7), Twierdza Modlin.</div></li>
+</ul>
+<p class="opis">- Pomysł scenariusza przyszedł mi do głowy podczas własnej przeprowadzki, którą powierzyłem znanej warszawskiej firmie - mówi <a href="index.php/114065">Cezary Harasimowicz</a>. - Pomyślałem, że to świetny filmowy temat. Upewniłem się, kiedy moja mama, widząc wygrzebaną z piwnicy walizkę, popłakała się i opowiedziała historię ucieczki ze Lwowa z tą właśnie walizką. Jej opowieść uświadomiła mi, że historia Polski to historia ciągłych przeprowadzek i towarzyszących im emocji. Każda filmowa przeprowadzka będzie dotyczyła konkretnej daty w historii Polski. Ważnym miejscem jest magazyn firmy Szczygłów, w którym przechowuje się m.in. rzeczy zgubione podczas przeprowadzek. Bohaterem każdego odcinka będzie przedmiot. Rok 1905 reprezentować będzie np. serwantka generała gubernatora Maksymowicza, 1939 - sejf pierwszego pułku szwoleżerów, 1956 - szuflada redaktora Bryjki, 1974 - fotel towarzysza Maja. Niektóre historie są wymyślone, inne pojawiły się podczas zbierania dokumentacji. Serial zaczyna się w sylwestra 1900 roku romantyczną opowieścią o miłości protoplasty rodu i założyciela firmy Czesława Szczygła, wozaka z Powiśla wożącego gnój. Zakochuje się on w rewolucjonistce SDKPiL ściganej przez ochranę. Ukochana musi uciekać z Polski, zostaje po niej kufer. Odcinek nosi tytuł "Kufer Lilianny". Jaki przedmiot poprowadzi nas przez rok 2001, to tajemnica. Wiadomo tylko, że w ostatnim odcinku spotkają się wszyscy klienci firmy. - To będzie opowieść polska, ale też bardzo warszawska, poznamy typy, klimaty dawnej i obecnej stolicy - mówi Harasimowicz. Saga rodzinna w klimacie prozy Hrabala, tragikomiczna, ciepła, ogólnie optymistyczna. Widzowie oglądający film nie będą mieli poczucia, że zmusza się ich do jakichś radykalnych postaw, ocen, rozliczeń. Będą mogli pozwolić sobie na własną interpretację. <a href="index.php/115128">Leszek Wosiewicz</a>, autor groteskowego <a href="index.php/122936">"Kornblumenblau"</a>, ale i zabawnych, nostalgicznych <a href="index.php/127164">"Kronik domowych"</a> według własnego scenariusza, mówi: - Na początku byłem najeżony, bo nie cenię sobie seriali. Ale scenariusz zaskoczył mnie swoim ciepłem, dowcipem, autoironią. Zrozumiałem, że otrzymałem materiał, który ma masę zalet, i że warto go zrobić. Uważam, że jest to pierwszy od wielu lat pomysł na serial o charakterze uniwersalnym. Będzie go można sprzedać na całym świecie. <a href="index.php/1124645">Michał Kwieciński</a>, szef <a href="index.php/1124646">Akson Studio</a>, producent wykonawczy filmu, chce, aby role braci, właścicieli firmy i ich żon zagrali nieznani aktorzy. - Chcemy dać ogłoszenie w prasie, ogłosić przetarg na przeciętnego Polaka. To bardzo ważny, podsumowujący naszą historię serial o karierze na miarę Bliklego, możliwej dzięki aspiracjom i inteligencji jednostki - mówi Kwieciński. - Na taki serial może sobie pozwolić tylko telewizja publiczna. (fragment artykułu Katarzyny Bielas z "Gazety Wyborczej" 1999 nr 146 z 25.06).<br />
+Reżyserem serialu został <a href="index.php/115128">Leszek Wosiewicz</a>, mimo że do realizacji cykli telewizyjnych odnosił się dotychczas sceptycznie. "Przeprowadzki" ujęły go jednak ciepłem, łagodnym humorem i z lekka ironicznym dystansem do przedstawianych w nich zdarzeń. Serial Harasimowicza i Wosiewicza to oryginalnie ujęta saga rodzinna, odległa klimatem od brazylijskich czy wenezuelskich telenowel. Melodramatyczne efekty ustępują tu miejsca Hrabalowskiej i Munkowskiej z ducha refleksji nad tragikomizmem ludzkiej egzystencji. Akcja cyklu trwa równo sto lat. Od sylwestra 1900 do sylwestra 2000. Każdy z odcinków to odrębna fabularna całość, opowiadająca o jakiejś przeprowadzce i zagubionym podczas niej przedmiocie. Jedynym łącznikiem między poszczególnymi częściami jest rodzina Szczygłów, kierująca firmą, przewożącą dobytek ludzi zmieniających mieszkanie. Z woli scenarzysty w tle każdej z dwudziestu jeden opowieści rozgrywają się doniosłe wydarzenia historyczne. Nie pozostają one rzecz jasna bez wpływu na dzieje rodziny Szczygłów. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=168069_1&galeria=158069"><img class="bezcienia" src="../z1/69i/8069_1.jpg" height="60"></a><a href="index.php?fotos=168069_2&galeria=158069"><img class="bezcienia" src="../z1/69i/8069_2.jpg" height="60"></a><a href="index.php?fotos=168069_3&galeria=158069"><img class="bezcienia" src="../z1/69i/8069_3.jpg" height="60"></a><a href="index.php?fotos=168069_4&galeria=158069"><img class="bezcienia" src="../z1/69i/8069_4.jpg" height="60"></a><a href="index.php?fotos=168069_5&galeria=158069"><img class="bezcienia" src="../z1/69i/8069_5.jpg" height="60"></a><a href="index.php?fotos=168069_6&galeria=158069"><img class="bezcienia" src="../z1/69i/8069_6.jpg" height="60"></a><a href="index.php?fotos=168069_7&galeria=158069"><img class="bezcienia" src="../z1/69i/8069_7.jpg" height="60"></a><a href="index.php/158069" title="Galeria zdjęć (15)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128069" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128069','ekipa_skrocona128069','ekipa128069','ekipa_schowaj128069','ekipa_schowaj_krotki128069','ekipa_schowaj_pelny128069','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128069" class="jslink" onclick="pzf('ekipa_skrocona128069','ekipa_pelna128069','ekipa128069','ekipa_schowaj128069','ekipa_schowaj_pelny128069','ekipa_schowaj_krotki128069','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128069"128069" class="jslink" onclick="pzz('ekipa128069','ekipa_schowaj128069')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128069" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128069">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115128">Leszek Wosiewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/118810">Adam Iwiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/114718">Elżbieta Sikorska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/114875">Bożena Politańska-Jakubowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129451">Wiktor Kośla</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133787">Marcin Wrona</a></div><div class="ekipa_opis"> odcinki: 1-7, 10</div><div class="ekipa_osoba"><a href="index.php/1136125">Bartosz Konopka</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1136177">Kinga Lewińska</a></div><div class="ekipa_opis"> odcinki: 5-6, 8-10</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114065">Cezary Harasimowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11838">Krzysztof Ptak</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-7, 10</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1135990">Piotr Śliskowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 4-10</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124676">Jacek Januszyk</a></div><div class="ekipa_opis wyroznienie"> odcinki: 5-7</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1124676">Jacek Januszyk</a></div><div class="ekipa_opis"> odcinki: 1-7</div><div class="ekipa_osoba"><a href="index.php/1135990">Piotr Śliskowski</a></div><div class="ekipa_opis"> odcinki: 3-10</div><div class="ekipa_osoba"><a href="index.php/1122476">Janusz Sus</a></div><div class="ekipa_opis"> odcinki: 3, 6-7</div><div class="ekipa_osoba"><a href="index.php/1116897">Romuald Lewandowski</a></div><div class="ekipa_opis"> odcinki: 4-5, 7-8</div><div class="ekipa_osoba"><a href="index.php/1129457">Małgorzata Łupina</a></div><div class="ekipa_opis"> odcinki: 5-6, 8-10</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/112549">Zbigniew Jakubowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115733">Ferdynand Szczerbowicz</a></div><div class="ekipa_opis"> w napisach imię: Ferdisław</div><div class="ekipa_osoba"><a href="index.php/1124717">Krzysztof Kubiak</a></div><div class="ekipa_opis"> odcinki: 1-7</div><div class="ekipa_osoba"><a href="index.php/1127891">Remigiusz Kubiak</a></div><div class="ekipa_opis"> odcinki: 1-7</div><div class="ekipa_osoba"><a href="index.php/1115741">Józef Cieplucha</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115743">Jerzy Lenkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1110965">Grzegorz Domański</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113673">Dariusz Grzywacz</a></div><div class="ekipa_opis"> odcinki: 2-3</div><div class="ekipa_osoba"><a href="index.php/1133789">Artur Lange</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118025">Jerzy Nuckowski</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1126570">Ryszard Burhart</a></div><div class="ekipa_opis"> odcinki: 2-10</div><div class="ekipa_osoba"><a href="index.php/1134581">Tomasz Pyć</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1122674">Aleksander Traut</a></div><div class="ekipa_opis"> odcinki: 1-4</div><div class="ekipa_osoba"><a href="index.php/1124302">Paweł Dylik</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1128621">Marcin Grzegory</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1134123">Adam Wardak</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1136127">Janusz Michalski</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba">Zdzisław Kuleszka</div><div class="ekipa_opis"> odcinki: 4-10</div></li>
+<li><div class="ekipa_funkcja">Operator Steadicam</div><div class="ekipa_osoba"><a href="index.php/1124676">Jacek Januszyk</a></div><div class="ekipa_opis"> odcinki: 7</div><div class="ekipa_osoba"><a href="index.php/1135990">Piotr Śliskowski</a></div><div class="ekipa_opis"> odcinki: 7-10</div><div class="ekipa_osoba"><a href="index.php/1129762">Tomasz Karnowski</a></div><div class="ekipa_opis"> asystent; nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1129765">Marek Peuker</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Laboratorium</div><div class="ekipa_osoba"><a href="index.php/111141">Telewizja Polska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11341">Andrzej Haliński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/11897">Anna Bohdziewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/1132662">Magdalena Hubka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128469">Elżbieta Szutkowski</a></div><div class="ekipa_opis"> odcinki: 1-2</div><div class="ekipa_osoba"><a href="index.php/1128242">Sebastian Frąc</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1122684">Bogusław Dziedzic</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113808">Zdzisław Szkopiński</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/113236">Waldemar Weiss</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1135930">Artur Bondruk</a></div><div class="ekipa_opis"> odcinki: 2-3</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123262">Joanna Dzwonnik</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dekoratorska</div><div class="ekipa_osoba"><a href="index.php/113154">Emil Kostecki</a></div><div class="ekipa_opis"> odcinki: 1-7, 10</div><div class="ekipa_osoba"><a href="index.php/1127097">Krzysztof Majewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127100">Adam Ruciński</a></div><div class="ekipa_opis"> odcinki: 1-7, 10</div><div class="ekipa_osoba"><a href="index.php/1132663">Lech Ociesa</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1128204">Krzysztof Kęska</a></div><div class="ekipa_opis"> odcinki: 1-7, 10</div><div class="ekipa_osoba"><a href="index.php/1119673">Jerzy Jakimiak</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1136128">Arkadiusz Jaworski</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1135930">Artur Bondruk</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1135393">Tomasz Selenta</a></div><div class="ekipa_opis"> odcinki: 4-10</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo budowy dekoracji</div><div class="ekipa_osoba"><a href="index.php/1115879">Jarosław Pieńkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114483">Dorota Roqueplo</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumy wojskowe</div><div class="ekipa_osoba"><a href="index.php/111540">Andrzej Szenajch</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/113241">Anna Kiljańska</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/1134997">Monika Krzyżanowska</a></div><div class="ekipa_opis"> odcinki: 4-10</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1116085">Anna Rychlik</a></div><div class="ekipa_opis"> odcinki: 1-7, 10</div><div class="ekipa_osoba"><a href="index.php/1128442">Elżbieta Kaczmarska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126320">Ewa Rakowska</a></div><div class="ekipa_opis"> odcinki: 2-3</div><div class="ekipa_osoba"><a href="index.php/1134998">Dorota Kosatka</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/113241">Anna Kiljańska</a></div><div class="ekipa_opis"> odcinki: 10</div></li>
+<li><div class="ekipa_funkcja">Militaria</div><div class="ekipa_osoba"><a href="index.php/111540">Andrzej Szenajch</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Anna Ciborowska</div><div class="ekipa_opis"> współpraca; odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1133275">Marta Łepkowska</a></div><div class="ekipa_opis"> współpraca; odcinki: 2-7, 10</div><div class="ekipa_osoba"><a href="index.php/115413">Małgorzata Mazowieńska</a></div><div class="ekipa_opis"> współpraca; odcinki: 4-8, 10</div><div class="ekipa_osoba"><a href="index.php/1124059">Adam Kocemba</a></div><div class="ekipa_opis"> współpraca; odcinki: 4-8, 10</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1112381">Michał Lorenc</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba"><a href="index.php/1126175">Polska Orkiestra Radiowa (Warszawa)</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125925">Marta Stanisławska</a></div><div class="ekipa_opis"> cymbały</div><div class="ekipa_osoba"><a href="index.php/1124832">Barbara Witkowska</a></div><div class="ekipa_opis"> harfa; odcinki: 4</div></li>
+<li><div class="ekipa_funkcja">Dyrygent</div><div class="ekipa_osoba"><a href="index.php/1110749">Tadeusz Karolak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Aranżacja</div><div class="ekipa_osoba"><a href="index.php/1110749">Tadeusz Karolak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/11690">Marta Broczkowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/114997">Zbigniew Zbrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Choreografia</div><div class="ekipa_osoba"><a href="index.php/119124">Tomasz Tworkowski</a></div><div class="ekipa_opis"> odcinki: 7</div></li>
+<li><div class="ekipa_funkcja">Realizacja nagrań</div><div class="ekipa_osoba"><a href="index.php/1123134">Tadeusz Mieczkowski</a></div><div class="ekipa_opis"> nagrań dokonano w Studio Polskiego Radia  im. Agnieszki Osieckiej</div><div class="ekipa_osoba"><a href="index.php/1127506">Robert Żychliński</a></div><div class="ekipa_opis"> współpraca</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113974">Andrzej Bohdanowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1128773">Maciej Sobczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116773">Ryszard Wysocki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117167">Mirosław Makowski</a></div><div class="ekipa_opis"> odcinki: 1-2</div></li>
+<li><div class="ekipa_funkcja">Imitator dźwięku</div><div class="ekipa_osoba"><a href="index.php/1161">Henryk Zastróżny</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/113244">Małgorzata Jaworska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126218">Michał Muzyka</a></div><div class="ekipa_opis"> odcinki: 1-2</div><div class="ekipa_osoba"><a href="index.php/1128471">Urszula Zaręba</a></div><div class="ekipa_opis"> odcinki: 3-6</div><div class="ekipa_osoba"><a href="index.php/1128471">Urszula Zaręba</a></div><div class="ekipa_opis"> współpraca; odcinki: 1-2</div><div class="ekipa_osoba"><a href="index.php/1132692">Błażej Kukla</a></div><div class="ekipa_opis"> współpraca; odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis"> współpraca; odcinki: 7-10</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118782">Ewa Różewicz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-3</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118813">Katarzyna Rudnik</a></div><div class="ekipa_opis wyroznienie"> odcinki: 4-5</div><div class="ekipa_osoba wyroznienie"><a href="index.php/117550">Grażyna Jasińska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 6-8</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114820">Grażyna Gradoń</a></div><div class="ekipa_opis wyroznienie"> odcinki: 9-10</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1124296">Robert Mańkowski</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div></li>
+<li><div class="ekipa_funkcja">Montaż elektroniczny</div><div class="ekipa_osoba"><a href="index.php/1132877">Piotr Dudek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123218">Iwona Blicharz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115020">Elżbieta Malka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1127255">Małgorzata Tomczak</a></div><div class="ekipa_opis"> odcinki: 1-7, 10</div><div class="ekipa_osoba"><a href="index.php/1125500">Jolanta Grzelak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128039">Maria Stosio</a></div><div class="ekipa_opis"> odcinki: 2-10</div><div class="ekipa_osoba"><a href="index.php/1135932">Aleksander Tasakowski</a></div><div class="ekipa_opis"> odcinki: 2</div><div class="ekipa_osoba"><a href="index.php/115257">Elżbieta Pietrzak</a></div><div class="ekipa_opis"> odcinki: 8-10</div><div class="ekipa_osoba"><a href="index.php/1120670">Marek Pomaski</a></div><div class="ekipa_opis"> obsługa wozu charakteryzatorskiego</div><div class="ekipa_osoba"><a href="index.php/1120665">Waldemar Pomaski</a></div><div class="ekipa_opis"> obsługa wozu charakteryzatorskiego;  odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1129026">Joanna Dybczyńska</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Opieka artystyczna</div><div class="ekipa_osoba"><a href="index.php/114113">Janusz Morgenstern</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1133793">Jacek Korpetta</a></div><div class="ekipa_opis"> historyczna; odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1133794">Edward Szędzielorz</a></div><div class="ekipa_opis"> językowa; odcinki: 1-4</div><div class="ekipa_osoba">Piotr Rajca</div><div class="ekipa_opis"> językowa; odcinki: 4</div><div class="ekipa_osoba">Filip Sikorski</div><div class="ekipa_opis"> językowa; odcinki: 4</div><div class="ekipa_osoba"><a href="index.php/1126953">Jarosław Junko</a></div><div class="ekipa_opis"> językowa; odcinki: 5-6</div><div class="ekipa_osoba">Jadwiga Kańska (?)</div><div class="ekipa_opis"> językowa; odcinki: 10</div><div class="ekipa_osoba"><a href="index.php/11288">Szymon Szurmiej</a></div><div class="ekipa_opis"> językowa; odcinki: 10</div><div class="ekipa_osoba"><a href="index.php/119124">Tomasz Tworkowski</a></div><div class="ekipa_opis"> choreograficzna; odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/118354">Zbigniew Modej</a></div><div class="ekipa_opis"> kaskaderska</div><div class="ekipa_osoba"><a href="index.php/114407">Jacek Kadłubowski</a></div><div class="ekipa_opis"> d/s kaskadersko-końskich</div><div class="ekipa_osoba"><a href="index.php/1125021">Jarosław Nowikowski</a></div><div class="ekipa_opis"> współpraca przy konsultacji d/s  kaskadersko-końskich; odcinki: 4</div><div class="ekipa_osoba"><a href="index.php/1128246">Zbigniew Mikiciuk</a></div><div class="ekipa_opis"> samochodowa; odcinki: 8-10</div><div class="ekipa_osoba"><a href="index.php/1128243">Patryk Mikiciuk</a></div><div class="ekipa_opis"> samochodowa; odcinki: 8-10</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/118354">Zbigniew Modej</a></div><div class="ekipa_opis"> odcinki: 6, 9</div><div class="ekipa_osoba"><a href="index.php/112045">Sylwester Zawadzki</a></div><div class="ekipa_opis"> odcinki: 6, 9</div><div class="ekipa_osoba"><a href="index.php/1120072">Jacek Jeleń</a></div><div class="ekipa_opis"> odcinki: 6</div><div class="ekipa_osoba"><a href="index.php/114407">Jacek Kadłubowski</a></div><div class="ekipa_opis"> odcinki: 6, 9</div><div class="ekipa_osoba"><a href="index.php/1136239">Maciej A. Maciejewski</a></div><div class="ekipa_opis"> odcinki: 6</div><div class="ekipa_osoba"><a href="index.php/115045">Tomasz Przybysz</a></div><div class="ekipa_opis"> odcinki: 9</div><div class="ekipa_osoba"><a href="index.php/115043">Janusz Chlebowski</a></div><div class="ekipa_opis"> odcinki: 9</div><div class="ekipa_osoba"><a href="index.php/114739">Józef Stefański</a></div><div class="ekipa_opis"> odcinki: 9</div></li>
+<li><div class="ekipa_funkcja">Dubler</div><div class="ekipa_osoba"><a href="index.php/1127598">Tomasz Trojnar</a></div><div class="ekipa_opis"> odcinki: 9</div><div class="ekipa_osoba"><a href="index.php/1125021">Jarosław Nowikowski</a></div><div class="ekipa_opis"> odcinki: 9</div></li>
+<li><div class="ekipa_funkcja">Opieka medyczna</div><div class="ekipa_osoba"><a href="index.php/1124725">Andrzej Tarasewicz</a></div><div class="ekipa_opis"> odcinki: 6-10</div><div class="ekipa_osoba"><a href="index.php/1127598">Tomasz Trojnar</a></div><div class="ekipa_opis"> odcinki: 9-10</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/115425">Krzysztof Wellman</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129763">Michał Mrowiec</a></div><div class="ekipa_opis"> odcinki: 1-3</div></li>
+<li><div class="ekipa_funkcja">Materiały archiwalne</div><div class="ekipa_osoba"><a href="index.php/1123350">Archiwum Dokumentacji Mechanicznej</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/112377">Wytwórnia Filmowa Czołówka</a></div><div class="ekipa_opis"> odcinki: 9</div><div class="ekipa_osoba"><a href="index.php/1136637">Fundacja Shalom</a></div><div class="ekipa_opis"> materiały z kolekcji "I ciągle widzę ich  twarze"; odcinki: 10</div></li>
+<li><div class="ekipa_funkcja">Efekty pirotechniczne</div><div class="ekipa_osoba"><a href="index.php/115839">Janusz Bykowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty specjalne</div><div class="ekipa_osoba"><a href="index.php/1120093">Witold Gajzler</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1127288">Zbigniew Michalski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127287">Krzysztof Adamus</a></div><div class="ekipa_opis"> odcinki: 1-4</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110919">Paweł Gabryś</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/113821">Anna Przybyszewska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125024">Justyna Pawlak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129305">Maria Nowocień</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1129023">Bartosz Kłopotek-Główczewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117269">Małgorzata Witkowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126432">Renata Rogala</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Katarzyna Kapica</div><div class="ekipa_opis"> odcinki: 1-4</div><div class="ekipa_osoba"><a href="index.php/1126756">Marek Druś</a></div><div class="ekipa_opis"> odcinki: 1-7</div><div class="ekipa_osoba"><a href="index.php/1133791">Jacek Grzechnik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136132">Marcin Kisiel</a></div><div class="ekipa_opis"> odcinki: 4, 6, 8-10</div><div class="ekipa_osoba"><a href="index.php/118814">Iwona Gajewska</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba">Jerzy Wójcik</div><div class="ekipa_opis"> odcinki: 4-10</div><div class="ekipa_osoba"><a href="index.php/1136178">Marta Kamieńska</a></div><div class="ekipa_opis"> odcinki: 5-6, 8-10</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1121512">Leszek Jarosz</a></div><div class="ekipa_opis"> odcinki: 1-2</div><div class="ekipa_osoba"><a href="index.php/1124658">Wiesław Kardaś</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca producencka</div><div class="ekipa_osoba"><a href="index.php/1124643">Katarzyna Fukacz-Cebula</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116792">Małgorzata Fogel-Gabryś</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis wyroznienie"> dla Programu 1</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis wyroznienie"> Róża Żychniewicz-Szczygieł, żona Czesława</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis wyroznienie"> Czesław Szczygieł</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128069">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/115128">Leszek Wosiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/114065">Cezary Harasimowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/11838">Krzysztof Ptak</a></div><div class="ekipa_opis"> odcinki: 1-7, 10</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1135990">Piotr Śliskowski</a></div><div class="ekipa_opis"> odcinki: 4-10</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1124676">Jacek Januszyk</a></div><div class="ekipa_opis"> odcinki: 5-7</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/11341">Andrzej Haliński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/1123262">Joanna Dzwonnik</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1114483">Dorota Roqueplo</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/1112381">Michał Lorenc</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/113974">Andrzej Bohdanowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1118782">Ewa Różewicz</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118813">Katarzyna Rudnik</a></div><div class="ekipa_opis"> odcinki: 4-5</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/117550">Grażyna Jasińska</a></div><div class="ekipa_opis"> odcinki: 6-8</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114820">Grażyna Gradoń</a></div><div class="ekipa_opis"> odcinki: 9-10</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1123218">Iwona Blicharz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/115020">Elżbieta Malka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1110919">Paweł Gabryś</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis"> dla Programu 1</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Żychniewicz-Szczygieł, żona Czesława</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div style="display:block;" /></li>
+</ul>
+</div>
+<div class="podzbior"><h1>KUFER LILIANNY (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2000. 12. 24</div></li>
+<li><div class="film_tech3">51 min</div></li>
+</ul>
+<p class="opis">Zbliża się koniec roku 2000, a zarazem XX wieku. W firmie "Szczygieł - Przeprowadzki. Rok zał. 1901" wybucha pożar. Stanisław Szczygieł, obecny właściciel przedsiębiorstwa, zostaje śmiertelnie ranny. Przed zgonem przekazuje synowi pilnie strzeżoną przez lata tajemnicę. W firmie znajduje się tajny magazyn zagubionych podczas przeprowadzek rzeczy. W ręce Bogusia Szczygła trafia pożółkła ze starości księga, w której opisane są losy tych przedmiotów. Chłopak zaczyna czytać. Pierwsza historia dotyczy "kufra Lilianny" i rozgrywa się w roku 1900 na warszawskim Powiślu. Bracia Mietek i Czesiek Szczygłowie zarabiają na życie wożąc gnój. Pewnego dnia spotykają piękną pannę, która postanowiła porzucić swą bogatą, bankierską rodzinę i poświęcić się walce o oswobodzenie proletariatu z pazernych rąk kapitalistów. Liliannę, która w swoim kufrze ukrywa rewolucyjną bibułę, ściga ochrana. Dziewczyna musi uciekać z kraju. Emigruje aż do Ameryki. W sylwestrową noc na peron odwozi ją zakochany Czesiek Szczygieł. Przypadek sprawia, że Lilianna odjeżdża bez kuferka, w którym znajduje się teraz tylko elegancka suknia i skromny zestaw niezbędnych do życia rzeczy. Zrozpaczony Czesiek nagle doznaje olśnienia. A może by tak zamiast gnoju wozić ludzi i ich dobytek? Pomysł przedni, tylko skąd wziąć pieniądze na rozkręcenie interesu? I wówczas, jeszcze tej samej nocy, spotyka niejaką Różę Żychniewicz, dzięki której jego życie całkowicie się odmieni. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=169645_1&galeria=159645"><img class="bezcienia" src="../z1/45i/9645_1.jpg" height="60"></a><a href="index.php?fotos=169645_2&galeria=159645"><img class="bezcienia" src="../z1/45i/9645_2.jpg" height="60"></a><a href="index.php?fotos=169645_3&galeria=159645"><img class="bezcienia" src="../z1/45i/9645_3.jpg" height="60"></a><a href="index.php/159645" title="Galeria zdjęć (3)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki129645" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna129645','ekipa_skrocona129645','ekipa129645','ekipa_schowaj129645','ekipa_schowaj_krotki129645','ekipa_schowaj_pelny129645','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny129645" class="jslink" onclick="pzf('ekipa_skrocona129645','ekipa_pelna129645','ekipa129645','ekipa_schowaj129645','ekipa_schowaj_pelny129645','ekipa_schowaj_krotki129645','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj129645"129645" class="jslink" onclick="pzz('ekipa129645','ekipa_schowaj129645')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa129645" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna129645">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1123035">Artur Janusiak</a></div><div class="ekipa_opis"> Mieczysław Szczygieł, brat Czesława</div><div class="ekipa_osoba"><a href="index.php/1122120">Małgorzata Kożuchowska</a></div><div class="ekipa_opis"> Lilianna Hirsz</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Żychniewicz-Szczygieł, żona  Czesława</div><div class="ekipa_osoba"><a href="index.php/1113024">Andrzej Mastalerz</a></div><div class="ekipa_opis"> stróż Ambroży Holtz</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/1121300">Anna Radwan</a></div><div class="ekipa_opis"> Teresa Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Helena Szczygieł</div><div class="ekipa_osoba"><a href="index.php/113810">Andrzej Strzelecki</a></div><div class="ekipa_opis"> Roman Hirsz, ojciec Lilianny, prezes banku</div><div class="ekipa_osoba"><a href="index.php/111060">Józef Fryźlewicz</a></div><div class="ekipa_opis"> Błażej, lokaj Hirszów</div><div class="ekipa_osoba"><a href="index.php/1118157">Waldemar Obłoza</a></div><div class="ekipa_opis"> tajniak Ochrany</div><div class="ekipa_osoba"><a href="index.php/112907">Tomasz Marzecki</a></div><div class="ekipa_opis"> stójkowy</div><div class="ekipa_osoba"><a href="index.php/1113920">Tomasz Preniasz</a></div><div class="ekipa_opis"> sołdat</div><div class="ekipa_osoba"><a href="index.php/113516">Tadeusz Hanusek</a></div><div class="ekipa_opis"> Lilpop, prezes fabryki</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Florek, kierowca w firmie Szczygłów</div><div class="ekipa_osoba"><a href="index.php/1129661">Karolina Muszalak</a></div><div class="ekipa_opis"> Emilia, żona Hirsza</div><div class="ekipa_osoba">Andrzej Truszczyński</div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/1128156">Robert Żołędziewski</a></div><div class="ekipa_opis"> "Biedronka", uczestnik zabawy  sylwestrowej</div><div class="ekipa_osoba"><a href="index.php/116435">Stanisław Banasiuk</a></div><div class="ekipa_opis"> majster w fabryce Lilpopa</div><div class="ekipa_osoba"><a href="index.php/1133597">Jadwiga Dal</a></div><div class="ekipa_opis"> robotnica w fabryce Lilpopa</div><div class="ekipa_osoba"><a href="index.php/1127307">Antoni Barłowski</a></div><div class="ekipa_opis"> robotnik w fabryce Lilpopa</div><div class="ekipa_osoba">Karol Sakowicz</div><div class="ekipa_opis"> kelner</div><div class="ekipa_osoba"><a href="index.php/1133781">Robert Kuśmierski</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div><div class="ekipa_osoba"><a href="index.php/116113">Tomasz Kania</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div><div class="ekipa_osoba"><a href="index.php/116325">Edward Górecki</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div><div class="ekipa_osoba"><a href="index.php/1133782">Bogdan Kierejsza</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div><div class="ekipa_osoba"><a href="index.php/1131021">Anna Karolak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126019">Ewa Kowalska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Izabela Siemińska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133103">Adam Krasoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Zbigniew Piechowiak</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112031">Sławomira Łozińska</a></div><div class="ekipa_opis"> Helena Szczygieł; wystąpiła jedynie w pierwszej wersji odcinka wyemitowanej w Wigilię roku 2000, w wersji ostatecznej rolę Heleny Szczygieł zagrała <a href="http://filmpolski.pl/fp/index.php?osoba=1115714">Edyta Jungowska</a></div><div class="ekipa_osoba"><a href="index.php/111233">Jan Nowicki</a></div><div class="ekipa_opis"> Stanisław Szczygieł; wystąpił jedynie w pierwszej wersji odcinka wyemitowanej w Wigilię roku 2000, w wersji ostatecznej rolę Stanisława Szczygła zagrał <a href="http://filmpolski.pl/fp/index.php?osoba=111238]">Olaf Lubaszenko</a></div><div class="ekipa_osoba"><a href="index.php/1112036">Marta Stebnicka</a></div><div class="ekipa_opis"> Teresa Szczygieł; wystąpiła jedynie w pierwszej wersji odcinka wyemitowanej w Wigilię roku 2000, w wersji ostatecznej rolę Teresy Szczygieł zagrała <a href="http://filmpolski.pl/fp/index.php?osoba=1121300">Anna Radwan</a></div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona129645">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj129645" class="jslink" onclick="pzz1('varia129645','varia_schowaj129645')">pokaż</span></div></h2>
+<table id="varia129645" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">POLKI GALOPKI  
+        </td></tr>
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/1133785">Warszawski Kwartet Kapelowy</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/1119563">Rafał Szpotakowski</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>SZKLANA KULA RÓŻY (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">55 min</div></li>
+</ul>
+<p class="opis">Rok 1901. Czesiek zakochuje się w Róży, nie wiedząc, że durzy się w niej również jego brat Mietek. Obaj chłopcy obserwują dom, w którym mieszka dama ich serca. Wzbudzają jednak niepokój właściciela posesji, Ignacego Żychniewicza, który napuszcza na nich stójkowego. W rezultacie bracia lądują w cyrkule. Czesiek ze szklaną kulą ukochanej, Mietek z głęboką urazą do brata. Tymczasem charakterna Róża, na złość ojcu, ucieka z domu i zaczyna zamiast Szczygłów wywozić gnój z Powiśla. Pan Ignacy, przekonawszy się o sile uczucia córki, wykupuje chłopców z niewoli i - wprawdzie bez przekonania, ale zgadza się na mezalians Róży z prostym furmanem. W prezencie ślubnym ofiarowuje młodym pieniądze na założenie własnego interesu. W ten sposób wesele Róży i Cześka zbiega się z otwarciem firmy przewozowej "Szczygieł - przeprowadzki". Kolejnym radosnym wydarzeniem jest pojednanie braci. Mietek bowiem zjawia się na weselu i na znak zgody oddaje skradzioną bratu szklaną kulę Róży. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=169979_1&galeria=159979"><img class="bezcienia" src="../z1/79i/9979_1.jpg" height="60"></a><a href="index.php/159979" title="Galeria zdjęć (1)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki129979" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna129979','ekipa_skrocona129979','ekipa129979','ekipa_schowaj129979','ekipa_schowaj_krotki129979','ekipa_schowaj_pelny129979','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny129979" class="jslink" onclick="pzf('ekipa_skrocona129979','ekipa_pelna129979','ekipa129979','ekipa_schowaj129979','ekipa_schowaj_pelny129979','ekipa_schowaj_krotki129979','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj129979"129979" class="jslink" onclick="pzz('ekipa129979','ekipa_schowaj129979')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa129979" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna129979">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Żychniewicz-Szczygieł, żona  Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1123035">Artur Janusiak</a></div><div class="ekipa_opis"> Mieczysław Szczygieł, brat Czesława</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/112871">Adam Ferency</a></div><div class="ekipa_opis"> generał gubernator Jegorow</div><div class="ekipa_osoba"><a href="index.php/1115359">Piotr Adamczyk</a></div><div class="ekipa_opis"> lejtnant, adiutant generała</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> rewirowy</div><div class="ekipa_osoba"><a href="index.php/119256">Andrzej Róg</a></div><div class="ekipa_opis"> więzień w celi Szczygłów</div><div class="ekipa_osoba"><a href="index.php/1123655">Stefan Popkowski</a></div><div class="ekipa_opis"> Jura, strażnik w cyrkule</div><div class="ekipa_osoba"><a href="index.php/1119445">Anna Kękuś</a></div><div class="ekipa_opis"> baba</div><div class="ekipa_osoba"><a href="index.php/115784">Ryszard Pracz</a></div><div class="ekipa_opis"> latarnik</div><div class="ekipa_osoba"><a href="index.php/1121806">Aleksandra Górska</a></div><div class="ekipa_opis"> przekupka</div><div class="ekipa_osoba"><a href="index.php/115720">Aleksander Gawroński</a></div><div class="ekipa_opis"> dozorca</div><div class="ekipa_osoba"><a href="index.php/1113024">Andrzej Mastalerz</a></div><div class="ekipa_opis"> stróż Ambroży Holtz</div><div class="ekipa_osoba"><a href="index.php/1123965">Łukasz Lewandowski</a></div><div class="ekipa_opis"> Józuś, pracownik firmy Szczygła</div><div class="ekipa_osoba"><a href="index.php/113026">Stanisław Sparażyński</a></div><div class="ekipa_opis"> ksiądz udzielający ślubu Róży i Cześkowi</div><div class="ekipa_osoba"><a href="index.php/1129260">Kinga Ilgner</a></div><div class="ekipa_opis"> dama</div><div class="ekipa_osoba"><a href="index.php/1127037">Aleksandra Cicharska</a></div><div class="ekipa_opis"> dama; w napisach nazwisko: Ciecharska</div><div class="ekipa_osoba"><a href="index.php/111705">Marian Glinka</a></div><div class="ekipa_opis"> Dziuniek, brygadier w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/117829">Andrzej Rydel</a></div><div class="ekipa_opis"> fotograf na weselu Róży i Cześka</div><div class="ekipa_osoba"><a href="index.php/1133109">Piotr Kołtun</a></div><div class="ekipa_opis"> Andrus</div><div class="ekipa_osoba"><a href="index.php/1135934">Kazimierz Ostrowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1128504">Janusz Borkowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1133397">Andrzej Gołębiowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"; w napisach  nazwisko: Gołębiewski</div><div class="ekipa_osoba"><a href="index.php/1135936">Maciej Zawadzki</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/115277">Jacek Czyż</a></div><div class="ekipa_opis"> starosta na weselu Róży i Cześka</div><div class="ekipa_osoba"><a href="index.php/111669">Zbigniew Bogdański</a></div><div class="ekipa_opis"> mecenas na weselu Róży i Cześka</div><div class="ekipa_osoba"><a href="index.php/1129126">Andrzej Byś</a></div><div class="ekipa_opis"> elegancki gość</div><div class="ekipa_osoba"><a href="index.php/116325">Edward Górecki</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div><div class="ekipa_osoba"><a href="index.php/116113">Tomasz Kania</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div><div class="ekipa_osoba"><a href="index.php/1133781">Robert Kuśmierski</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div><div class="ekipa_osoba"><a href="index.php/1133782">Bogdan Kierejsza</a></div><div class="ekipa_opis"> członek kapeli ze Szczyglej</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona129979">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj129979" class="jslink" onclick="pzz1('varia129979','varia_schowaj129979')">pokaż</span></div></h2>
+<table id="varia129979" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">POLKI GALOPKI  
+        </td></tr>
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/1133785">Warszawski Kwartet Kapelowy</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/1119563">Rafał Szpotakowski</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>SERWANTKA GENERAŁOWEJ (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Rok 1905. Po kolejnym nieudanym zamachu na generała - gubernatora jego żona ma dosyć życia w ciągłym zagrożeniu. Postanawia więc wrócić do Petersburga. Przeprowadzkę zleca firmie Szczygła. Niebawem dowiadują się o tym koła konspiracyjne. Do Cześka zgłasza się bojowiec, który zamierza zgładzić namiestnika, umieszczając w jego serwantce bombę. Szczygieł staje przed poważnym dylematem: dobro ojczyzny czy klienta, który mu zaufał. Mimo oporów Czesiek przyjmuje bojowca do pracy, by ułatwić mu umieszczenie śmiercionośnego ładunku. Tymczasem pozostali tragarze buntują się, widząc, że "nowy" wyraźnie i bezkarnie lekceważy swoje obowiązki. Niewygodną dla Cześka sytuację niespodziewanie rozwiązuje Róża. Znalazłszy bombę, zwraca ją bojowcom, oświadczając, że jej firma nie zajmuje się wysadzaniem klientów w powietrze. Nawet, jeśli stoją za tym wzniosłe pobudki patriotyczne. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=169744_1&galeria=159744"><img class="bezcienia" src="../z1/44i/9744_1.jpg" height="60"></a><a href="index.php?fotos=169744_2&galeria=159744"><img class="bezcienia" src="../z1/44i/9744_2.jpg" height="60"></a><a href="index.php/159744" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki129744" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna129744','ekipa_skrocona129744','ekipa129744','ekipa_schowaj129744','ekipa_schowaj_krotki129744','ekipa_schowaj_pelny129744','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny129744" class="jslink" onclick="pzf('ekipa_skrocona129744','ekipa_pelna129744','ekipa129744','ekipa_schowaj129744','ekipa_schowaj_pelny129744','ekipa_schowaj_krotki129744','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj129744"129744" class="jslink" onclick="pzz('ekipa129744','ekipa_schowaj129744')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa129744" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna129744">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Żychniewicz-Szczygieł, żona  Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1123035">Artur Janusiak</a></div><div class="ekipa_opis"> Mieczysław Szczygieł, brat Czesława</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/113411">Anna Romantowska</a></div><div class="ekipa_opis"> generałowa Masza Jegorowa</div><div class="ekipa_osoba"><a href="index.php/112871">Adam Ferency</a></div><div class="ekipa_opis"> generał gubernator Jegorow</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/1115359">Piotr Adamczyk</a></div><div class="ekipa_opis"> lejtnant, adiutant generała</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> doktor Zygfryd Reutt</div><div class="ekipa_osoba"><a href="index.php/1123965">Łukasz Lewandowski</a></div><div class="ekipa_opis"> Józuś, pracownik firmy Szczygła</div><div class="ekipa_osoba"><a href="index.php/1121952">Paweł Gędłek</a></div><div class="ekipa_opis"> bojowiec PPS; w napisach nazwisko: Gendłek</div><div class="ekipa_osoba"><a href="index.php/1116617">Paweł Wilczak</a></div><div class="ekipa_opis"> rewirowy</div><div class="ekipa_osoba"><a href="index.php/1115258">Maciej Stuhr</a></div><div class="ekipa_opis"> Stefan Okrzeja</div><div class="ekipa_osoba"><a href="index.php/111705">Marian Glinka</a></div><div class="ekipa_opis"> Dziuniek, brygadier w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1119844">Paweł Kleszcz</a></div><div class="ekipa_opis"> oficer</div><div class="ekipa_osoba"><a href="index.php/112124">Kazimierz Borowiec</a></div><div class="ekipa_opis"> kat wykonujący wyrok na Okrzei</div><div class="ekipa_osoba"><a href="index.php/1123462">Tomasz Pijanowski</a></div><div class="ekipa_opis"> <a href="index.php/11105895">Józef Piłsudski</a>; rola dubbingowana przez <a href="index.php/111939">Janusza Zakrzeńskiego</a></div><div class="ekipa_osoba"><a href="index.php/1135934">Kazimierz Ostrowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1128504">Janusz Borkowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1135936">Maciej Zawadzki</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1133397">Andrzej Gołębiowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"; w napisach  nazwisko: Gołębiewski</div><div class="ekipa_osoba">S. Biedroń</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">A. Branicki</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">R. Durka</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1120072">Jacek Jeleń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/114407">Jacek Kadłubowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">J. Kluk</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135996">Andrzej Kostrzewa</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124555">Stella Kuczyńska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118354">Zbigniew Modej</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125021">Jarosław Nowikowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">K. Olszewski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135998">L. Rafalski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">W. Rowiński</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126072">Robert Rożnowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136000">Jerzy Rybiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">R. Sulik</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Obsada dubbingu</div><div class="ekipa_osoba"><a href="index.php/111939">Janusz Zakrzeński</a></div><div class="ekipa_opis"> <a href="index.php/11105895">Józef Piłsudski</a>; rola <a href="index.php/1123462">Tomasza Pijanowskiego</a></div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona129744">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KANAPA DOKTORA REUTTA (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">52 min</div></li>
+</ul>
+<p class="opis">Rok 1914. W wyniku zamachu w Sarajewie wybucha I wojna światowa. Wzrastają nadzieje Polaków na odzyskanie niepodległości. W Warszawie mobilizacja idzie pełną parą. Mietek Szczygieł - wciąż zakochany w Róży, choć ożeniony z pracownicą firmy, Celiną - wstępuje do rosyjskiej armii i rusza na front. Tymczasem władze carskie zmuszają warszawiaków pochodzenia niemieckiego do opuszczenia miasta. Do firmy Cześka Szczygła zgłasza się Maciek Reutt, student medycyny, a zarazem syn znanego ordynatora Szpitala Ewangelickiego. Młodzian zamawia przeprowadzkę rodzinnego majątku do Niemiec. Zamówienie wiąże się z wielkim ryzykiem, gdyż jest równoznaczne z przekroczeniem linii frontu. Róża, która po długim oczekiwaniu niedawno zaszła w ciążę, chce odrzucić ofertę. Jednak, ku jej rozpaczy, Czesiek postanawia przeprowadzić Reuttów. Na granicy Królestwa stary ordynator dostaje ataku serca. Trzeba zrobić przystanek w pobliskiej szopie. Tymczasem ostrzał wokoło wzmaga się, a umierający Reutt nakazuje synowi wracać i walczyć o wolność Polski, gdyż to ona jest jego prawdziwą ojczyzną. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=169746_1&galeria=159746"><img class="bezcienia" src="../z1/46i/9746_1.jpg" height="60"></a><a href="index.php?fotos=169746_2&galeria=159746"><img class="bezcienia" src="../z1/46i/9746_2.jpg" height="60"></a><a href="index.php?fotos=169746_3&galeria=159746"><img class="bezcienia" src="../z1/46i/9746_3.jpg" height="60"></a><a href="index.php?fotos=169746_4&galeria=159746"><img class="bezcienia" src="../z1/46i/9746_4.jpg" height="60"></a><a href="index.php?fotos=169746_5&galeria=159746"><img class="bezcienia" src="../z1/46i/9746_5.jpg" height="60"></a><a href="index.php/159746" title="Galeria zdjęć (5)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki129746" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna129746','ekipa_skrocona129746','ekipa129746','ekipa_schowaj129746','ekipa_schowaj_krotki129746','ekipa_schowaj_pelny129746','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny129746" class="jslink" onclick="pzf('ekipa_skrocona129746','ekipa_pelna129746','ekipa129746','ekipa_schowaj129746','ekipa_schowaj_pelny129746','ekipa_schowaj_krotki129746','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj129746"129746" class="jslink" onclick="pzz('ekipa129746','ekipa_schowaj129746')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa129746" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna129746">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Żychniewicz-Szczygieł, żona  Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1123035">Artur Janusiak</a></div><div class="ekipa_opis"> Mieczysław Szczygieł, brat Czesława</div><div class="ekipa_osoba"><a href="index.php/112786">Krzysztof Kolberger</a></div><div class="ekipa_opis"> doktor Zygfryd Reutt</div><div class="ekipa_osoba"><a href="index.php/111916">Maria Pakulnis</a></div><div class="ekipa_opis"> Heidi Reutt, żona doktora</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> Abraham Rosenberg, brygadier w firmie  "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/1123965">Łukasz Lewandowski</a></div><div class="ekipa_opis"> Józuś, pracownik firmy Szczygła</div><div class="ekipa_osoba"><a href="index.php/1127027">Robert Kudelski</a></div><div class="ekipa_opis"> Maciek Reutt, syn doktora</div><div class="ekipa_osoba"><a href="index.php/1135934">Kazimierz Ostrowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1128504">Janusz Borkowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1135936">Maciej Zawadzki</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1133397">Andrzej Gołębiowski</a></div><div class="ekipa_opis"> przewoźnik w firmie "Szczygieł"; w napisach  nazwisko: Gołębiewski</div><div class="ekipa_osoba"><a href="index.php/118806">Andrzej Musiał</a></div><div class="ekipa_opis"> doktor Siergiej Maślanko, nowy dyrektor  szpitala</div><div class="ekipa_osoba"><a href="index.php/113740">Renata Kretówna</a></div><div class="ekipa_opis"> pani Silber, chora w szpitalu</div><div class="ekipa_osoba"><a href="index.php/1120493">Miriam Aleksandrowicz</a></div><div class="ekipa_opis"> pielęgniarka w szpitalu</div><div class="ekipa_osoba">Małgorzata Kozioł</div><div class="ekipa_opis"> Andzia Czuleńska, dziewczyna tańcząca z Mietkiem</div><div class="ekipa_osoba">Mateusz Czebłakow</div><div class="ekipa_opis"> Teofil Szczygieł, syn Celiny i Mietka; w  napisach nazwisko: Czełbakow</div><div class="ekipa_osoba"><a href="index.php/1119175">Magdalena Gnatowska</a></div><div class="ekipa_opis"> rudowłosa dziewczyna niosąca mleko</div><div class="ekipa_osoba"><a href="index.php/1119538">Józef Mika</a></div><div class="ekipa_opis"> lejtnant niemiecki</div><div class="ekipa_osoba"><a href="index.php/1120382">Grzegorz Forysiak</a></div><div class="ekipa_opis"> żołnierz rosyjski; w napisach nazwisko: Foryniak</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona129746">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj129746" class="jslink" onclick="pzz1('varia129746','varia_schowaj129746')">pokaż</span></div></h2>
+<table id="varia129746" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">NAD PIĘKNYM MODRYM DUNAJEM  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/112803">Johann Strauss (syn)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">HOMAGE TO VALENTINO  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba">Sernino</td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>RONDEL KUCHMISTRZA SOKOŁKA (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Rok 1918. Kończy się I wojna światowa, Polska odzyskuje niepodległość. Czesław wraca do domu. Tu czekają nań dwie nowiny, jedna dobra, druga zła. Pierwsza, że urodził mu się długo oczekiwany syn. Druga zaś, że Mieczysław zaginął bez wieści na froncie. Czesiek postanawia rozpocząć poszukiwania brata. Na razie musi na nowo rozkręcać interes. Liczne powroty warszawiaków napędzają koniunkturę na przeprowadzki. Firma kwitnie. Jednym z pierwszych klientów jest lwowski kuchmistrz Sokołek, który po powrocie z Syberii marzy o sprowadzeniu się do rodzinnego miasta, by zacząć tam nowe życie u boku Klary, sympatycznej starej panny. Czesiek, mimo ryzyka (o Lwów trwają właśnie walki), przyjmuje zlecenie. Niestety, wkrótce po wyruszeniu w drogę transport wpada w wir działań wojennych. Kto wie, jakby się skończyła przygoda z armią ukraińską, gdyby nie ugotowany przez Sokołka w rondelku smakowity barszcz ukraiński. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=169745_1&galeria=159745"><img class="bezcienia" src="../z1/45i/9745_1.jpg" height="60"></a><a href="index.php?fotos=169745_2&galeria=159745"><img class="bezcienia" src="../z1/45i/9745_2.jpg" height="60"></a><a href="index.php/159745" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki129745" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna129745','ekipa_skrocona129745','ekipa129745','ekipa_schowaj129745','ekipa_schowaj_krotki129745','ekipa_schowaj_pelny129745','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny129745" class="jslink" onclick="pzf('ekipa_skrocona129745','ekipa_pelna129745','ekipa129745','ekipa_schowaj129745','ekipa_schowaj_pelny129745','ekipa_schowaj_krotki129745','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj129745"129745" class="jslink" onclick="pzz('ekipa129745','ekipa_schowaj129745')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa129745" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna129745">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Żychniewicz-Szczygieł, żona  Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/111236">Igor Przegrodzki</a></div><div class="ekipa_opis"> kuchmistrz Michał Sokołek</div><div class="ekipa_osoba"><a href="index.php/113072">Halina Łabonarska</a></div><div class="ekipa_opis"> Klara Michalska</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> Abraham Rosenberg, brygadier w firmie  "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/1123965">Łukasz Lewandowski</a></div><div class="ekipa_opis"> Józuś, pracownik firmy Szczygła</div><div class="ekipa_osoba"><a href="index.php/1133399">Rafał Kosecki</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1136174">Bartłomiej Morawski</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"; w napisach imię: Bartosz</div><div class="ekipa_osoba"><a href="index.php/1127311">Paweł Szwed</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1113699">Robert Łuchniak</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1119914">Marcin Grzymowicz</a></div><div class="ekipa_opis"> żołnierz niemiecki dający karabin Sokołkowi</div><div class="ekipa_osoba"><a href="index.php/1123462">Tomasz Pijanowski</a></div><div class="ekipa_opis"> <a href="index.php/11105895">Józef Piłsudski</a></div><div class="ekipa_osoba"><a href="index.php/1136175">Agnieszka Drumińska</a></div><div class="ekipa_opis"> Stasia, służąca Szczygłów</div><div class="ekipa_osoba"><a href="index.php/1126553">Dawid Łepkowski</a></div><div class="ekipa_opis"> Krzyś Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/116013">Jan Prochyra</a></div><div class="ekipa_opis"> kucharz</div><div class="ekipa_osoba"><a href="index.php/112832">Henryk Rajfer</a></div><div class="ekipa_opis"> karczmarz Szmul</div><div class="ekipa_osoba"><a href="index.php/112826">Ernestyna Winnicka</a></div><div class="ekipa_opis"> żona karczmarza Szmula</div><div class="ekipa_osoba"><a href="index.php/1128609">Andrzej Beja-Zaborski</a></div><div class="ekipa_opis"> felczer</div><div class="ekipa_osoba"><a href="index.php/1136176">Stanisław Dembski</a></div><div class="ekipa_opis"> pop</div><div class="ekipa_osoba"><a href="index.php/1124963">Linas Domarackas</a></div><div class="ekipa_opis"> Ukrainiec</div><div class="ekipa_osoba"><a href="index.php/1126953">Jarosław Junko</a></div><div class="ekipa_opis"> Ukrainiec</div><div class="ekipa_osoba"><a href="index.php/1124178">Arkadiusz Janiczek</a></div><div class="ekipa_opis"> dowódca Ukraińców</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona129745">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj129745" class="jslink" onclick="pzz1('varia129745','varia_schowaj129745')">pokaż</span></div></h2>
+<table id="varia129745" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">NAD PIĘKNYM MODRYM DUNAJEM  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/112803">Johann Strauss (syn)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">DUMY MOI  
+        </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+            </td><td class="varia_osoba">Taras Szewczenko</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/1120818">Roman Rewakowicz</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">O MÓJ ROZMARYNIE</td></tr>
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">BIAŁE RÓŻE  
+        </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+              
+            </td><td class="varia_osoba"><a href="index.php/1113201">Kazimierz Wroczyński</a></td><td class="varia_osoba_opis">w czołówce błędnie: muzyka</td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1136180">J. Zbiróg</a></td><td class="varia_osoba_opis">w czołówce błędnie: muzyka</td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/1121289">Mieczysław Kozar-Słobódzki</a></td><td class="varia_osoba_opis">w czołówce błędnie: słowa</td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>NOCNIK PANNY AGATY TURSKIEJ (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2001</div></li>
+<li><div class="film_tech3">52 min</div></li>
+</ul>
+<p class="opis">Rok 1920. Armia Czerwona zbliża się do Warszawy. Szczygieł zgłasza się na ochotnika do wojska polskiego. Dostaje rozkaz sformowania oddziału transportowego. Wojenna zawierucha rzuca Cześka i jego towarzyszy broni w pobliże Radzymina, a dokładnie do posesji państwa Kubiczów. Służąca Agata zakochuje się w Szczygle.  Dziewczyna usługuje starej pani Kubicz, bez przerwy domagającej się "la tasse de nuit", czyli po prostu nocnika. Obowiązkowość Agaty przeradza się w heroizm, kiedy na posiadłość napadają bolszewicy. Nie waha się narazić życie, byle tylko uchronić nocnik od zguby. Na szczęście w sukurs służącej przychodzi polska konnica. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=1610533_1&galeria=1510533"><img class="bezcienia" src="../z1/33i/10533_1.jpg" height="60"></a><a href="index.php?fotos=1610533_2&galeria=1510533"><img class="bezcienia" src="../z1/33i/10533_2.jpg" height="60"></a><a href="index.php?fotos=1610533_3&galeria=1510533"><img class="bezcienia" src="../z1/33i/10533_3.jpg" height="60"></a><a href="index.php/1510533" title="Galeria zdjęć (3)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1210533" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1210533','ekipa_skrocona1210533','ekipa1210533','ekipa_schowaj1210533','ekipa_schowaj_krotki1210533','ekipa_schowaj_pelny1210533','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1210533" class="jslink" onclick="pzf('ekipa_skrocona1210533','ekipa_pelna1210533','ekipa1210533','ekipa_schowaj1210533','ekipa_schowaj_pelny1210533','ekipa_schowaj_krotki1210533','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1210533"1210533" class="jslink" onclick="pzz('ekipa1210533','ekipa_schowaj1210533')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1210533" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1210533">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Szczygieł, żona Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/1126553">Dawid Łepkowski</a></div><div class="ekipa_opis"> Krzyś Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> panna Agata Turska, służąca Kubiczów</div><div class="ekipa_osoba"><a href="index.php/1113861">Agnieszka Wagner</a></div><div class="ekipa_opis"> profesorowa Maria Kubicz, żona Eustachego</div><div class="ekipa_osoba"><a href="index.php/114065">Cezary Harasimowicz</a></div><div class="ekipa_opis"> profesor Eustachy Kubicz</div><div class="ekipa_osoba"><a href="index.php/115394">Małgorzata Lorentowicz</a></div><div class="ekipa_opis"> starsza pani Kubicz, matka Eustachego</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> Abraham Rosenberg, brygadier w firmie  "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1123965">Łukasz Lewandowski</a></div><div class="ekipa_opis"> Józuś, pracownik firmy Szczygła</div><div class="ekipa_osoba"><a href="index.php/1133399">Rafał Kosecki</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1136174">Bartłomiej Morawski</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"; w napisach imię: Bartosz</div><div class="ekipa_osoba"><a href="index.php/1127311">Paweł Szwed</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1113699">Robert Łuchniak</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis"> czekista Filip Dziewulski</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> plutonowy, w cywilu woźnica w firmie  Fijałkowskiego</div><div class="ekipa_osoba"><a href="index.php/1137345">Piotr Grabowski</a></div><div class="ekipa_opis"> polski żołnierz</div><div class="ekipa_osoba"><a href="index.php/1116465">Andrzej Oksza-Łapicki</a></div><div class="ekipa_opis"> ogrodnik w majątku Kubiczów</div><div class="ekipa_osoba"><a href="index.php/1116108">Barbara Babilińska</a></div><div class="ekipa_opis"> kucharka w majątku Kubiczów</div><div class="ekipa_osoba"><a href="index.php/1122782">Rafał Mohr</a></div><div class="ekipa_opis"> czerwonoarmiejec</div><div class="ekipa_osoba">Bogusław Andrzejczak</div><div class="ekipa_opis"> czerwonoarmiejec</div><div class="ekipa_osoba">Jarosław Jasiński</div><div class="ekipa_opis"> czerwonoarmiejec</div><div class="ekipa_osoba"><a href="index.php/1136234">Paweł Grabarczyk</a></div><div class="ekipa_opis"> czerwonoarmiejec</div><div class="ekipa_osoba">Piotr Woliński</div><div class="ekipa_opis"> czerwonoarmiejec</div><div class="ekipa_osoba"><a href="index.php/1127685">Igor Stiepanow</a></div><div class="ekipa_opis"> czerwonoarmiejec</div><div class="ekipa_osoba"><a href="index.php/1117675">Władimir Abramuszkin</a></div><div class="ekipa_opis"> czerwonoarmiejec</div><div class="ekipa_osoba"><a href="index.php/1125022">Adam Hejger</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136236">Eugeniusz Nieściór</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127375">Andrzej Skupień</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136000">Jerzy Rybiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125021">Jarosław Nowikowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135998">L. Rafalski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126072">Robert Rożnowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136237">W. Jobda</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126090">Kazimierz Tobolski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136238">D. Dębski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136239">Maciej A. Maciejewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136240">S. Stępień</a></div><div class="ekipa_opis">&nbsp;</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1210533">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1210533" class="jslink" onclick="pzz1('varia1210533','varia_schowaj1210533')">pokaż</span></div></h2>
+<table id="varia1210533" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">HOMAGE TO VALENTINO  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba">Sernino</td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>NICZYJ PORTRET (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2001</div></li>
+<li><div class="film_tech3">52 min</div></li>
+</ul>
+<p class="opis">Rok 1926. Nadchodzi czas kryzysu. Zarówno w państwie, jak i w firmie i rodzinie Szczygłów. Celina, wciąż nie mogąc przeboleć straty męża, a teraz jeszcze przemijającej młodości, coraz częściej zagląda do kieliszka. Towarzysz wspólnych popijaw, malarz Kuśmider, właśnie kończy portret prezydenta Wojciechowskiego. Brakuje mu jednak pieniędzy na przewiezienie dzieła do gmachu Sejmu. Celina prosi Czesława o pomoc. Tymczasem w Warszawie wybuchają zamieszki. Celina, która jest świadkiem strzelaniny pomiędzy zwolennikami prezydenta i Józefa Piłsudskiego, doznaje szoku. Widząc jej stan, Czesław podejmuje się przetransportować portret "na krechę". Kuśmider, dowiedziawszy się, że wojska Piłsudskiego zyskują przewagę, szybko przemalowuje twarz Wojciechowskiego na oblicze marszałka. Frak, niestety, pozostawia nienaruszony i podczas transportu fałszerstwo wychodzi na jaw. Zdesperowany artysta w ostatniej chwili przerabia więc obraz na modłę kubistyczną. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=1610572_1&galeria=1510572"><img class="bezcienia" src="../z1/72i/10572_1.jpg" height="60"></a><a href="index.php/1510572" title="Galeria zdjęć (1)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1210572" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1210572','ekipa_skrocona1210572','ekipa1210572','ekipa_schowaj1210572','ekipa_schowaj_krotki1210572','ekipa_schowaj_pelny1210572','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1210572" class="jslink" onclick="pzf('ekipa_skrocona1210572','ekipa_pelna1210572','ekipa1210572','ekipa_schowaj1210572','ekipa_schowaj_pelny1210572','ekipa_schowaj_krotki1210572','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1210572"1210572" class="jslink" onclick="pzz('ekipa1210572','ekipa_schowaj1210572')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1210572" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1210572">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Szczygieł, żona Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/113410">Krzysztof Pieczyński</a></div><div class="ekipa_opis"> malarz Stefan Kuśmider</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> Abraham Rosenberg, brygadier w firmie   "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1123965">Łukasz Lewandowski</a></div><div class="ekipa_opis"> Józuś, pracownik firmy Szczygła</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/111974">Krystyna Tkacz</a></div><div class="ekipa_opis"> Dziewońska, właścicielka kamienicy, w  której mieszka Kuśmider</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba">Krzysztof Gaduła-Zawratyński</div><div class="ekipa_opis"> Wacio Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1136289">Konrad Jakoniuk</a></div><div class="ekipa_opis"> Rysio Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba">Oktawian Kuc</div><div class="ekipa_opis"> Krzyś Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1133399">Rafał Kosecki</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1136174">Bartłomiej Morawski</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"; w napisach imię: Bartosz</div><div class="ekipa_osoba"><a href="index.php/1120250">Dariusz Lewandowski</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1113699">Robert Łuchniak</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/115920">Krzysztof Kiersznowski</a></div><div class="ekipa_opis"> Michalski</div><div class="ekipa_osoba"><a href="index.php/115902">Jan Mateusz Nowakowski</a></div><div class="ekipa_opis"> Ciumiejko, członek komisji odbiorczej</div><div class="ekipa_osoba"><a href="index.php/113295">Dariusz Dobkowski</a></div><div class="ekipa_opis"> Guziłło, członek komisji odbiorczej</div><div class="ekipa_osoba"><a href="index.php/1126221">Michał Jarmicki</a></div><div class="ekipa_opis"> Halicki, członek komisji odbiorczej</div><div class="ekipa_osoba"><a href="index.php/1123140">Piotr Rybak</a></div><div class="ekipa_opis"> Tomaszek, członek komisji odbiorczej; w napisach imię: Paweł</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Wit, tańczący z Celiną w "Savoy'u"</div><div class="ekipa_osoba">Ewa Mazur</div><div class="ekipa_opis"> sąsiadka Kuśmidra</div><div class="ekipa_osoba"><a href="index.php/1136175">Agnieszka Drumińska</a></div><div class="ekipa_opis"> służąca Szczygłów</div><div class="ekipa_osoba"><a href="index.php/118116">Zbigniew Olszewski</a></div><div class="ekipa_opis"> dorożkarz</div><div class="ekipa_osoba"><a href="index.php/1129322">Rafał Ostrowski</a></div><div class="ekipa_opis"> żołnierz</div><div class="ekipa_osoba"><a href="index.php/1126163">Arkadiusz Detmer</a></div><div class="ekipa_opis"> żołnierz</div><div class="ekipa_osoba"><a href="index.php/1128155">Przemysław Kaczyński</a></div><div class="ekipa_opis"> żołnierz</div><div class="ekipa_osoba"><a href="index.php/1118309">Marcel Wiercichowski</a></div><div class="ekipa_opis"> żołnierz</div><div class="ekipa_osoba"><a href="index.php/111669">Zbigniew Bogdański</a></div><div class="ekipa_opis"> "Prezydent Wojciechowski", model  Kuśmidra</div><div class="ekipa_osoba"><a href="index.php/114849">Stanisław Górka</a></div><div class="ekipa_opis"> spiker w radio; tylko głos</div><div class="ekipa_osoba">Paweł Baranecki</div><div class="ekipa_opis"> kelner w "Savoy'u"</div><div class="ekipa_osoba">Robert Baranowski</div><div class="ekipa_opis"> kelner w "Savoy'u"</div><div class="ekipa_osoba">P. Olszewski</div><div class="ekipa_opis"> członek orkiestry w "Savoy'u"</div><div class="ekipa_osoba"><a href="index.php/1133518">Andrzej Biskupski</a></div><div class="ekipa_opis"> członek orkiestry w "Savoy'u"</div><div class="ekipa_osoba"><a href="index.php/1125704">Marek Zebura</a></div><div class="ekipa_opis"> członek orkiestry w "Savoy'u"</div><div class="ekipa_osoba">J. Szuliński</div><div class="ekipa_opis"> członek orkiestry w "Savoy'u"</div><div class="ekipa_osoba"><a href="index.php/1114786">Wojciech Kowalewski</a></div><div class="ekipa_opis"> członek orkiestry w "Savoy'u"</div><div class="ekipa_osoba">J. Tylman</div><div class="ekipa_opis"> członek orkiestry w "Savoy'u"</div><div class="ekipa_osoba"><a href="index.php/1128086">Iwona Pachońska</a></div><div class="ekipa_opis"> tancerka shimmy w "Savoy'u"</div><div class="ekipa_osoba">V. Mielczuk</div><div class="ekipa_opis"> tancerz shimmy w "Savoy'u"</div><div class="ekipa_osoba">S. Głowala-Leptacz</div><div class="ekipa_opis"> tancerz shimmy w "Savoy'u"</div><div class="ekipa_osoba">M. Bach</div><div class="ekipa_opis"> tancerz shimmy w "Savoy'u"</div><div class="ekipa_osoba">M. Mierzejewski</div><div class="ekipa_opis"> tancerz shimmy w "Savoy'u"</div><div class="ekipa_osoba"><a href="index.php/1147319">Jerzy Mierzejewski</a></div><div class="ekipa_opis"> tancerz shimmy w "Savoy'u"</div><div class="ekipa_osoba"><a href="index.php/1127311">Paweł Szwed</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1210572">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1210572" class="jslink" onclick="pzz1('varia1210572','varia_schowaj1210572')">pokaż</span></div></h2>
+<table id="varia1210572" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">SAVOY - SHIMMY  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/1114786">Wojciech Kowalewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">POLONEZ AS-DUR  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/111436">Fryderyk Chopin</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">SCHERZO z SONATY B-MOLL  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/111436">Fryderyk Chopin</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">NAD MODRYM PIĘKNYM DUNAJEM  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/112803">Johann Strauss (syn)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">JÓZEFA MYŚLI  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/1112381">Michał Lorenc</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Aranżacja  
+            </td><td class="varia_osoba"><a href="index.php/1119806">Mateusz Pospieszalski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">MY PIERWSZA BRYGADA  
+        </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+              
+            </td><td class="varia_osoba"><a href="index.php/1136304">Andrzej Tadeusz Hałaciński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1136305">Tadeusz Biernacki</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>STEINWAY ORDYNATA (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2001</div></li>
+<li><div class="film_tech3">53 min</div></li>
+</ul>
+<p class="opis">Rok 1929. W firmie i rodzinie Szczygłów wszystko układa się znakomicie. Kiedy jedni się bogacą, inni muszą tracić. Do tych ostatnich należy książę Dowgiłło. Arytokrata wszakże nie poddaje się. Chcąc poprawić swoją sytuację finansową, planuje wielkie, lecz bardzo ryzykowne przedsięwzięcie. Zamierza uzyskać gwarancję zobowiązań finansowych, przyjmując kontrahenta w urządzonym z przepychem pałacyku w Alejach Ujazdowskich. Najpierw jednak musi przetransportować swój dobytek z majątku w Ośnieżu do stolicy. W tym celu prosi Szczygła o przeprowadzkę...na kredyt. Czesław godzi się, a ordynat - kiedy już urządza się w pałacyku - zaprasza go wraz z rodziną na wystawne przyjęcie z udziałem m.in. Hanki Ordonówny i Bolesława Wieniawy-Długoszowskiego. Tak efektowna oprawa robi wrażenie na kontrahencie, w wyniku czego Dowgiłło zarabia okrągłe 150 tysięcy dolarów. Cóż z tego, skoro następnego dnia dochodzi do krachu na Wall Street i czek, który otrzymał książę, okazuje się bez wartości. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=1610598_1&galeria=1510598"><img class="bezcienia" src="../z1/98i/10598_1.jpg" height="60"></a><a href="index.php?fotos=1610598_2&galeria=1510598"><img class="bezcienia" src="../z1/98i/10598_2.jpg" height="60"></a><a href="index.php/1510598" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1210598" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1210598','ekipa_skrocona1210598','ekipa1210598','ekipa_schowaj1210598','ekipa_schowaj_krotki1210598','ekipa_schowaj_pelny1210598','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1210598" class="jslink" onclick="pzf('ekipa_skrocona1210598','ekipa_pelna1210598','ekipa1210598','ekipa_schowaj1210598','ekipa_schowaj_pelny1210598','ekipa_schowaj_krotki1210598','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1210598"1210598" class="jslink" onclick="pzz('ekipa1210598','ekipa_schowaj1210598')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1210598" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1210598">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Szczygieł, żona Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/111932">Olgierd Łukaszewicz</a></div><div class="ekipa_opis"> książę Piotr Dowgiłło</div><div class="ekipa_osoba"><a href="index.php/1126939">Agnieszka Dygant</a></div><div class="ekipa_opis"> Urszula, żona księcia Dowgiłły</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> Abraham Rosenberg, brygadier w firmie  "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/11924">Włodzimierz Maciudziński</a></div><div class="ekipa_opis"> Malinowski, zarządca majątku Dowgiłłów</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> prywatny detektyw Józef Byrka</div><div class="ekipa_osoba"><a href="index.php/116593">Maciej Kozłowski</a></div><div class="ekipa_opis"> kasiarz Marian Holtz, syn stróża Ambrożego</div><div class="ekipa_osoba"><a href="index.php/113857">Maciej Karpiński</a></div><div class="ekipa_opis"> dyrektor hotelu "Bristol"</div><div class="ekipa_osoba"><a href="index.php/1116741">Mirosław Jękot</a></div><div class="ekipa_opis"> prezes banku</div><div class="ekipa_osoba"><a href="index.php/113277">Andrzej Blumenfeld</a></div><div class="ekipa_opis"> milioner Nukim Teitelbaum</div><div class="ekipa_osoba">Piotr Szafraniec</div><div class="ekipa_opis"> Krzyś Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1136391">Michał Śmielak</a></div><div class="ekipa_opis"> Rysio Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1136392">Wawrzyniec Prasek</a></div><div class="ekipa_opis"> Wacio Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1116526">Anna Korzeniecka</a></div><div class="ekipa_opis"> Leokadia, służąca Dowgiłłów</div><div class="ekipa_osoba">Gabriela Garncarska</div><div class="ekipa_opis"> pokojówka Dowgiłłów</div><div class="ekipa_osoba">Karol Nahar</div><div class="ekipa_opis"> sprzątający</div><div class="ekipa_osoba"><a href="index.php/1129923">Sebastian Domagała</a></div><div class="ekipa_opis"> boy w hotelu "Bristol"</div><div class="ekipa_osoba"><a href="index.php/1110419">Zbigniew Kasprzyk</a></div><div class="ekipa_opis"> odźwierny w hotelu "Bristol"</div><div class="ekipa_osoba"><a href="index.php/113276">Jacek Bursztynowicz</a></div><div class="ekipa_opis"> recepcjonista w hotelu "Bristol"</div><div class="ekipa_osoba"><a href="index.php/1136395">Magdalena Kriger</a></div><div class="ekipa_opis"> Ala, służąca Szczygłów</div><div class="ekipa_osoba"><a href="index.php/1121688">Jarosław Boberek</a></div><div class="ekipa_opis"> posterunkowy Pyć</div><div class="ekipa_osoba"><a href="index.php/1110945">Jarosław Gruda</a></div><div class="ekipa_opis"> chłop na drodze</div><div class="ekipa_osoba"><a href="index.php/1125021">Jarosław Nowikowski</a></div><div class="ekipa_opis"> furman</div><div class="ekipa_osoba"><a href="index.php/1136396">Zbigniew Kowalczyk</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba">Piotr Grzybek</div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1126777">Michał Paszczyk</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1120417">Tadeusz Sikora</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1136398">Krzysztof Szymański</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba">Piotr Ponfus</div><div class="ekipa_opis"> służący</div><div class="ekipa_osoba">Edmund Berg</div><div class="ekipa_opis"> Bolesław Wieniawa-Długoszowski, gośc na  raucie u Dowgiłłów</div><div class="ekipa_osoba"><a href="index.php/1113048">Magdalena Mirek</a></div><div class="ekipa_opis"> Hanka Ordonówna, gość na raucie u  Dowgiłłów</div><div class="ekipa_osoba"><a href="index.php/1133997">Hanna Chojnacka-Gościniak</a></div><div class="ekipa_opis"> gość na raucie w pałacu Dowgiłłów</div><div class="ekipa_osoba"><a href="index.php/1128198">Dorota Bierkowska</a></div><div class="ekipa_opis"> gość na raucie w pałacu Dowgiłłów</div><div class="ekipa_osoba"><a href="index.php/1114884">Mirosław Kowalczyk</a></div><div class="ekipa_opis"> gość na raucie w pałacu Dowgiłłów</div><div class="ekipa_osoba"><a href="index.php/1136401">Adam Szuster</a></div><div class="ekipa_opis"> woźnica</div><div class="ekipa_osoba"><a href="index.php/1136236">Eugeniusz Nieściór</a></div><div class="ekipa_opis"> woźnica</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1210598">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1210598" class="jslink" onclick="pzz1('varia1210598','varia_schowaj1210598')">pokaż</span></div></h2>
+<table id="varia1210598" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">KRAKOWIACZEK, CI JA</td></tr>
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">WALC AS-DUR  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/112672">Johannes Brahms</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>SEJF 1-GO PUŁKU SZWOLEŻERÓW (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2001</div></li>
+<li><div class="film_tech3">54 min <br /><br />
+Lokacje: Warszawa (Powązki).</div></li>
+</ul>
+<p class="opis">Rok 1939. Męska część rodziny Szczygłów zostaje powołana do wojska. Krzysztof do piechoty, Ryszard do marynarki, zaś Czesław i Wacław do pierwszego pułku szwoleżerów im. Józefa Piłsudskiego. Niestety, nie oznacza to bynajmniej spełnienia marzeń o ułańskim mundurze. Szczygłowie znani są jako świetni przewoźnicy i takąż funkcję otrzymują w wojsku. No bo kto lepiej nadaje się do przetransportowania pułkowego sejfu? Do plutonu transportowego zgłasza się na ochotnika niejaki Holtz. Od samego początku budzi  nieufność Czesława. Nie bez powodu. Wkrótce okazuje się, że Holtz to w cywilu król warszawskich kasiarzy, który zamierza wykraść z sejfu sztaby złota. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=1610620_1&galeria=1510620"><img class="bezcienia" src="../z1/20i/10620_1.jpg" height="60"></a><a href="index.php?fotos=1610620_2&galeria=1510620"><img class="bezcienia" src="../z1/20i/10620_2.jpg" height="60"></a><a href="index.php/1510620" title="Galeria zdjęć (2)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1210620" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1210620','ekipa_skrocona1210620','ekipa1210620','ekipa_schowaj1210620','ekipa_schowaj_krotki1210620','ekipa_schowaj_pelny1210620','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1210620" class="jslink" onclick="pzf('ekipa_skrocona1210620','ekipa_pelna1210620','ekipa1210620','ekipa_schowaj1210620','ekipa_schowaj_pelny1210620','ekipa_schowaj_krotki1210620','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1210620"1210620" class="jslink" onclick="pzz('ekipa1210620','ekipa_schowaj1210620')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1210620" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1210620">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Szczygieł, żona Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/113502">Leon Charewicz</a></div><div class="ekipa_opis"> Ignacy Żychniewicz, ojciec Róży</div><div class="ekipa_osoba"><a href="index.php/1116028">Rafał Królikowski</a></div><div class="ekipa_opis"> rotmistrz Franciszek Flatau</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> Abraham Rosenberg, brygadier w firmie  "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/116593">Maciej Kozłowski</a></div><div class="ekipa_opis"> kasiarz Marian Holtz, syn stróża Ambrożego</div><div class="ekipa_osoba"><a href="index.php/1121623">Paweł Deląg</a></div><div class="ekipa_opis"> czekista Filip Dziewulski</div><div class="ekipa_osoba"><a href="index.php/1121808">Wojciech Majchrzak</a></div><div class="ekipa_opis"> Wacław Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/114023">Andrzej Precigs</a></div><div class="ekipa_opis"> pułkownik Albrecht, dowódca I Pułku  Szwoleżerów im. Józefa Piłsudskiego</div><div class="ekipa_osoba"><a href="index.php/1127477">Marcin Chochlew</a></div><div class="ekipa_opis"> Krzysztof Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1128969">Marcin Janos Krawczyk</a></div><div class="ekipa_opis"> Ryszard Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1136395">Magdalena Kriger</a></div><div class="ekipa_opis"> Ala, służąca Szczygłów</div><div class="ekipa_osoba"><a href="index.php/1136493">Tomasz Wieczerzak</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/1120250">Dariusz Lewandowski</a></div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba">Kazimierz Wojda</div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"</div><div class="ekipa_osoba">Tomasz Koca</div><div class="ekipa_opis"> tragarz w firmie "Szczygieł"; w napisach  imię: Tadeusz</div><div class="ekipa_osoba"><a href="index.php/1113851">Tomasz Budyta</a></div><div class="ekipa_opis"> ksiądz udzielający namaszczenia Ignacemu  Żychniewiczowi</div><div class="ekipa_osoba"><a href="index.php/1121326">Ilja Zmiejew</a></div><div class="ekipa_opis"> krasnoarmiejec Wołodia</div><div class="ekipa_osoba"><a href="index.php/116563">Zdzisław Sośnierz</a></div><div class="ekipa_opis"> kapitan Tarnawski, lekarz pułku</div><div class="ekipa_osoba"><a href="index.php/1118887">Aleksander Gawek</a></div><div class="ekipa_opis"> adiutant komdiwa</div><div class="ekipa_osoba"><a href="index.php/1136496">Tomasz Bielawiec</a></div><div class="ekipa_opis"> Miszka</div><div class="ekipa_osoba"><a href="index.php/1126442">Jan Aleksandrowicz</a></div><div class="ekipa_opis"> Miszka</div><div class="ekipa_osoba"><a href="index.php/1128167">Daniel Wyczesany</a></div><div class="ekipa_opis"> młodziutki podchrąży</div><div class="ekipa_osoba"><a href="index.php/1136497">Ewa Hornich</a></div><div class="ekipa_opis"> dziewczyna na ławce</div><div class="ekipa_osoba"><a href="index.php/1133980">Ireneusz Machnicki</a></div><div class="ekipa_opis"> lotnik na ławce</div><div class="ekipa_osoba"><a href="index.php/1110986">Roch Siemianowski</a></div><div class="ekipa_opis"> sztandarowy</div><div class="ekipa_osoba"><a href="index.php/118810">Adam Iwiński</a></div><div class="ekipa_opis"> kierowca ciężarówki</div><div class="ekipa_osoba"><a href="index.php/111540">Andrzej Szenajch</a></div><div class="ekipa_opis"> dowódca ćwiczeń</div><div class="ekipa_osoba"><a href="index.php/1127072">Piotr Bała</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1122446">Wojciech Kobiałko</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136499">Jacek Bielec</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136500">Michał Bielec</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1120076">Lesław Buśko</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">T. Czerwiński</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136238">D. Dębski</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1125988">Wiesław Dymek</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">B. Gadzinowski</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136503">S. Gajc</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">W. Grochowski</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">B. Gryczka</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">H. Góral</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1125022">Adam Hejger</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136237">W. Jobda</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1135996">Andrzej Kostrzewa</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136507">Hubert Kostrzewa</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1169970">Tomasz Kostrzewa</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1147782">Tomasz Lipiński</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136239">Maciej A. Maciejewski</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">R. Majcher</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136511">A. Michalik</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">P. Michalik</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136236">Eugeniusz Nieściór</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1125021">Jarosław Nowikowski</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136513">Józef Polnik</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1126072">Robert Rożnowski</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136000">Jerzy Rybiński</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">C. Samuel</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1127375">Andrzej Skupień</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">H. Sławkiewicz</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">M. Stalarski</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">M. Starko</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136240">S. Stępień</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">K. Suski</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1136401">Adam Szuster</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba"><a href="index.php/1126090">Kazimierz Tobolski</a></div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">G. Wyszyński</div><div class="ekipa_opis"> szwoleżer</div><div class="ekipa_osoba">M. Żarnowski</div><div class="ekipa_opis"> szwoleżer</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1210620">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1210620" class="jslink" onclick="pzz1('varia1210620','varia_schowaj1210620')">pokaż</span></div></h2>
+<table id="varia1210620" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">MARSZ PIERWSZEGO PUŁKU SZWOLEŻERÓW JÓZEFA PIŁSUDSKIEGO  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/1136522">A. Sikorski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">PRZYBYLI UŁANI POD OKIENKO  
+        </td></tr><tr><td colspan="3" class="varia_opis">muzyka ludowa</td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+            </td><td class="varia_osoba">Feliks Gwiżdż</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba">Orkiestra Koncertowa Wojska Polskiego im. Stanisława Moniuszki</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/1136524">Grzegorz Melimąka</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">JAK TO NA WOJENCE ŁADNIE  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/1136525">Władysław Tarnowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+            </td><td class="varia_osoba"><a href="index.php/1136525">Władysław Tarnowski</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>SZAFA BRYGADIERA ABRAMKA (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2001</div></li>
+<li><div class="film_tech3">52 min</div></li>
+</ul>
+<p class="opis">Rok 1941. Choć wokół szaleje hitlerowski terror, firma Szczygła jakoś funkcjonuje. Niedaleko jej siedziby staje mur getta. To zły znak dla Abrahama Rozenberga, silnego jak tur i niezwykle sympatycznego brygadiera z firmy Cześka. Szczygieł nie potrafi rozstać się ze swym długoletnim, lojalnym pracownikiem. Postanawia go ukrywać, ale pada ofiarą donosu szmalcownika. Czesław trafia na Szucha. Ma jednak wyjątkowe szczęście. Jednym z przesłuchujących go gestapowców okazuje się sturmfuhrer Reutt, krewny pewnego doktora, któremu niegdyś Szczygieł ocalił majątek. Dzięki interwencji Reutta Czesław wychodzi na wolność pod pretekstem samodzielnego odnalezienia Abramka. Gdy Szczygieł spotyka przyjaciela, na jego usilną prośbę pomaga mu przeprowadzić się do getta, gdzie znajduje się rodzina Rozenberga. Sam niesie szafę Abramka na plecach. Tuż po przekroczeniu muru strażnik wypędza Cześka razem z meblem na aryjską stronę. Szczygieł nie zdaje sobie sprawy, że w szafie ukrywa się żydowskie dziecko. [PAT]</p><div class="galeria_mala"><a href="index.php?fotos=169748_1&galeria=159748"><img class="bezcienia" src="../z1/48i/9748_1.jpg" height="60"></a><a href="index.php?fotos=169748_2&galeria=159748"><img class="bezcienia" src="../z1/48i/9748_2.jpg" height="60"></a><a href="index.php?fotos=169748_3&galeria=159748"><img class="bezcienia" src="../z1/48i/9748_3.jpg" height="60"></a><a href="index.php/159748" title="Galeria zdjęć (3)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki129748" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna129748','ekipa_skrocona129748','ekipa129748','ekipa_schowaj129748','ekipa_schowaj_krotki129748','ekipa_schowaj_pelny129748','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny129748" class="jslink" onclick="pzf('ekipa_skrocona129748','ekipa_pelna129748','ekipa129748','ekipa_schowaj129748','ekipa_schowaj_pelny129748','ekipa_schowaj_krotki129748','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj129748"129748" class="jslink" onclick="pzz('ekipa129748','ekipa_schowaj129748')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa129748" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna129748">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124081">Kinga Preis</a></div><div class="ekipa_opis"> Róża Szczygieł, żona Czesława</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Czesław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1119917">Maja Ostaszewska</a></div><div class="ekipa_opis"> Celina Szczygieł, żona Mieczysława</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> Abraham Rosenberg, brygadier w firmie  "Szczygieł"</div><div class="ekipa_osoba"><a href="index.php/114886">Piotr Krukowski</a></div><div class="ekipa_opis"> szmalcownik Guzioł</div><div class="ekipa_osoba"><a href="index.php/1128459">Władysław Grzywna</a></div><div class="ekipa_opis"> obersturmbannfuhrer Stuhl</div><div class="ekipa_osoba"><a href="index.php/1121808">Wojciech Majchrzak</a></div><div class="ekipa_opis"> Wacław Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1112387">Olaf Lubaszenko</a></div><div class="ekipa_opis"> Stanisław Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1122760">Łukasz Nowicki</a></div><div class="ekipa_opis"> Bogdan Szczygieł, syn Stanisława</div><div class="ekipa_osoba"><a href="index.php/1118893">Paweł Burczyk</a></div><div class="ekipa_opis"> rikszarz Dudek</div><div class="ekipa_osoba"><a href="index.php/1127477">Marcin Chochlew</a></div><div class="ekipa_opis"> Krzysztof Szczygieł, syn Róży i Czesława</div><div class="ekipa_osoba"><a href="index.php/1136395">Magdalena Kriger</a></div><div class="ekipa_opis"> Ala, służąca Szczygłów</div><div class="ekipa_osoba"><a href="index.php/1128157">Paweł Ławrynowicz</a></div><div class="ekipa_opis"> gestapowiec</div><div class="ekipa_osoba"><a href="index.php/1127926">Jacek Winiarski</a></div><div class="ekipa_opis"> gestapowiec</div><div class="ekipa_osoba"><a href="index.php/1120458">Marcin Kocela</a></div><div class="ekipa_opis"> gestapowiec</div><div class="ekipa_osoba"><a href="index.php/1112183">Adam Kamień</a></div><div class="ekipa_opis"> sturmfuhrer Reutt, bratanek doktora  Zygfryda Reutta</div><div class="ekipa_osoba"><a href="index.php/1125024">Justyna Pawlak</a></div><div class="ekipa_opis"> sekretarka Reutta</div><div class="ekipa_osoba">Krzysztof Rządkowski</div><div class="ekipa_opis"> wartownik</div><div class="ekipa_osoba"><a href="index.php/1125450">Dariusz Pick</a></div><div class="ekipa_opis"> więzień Pawiaka</div><div class="ekipa_osoba"><a href="index.php/1114834">Ireneusz Dydliński</a></div><div class="ekipa_opis"> więzień Pawiaka</div><div class="ekipa_osoba"><a href="index.php/112624">Andrzej Chichłowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Andrzej Agria</div><div class="ekipa_opis"> dziecko żydowskie w szafie</div><div class="ekipa_osoba"><a href="index.php/111623">Karol Stępkowski</a></div><div class="ekipa_opis"> profesor, tragarz w firmie Szczygła</div><div class="ekipa_osoba"><a href="index.php/1116773">Ryszard Wysocki</a></div><div class="ekipa_opis"> profesor, tragarz w firmie Szczygła</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona129748">
+</ul>
+</div>
+<span class="clear"></span></div><div id="czasgen">2026.05.08 03:12:46</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

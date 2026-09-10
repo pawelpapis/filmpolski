@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - LALKA</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>LALKA</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1977</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">1978. 09. 17</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film kostiumowy, Film obyczajowy</div></li>
+<li><div class="film_tech3">Barwny, 9 odcinków x ok. 78 min<br /><br />
+Okres zdjęciowy rozpoczął się 21 kwietnia 1976.<br />
+Lokacje: Warszawa (ul. Nowogrodzka - "kamienica Łęckich", Krakowskie Przedmieście, plac Zamkowy, Miodowa, Oboźna, Pałacyk  Cukrowników przy ul. Mokotowskiej 25, Agrykola), Wrocław (ul. Miernicza), Janowiec k. Kazimierza nad Wisłą (filmowe ruiny zamku w Zasławiu), Nieborów, Czerwińsk, Piotrków Trybunalski (dworzec kolejowy), Łódź (Pałac Izraela Poznańskiego przy ul. Ogrodowej, Pałac Karola Scheiblera przy Placu Zwycięstwa 2, budynek III Liceum Ogólnokształcącego przy ul. Sienkiewicza 46), Zaborów w gm. Leszno (pałac Goldstandów).</div></li>
+</ul>
+<p class="opis">"To powieść stworzona na serial" - mówił <a href="index.php/116414">Ryszard Ber</a> w trakcie realizacji telewizyjnej wersji "Lalki". Zadanie miał niełatwe. Po pierwsze książka <a href="index.php/111116">Bolesława Prusa</a> należy do kanonu literatury polskiej i stworzenie jej równorzędnego, ekranowego ekwiwalentu to wyzwanie trudne i ryzykowne. Po drugie Ber musiał się liczyć z porównaniami do wcześniejszej, kinowej adaptacji, dokonanej przez <a href="index.php/111519">Wojciecha Hasa</a>. Ale "Lalka" jako serial przetrwała próbę czasu, a nawet zaskarbiła sobie sympatię sporej części widzów, o czym świadczą liczne wznowienia. Cykl Bera jest też znacznie bliższy literackiemu oryginałowi niż film Hasa, w którym np. pominięto "pamiętnik starego subiekta". Nie znaczy to oczywiście, że serial przyjęto bezkrytycznie. Część recenzentów wytykała reżyserowi błędy obsadowe, narzekano też na stosunkowo niską temperaturę relacji między Wokulskim a Izabelą. Zgodny aplauz wywołała chyba tylko kreacja <a href="index.php/11227">Bronisława Pawlika</a> jako Rzeckiego. W interpretacji aktora pan Ignacy był jakby żywcem przeniesiony z Prusa. Rozbrajająco naiwny politycznie, do końca wierny w przyjaźni, przywiązany do staroświeckich zasad w handlu, dla ludzi dobry i współczujący, w interesach uczciwy.</p><div class="galeria_mala"><a href="index.php?fotos=163325_1&galeria=153325"><img class="bezcienia" src="../z1/25i/3325_1.jpg" height="60"></a><a href="index.php?fotos=163325_2&galeria=153325"><img class="bezcienia" src="../z1/25i/3325_2.jpg" height="60"></a><a href="index.php?fotos=163325_3&galeria=153325"><img class="bezcienia" src="../z1/25i/3325_3.jpg" height="60"></a><a href="index.php?fotos=163325_4&galeria=153325"><img class="bezcienia" src="../z1/25i/3325_4.jpg" height="60"></a><a href="index.php?fotos=163325_5&galeria=153325"><img class="bezcienia" src="../z1/25i/3325_5.jpg" height="60"></a><a href="index.php?fotos=163325_6&galeria=153325"><img class="bezcienia" src="../z1/25i/3325_6.jpg" height="60"></a><a href="index.php?fotos=163325_7&galeria=153325"><img class="bezcienia" src="../z1/25i/3325_7.jpg" height="60"></a><a href="index.php/153325" title="Galeria zdjęć (19)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123325" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123325','ekipa_skrocona123325','ekipa123325','ekipa_schowaj123325','ekipa_schowaj_krotki123325','ekipa_schowaj_pelny123325','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123325" class="jslink" onclick="pzf('ekipa_skrocona123325','ekipa_pelna123325','ekipa123325','ekipa_schowaj123325','ekipa_schowaj_pelny123325','ekipa_schowaj_krotki123325','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123325"123325" class="jslink" onclick="pzz('ekipa123325','ekipa_schowaj123325')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123325" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123325">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116414">Ryszard Ber</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/11483">Janusz Weychert</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111721">Andrzej Wohl</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11481">Zbigniew Maćków</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/11127180">Mirosława Skowrońska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/115895">Jadwiga Turant</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111409">Dorota Grieser</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11892">Aleksander Ścibor-Rylski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115579">Jadwiga Wojtyłło</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111805">Jacek Korcelli</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/113223">Zbigniew Hartwig</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1129">Jerzy Białek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11550">Aleksy Krywsza</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Laboratorium</div><div class="ekipa_osoba"><a href="index.php/1193">Wytwórnia Filmów Fabularnych (Łódź)</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111802">Andrzej Płocki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-5, 7-9</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11341">Andrzej Haliński</a></div><div class="ekipa_opis wyroznienie"> odcinki: 6</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/11341">Andrzej Haliński</a></div><div class="ekipa_opis"> odcinki: 1-5, 7-9</div><div class="ekipa_osoba"><a href="index.php/111802">Andrzej Płocki</a></div><div class="ekipa_opis"> odcinki: 6</div><div class="ekipa_osoba"><a href="index.php/113209">Janusz Pol</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111681">Adam Kopczyński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/1115576">Eugeniusz Kapelak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11765">Stefan Burzyński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11343">Marek Iwaszkiewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111082">Albina Barańska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Atelier</div><div class="ekipa_osoba"><a href="index.php/1193">Wytwórnia Filmów Fabularnych (Łódź)</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115410">Irena Biegańska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/11345">Agnieszka Domaniecka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112603">Małgorzata Braszka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112604">Ewa Krauze</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11210">Halina Ber</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11362">Alicja Kozłowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/115389">Wiesława Brożyna</a></div><div class="ekipa_opis"> w napisach imię: Wielisława</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116248">Andrzej Kurylewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/11507">Piotr Marczewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113010">Janusz Rosół</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/112022">Józef Druś</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11864">Zygmunt Rychter</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11359">Alina Faflik</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/11360">Anna Rubińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11985">Witold Krysztoforski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1115577">Ludwik B. Grzeniewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/115044">Andrzej Daniłowicz</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11949">Józef Grzeszczak</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1191">Ryszard Janikowski</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113013">Jan Szymański</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1156116">Maciej Parnowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111490">Wojciech Nowicki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/113014">Jerzy Fidler</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112024">Jadwiga Koźba</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111485">Henryk Włoch</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11527">Włodzimierz Piotr Śródka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11571">Zespół Filmowy Pryzmat</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis wyroznienie"> Izabela Łęcka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis wyroznienie"> Stanisław Wokulski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis wyroznienie"> Ignacy Rzecki</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123325">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/116414">Ryszard Ber</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/11892">Aleksander Ścibor-Rylski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115579">Jadwiga Wojtyłło</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/111805">Jacek Korcelli</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/111802">Andrzej Płocki</a></div><div class="ekipa_opis"> odcinki: 1-5, 7-9</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11341">Andrzej Haliński</a></div><div class="ekipa_opis"> odcinki: 6</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/11343">Marek Iwaszkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111082">Albina Barańska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/115410">Irena Biegańska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/11210">Halina Ber</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11362">Alicja Kozłowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/116248">Andrzej Kurylewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/113010">Janusz Rosół</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/11359">Alina Faflik</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/113013">Jan Szymański</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/11571">Zespół Filmowy Pryzmat</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Pierwowzory<div class="sterowanie"><span id="pierwowzory_schowaj123325" class="jslink" onclick="pzz1('pierwowzory123325','pierwowzory_schowaj123325')">schowaj</span></div></h2>
+<table id="pierwowzory123325" class="varia_table">
+<tr><td colspan="2" class="varia_rodzaj">Pierwowzór</td></tr><tr><td colspan="2" class="varia_tytul">LALKA  
+      
+    </td></tr><tr><td colspan="2" class="varia_funkcja">Powieść</td></tr><tr><td class="varia_funkcja">Autor</td><td class="varia_osoba"><a href="index.php/111116">Bolesław Prus</a></td></tr></table>
+<h2>Nagrody<div class="sterowanie"><span id="nagrody_schowaj123325" class="jslink" onclick="pzz('nagrody123325','nagrody_schowaj123325')">schowaj</span></div></h2>
+<ul class="nagrody" id="nagrody123325" style="display:block;">
+<li><div class="nagrody_data">1978</div><div class="nagrody-nazwa">Olsztyn (Festiwal Polskiej Twórczości Telewizyjnej)-Nagroda za kreacje aktorskie  
+      
+    </div><div class="nagrody-osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="nagrody-osoba"><a href="index.php/111709">Włodzimierz Boruński</a></div></li>
+<li><div class="nagrody_data">1979</div><div class="nagrody-nazwa">Złoty Ekran (przyznawany przez pismo "Ekran")  
+      
+    </div><div class="nagrody-osoba"><a href="index.php/116414">Ryszard Ber</a></div><div class="nagrody-osoba"><a href="index.php/11227">Bronisław Pawlik</a></div></li>
+<li><div class="nagrody_data">1979</div><div class="nagrody-nazwa">Nagroda Przewodniczącego Komitetu d/s Radia i Telewizji  
+     <br /><span class="nagrody-opis">za całokształt współpracy artystycznej z TVP, ze szczególnym uwzględnieniem  kreacji Rzeckiego w ....</span></div><div class="nagrody-osoba"><a href="index.php/11227">Bronisław Pawlik</a></div></li>
+<li><div class="nagrody_data">1979</div><div class="nagrody-nazwa">Nagroda Przewodniczącego Komitetu d/s Radia i Telewizji  
+     <br /><span class="nagrody-opis">za całokształt współpracy artystycznej z TVP, ze szczególnym uwzględnieniem  kreacji Wokulskiego w ....</span></div><div class="nagrody-osoba"><a href="index.php/11167">Jerzy Kamas</a></div></li>
+<li><div class="nagrody_data">1979</div><div class="nagrody-nazwa">Nagroda Szefa Kinematografii (Przewodniczącego Komitetu Kinematografii) za twórczość filmową-w dziedzinie filmu fabularnego  
+     <br /><span class="nagrody-opis">za całokształt pracy reżyserskiej w TVP, ze szczególnym uwzględnieniem filmu  ...</span></div><div class="nagrody-osoba"><a href="index.php/116414">Ryszard Ber</a></div></li>
+<li><div class="nagrody_data">1979</div><div class="nagrody-nazwa">Nagroda Przewodniczącego Komitetu d/s Radia i Telewizji  
+      
+      
+      
+      
+      
+     <br /><span class="nagrody-opis">zespołowo</span></div><div class="nagrody-osoba"><a href="index.php/11892">Aleksander Ścibor-Rylski</a></div><div class="nagrody-osoba"><a href="index.php/1115579">Jadwiga Wojtyłło</a></div><div class="nagrody-osoba"><a href="index.php/111805">Jacek Korcelli</a></div><div class="nagrody-osoba"><a href="index.php/111802">Andrzej Płocki</a></div><div class="nagrody-osoba"><a href="index.php/113013">Jan Szymański</a></div><div class="nagrody-osoba"><a href="index.php/113321">Ryszard Barski</a></div></li>
+</ul>
+
+<h2>Patrz także:<div class="sterowanie"><span id="klamry_schowaj123325" class="jslink" onclick="pzz1('klamry123325','klamry_schowaj123325')">schowaj</span></div></h2>
+<ul class="klamry" id="klamry123325">
+<li><div class="rok">1968</div><div class="tytul"><a href="index.php/121666">LALKA</a></div><div class="wyroznik">Film fabularny / Wojciech Jerzy Has</div></li>
+<li><div class="rok">2011</div><div class="tytul"><a href="index.php/525218">LALKA</a></div><div class="wyroznik">Spektakl telewizyjny / Bolesław Prus / Wojciech Kościelniak</div></li>
+<li><div class="rok">2026</div><div class="tytul"><a href="index.php/1271156">LALKA</a></div><div class="wyroznik">Film fabularny / Maciej Kawalski</div></li>
+<li><div class="rok">2026</div><div class="tytul"><a href="index.php/1271197">LALKA</a></div><div class="wyroznik">Serial fabularny / Paweł Maślona</div></li>
+</ul>
+<div class="podzbior"><h1>POWRÓT (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">78 min</div></li>
+</ul>
+<p class="opis">Warszawa, 1878 r. Na Krakowskim Przedmieściu mieści się sklep galanteryjny "J. Mincel i S. Wokulski". Pod nieobecność pryncypała, a zarazem przyjaciela - Wokulskiego, sklep prowadzi pan Ignacy Rzecki. Pewnego dnia Wokulski wraca z zagranicy przywożąc ze sobą spory majątek, którego dorobił się na dostawach wojskowych. Postanawia rozbudować sklep i dostac sie na salony arystokracji, a motorem jego poczynań jest miłość do pięknej Izabeli Łęckiej, córki zrujnowanego arystokraty. Ale wyniosła hrabianka widzi w nim jedynie kupczyka.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123326" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123326','ekipa_skrocona123326','ekipa123326','ekipa_schowaj123326','ekipa_schowaj_krotki123326','ekipa_schowaj_pelny123326','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123326" class="jslink" onclick="pzf('ekipa_skrocona123326','ekipa_pelna123326','ekipa123326','ekipa_schowaj123326','ekipa_schowaj_pelny123326','ekipa_schowaj_krotki123326','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123326"123326" class="jslink" onclick="pzz('ekipa123326','ekipa_schowaj123326')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123326" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123326">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div class="ekipa_osoba"><a href="index.php/112697">Alina Janowska</a></div><div class="ekipa_opis"> Krzeszowska</div><div class="ekipa_osoba"><a href="index.php/11721">Anna Milewska</a></div><div class="ekipa_opis"> Florentyna, kuzynka Łęckiej</div><div class="ekipa_osoba"><a href="index.php/111522">Zofia Mrozowska</a></div><div class="ekipa_opis"> hrabina Joanna Karolowa, siostra Łęckiego</div><div class="ekipa_osoba"><a href="index.php/1142">Bogdan Baer</a></div><div class="ekipa_opis"> Szprot</div><div class="ekipa_osoba"><a href="index.php/11273">Mieczysław Czechowicz</a></div><div class="ekipa_opis"> radca Węgrowicz</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> Mraczewski</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Klein, subiekt w sklepie Wokulskiego; w napisach nazwisko: Friedman</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/114707">Emil Karewicz</a></div><div class="ekipa_opis"> Tomasz Łęcki, ojciec Izabeli</div><div class="ekipa_osoba"><a href="index.php/111058">Józef Nalberczak</a></div><div class="ekipa_opis"> Deklewski</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/111465">Wojciech Pokora</a></div><div class="ekipa_opis"> Lisiecki, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> furman Wysocki</div><div class="ekipa_osoba"><a href="index.php/11925">Czesław Wołłejko</a></div><div class="ekipa_opis"> Krzeszowski</div><div class="ekipa_osoba"><a href="index.php/112485">Zygmunt Apostoł</a></div><div class="ekipa_opis"> weteran wojenny</div><div class="ekipa_osoba"><a href="index.php/112898">Stanisław Jaroszyński</a></div><div class="ekipa_opis"> klient w sklepie Wokulskiego kupujący  kalosze</div><div class="ekipa_osoba"><a href="index.php/111661">Teresa Lipowska</a></div><div class="ekipa_opis"> Szperlingowa</div><div class="ekipa_osoba"><a href="index.php/11180">Józef Łodyński</a></div><div class="ekipa_opis"> Paweł, służący w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/114826">Wojciech Machnicki</a></div><div class="ekipa_opis"> kelner Józio</div><div class="ekipa_osoba"><a href="index.php/11165">Tadeusz Teodorczyk</a></div><div class="ekipa_opis"> Mikołaj, służący Łęckich</div><div class="ekipa_osoba"><a href="index.php/113728">Jerzy Tkaczyk</a></div><div class="ekipa_opis"> mężczyzna kłaniający się Szperlingowej</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123326">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>PAMIĘTNIK STAREGO SUBIEKTA (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">73 min</div></li>
+</ul>
+<p class="opis">Rzecki wieczorami, po zamknięciu sklepu, spisuje wydarzenia, których był świadkiem. Z lektury pamiętnika pana Ignacego poznajemy historię sklepu Mincla i losy młodego, a później dorosłego Stanisława Wokulskiego. Stary subiekt pisze o zesłaniu przyjaciela po powstaniu 1863, jego małżeństwie z wdową po właścicielu sklepu Janie Minclu i o początkach szaleńczej miłości do panny Izabeli Łęckiej.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123328" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123328','ekipa_skrocona123328','ekipa123328','ekipa_schowaj123328','ekipa_schowaj_krotki123328','ekipa_schowaj_pelny123328','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123328" class="jslink" onclick="pzf('ekipa_skrocona123328','ekipa_pelna123328','ekipa123328','ekipa_schowaj123328','ekipa_schowaj_pelny123328','ekipa_schowaj_krotki123328','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123328"123328" class="jslink" onclick="pzz('ekipa123328','ekipa_schowaj123328')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123328" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123328">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Helena Stawska</div><div class="ekipa_osoba"><a href="index.php/11721">Anna Milewska</a></div><div class="ekipa_opis"> Florentyna, kuzynka Łęckiej</div><div class="ekipa_osoba"><a href="index.php/111522">Zofia Mrozowska</a></div><div class="ekipa_opis"> hrabina Joanna Karolowa, siostra Łęckiego</div><div class="ekipa_osoba"><a href="index.php/111965">Joanna Żółkowska</a></div><div class="ekipa_opis"> Marianna</div><div class="ekipa_osoba"><a href="index.php/111709">Włodzimierz Boruński</a></div><div class="ekipa_opis"> Michał Szuman, przyjaciel Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/111846">Józef Duriasz</a></div><div class="ekipa_opis"> August Katz, subiekt w sklepie Minclów</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/111932">Olgierd Łukaszewicz</a></div><div class="ekipa_opis"> Leon, przewodniczący tajnego zebrania  studentów</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/11226">Andrzej Szalawski</a></div><div class="ekipa_opis"> Jan Mincel</div><div class="ekipa_osoba"><a href="index.php/114638">Andrzej Zaorski</a></div><div class="ekipa_opis"> Julian Ochocki</div><div class="ekipa_osoba"><a href="index.php/112485">Zygmunt Apostoł</a></div><div class="ekipa_opis"> weteran wojenny</div><div class="ekipa_osoba"><a href="index.php/111451">Stanisław Bareja</a></div><div class="ekipa_opis"> Jan Mincel, bratanek Jana</div><div class="ekipa_osoba"><a href="index.php/112873">Zofia Czerwińska</a></div><div class="ekipa_opis"> Małgorzata Minclowa, żona Jana, później  żona Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/112244">Mieczysław Kalenik</a></div><div class="ekipa_opis"> Domański, przyjaciel ojca Rzeckiego</div><div class="ekipa_osoba"><a href="index.php/1115582">Marian Kouba</a></div><div class="ekipa_opis"> śpiewak w teatrze</div><div class="ekipa_osoba"><a href="index.php/115271">Danuta Kowalska</a></div><div class="ekipa_opis"> Kasia Hopferówna, córka właściciela  winiarni</div><div class="ekipa_osoba"><a href="index.php/115311">Paweł Kruk</a></div><div class="ekipa_opis"> Franz Mincel, bratanek Jana</div><div class="ekipa_osoba">Bartłomiej Litwin</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11247">Gustaw Lutkiewicz</a></div><div class="ekipa_opis"> Raczek, przyjaciel ojca Rzeckiego</div><div class="ekipa_osoba"><a href="index.php/112424">Zygmunt Maciejewski</a></div><div class="ekipa_opis"> ojciec Rzeckiego</div><div class="ekipa_osoba"><a href="index.php/111022">Wiesława Mazurkiewicz</a></div><div class="ekipa_opis"> Zuzanna, ciotka Rzeckiego</div><div class="ekipa_osoba"><a href="index.php/111030">Stanisław Michalski</a></div><div class="ekipa_opis"> Jan Machalski, przyjaciel Rzeckiego  pracujący w winiarni Hopfera</div><div class="ekipa_osoba"><a href="index.php/1115584">Krystyna Pakulska</a></div><div class="ekipa_opis"> śpiewaczka w teatrze</div><div class="ekipa_osoba"><a href="index.php/112953">Michał Pluciński</a></div><div class="ekipa_opis"> ojciec Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/111537">Joanna Poraska</a></div><div class="ekipa_opis"> babcia Mincel</div><div class="ekipa_osoba"><a href="index.php/114023">Andrzej Precigs</a></div><div class="ekipa_opis"> Stanisław Wokulski w młodości; rola dubbingowana przez <a href="index.php/11167">Jerzego Kamasa</a></div><div class="ekipa_osoba"><a href="index.php/11938">Teodor Gendera</a></div><div class="ekipa_opis"> Hopfer, właściel winiarni</div><div class="ekipa_osoba"><a href="index.php/1115585">Edyta Harmoza</a></div><div class="ekipa_opis"> Helusia Stawska</div><div class="ekipa_osoba"><a href="index.php/11175">Lech Jagiełło</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118262">Bogumił Kłodkowski</a></div><div class="ekipa_opis"> mężczyzna w winiarni Hopfera</div><div class="ekipa_osoba"><a href="index.php/113304">Włodzimierz Nakwaski</a></div><div class="ekipa_opis"> służący hrabiny Karolowej</div><div class="ekipa_osoba"><a href="index.php/1115586">Sylwester Pawłowski</a></div><div class="ekipa_opis"> mężczyzna w winiarni Hopfera</div><div class="ekipa_osoba"><a href="index.php/115432">Zofia Perczyńska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/114556">Jacek Recknitz</a></div><div class="ekipa_opis"> mężczyzna w winiarni Hopfera; w napiach nazwisko: Reknitz</div><div class="ekipa_osoba"><a href="index.php/113079">Michał Anioł</a></div><div class="ekipa_opis"> student na tajnym zebraniu; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123328">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj123328" class="jslink" onclick="pzz1('varia123328','varia_schowaj123328')">pokaż</span></div></h2>
+<table id="varia123328" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Opera</td></tr><tr><td colspan="3" class="varia_tytul">TRAVIATA - duet Violetty i Alfreda z III aktu  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba">Giuseppe Verdi</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+              
+              
+            </td><td class="varia_osoba"><a href="index.php/118375">Zofia Rudnicka-Debichowa</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1115581">Romuald Spychalski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/111808">Orkiestra Polskiego Radia i Telewizji (Łódź)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/11557">Henryk Debich</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>WIELKOPAŃSKIE ZABAWY (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">78 min</div></li>
+</ul>
+<p class="opis">Zaproszenie Wokulskiego przez Hrabinę bulwersuje towarzystwo. Wejście kupca do arystokratycznych salonów jest szeroko komentowane w wyższych sferach. Dopiero otwarcie nowego, eleganckiego sklepu oraz założenie spółki do handlu ze Wschodem przyczyniło się do zaakceptowania pana Stanisława przez arystokrację. Wielu możnych przystępuje do spółki, zachęconych obiecywanym wysokim procentem od wkładów. Bywalec salonów, Wokulski, zostaje przedstawiony prezesowej Zasławskiej, która wyjawia tajemnicę, że przed laty łączyła ją miłość z jego stryjem.
+Dla Izabeli pozostaje on jednak nadal tylko kupcem. Za pośrednictwem niejakiego Maruszewicza Wokulski odkupuje od barona Krzeszowskiego klacz, która wygrywa wyścigi. Krzeszowski obraża Izabelę, Wokulski wyzywa go na pojedynek. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123333" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123333','ekipa_skrocona123333','ekipa123333','ekipa_schowaj123333','ekipa_schowaj_krotki123333','ekipa_schowaj_pelny123333','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123333" class="jslink" onclick="pzf('ekipa_skrocona123333','ekipa_pelna123333','ekipa123333','ekipa_schowaj123333','ekipa_schowaj_pelny123333','ekipa_schowaj_krotki123333','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123333"123333" class="jslink" onclick="pzz('ekipa123333','ekipa_schowaj123333')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123333" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123333">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div class="ekipa_osoba"><a href="index.php/115285">Zofia Jaroszewska</a></div><div class="ekipa_opis"> prezesowa Zasławska</div><div class="ekipa_osoba"><a href="index.php/11329">Maria Kaniewska</a></div><div class="ekipa_opis"> pani Meliton</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Helena Stawska</div><div class="ekipa_osoba"><a href="index.php/11721">Anna Milewska</a></div><div class="ekipa_opis"> Florentyna, kuzynka Łęckiej</div><div class="ekipa_osoba"><a href="index.php/111522">Zofia Mrozowska</a></div><div class="ekipa_opis"> hrabina Joanna Karolowa, siostra Łęckiego</div><div class="ekipa_osoba"><a href="index.php/111709">Włodzimierz Boruński</a></div><div class="ekipa_opis"> Michał Szuman, przyjaciel Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11535">Krzysztof Chamiec</a></div><div class="ekipa_opis"> hrabia Anglik, sekundant barona  Krzeszowskiego</div><div class="ekipa_osoba"><a href="index.php/112958">Jan Ciecierski</a></div><div class="ekipa_opis"> baron Dalski</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> Mraczewski</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Klein, subiekt w sklepie Wokulskiego; w napisach nazwisko: Friedman</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Henryk Szlangbaum</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/114707">Emil Karewicz</a></div><div class="ekipa_opis"> Tomasz Łęcki, ojciec Izabeli</div><div class="ekipa_osoba"><a href="index.php/113985">Krzysztof Litwin</a></div><div class="ekipa_opis"> Zięba, subiekt w sklepie Wokulskiego; nazwisko aktora pojawia się w napisach odcinka, choć w rzeczywistości w nim nie wystąpił</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/111465">Wojciech Pokora</a></div><div class="ekipa_opis"> Lisiecki, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11802">Igor Śmiałowski</a></div><div class="ekipa_opis"> książę</div><div class="ekipa_osoba"><a href="index.php/114513">Zdzisław Wardejn</a></div><div class="ekipa_opis"> Maruszewicz</div><div class="ekipa_osoba"><a href="index.php/11925">Czesław Wołłejko</a></div><div class="ekipa_opis"> Krzeszowski</div><div class="ekipa_osoba"><a href="index.php/114638">Andrzej Zaorski</a></div><div class="ekipa_opis"> Julian Ochocki</div><div class="ekipa_osoba"><a href="index.php/112162">Ryszard Barycz</a></div><div class="ekipa_opis"> arystokrata</div><div class="ekipa_osoba"><a href="index.php/113757">Andrzej Bogucki</a></div><div class="ekipa_opis"> marszałek na zebraniu u księcia</div><div class="ekipa_osoba"><a href="index.php/115959">Seweryn Butrym</a></div><div class="ekipa_opis"> arystokrata na zebraniu u księcia</div><div class="ekipa_osoba"><a href="index.php/1115585">Edyta Harmoza</a></div><div class="ekipa_opis"> Helusia Stawska</div><div class="ekipa_osoba"><a href="index.php/11160">Andrzej Jurczak</a></div><div class="ekipa_opis"> służący Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11629">Andrzej Krasicki</a></div><div class="ekipa_opis"> hrabia, sekundant barona Krzeszowskiego</div><div class="ekipa_osoba"><a href="index.php/11941">Edward Lach</a></div><div class="ekipa_opis"> hrabia</div><div class="ekipa_osoba"><a href="index.php/11627">Zdzisław Maklakiewicz</a></div><div class="ekipa_opis"> Konstanty, lokaj barona Krzeszowskiego</div><div class="ekipa_osoba"><a href="index.php/112253">Wiktor Nanowski</a></div><div class="ekipa_opis"> bankier na zebraniu u księcia</div><div class="ekipa_osoba"><a href="index.php/111516">Barbara Dziekan</a></div><div class="ekipa_opis"> księżna</div><div class="ekipa_osoba"><a href="index.php/111290">Stanisław Jaśkiewicz</a></div><div class="ekipa_opis"> lekarz na pojedynku Krzeszowskiego z  Wokulskim</div><div class="ekipa_osoba"><a href="index.php/112733">Jerzy Karaszkiewicz</a></div><div class="ekipa_opis"> złodziej w Łazienkach</div><div class="ekipa_osoba"><a href="index.php/11178">Juliusz Lisowski</a></div><div class="ekipa_opis"> lokaj hrabiny Karolowej</div><div class="ekipa_osoba"><a href="index.php/113599">Jerzy Łapiński</a></div><div class="ekipa_opis"> Gutmorgen</div><div class="ekipa_osoba">Mieczysław Mełnicki</div><div class="ekipa_opis"> dżokej Yung</div><div class="ekipa_osoba"><a href="index.php/115190">Kazimierz Meres</a></div><div class="ekipa_opis"> Miller</div><div class="ekipa_osoba"><a href="index.php/113304">Włodzimierz Nakwaski</a></div><div class="ekipa_opis"> służący hrabiny Karolowej</div><div class="ekipa_osoba"><a href="index.php/119035">Izabella Pieńkowska</a></div><div class="ekipa_opis"> arystokratka</div><div class="ekipa_osoba"><a href="index.php/116844">Andrzej Szajewski</a></div><div class="ekipa_opis"> Wrzesiński, nabywca klaczy</div><div class="ekipa_osoba"><a href="index.php/111950">Stanisław Tylczyński</a></div><div class="ekipa_opis"> hrabia na zebraniu u księcia</div><div class="ekipa_osoba"><a href="index.php/11185">Zygmunt Wiaderny</a></div><div class="ekipa_opis"> Szulc</div><div class="ekipa_osoba"><a href="index.php/118368">Ewa Florczak</a></div><div class="ekipa_opis"> arystokratka; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11165">Tadeusz Teodorczyk</a></div><div class="ekipa_opis"> Mikołaj, służący Łęckich; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123333">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj123333" class="jslink" onclick="pzz1('varia123333','varia_schowaj123333')">pokaż</span></div></h2>
+<table id="varia123333" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwory muzyczne</td></tr><tr><td colspan="3" class="varia_tytul">fragmenty utworów  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+              
+              
+            </td><td class="varia_osoba"><a href="index.php/116457">Robert Schumann</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba">Szatrow</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba">J Mummel</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Opracowanie muzyczne  
+            </td><td class="varia_osoba"><a href="index.php/11507">Piotr Marczewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/111808">Orkiestra Polskiego Radia i Telewizji (Łódź)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/112724">Andrzej Rokicki</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>PIERWSZE OSTRZEŻENIE (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">78 min</div></li>
+</ul>
+<p class="opis">Aby przypodobać się pannie Izabeli, Wokulski organizuje klakę i kwiaty podczas występów włoskiego aktora Rossiego. Następnie przez podstawionych licytantów kupuje kamienicę Łęckich za 90 tysięcy rubli. W ten sposób ocala posag panny Izabeli. Łęccy, którzy liczyli na 120 tysięcy, są mocno rozczarowani. Do Warszawy przyjeżdża z zagranicy Kazio Starski, daleki kuzyn Izabeli. Panna Łęcka uważa go za ewentualnego kandydata na męża. Przy Wokulskim rozmawia ze Starskim po angielsku. Obrażony Wokulski żegna się chłodno i sam wyjeżdża do Paryża, choć miał jechać z Łęckimi.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123337" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123337','ekipa_skrocona123337','ekipa123337','ekipa_schowaj123337','ekipa_schowaj_krotki123337','ekipa_schowaj_pelny123337','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123337" class="jslink" onclick="pzf('ekipa_skrocona123337','ekipa_pelna123337','ekipa123337','ekipa_schowaj123337','ekipa_schowaj_pelny123337','ekipa_schowaj_krotki123337','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123337"123337" class="jslink" onclick="pzz('ekipa123337','ekipa_schowaj123337')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123337" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123337">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div class="ekipa_osoba"><a href="index.php/112697">Alina Janowska</a></div><div class="ekipa_opis"> Krzeszowska</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Helena Stawska</div><div class="ekipa_osoba"><a href="index.php/11721">Anna Milewska</a></div><div class="ekipa_opis"> Florentyna, kuzynka Łęckiej</div><div class="ekipa_osoba"><a href="index.php/111522">Zofia Mrozowska</a></div><div class="ekipa_opis"> hrabina Joanna Karolowa, siostra Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> Mraczewski</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Klein, subiekt w sklepie Wokulskiego; w napisach nazwisko: Friedman</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Henryk Szlangbaum</div><div class="ekipa_osoba">Aleksandr Kaliagin</div><div class="ekipa_opis"> Suzin</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/114707">Emil Karewicz</a></div><div class="ekipa_opis"> Tomasz Łęcki, ojciec Izabeli</div><div class="ekipa_osoba"><a href="index.php/11177">Włodzimierz Kwaskowski</a></div><div class="ekipa_opis"> Szlangbaum, ojciec Henryka</div><div class="ekipa_osoba"><a href="index.php/113985">Krzysztof Litwin</a></div><div class="ekipa_opis"> Zięba, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/111465">Wojciech Pokora</a></div><div class="ekipa_opis"> Lisiecki, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11234">Roman Wilhelmi</a></div><div class="ekipa_opis"> Kazimierz Starski</div><div class="ekipa_osoba"><a href="index.php/111708">Zbigniew Zapasiewicz</a></div><div class="ekipa_opis"> aktor Rossi</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Brodacz, student w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/111239">Władysław Dewoyno</a></div><div class="ekipa_opis"> licytant Łęckiego</div><div class="ekipa_osoba"><a href="index.php/113385">Stanisław Gawlik</a></div><div class="ekipa_opis"> licytant Szlangbauma</div><div class="ekipa_osoba"><a href="index.php/116640">Kazimierz Jaworski</a></div><div class="ekipa_opis"> licytant Krzeszowskiej</div><div class="ekipa_osoba"><a href="index.php/11160">Andrzej Jurczak</a></div><div class="ekipa_opis"> służący Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/115029">Janusz Kubicki</a></div><div class="ekipa_opis"> żydowski licytant</div><div class="ekipa_osoba"><a href="index.php/11329">Maria Kaniewska</a></div><div class="ekipa_opis"> pani Meliton</div><div class="ekipa_osoba"><a href="index.php/112253">Wiktor Nanowski</a></div><div class="ekipa_opis"> bankier na zebraniu u księcia; nazwisko aktora pojawia się w napisach odcinka, choć w rzeczywistości w nim nie wystąpił</div><div class="ekipa_osoba"><a href="index.php/111164">Leon Niemczyk</a></div><div class="ekipa_opis"> adwokat Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11664">Jerzy Rogalski</a></div><div class="ekipa_opis"> Patkiewicz, student w kamieny Łęckiego; nazwisko aktora pojawia się w napisach odcinka, choć w rzeczywistości w nim nie wystąpił</div><div class="ekipa_osoba"><a href="index.php/113764">Krzysztof Różycki</a></div><div class="ekipa_opis"> fryzjer Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/113290">Piotr Skarga</a></div><div class="ekipa_opis"> Maleski, student w kamieny Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11381">Włodzimierz Skoczylas</a></div><div class="ekipa_opis"> Dawid Szpigelman, wierzyciel Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11674">Zygmunt Zintel</a></div><div class="ekipa_opis"> adwokat Krzeszowskiej</div><div class="ekipa_osoba"><a href="index.php/113019">Jerzy Czupryniak</a></div><div class="ekipa_opis"> doktor</div><div class="ekipa_osoba"><a href="index.php/1115611">Jan Greber</a></div><div class="ekipa_opis"> aktor grający Banka w "Makbecie"</div><div class="ekipa_osoba"><a href="index.php/112269">Antoni Jurasz</a></div><div class="ekipa_opis"> żydowski licytant</div><div class="ekipa_osoba"><a href="index.php/113505">Bogusław Mach</a></div><div class="ekipa_opis"> nauczyciel angielskiego</div><div class="ekipa_osoba"><a href="index.php/113025">Marek Sobczyk</a></div><div class="ekipa_opis"> doktor</div><div class="ekipa_osoba"><a href="index.php/1110191">Henryk Szlachet</a></div><div class="ekipa_opis"> żydowski licytant</div><div class="ekipa_osoba"><a href="index.php/11582">Zdzisław Szymański</a></div><div class="ekipa_opis"> Niemiec w winiarni</div><div class="ekipa_osoba"><a href="index.php/11732">Jan Tesarz</a></div><div class="ekipa_opis"> prowadzący licytację</div><div class="ekipa_osoba"><a href="index.php/11165">Tadeusz Teodorczyk</a></div><div class="ekipa_opis"> Mikołaj, służący Łęckich</div><div class="ekipa_osoba"><a href="index.php/112956">Edward Wichura</a></div><div class="ekipa_opis"> Niemiec w winiarni</div><div class="ekipa_osoba"><a href="index.php/111721">Andrzej Wohl</a></div><div class="ekipa_opis"> licytant</div><div class="ekipa_osoba"><a href="index.php/11180">Józef Łodyński</a></div><div class="ekipa_opis"> Paweł, służący w sklepie Wokulskiego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1167739">Jerzy Tadeusiak</a></div><div class="ekipa_opis"> Niemiec w winiarni; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123337">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WIDZIADŁO (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">79 min</div></li>
+</ul>
+<p class="opis">Wokulski wyjeżdża do Paryża. W tym czasie Rzecki jako jego pełnomocnik odwiedza kamienicę Łęckich. Zaprzyjaźnia się z panią Stawską, jej matką i córeczką i w efekcie wizyty obniża im czynsz. Poznaje także baronową Krzeszowską oraz nie płacących w ogóle czynszu studentów. Wokulski hula w Paryżu z Suzinem. W wolnych chwilach przyjmuje tłumy interesantów - jako ewentualny "sponsor". Zaciekawiają go dwie postacie: baronowej Saint-Germain zleca odszukanie zaginionego męża pani Stawskiej, a profesor Geist fascynuje go doświadczeniami z metalami, wśród których jest też metal lżejszy od powietrza. Ale serce nie sługa - kiedy otrzymuje list od hrabiny, wraca do Warszawy. [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123346" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123346','ekipa_skrocona123346','ekipa123346','ekipa_schowaj123346','ekipa_schowaj_krotki123346','ekipa_schowaj_pelny123346','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123346" class="jslink" onclick="pzf('ekipa_skrocona123346','ekipa_pelna123346','ekipa123346','ekipa_schowaj123346','ekipa_schowaj_pelny123346','ekipa_schowaj_krotki123346','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123346"123346" class="jslink" onclick="pzz('ekipa123346','ekipa_schowaj123346')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123346" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123346">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/112697">Alina Janowska</a></div><div class="ekipa_opis"> Krzeszowska</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Helena Stawska</div><div class="ekipa_osoba"><a href="index.php/111917">Danuta Szaflarska</a></div><div class="ekipa_opis"> Misiewiczowa, matka Stawskiej</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> baronowa Saint-Germain</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Brodacz, student w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/111709">Włodzimierz Boruński</a></div><div class="ekipa_opis"> Michał Szuman, przyjaciel Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/111846">Józef Duriasz</a></div><div class="ekipa_opis"> August Katz, subiekt w sklepie Minclów</div><div class="ekipa_osoba">Aleksandr Kaliagin</div><div class="ekipa_opis"> Suzin</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/11276">Janusz Kłosiński</a></div><div class="ekipa_opis"> Wirski, rządca w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/111051">Mieczysław Voit</a></div><div class="ekipa_opis"> profesor Bernard Geist</div><div class="ekipa_osoba"><a href="index.php/111533">Krystyna Kołodziejczyk</a></div><div class="ekipa_opis"> Franusia, gosposia Stawskiej</div><div class="ekipa_osoba"><a href="index.php/112277">Piotr Wysocki</a></div><div class="ekipa_opis"> Gimard, sekretarz Wokulskiego w Paryżu</div><div class="ekipa_osoba"><a href="index.php/113640">Joanna Walter</a></div><div class="ekipa_opis"> Wirska, żona rządcy</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Marysia, służąca Krzeszowskiej</div><div class="ekipa_osoba"><a href="index.php/1115585">Edyta Harmoza</a></div><div class="ekipa_opis"> Helusia Stawska</div><div class="ekipa_osoba"><a href="index.php/11277">Marian Łącz</a></div><div class="ekipa_opis"> żołnierz na Węgrzech</div><div class="ekipa_osoba"><a href="index.php/1110296">Ryszard Stogowski</a></div><div class="ekipa_opis"> petent u Wokulskiego w Paryżu</div><div class="ekipa_osoba"><a href="index.php/11673">Maciej Sławiński</a></div><div class="ekipa_opis"> ranny żołnierz niemiecki</div><div class="ekipa_osoba"><a href="index.php/115437">Michał Szwejlich</a></div><div class="ekipa_opis"> Żyd wiozący Rzeckiego z Węgier</div><div class="ekipa_osoba"><a href="index.php/112905">Krzysztof Świętochowski</a></div><div class="ekipa_opis"> żołnierz na Węgrzech</div><div class="ekipa_osoba"><a href="index.php/1110745">Eugeniusz Wałaszek</a></div><div class="ekipa_opis"> petent u Wokulskiego w Paryżu</div><div class="ekipa_osoba"><a href="index.php/114872">Wiktor Zborowski</a></div><div class="ekipa_opis"> żołnierz na Węgrzech</div><div class="ekipa_osoba"><a href="index.php/112422">Andrzej Żarnecki</a></div><div class="ekipa_opis"> petent u Wokulskiego w Paryżu</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/114513">Zdzisław Wardejn</a></div><div class="ekipa_opis"> Maruszewicz; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123346">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj123346" class="jslink" onclick="pzz1('varia123346','varia_schowaj123346')">pokaż</span></div></h2>
+<table id="varia123346" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">
+          
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/119217">Jacques Offenbach</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Opracowanie muzyczne  
+            </td><td class="varia_osoba"><a href="index.php/11507">Piotr Marczewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/111808">Orkiestra Polskiego Radia i Telewizji (Łódź)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/112724">Andrzej Rokicki</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>WIEJSKIE ROZRYWKI (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">78 min</div></li>
+</ul>
+<p class="opis">Wokulski wraca z Paryża, by na zaproszenie prezesowej spędzić lato w Zasławiu. Są tu już panna Izabela, Kazio Starski, Julian Ochocki, Fela i Ewelina Janockie, Kazia Wąsowska i baron Dalski. Widząc, że Wokulski cieszy się powszechnym szacunkiem i zainteresowaniem kobiet, panna Łęcka zmiania nieco swój stosunek do niego i po raz pierwszy pozwala mu mieć nadzieję na wspólną przyszłość. Wokulski wyjeżdża szczęśliwy.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123348" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123348','ekipa_skrocona123348','ekipa123348','ekipa_schowaj123348','ekipa_schowaj_krotki123348','ekipa_schowaj_pelny123348','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123348" class="jslink" onclick="pzf('ekipa_skrocona123348','ekipa_pelna123348','ekipa123348','ekipa_schowaj123348','ekipa_schowaj_pelny123348','ekipa_schowaj_krotki123348','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123348"123348" class="jslink" onclick="pzz('ekipa123348','ekipa_schowaj123348')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123348" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123348">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div class="ekipa_osoba"><a href="index.php/11390">Lucyna Brusikiewicz</a></div><div class="ekipa_opis"> Felicja Janocka, siostra Eweliny</div><div class="ekipa_osoba"><a href="index.php/115285">Zofia Jaroszewska</a></div><div class="ekipa_opis"> prezesowa Zasławska</div><div class="ekipa_osoba"><a href="index.php/11223">Barbara Wrzesińska</a></div><div class="ekipa_opis"> Kazimiera Wąsowska</div><div class="ekipa_osoba"><a href="index.php/1115639">Małgorzata Wydrzycka</a></div><div class="ekipa_opis"> Ewelina Janocka, narzeczona barona  Dalskiego</div><div class="ekipa_osoba"><a href="index.php/112958">Jan Ciecierski</a></div><div class="ekipa_opis"> baron Dalski</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/1115640">Marian Łaszewski</a></div><div class="ekipa_opis"> Węgiełek</div><div class="ekipa_osoba"><a href="index.php/11234">Roman Wilhelmi</a></div><div class="ekipa_opis"> Kazimierz Starski</div><div class="ekipa_osoba"><a href="index.php/114638">Andrzej Zaorski</a></div><div class="ekipa_opis"> Julian Ochocki</div><div class="ekipa_osoba"><a href="index.php/11245">Wiktor Grotowicz</a></div><div class="ekipa_opis"> konduktor w pociągu</div><div class="ekipa_osoba"><a href="index.php/1115641">Jadwiga Janczewska</a></div><div class="ekipa_opis"> matka Węgiełka</div><div class="ekipa_osoba"><a href="index.php/116641">Jerzy Tyczyński</a></div><div class="ekipa_opis"> lokaj prezesowej Zasławskiej</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123348">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>CIĄG DALSZY PAMIĘTNIKA STAREGO SUBIEKTA (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">78 min</div></li>
+</ul>
+<p class="opis">Wokulski za wszelką cenę pragnie przypodobać się Izabeli. Postanawia nawet sprzedać sklep. Ignacy Rzecki odnotowuje w swym pamiętniku dwa wydarzenia, które poruszyły opinię publiczną, oba związane ze sprzedażą kamienicy Łęckich baronowej Krzeszowskiej. Nowa właścicielka domu wytoczyła procesy swoim dawnym lokatorom - studentom oraz pani Stawskiej. Oskarżyła ją o kradzież lalki. Odbyła się rozprawa sądowa, podczas której baronowa została ośmieszona.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123349" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123349','ekipa_skrocona123349','ekipa123349','ekipa_schowaj123349','ekipa_schowaj_krotki123349','ekipa_schowaj_pelny123349','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123349" class="jslink" onclick="pzf('ekipa_skrocona123349','ekipa_pelna123349','ekipa123349','ekipa_schowaj123349','ekipa_schowaj_pelny123349','ekipa_schowaj_krotki123349','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123349"123349" class="jslink" onclick="pzz('ekipa123349','ekipa_schowaj123349')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123349" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123349">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/112697">Alina Janowska</a></div><div class="ekipa_opis"> Krzeszowska</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Helena Stawska</div><div class="ekipa_osoba"><a href="index.php/111917">Danuta Szaflarska</a></div><div class="ekipa_opis"> Misiewiczowa, matka Stawskiej</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Marysia, służąca Krzeszowskiej</div><div class="ekipa_osoba"><a href="index.php/1142">Bogdan Baer</a></div><div class="ekipa_opis"> Szprot</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Brodacz, student w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/111709">Włodzimierz Boruński</a></div><div class="ekipa_opis"> Michał Szuman, przyjaciel Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11273">Mieczysław Czechowicz</a></div><div class="ekipa_opis"> radca Węgrowicz</div><div class="ekipa_osoba"><a href="index.php/11626">Aleksander Fogiel</a></div><div class="ekipa_opis"> sędzia</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Henryk Szlangbaum</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/11276">Janusz Kłosiński</a></div><div class="ekipa_opis"> Wirski, rządca w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/111058">Józef Nalberczak</a></div><div class="ekipa_opis"> Deklewski</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/11664">Jerzy Rogalski</a></div><div class="ekipa_opis"> Patkiewicz, student w kamieny Łęckiego</div><div class="ekipa_osoba"><a href="index.php/113290">Piotr Skarga</a></div><div class="ekipa_opis"> Maleski, student w kamieny Łęckiego</div><div class="ekipa_osoba"><a href="index.php/114513">Zdzisław Wardejn</a></div><div class="ekipa_opis"> Maruszewicz</div><div class="ekipa_osoba"><a href="index.php/11674">Zygmunt Zintel</a></div><div class="ekipa_opis"> adwokat Krzeszowskiej</div><div class="ekipa_osoba"><a href="index.php/11160">Andrzej Jurczak</a></div><div class="ekipa_opis"> służący Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Klein, subiekt w sklepie Wokulskiego; w napisach nazwisko: Friedman</div><div class="ekipa_osoba"><a href="index.php/111533">Krystyna Kołodziejczyk</a></div><div class="ekipa_opis"> Franusia, gosposia Stawskiej</div><div class="ekipa_osoba"><a href="index.php/113985">Krzysztof Litwin</a></div><div class="ekipa_opis"> Zięba, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/117126">Zbigniew Niewczas</a></div><div class="ekipa_opis"> adwokat Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/111465">Wojciech Pokora</a></div><div class="ekipa_opis"> Lisiecki, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11814">Henryk Dudziński</a></div><div class="ekipa_opis"> mężczyzna w sądzie</div><div class="ekipa_osoba"><a href="index.php/1115585">Edyta Harmoza</a></div><div class="ekipa_opis"> Helusia Stawska</div><div class="ekipa_osoba"><a href="index.php/117081">Ludwik Kasendra</a></div><div class="ekipa_opis"> mężczyzna w sądzie</div><div class="ekipa_osoba"><a href="index.php/1149619">Sabina Mielczarek</a></div><div class="ekipa_opis"> kobieta w sądzie; w napisach nazwisko: Milczarek</div><div class="ekipa_osoba"><a href="index.php/111720">Lena Wilczyńska</a></div><div class="ekipa_opis"> kobieta w sądzie</div><div class="ekipa_osoba"><a href="index.php/114826">Wojciech Machnicki</a></div><div class="ekipa_opis"> kelner Józio; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123349">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj123349" class="jslink" onclick="pzz1('varia123349','varia_schowaj123349')">pokaż</span></div></h2>
+<table id="varia123349" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwór muzyczny</td></tr><tr><td colspan="3" class="varia_tytul">
+          
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/116457">Robert Schumann</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Opracowanie muzyczne  
+            </td><td class="varia_osoba"><a href="index.php/11507">Piotr Marczewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/111808">Orkiestra Polskiego Radia i Telewizji (Łódź)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/112724">Andrzej Rokicki</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>DAMY I KOBIETY (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">78 min</div></li>
+</ul>
+<p class="opis">Podczas koncertu skrzypcowego Molinariego panna Izabela wpada w ekstazę, potem przychylnym okiem patrzy na zaloty skrzypka. Urażony Wokulski przestaje ją odwiedzać. Pani Wąsowska podsuwa mu myśl, że był to odwet Izabeli za jego wizyty u Stawskiej. Wokulski pędzi z przeprosinami i wychodzi z domu Łęckich jako narzeczony Izabeli. Pani Stawska wyjeżdża z Warszawy. Baron wraca do żony i wynajmuje na nowo mieszkanie tym samym studentom. Prezesowa umiera, zostawiając 10 tysięcy rubli Starskiemu. Wokulski z Izabelą, jej ojcem i panną Florentyną jadą do Paryża. W ostatniej chwili dołącza do nich pan Starski. W pociągu Wokulski jest mimowolnym świadkiem pieszczot swojej narzeczonej i jej kuzyna. Na najbliższej stacji wysiada, chce popełnić samobójstwo.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123353" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123353','ekipa_skrocona123353','ekipa123353','ekipa_schowaj123353','ekipa_schowaj_krotki123353','ekipa_schowaj_pelny123353','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123353" class="jslink" onclick="pzf('ekipa_skrocona123353','ekipa_pelna123353','ekipa123353','ekipa_schowaj123353','ekipa_schowaj_pelny123353','ekipa_schowaj_krotki123353','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123353"123353" class="jslink" onclick="pzz('ekipa123353','ekipa_schowaj123353')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123353" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123353">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div class="ekipa_osoba"><a href="index.php/112697">Alina Janowska</a></div><div class="ekipa_opis"> Krzeszowska</div><div class="ekipa_osoba"><a href="index.php/115285">Zofia Jaroszewska</a></div><div class="ekipa_opis"> prezesowa Zasławska</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Helena Stawska</div><div class="ekipa_osoba"><a href="index.php/11721">Anna Milewska</a></div><div class="ekipa_opis"> Florentyna, kuzynka Łęckiej</div><div class="ekipa_osoba"><a href="index.php/111522">Zofia Mrozowska</a></div><div class="ekipa_opis"> hrabina Joanna Karolowa, siostra Łęckiego</div><div class="ekipa_osoba"><a href="index.php/111917">Danuta Szaflarska</a></div><div class="ekipa_opis"> Misiewiczowa, matka Stawskiej</div><div class="ekipa_osoba"><a href="index.php/11223">Barbara Wrzesińska</a></div><div class="ekipa_opis"> Kazimiera Wąsowska</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Marysia, służąca Krzeszowskiej</div><div class="ekipa_osoba"><a href="index.php/111965">Joanna Żółkowska</a></div><div class="ekipa_opis"> Marianna</div><div class="ekipa_osoba"><a href="index.php/111709">Włodzimierz Boruński</a></div><div class="ekipa_opis"> Michał Szuman, przyjaciel Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/114707">Emil Karewicz</a></div><div class="ekipa_opis"> Tomasz Łęcki, ojciec Izabeli</div><div class="ekipa_osoba"><a href="index.php/11276">Janusz Kłosiński</a></div><div class="ekipa_opis"> Wirski, rządca w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11627">Zdzisław Maklakiewicz</a></div><div class="ekipa_opis"> Konstanty, lokaj barona Krzeszowskiego</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/113290">Piotr Skarga</a></div><div class="ekipa_opis"> Maleski, student w kamieny Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11802">Igor Śmiałowski</a></div><div class="ekipa_opis"> książę</div><div class="ekipa_osoba"><a href="index.php/114513">Zdzisław Wardejn</a></div><div class="ekipa_opis"> Maruszewicz</div><div class="ekipa_osoba"><a href="index.php/11234">Roman Wilhelmi</a></div><div class="ekipa_opis"> Kazimierz Starski</div><div class="ekipa_osoba"><a href="index.php/11925">Czesław Wołłejko</a></div><div class="ekipa_opis"> Krzeszowski</div><div class="ekipa_osoba"><a href="index.php/114638">Andrzej Zaorski</a></div><div class="ekipa_opis"> Julian Ochocki</div><div class="ekipa_osoba"><a href="index.php/117292">Marek Barbasiewicz</a></div><div class="ekipa_opis"> skrzypek Molinari</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Brodacz, student w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11390">Lucyna Brusikiewicz</a></div><div class="ekipa_opis"> Felicja Janocka, siostra Eweliny</div><div class="ekipa_osoba"><a href="index.php/11670">Wirgiliusz Gryń</a></div><div class="ekipa_opis"> dróżnik Kacper Wysocki</div><div class="ekipa_osoba"><a href="index.php/1115640">Marian Łaszewski</a></div><div class="ekipa_opis"> Węgiełek</div><div class="ekipa_osoba"><a href="index.php/11664">Jerzy Rogalski</a></div><div class="ekipa_opis"> Patkiewicz, student w kamieny Łęckiego</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> furman Wysocki</div><div class="ekipa_osoba"><a href="index.php/1115639">Małgorzata Wydrzycka</a></div><div class="ekipa_opis"> Ewelina Janocka, narzeczona barona  Dalskiego</div><div class="ekipa_osoba"><a href="index.php/11927">Aleksander Gąssowski</a></div><div class="ekipa_opis"> ksiądz nad łóżkiem prezesowej Zasławskiej</div><div class="ekipa_osoba"><a href="index.php/111889">Andrzej Herder</a></div><div class="ekipa_opis"> Pieczarkowski</div><div class="ekipa_osoba"><a href="index.php/111157">Józef Kalita</a></div><div class="ekipa_opis"> lokaj Wąsowskiej</div><div class="ekipa_osoba"><a href="index.php/11818">Eugeniusz Korczarowski</a></div><div class="ekipa_opis"> Rydzewski</div><div class="ekipa_osoba"><a href="index.php/111243">Czesław Lasota</a></div><div class="ekipa_opis"> rezydent u prezesowej</div><div class="ekipa_osoba"><a href="index.php/111244">Mieczysław Łoza</a></div><div class="ekipa_opis"> zawiadowca na stacji w Skierniewicach</div><div class="ekipa_osoba"><a href="index.php/114206">Maciej Maciejewski</a></div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba"><a href="index.php/117967">Stanisław Michalik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118218">Aniela Świderska</a></div><div class="ekipa_opis"> kobieta na koncercie Molinariego</div><div class="ekipa_osoba"><a href="index.php/112162">Ryszard Barycz</a></div><div class="ekipa_opis"> arystokrata; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/111533">Krystyna Kołodziejczyk</a></div><div class="ekipa_opis"> Franusia, gosposia Stawskiej; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/115275">Maria Mamona</a></div><div class="ekipa_opis"> kobieta na koncercie Molinariego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1110314">Jacek Nieżychowski</a></div><div class="ekipa_opis"> arystokrata; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/114570">Agata Rzeszewska</a></div><div class="ekipa_opis"> kobieta na koncercie Molinariego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/113265">Grażyna Szapołowska</a></div><div class="ekipa_opis"> kobieta na koncercie Molinariego; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11165">Tadeusz Teodorczyk</a></div><div class="ekipa_opis"> Mikołaj, służący Łęckich; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/116641">Jerzy Tyczyński</a></div><div class="ekipa_opis"> lokaj prezesowej Zasławskiej; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123353">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj123353" class="jslink" onclick="pzz1('varia123353','varia_schowaj123353')">pokaż</span></div></h2>
+<table id="varia123353" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Utwory muzyczne</td></tr><tr><td colspan="3" class="varia_tytul">
+          
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+              
+              
+              
+              
+            </td><td class="varia_osoba"><a href="index.php/112803">Johann Strauss (syn)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/118274">Niccolo Paganini</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1115654">B Pietrzak</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba">Charles Gounod</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba">Giuseppe Verdi</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Opracowanie muzyczne  
+            </td><td class="varia_osoba"><a href="index.php/11507">Piotr Marczewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/111808">Orkiestra Polskiego Radia i Telewizji (Łódź)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Dyrygent  
+            </td><td class="varia_osoba"><a href="index.php/112724">Andrzej Rokicki</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>DUSZA W LETARGU (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">78 min</div></li>
+</ul>
+<p class="opis">Stanisław Wokulski otrzymuje wiadomość o śmierci męża pani Stawskiej. Choć nie widuje już Izabeli, wciąż ją kocha i zarazem nią pogardza. Spotyka się z panią Wąsowską, która opowiada mu o jego ukochanej. Umiera Łęcki, pani Stawska przyjmuje oświadczyny Mraczewskiego. Wokulski pewnego dnia po prostu znika. Z Zasławia nadchodzi wieść, że prawdopodobnie wysadził się w ruinach zamku. Jego miejsce w spółce zajmuje Szlangbaum. Wkrótce umiera także stary subiekt, Ignacy Rzecki. Na pytanie doktora Szumana, kto tu zostanie, skoro najlepsi umierają lub jak Ochocki wyjeżdżają - odpowiadają Szlangbaum i Maruszewicz: "My". [PAT]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123368" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123368','ekipa_skrocona123368','ekipa123368','ekipa_schowaj123368','ekipa_schowaj_krotki123368','ekipa_schowaj_pelny123368','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123368" class="jslink" onclick="pzf('ekipa_skrocona123368','ekipa_pelna123368','ekipa123368','ekipa_schowaj123368','ekipa_schowaj_pelny123368','ekipa_schowaj_krotki123368','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123368"123368" class="jslink" onclick="pzz('ekipa123368','ekipa_schowaj123368')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123368" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123368">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111019">Małgorzata Braunek</a></div><div class="ekipa_opis"> Izabela Łęcka</div><div class="ekipa_osoba"><a href="index.php/11223">Barbara Wrzesińska</a></div><div class="ekipa_opis"> Kazimiera Wąsowska</div><div class="ekipa_osoba"><a href="index.php/1142">Bogdan Baer</a></div><div class="ekipa_opis"> Szprot</div><div class="ekipa_osoba"><a href="index.php/111709">Włodzimierz Boruński</a></div><div class="ekipa_opis"> Michał Szuman, przyjaciel Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11535">Krzysztof Chamiec</a></div><div class="ekipa_opis"> hrabia Anglik, sekundant barona  Krzeszowskiego</div><div class="ekipa_osoba"><a href="index.php/112958">Jan Ciecierski</a></div><div class="ekipa_opis"> baron Dalski</div><div class="ekipa_osoba"><a href="index.php/11273">Mieczysław Czechowicz</a></div><div class="ekipa_opis"> radca Węgrowicz</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> Mraczewski</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Klein, subiekt w sklepie Wokulskiego; w napisach nazwisko: Friedman</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Henryk Szlangbaum</div><div class="ekipa_osoba"><a href="index.php/11167">Jerzy Kamas</a></div><div class="ekipa_opis"> Stanisław Wokulski</div><div class="ekipa_osoba"><a href="index.php/11276">Janusz Kłosiński</a></div><div class="ekipa_opis"> Wirski, rządca w kamienicy Łęckiego</div><div class="ekipa_osoba"><a href="index.php/113985">Krzysztof Litwin</a></div><div class="ekipa_opis"> Zięba, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/113599">Jerzy Łapiński</a></div><div class="ekipa_opis"> Gutmorgen</div><div class="ekipa_osoba"><a href="index.php/11227">Bronisław Pawlik</a></div><div class="ekipa_opis"> Ignacy Rzecki</div><div class="ekipa_osoba"><a href="index.php/111465">Wojciech Pokora</a></div><div class="ekipa_opis"> Lisiecki, subiekt w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11802">Igor Śmiałowski</a></div><div class="ekipa_opis"> książę</div><div class="ekipa_osoba"><a href="index.php/114513">Zdzisław Wardejn</a></div><div class="ekipa_opis"> Maruszewicz</div><div class="ekipa_osoba"><a href="index.php/114638">Andrzej Zaorski</a></div><div class="ekipa_opis"> Julian Ochocki</div><div class="ekipa_osoba"><a href="index.php/1111003">Bolesław Bolkowski</a></div><div class="ekipa_opis"> rejent</div><div class="ekipa_osoba"><a href="index.php/11160">Andrzej Jurczak</a></div><div class="ekipa_opis"> służący Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/11177">Włodzimierz Kwaskowski</a></div><div class="ekipa_opis"> Szlangbaum, ojciec Henryka</div><div class="ekipa_osoba"><a href="index.php/11941">Edward Lach</a></div><div class="ekipa_opis"> hrabia</div><div class="ekipa_osoba"><a href="index.php/11180">Józef Łodyński</a></div><div class="ekipa_opis"> Paweł, służący w sklepie Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/113764">Krzysztof Różycki</a></div><div class="ekipa_opis"> fryzjer Wokulskiego</div><div class="ekipa_osoba"><a href="index.php/111846">Józef Duriasz</a></div><div class="ekipa_opis"> August Katz, subiekt w sklepie Minclów; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/111157">Józef Kalita</a></div><div class="ekipa_opis"> lokaj Wąsowskiej; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11629">Andrzej Krasicki</a></div><div class="ekipa_opis"> hrabia, sekundant barona Krzeszowskiego; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123368">
+</ul>
+</div>
+<span class="clear"></span></div><div id="czasgen">2026.09.02 00:52:32</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

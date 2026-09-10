@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - ABY DO ŚWITU...</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>ABY DO ŚWITU...</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="123459" selected >1</option><option value="123459_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/123459_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/123459_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1992</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">1992. 04. 27</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film obyczajowy, Telenowela</div></li>
+<li><div class="film_tech3">Barwny, 18 odcinków<br /><br />
+Odcinek 14 /MACIEJ KOREBA/ został wyemitowany 27 maja 1992. Z tym dniem serial został zdjęty z ekranu przez nowego szefa Radiokomitetu po dymisji pomysłodawcy serialu - <a href="index.php/113507">Jana Purzyckiego</a>.</div></li>
+</ul>
+<p class="opis">Bohaterami "Aby do świtu" są pracownicy nocnej zmiany w sortowni prasy. Oni pierwsi mogą dowiedzieć się z gazet o najnowszych wydarzeniach w kraju. Początkowo intencją twórców cyklu było, by pracownicy sortowni w trakcie wykonywania swych obowiązków komentowali bieżące wypadki polityczne, gospodarcze, kulturalne. Komentarz ten miał być wszechstronny i rozłożony na wiele punktów widzenia. Wszak w sortowni pracują rozmaici ludzie. Jest oczytany student, młoda anarchistka z prowincji, mówiący "wiechem" warszawski cwaniak, bohater wojsk ONZ z rejonu Gazy, apetyczna energoterapeutka. W trakcie powstawania kolejnych odcinków okazało się jednak, że fabułę lepiej układa się wokół osobistych problemów bohaterów, zwłaszcza szefa, granego przez Piotra Fronczewskiego.</p><div class="galeria_mala"><a href="index.php?fotos=163459_1&galeria=153459"><img class="bezcienia" src="../z1/59i/3459_1.jpg" height="60"></a><a href="index.php?fotos=163459_2&galeria=153459"><img class="bezcienia" src="../z1/59i/3459_2.jpg" height="60"></a><a href="index.php?fotos=163459_3&galeria=153459"><img class="bezcienia" src="../z1/59i/3459_3.jpg" height="60"></a><a href="index.php/153459" title="Galeria zdjęć (3)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123459" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123459','ekipa_skrocona123459','ekipa123459','ekipa_schowaj123459','ekipa_schowaj_krotki123459','ekipa_schowaj_pelny123459','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123459" class="jslink" onclick="pzf('ekipa_skrocona123459','ekipa_pelna123459','ekipa123459','ekipa_schowaj123459','ekipa_schowaj_pelny123459','ekipa_schowaj_krotki123459','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123459"123459" class="jslink" onclick="pzz('ekipa123459','ekipa_schowaj123459')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123459" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123459">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-14, 17-18</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122">Krzysztof Gruber</a></div><div class="ekipa_opis wyroznienie"> odcinki: 15-16</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/111036">Urszula Wolska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1122">Krzysztof Gruber</a></div><div class="ekipa_opis"> odcinki: 1-14, 17-18</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/1116093">Andrzej Chlebowski</a></div><div class="ekipa_opis"> odcinki: 1-6</div><div class="ekipa_osoba"><a href="index.php/1116092">Anna Celentano</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-5</div><div class="ekipa_osoba"><a href="index.php/112355">Barbara Dąbkiewicz</a></div><div class="ekipa_opis"> odcinki: 3, 6-8</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1116094">Marta Szyszko</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116093">Andrzej Chlebowski</a></div><div class="ekipa_opis"> odcinki: 9-18</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/112355">Barbara Dąbkiewicz</a></div><div class="ekipa_opis"> odcinki: 9-18</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114342">Jacek Janczarski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2, 4-10</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114131">Ilona Łepkowska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2, 4-9, 12, 14, 16</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115120">Michał Arabudzki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2, 4-9, 11, 15, 18</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110388">Paweł Mossakowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2, 4-9, 17</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116127">Jan P. Rezerwowy (pseud.)</a></div><div class="ekipa_opis wyroznienie"> odcinki: 3, 10</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 13</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenariuszowa</div><div class="ekipa_osoba"><a href="index.php/1114342">Jacek Janczarski</a></div><div class="ekipa_opis"> odcinki: 11-12</div><div class="ekipa_osoba"><a href="index.php/114131">Ilona Łepkowska</a></div><div class="ekipa_opis"> odcinki: 13-17</div><div class="ekipa_osoba"><a href="index.php/1110388">Paweł Mossakowski</a></div><div class="ekipa_opis"> odcinki: 11-12</div><div class="ekipa_osoba"><a href="index.php/1115120">Michał Arabudzki</a></div><div class="ekipa_opis"> odcinki: 10, 12</div></li>
+<li><div class="ekipa_funkcja">Pomysł</div><div class="ekipa_osoba"><a href="index.php/113507">Jan Purzycki</a></div><div class="ekipa_opis"> filmu</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113426">Krzysztof Pakulski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1116096">Waldemar Bala</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-5</div><div class="ekipa_osoba"><a href="index.php/1116097">Krzysztof Gołąbek</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-5</div><div class="ekipa_osoba"><a href="index.php/1116125">Zbigniew Maziarz</a></div><div class="ekipa_opis"> odcinki: 3, 6-18</div><div class="ekipa_osoba"><a href="index.php/1116126">Mariusz Rakowski</a></div><div class="ekipa_opis"> odcinki: 3, 6-9</div><div class="ekipa_osoba"><a href="index.php/1115881">Damian Skóra</a></div><div class="ekipa_opis"> odcinki: 10-18</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1115883">Jerzy Bęben</a></div><div class="ekipa_opis"> odcinki: 1-6</div><div class="ekipa_osoba"><a href="index.php/1116095">Grzegorz Bieler</a></div><div class="ekipa_opis"> odcinki: 1-6</div><div class="ekipa_osoba"><a href="index.php/1116098">Robert Bartoszewski</a></div><div class="ekipa_opis"> odcinki: 1-6</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1115883">Jerzy Bęben</a></div><div class="ekipa_opis"> odcinki: 9-18</div><div class="ekipa_osoba"><a href="index.php/1116095">Grzegorz Bieler</a></div><div class="ekipa_opis"> odcinki: 9-18</div><div class="ekipa_osoba"><a href="index.php/1116098">Robert Bartoszewski</a></div><div class="ekipa_opis"> odcinki: 9-18</div></li>
+<li><div class="ekipa_funkcja">Obsługa wozu transmisyjnego</div><div class="ekipa_osoba"><a href="index.php/1116102">Jerzy Dzwonkowski</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-5</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111319">Jerzy Sajko</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/113234">Robert Czesak</a></div><div class="ekipa_opis"> odcinki: 1-6</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112079">Teresa Gruber</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1116101">Zdzisław Kobyliński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115874">Tadeusz Pakuła</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113239">Małgorzata Obłoza</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111384">Hanna Ćwikło</a></div><div class="ekipa_opis wyroznienie"> odcinki: 15-18</div></li>
+<li><div class="ekipa_funkcja">Asystent kostiumografa</div><div class="ekipa_osoba"><a href="index.php/111384">Hanna Ćwikło</a></div><div class="ekipa_opis"> odcinki: 1-14</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111797">Janina Dybowska-Person</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent charakteryzatora</div><div class="ekipa_osoba"><a href="index.php/1111096">Bożena Balcerowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/114997">Zbigniew Zbrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116934">Ryszard Nieckuła</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-6</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116500">Jerzy Machnicki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2, 4-5</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114877">Grzegorz Szkarłat</a></div><div class="ekipa_opis wyroznienie"> odcinki: 3, 6-8</div></li>
+<li><div class="ekipa_funkcja">Technik dźwięku</div><div class="ekipa_osoba"><a href="index.php/1114877">Grzegorz Szkarłat</a></div><div class="ekipa_opis"> odcinki: 15-18</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1114877">Grzegorz Szkarłat</a></div><div class="ekipa_opis"> odcinki: 9-14</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116090">Mirosław Stążecki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116091">Sławomir Filip</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2, 4-6</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1116099">Maciej Brzozowski</a></div><div class="ekipa_opis"> odcinki: 1-6</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111910">Paweł Mantorski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112948">Józef Jarosz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/119224">Joanna Stachurska-Łagodziec</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/11529">Anna Kowalska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Sekretariat grupy zdjęciowej</div><div class="ekipa_osoba"><a href="index.php/113263">Bożenna Mrówczyńska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kasjer</div><div class="ekipa_osoba"><a href="index.php/1110266">Anna Siemieniuk</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116100">MTL Maxfilm</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis wyroznienie"> Władysław Jagiełło "Kariera", kierownik  sortowni; w odcinku 16 w rzeczywistości nie  wystąpił, w odcinku 17 tylko głos</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123459">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis"> odcinki: 1-14, 17-18</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122">Krzysztof Gruber</a></div><div class="ekipa_opis"> odcinki: 15-16</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1114342">Jacek Janczarski</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-10</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114131">Ilona Łepkowska</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-9, 12, 14, 16</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115120">Michał Arabudzki</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-9, 11, 15, 18</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1110388">Paweł Mossakowski</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-9, 17</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1116127">Jan P. Rezerwowy (pseud.)</a></div><div class="ekipa_opis"> odcinki: 3, 10</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis"> odcinki: 13</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/113426">Krzysztof Pakulski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/111319">Jerzy Sajko</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/112079">Teresa Gruber</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/113239">Małgorzata Obłoza</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111384">Hanna Ćwikło</a></div><div class="ekipa_opis"> odcinki: 15-18</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/111797">Janina Dybowska-Person</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/118379">Krzesimir Dębski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116934">Ryszard Nieckuła</a></div><div class="ekipa_opis"> odcinki: 1-6</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116500">Jerzy Machnicki</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-5</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114877">Grzegorz Szkarłat</a></div><div class="ekipa_opis"> odcinki: 3, 6-8</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1116090">Mirosław Stążecki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1116091">Sławomir Filip</a></div><div class="ekipa_opis"> odcinki: 1-2, 4-6</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/111910">Paweł Mantorski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112948">Józef Jarosz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/1116100">MTL Maxfilm</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik  sortowni; w odcinku 16 w rzeczywistości nie  wystąpił, w odcinku 17 tylko głos</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj123459" class="jslink" onclick="pzz1('varia123459','varia_schowaj123459')">pokaż</span></div></h2>
+<table id="varia123459" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">W KAŻDYM Z NAS  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1114342">Jacek Janczarski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/115662">Seweryn Krajewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/115662">Seweryn Krajewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">ABY DO ŚWITU  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/114487">Jan Pietrzak</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/112498">Włodzimierz Korcz</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/11799">Piotr Fronczewski</a></td><td class="varia_osoba_opis"></td></tr>
+</table><div class="podzbior"><h1>INES (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">19 min</div></li>
+</ul>
+<p class="opis">Do pracy zostaje przyjęta młoda dziewczyna imieniem Ines. Pochodzi z prowincji, nosi czarną kurtkę i plecak, ma zdecydowanie anarchistyczne poglądy. Na tle pozostałych pracowników sortowni sprawia wrażenie istoty z innego świata. Być może dlatego wzbudza zainteresowanie Romana.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123461" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123461','ekipa_skrocona123461','ekipa123461','ekipa_schowaj123461','ekipa_schowaj_krotki123461','ekipa_schowaj_pelny123461','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123461" class="jslink" onclick="pzf('ekipa_skrocona123461','ekipa_pelna123461','ekipa123461','ekipa_schowaj123461','ekipa_schowaj_pelny123461','ekipa_schowaj_krotki123461','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123461"123461" class="jslink" onclick="pzz('ekipa123461','ekipa_schowaj123461')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123461" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123461">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Szczygieł</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123461">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>PRAWDZIWY PROLETARIUSZ (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">20 min</div></li>
+</ul>
+<p class="opis">Pracownicy sortowni w oczekiwaniu na dostawę najnowszej prasy dzielą się uwagami na temat własnego życia i codziennych wydarzeń.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123462" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123462','ekipa_skrocona123462','ekipa123462','ekipa_schowaj123462','ekipa_schowaj_krotki123462','ekipa_schowaj_pelny123462','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123462" class="jslink" onclick="pzf('ekipa_skrocona123462','ekipa_pelna123462','ekipa123462','ekipa_schowaj123462','ekipa_schowaj_pelny123462','ekipa_schowaj_krotki123462','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123462"123462" class="jslink" onclick="pzz('ekipa123462','ekipa_schowaj123462')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123462" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123462">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Szczygieł</div><div class="ekipa_osoba"><a href="index.php/112066">Wojciech Wysocki</a></div><div class="ekipa_opis"> Bronisław Wronik, prywatny dystrybutor  prasy</div><div class="ekipa_osoba"><a href="index.php/1115188">Iwona Sul</a></div><div class="ekipa_opis"> pani Tereska, asystentka Wronika</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123462">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>MAJOWE ŚWIĘTO (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">21 min</div></li>
+</ul>
+<p class="opis">Owładnięty wspomnieniami Serdel postanawia odpowiednio uczcić noc przed 1 maja. Sprowadza więc do sortowni panienkę lekkich obyczajów. Ta jednak ma zbyt wysokie wymagania, w wyniku czego dochodzi do awantury. Serdel dostaje butelką w głowę i pada zemdlony. Zaniepokojony dziwnymi odgłosami wybiega z kantorka szef. Wkrótce zjawia się też policja, szukająca anarchistów.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123468" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123468','ekipa_skrocona123468','ekipa123468','ekipa_schowaj123468','ekipa_schowaj_krotki123468','ekipa_schowaj_pelny123468','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123468" class="jslink" onclick="pzf('ekipa_skrocona123468','ekipa_pelna123468','ekipa123468','ekipa_schowaj123468','ekipa_schowaj_pelny123468','ekipa_schowaj_krotki123468','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123468"123468" class="jslink" onclick="pzz('ekipa123468','ekipa_schowaj123468')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123468" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123468">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1115625">Ewa Gawryluk</a></div><div class="ekipa_opis"> prostytutka Jola</div><div class="ekipa_osoba"><a href="index.php/1111508">Cezary Pazura</a></div><div class="ekipa_opis"> nadposterunkowy Andrzej</div><div class="ekipa_osoba"><a href="index.php/1110039">Marek Cichucki</a></div><div class="ekipa_opis"> starszy posterunkowy Władek</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123468">
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj123468" class="jslink" onclick="pzz1('varia123468','varia_schowaj123468')">pokaż</span></div></h2>
+<table id="varia123468" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">ŁADNE OCZY MASZ  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/115662">Seweryn Krajewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+            </td><td class="varia_osoba"><a href="index.php/1113343">Marek Dagnan</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/117616">Czerwone Gitary (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">HISTORIA JEDNEJ ZNAJOMOŚCI  
+        </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+            </td><td class="varia_osoba"><a href="index.php/1110184">Krzysztof Klenczon</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+            </td><td class="varia_osoba"><a href="index.php/1112693">Jerzy Kossela</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+            </td><td class="varia_osoba"><a href="index.php/117616">Czerwone Gitary (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+</table><span class="clear"></span></div><div class="podzbior"><h1>ŻYCIOWY WYDATEK (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">20 min</div></li>
+</ul>
+<p class="opis">Szef przychodzi do pracy chory, w związku z czym Jadziunek postanawia zaaplikować mu kurację ziołową własnego pomysłu. Roman spostrzega brak pieniędzy w swoim portfelu i usiłuje dociec przyczyny ich tajemniczego zniknięcia. W wyniku szybkiego dochodzenia wychodzi na jaw, że gotówkę męża wydała Jadziunek na horoskop komputerowy.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123478" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123478','ekipa_skrocona123478','ekipa123478','ekipa_schowaj123478','ekipa_schowaj_krotki123478','ekipa_schowaj_pelny123478','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123478" class="jslink" onclick="pzf('ekipa_skrocona123478','ekipa_pelna123478','ekipa123478','ekipa_schowaj123478','ekipa_schowaj_pelny123478','ekipa_schowaj_krotki123478','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123478"123478" class="jslink" onclick="pzz('ekipa123478','ekipa_schowaj123478')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123478" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123478">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123478">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>AWANTURA (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">19 min</div></li>
+</ul>
+<p class="opis">Jadziunek wpada na szatański pomysł. Postanawia zrobić szefowi elektryzujący sweter.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123479" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123479','ekipa_skrocona123479','ekipa123479','ekipa_schowaj123479','ekipa_schowaj_krotki123479','ekipa_schowaj_pelny123479','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123479" class="jslink" onclick="pzf('ekipa_skrocona123479','ekipa_pelna123479','ekipa123479','ekipa_schowaj123479','ekipa_schowaj_pelny123479','ekipa_schowaj_krotki123479','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123479"123479" class="jslink" onclick="pzz('ekipa123479','ekipa_schowaj123479')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123479" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123479">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1111833">Piotr Gąsowski</a></div><div class="ekipa_opis"> pirat nagraniowy, "pracodawca" Jagiełły</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123479">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>SATELITA HRABIEGO (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">19 min</div></li>
+</ul>
+<p class="opis">Jeden z pracowników usiłuje załatwić szefowi antenę satelitarną po okazyjnej cenie.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123499" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123499','ekipa_skrocona123499','ekipa123499','ekipa_schowaj123499','ekipa_schowaj_krotki123499','ekipa_schowaj_pelny123499','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123499" class="jslink" onclick="pzf('ekipa_skrocona123499','ekipa_pelna123499','ekipa123499','ekipa_schowaj123499','ekipa_schowaj_pelny123499','ekipa_schowaj_krotki123499','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123499"123499" class="jslink" onclick="pzz('ekipa123499','ekipa_schowaj123499')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123499" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123499">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Czytacz", emerytowany cenzor</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Szczygieł</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123499">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KTO POSPRZĄTA? (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">17 min</div></li>
+</ul>
+<p class="opis">Kierownik zmiany stara się nakłonić pracowników do posprzątania miejsca pracy. Niestety, nie jest to łatwe.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123502" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123502','ekipa_skrocona123502','ekipa123502','ekipa_schowaj123502','ekipa_schowaj_krotki123502','ekipa_schowaj_pelny123502','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123502" class="jslink" onclick="pzf('ekipa_skrocona123502','ekipa_pelna123502','ekipa123502','ekipa_schowaj123502','ekipa_schowaj_pelny123502','ekipa_schowaj_krotki123502','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123502"123502" class="jslink" onclick="pzz('ekipa123502','ekipa_schowaj123502')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123502" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123502">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Szczygieł</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Czytacz", emerytowany cenzor</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123502">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>LADY (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">19 min</div></li>
+</ul>
+<p class="opis">Pracownicy sortowni wymieniają uwagi na temat stanu bezpieczeństwa polskich obywateli i komentują aktualne wydarzenia w kraju.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123504" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123504','ekipa_skrocona123504','ekipa123504','ekipa_schowaj123504','ekipa_schowaj_krotki123504','ekipa_schowaj_pelny123504','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123504" class="jslink" onclick="pzf('ekipa_skrocona123504','ekipa_pelna123504','ekipa123504','ekipa_schowaj123504','ekipa_schowaj_pelny123504','ekipa_schowaj_krotki123504','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123504"123504" class="jslink" onclick="pzz('ekipa123504','ekipa_schowaj123504')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123504" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123504">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Szczygieł</div><div class="ekipa_osoba"><a href="index.php/112066">Wojciech Wysocki</a></div><div class="ekipa_opis"> Bronisław Wronik, prywatny dystrybutor  prasy</div><div class="ekipa_osoba"><a href="index.php/1116178">Aldona Jungowska</a></div><div class="ekipa_opis"> Marzenka, asystentka Wronika</div><div class="ekipa_osoba"><a href="index.php/118631">Anna Gornostaj</a></div><div class="ekipa_opis"> sprzątaczka Tamara "Lady"</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123504">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KOGO WYRZUCIĆ (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">21 min</div></li>
+</ul>
+<p class="opis">Szef postanawia wypić ubiegłoroczny koniak, by ukoić uporczywą chandrę, spowodowaną niewesołą sytuacją w kraju.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123506" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123506','ekipa_skrocona123506','ekipa123506','ekipa_schowaj123506','ekipa_schowaj_krotki123506','ekipa_schowaj_pelny123506','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123506" class="jslink" onclick="pzf('ekipa_skrocona123506','ekipa_pelna123506','ekipa123506','ekipa_schowaj123506','ekipa_schowaj_pelny123506','ekipa_schowaj_krotki123506','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123506"123506" class="jslink" onclick="pzz('ekipa123506','ekipa_schowaj123506')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123506" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123506">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1114993">Monika Bolly</a></div><div class="ekipa_opis"> Ines</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> "Serdel"</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/112572">Ewa Ziętek</a></div><div class="ekipa_opis"> Jadwiga "Jadziuniek" Sewer-Bossakowska,  żona Romana</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> Maciej Koreba "Student"</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Czytacz", emerytowany cenzor</div><div class="ekipa_osoba"><a href="index.php/118631">Anna Gornostaj</a></div><div class="ekipa_opis"> sprzątaczka Tamara "Lady"</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123506">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>BILARD (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">20 min</div></li>
+</ul>
+<p class="opis">Do sortowni prasy wkracza policja. Ma zabezpieczyć ślady domniemanego włamania.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki123512" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna123512','ekipa_skrocona123512','ekipa123512','ekipa_schowaj123512','ekipa_schowaj_krotki123512','ekipa_schowaj_pelny123512','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny123512" class="jslink" onclick="pzf('ekipa_skrocona123512','ekipa_pelna123512','ekipa123512','ekipa_schowaj123512','ekipa_schowaj_pelny123512','ekipa_schowaj_krotki123512','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj123512"123512" class="jslink" onclick="pzz('ekipa123512','ekipa_schowaj123512')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa123512" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna123512">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> Władysław Jagiełło "Kariera", kierownik sortowni</div><div class="ekipa_osoba"><a href="index.php/1196">Jerzy Bończak</a></div><div class="ekipa_opis"> Roman Sewer-Bossakowski</div><div class="ekipa_osoba"><a href="index.php/113027">Paweł Wawrzecki</a></div><div class="ekipa_opis"> Szczygieł</div><div class="ekipa_osoba"><a href="index.php/1111508">Cezary Pazura</a></div><div class="ekipa_opis"> nadposterunkowy Andrzej</div><div class="ekipa_osoba"><a href="index.php/1110039">Marek Cichucki</a></div><div class="ekipa_opis"> starszy posterunkowy Władek</div><div class="ekipa_osoba"><a href="index.php/1112851">Grażyna Strachota</a></div><div class="ekipa_opis"> Marta Blum, architekt wnętrz,  przedstawicielka firmy Wronika</div><div class="ekipa_osoba"><a href="index.php/112172">Robert Rogalski</a></div><div class="ekipa_opis"> Władysław, majster z firmy Wronika</div></li>
+<li><div class="ekipa_funkcja">Obsada aktorska (głos w tle)</div><div class="ekipa_osoba"><a href="index.php/117628">Agnieszka Kotulanka</a></div><div class="ekipa_opis"> Bożenka, żona kierownika</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona123512">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="123459" selected >1</option><option value="123459_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/123459_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/123459_2"></a> 
+</nav><div id="czasgen">2026.05.08 02:55:07</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

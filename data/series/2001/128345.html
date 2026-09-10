@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - MIASTECZKO</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>MIASTECZKO</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="128345" selected >1</option><option value="128345_2">2</option><option value="128345_3">3</option><option value="128345_4">4</option><option value="128345_5">5</option><option value="128345_6">6</option><option value="128345_7">7</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/128345_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/128345_7"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000-2001</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2000. 03. 27</div></li>
+<li><div class="film_tech3">Barwny, 61 odcinków x ok. 40 min<br /><br />
+Okres zdjęciowy rozpoczął się 29 listopada 1999.<br />
+Lokacje: Warszawa, Konstancin, Serock.<br /><br />
+Uwaga: Czas trwania odcinków podawany orientacyjnie. Zawiera także reklamy przerywające emisję serialu.</div></li>
+</ul>
+<p class="opis">"Ślubu nie będzie!"- informuje zdenerwowany Tomek Tarnawski zgromadzoną w kościele rodzinę i przyjaciół z Zagórzyna. Tak rozpoczynają się perypetie mieszkańców podwarszawskiego miasteczka. Narzeczona Tomka - Teresa Siudym - ucieka sprzed ołtarza, a Tomek niespodziewanie zostaje ojcem i wikła się w nieszczęśliwy związek z bezwzględną prezenterką telewizyjną - Ireną. Świetnie zapowiadająca się kariera Tomka w stolicy wydaje się spełnieniem marzeń jego matki, Wandy. Ambitna i energiczna pani burmistrz Zagórzyna żelazną ręką zarządza miasteczkiem. Pewnego dnia w jej życiu pojawia się sławny aktor Kostek Kamiński, który stopniowo odsłania przed zakochaną Wandą mroczne strony swojego życia. W miasteczku trwa spór o pałac, w którym mieści się szkoła, jej dyrektor, ojciec Teresy, Janusz Siudym nie godzi się na przeprowadzkę placówki do budynków zastępczych. Agencja Przemysłowa, która chce urządzić w Pałacu hotel, stara się wszelkimi metodami przekonać lub pokonać przeciwnika. Oskarżony o nieumyślne zabójstwo Janusz jest w prawdziwym niebezpieczeństwie. A pani burmistrz? Czy prawdą jest, że - jak podała miejscowa prasa - przekupiła ją Agencja? Teresa, niedoszła żona Tomka, ucieka z Zagórzyna do Warszawy i poznaje kulisy pracy działu mody kobiecego magazynu. W zawiłości wielkomiejskiego życia wprowadza przyjaciółkę Ela, stylistka mody. Po wielu perypetiach Teresa znajduje miłość i pracę, o jakiej marzyła. Układy rodzinne komplikuje fakt, że Teresą interesuje się wuj Tomka, Igor. Miasteczko zamieszkuje cała galeria barwnych postaci. Młody ksiądz Andrzej próbuje dość niekonwencjonalnymi metodami skłonić parafian do wypełniania przykazań dekalogu. "Jesteś najfajniejszym chłopakiem, jakiego znam" - wyznaje księdzu zakochana w nim Ela. Zosia Siudym, żona dyrektora szkoły, przekształciła swój sklepik w ekskluzywne mini delikatesy, jej brat, Gienio, rolnik, realizuje kolejne szalone wizje, np. próbując hodować strusie. Lucyna, siostra Teresy, cierpi w nieudanym małżeństwie, bowiem jej mąż, biznesmen Marek, zdradza żonę z piękną i niebezpieczna panią adwokat i - sam nie wiedząc kiedy - zostaje wplątany w ciemne interesy jej tajemniczego Szefa. Tak toczą się losy mieszkańców położonego przy warszawskiej autostradzie miasteczka. Jak to w życiu bywa, w pogodny rytm codzienności wplatają się gwałtowne wydarzenia. Do miasteczka wkraczają nowe czasy, każdy z bohaterów na swój sposób próbuje znaleźć swoje miejsce w nowej rzeczywistości, trzymając się tradycyjnych wartości lub próbując odnieść sukces w świecie biznesu.<br />
+<br />
+<b>Charakterystyka głównych bohaterów:</b><br />
+<b>Teresa Siudym:</b> miła, ciepła, trochę naiwna dziewczyna z Zagórzyna, narzeczona Tomka, bardzo w nim zakochana, po niedoszłym ślubie gorączkowo szuka swojego miejsca w życiu, krótko pracuje w Warszawie jako sekretarka w redakcji pisma kobiecego, w którym jej przyjaciółka Ela jest stylistką mody.<br />
+<b>Tomek Tarnawski:</b> ukochany i jedyny syn pani burmistrz, trochę rozpieszczony, ale w sumie sympatyczny i wzbudzający zaufanie, właśnie kończy studia i staje przed dylematem: wybrać karierę naukową czy intratną pracę w banku, mimo, że wiąże się z Ireną, podświadomie wciąż kocha Teresę.<br />
+<b>Irena:</b> ambitna i bezwzględna prezenterka telewizyjna, za wszelką cenę pragnąca zrobić karierę, z premedytacją wybiera Tomka na ojca swojego dziecka, potem próbuje pogodzić pracę z opieką nad niemowlakiem, ale sobie nie radzi.<br />
+<b>Wanda Tarnawska:</b> burmistrz Zagórzyna, kobieta energiczna, ambitna, żelazna ręką zarządzająca miasteczkiem, rozwódka, matka Tomka, w jej życiu pojawia się jednak znany aktor Kostek Kamiński. Wanda postanawia sprzedać Agencji Przemysłowej pałac, w którym mieści się szkoła, na co nie zgadza się Janusz, dyrektor szkoły, w miejscowej prasie ukazuje się artykuł sugerujący, że Agencja dała Wandzie łapówkę.<br />
+<b>Igor Tarnawski:</b> brat Wandy, wdowiec w średnim wieku mieszkający na stałe w Paryżu, dość przystojny, z wdziękiem, kocha się w Teresie, kupuje dom w Zagórzynie i postanawia sprowadzać do Polski zagraniczne wino.<br />
+<b>Zosia Siudym:</b> matka Teresy i Lucyny, kobieta cicha, spokojna, prowadzi sklep w Zagórzynie, mąż Lucyny namawia ją do przekształcenia sklepiku w ekskluzywne mini delikatesy.<br />
+<b>Janusz Siudym:</b> mąż Zosi, ojciec Teresy i Lucyny, dyrektor zagórzyńskiej szkoły, człowiek prawy i porządny, walczy o pozostanie szkoły w pałacu, przez co wchodzi w poważny konflikt z Agencją Przemysłową, która próbuje usunąć niewygodnego dyrektora.<br />
+<b>Gienio:</b> brat Zosi, rolnik wciąż bujający w obłokach z szalonymi pomysłami za życie, m. in. zakłada hodowlę strusi, pomaga też siostrze prowadzić sklep.<br />
+<b>Lucyna:</b> siostra Teresy, córka Zosi i Janusza, nieszczęśliwa w małżeństwie z bogatym biznesmenem, z którym ma kilkuletniego synka, Dominika, nadwrażliwa, na granicy załamania nerwowego, ucieka w alkohol, zaopiekuje się Wojtek, nauczyciel ze szkoły w Zagórzynie., zrodzi się uczucie.<br />
+<b>Marek:</b> mąż Lucyny, młody, bezwzględny biznesmen, zdradza żonę z piękną i niebezpieczną panią adwokat, która wplątuje go w swoje ciemne interesy. <br />
+<b>Michał Małecki:</b> przyjaciel Tomka z Zagórzyna, dziennikarz miejscowej gazety, publikuje artykuł o rzekomej korupcji pani burmistrz, z kumplem Jackiem zaczyna go łączyć coś więcej niż przyjaźń. <br />
+<b>Marysia Małecka:</b> siostra Michała, pracuje w banku w Zagórzynie, skąd zostaje wyrzucona po ujawnieniu bratu informacji o stanie kont pani burmistrz, przyjaciel Michała, Tomek, proponuje jej przyjazd do Warszawy i opiekę nad dzieckiem, Irena jednak podejrzewa ją, że podkochuje się w Tomku. <br />
+<b>Ksiądz Andrzej:</b> młody wikary, który na czas nieobecności proboszcza objął rządy w parafii, wrażliwy idealista, z zapałem próbuje dość niekonwencjonalnymi metodami zbawić świat, Zakochana w nim Ela, próbuje rozbudzić w kapłanie "ludzkie" uczucia. <br />
+<b>Krystyna Pęczek:</b> gospodyni księdza, lecz w przeciwieństwie do niego mocno stąpa po ziemi, uważny obserwator życia, wie wszystko o wszystkim i wszystkich w Zagórzynie.<br />
+<b>Ela Barańska:</b> przyjaciółka Teresy z lat szkolnych, stylistka mody w kobiecym magazynie w Warszawie, żyje mocno, zmienia kochanków, eksperymentuje z narkotykami, w sumie jest jednak wrażliwa i ma dobre serce, wciąż szuka miłości idealnej, w końcu zakochuje się w księdzu Andrzeju z Zagórzyna, który jest jej kolegą ze szkoły. <br />
+<b>Wojtek Bir:</b> młody nauczyciel biologii w szkole w Zagórzynie, idealista, zwolennik new age, kocha się w Lucynie i przyjaźni z Marysią. <br />
+<b>Kostek Kamiński:</b> znany aktor, nawiązuje romans z panią burmistrz, wobec której jest jednak nie do końca w porządku. <br />
+Opracowanie: [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>] na podstawie tekstu pochodzącego ze strony www.tvn.pl</p><div class="galeria_mala"><a href="index.php?fotos=168345_1&galeria=158345"><img class="bezcienia" src="../z1/45i/8345_1.jpg" height="60"></a><a href="index.php?fotos=168345_2&galeria=158345"><img class="bezcienia" src="../z1/45i/8345_2.jpg" height="60"></a><a href="index.php?fotos=168345_3&galeria=158345"><img class="bezcienia" src="../z1/45i/8345_3.jpg" height="60"></a><a href="index.php?fotos=168345_4&galeria=158345"><img class="bezcienia" src="../z1/45i/8345_4.jpg" height="60"></a><a href="index.php?fotos=168345_5&galeria=158345"><img class="bezcienia" src="../z1/45i/8345_5.jpg" height="60"></a><a href="index.php?fotos=168345_6&galeria=158345"><img class="bezcienia" src="../z1/45i/8345_6.jpg" height="60"></a><a href="index.php/158345" title="Galeria zdjęć (8)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128345" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128345','ekipa_skrocona128345','ekipa128345','ekipa_schowaj128345','ekipa_schowaj_krotki128345','ekipa_schowaj_pelny128345','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128345" class="jslink" onclick="pzf('ekipa_skrocona128345','ekipa_pelna128345','ekipa128345','ekipa_schowaj128345','ekipa_schowaj_pelny128345','ekipa_schowaj_krotki128345','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128345"128345" class="jslink" onclick="pzz('ekipa128345','ekipa_schowaj128345')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128345" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128345">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110814">Marek Brodzki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-32</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126456">Tomasz Hynek</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-32</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114515">Maciej Wojtyszko</a></div><div class="ekipa_opis wyroznienie"> od odcinka 33 określenie funkcji: reżyser  prowadzący serial</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/113922">Monika Skowrońska</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/11753">Jacek Dzik</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1124065">Marcin Szczerbic</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1128374">Ilona Braciak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122786">Manuela Gretkowska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-59</div><div class="ekipa_osoba wyroznienie">Piotr Pietucha</div><div class="ekipa_opis wyroznienie"> odcinki: 1-59</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132610">Agnieszka Krakowiak</a></div><div class="ekipa_opis wyroznienie"> odcinki: 60-61</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116473">Jacek Kondracki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 60-61</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110546">Bogdan Stachurski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-32</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113426">Krzysztof Pakulski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 33-61</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111413">Włodzimierz Głodek</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-59</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1123826">Tomasz Kuzio</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1126634">Piotr Łukasiewicz</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/1125805">Klaudiusz Warszewski</a></div><div class="ekipa_opis"> odcinki: 1-59</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora obrazu</div><div class="ekipa_osoba"><a href="index.php/1124392">Grzegorz Stankiewicz</a></div><div class="ekipa_opis"> asystent techniczny; odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1124394">Paweł Zakrzewski</a></div><div class="ekipa_opis"> asystent techniczny</div><div class="ekipa_osoba"><a href="index.php/1127417">Marcin Szulski</a></div><div class="ekipa_opis"> asystent techniczny; odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1129520">Piotr Tadla</a></div><div class="ekipa_opis"> asystent techniczny; odcinki: 1-32</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1122096">Jerzy Nogal</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1122382">Piotr Muranyi</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1118023">Janusz Kopiowski</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Obsługa agregatu</div><div class="ekipa_osoba"><a href="index.php/1123820">Robert Carek</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1124582">Stefan Fliski</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1116577">Mirosław Bielecki</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/118395">Tomasz Gradowski</a></div><div class="ekipa_opis"> główny oświetlacz; odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1116199">Marek Wojciechowski</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1125287">Marek Baprawski</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1126801">Tomasz Baprawski</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1134012">Quadro Film Service</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1126882">Takt Film</a></div><div class="ekipa_opis"> sprzęt zdjęciowy</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11499">Dorota Ignaczak</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/1123533">Włodzimierz Szyrle</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1127344">Michał Białousz</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115771">Joanna Doroszkiewicz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-32</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo budowy dekoracji</div><div class="ekipa_osoba"><a href="index.php/113236">Waldemar Weiss</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/11872">Grzegorz Rzepecki</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/113948">Edward Koralewski</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1121792">Adam Nawrocki</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1124638">Wojciech Kocemba</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/1118863">Robert Dąbrowski</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/1125650">Grzegorz Podbielski</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112748">Małgorzata Stefaniak</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-32</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113239">Ewa Skorża</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-32</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1172">Elżbieta Radke</a></div><div class="ekipa_opis wyroznienie"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/1117917">Małgorzata Gwiazdecka</a></div><div class="ekipa_opis"> odcinki: 1-32</div></li>
+<li><div class="ekipa_funkcja">Asystent kostiumografa</div><div class="ekipa_osoba"><a href="index.php/1116572">Agnieszka Maszczyk</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126456">Tomasz Hynek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/1115">Małgorzata Przedpełska</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Operator dźwięku</div><div class="ekipa_osoba"><a href="index.php/1113988">Jacek Nowakowski</a></div><div class="ekipa_opis"> odcinki: 1-59</div><div class="ekipa_osoba"><a href="index.php/1127693">Bartłomiej Woźniak</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1123219">Maria Chilarecka</a></div><div class="ekipa_opis"> odcinki: 60-61</div><div class="ekipa_osoba"><a href="index.php/113974">Andrzej Bohdanowicz</a></div><div class="ekipa_opis"> odcinki: 60-61</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1122875">Adam Padamczyk</a></div><div class="ekipa_opis"> odcinki: 55-61; nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Mikrofoniarz</div><div class="ekipa_osoba"><a href="index.php/1125243">Sławomir Ciołkowski</a></div><div class="ekipa_opis"> odcinki: 1-59</div><div class="ekipa_osoba"><a href="index.php/1122374">Rafał Piłkowski</a></div><div class="ekipa_opis"> odcinki: 9-32</div><div class="ekipa_osoba"><a href="index.php/1116773">Ryszard Wysocki</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/1112374">Piotr Pacholski</a></div><div class="ekipa_opis"> odcinki: 60-61</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/115231">Sebastian Kaliński</a></div><div class="ekipa_opis"> odcinki: 17-61; Sonoria</div><div class="ekipa_osoba"><a href="index.php/1117325">Stefan Chomnicki</a></div><div class="ekipa_opis"> odcinki: 1-16; Studio SCH</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115072">Milenia Fiedler</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-59</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126471">Marcin Piątkowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1128596">Sebastian Korwin-Kulesza</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126397">Tomasz Ozimkiewicz</a></div><div class="ekipa_opis"> odcinki: 1-16</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132494">Krzysztof Zięcik</a></div><div class="ekipa_opis wyroznienie"> montaż on-line, ITI Film Studio; odcinki:  15-61</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125284">Janusz Kaleja</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-32</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112557">Jolanta Szklarek</a></div><div class="ekipa_opis wyroznienie"> odcinki: 17-32</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1112297">Maja Gawińska-Łyczkowska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-8</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116591">Beata Matuszczak</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-24</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115170">Ewa Symko-Marczewska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Asystent charakteryzatora</div><div class="ekipa_osoba"><a href="index.php/1129521">Paulina Guźlińska</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1128383">Anna Dąbrowska</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1129977">Kinga Tanana-Zuba</a></div><div class="ekipa_opis"> odcinki: 9-32</div><div class="ekipa_osoba"><a href="index.php/1129522">Anna Gorońska</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/1134008">Marta Wiśniewska</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba">Jan Kasiński</div><div class="ekipa_opis"> kościelna; odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/1122690">Robert Herba</a></div><div class="ekipa_opis"> ds. ewolucji samochodowych; odcinki: 1-8</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/1120072">Jacek Jeleń</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/118354">Zbigniew Modej</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/1124555">Stella Kuczyńska</a></div><div class="ekipa_opis"> odcinki: 9-32</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1128741">Agnieszka Piotrowska</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1134007">Piotr Sadurski</a></div><div class="ekipa_opis"> odcinki: 33-59</div><div class="ekipa_osoba"><a href="index.php/1136079">Maciej Biernacki</a></div><div class="ekipa_opis"> odcinki: 60-61</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1120064">Tadeusz Pilich</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1134009">Danuta Zarębska</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1129529">Józef Frymarski</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1129528">Andrzej Bogdański</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1129527">Tadeusz Kupiec</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1122160">Franciszek Jedlecki</a></div><div class="ekipa_opis"> odcinki: 9-32</div><div class="ekipa_osoba"><a href="index.php/1129524">Piotr Bartoszkiewicz</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1129526">Andrzej Kupiec</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba">Dariusz Ślaz</div><div class="ekipa_opis"> odcinki; 1-8</div><div class="ekipa_osoba"><a href="index.php/1129978">Zdzisław Wonatowski</a></div><div class="ekipa_opis"> odcinki: 9-24</div><div class="ekipa_osoba"><a href="index.php/1125304">Jerzy Hunek</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/1128533">Michał Dąbrowa</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/1114185">Tomasz Michrowski</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/1124728">Wiesław Milewski</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11913">Michał Szczerbic</a></div><div class="ekipa_opis wyroznienie"> odcinki; 1-59</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111392">Robert Lipiński</a></div><div class="ekipa_opis wyroznienie"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/113086">Grażyna Kozłowska</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1128390">Beata Cybula</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1113579">Marek Sobociński</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Asystent kierownika produkcji</div><div class="ekipa_osoba"><a href="index.php/1126171">Daria Rogozińska</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1123199">Jerzy Mizak</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1113579">Marek Sobociński</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1129519">Józef Zapała</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/1128119">Artur Kotowski</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Technik planu</div><div class="ekipa_osoba"><a href="index.php/1118596">Zbigniew Nietresta</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1118776">Ryszard Szymański</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1128441">Marcin Dybczyński</a></div><div class="ekipa_opis"> odcinki: 33-59</div><div class="ekipa_osoba">Marcin Dąbrowski</div><div class="ekipa_opis"> odcinki: 60-61</div></li>
+<li><div class="ekipa_funkcja">Sekretariat grupy zdjęciowej</div><div class="ekipa_osoba"><a href="index.php/1128395">Barbara Nietresta</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/118815">Halina Małek</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1123705">Monika Zalewska-Radźko</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1113613">Wanda Dąbrowska</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1119297">Ewa Dybczyńska</a></div><div class="ekipa_opis"> odcinki: 33-59</div><div class="ekipa_osoba"><a href="index.php/1128947">Marta Rogalska</a></div><div class="ekipa_opis"> odcinki: 60-61</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/113262">Małgorzata Dedek</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div class="ekipa_osoba"><a href="index.php/1112299">Jolanta Borewicz</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div class="ekipa_osoba"><a href="index.php/112615">Elżbieta Heleniak</a></div><div class="ekipa_opis"> odcinki: 1-59</div></li>
+<li><div class="ekipa_funkcja">Goniec</div><div class="ekipa_osoba"><a href="index.php/1125143">Zbigniew Chodziak</a></div><div class="ekipa_opis"> odcinki: 33-61</div></li>
+<li><div class="ekipa_funkcja">Kasjer</div><div class="ekipa_osoba"><a href="index.php/1114490">Urszula Baraniak</a></div><div class="ekipa_opis"> odcinki: 1-32</div></li>
+<li><div class="ekipa_funkcja">Koordynacja produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1112175">Andrzej Besztak</a></div><div class="ekipa_opis"> odcinki: 1-32</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126540">Anna Iwaszkiewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117822">Dariusz Pietrykowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1128249">ITI Film Studio</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124990">TVN</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis wyroznienie"> Marek, mąż Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis wyroznienie"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis wyroznienie"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba">Ł. Aranowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">M. Aranowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">J. Bałkowiec-Iskra</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129506">Michał Billip</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">M. Dąbrowska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">A Dąbrowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">M. Dunin-Kozicka</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Ch. Jodłowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">P. Konstanciak</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">M. Kowalski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">A. Leszczyński</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">B. Misiewicz</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">M Nowak</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">J. B. Porowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">M. Siuda</div><div class="ekipa_opis">&nbsp;</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128345">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1110814">Marek Brodzki</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126456">Tomasz Hynek</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114515">Maciej Wojtyszko</a></div><div class="ekipa_opis"> od odcinka 33 określenie funkcji: reżyser  prowadzący serial</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1122786">Manuela Gretkowska</a></div><div class="ekipa_opis"> odcinki: 1-59</div><div style="display:block;" /><div class="ekipa_osoba">Piotr Pietucha</div><div class="ekipa_opis"> odcinki: 1-59</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1132610">Agnieszka Krakowiak</a></div><div class="ekipa_opis"> odcinki: 60-61</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116473">Jacek Kondracki</a></div><div class="ekipa_opis"> odcinki: 60-61</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1110546">Bogdan Stachurski</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113426">Krzysztof Pakulski</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111413">Włodzimierz Głodek</a></div><div class="ekipa_opis"> odcinki: 1-59</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/11499">Dorota Ignaczak</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/115771">Joanna Doroszkiewicz</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/112748">Małgorzata Stefaniak</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1113239">Ewa Skorża</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1172">Elżbieta Radke</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/1126456">Tomasz Hynek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1115072">Milenia Fiedler</a></div><div class="ekipa_opis"> odcinki: 1-59</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126471">Marcin Piątkowski</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1132494">Krzysztof Zięcik</a></div><div class="ekipa_opis"> montaż on-line, ITI Film Studio; odcinki:  15-61</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1125284">Janusz Kaleja</a></div><div class="ekipa_opis"> odcinki: 1-32</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112557">Jolanta Szklarek</a></div><div class="ekipa_opis"> odcinki: 17-32</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1112297">Maja Gawińska-Łyczkowska</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116591">Beata Matuszczak</a></div><div class="ekipa_opis"> odcinki: 1-24</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115170">Ewa Symko-Marczewska</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/11913">Michał Szczerbic</a></div><div class="ekipa_opis"> odcinki; 1-59</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111392">Robert Lipiński</a></div><div class="ekipa_opis"> odcinki: 33-61</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1126540">Anna Iwaszkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1117822">Dariusz Pietrykowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/1124990">TVN</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Teresa Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj128345" class="jslink" onclick="pzz1('varia128345','varia_schowaj128345')">pokaż</span></div></h2>
+<table id="varia128345" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">MIASTECZKO  
+    </td></tr><tr><td colspan="3" class="varia_opis">Tekst piosenki:<br /> 1. Zapłacona za wysoka cena,<br />     taki gest, nie powinno być przykro,<br />     zapominaj lub zmieniaj temat, <br />     tego już nie ma, to już znikło.<br /> <br /> REF. Miasteczko i miasto,<br />           miasto i miasteczko, <br />           czas płynie nierówno,<br />           inne myśli, inne dnie,<br />           za prosto, za prędko,<br />           zbyt wolno, zbyt trudno, <br />           albo i nie, albo i nie.<br /> <br /> 2. Odpowiedzi z pytaniami się nie godzą,<br />     te pytania już wczorajsze, już zmyślone,<br />     niepotrzebnie powracają nocą,<br />     kiedy i po co, w którą stronę.<br /> <br /> REF. Miasteczko i miasto,<br />           miasto i miasteczko, <br />           czas płynie nierówno,<br />           inne myśli, inne dnie,<br />           za prosto, za prędko,<br />           zbyt wolno, zbyt trudno, <br />           albo i nie, albo i nie.<br /> <br />           Miasteczko i miasto,<br />           miasto i miasteczko, <br />           czas płynie nierówno,<br />           inne myśli, inne dnie,<br />           za prosto, za prędko,<br />           zbyt wolno, zbyt trudno, <br />           albo i nie, albo i nie.</td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1129518">Szymon Wysocki</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/114515">Maciej Wojtyszko</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+          
+          
+        </td><td class="varia_osoba"><a href="index.php/117131">Ewa Bem</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1115123">Adam Cegielski</a></td><td class="varia_osoba_opis">kontrabas</td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1124820">Michał Grymuza</a></td><td class="varia_osoba_opis">gitara</td></tr>
+
+<tr><td class="varia_funkcja">Realizacja nagrań  
+        </td><td class="varia_osoba"><a href="index.php/117725">Wojciech Przybylski</a></td><td class="varia_osoba_opis"></td></tr>
+</table><div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">40 min</div></li>
+</ul>
+<p class="opis">W Zagórzynie, małej mieścinie nieopodal Warszawy, trwają ostatnie gorączkowe przygotowania do ślubu Teresy Siudym - córki dyrektora miejscowej szkoły, i Tomka Tarnawskiego- syna pani burmistrz. Podczas kiedy Teresa przymierza suknię ślubną do pokoju bez pukania wpada Wanda Tarnawska, niby to sprawdzić co ze ślubnym bukietem, Michał, który miał go odebrać z kwiaciarni po upojnym wieczorze kawalerskim gdzieś przepadł. Teresa przypuszcza że Tarnawska wpadła zapewne po to by sprawdzić czy synowa nie przyniesie jej wstydu wsiowym ubraniem, naspraszała jakichś dyrektorów i prezesów to chce żeby wszystko wypadło elegancko. Ela, przyjaciółka Teresy, która towarzyszy jej w ostatnich przygotowaniach stwierdza że Siudymówna nie będzie miała z Wandą łatwego życia. Teresa mówi że teściowa wcale nie jest taka zła, tylko trochę nerwowa, jakoś z nią wytrzyma, zresztą jak tylko Tomek obroni pracę dyplomową to wyniosą się z Zagórzyna do Warszawy, a może nawet zagranicę. Ela ma nadzieję że w tej Warszawie Tomek ponownie nie spiknie się z Ireną, ona jest przecież teraz wziętą dziennikarką telewizyjną. Teresa rozwiewa te obawy, oni już dawno ze sobą zerwali i na comeback nie ma co liczyć. Teresa, już gotowa do ślubnej ceremonii prezentuje się wspaniale, Ela stwierdza że wygląda piękniej niż księżniczka Diana. Tymczasem Wanda budzi skacowanego po wieczorze kawalerskim Tomka, faszeruje go ziółkami, potem poleca wziąć prysznic, pora przecież ubierać się do ślubu. Tomek, aby tylko nie zapomnieć, obrączki ślubne nosi na szyi. Do miasteczka zjeżdżają się kolejni weselni goście, m.in. Marek, mąż Lucyny, siostry panny młodej, biznesmen prowadzący podejrzane interesy, notorycznie zdradzający swoją żonę z Ewą, piękną, młodą i inteligentną prawniczką. Kiedy Wanda telefonicznie załatwia ostatnie sprawy związane ze ślubem w jej domu pojawia się Igor Tarnawski, brat burmistrzowej, na stałe mieszkający we Francji, wdowiec, który teraz procesuje się z rodziną zmarłej żony. Igor pokazuje siostrze piękny naszyjnik z pereł, to prezent ślubny dla Tereni. Za chwilę w domu Tarnawskiej pojawia się Irena, dawna narzeczona Tomka i oznajmia Wandzie że jest w ciąży z jej synem. Burmistrzowa jest wstrząśnięta, zostawia Tomka i Irenę samych. Tomek dowiaduje się wreszcie że zostanie ojcem, bije się z myślami co ma teraz zrobić, po zastanowieniu postanawia wyznać narzeczonej iż będzie miał dziecko z inną kobietą, nie może przecież nowego życia zaczynać od kłamstw, z drugiej jednak strony istnieje obawa że Teresa może sobie coś zrobić. Przed kościołem z wolna zaczynają gromadzić się goście weselni i ciekawscy mieszkańcy Zagórzyna. Do ceremonii przygotowuje się ksiądz Andrzej, jest bardzo stremowany, bo to pierwszy ślub w jego karierze. Zdenerwowanego kapłana na duchu podtrzymuje pani Krysia, gospodyni na plebani. Tomek przyjeżdża po Teresę do jej domu i zabiera ją do lasu, tam wyznaje że będzie miał z Teresą dziecko. Dochodzi do gwałtownej kłótni, zrozpaczona i zszokowana Teresa oświadcza Tomkowi że go nienawidzi, nic ją nie obchodzą jego zapewnienia że wciąż ją kocha, zrywa zaręczyny i ucieka. Zdenerwowany Tomek zaś jedzie do kościoła, bez słowa mija matkę i Michała, wchodzi do świątyni i księdzu Andrzejowi oraz zniecierpliwionym już gościom obwieszcza że żadnego ślubu nie będzie. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128542" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128542','ekipa_skrocona128542','ekipa128542','ekipa_schowaj128542','ekipa_schowaj_krotki128542','ekipa_schowaj_pelny128542','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128542" class="jslink" onclick="pzf('ekipa_skrocona128542','ekipa_pelna128542','ekipa128542','ekipa_schowaj128542','ekipa_schowaj_pelny128542','ekipa_schowaj_krotki128542','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128542"128542" class="jslink" onclick="pzz('ekipa128542','ekipa_schowaj128542')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128542" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128542">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> mecenas Ewa Salecka, kochanka Marka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1129503">Maria Robaszkiewicz-Kowarska</a></div><div class="ekipa_opis"> Ula, żona Gienka</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> Gienek, brat Zofii</div><div class="ekipa_osoba"><a href="index.php/1129504">Anna Gajewska</a></div><div class="ekipa_opis"> Marysia Małecka, siostra Michała</div><div class="ekipa_osoba"><a href="index.php/1129505">Dominik Ciemny</a></div><div class="ekipa_opis"> Dominik, syn Lucyny i Marka</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Grześ Matysik</div><div class="ekipa_osoba"><a href="index.php/1119461">Ryszard Chlebuś</a></div><div class="ekipa_opis"> cukiernik Majcherek</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128542">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">39 min</div></li>
+</ul>
+<p class="opis">Cały Zagórzyn komentuje skandal, jaki wyniknął z powodu odwołania ślubu Teresy i Tomka. Gienio mówi że jakby dorwał młodego Tarnawskiego to by mu nogi z dupy powyrywał, Janusz żałuje że nie posłuchali ludzi, którzy wiedzieli co się święci, jest zbulwersowany że Tomek zostawił Teresę samą na drodze. Za chwilę do domu wracają Lucyna i Marek, jak dotąd nie udało się im odnaleźć Teresy. Tymczasem młoda Siudymówna bosa w sukience ślubnej przemierza miasteczko, potem zaś kryje się w zakamarkach kawiarni gdzie niechcący podsłuchuje rozmowę Wandy i Igora. Tarnawska wypowiada sporo niemiłych słów pod adresem niedoszłej synowej, cieszy się nawet że do tego ślubu nie doszło, Tomek bowiem zasługuje na żonę z większymi ambicjami. Igor staje w obronie Tereski, uważa że to fantastyczna dziewczyna, która marzyła o wielkiej miłości i została tak okrutnie zraniona, potępia Tomka i Irenę za ich niegodziwe postępowanie. Wanda martwi się że ten ślub popsuje jej atmosferę w pracy, marzy by w spokoju przeżyć poniedziałek. Igor jest oburzony cynizmem i wyrachowaniem siostry. Lucyna stara się zbliżyć do męża, ten jednak nie jest skory do czułości, tłumaczy się zmęczeniem, mówi że biznes to nie jest pielgrzymka do Częstochowy, a robienie pieniędzy to ciężka praca. Lucyna w złości rzuca że czuje się jak zakonnica, ich małżeństwo przypomina zakon, ciągle jest sama. Marek stara się udobruchać żonę, obiecuje że niebawem kupią sobie domek nad morzem i całe dnie będą spędzać na plaży, teraz zaś chce zaprosić ją do restauracji, zmienia jednak plany po telefonie od Ewy, tłumaczy Lucynie że musi natychmiast wracać do Warszawy, czekają tam nań interesy. Lucyna jest wściekła. Teresa wraca wreszcie do domu, jest zdruzgotana opinią Wandy na swój temat. Ela stara się pocieszyć przyjaciółkę, proponuje by pojechała z nią do Warszawy, ma nawet dla niej pracę, zostanie sekretarką w redakcji miesięcznika w którym ona jest dziennikarką. Teresa komunikuje rodzicom swoją decyzje o opuszczeniu Zagórzyna, Janusz popiera córkę, Zosia jest przeciwna wyjazdowi. W szkole nauczyciele ubolewają nad słabymi wynikami w nauce swoich uczniów oraz kłopotach wychowawczych z niektórymi z nich np. z Grzesiem Matysikiem, chłopcem pochodzącym z bardzo biednej rodziny. Dyrektor Siudym wybiera się do magistratu walczyć o pieniądze dla szkoły. Postawą swojego wnuka Tomka oburzona jest też babcia Ola, mówi że wstydziła się iść po zakupy do sklepu Siudymowej, nie wie jakby mogła spojrzeć jej prosto w oczy. Wanda uważa że nie ma co dłużej ciągnąć tej sprawy, to nie ich wina że Tomek nie ożenił się z Teresą, poza tym dziwią ją nagłe wyrzuty sumienia matki - starej komunistki, która zawsze mawiała że partia nie ma sumienia tylko rację. O niedoszłym ślubie w gabinecie stomatologicznym rozmawiają też pani Krysia, gospodyni księdza i miejscowy dentysta. Grający z młodzieżą w piłkę ksiądz Andrzej zaczepia przechodzącego obok boiska Tomka, stara się go podnieść na duchu, wyznaje że też był w podobnej sytuacji, zostawił narzeczoną bo poczuł powołanie. Tomek uważa że z nim jest zupełnie inaczej, nadal kocha Teresę, tylko ona go nie chce, poza tym za chwilę będzie miał dziecko z inną kobietą i to go zobowiązuje. Po sesji Zarządu Miasta pani burmistrz składa Januszowi Siudymowi propozycję objęcia intratnej posady w zamian za jego zgodę na przeniesienie szkoły z pałacu do innych, mniej komfortowych budynków. Oburzony Siudym z miejsca odrzuca tę propozycję, oświadcza Tarnawskiej że nie pozwoli jej sprzedać szkoły. Wyjeżdżającą Teresę żegna Igor, wręczając jej cenny naszyjnik, który miał być prezentem ślubnym próbuje powiedzieć o swoim do niej uczuciu, mówi że dla niego warta jest o wiele więcej niż ten sznur pereł. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128574" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128574','ekipa_skrocona128574','ekipa128574','ekipa_schowaj128574','ekipa_schowaj_krotki128574','ekipa_schowaj_pelny128574','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128574" class="jslink" onclick="pzf('ekipa_skrocona128574','ekipa_pelna128574','ekipa128574','ekipa_schowaj128574','ekipa_schowaj_pelny128574','ekipa_schowaj_krotki128574','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128574"128574" class="jslink" onclick="pzz('ekipa128574','ekipa_schowaj128574')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128574" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128574">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1129503">Maria Robaszkiewicz-Kowarska</a></div><div class="ekipa_opis"> Ula, żona Gienka</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> Gienek, brat Zofii</div><div class="ekipa_osoba"><a href="index.php/1125450">Dariusz Pick</a></div><div class="ekipa_opis"> Darek, nauczyciel wf-u</div><div class="ekipa_osoba"><a href="index.php/1120238">Joanna Jędrejek</a></div><div class="ekipa_opis"> nauczycielka Joanna</div><div class="ekipa_osoba"><a href="index.php/1129505">Dominik Ciemny</a></div><div class="ekipa_opis"> Dominik, syn Lucyny i Marka</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Grześ Matysik</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> kelnerka Madzia</div><div class="ekipa_osoba"><a href="index.php/11540">Jerzy Molga</a></div><div class="ekipa_opis"> dentysta</div><div class="ekipa_osoba"><a href="index.php/1129988">Zuzanna Stokowska</a></div><div class="ekipa_opis"> Kasia Płońska</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128574">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">38 min</div></li>
+</ul>
+<p class="opis">Tomek przyjeżdża do Ireny, chce z nią porozmawiać o ich przyszłości, pyta czy przypadkiem ta jej ciąża nie jest mistyfikacją jak ta scena ze szczeniakiem, którą próbowała wzruszyć swoim widzów, poza tym kiedyś powiedziała mu że nie może zajść w ciążę. Irena próbuje przekonać Tomka, że się zmieniła, stała się lepsza, dojrzalsza i bardziej odpowiedzialna, wyznaje że kiedyś, przed laty, poddała się aborcji i stąd wynikały te jej problemy z zajściem w ciążę. Tomek nie dowierza dobrym intencjom Ireny, jednak ich wspólna wizyta u ginekologa i badanie USG ostatecznie przekonuje go o konieczności pozostania z nią, musi jej przecież pilnować, bo dziennikarka nie dopuszcza do siebie myśli iż wkrótce będzie musiała zrezygnować z pracy w telewizji. Marek w kawiarni spotyka się ze swoją kochanką, Ewą, ta próbuje postawić go przed wyborem: ona albo żona, mężczyzna jednak wciąż nie może się zdecydować, wtedy to Ewa oświadcza że odchodzi. Tymczasem Lucyna coraz bardziej przeżywa zdradę męża, Zosia podejrzewa że córka pije, a Wojtek, nauczyciel biologii i miłośnik radiestezji, wyczuwa dookoła niej nie tylko niezwykle silne "pole", ale także "zatrutą duszę". Teresa rozpoczyna pracę w redakcji miesięcznika o modzie, początki są trudne, dziewczyna jest poniżana i szykanowana przez zawistne współpracowniczki Eli, które uważają że ta zaczyna wprowadzać do redakcji swoich ludzi, na razie zaczyna od sekretarki a skończy pewnie na mianowaniu redaktor naczelnej. Ela stara się pomóc przyjaciółce, radzi by nie pozwoliła się wykorzystywać, poza tym musi zmienić tan swój prowincjonalny styl ubierania i zachowania, a przede wszystkim musi przestać wciąż myśleć o Tomku, trzeba go raz na zawsze wyrzucić z pamięci, najlepiej zastąpić innym facetem, choćby Igorem, który dopiero co telefonował.  Gienio, brat Zosi Siudym ma problemy finansowe, nie jest w stanie spłacić zaciągniętego w banku kredytu, prosi więc siostrę o pomoc. Do domu Siudymów wpada Marek, mówi że nigdzie nie może znaleźć Lucyny, razem z teściem udaje się na poszukiwanie żony. Dominik jest zdziwiony obecnością w domu ojca, pyta babcię czy dzisiaj jest niedziela, bo tatuś tylko tego dnia przyjeżdża do Zagórzyna, mniema że może go po prostu go kocha. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128602" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128602','ekipa_skrocona128602','ekipa128602','ekipa_schowaj128602','ekipa_schowaj_krotki128602','ekipa_schowaj_pelny128602','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128602" class="jslink" onclick="pzf('ekipa_skrocona128602','ekipa_pelna128602','ekipa128602','ekipa_schowaj128602','ekipa_schowaj_pelny128602','ekipa_schowaj_krotki128602','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128602"128602" class="jslink" onclick="pzz('ekipa128602','ekipa_schowaj128602')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128602" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128602">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> mecenas Ewa Salecka, kochanka Marka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1127863">Sybilla Rostek</a></div><div class="ekipa_opis"> Renata, redaktorka pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1128199">Magda Czartoryjska</a></div><div class="ekipa_opis"> redaktorka pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> Gienek, brat Zofii</div><div class="ekipa_osoba"><a href="index.php/1129505">Dominik Ciemny</a></div><div class="ekipa_opis"> Dominik, syn Lucyny i Marka</div><div class="ekipa_osoba"><a href="index.php/112162">Ryszard Barycz</a></div><div class="ekipa_opis"> lekarz prowadzący ciążę Ireny</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128602">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">40 min</div></li>
+</ul>
+<p class="opis">Marek i Janusz odnajdują Lucynę śpiącą w swoim własnym łóżku, kiedy wreszcie udaje się im ją ocucić okazuje się że wzięła tabletki nasenne i popiła je alkoholem, dlatego zasnęła tak mocno. Marek przeprasza teścia za zamieszanie, skarży się że nie może dojść z żoną do ładu. Janusz namawia zięcia by szczerze porozmawiał z żoną, ale próba pojednania i wyjaśnienia nieporozumień pogłębia tylko małżeńskie niesnaski. W redakcji, miejscu pracy Eli i Teresy, trwają nerwowe przygotowania do przyjazdu słynnego niemieckiego fotografika, Maxima. Ksiądz Andrzej dostrzega sińce pod oczami swojego ministranta, Grzesia Matysika, okazuje się że chłopca pobił jego ojciec. Ksiądz zapowiada wizytę u Matysików, chce porozmawiać z jego rodzicami. Przedstawiciele Agencji Przemysłowej przyjeżdżają obejrzeć pałac, w którym nadal mieści się szkoła. Dyrektor Siudym w ostrych słowach wyprasza niepożądanych gości. Marek gra przed Siudymami dobrego zięcia, chce pożyczyć teściowej pieniądze na modernizację jej sklepiku, uważa że trzeba go przekształcić w nowoczesne delikatesy. Lucyna zaprzyjaźnia się z Wojtkiem, nauczycielem biologii, ekologiem i wegetarianinem, zaprasza go do siebie do domu  i prosi o pomoc w uporządkowaniu ogrodu. W redakcji pogłębia się nerwowa atmosfera w związku z wizytą Maxima i jego niecodziennym życzeniem, fotografik zażądał białej skórzanej kanapy. Dzięki Teresie, która odnajduje takowy mebel w jednej z restauracji na Starym Mieście udaje się sprostać wymaganiom artysty. W tejże restauracji Tomek spotyka się z przyjacielem Michałem, który robi mu wymówki w związku z sytuacją, w jakiej ten się znalazł, uważa że Irena nie jest kobietą dla niego. Burmistrzowa jest oburzona postępowaniem Janusza, który wyrzucił za drzwi przedstawicieli Agencji Przemysłowej, teraz gotowi są się wycofać, grozi że wytoczy Siudymowi proces. Ksiądz Andrzej stara się pomóc bezrobotnemu Matysikowi, prosi go o pomalowanie plebani, próbuje też rozmawiać o jego problemach rodzinnych, przekonuje że bicie dzieci niczemu dobremu nie służy, może tylko zrazić do siebie syna. Podczas sesji zdjęciowej Maxim zauważa Teresę i długo z nią rozmawia, fakt ten wzbudza zawiść koleżanek i kąśliwe uwagi redaktor naczelnej. Następnego dnia szefowa redakcji awansuje Teresę na asystentkę Eli, jej pierwszym zadaniem ma być przygotowanie sesji zdjęciowej do artykułu "Praca i macierzyństwo", okazuje się że do fotografii pozować ma Irena. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128614" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128614','ekipa_skrocona128614','ekipa128614','ekipa_schowaj128614','ekipa_schowaj_krotki128614','ekipa_schowaj_pelny128614','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128614" class="jslink" onclick="pzf('ekipa_skrocona128614','ekipa_pelna128614','ekipa128614','ekipa_schowaj128614','ekipa_schowaj_pelny128614','ekipa_schowaj_krotki128614','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128614"128614" class="jslink" onclick="pzz('ekipa128614','ekipa_schowaj128614')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128614" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128614">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1118157">Waldemar Obłoza</a></div><div class="ekipa_opis"> Roman Matysik, ojciec Grzesia</div><div class="ekipa_osoba"><a href="index.php/118689">Marta Klubowicz</a></div><div class="ekipa_opis"> szefowa redakcji pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1127863">Sybilla Rostek</a></div><div class="ekipa_opis"> Renata, redaktorka pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1128199">Magda Czartoryjska</a></div><div class="ekipa_opis"> redaktorka pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1125450">Dariusz Pick</a></div><div class="ekipa_opis"> Darek, nauczyciel wf-u</div><div class="ekipa_osoba"><a href="index.php/1120238">Joanna Jędrejek</a></div><div class="ekipa_opis"> nauczycielka Joanna</div><div class="ekipa_osoba"><a href="index.php/112760">Sylwester Maciejewski</a></div><div class="ekipa_opis"> Antoni, kierowca Wandy</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Grześ Matysik</div><div class="ekipa_osoba"><a href="index.php/1121285">Joanna Domańska</a></div><div class="ekipa_opis"> właścicielka kawiarni</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> wiceburmistrz Zagórzyna</div><div class="ekipa_osoba"><a href="index.php/1120831">Marcin Klepacki</a></div><div class="ekipa_opis"> kelner w kawiarni</div><div class="ekipa_osoba"><a href="index.php/1122883">Bożydar Murgan</a></div><div class="ekipa_opis"> fotograf Maxim</div><div class="ekipa_osoba"><a href="index.php/1118751">Iwona Petrykowska</a></div><div class="ekipa_opis"> modelka pozująca Maximowi</div><div class="ekipa_osoba"><a href="index.php/1123787">Katarzyna Skrzypek</a></div><div class="ekipa_opis"> modelka pozująca Maximowi</div><div class="ekipa_osoba"><a href="index.php/1121810">Paweł Szczesny</a></div><div class="ekipa_opis"> Jabłoński, przedstawiciel Agencji Przemysłowej</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128614">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">39 min</div></li>
+</ul>
+<p class="opis">Teresa gości u siebie na kolacji Igora, opowiada o zawalonej sesji zdjęciowej Ireny. Igor mówi o swoich planach powrotu na stałe do Zagórzyna, chce kupić dom i otworzyć firmę importującą wina, namawia dziewczynę na wspólny wypad do Francji. Teresa waha się czy przyjąć zaproszenie. Pani Krysia pomstuje na Matysika, który rozpoczął remont i zniknął. Ksiądz Andrzej bagatelizuje ten problem, teraz intensywnie myśli jaki obrazek wybrać na I-wszo Komunijną pamiątkę. Tomek i Irena przygotowują się do narodzin potomka, robią zakupy, urządzają pokoik dla dziecka, planują wziąć kredyt i kupić większe mieszkanie. Trwa posiedzenie Zarządu Miasta Zagórzyna, po burzliwej dyskusji burmistrzowa poddaje pod głosowanie projekt uchwały o sprzedaży pałacu, Tarnawska jest za, Siudym zdecydowanie przeciw, Michał wstrzymuje się od głosu, ostatecznie wynik głosowania jest nierozstrzygnięty, decyzja o zbyciu nieruchomości zostaje odroczona do następnej sesji. Wojtek pomaga Lucynie w uprawie ogrodu, podczas pracy kaleczy się w palec. Lucyna opatrując zraniony palec nauczyciela nieśmiało opowiada o swoich małżeńskich problemach, wyznaje że Marek był jej pierwszą wielką miłością i właściwie nie zna innych mężczyzn. Wojtek także otwiera się przed Lucyną, mówi że co się zakocha to katastrofa, jedyną jego odwzajemnioną miłością są rośliny, bo one nie potrafią od niego uciec. Janusz odwiedza żonę w sklepie, nie wierzy w dobre intencje zięcia, który zainwestował pieniądze w ten interes. Zosia postanawia kupić tańsze lodówki i część pieniędzy pożyczyć będącemu w potrzebie Gieniowi. W warszawskim mieszkaniu Ireny i Tomka pojawia się Michał, dochodzi do jego pełnej niechęci i wzajemnych oskarżeń rozmowy z dziennikarką, która wypiera się swoich wiejskich korzeni i uważa się teraz za kogoś lepszego od innych, oglądają ją przecież miliony. Tomek i Michał jadą razem do Zagórzyna. Matysik przychodzi do księdza, twierdzi, że wstąpił w niego diabeł, prosi o egzorcyzmy, kapłan przekonuje go do złożenia przed ołtarzem Matki Boskiej ślubu abstynencji, na razie na próbę na miesiąc. Ela dostrzega okulary, które zostawił Igor, są odpowiednie do sesji zdjęciowej ze strojami kąpielowymi, dzwoni do niego by jej je pożyczył. Telefon odbiera Tomek,  przez przypadek dowiaduje się o wizycie Igora u Teresy. Wanda opowiada o głosowaniu w magistracie, jest przekonana że następnym razem uda się jej przeforsować uchwałę o sprzedaży pałacu. Tomek pyta wuja co go łączy z Teresą, mówi że nie życzy sobie by załatwiał jego sprawy i ratował honor rodziny. Zdenerwowany Igor oświadcza Tomkowi że nie jest pępkiem świata i  nie wszystko kręci się wokół niego. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128634" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128634','ekipa_skrocona128634','ekipa128634','ekipa_schowaj128634','ekipa_schowaj_krotki128634','ekipa_schowaj_pelny128634','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128634" class="jslink" onclick="pzf('ekipa_skrocona128634','ekipa_pelna128634','ekipa128634','ekipa_schowaj128634','ekipa_schowaj_pelny128634','ekipa_schowaj_krotki128634','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128634"128634" class="jslink" onclick="pzz('ekipa128634','ekipa_schowaj128634')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128634" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128634">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1118157">Waldemar Obłoza</a></div><div class="ekipa_opis"> Roman Matysik, ojciec Grzesia</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> Gienek, brat Zofii</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Grześ Matysik</div><div class="ekipa_osoba"><a href="index.php/111669">Zbigniew Bogdański</a></div><div class="ekipa_opis"> Zenek, radny Zagórzyna</div><div class="ekipa_osoba"><a href="index.php/113296">Grzegorz Gadziomski</a></div><div class="ekipa_opis"> Tadek, radny Zagórzyna</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> Olek, radny Zagórzyna</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128634">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">37 min</div></li>
+</ul>
+<p class="opis">Marek wraca do domu, zastaje tam Wojtka pracującego w ogrodzie, traktuje go bardzo obcesowo. Ela wyjeżdża do Włoch, Teresa momentalnie zaczyna mieć w redakcji ogromne problemy, nie wytrzymuje tej potwornej nagonki, postanawia wziąć urlop i  wrócić do Zagórzyna. Zarówno Janusz jak i Wanda piszą artykuły o sprzedaży pałacu, burmistrzowej w redagowaniu tekstu pomaga Michał - dziennikarz miejscowej gazety. Marek w rozmowie ze swoją kochanką wspomina o domniemanej zdradzie Lucyny z Wojtkiem, najbardziej drażni go fakt że Dominik mówi do tego faceta "wujku", uważa że ten "romans" to doskonały pretekst do rozwodu, i to z winy Lucyny. Michał nad jeziorem spotyka się z Tomkiem, podczas łowienia ryb rozmawiają o Irenie. Michał przyznaje się Tomkowi że kiedyś chodził z Ireną, wtedy kiedy razem zdawali na dziennikarstwo, ale po miesiącu wszystko się skończyło, był jej potrzebny tylko do zdania egzaminów, opowiada też o innych "znajomościach" Ireny. Pomiędzy przyjaciółmi dochodzi do bójki. Teresa w rozmowie z siostrą wyznaje że nie zamierza wracać do pracy w redakcji, Lucyna bardzo pozytywnie wypowiada się o Wojtku. Irenie przychodzi do głowy pomysł na nowy program telewizyjny, który ma się nazywać "Burmistrz 2000", zaprasza doń Tarnawską, a ta z radością przyjmuje zaproszenie. Tomek czyni Irenie wymówki w związku z jej dawną znajomością z Michałem, dziewczyna twierdzi, że szybko ze sobą zerwali bo on okazał się być homoseksualistą. Tomek nie chce wierzyć w te rewelacje. Michał podejrzewa, że zainteresowanie burmistrzowej sprzedażą pałacu nie jest bezinteresowne, sądzi że Agencja Przemysłowa przekupiła Tarnawską. Michał namawia swoją siostrę Marysię, pracownicę banku, aby sprawdziła stan konta burmistrzowej, potem spotyka się z Siudymem i przekazuje mu zdobyte informacje, decyduje też że na następnym posiedzeniu Zarządu Miasta będzie głosował przeciwko sprzedaży pałacu. Babcia informuje Igora że Teresa wróciła do miasteczka by pomagać matce w sklepie, prosi syna by nie kłócił się już więcej o nią z Tomkiem. Irena pragnie kupić sobie loda, wchodzi do sklepu Siudymowej, gdzie spotyka się twarzą w twarz z Teresą. Za chwilę w sklepie pojawia się też Igor, ponawia swoją propozycję wyjazdu do Francji, niespodziewanie Teresa zgadza się z nim pojechać. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128661" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128661','ekipa_skrocona128661','ekipa128661','ekipa_schowaj128661','ekipa_schowaj_krotki128661','ekipa_schowaj_pelny128661','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128661" class="jslink" onclick="pzf('ekipa_skrocona128661','ekipa_pelna128661','ekipa128661','ekipa_schowaj128661','ekipa_schowaj_pelny128661','ekipa_schowaj_krotki128661','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128661"128661" class="jslink" onclick="pzz('ekipa128661','ekipa_schowaj128661')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128661" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128661">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> mecenas Ewa Salecka, kochanka Marka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1127863">Sybilla Rostek</a></div><div class="ekipa_opis"> Renata, redaktorka pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/112760">Sylwester Maciejewski</a></div><div class="ekipa_opis"> Antoni, kierowca Wandy</div><div class="ekipa_osoba"><a href="index.php/1129504">Anna Gajewska</a></div><div class="ekipa_opis"> Marysia Małecka, siostra Michała</div><div class="ekipa_osoba"><a href="index.php/1129505">Dominik Ciemny</a></div><div class="ekipa_opis"> Dominik, syn Lucyny i Marka</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> fotografik w redakcji pisma kobiecego</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128661">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">38 min</div></li>
+</ul>
+<p class="opis">Irena niczym lwica walczy o swój program, jednak prezes stacji telewizyjnej jest nieubłagany, ciężarna dziennikarka musi zniknąć z ekranu, zapewnia przy tym że nie ma doń żadnych uprzedzeń, chodzi mu jedynie o jej zdrowie. Wojtek coraz częściej spotyka się z Lucyną, odnajduje też wspólny język z jej synem, doskonale bawi się z Dominikiem w lesie. Ela spotyka się z Michałem, rozmawiają o Tomku i Teresie. W kawiarni Ela poznaje Asię, proponuje jej by została modelką. Pani Krysia składa wikaremu gratulacje że udało mu się nawrócić Matysika. Janusz przychodzi do księdza z prośbą o podpisanie petycji w obronie szkoły. Ksiądz Andrzej zapowiada że w najbliższą niedzielę wygłosi w kościele "rewolucyjne" kazanie w sprawie tradycji I-wszo Komunijnych. Pani Krysia sceptycznie odnosi się do projektu rezygnacji ze święcenia prezentów i zamiany sukienek na alby. Irena jest rozgoryczona faktem że zdjęto ją z anteny. Zaaferowany Tomek opowiada Irenie o propozycji swego profesora na uczelni otwierającej mu możliwość kariery naukowej. Irena wyśmiewa ambicje naukowe Tomka, uważa że za asystencką pensję nie utrzyma rodziny, lepiej żeby pracował w jakimś banku i zarabiał porządne pieniądze. Urażony Tomek wychodzi z domu, na ulicy zostaje napadnięty przez złodziei, którzy kradną mu wszystko co ma. Zosia donosi Lucynie o krążących po miasteczku plotkach o jej rzekomym romansie z Wojtkiem. W studiu telewizyjnym, podczas nagrania programu, Wanda poznaje znanego aktora Konstantego Kamińskiego. Mężczyzna jest oczarowany Tarnawską, szybko przechodzi z nią na "ty", po nagraniu odwozi ją swoim samochodem do domu i zaprasza do swojego teatru, w którym pracuje. Lucyna znajduje przed domem powieszonego kota i list z groźbami pod adresem syna, jest przerażona, zaczyna histeryzować, Marek stara się ją uspokoić, mówi że jak się boi to niech zaprosi do domu na noc Wojtka. We Francji Teresa doskonale bawi się w towarzystwie Igora, wkrótce ląduje w jego łóżku. Igor wyznaje Teresie że ją kocha. W "Głosie Zagórzyna" ukazuje się artykuł oskarżający Tarnawską o korupcję, pani burmistrz jest wściekła, chce podać gazetę do sądu. Nauczyciele gorąco komentują prasowe doniesienia o łapówkarstwie burmistrzowej. Do pokoju nauczycielskiego wchodzi blada jak ściana Asia, mówi że źle się czuje i prosi by dyrektor pozwolił jej iść do domu, za chwilę jednak mdleje i osuwa się w ramiona Siudyma. Ksiądz Andrzej prosi Elę, aby pomogła mu przekonać rodziców komunijnych dzieci do alb zamiast drogich garniturów i sukienek. Dziennikarka obiecuje pomoc, ale w zamian za zgodę na sesję zdjęciową we wnętrzach zagórzyńskiego kościoła. Po wspólnie spędzonej nocy Igor wita Teresę przynosząc jej śniadanie do łóżka. Siudymówna czuje się bardzo głupio, przyznaje, że ona nigdy dotąd nie chodziła z mężczyzną do łóżka tylko dla seksu. Marek telefonuje do Ewy, opowiada o wydarzeniach jakie miały miejsce w nocy, podejrzewa że ktoś go wsypał, będzie ich teraz musiał prosić o ochronę. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128685" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128685','ekipa_skrocona128685','ekipa128685','ekipa_schowaj128685','ekipa_schowaj_krotki128685','ekipa_schowaj_pelny128685','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128685" class="jslink" onclick="pzf('ekipa_skrocona128685','ekipa_pelna128685','ekipa128685','ekipa_schowaj128685','ekipa_schowaj_pelny128685','ekipa_schowaj_krotki128685','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128685"128685" class="jslink" onclick="pzz('ekipa128685','ekipa_schowaj128685')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128685" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128685">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> aktor Kostek Kamiński</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1125450">Dariusz Pick</a></div><div class="ekipa_opis"> Darek, nauczyciel wf-u</div><div class="ekipa_osoba"><a href="index.php/1120238">Joanna Jędrejek</a></div><div class="ekipa_opis"> nauczycielka Joanna</div><div class="ekipa_osoba"><a href="index.php/112760">Sylwester Maciejewski</a></div><div class="ekipa_opis"> Antoni, kierowca Wandy</div><div class="ekipa_osoba"><a href="index.php/1129505">Dominik Ciemny</a></div><div class="ekipa_opis"> Dominik, syn Lucyny i Marka</div><div class="ekipa_osoba"><a href="index.php/1140511">Ireneusz Gutowski</a></div><div class="ekipa_opis"> pracownik telewizji</div><div class="ekipa_osoba"><a href="index.php/1129510">Iwona Kiełt</a></div><div class="ekipa_opis"> Asia Kawecka</div><div class="ekipa_osoba"><a href="index.php/1122447">Bogdan Kokotek</a></div><div class="ekipa_opis"> prowadzący program "Kobieta 2000", później realizator programu Ireny</div><div class="ekipa_osoba"><a href="index.php/1151308">Krzysztof Miętek</a></div><div class="ekipa_opis"> pracownik telewizji</div><div class="ekipa_osoba"><a href="index.php/11210194">Sebastian Szaniawski</a></div><div class="ekipa_opis"> pracownik telewizji</div><div class="ekipa_osoba"><a href="index.php/1129517">Gabriel Wąsiński</a></div><div class="ekipa_opis"> kierownik planu programu "Kobieta 2000"</div><div class="ekipa_osoba"><a href="index.php/1120162">Tadeusz Wieczorek</a></div><div class="ekipa_opis"> prezes stacji telewizyjnej</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128685">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">37 min</div></li>
+</ul>
+<p class="opis">Marek za pośrednictwem Ewy kontaktuje się z tajemniczym Szefem w sprawie ochrony przed szantażującymi go bandytami. Szef zapewnia Marka że nikt go już nie będzie niepokoił, jest też przekonany że jeszcze nie raz się spotkają. Irena w samochodzie dostaje bólów porodowych, Tomek odwozi ją do szpitala, tam wkrótce rodzi córeczkę, wpada jednak w psychozę poporodową i nie chce widzieć swojego dziecka. Tomek jest szczęśliwy i zachwycony swoją córeczką, pilnie uczy się podstawowych czynności pielęgnacyjnych, z dumą przyjmuje gratulacje matki i babci. Teresa przyznaje się Eli że zakochała się w Igorze, mówi że przy nim zrozumiała co to znaczy prawdziwe uczucie. Ku niezadowoleniu Eli Teresa podejmuje decyzję o rezygnacji z pracy w redakcji i powrocie do Zagórzyna, przyjmuje jednak sugestię przyjaciółki i obiecuje że ukończy kurs kosmetyczny i otworzy nowoczesny zakład. Lucyna wciąż obawia się bandytów, prosi Wojtka, aby ten został u niej w domu na noc. Pod drzwi willi Lucyny ktoś podrzuca pudełko z małymi kotkami i kartkę z przeprosinami. Okazuje się, że pieniądze na koncie burmistrzowej pochodzą od Igora, adwokat Tarnawskiej żąda od Michała przeprosin w prasie i zaliczki na poczet PCK, Marysia zaś za ujawnienie tajemnicy służbowej traci intratną posadę w banku. Pijany Matysik znowu znęca się nad żoną, ksiądz Andrzej biegnie z interwencją do domu alkoholika. Wanda spotyka się w teatrze z Kostkiem, jest zachwycona jego talentem, gdy rozmawiają na scenie pojawia się wycieczka dzieci, zarówno Kostek jak i Wanda, wzięta za znaną aktorkę, rozdają autografy. Tomek stara się o pracę w banku, po rozmowie kwalifikacyjnej dostaje posadę, ale z zastrzeżeniem że teraz rzadko będzie widywał żonę i dzieci. Teresa oświadcza rodzicom że związała się z Igorem i myśli o nim bardzo poważnie. Siudymowie nie pochwalają decyzji córki, Teresa zarzuca rodzicom małostkowość i obrażona wychodzi z domu, udaje się do Lucyny z którą rozmawia o kłopotach siostry i swoim wielkim szczęściu. Asia, którą miała fotografować Ela trafia do szpitala, lekarze stwierdzają u niej anoreksję. Igor po powrocie z Warszawy komunikuje Teresie że Tomek ma córkę, umawia się z nią na lustrację domu, który chce kupić. Teresa, kiedy dowiaduje się od Marysi że przez Tarnawską wyrzucili ją z pracy oświadcza że po ewentualnym ślubie z Igorem zostanie chyba przy swoim nazwisku. Ewa proponuje Markowi kilkudniowy wypad w góry, o dom nie musi się już martwić, przecież wszystko załatwione. Tymczasem wracający z polowania Siudym widzi bandytów uciekających spod domu Lucyny, sięga po sztucer i strzela w koła ich samochodu, auto rozbija się na przydrożnym drzewie. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128708" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128708','ekipa_skrocona128708','ekipa128708','ekipa_schowaj128708','ekipa_schowaj_krotki128708','ekipa_schowaj_pelny128708','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128708" class="jslink" onclick="pzf('ekipa_skrocona128708','ekipa_pelna128708','ekipa128708','ekipa_schowaj128708','ekipa_schowaj_pelny128708','ekipa_schowaj_krotki128708','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128708"128708" class="jslink" onclick="pzz('ekipa128708','ekipa_schowaj128708')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128708" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128708">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> mecenas Ewa Salecka, kochanka Marka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> aktor Kostek Kamiński</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1118157">Waldemar Obłoza</a></div><div class="ekipa_opis"> Roman Matysik, ojciec Grzesia</div><div class="ekipa_osoba"><a href="index.php/1129504">Anna Gajewska</a></div><div class="ekipa_opis"> Marysia Małecka, siostra Michała</div><div class="ekipa_osoba"><a href="index.php/1129505">Dominik Ciemny</a></div><div class="ekipa_opis"> Dominik, syn Lucyny i Marka</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Grześ Matysik</div><div class="ekipa_osoba"><a href="index.php/1116280">Jarosław Gajewski</a></div><div class="ekipa_opis"> dyrektor banku</div><div class="ekipa_osoba"><a href="index.php/114506">Elżbieta Jarosik</a></div><div class="ekipa_opis"> Zdzisława Matysikowa, matka Grzesia</div><div class="ekipa_osoba"><a href="index.php/1118926">Jacek Krautforst</a></div><div class="ekipa_opis"> nauczyciel z wycieczką w teatrze; w napisach nazwisko: Klautforst</div><div class="ekipa_osoba"><a href="index.php/1124834">Monika Kwiatkowska</a></div><div class="ekipa_opis"> lekarka na porodówce</div><div class="ekipa_osoba"><a href="index.php/114826">Wojciech Machnicki</a></div><div class="ekipa_opis"> adwokat Wandy</div><div class="ekipa_osoba"><a href="index.php/116371">Grażyna Marzec</a></div><div class="ekipa_opis"> lekarka na oddziale położniczym</div><div class="ekipa_osoba"><a href="index.php/1123654">Joanna Pierzak</a></div><div class="ekipa_opis"> pielęgniarka na porodówce</div><div class="ekipa_osoba"><a href="index.php/1115865">Jolanta Rzaczkiewicz</a></div><div class="ekipa_opis"> położna-instruktorka na porodówce; w napisach nazwisko: Raczkiewicz</div><div class="ekipa_osoba"><a href="index.php/111423">Henryk Talar</a></div><div class="ekipa_opis"> Henryk Szmidt</div><div class="ekipa_osoba"><a href="index.php/1132135">Sandra Samos</a></div><div class="ekipa_opis"> uczennica na wycieczce w teatrze; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128708">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">37 min</div></li>
+</ul>
+<p class="opis">Janusz, w związku z wydarzeniami ostatniej nocy, jest przesłuchiwany przez policję, jako że jeden z bandytów nie żyje. czeka  go sprawa o nieumyślne spowodowanie śmierci. W domu Siudymów rozpacz, Janusz jest załamany, boi się że pójdzie do więzienia, nie chodzi jednak o to że stanie przed sądem, ale o fakt że zabił człowieka, nie wie czy zdoła żyć z piętnem mordercy. Zosia o wszystko obwinia Lucynę, to przez ten jej romans. Dziewczyna się broni, przecież marek sam prosił Wojtka żeby u nich przenocował, ktoś im groził, podrzucił zabitego kota i list. Marek jednak wszystkiego się wypiera, nikt go nie szantażował, twierdzi, że wszelkie groźby istnieją tylko w chorej znerwicowanej wyobraźni Lucyny, to tylko jej alkoholowe zwidy przez które wpakowała własnego ojca w niezłe szambo. Tomek odwiedza Irenę w szpitalu, kobieta wciąż jest w szoku poporodowym i zupełnie nie interesuje się dzieckiem. Lekarka pociesza młodego Tarnawskiego, żona wkrótce dojdzie do siebie, bywały już gorsze przypadki. Ksiądz Andrzej w redakcji miesięcznika "Image" spotyka się z Elą w sprawie "wykładu" o strojach komunijnych. Ela próbuje zaprosić księdza do teatru, ten jednak odmawia, wieczorem ma mszę i musi wracać do Zagórzyna.  Igor zarzuca siostrze że to przez nią Marysię wyrzucono z pracy, Wanda zaprzecza, dziewczyna złamała prawo naruszając tajemnicę bankową, niech się cieszy że sprawa nie trafiła do sądu. Igor komunikuje rodzinie że postanowił zostać w Zagórzynie i ożenić się z Teresą, Wanda stanowczo sprzeciwia się decyzji brata. Lucyna odwiedza Wojtka, który także ucierpiał podczas nocnej strzelaniny, ma złamaną rękę. Lucyna skarży się że Marek próbuje zrobić z niej wariatkę, wiedziała że z niego kawał drania, nigdy z nikim się nie liczył, ale nie sądziła że stać go na oczernianie własnej żony. Marysia rozpacza, bo nie wie co ma teraz ze sobą zrobić, przecież z taką opinią z banku nigdzie nie znajdzie teraz pracy. Michał stara się pocieszyć siostrę, na pewno dadzą sobie jakoś radę, wspomina tragicznie zmarłych rodziców, wtedy jednego dnia stali się dorośli. Przedstawiciel Agencji Przemysłowej jest przekonany że dyrektor Siudym nie prędko wywinie się z tej strzelaniny, proces potrwa, a on zajęty własnymi problemami przestanie się wtrącać w inne sprawy, potem roztacza przed burmistrzową wizje współpracy, obiecuje pomoc przy następnych wyborach. Kostek odwiedza Wandę w jej domu, ta jest bardzo rada z odwiedzin aktora. Gieniów zaszczyca swoją obecnością ich sąsiadka Płońska, w pretensjonalnych słowach prosi o umożliwienie korzystania z ich ujęcia wody. Ula drwi z wielkopańskich manier sąsiadki. Wanda postanawia że znajdzie Januszowi najlepszego adwokata, pomoże mu bo to porządny człowiek i trzeba go bronić. Igor i Teresa myślą o kupnie domu, oglądają stary dworek, który jest jednak bardzo zdewastowany, pojawia się też stara, dziwnie zachowująca się kobieta, twierdzi, że w tym domu straszy, potem nagle znika. Przestraszona Teresa oświadcza że nigdy nie wejdzie do tego domu. W kościele ksiądz Andrzej odprawia mszę w intencji zmarłych dziesięć lat temu rodziców Michała i Marysi Małeckich oraz dyrektora Siudyma, który przechodzi trudne chwile. Celebrę zakłóca pojawienie się  na chórze pijanego Matysika, który odgraża się kapłanowi. Grześ jest upokorzony zachowaniem ojca. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128759" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128759','ekipa_skrocona128759','ekipa128759','ekipa_schowaj128759','ekipa_schowaj_krotki128759','ekipa_schowaj_pelny128759','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128759" class="jslink" onclick="pzf('ekipa_skrocona128759','ekipa_pelna128759','ekipa128759','ekipa_schowaj128759','ekipa_schowaj_pelny128759','ekipa_schowaj_krotki128759','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128759"128759" class="jslink" onclick="pzz('ekipa128759','ekipa_schowaj128759')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128759" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128759">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> mecenas Ewa Salecka, kochanka Marka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/111930">Halina Machulska</a></div><div class="ekipa_opis"> Aleksandra Tarnawska, matka Wandy i Igora</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> aktor Kostek Kamiński</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1118157">Waldemar Obłoza</a></div><div class="ekipa_opis"> Roman Matysik, ojciec Grzesia</div><div class="ekipa_osoba"><a href="index.php/118689">Marta Klubowicz</a></div><div class="ekipa_opis"> szefowa redakcji pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1127863">Sybilla Rostek</a></div><div class="ekipa_opis"> Renata, redaktorka pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1128199">Magda Czartoryjska</a></div><div class="ekipa_opis"> redaktorka pisma kobiecego</div><div class="ekipa_osoba"><a href="index.php/1129503">Maria Robaszkiewicz-Kowarska</a></div><div class="ekipa_opis"> Ula, żona Gienka</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> Gienek, brat Zofii</div><div class="ekipa_osoba"><a href="index.php/112760">Sylwester Maciejewski</a></div><div class="ekipa_opis"> Antoni, kierowca Wandy</div><div class="ekipa_osoba"><a href="index.php/1129504">Anna Gajewska</a></div><div class="ekipa_opis"> Marysia Małecka, siostra Michała</div><div class="ekipa_osoba"><a href="index.php/1128253">Alan Andersz</a></div><div class="ekipa_opis"> Grześ Matysik</div><div class="ekipa_osoba"><a href="index.php/116371">Grażyna Marzec</a></div><div class="ekipa_opis"> lekarka na oddziale położniczym</div><div class="ekipa_osoba"><a href="index.php/1113467">Małgorzata Jóźwiak</a></div><div class="ekipa_opis"> Ala, sekretarka Wandy</div><div class="ekipa_osoba"><a href="index.php/1128452">Wojciech Billip</a></div><div class="ekipa_opis"> policjant w Zagórzynie</div><div class="ekipa_osoba"><a href="index.php/111569">Anna Ciepielewska</a></div><div class="ekipa_opis"> kobieta w czerni</div><div class="ekipa_osoba"><a href="index.php/1114749">Dorota Lanton</a></div><div class="ekipa_opis"> pacjentka na oddziale położniczym</div><div class="ekipa_osoba"><a href="index.php/112136">Maciej Szary</a></div><div class="ekipa_opis"> Kazik, komendant policji w Zagórzynie</div><div class="ekipa_osoba"><a href="index.php/1121810">Paweł Szczesny</a></div><div class="ekipa_opis"> Jabłoński, przedstawiciel Agencji Przemysłowej</div><div class="ekipa_osoba"><a href="index.php/118826">Dorota Zięciowska</a></div><div class="ekipa_opis"> Beata Płońska, sąsiadka Gienków</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128759">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>10</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2000</div></li>
+<li><div class="film_tech3">38 min</div></li>
+</ul>
+<p class="opis">Igor załatwia ostatnie sprawy przed wyjazdem w interesach do Francji. Tym razem nie chce zabrać że sobą Teresy, ale widząc jak tą interesują się inni mężczyźni staje się o nią nieco zazdrosny. W Zagórzynie pojawia się ekscentryczny Jacek, który ma szefować miejscowemu Domowi Kultury. Michał oprowadza go po miasteczku, pomiędzy nimi nawiązuje się nić sympatii. Pani Krysia wspomina bulwersujące zdarzenie jakie miało miejsce wczoraj w kościele, uważa że ksiądz dobrze zrobił że dołożył Matysikowi. Na plebani pojawia się Asia, która dopiero co wyszła ze szpitala,, pyta o Elę, która obiecała że uczyni z niej modelkę. Pani Krysia częstuje dziewczynę obiadem, ta jednak na widok jedzenia dostaje nudności, znak to że jeszcze nie wyzbyła się anoreksji. Irenę i jej córkę odwiedzają w szpitalu koledzy i koleżanki ze stacji telewizyjnej, robią dziecku zdjęcia. Kiedy pojawia się Tomek wyrzuca za drzwi hałaśliwych gości. Janusz wciąż nie może się wyzbyć stanów depresyjnych, unika ludzi, z nikim nie chce rozmawiać, całymi dniami włóczy się po lesie. Tomek pod okiem położnej uczy się pielęgnacji dziecka. Wojtek chce porozmawiać z Markiem o ostatnich wydarzeniach, ten jednak w wulgarnych słowach zbywa nauczyciela, mówi że nie ma czasu na pierdoły, w domu czeka na niego żona i dziecko, podkreśla że jego żona. Teresa martwi się o ojca, bardzo zdziwaczał po tym wypadku, czuje się też samotna po wyjeździe Igora. Ela jest w zupełnie innym nastroju, przyznaje się przyjaciółce że spodobał się jej ksiądz Andrzej, to super facet. Teresa uważa że Ela chyba zwariowała, jak można zakochać się w księdzu? Tymczasem Igor przed wyjazdem do Francji spotyka się z siostrą. Wanda znów zaczyna krytykować Teresę i plany brata z nią związane. Igor ostro reaguje, uważa że Wanda w głupi sposób wtrąca się w nie swoje sprawy. W sklepie Zofii zjawia się pijany Matysik, chce kupić alkohol, kiedy Siudymowa odmawia wychodzi obrażony. Marysia ma nadzieję zatrudnić się na pół etatu w szkole. Ela przychodzi do kościoła na potkanie z rodzicami w sprawie komunii, wyraźnie kokietuje księdza Andrzeja. Rodzice nie dają się przekonać do kupienia alb. W świątyni pojawia się też Asia, przypomina Eli że obiecała jej pomoc w karierze modelki. Ela daje nastolatce swoją wizytówkę prosząc by do niej zatelefonowała. Marysia przyłapuje Wojtka na pisaniu wierszy, zawstydzony mężczyzna skrywa swoją poezję i jednocześnie przeprasza za swoją dziwność. Tarnawska spotyka się w kawiarni z Kostkiem, poznaje go z Tomkiem. Aktor ze smutkiem opowiada o swoim chorym synu, który przebywa w ośrodku dla osób autystycznych. Wysiadającego z samochodu pod domem Marka zaskakuje Ewa, robi mu wyrzuty, że wrócił do żony. Marek twierdzi, że to tylko chwilowy come back. [<b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki128821" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna128821','ekipa_skrocona128821','ekipa128821','ekipa_schowaj128821','ekipa_schowaj_krotki128821','ekipa_schowaj_pelny128821','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny128821" class="jslink" onclick="pzf('ekipa_skrocona128821','ekipa_pelna128821','ekipa128821','ekipa_schowaj128821','ekipa_schowaj_pelny128821','ekipa_schowaj_krotki128821','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj128821"128821" class="jslink" onclick="pzz('ekipa128821','ekipa_schowaj128821')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa128821" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna128821">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis wyroznienie"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis wyroznienie"> Teresa Siudym</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis wyroznienie"> Tomek Tarnawski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis wyroznienie"> Igor Tarnawski, brat Wandy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis wyroznienie"> Zofia Siudym, matka Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis wyroznienie"> Janusz Siudym, ojciec Teresy i Lucyny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis wyroznienie"> Irena</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ela Barańska, przyjaciółka Teresy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis wyroznienie"> Lucyna, siostra Teresy</div><div class="ekipa_osoba"><a href="index.php/1123796">Krzysztof Banaszyk</a></div><div class="ekipa_opis"> Michał Małecki, przyjaciel Tomka</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> mecenas Ewa Salecka, kochanka Marka</div><div class="ekipa_osoba"><a href="index.php/1125760">Marcin Dorociński</a></div><div class="ekipa_opis"> Marek, mąż Lucyny</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> aktor Kostek Kamiński</div><div class="ekipa_osoba"><a href="index.php/1114373">Paweł Iwanicki</a></div><div class="ekipa_opis"> nauczyciel Wojtek Bir</div><div class="ekipa_osoba"><a href="index.php/1124893">Marek Włodarczyk</a></div><div class="ekipa_opis"> ksiądz Andrzej</div><div class="ekipa_osoba"><a href="index.php/1119405">Grażyna Zielińska</a></div><div class="ekipa_opis"> Krystyna Pęczek, gospodyni księdza</div><div class="ekipa_osoba"><a href="index.php/1118157">Waldemar Obłoza</a></div><div class="ekipa_opis"> Roman Matysik, ojciec Grzesia</div><div class="ekipa_osoba"><a href="index.php/1129503">Maria Robaszkiewicz-Kowarska</a></div><div class="ekipa_opis"> Ula, żona Gienka</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> Gienek, brat Zofii</div><div class="ekipa_osoba"><a href="index.php/1129504">Anna Gajewska</a></div><div class="ekipa_opis"> Marysia Małecka, siostra Michała</div><div class="ekipa_osoba"><a href="index.php/1129505">Dominik Ciemny</a></div><div class="ekipa_opis"> Dominik, syn Lucyny i Marka</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> Jacek</div><div class="ekipa_osoba"><a href="index.php/1122777">Katarzyna Herman</a></div><div class="ekipa_opis"> Monika, koleżanka Ireny</div><div class="ekipa_osoba"><a href="index.php/1137226">Piotr Jankowski</a></div><div class="ekipa_opis"> fotograf, kolega Ireny</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> kelnerka Madzia</div><div class="ekipa_osoba"><a href="index.php/1129510">Iwona Kiełt</a></div><div class="ekipa_opis"> Asia Kawecka</div><div class="ekipa_osoba"><a href="index.php/1116758">Janusz Sadowski</a></div><div class="ekipa_opis"> kierowca w firmie Igora</div><div class="ekipa_osoba"><a href="index.php/118826">Dorota Zięciowska</a></div><div class="ekipa_opis"> Beata Płońska, sąsiadka Gienków</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona128821">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Wanda Tarnawska, matka Tomka, burmistrz Zagórzyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123180">Agnieszka Warchulska</a></div><div class="ekipa_opis"> Teresa Siudym</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123982">Szymon Bobrowski</a></div><div class="ekipa_opis"> Tomek Tarnawski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118010">Bronisław Wrocławski</a></div><div class="ekipa_opis"> Igor Tarnawski, brat Wandy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11224">Jadwiga Jankowska-Cieślak</a></div><div class="ekipa_opis"> Zofia Siudym, matka Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Janusz Siudym, ojciec Teresy i Lucyny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123166">Anna Samusionek</a></div><div class="ekipa_opis"> Irena</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ela Barańska, przyjaciółka Teresy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128299">Dorota Landowska</a></div><div class="ekipa_opis"> Lucyna, siostra Teresy</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="128345" selected >1</option><option value="128345_2">2</option><option value="128345_3">3</option><option value="128345_4">4</option><option value="128345_5">5</option><option value="128345_6">6</option><option value="128345_7">7</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/128345_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/128345_7"></a> 
+</nav><div id="czasgen">2026.05.20 00:58:37</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - SWACI</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>SWACI</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1261213" selected >1</option><option value="1261213_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1261213_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1261213_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022-2023</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2023. 04. 07</div></li>
+<li><div class="film_tech3">Barwny, 16 odcinków x 44 min<br /><br />
+Serial jest polską wersją ukraińskiej produkcji "Svaty", emitowanej od roku 2008.<br /><br />
+Emisja w serwisie Polsat Box Go:<br />
+Sezon 1. Odcinki 1-8. Emisja: 7 kwietnia - 26 maja 2023.<br />
+Sezon 2. Odcinki: 9-16. Emisja od 9 sierpnia 2023.</div></li>
+</ul>
+<p class="opis">Głównymi bohaterami serialu są dwie pary rodziców małżonków Ani i Mateusza. Młodzi wyjeżdżają na wakacje kupione last minute i 7-letnią córkę Maję chcą zostawić pod opieką dziadków. Wskutek pomyłki do opieki nad wnuczką przyjeżdżają zarówno pochodzący ze wsi rodzice Ani, jak też mieszkający w wielkim mieście rodzice Mateusza.</p><div class="galeria_mala"><a href="index.php?fotos=1661213_1&galeria=1561213"><img class="bezcienia" src="../z1/13i/61213_1.jpg" height="60"></a><a href="index.php?fotos=1661213_2&galeria=1561213"><img class="bezcienia" src="../z1/13i/61213_2.jpg" height="60"></a><a href="index.php?fotos=1661213_3&galeria=1561213"><img class="bezcienia" src="../z1/13i/61213_3.jpg" height="60"></a><a href="index.php?fotos=1661213_4&galeria=1561213"><img class="bezcienia" src="../z1/13i/61213_4.jpg" height="60"></a><a href="index.php?fotos=1661213_5&galeria=1561213"><img class="bezcienia" src="../z1/13i/61213_5.jpg" height="60"></a><a href="index.php?fotos=1661213_6&galeria=1561213"><img class="bezcienia" src="../z1/13i/61213_6.jpg" height="60"></a><a href="index.php/1561213" title="Galeria zdjęć (21)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1261213" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1261213','ekipa_skrocona1261213','ekipa1261213','ekipa_schowaj1261213','ekipa_schowaj_krotki1261213','ekipa_schowaj_pelny1261213','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1261213" class="jslink" onclick="pzf('ekipa_skrocona1261213','ekipa_pelna1261213','ekipa1261213','ekipa_schowaj1261213','ekipa_schowaj_pelny1261213','ekipa_schowaj_krotki1261213','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1261213"1261213" class="jslink" onclick="pzz('ekipa1261213','ekipa_schowaj1261213')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1261213" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1261213">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1111956">Kordian Piwowarski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1152149">Jakub Zduńczyk</a></div><div class="ekipa_opis"> planowy</div><div class="ekipa_osoba"><a href="index.php/118065">Katarzyna Jungowska</a></div><div class="ekipa_opis"> planowy; odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11194557">Karol Kiewel</a></div><div class="ekipa_opis"> planowy; odcinki: 16</div><div class="ekipa_osoba"><a href="index.php/11103218">Patryk Nowak</a></div><div class="ekipa_opis"> ds. planowania</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/11198787">Anita Ciesiółka</a></div><div class="ekipa_opis"> planowego</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114128">Hanna Bieniuszewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1111956">Kordian Piwowarski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1145197">Jan Cybis</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1170311">Łukasz Szołtysik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11162497">Kacper Kukla</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora obrazu</div><div class="ekipa_osoba"><a href="index.php/1144199">Sebastian Ronowicz</a></div><div class="ekipa_opis"> ostrzyciel</div><div class="ekipa_osoba"><a href="index.php/11163944">Michał Kowalski</a></div><div class="ekipa_opis"> ostrzyciel</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora kamery</div><div class="ekipa_osoba"><a href="index.php/11151654">Piotr Podsiadło</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11157727">Sebastian Marczak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11167160">Marcin Rostkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator Steadicam</div><div class="ekipa_osoba"><a href="index.php/11175463">Michał Kluszczyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11194026">Marek Borniński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11126285">Marek Zajączkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora Steadicam</div><div class="ekipa_osoba"><a href="index.php/11190971">Stanisław Popłochodzki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11208106">Tomasz Szymkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11214316">Mirosław Wierszałowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zdjęcia lotnicze</div><div class="ekipa_osoba"><a href="index.php/11146383">Marcin Kukla</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11169260">Tomasz Nizielski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/11170630">Nazar Golub</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba">Nazar Hryhoryshyn</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11199352">Marcin Wojdałowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Vadzim Paddubny</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Grip</div><div class="ekipa_osoba"><a href="index.php/1150734">Cezary Książek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11133816">Kevin Wildemann</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Postprodukcja obrazu</div><div class="ekipa_osoba"><a href="index.php/1154428">Wiktor Sasim</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11193253">Małgorzata Skwarek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf planu</div><div class="ekipa_osoba"><a href="index.php/11211133">Nina Köhler</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/11191272">Ireneusz Kamieniak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11145832">Julia Filińska</a></div><div class="ekipa_opis"> odcinki: 5-16</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1155234">Krzysztof Jakubiak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizytor planu</div><div class="ekipa_osoba"><a href="index.php/11160948">Dawid Buczek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Pojazdy</div><div class="ekipa_osoba">Samochodziarnia</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11190660">Marcin Klepka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1163763">Natalia Data</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/11170639">Sandra Nowotny</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11173237">Małgorzata Mech</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent kostiumografa</div><div class="ekipa_osoba"><a href="index.php/11214317">Anna Tiepłow</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie muzyczne</div><div class="ekipa_osoba"><a href="index.php/1149770">Aleksandra Zawrotniak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1138877">Radosław Ochnio</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Realizacja dźwięku</div><div class="ekipa_osoba"><a href="index.php/1155188">Paweł Mazurczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Mikrofoniarz</div><div class="ekipa_osoba"><a href="index.php/1146754">Konrad Fochman</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11214319">Szymon Sielski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11161199">Jarosław Stefan</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11169598">Filip Charitonow</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1172724">Patrycja Krysik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11179898">Łukasz Pawlusiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/1165251">Studio Fonograf</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138877">Radosław Ochnio</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11134523">Marta Weronika Werońska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11197508">Tomasz Trzeciakowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11130651">Mateusz Wojtyński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/11205588">Mikołaj Bober</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażu</div><div class="ekipa_osoba"><a href="index.php/11179899">Bartosz Guguła</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażu</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1152916">Anna Jabłońska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Charakteryzator II</div><div class="ekipa_osoba"><a href="index.php/1157846">Joanna Skiba</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent charakteryzatora</div><div class="ekipa_osoba"><a href="index.php/11201686">Wiktoria Chomont</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11174608">Yana Hrom</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/11196771">Ewa Sicińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11193125">Aleksandra Maksimczuk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Promocja</div><div class="ekipa_osoba"><a href="index.php/11212936">Agata Kolach</a></div><div class="ekipa_opis"> Dział Promocji i PR Telewizji Polsat</div><div class="ekipa_osoba"><a href="index.php/11211848">Monika Pawłowska</a></div><div class="ekipa_opis"> Dział Promocji i PR Telewizji Polsat</div><div class="ekipa_osoba"><a href="index.php/11202959">Anna Kowalczyk</a></div><div class="ekipa_opis"> social media Telewizji Polsat</div><div class="ekipa_osoba"><a href="index.php/11171066">Agata Tadra</a></div><div class="ekipa_opis"> Zespół autopromocji Telewizji Polsat</div><div class="ekipa_osoba"><a href="index.php/11214322">Daria Karmowska</a></div><div class="ekipa_opis"> Zespół autopromocji Telewizji Polsat</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1160308">Aleksandra Mecwaldowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Grafika</div><div class="ekipa_osoba"><a href="index.php/11170617">Michał Krygier</a></div><div class="ekipa_opis"> komputerowa</div><div class="ekipa_osoba"><a href="index.php/11198770">Imagenarium</a></div><div class="ekipa_opis"> komputerowa</div></li>
+<li><div class="ekipa_funkcja">Animacja</div><div class="ekipa_osoba"><a href="index.php/11170617">Michał Krygier</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11198770">Imagenarium</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/11170617">Michał Krygier</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11198770">Imagenarium</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Napisy</div><div class="ekipa_osoba"><a href="index.php/11170617">Michał Krygier</a></div><div class="ekipa_opis"> końcowe</div><div class="ekipa_osoba"><a href="index.php/11198770">Imagenarium</a></div><div class="ekipa_opis"> końcowe</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/11163120">Paweł Adamczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/11202048">Unagi Media</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Obsługa prawna</div><div class="ekipa_osoba"><a href="index.php/1149870">Lech Adamski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Inspekcja</div><div class="ekipa_osoba"><a href="index.php/1122693">Wojciech Konkol</a></div><div class="ekipa_opis"> BHP</div></li>
+<li><div class="ekipa_funkcja">Obsługa planu</div><div class="ekipa_osoba"><a href="index.php/11203054">Gostek-Media</a></div><div class="ekipa_opis"> kampery, agregaty, garderoba, toalety</div><div class="ekipa_osoba"><a href="index.php/11135446">Rafał Gostkowski</a></div><div class="ekipa_opis"> kampery, agregaty, garderoba, toalety</div><div class="ekipa_osoba"><a href="index.php/11151849">Gostek Film</a></div><div class="ekipa_opis"> kampery, agregaty, garderoba, toalety</div><div class="ekipa_osoba"><a href="index.php/11210176">Wiesław Madej</a></div><div class="ekipa_opis"> kampery, agregaty, garderoba, toalety</div><div class="ekipa_osoba"><a href="index.php/11119605">Krzysztof Zieliński</a></div><div class="ekipa_opis"> kampery, agregaty, garderoba, toalety</div><div class="ekipa_osoba"><a href="index.php/11104905">Edmund Pasieka</a></div><div class="ekipa_opis"> kampery, agregaty, garderoba, toalety</div><div class="ekipa_osoba"><a href="index.php/11151620">Kamil Gostkowski</a></div><div class="ekipa_opis"> kampery, agregaty, garderoba, toalety</div></li>
+<li><div class="ekipa_funkcja">Ochrona planu</div><div class="ekipa_osoba"><a href="index.php/1162097">Secu-Rom</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba">Ambasador</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153379">Paweł Gottlid</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11113225">Sławomir Szcześniak</a></div><div class="ekipa_opis"> kierowca</div><div class="ekipa_osoba"><a href="index.php/11195164">Robert Wroński</a></div><div class="ekipa_opis"> kierowca</div><div class="ekipa_osoba"><a href="index.php/11213329">Rafał Gajcy</a></div><div class="ekipa_opis"> kierowca</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1152203">Dana Catering</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116473">Marek Bączyk</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/11214320">Magdalena Szczotka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11201107">Łukasz Losa</a></div><div class="ekipa_opis"> ds. aktorskich</div><div class="ekipa_osoba"><a href="index.php/117604">Krzysztof Wiech</a></div><div class="ekipa_opis"> ds. obiektów</div></li>
+<li><div class="ekipa_funkcja">Asystent kierownika produkcji</div><div class="ekipa_osoba"><a href="index.php/11184311">Justyna Komoń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11214321">Julia Goryszewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/11163120">Paweł Adamczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/11135446">Rafał Gostkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11197503">Daniel Gaszkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/11162791">Joanna Dzyr</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11165415">Zuzanna Wiśniewska</a></div><div class="ekipa_opis"> odcinki: 5-</div><div class="ekipa_osoba"><a href="index.php/1159718">Magdalena Pogorzelska</a></div><div class="ekipa_opis"> odcinki: 6</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/11165519">Klementyna Pławska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Szef produkcji</div><div class="ekipa_osoba"><a href="index.php/1143617">Dorota Olbińska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1178369">Agnieszka Porzezińska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1135218">Krzysztof Hansz</a></div><div class="ekipa_opis wyroznienie"> Polsat</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11191525">Krzysztof Łaszewski</a></div><div class="ekipa_opis wyroznienie"> Polsat</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1178581">Tamara Aagten-Margol</a></div><div class="ekipa_opis wyroznienie"> Polot Media</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11170625">Okił Khamidov</a></div><div class="ekipa_opis wyroznienie"> Polot Media</div></li>
+<li><div class="ekipa_funkcja">Producent nadzorujący</div><div class="ekipa_osoba"><a href="index.php/1171972">Małgorzata Pach-Galik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11197494">Polot Media</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zlecenie</div><div class="ekipa_osoba"><a href="index.php/1122087">Polsat</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis wyroznienie"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis wyroznienie"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis wyroznienie"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis wyroznienie"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11159492">Paulina Lasota</a></div><div class="ekipa_opis wyroznienie"> Ania Kwiatkowska, matka Mai</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11177465">Szymon Majchrzak</a></div><div class="ekipa_opis wyroznienie"> Mateusz Kwiatkowski, ojciec Mai</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis wyroznienie"> Maja Kwiatkowska</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1261213">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1111956">Kordian Piwowarski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/114128">Hanna Bieniuszewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1111956">Kordian Piwowarski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1145197">Jan Cybis</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/11193253">Małgorzata Skwarek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1163763">Natalia Data</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1138877">Radosław Ochnio</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/11130651">Mateusz Wojtyński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1152916">Anna Jabłońska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1116473">Marek Bączyk</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/1178369">Agnieszka Porzezińska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1135218">Krzysztof Hansz</a></div><div class="ekipa_opis"> Polsat</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11191525">Krzysztof Łaszewski</a></div><div class="ekipa_opis"> Polsat</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1178581">Tamara Aagten-Margol</a></div><div class="ekipa_opis"> Polot Media</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11170625">Okił Khamidov</a></div><div class="ekipa_opis"> Polot Media</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/11197494">Polot Media</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11159492">Paulina Lasota</a></div><div class="ekipa_opis"> Ania Kwiatkowska, matka Mai</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11177465">Szymon Majchrzak</a></div><div class="ekipa_opis"> Mateusz Kwiatkowski, ojciec Mai</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div style="display:block;" /></li>
+</ul>
+</div>
+<div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Rodzice Mai - Ania i Mateusz Kwiatkowscy - złapali okazję tanich wakacji i zostawiają swoją córkę pod opieką dziadków – Krystyny, Wacka, Iwony i Jerzego. Zderzenie dwóch różnych światów – miejskiego i wiejskiego – jest bardzo trudne do pogodzenia. Dziadkowie nie mogą dojść do porozumienia, w jaki sposób będą zajmować się wnuczką.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1263607" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1263607','ekipa_skrocona1263607','ekipa1263607','ekipa_schowaj1263607','ekipa_schowaj_krotki1263607','ekipa_schowaj_pelny1263607','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1263607" class="jslink" onclick="pzf('ekipa_skrocona1263607','ekipa_pelna1263607','ekipa1263607','ekipa_schowaj1263607','ekipa_schowaj_pelny1263607','ekipa_schowaj_krotki1263607','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1263607"1263607" class="jslink" onclick="pzz('ekipa1263607','ekipa_schowaj1263607')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1263607" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1263607">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/11177465">Szymon Majchrzak</a></div><div class="ekipa_opis"> Mateusz Kwiatkowski, ojciec Mai</div><div class="ekipa_osoba"><a href="index.php/11159492">Paulina Lasota</a></div><div class="ekipa_opis"> Ania Kwiatkowska, matka Mai</div><div class="ekipa_osoba"><a href="index.php/11170908">Mariusz Kosmala</a></div><div class="ekipa_opis"> klient w przymierzalni; w napisach imię: Marcin</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1263607">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Ania i Mateusz Kwiatkowscy są na zagranicznych wakacjach. W domu, pod opieką dziadków, zostawili swoją sześcioletnią córeczkę Maję. Rodzice Ani: Krystyna i Wacław oraz rodzice Mateusza: Iwona i Jurek nie przepadają za sobą. Gdy mieszkają w wilii swoich dzieci pod jednym dachem, dochodzi między nimi do ciągłych napięć i kłótni. Wnuczka Maja smuci się z tego powodu, bo kocha po równo swoje babcie i dziadków i stara się ich pogodzić. Po wspólnym pikniku, zwaśnione pary dogadują się i wspólnie z wnuczką jadą do galerii handlowej. W drodze znów zaczynają ze sobą rywalizować i gdy skłóceni docierają na miejsce, w galerii orientują się, że nie ma z nimi Mai. W tym dniu wracają z wakacji ich dzieci: Ania i Mateusz, i pech chce, że w drodze do domu zatrzymują się w tej samej galerii. Dziadkowie rozpoczynają nerwowe poszukiwania wnuczki, jednocześnie ukrywając się przed swoimi dziećmi. Powoduje to szereg zabawnych sytuacji. Mała Maja tymczasem szuka w całej galerii indiańskiej „fajki pokoju” dla swoich dziadków, bo wierzy, że dzięki niej, jej ukochani będą mogli się porozumieć. Całe zamieszanie kończy się szczęśliwie i wszyscy razem wracają do domu młodych Kwiatkowskich. Gdy spakowani rodzice żegnają się ze swoimi dziećmi i wnuczką, Mai niechcący wyrywa się, że będzie miała braciszka. Zaskoczeni i uszczęśliwieni dziadkowie, przy konsternacji Ani i Mateusza, gratulują młodym rodzicom i decydują się zostać u nich dłużej.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1263608" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1263608','ekipa_skrocona1263608','ekipa1263608','ekipa_schowaj1263608','ekipa_schowaj_krotki1263608','ekipa_schowaj_pelny1263608','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1263608" class="jslink" onclick="pzf('ekipa_skrocona1263608','ekipa_pelna1263608','ekipa1263608','ekipa_schowaj1263608','ekipa_schowaj_pelny1263608','ekipa_schowaj_krotki1263608','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1263608"1263608" class="jslink" onclick="pzz('ekipa1263608','ekipa_schowaj1263608')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1263608" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1263608">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/11177465">Szymon Majchrzak</a></div><div class="ekipa_opis"> Mateusz Kwiatkowski, ojciec Mai</div><div class="ekipa_osoba"><a href="index.php/11159492">Paulina Lasota</a></div><div class="ekipa_opis"> Ania Kwiatkowska, matka Mai</div><div class="ekipa_osoba"><a href="index.php/1124759">Przemysław Saleta</a></div><div class="ekipa_opis"> występuje w roli samego siebie</div><div class="ekipa_osoba"><a href="index.php/1126924">Grzegorz Sierzputowski</a></div><div class="ekipa_opis"> lekarz pogotowia</div><div class="ekipa_osoba"><a href="index.php/1154487">Michał Zbroja</a></div><div class="ekipa_opis"> ochroniarz w galerii handlowej</div><div class="ekipa_osoba"><a href="index.php/11174338">Konrad Żygadło</a></div><div class="ekipa_opis"> sprzedawca w sklepie z tytoniem</div><div class="ekipa_osoba"><a href="index.php/11144886">Aleksandra Wasilewska</a></div><div class="ekipa_opis"> dyspozytorka w galerii handlowej</div><div class="ekipa_osoba"><a href="index.php/11170908">Mariusz Kosmala</a></div><div class="ekipa_opis"> klient w przymierzalni; w napisach imię: Marcin</div><div class="ekipa_osoba"><a href="index.php/11104905">Edmund Pasieka</a></div><div class="ekipa_opis"> Platon</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1263608">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Mateusz i Ania Kwiatkowscy spodziewają się drugiego dziecka. Zdenerwowani sytuacją młodzi rodzice pokłócili się z powodu drobiazgu, a ich sześcioletnia córka Maja powiedziała przez telefon obu babciom, że mama i tata zamierzają się rozstać. Następnego dnia w domu Kwiatkowskich pojawiają się dwie pary zaniepokojonych dziadków – rodzice Mateusza - Iwona i Jerzy Kwiatkowscy, oraz rodzice Ani – Krystyna i Wacek Gąsiorowie. Zarówno dziadkowie Kwiatkowscy, jak i Gąsiorowie chcą zapobiec kłótniom dzieci i uspokoić sytuację, jednakże sprzeczki pomiędzy nimi, oraz różnice w ich wychowaniu i temperamencie, prowadzą do jeszcze większego zamieszania.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1263661" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1263661','ekipa_skrocona1263661','ekipa1263661','ekipa_schowaj1263661','ekipa_schowaj_krotki1263661','ekipa_schowaj_pelny1263661','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1263661" class="jslink" onclick="pzf('ekipa_skrocona1263661','ekipa_pelna1263661','ekipa1263661','ekipa_schowaj1263661','ekipa_schowaj_pelny1263661','ekipa_schowaj_krotki1263661','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1263661"1263661" class="jslink" onclick="pzz('ekipa1263661','ekipa_schowaj1263661')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1263661" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1263661">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/11177465">Szymon Majchrzak</a></div><div class="ekipa_opis"> Mateusz Kwiatkowski, ojciec Mai</div><div class="ekipa_osoba"><a href="index.php/11159492">Paulina Lasota</a></div><div class="ekipa_opis"> Ania Kwiatkowska, matka Mai</div><div class="ekipa_osoba"><a href="index.php/11125149">Sebastian Perdek</a></div><div class="ekipa_opis"> mężczyzna w szpitalu</div><div class="ekipa_osoba">Paula Drobnik</div><div class="ekipa_opis"> żona mężczyzny w szpitalu</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1263661">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Będąca w drugiej ciąży Ania Kwiatkowska jest bardzo drażliwa. Często z błahego powodu kłóci się z Mateuszem. Rodzice obojga, Krystyna i Wacek Gąsiorowie i Iwona i Jerzy Kwiatkowscy, starają się łagodzić sytuację, ale doprowadzają do jeszcze większej eskalacji napięcia między małżonkami. W pewnym momencie Ania stwierdza, że zaczęła rodzić.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1263773" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1263773','ekipa_skrocona1263773','ekipa1263773','ekipa_schowaj1263773','ekipa_schowaj_krotki1263773','ekipa_schowaj_pelny1263773','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1263773" class="jslink" onclick="pzf('ekipa_skrocona1263773','ekipa_pelna1263773','ekipa1263773','ekipa_schowaj1263773','ekipa_schowaj_pelny1263773','ekipa_schowaj_krotki1263773','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1263773"1263773" class="jslink" onclick="pzz('ekipa1263773','ekipa_schowaj1263773')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1263773" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1263773">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/11177465">Szymon Majchrzak</a></div><div class="ekipa_opis"> Mateusz Kwiatkowski, ojciec Mai</div><div class="ekipa_osoba"><a href="index.php/11159492">Paulina Lasota</a></div><div class="ekipa_opis"> Ania Kwiatkowska, matka Mai</div><div class="ekipa_osoba"><a href="index.php/1113960">Andrzej Niemirski</a></div><div class="ekipa_opis"> sąsiad Dominik</div><div class="ekipa_osoba"><a href="index.php/11125149">Sebastian Perdek</a></div><div class="ekipa_opis"> mężczyzna w szpitalu</div><div class="ekipa_osoba">Paula Drobnik</div><div class="ekipa_opis"> żona mężczyzny w szpitalu</div><div class="ekipa_osoba">Ewa Makowska</div><div class="ekipa_opis"> lekarka</div><div class="ekipa_osoba"><a href="index.php/1145039">Dorota Salamon</a></div><div class="ekipa_opis"> salowa Halina Pieczarka</div><div class="ekipa_osoba">Agnes Truszkowska</div><div class="ekipa_opis"> sprzedawczyni w kwiaciarni</div><div class="ekipa_osoba"><a href="index.php/11149732">Mieczysław Wojtczak</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/11184858">Rafał Maj</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/11201651">Jacek Fuchs</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba">Sławomir Kiela</div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/11141097">Witold Komuda</a></div><div class="ekipa_opis"> profesor Grzegorz Kruszyński</div><div class="ekipa_osoba"><a href="index.php/11214910">Patryk Owczarek</a></div><div class="ekipa_opis"> student medycyny</div><div class="ekipa_osoba"><a href="index.php/11190085">Artur Sitko</a></div><div class="ekipa_opis"> sanitariusz</div><div class="ekipa_osoba"><a href="index.php/11214320">Magdalena Szczotka</a></div><div class="ekipa_opis"> ciężarna</div><div class="ekipa_osoba"><a href="index.php/11205958">Katarzyna Kotańska</a></div><div class="ekipa_opis"> ciężarna</div><div class="ekipa_osoba"><a href="index.php/11186904">Anna Nieciąg</a></div><div class="ekipa_opis"> ciężarna</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1263773">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Iwona Kwiatkowska jest niezadowolona, że jej wnuczka ma spędzić wakacje poza miastem, ponieważ zaraz po wakacjach rozpoczyna naukę w szkole. Razem z mężem, Jerzym Kwiatkowskim, jadą więc na wieś, gdzie Maja zostaje pod opieką dziadka - Wacława Gąsiora i babci - Krystyny. Nieoczekiwanie okazuje się, że Kwiatkowscy zapomnieli uprzedzić swatów o swoim przyjeździe. Rzeczywiście, ich przybycie jest całkowitym zaskoczeniem zarówno dla Krystyny, jak i Wacława. Konflikt interesów, a wraz z nim nowe przygody i nieoczekiwany splot wydarzeń, wydają się być nieuniknione.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1263830" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1263830','ekipa_skrocona1263830','ekipa1263830','ekipa_schowaj1263830','ekipa_schowaj_krotki1263830','ekipa_schowaj_pelny1263830','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1263830" class="jslink" onclick="pzf('ekipa_skrocona1263830','ekipa_pelna1263830','ekipa1263830','ekipa_schowaj1263830','ekipa_schowaj_pelny1263830','ekipa_schowaj_krotki1263830','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1263830"1263830" class="jslink" onclick="pzz('ekipa1263830','ekipa_schowaj1263830')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1263830" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1263830">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> Jacek</div><div class="ekipa_osoba"><a href="index.php/1147822">Elżbieta Romanowska</a></div><div class="ekipa_opis"> Lidka</div><div class="ekipa_osoba"><a href="index.php/11215253">Filip Tkaczyk</a></div><div class="ekipa_opis"> Alan</div><div class="ekipa_osoba"><a href="index.php/1159935">Dominika Gwit</a></div><div class="ekipa_opis"> Natalia</div><div class="ekipa_osoba"><a href="index.php/111928">Tadeusz Chudecki</a></div><div class="ekipa_opis"> Ireneusz Bóbr</div><div class="ekipa_osoba"><a href="index.php/11159189">Adam Organista</a></div><div class="ekipa_opis"> "Suchy"</div><div class="ekipa_osoba">Wiktor Gołuński</div><div class="ekipa_opis"> Kevin, syn Natalii</div><div class="ekipa_osoba">Aleksander Gołuński</div><div class="ekipa_opis"> Brajan, syn Natalii</div><div class="ekipa_osoba">Patrick Kamieniarz</div><div class="ekipa_opis"> dostawca węgla</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1263830">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Wacek i Jerzy pomagają Jackowi, koledze Wacka, z przewożeniem węgla na podwórko Jacka. Krysia i Iwona robią przetwory. Wacek, Jerzy i Jacek świętują koniec pracy, Jerzy wychodzi wcześniej, jednak wraca dopiero nad ranem. Następnego dnia Gąsiorów odwiedzają policjanci w sprawie włamania i kradzieży w sklepie. Podejrzanym staje się Jerzy, trafia do aresztu. Cała rodzina próbuje udowodnić jego niewinność i złapać prawdziwego złodzieja.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1263928" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1263928','ekipa_skrocona1263928','ekipa1263928','ekipa_schowaj1263928','ekipa_schowaj_krotki1263928','ekipa_schowaj_pelny1263928','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1263928" class="jslink" onclick="pzf('ekipa_skrocona1263928','ekipa_pelna1263928','ekipa1263928','ekipa_schowaj1263928','ekipa_schowaj_pelny1263928','ekipa_schowaj_krotki1263928','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1263928"1263928" class="jslink" onclick="pzz('ekipa1263928','ekipa_schowaj1263928')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1263928" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1263928">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> Jacek</div><div class="ekipa_osoba"><a href="index.php/1147822">Elżbieta Romanowska</a></div><div class="ekipa_opis"> Lidka</div><div class="ekipa_osoba"><a href="index.php/11215253">Filip Tkaczyk</a></div><div class="ekipa_opis"> Alan</div><div class="ekipa_osoba"><a href="index.php/1159935">Dominika Gwit</a></div><div class="ekipa_opis"> Natalia</div><div class="ekipa_osoba"><a href="index.php/111928">Tadeusz Chudecki</a></div><div class="ekipa_opis"> Ireneusz Bóbr</div><div class="ekipa_osoba"><a href="index.php/1139162">Marcin Sztabiński</a></div><div class="ekipa_opis"> policjant Aleksander Stróż</div><div class="ekipa_osoba"><a href="index.php/11159189">Adam Organista</a></div><div class="ekipa_opis"> "Suchy"</div><div class="ekipa_osoba"><a href="index.php/11208101">Kacper Krysiak</a></div><div class="ekipa_opis"> policjant Dudek</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1263928">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Ania i Mateusz Kwiatkowscy przebywają za granicą. W tym czasie ich córka Maja jest pod opieką wszystkich dziadków. Iwona i Jurek Kwiatkowscy oraz Maja mieszkają na wsi w domu Krysi i Wacka Gąsiorów. Maja kręci kamerką swoich dziadków - chce wysłać filmik do rodziców. Jurek właśnie wraca z więzienia. Stęskniona Iwona i swaci są szczęśliwi. Maja przyjaźni się z synem sąsiadki - Alanem, który częstuje dziewczynkę papierosem. Widzi to Krysia, która alarmuje pozostałych dorosłych. Dochodzi do kłótni z matką Alana - Lidką, a Iwona wprowadza restrykcje: zakaz palenia przy wnuczce i zakaz jedzenia ciężkostrawnych potraw. Pozostali godzą się na to, choć z oporami. Tymczasem Alan namawia Maję na spacer wczesnym rankiem - ma niespodziankę dla małej przyjaciółki. Na strychu szopy na skraju wsi chłopiec zrobił dziury w dachu, odtwarzając mapę nieba. Maja jest zachwycona „planetarium”. Dzieci wyszły z domu niezauważone. Swaci wszczynają alarm i rozpaczliwie szukają we wsi i po lesie Mai i Alana. Dzieci wracają same do domu i wszystko dobrze się kończy. Szczęśliwi swaci i wnuczka zasiadają do kolacji i oglądają w telewizorze nagrany przez Maję film z życia u dziadków.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1263974" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1263974','ekipa_skrocona1263974','ekipa1263974','ekipa_schowaj1263974','ekipa_schowaj_krotki1263974','ekipa_schowaj_pelny1263974','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1263974" class="jslink" onclick="pzf('ekipa_skrocona1263974','ekipa_pelna1263974','ekipa1263974','ekipa_schowaj1263974','ekipa_schowaj_pelny1263974','ekipa_schowaj_krotki1263974','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1263974"1263974" class="jslink" onclick="pzz('ekipa1263974','ekipa_schowaj1263974')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1263974" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1263974">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> Jacek</div><div class="ekipa_osoba"><a href="index.php/1147822">Elżbieta Romanowska</a></div><div class="ekipa_opis"> Lidka</div><div class="ekipa_osoba"><a href="index.php/11215253">Filip Tkaczyk</a></div><div class="ekipa_opis"> Alan</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1263974">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2022</div></li>
+</ul>
+<p class="opis">Wacław Gąsior jest bardzo oddany swojej pracy w piekarni i nie wyobraża sobie życia bez niej. Nieoczekiwanie zostaje z niej zwolniony. Bezrobotny Wacek popada w depresję. Chcąc pożegnać się ze swoją ciężarówką, kradnie ją spod sklepu. Swaci i policja ruszają za nim w pościg.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1264094" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1264094','ekipa_skrocona1264094','ekipa1264094','ekipa_schowaj1264094','ekipa_schowaj_krotki1264094','ekipa_schowaj_pelny1264094','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1264094" class="jslink" onclick="pzf('ekipa_skrocona1264094','ekipa_pelna1264094','ekipa1264094','ekipa_schowaj1264094','ekipa_schowaj_pelny1264094','ekipa_schowaj_krotki1264094','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1264094"1264094" class="jslink" onclick="pzz('ekipa1264094','ekipa_schowaj1264094')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1264094" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1264094">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/11215253">Filip Tkaczyk</a></div><div class="ekipa_opis"> Alan</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> Jacek</div><div class="ekipa_osoba"><a href="index.php/1139162">Marcin Sztabiński</a></div><div class="ekipa_opis"> policjant Aleksander Stróż</div><div class="ekipa_osoba">Kacper Plich</div><div class="ekipa_opis"> kierowca Michał</div><div class="ekipa_osoba"><a href="index.php/11208693">Renata Szkup</a></div><div class="ekipa_opis"> starsza pani</div><div class="ekipa_osoba"><a href="index.php/11241351">Adam Lach</a></div><div class="ekipa_opis"> kompan do kieliszka</div><div class="ekipa_osoba"><a href="index.php/11215944">Robert Miękwicz</a></div><div class="ekipa_opis"> kompan do kieliszka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1264094">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2023</div></li>
+</ul>
+<p class="opis">Iwona i Jerzy Kwiatkowscy od dwóch tygodni mieszkają z wnuczką Mają w domu Krysi i Wacka Gąsiorów. Krysia jest sfrustrowana bezczynnością Wacka i każe mu iść do pracy. Do czasu zatrudnienia zamierza głodzić Wacka, więc ten w desperacji oszukuje Krysię, że przyjął posadę. W rzeczywistości jednak pożycza pieniądze i próbuje szczęścia w grze na automatach. Krysia wierzy Wackowi, jest szczęśliwa. A Kwiatkowscy z tej okazji zapraszają Gąsiorów do wystawnej restauracji. Kłamstwo Wacka wychodzi na jaw. Z kolei Jerzy, bez wiedzy Iwony, podnajmuje ich mieszkanie swojemu koledze. Podczas uroczystej kolacji, Kwiatkowscy dostają telefon, że zalewają sąsiadów i nagle zostawiają samych Gąsiorów – bez pieniędzy – w restauracji.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1264153" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1264153','ekipa_skrocona1264153','ekipa1264153','ekipa_schowaj1264153','ekipa_schowaj_krotki1264153','ekipa_schowaj_pelny1264153','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1264153" class="jslink" onclick="pzf('ekipa_skrocona1264153','ekipa_pelna1264153','ekipa1264153','ekipa_schowaj1264153','ekipa_schowaj_pelny1264153','ekipa_schowaj_krotki1264153','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1264153"1264153" class="jslink" onclick="pzz('ekipa1264153','ekipa_schowaj1264153')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1264153" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1264153">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> Jacek</div><div class="ekipa_osoba"><a href="index.php/1147822">Elżbieta Romanowska</a></div><div class="ekipa_opis"> Lidka</div><div class="ekipa_osoba"><a href="index.php/11215253">Filip Tkaczyk</a></div><div class="ekipa_opis"> Alan</div><div class="ekipa_osoba"><a href="index.php/1159935">Dominika Gwit</a></div><div class="ekipa_opis"> Natalia</div><div class="ekipa_osoba">Dawid Karaś</div><div class="ekipa_opis"> kelner</div><div class="ekipa_osoba"><a href="index.php/11160447">Przemysław Kalicki</a></div><div class="ekipa_opis"> pracownik w magazynie</div><div class="ekipa_osoba">Marek Kołbik</div><div class="ekipa_opis"> pracownik w magazynie</div><div class="ekipa_osoba"><a href="index.php/11199727">Adam Juda</a></div><div class="ekipa_opis"> pracownik w magazynie</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1264153">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>10</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2023</div></li>
+</ul>
+<p class="opis">Jerzy i Iwona Kwiatkowscy przebywają na wsi w domu rodziców swojej synowej – Wacka i Krystyny Gąsiorów. Zbliżają się urodziny wspólnej wnuczki, Mai. Dziadkowie planują prezenty i atrakcje dla dziewczynki, ale Wacek kupił prosiaczka, którego nazwał Churchill. Niesforna świnka powoduje dużo problemów i komplikacji.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1264565" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1264565','ekipa_skrocona1264565','ekipa1264565','ekipa_schowaj1264565','ekipa_schowaj_krotki1264565','ekipa_schowaj_pelny1264565','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1264565" class="jslink" onclick="pzf('ekipa_skrocona1264565','ekipa_pelna1264565','ekipa1264565','ekipa_schowaj1264565','ekipa_schowaj_pelny1264565','ekipa_schowaj_krotki1264565','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1264565"1264565" class="jslink" onclick="pzz('ekipa1264565','ekipa_schowaj1264565')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1264565" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1264565">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1136860">Paweł Koślik</a></div><div class="ekipa_opis"> Wacek Gąsior, dziadek Mai, ojciec Ani</div><div class="ekipa_osoba"><a href="index.php/1125773">Beata Schimscheiner</a></div><div class="ekipa_opis"> Krysia Gąsior, babcia Mai, matka Ani</div><div class="ekipa_osoba"><a href="index.php/1121939">Mariusz Kiljan</a></div><div class="ekipa_opis"> Jerzy Kwiatkowski, dziadek Mai, ojciec Mateusza</div><div class="ekipa_osoba"><a href="index.php/1123804">Monika Krzywkowska</a></div><div class="ekipa_opis"> Iwona Kwiatkowska , babcia Mai, matka Mateusza</div><div class="ekipa_osoba"><a href="index.php/11190723">Amelia Żuchowska</a></div><div class="ekipa_opis"> Maja Kwiatkowska</div><div class="ekipa_osoba"><a href="index.php/1126481">Dariusz Toczek</a></div><div class="ekipa_opis"> Jacek</div><div class="ekipa_osoba"><a href="index.php/1147822">Elżbieta Romanowska</a></div><div class="ekipa_opis"> Lidka</div><div class="ekipa_osoba"><a href="index.php/11215253">Filip Tkaczyk</a></div><div class="ekipa_opis"> Alan</div><div class="ekipa_osoba"><a href="index.php/1159935">Dominika Gwit</a></div><div class="ekipa_opis"> Natalia</div><div class="ekipa_osoba"><a href="index.php/11197175">Monika Kisielewicz</a></div><div class="ekipa_opis"> kobieta w sklepie</div><div class="ekipa_osoba"><a href="index.php/11176350">Barbara Dmowska</a></div><div class="ekipa_opis"> sąsiadka Basia; w napisach nazwisko: Dymowska</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1264565">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1261213" selected >1</option><option value="1261213_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1261213_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1261213_2"></a> 
+</nav><div id="czasgen">2026.05.08 06:01:57</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

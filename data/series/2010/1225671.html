@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - DUCH W DOM</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>DUCH W DOM</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2010. 04. 05</div></li>
+<li><div class="film_tech3">Barwny, 8 odcinków x ok. 41 min</div></li>
+</ul>
+<p class="opis">Spokojna dzielnica dużego miasta. W jednorodzinnym domu mieszkają rodzice, trójka dzieci i babcia. 70-letnia seniorka jako jedyna widzi duchy swoich świętej pamięci teściów, które także są lokatorami willi.
+Jedyną osobą, która widzi duchy Heleny i Jerzego, jest babcia Ola.<br />
+Główny bohater Leszek jest skrzypkiem. Pracuje w niewielkim teatrze i uczy w szkole muzycznej. Jego żona Beata to nauczycielka matematyki w liceum. Wspólnie wychowują 14-letnią Julię, 10-letnią Kaśkę i sześciolatka Kacperka. Babcia cierpi na sklerozę oraz niedosłuch i wie, jak wykorzystać swoje przypadłości, żeby skutecznie manipulować bliskimi osobami. <br />
+Z rodziną sąsiadują dobrze sytuowany dentysta Marek z żoną Karoliną, niedocenianą aktorką, oraz Kazimierz - właściciel komisu samochodowego. Lubi filozofować. Jego przeszłość jest pełna tajemnic, podobnie jak teraźniejszość. Czasem na podwórku sąsiada parkują jakieś "wyjątkowe okazje", choć komis jest gdzie indziej. <br />
+Duchy często namacalnie wpływają na świat materialny, pomagając mieszkańcom w rozwiązaniu problemów. Niekiedy mącą w głowie babci, której działania odbijają się na rodzinie. Prym wiedzie duch teściowej, która za wszelką cenę stara się kierować byłą synową i czyni to nadzwyczaj skutecznie. Bo kto powiedział, że po przejściu do wieczności ludzie zmieniają się na lepsze?</p><div class="galeria_mala"><a href="index.php?fotos=1625671_1&galeria=1525671"><img class="bezcienia" src="../z1/71i/25671_1.jpg" height="60"></a><a href="index.php?fotos=1625671_2&galeria=1525671"><img class="bezcienia" src="../z1/71i/25671_2.jpg" height="60"></a><a href="index.php?fotos=1625671_3&galeria=1525671"><img class="bezcienia" src="../z1/71i/25671_3.jpg" height="60"></a><a href="index.php?fotos=1625671_4&galeria=1525671"><img class="bezcienia" src="../z1/71i/25671_4.jpg" height="60"></a><a href="index.php?fotos=1625671_5&galeria=1525671"><img class="bezcienia" src="../z1/71i/25671_5.jpg" height="60"></a><a href="index.php?fotos=1625671_6&galeria=1525671"><img class="bezcienia" src="../z1/71i/25671_6.jpg" height="60"></a><a href="index.php/1525671" title="Galeria zdjęć (15)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1225671" class="jslink" onclick="pzz('trailery1225671','trailery_schowaj1225671')">pokaż</span></div></h2><div id="trailery1225671" style="display: none;"><div style="margin:10px auto 0 20px; width:450px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="450" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/duch_w_dom.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=450&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225671" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225671','ekipa_skrocona1225671','ekipa1225671','ekipa_schowaj1225671','ekipa_schowaj_krotki1225671','ekipa_schowaj_pelny1225671','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225671" class="jslink" onclick="pzf('ekipa_skrocona1225671','ekipa_pelna1225671','ekipa1225671','ekipa_schowaj1225671','ekipa_schowaj_pelny1225671','ekipa_schowaj_krotki1225671','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225671"1225671" class="jslink" onclick="pzz('ekipa1225671','ekipa_schowaj1225671')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225671" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225671">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122839">Maciej Dutkiewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123655">Stefan Popkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118401">Rafał Sisicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158519">Marek Birner</a></div><div class="ekipa_opis"> odcinki: 2-4</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1159124">Agnieszka Drożdżyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122431">Robert Brutter</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125214">Mariusz Polaczek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nadzór scenariuszowy</div><div class="ekipa_osoba"><a href="index.php/1127422">Beata Gościk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opieka literacka</div><div class="ekipa_osoba"><a href="index.php/1160883">Krzysztof Tyszowiecki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1133642">Waldemar Szmidt</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1123682">Jarosław Wnuk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152193">Tomasz Sobański</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126634">Piotr Łukasiewicz</a></div><div class="ekipa_opis"> odcinki: 5-8</div></li>
+<li><div class="ekipa_funkcja">Operator CCU</div><div class="ekipa_osoba"><a href="index.php/1137254">Konrad Podnajmer</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1156037">Konrad Przyłucki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155820">Sebastian Strynkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zdjęcia specjalne</div><div class="ekipa_osoba"><a href="index.php/1134960">Michał Nowakowski</a></div><div class="ekipa_opis"> establishingi</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1123644">Tadeusz Ostrowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152777">Mateusz Ostrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1123201">Krzysztof Wacholski</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1127416">Tomasz Maliński</a></div><div class="ekipa_opis"> współpraca</div><div class="ekipa_osoba"><a href="index.php/1129309">Leszek Plak</a></div><div class="ekipa_opis"> współpraca</div><div class="ekipa_osoba"><a href="index.php/1129310">Andrzej Bąkowski</a></div><div class="ekipa_opis"> współpraca</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1157207">Klimex</a></div><div class="ekipa_opis"> podnośniki</div><div class="ekipa_osoba"><a href="index.php/1132359">Flash</a></div><div class="ekipa_opis"> oświetleniowy, agregat</div></li>
+<li><div class="ekipa_funkcja">Postprodukcja obrazu</div><div class="ekipa_osoba"><a href="index.php/1134639">Chimney Poland</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158752">Edyta Sęk</a></div><div class="ekipa_opis"> koordynacja</div><div class="ekipa_osoba"><a href="index.php/1166167">Kinga Kłusak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1162682">Piotr Sasim</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114789">Magdalena Dipont</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113234">Robert Czesak</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/113237">Bogdan Piotrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizytor planu</div><div class="ekipa_osoba"><a href="index.php/1135737">Tomasz Figura</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo budowy dekoracji</div><div class="ekipa_osoba"><a href="index.php/1125176">Andrzej Rychtarczyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117085">Monika Jagodzińska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1168560">Marta Kozarzewska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1160747">Milenia Michałowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117596">Aleksandra Zielińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158057">Faustyna Król</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1163328">Joanna Sadowska</a></div><div class="ekipa_opis"> odcinki: 1</div></li>
+<li><div class="ekipa_funkcja">Opracowanie muzyczne</div><div class="ekipa_osoba"><a href="index.php/1139181">Anna Malarowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132545">Monika Krzanowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129375">Iwona Ejsmund</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 3, 6-7</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129374">Marcin Ejsmund</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 3, 6-7</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis wyroznienie"> odcinki: 2, 4-5, 8</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora dźwięku</div><div class="ekipa_osoba"><a href="index.php/114130">Tomasz Kamiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1142677">Michał Pracz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty synchroniczne</div><div class="ekipa_osoba"><a href="index.php/1168148">Jarosław Kędzierski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125691">Marcin Pilich</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115072">Milenia Fiedler</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 3, 5, 7-8</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126491">Jarosław Kamiński</a></div><div class="ekipa_opis wyroznienie"> odcinki: 2, 4, 6</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1159127">Magdalena Buczkowska</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div><div class="ekipa_osoba"><a href="index.php/1158395">Bartosz Dymarski</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div><div class="ekipa_osoba"><a href="index.php/1156901">Paweł Wyrek</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div></li>
+<li><div class="ekipa_funkcja">Studio montażu</div><div class="ekipa_osoba"><a href="index.php/1146641">Studio Company</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123218">Iwona Blicharz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Charakteryzator II</div><div class="ekipa_osoba"><a href="index.php/1128039">Maria Stosio</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162896">Monika Mączka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162908">Maria Bocheńska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1168551">Anna Wolska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Make-up bus</div><div class="ekipa_osoba"><a href="index.php/1142941">Wojciech Orzechowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty komputerowe</div><div class="ekipa_osoba"><a href="index.php/1140609">Jan Białek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154911">Paweł Falkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157324">Radosław Rekita</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162742">Marcin Karski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1142425">Olga Kwiecińska-Kaplińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1159459">Jarosław Ciesielski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/11120766">Anna Górajka</a></div><div class="ekipa_opis"> w napisach nazwisko: Górajska</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/1140609">Jan Białek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie graficzne</div><div class="ekipa_osoba"><a href="index.php/1171442">Olgierd Zbychorski</a></div><div class="ekipa_opis"> projekt logo; nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1166535">Fill Studio</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1168556">Jolanta Malejczyk</a></div><div class="ekipa_opis"> stomatologiczna</div><div class="ekipa_osoba"><a href="index.php/1168557">Artur Wnuk</a></div><div class="ekipa_opis"> chemiczna</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1168558">Gastro Góra</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1160751">Sławomir Góra</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157724">Plan Bar</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1134009">Danuta Zarębska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ochrona planu</div><div class="ekipa_osoba"><a href="index.php/1166484">Agencja Kobra</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1126756">Marek Druś</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124586">Jerzy Bartosiak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1127290">Gustaw Mostowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110919">Paweł Gabryś</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1148404">Przemysław Segeń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113821">Anna Przybyszewska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11195358">Katarzyna Sikorska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1160887">Alicja Chełstowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1155541">Krzysztof Szamałek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1127175">Antoni Zakrzewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155233">Jarosław Wysocki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1134846">Waldemar Drabek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/1134309">Gabriela Ciechanowiecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kasjer</div><div class="ekipa_osoba"><a href="index.php/1134309">Gabriela Ciechanowiecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo postprodukcji</div><div class="ekipa_osoba"><a href="index.php/1133760">Joanna Słonina</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Szef produkcji</div><div class="ekipa_osoba"><a href="index.php/1125236">Magdalena Badura</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nadzór producencki</div><div class="ekipa_osoba"><a href="index.php/1124643">Katarzyna Fukacz-Cebula</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1158894">Małgorzata Górzańska</a></div><div class="ekipa_opis"> TVP</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis wyroznienie"> babcia Ola, matka Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113411">Anna Romantowska</a></div><div class="ekipa_opis wyroznienie"> duch Heleny, teściowej babci Oli</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis wyroznienie"> duch Jerzego, teścia babci Oli</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis wyroznienie"> Beata Wierzbicka, żona Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1111833">Piotr Gąsowski</a></div><div class="ekipa_opis wyroznienie"> Leszek Wierzbicki</div><div class="ekipa_osoba"><a href="index.php/1135167">Gabriela Pietrucha</a></div><div class="ekipa_opis"> Julia, córka Beaty i Leszka</div><div class="ekipa_osoba"><a href="index.php/1158068">Aleksandra Betańska</a></div><div class="ekipa_opis"> Kasia, córka Beaty i Leszka</div><div class="ekipa_osoba"><a href="index.php/1168473">Michał Bonisławski</a></div><div class="ekipa_opis"> Kacper, syn Beaty i Leszka</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> gangster Kazimierz, sąsiad Beaty i Leszka</div><div class="ekipa_osoba"><a href="index.php/11221">Witold Dębicki</a></div><div class="ekipa_opis"> perkusita, kolega Leszka</div><div class="ekipa_osoba"><a href="index.php/1142611">Wojciech Leonowicz</a></div><div class="ekipa_opis"> muzyk Lutek, kolega Leszka</div><div class="ekipa_osoba"><a href="index.php/1143927">Jakub Wieczorek</a></div><div class="ekipa_opis"> klarnecista, kolega Leszka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225671">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1122839">Maciej Dutkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1122431">Robert Brutter</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1125214">Mariusz Polaczek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1133642">Waldemar Szmidt</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/114789">Magdalena Dipont</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113234">Robert Czesak</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1117085">Monika Jagodzińska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1132545">Monika Krzanowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129375">Iwona Ejsmund</a></div><div class="ekipa_opis"> odcinki: 1, 3, 6-7</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129374">Marcin Ejsmund</a></div><div class="ekipa_opis"> odcinki: 1, 3, 6-7</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis"> odcinki: 2, 4-5, 8</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1115072">Milenia Fiedler</a></div><div class="ekipa_opis"> odcinki: 1, 3, 5, 7-8</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126491">Jarosław Kamiński</a></div><div class="ekipa_opis"> odcinki: 2, 4, 6</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1123218">Iwona Blicharz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1110919">Paweł Gabryś</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> babcia Ola, matka Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113411">Anna Romantowska</a></div><div class="ekipa_opis"> duch Heleny, teściowej babci Oli</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11799">Piotr Fronczewski</a></div><div class="ekipa_opis"> duch Jerzego, teścia babci Oli</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1117482">Agnieszka Pilaszewska</a></div><div class="ekipa_opis"> Beata Wierzbicka, żona Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1111833">Piotr Gąsowski</a></div><div class="ekipa_opis"> Leszek Wierzbicki</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1225671" class="jslink" onclick="pzz1('varia1225671','varia_schowaj1225671')">pokaż</span></div></h2>
+<table id="varia1225671" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">W MOIM MAGICZNYM DOMU  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1119700">Janusz Strobel</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba">Magda Czapińska</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+          
+          
+          
+          
+        </td><td class="varia_osoba"><a href="index.php/1126672">Maciej Maleńczuk</a></td><td class="varia_osoba_opis">wokal</td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1150367">Maciej Muraszko</a></td><td class="varia_osoba_opis">perkusja</td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1168552">Andrzej Laskowski</a></td><td class="varia_osoba_opis">bas</td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1157877">Grzegorz Stasiuk</a></td><td class="varia_osoba_opis">instrumenty klawiszowe</td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1168553">Jakub Frydrych</a></td><td class="varia_osoba_opis">gitara</td></tr>
+
+<tr><td class="varia_funkcja">Realizacja nagrań  
+        </td><td class="varia_osoba"><a href="index.php/1168554">Sergiusz Supron</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Manager  
+        </td><td class="varia_osoba"><a href="index.php/1168555">Maciej Schwartz</a></td><td class="varia_osoba_opis"></td></tr>
+</table>
+<h2>DUCH W DOM w internecie</h2>
+<ul class="point">
+<li><a href="http://www.tvp.pl/seriale/komediowe/duch-w-dom" target="_blank">oficjalna strona serialu</a></li>
+</ul>
+<div class="podzbior"><h1>BOMBOWA IMPREZA (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Julia, najstarsze dziecko Leszka i Beaty, idzie na prywatkę - i nie byłoby w tym nic strasznego, gdyby nie to, że musi, ale to absolutnie musi zostać na niej przynajmniej do północy. Inaczej - kompromitacja towarzyska, dramat, tragedia. Rodzice, wspierając się wzajemnie, próbują nie ulec lawinie argumentów i błagań córki. Sytuacji nie ułatwia fakt, że Leszek cierpi na rozwijające się i coraz boleśniejsze zapalenie miazgi w zębie, a babcia Ola ma wyraźne zburzenia świadomości, przyłapywana jest bowiem coraz częściej na rozmowie ze swoją dawno nie żyjącą teściową, a czasem i teściem...</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225693" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225693','ekipa_skrocona1225693','ekipa1225693','ekipa_schowaj1225693','ekipa_schowaj_krotki1225693','ekipa_schowaj_pelny1225693','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225693" class="jslink" onclick="pzf('ekipa_skrocona1225693','ekipa_pelna1225693','ekipa1225693','ekipa_schowaj1225693','ekipa_schowaj_pelny1225693','ekipa_schowaj_krotki1225693','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225693"1225693" class="jslink" onclick="pzz('ekipa1225693','ekipa_schowaj1225693')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225693" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225693">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis wyroznienie"> dentysta, sąsiad Beaty i Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis wyroznienie"> żona dentysty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis wyroznienie"> sklepikarz Stefan</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis wyroznienie"> polonistka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis wyroznienie"> biologiczka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> wuefistka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1148112">Wojciech Czerwiński</a></div><div class="ekipa_opis"> strażak</div><div class="ekipa_osoba"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis"> Stefa, żona gangstera</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225693">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis"> dentysta, sąsiad Beaty i Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> żona dentysty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis"> sklepikarz Stefan</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> polonistka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis"> biologiczka, koleżanka Beaty</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>LEK NA DEPRESJĘ (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Nieszczęścia chodzą zwykle parami, tym razem jednak zebrały się aż trzy. Leszek traci chałturę, która w istotnym stopniu wspomagała budżet rodzinny. Pan Stefan, właściciel osiedlowego sklepiku, nie dostaje zgody na sprzedaż alkoholu w restauracyjce, którą przy sklepiku próbuje otworzyć, zaś teściowa, a mówiąc precyzyjnie duch teściowej, popada w depresję. Zwłaszcza to ostatnie trudno wyjaśnić, bo w zasadzie w rodzinie dzieje się wszystko dobrze. Leszek i Beata się kochają i nie kłócą, dzieci dobrze się uczą, wszyscy są zdrowi. Okazuje się jednak, że dla teściowej, osoby skrajnie nadopiekuńczej, właśnie taka sytuacja jest nie do zniesienia, bo nie ma się o co martwić! A jak teściowa nie ma się o co martwić, czuje się niepotrzebna, ergo popada w depresję. Babcia Ola zatem, wspomagana przez ducha teścia, który jednak tradycyjnie na wiele się nie przydaje, usiłuje znaleźć teściowej jakieś pole do uprawiania zmartwienia, jeśli można się tak wyrazić. 
+Pan Stefan, pogrążony w rozpaczy, bo marzył o restauracyjce od lat, nieoczekiwanie uzyskuje pomoc od pana Kazimierza, uważanego powszechnie i nie bez racji za emerytowanego gangstera. Ponieważ jednak urzędnicy na skutek wielu głośnych prowokacji boją się wziąć łapówki, potrzebny jest w tej sprawie udział sąsiada dentysty, wciągniętego do spisku. 
+Pozornie najlepiej radzi sobie ze swoim kłopotem Leszek, który otrzymuje intratną propozycję grania w domu weselnym. Owszem, jako filharmonik cierpi, bo musi nauczyć się utworów szczególnie popularnych na weselach, ale za to wynagrodzenie wielokrotnie przewyższa filharmonijne standardy. Niestety, pojawia się również inny poważny minus - obowiązkowa konieczność spełniania toastów za państwa młodych, do czego ich rodziny przecież nie przymuszają, ale spróbuj człowieku odmówić. Leszek zatem, człowiek z natury pijący niewiele i źle znoszący alkohol, pojawia się, owszem, z kieszeniami pełnymi pieniędzy, ale w takim stanie, że o policzeniu pieniędzy nie ma nawet mowy. 
+Po drugim weselu Leszek składa uroczystą przysięgę, że alkoholu do ust nie weźmie. Jak każda nieprzemyślana decyzja, skutkuje to fatalnie, bo bracia panny młodej z podobnym afrontem nie mogą się pogodzić. Teściowa dzięki temu ma się wreszcie o kogo martwić, tylko biedny Leszek, zaproszony na otwarcie restauracyjki pana Stefana, słyszy tekst przekleństwo: no z takiej okazji się pan nie napije? [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225672" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225672','ekipa_skrocona1225672','ekipa1225672','ekipa_schowaj1225672','ekipa_schowaj_krotki1225672','ekipa_schowaj_pelny1225672','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225672" class="jslink" onclick="pzf('ekipa_skrocona1225672','ekipa_pelna1225672','ekipa1225672','ekipa_schowaj1225672','ekipa_schowaj_pelny1225672','ekipa_schowaj_krotki1225672','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225672"1225672" class="jslink" onclick="pzz('ekipa1225672','ekipa_schowaj1225672')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225672" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225672">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis wyroznienie"> dentysta, sąsiad Beaty i Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis wyroznienie"> żona dentysty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis wyroznienie"> sklepikarz Stefan</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114023">Andrzej Precigs</a></div><div class="ekipa_opis wyroznienie"> Kozłowski</div><div class="ekipa_osoba wyroznienie">Etna</div><div class="ekipa_opis wyroznienie"> wokalistka</div><div class="ekipa_osoba"><a href="index.php/113334">Andrzej Szopa</a></div><div class="ekipa_opis"> ojciec panny młodej</div><div class="ekipa_osoba"><a href="index.php/1114502">Wojciech Biedroń</a></div><div class="ekipa_opis"> ojciec panny młodej</div><div class="ekipa_osoba"><a href="index.php/1128194">Dominik Bąk</a></div><div class="ekipa_opis"> brat panny młodej</div><div class="ekipa_osoba"><a href="index.php/1113012">Adam Lewandowski</a></div><div class="ekipa_opis"> muzyk</div><div class="ekipa_osoba"><a href="index.php/1152333">Mateusz Szemraj</a></div><div class="ekipa_opis"> muzyk</div><div class="ekipa_osoba"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis"> Stefa, żona gangstera</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225672">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis"> dentysta, sąsiad Beaty i Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> żona dentysty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis"> sklepikarz Stefan</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114023">Andrzej Precigs</a></div><div class="ekipa_opis"> Kozłowski</div><div style="display:block;" /><div class="ekipa_osoba">Etna</div><div class="ekipa_opis"> wokalistka</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KARTY PRZETARGOWE (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Leszek odnosi niezwykły sukces, zostaje wybrany do tytułowej roli w przedstawieniu "Skrzypek na dachu". Rodzinną fetę po ogłoszeniu tej radosnej wiadomości przerywa rozhisteryzowany sąsiad dentysta, który właśnie odkrył, że ukradziono mu samochód. Podejrzenia, choć wyrażane nie wprost, padają na właściciela pobliskiego komisu samochodowego, a jednocześnie jednego z sąsiadów, pana Kazimierza. Czy to z powodu spodziewanej kariery scenicznej, czy z innej tajemniczej przyczyny Leszek zaczyna znacznie bardziej niż do tej pory dbać o swój wygląd. Dzień rozpoczyna wczesnym rankiem na pływalni, po południu buduje muskulaturę na siłowni. Beacie, początkowo zadowolonej z działań męża, koleżanki z pracy uświadamiają okrutną prawdę: jeśli żonaty facet zaczyna dbać o siebie, jest tylko jedno wytłumaczenie tego zachowania - inna kobieta. Dentysta postanawia przepytać sąsiada Kazimierza na okoliczność zniknięcia swojego samochodu. A gdzie stomatolog może bezkarnie zadawać niewygodnie pytania człowiekowi o niejasnej przeszłości i teraźniejszości? Oczywiście w gabinecie dentystycznym w czasie skomplikowanych działań w jego jamie ustnej. Pan Kazimierz postawiony w takiej sytuacji bez większych oporów deklaruje pomoc w odzyskaniu zaginionego auta. Babcia Ola zmartwiona faktem, że jej syn to zdradzający żonę szubrawiec prosi duchy teściów, żeby przeprowadziły małe śledztwo. Teściowa rozdziela zadania i akcja rozpracowywania domniemanego konkubinatu Leszka rusza z kopyta. Teściowej najbardziej przypada do gustu śledzenie Leszka w męskiej części siłowni. Wyniki dochodzenia są zaskakujące: Leszek jest całkowicie niewinny. Problem w tym, że Beata nie uwierzy w takie rewelacje pochodzące z zaświatów. Pan Kazimierz zadziałał na tyle skutecznie, że samochód dentysty w tajemniczy sposób wrócił do jego garażu. Na skutek tych działań dentysta zyskuje nowego pacjenta i na fotelu dentystycznym bardzo chętnie udzieli mu poglądowej lekcji na temat: jak się czuje człowiek, któremu ktoś obcy zabiera jego własność. Babci udaje się znaleźć skuteczny, choć zdecydowanie nietypowy, sposób na przekonanie Beaty o niewinności Leszka. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225689" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225689','ekipa_skrocona1225689','ekipa1225689','ekipa_schowaj1225689','ekipa_schowaj_krotki1225689','ekipa_schowaj_pelny1225689','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225689" class="jslink" onclick="pzf('ekipa_skrocona1225689','ekipa_pelna1225689','ekipa1225689','ekipa_schowaj1225689','ekipa_schowaj_pelny1225689','ekipa_schowaj_krotki1225689','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225689"1225689" class="jslink" onclick="pzz('ekipa1225689','ekipa_schowaj1225689')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225689" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225689">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis wyroznienie"> dentysta, sąsiad Beaty i Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis wyroznienie"> żona dentysty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis wyroznienie"> sklepikarz Stefan</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis wyroznienie"> polonistka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis wyroznienie"> biologiczka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> wuefistka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1158258">Damian Łukawski</a></div><div class="ekipa_opis"> aspirant Kowal</div><div class="ekipa_osoba"><a href="index.php/1148060">Marek Markiewicz</a></div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba"><a href="index.php/1138613">Andrzej Maroszek</a></div><div class="ekipa_opis"> złodziej</div><div class="ekipa_osoba"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis"> Stefa, żona gangstera</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225689">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis"> dentysta, sąsiad Beaty i Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> żona dentysty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis"> sklepikarz Stefan</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> polonistka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis"> biologiczka, koleżanka Beaty</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>DOBRA INWESTYCJA (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Beata i Leszek poznają na przyjęciu u dentysty małżeństwo, które dorobiło się fortuny na lokowaniu pieniędzy w elitarnym funduszu inwestycyjnym. Chcieliby sami zainwestować, ale ich zarobki są zbyt skromne. Nauczycielska pensja Beaty i muzyczne wynagrodzenie Leszka pozwalają im jedynie na bieżące wydatki. 
+Teściowa postanawia spisać barwną historię rodziny, a właściwie ją stworzyć. Oczywiście w sprawę jest zamieszana babcia, która tym razem wystąpi w roli pisarki z natchnieniem w postaci teściowej. 
+Kasia zostaje oddelegowana przez szkołę na, jak sama twierdzi, kongres elity naukowej elewów szkół przedgimnazjalnych, a dokładnie na festiwal naukowy, gdzie ma zaprezentować ciekawe doświadczenie chemiczne. Sukces uderza jej do głowy na tyle, że zaczyna drażnić Julkę, która postanawia utrzeć jej nosa. 
+Dzięki swoim kontaktom nowi znajomi otwierają przed Beatą i Leszkiem świat giełdowej finansjery, dając im szansę zainwestowania na dobry początek "skromnej" kwoty pięćdziesięciu tysięcy złotych, co przyprawia bohaterów o zawrót głowy, ale postanawiają stawić czoło wyzwaniu i skorzystać z okazji. Próbują zainteresować babcię, której teściowa kategorycznie odradza, by inwestować w cokolwiek. To, niestety, nigdy nikomu z rodziny nie wychodziło na dobre. Dentysta nie ma czego inwestować, bo nadal spłaca sprzęt z gabinetu. Jedynie pan Kazimierz obiecuje zastanowić się nad propozycją i pojawić się z pieniędzmi następnego dnia, kiedy przyjdą znajomi. 
+Julka przy pomocy Kacpra zamienia opisy na pojemniczkach z substancjami chemicznymi, których Kasia będzie używała w czasie swojej prezentacji. Jest bardzo z siebie zadowolona, aż do momentu, kiedy Kasia przychodzi do niej, zwierzając się, że chce dobrze wypaść, bo zależy jej na pewnym chłopaku. Dla Julki jest to najważniejszy argument i w takiej sytuacji mogłaby zrobić wszystko, by tylko odwrócić całą sprawę.  
+Ostatecznie prezentacja Kasi wypada doskonale. Nieco gorzej przedstawia się sprawa inwestycji Leszka i Beaty. Gdyby nie kontakty pana Kazimierza i jego zainteresowanie sprawą, mogłoby się to dla nich skończyć katastrofą. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225804" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225804','ekipa_skrocona1225804','ekipa1225804','ekipa_schowaj1225804','ekipa_schowaj_krotki1225804','ekipa_schowaj_pelny1225804','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225804" class="jslink" onclick="pzf('ekipa_skrocona1225804','ekipa_pelna1225804','ekipa1225804','ekipa_schowaj1225804','ekipa_schowaj_pelny1225804','ekipa_schowaj_krotki1225804','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225804"1225804" class="jslink" onclick="pzz('ekipa1225804','ekipa_schowaj1225804')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225804" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225804">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis wyroznienie"> dentysta, sąsiad Beaty i Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis wyroznienie"> żona dentysty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis wyroznienie"> sklepikarz Stefan</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122120">Małgorzata Kożuchowska</a></div><div class="ekipa_opis wyroznienie"> Grażyna</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis wyroznienie"> Jurek</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> polonistka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis"> biologiczka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> wuefistka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis"> Stefa, żona gangstera</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225804">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis"> dentysta, sąsiad Beaty i Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> żona dentysty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis"> sklepikarz Stefan</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122120">Małgorzata Kożuchowska</a></div><div class="ekipa_opis"> Grażyna</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126232">Przemysław Sadowski</a></div><div class="ekipa_opis"> Jurek</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KOBIECE EMOCJE (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Babcia Ola była u fryzjera, co wzbudza podejrzenia u teściowej. Ale kiedy babcia zaczyna prasować garsonkę, sprawa z punktu widzenia teściowej jest jasna. Ola na pewno kogoś ma. Tajemnicze milczenie babci zdaje się potwierdzać tę tezę. 
+Żona dentysty, Karolina, przeżywa atak potwornej tremy przed zbliżającą się premierą sztuki, w której gra rolę drugoplanową, żeby nie powiedzieć epizodyczną. 
+Leszek z kolegami muzykami wybiera się na małe tournee, a dokładnie: do wiejskiej szkoły koło Radzymina. Niestety, samochód Leszka, którym artyści podróżują, definitywnie odmawia posłuszeństwa i zostaje porzucony na poboczu pod Warszawą. Sytuację wykorzystuje gangster, który obiecuje Leszkowi doprowadzenie pojazdu do stanu używalności w zamian za drobną przysługę - oprawę muzyczną na weselu syna swojego przyjaciela. 
+Dentyście trafia się znakomita okazja, aby podreperować nieco ego małżonki: w jego ręce wpada krytyk teatralny. Ma on napisać recenzję z premiery sztuki, w której Karolina występuje. Oczywiście z okazji tej skwapliwie korzysta. 
+Wiadomość o tajemniczym mężczyźnie, z którym spotyka się babcia Ola, dociera do Leszka i Beaty i wywołuje mieszane uczucia z przewagą niepokoju. Wysłana za babcią w celach śledczych Julka wraca z kwitkiem: domniemany amant podjechał po babcię taksówką i błyskawicznie zniknęli z pola widzenia. 
+Udział grupy muzycznej pod kierunkiem Leszka w imprezie weselnej zostaje odwołany z powodu zawieszenia na czas nieokreślony samej uroczystości. 
+Babcia Ola oznajmia, że zaprosiła na obiad bliskiego swemu sercu mężczyznę i prosi, aby Beata przygotowała coś specjalnego na tę okazję. Teściowa jest zrozpaczona i przerażona lekkomyślnością swojej synowej, czemu oczywiście daje odpowiedni wyraz. 
+Plan dentysty poprawienia złego nastroju żony zostaje uwieńczony sukcesem, dzięki czemu jest ona bardzo zadowolona, a co za tym idzie - on również. 
+Na obiad przybywa zaproszony przez babcię Olę mężczyzna. Tajemnica zostaje wyjaśniona i nawet teściowa jest zadowolona. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225903" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225903','ekipa_skrocona1225903','ekipa1225903','ekipa_schowaj1225903','ekipa_schowaj_krotki1225903','ekipa_schowaj_pelny1225903','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225903" class="jslink" onclick="pzf('ekipa_skrocona1225903','ekipa_pelna1225903','ekipa1225903','ekipa_schowaj1225903','ekipa_schowaj_pelny1225903','ekipa_schowaj_krotki1225903','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225903"1225903" class="jslink" onclick="pzz('ekipa1225903','ekipa_schowaj1225903')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225903" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225903">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis wyroznienie"> dentysta, sąsiad Beaty i Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis wyroznienie"> żona dentysty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis wyroznienie"> polonistka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis wyroznienie"> biologiczka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis wyroznienie"> wuefistka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis"> Stefa, żona gangstera</div><div class="ekipa_osoba"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis"> sklepikarz Stefan</div><div class="ekipa_osoba"><a href="index.php/11377">Stanisław Mikulski</a></div><div class="ekipa_opis"> Grzegorz, przyjaciel babci Oli</div><div class="ekipa_osoba"><a href="index.php/1126924">Grzegorz Sierzputowski</a></div><div class="ekipa_opis"> krytyk teatralny</div><div class="ekipa_osoba"><a href="index.php/1166249">Robert Stępiński</a></div><div class="ekipa_opis"> człowiek gangstera</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225903">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis"> dentysta, sąsiad Beaty i Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> żona dentysty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> polonistka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis"> biologiczka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> wuefistka, koleżanka Beaty</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>SZCZEROŚĆ W RODZINIE (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Leszek zostaje ukarany mandatem za przekroczenie prędkości. Powstaje dylemat czy tą niezbyt radosną wiadomością podzielić się z Beatą, czy też zatrzymać ją dla siebie. 
+Babcia spotyka Krystynę, swoją dawną koleżankę ze studiów, która namawia ją, aby zapisała się do jej grupy na Uniwersytecie Trzeciego Wieku. Babcia nie decyduje się od razu, zastanawiając się jak to zostanie przyjęte nie tylko przez Leszka i Beatę, ale przede wszystkim przez teściową. 
+Julka nie powiedziała rodzicom o jedynce z chemii. Beata w obecności winowajczyni i Leszka wygłasza wykład na temat prawdomówności i szczerości w rodzinie. Na domiar złego pojawia się listonosz z mandatem dla Julki za jazdę autobusem na gapę. Na szczęście babci udaje się go w porę przechwycić. Mimo to sprawa wychodzi na jaw i Julka ma zakaz wychodzenia z domu. 
+Babcia studiuje informator o uczelni, ale chowa go, kiedy pojawia się teściowa. A ta obserwując dziwne zachowanie babci zaczyna coś podejrzewać. 
+Julka wprawia w osłupienie Kasię, kiedy zwraca się do niej o pomoc w nauce chemii. Kasia uważa, że uczenie siostry chemii to jak wejście na K2 w klapkach, ale zgadza się pomóc. 
+Teść najwyraźniej ma kłopoty. Łobuzy z zaświatów mają wielką ochotę dobrać się do niego za domniemane długi karciane. W ostatniej chwili ratuje go żona. 
+Leszkowi, mimo wielkich chęci nie udaje się poinformować żony o mandacie. A już niebawem ma kolejny problem: czy powiedzieć jej o dwóch mandatach. 
+Obserwując dziwne zachowanie babci, Beata dochodzi do wniosku, że matka jej męża padła ofiarą sekty. Podobnego przeświadczenia nabiera teściowa babci. Postanawia sprawdzić, dokąd babcia chadza z koleżanką Krystyną. 
+Beata ma wielką ochotę na serię upiększających zabiegów, co jednak dużo kosztuje. Według Leszka to wyrzucanie pieniędzy w błoto, zwłaszcza kiedy ma się do uiszczenia mandaty karne. 
+Umiejętność śledzenia doprowadza teściową i teścia na wykład w ramach Uniwersytetu Trzeciego Wieku. Teściowa mimo wszystko jest przekonana, że to jednak sekta. Teść ma ochotę uczęszczać na wykłady, zwłaszcza że wiele duchów, w tym niezwykle atrakcyjnych, pojawia się na uczelni. 
+Julce udaje się poprawić chemię, ale Beata jest nadal nieugięta w sprawie wyjść z domu. Zmienia zdanie po kolejnej wizycie listonosza. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225904" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225904','ekipa_skrocona1225904','ekipa1225904','ekipa_schowaj1225904','ekipa_schowaj_krotki1225904','ekipa_schowaj_pelny1225904','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225904" class="jslink" onclick="pzf('ekipa_skrocona1225904','ekipa_pelna1225904','ekipa1225904','ekipa_schowaj1225904','ekipa_schowaj_pelny1225904','ekipa_schowaj_krotki1225904','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225904"1225904" class="jslink" onclick="pzz('ekipa1225904','ekipa_schowaj1225904')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225904" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225904">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis wyroznienie"> dentysta, sąsiad Beaty i Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis wyroznienie"> żona dentysty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis wyroznienie"> polonistka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis wyroznienie"> biologiczka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis wyroznienie"> wuefistka, koleżanka Beaty</div><div class="ekipa_osoba"><a href="index.php/111661">Teresa Lipowska</a></div><div class="ekipa_opis"> Krysia, koleżanka babci Oli</div><div class="ekipa_osoba"><a href="index.php/11471">Wojciech Duryasz</a></div><div class="ekipa_opis"> Roman, kolega babci Oli</div><div class="ekipa_osoba"><a href="index.php/1130260">Piotr Rogucki</a></div><div class="ekipa_opis"> duch</div><div class="ekipa_osoba"><a href="index.php/1149856">Pascal Kaczorowski</a></div><div class="ekipa_opis"> duch</div><div class="ekipa_osoba"><a href="index.php/1142944">Bogusław Kudłek</a></div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba"><a href="index.php/1126927">Mariusz Krzemiński</a></div><div class="ekipa_opis"> listonosz</div><div class="ekipa_osoba"><a href="index.php/1121096">Maciej Gąsiorek</a></div><div class="ekipa_opis"> śmieciarz</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225904">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis"> dentysta, sąsiad Beaty i Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> żona dentysty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> polonistka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis"> biologiczka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> wuefistka, koleżanka Beaty</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>RODZINNY SAMOCHÓD (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Leszek przynosi radosną wiadomość: otrzymali odszkodowanie za zniszczony samochód. Ma już nawet pewne plany, co do zakupu kolejnego auta, ale rozsądna i licząca zyski z lokat pieniężnych żona, rozwiewa jego marzenia. 
+Panu Stefanowi coraz trudniej opanować sytuację na dwóch frontach jednocześnie: w sklepie i knajpce. Jeśli nie znajdzie kogoś do pomocy, stanie przed trudnym dylematem: którą działalność zawiesić na czas nieokreślony. Wiele wskazuje na to, że będzie to knajpka. 
+Julka stawia przed sobą zadanie z pozoru niewykonalne. Zamierza poderwać na inteligencję chłopaka, który jej się bardzo podoba. Jedyną osobą, która wierzy w sukces tej karkołomnej operacji - jest Kasia. 
+Koleżanki z pracy uświadamiają Beacie, jak ważną rolę w życiu mężczyzny pełni samochód. Przestraszona Beata wraca do domu i kategorycznie żąda nabycia auta. 
+Knajpka pana Stefana jest miejscem spotkań teścia z kolegami duchami. Wizja zamknięcia lokalu powoduje zwarcie szeregów duchowych i silne postanowienie znalezienia odpowiednich osób do pomocy przy prowadzeniu knajpki. 
+Julka w drodze do szkoły udziela krótkiego wywiadu ekipie telewizyjnej. Wyklepuje z pamięci inteligentny tekst na temat "Zemsty", ułożony przez Kasię na potrzeby podrywu. 
+Gangster deklaruje swoją pomoc Leszkowi i Beacie przy kupnie samochodu. W tym celu zaprasza ich do swojego komisu. Aby nie sprawić mu przykrości, korzystają z zaproszenia. 
+Po telewizyjnej emisji wypowiedzi o "Zemście" Julka przeżywa chwile popularności w szkole. Polonistka prosi ją nawet o przygotowanie referatu na lekcję pokazową. 
+Leszek i Beata biorą na próbę samochód z komisu. Samochód jest świetny, a cena okazyjna. Dla Beaty sprawa jego pochodzenia jest jasna. Dla teściowej również. 
+Zdobyte przez teścia i jego kolegów kontakty, okazują sie wielkim niewypałem. Kiedy pan Stefan jest bliski decyzji o zamknięciu knajpki, niespodziewanie pojawia się rozwiązanie jego problemu. 
+Julka mimo wygłoszenia wspaniałego referatu, przygotowanego wcześniej przez Kasię, nie może liczyć na dobrą ocenę. Poległa bowiem na pytaniach. 
+Obawy Leszka i Beaty, co do pochodzenia samochodu zostają rozwiane definitywnie i to w sposób, w jaki żadne z nich się nie spodziewało. Wierzbiccy mają nowe auto. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225950" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225950','ekipa_skrocona1225950','ekipa1225950','ekipa_schowaj1225950','ekipa_schowaj_krotki1225950','ekipa_schowaj_pelny1225950','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225950" class="jslink" onclick="pzf('ekipa_skrocona1225950','ekipa_pelna1225950','ekipa1225950','ekipa_schowaj1225950','ekipa_schowaj_pelny1225950','ekipa_schowaj_krotki1225950','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225950"1225950" class="jslink" onclick="pzz('ekipa1225950','ekipa_schowaj1225950')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225950" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225950">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis wyroznienie"> polonistka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis wyroznienie"> biologiczka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis wyroznienie"> wuefistka, koleżanka Beaty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis wyroznienie"> Stefa, żona gangstera</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis wyroznienie"> sklepikarz Stefan</div><div class="ekipa_osoba"><a href="index.php/1154561">Marta Juras</a></div><div class="ekipa_opis"> Ania</div><div class="ekipa_osoba"><a href="index.php/1150192">Agnieszka Judycka</a></div><div class="ekipa_opis"> nauczycielka Julii</div><div class="ekipa_osoba"><a href="index.php/1115232">Tomasz Kozłowicz</a></div><div class="ekipa_opis"> kolega Jerzego</div><div class="ekipa_osoba"><a href="index.php/1155512">Łukasz Chrzuszcz</a></div><div class="ekipa_opis"> dziennikarz</div><div class="ekipa_osoba"><a href="index.php/1139477">Adam Krawczyk</a></div><div class="ekipa_opis"> elegancik</div><div class="ekipa_osoba"><a href="index.php/1129333">Michał Rolnicki</a></div><div class="ekipa_opis"> właściciel samochodu</div><div class="ekipa_osoba"><a href="index.php/1137561">Roksana Krzemińska</a></div><div class="ekipa_opis"> żona właściciela samochodu</div><div class="ekipa_osoba"><a href="index.php/1169362">Małgorzata Tkaczyk</a></div><div class="ekipa_opis"> wizytatorka</div><div class="ekipa_osoba"><a href="index.php/1116026">Jerzy Łazewski</a></div><div class="ekipa_opis"> policjant z drogówki</div><div class="ekipa_osoba"><a href="index.php/1165993">Michał Meyer</a></div><div class="ekipa_opis"> klient w restauracji</div><div class="ekipa_osoba"><a href="index.php/1126442">Jan Aleksandrowicz</a></div><div class="ekipa_opis"> kryminalista</div><div class="ekipa_osoba"><a href="index.php/1152211">Weronika Asińska</a></div><div class="ekipa_opis"> koleżanka Julii</div><div class="ekipa_osoba"><a href="index.php/1168242">Marianna Januszewicz</a></div><div class="ekipa_opis"> koleżanka Julii</div><div class="ekipa_osoba"><a href="index.php/1142179">Aleksander Sosiński</a></div><div class="ekipa_opis"> chłopak</div><div class="ekipa_osoba"><a href="index.php/1169363">Jerzy Kulicki</a></div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba"><a href="index.php/1135227">Magdalena Modzelewska</a></div><div class="ekipa_opis"> 2 role: klientka restauracji, kandydatka do  pracy; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225950">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115286">Beata Ścibakówna</a></div><div class="ekipa_opis"> polonistka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150681">Aleksandra Godlewska</a></div><div class="ekipa_opis"> biologiczka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1140030">Katarzyna Ankudowicz</a></div><div class="ekipa_opis"> wuefistka, koleżanka Beaty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis"> Stefa, żona gangstera</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis"> sklepikarz Stefan</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WŁOSKIE KLIMATY (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Stefan jest podenerwowany w związku z wizytą kulinarnego recenzenta, który ma nawiedzić jego lokal incognito. Na szczęście ma do pomocy siostrzenicę, studentkę marketingu. 
+Teść popada w melancholię. Ten nietypowy stan małżonka budzi niepokój i złość teściowej. 
+Beata ma problem z uczniem Kowalskim. Jeżeli się nie poprawi, będzie musiała zostawić go na następny rok w tej samej klasie. 
+Wychodzi na jaw powód przygnębienia teścia. Całe życie był stroicielem fortepianów, a jego prawdziwym marzeniem była kariera pianisty. Czuje się niespełniony i przez to nieszczęśliwy. Babcia i teściowa zastanawiają się jak temu zaradzić. 
+Beatę odwiedza w domu prezes dużej państwowej spółki, a prywatnie ojciec ucznia Kowalskiego. Próbuje ją przekupić, przez co Beata wpada w furię. Wyrzuca go z domu, ale nie zauważa pozostawionej na stole koperty z pieniędzmi. Kowalski zostawił celowo, aby szantażować nauczycielkę. 
+Plan siostrzenicy Stefana jest prosty: do lokalu przychodzą jego znajomi: Leszek z Beatą, Gangster z żoną i dentysta z małżonką, a kiedy pojawi się kulinarny recenzent, którego rozpoznają po brodzie, wszyscy zaczyną wychwalać pod niebiosa doskonałość tutejszej kuchni i kulinarne mistrzostwo właściciela knajpki. 
+Wydaje się, że babcia i teściowa znalazły rozwiązanie emocjonalnych problemów teścia. Teraz pozostaje tylko wprowadzić plan w życie. 
+Mężczyzna z brodą, który w knajpce Stefana zamówił eskalopki, zostaje poddany dość intensywnej akcji marketingowej, prowadzonej przez uczynnych sąsiadów. Problem polega na tym, że eskalopki są przypalone. Przekonanie recenzenta, że w takiej postaci są najwykwintniejsze, to zadanie dla wytrawnego znawcy ludzkiej psychiki, czyli dla Gangstera. 
+Beata przyparta do muru wiszącym nad nią oskarżeniem o łapówkarstwo zastanawia się, czy dla świętego spokoju, ale wbrew swoim zasadom, nie przepuścić syna Kowalskiego do następnej klasy, mimo ewidentnej tępoty chłopaka. 
+Teść zostaje całkowicie zaskoczony przez swoją żonę i synową. Wzruszenie odbiera mu mowę, a szczęście emanuje z jego twarzy. I palców. 
+Mimo iż brodacz przekonany o wyjątkowości przypalonych eskalopków, w rzeczywistości nie jest kulinarnym recenzentem, w prasie z pewnością ukaże się entuzjastyczna opinia o włoskim stylu i niezwykłej kuchni lokalu pana Stefana. 
+Beata nie łamie jednak swoich zasad. Okazuje się, że to bardzo słuszna decyzja, a pan prezes Kowalski z pewnością nie będzie jej już niepokoił. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1225951" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1225951','ekipa_skrocona1225951','ekipa1225951','ekipa_schowaj1225951','ekipa_schowaj_krotki1225951','ekipa_schowaj_pelny1225951','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1225951" class="jslink" onclick="pzf('ekipa_skrocona1225951','ekipa_pelna1225951','ekipa1225951','ekipa_schowaj1225951','ekipa_schowaj_pelny1225951','ekipa_schowaj_krotki1225951','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1225951"1225951" class="jslink" onclick="pzz('ekipa1225951','ekipa_schowaj1225951')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1225951" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1225951">
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis wyroznienie"> dentysta, sąsiad Beaty i Leszka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis wyroznienie"> żona dentysty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis wyroznienie"> Stefa, żona gangstera</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis wyroznienie"> sklepikarz Stefan</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1154561">Marta Juras</a></div><div class="ekipa_opis wyroznienie"> Ania</div><div class="ekipa_osoba"><a href="index.php/118807">Piotr Siejka</a></div><div class="ekipa_opis"> Kowalski</div><div class="ekipa_osoba"><a href="index.php/1119380">Małgorzata Sadowska</a></div><div class="ekipa_opis"> Kowalska</div><div class="ekipa_osoba"><a href="index.php/1144570">Przemysław Stippa</a></div><div class="ekipa_opis"> krytyk kulinarny</div><div class="ekipa_osoba"><a href="index.php/1154829">Katarzyna Kilar</a></div><div class="ekipa_opis"> kobieta</div><div class="ekipa_osoba"><a href="index.php/1158520">Leszek Żukowski</a></div><div class="ekipa_opis"> brodacz</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1225951">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1129082">Bartek Kasprzykowski</a></div><div class="ekipa_opis"> dentysta, sąsiad Beaty i Leszka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137799">Aleksandra Kisio</a></div><div class="ekipa_opis"> żona dentysty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1121826">Magdalena Stużyńska</a></div><div class="ekipa_opis"> Stefa, żona gangstera</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122392">Jakub Przebindowski</a></div><div class="ekipa_opis"> sklepikarz Stefan</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1154561">Marta Juras</a></div><div class="ekipa_opis"> Ania</div><div style="display:block;" /></li>
+</ul>
+</div>
+<span class="clear"></span></div><div id="czasgen">2026.05.08 04:39:31</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

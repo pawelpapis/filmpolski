@@ -23,16 +23,17 @@ Plik: `scrape_filmpolski_years.py`.
 - roczniki: `data/years`
   - `YEAR.html`
   - `YEAR.json`
-- filmy (strony i JSON): `movies/YEAR`
-  - `movies/YEAR/ID.html`
-  - `movies/YEAR/ID.json`
-- galerie zdjęć: `movies/ID`
-  - `movies/ID/gallery_ID.html`
-  - `movies/ID/*.jpg`
+- filmy (strony i JSON): `data/movies/YEAR`
+  - `data/movies/YEAR/ID.html`
+  - `data/movies/YEAR/ID.json`
+- galerie zdjęć: `data/galleries/ID`
+  - `data/galleries/ID/gallery_ID.html`
+  - `data/galleries/ID/*.jpg`
 
 Możesz zmienić katalogi przez:
 - `--years-dir`
 - `--movies-dir`
+- `--galleries-dir`
 
 ## Przykłady użycia
 
@@ -75,13 +76,13 @@ python3 scrape_filmpolski_years.py --download-galleries --start-year 2000 --end-
 ```
 
 Jak działa `--download-galleries`:
-- dla każdego `movies/YEAR/ID.json` bierze pole `gallery_link`,
+- dla każdego `data/movies/YEAR/ID.json` bierze pole `gallery_link`,
 - jeśli `gallery_link` ma postać `https://filmpolski.pl/fp/index.php/<GALERIA_ID>`, pobiera stronę:
   - `https://filmpolski.pl/fp/index.php?galeria_filmu=<GALERIA_ID>`
-- zapisuje ją jako `movies/ID/gallery_ID.html`,
+- zapisuje ją jako `data/galleries/ID/gallery_ID.html`,
 - z `<article id="galeria_filmu">` zbiera wszystkie `<img src="...">`,
 - w ścieżce obrazka zamienia segment `.../<liczba>i/...` na `.../<liczba>z/...`,
-- pobiera zdjęcia do `movies/ID/`.
+- pobiera zdjęcia do `data/galleries/ID/`.
 
 W logu postępu podaje:
 - który film jest aktualnie przetwarzany w danym roku,
@@ -114,7 +115,7 @@ Każdy film (unikalny po `index.php/<id>`) ma pola:
 - `text_author`
 - `creators`
 
-## Struktura JSON filmu (`movies/YEAR/ID.json`)
+## Struktura JSON filmu (`data/movies/YEAR/ID.json`)
 
 - `title`
 - `production_years`
@@ -128,3 +129,29 @@ Każdy film (unikalny po `index.php/<id>`) ma pola:
 - `cast_other` (`name`, `id`, `character`)
 
 Dodatkowo aktor z `cast_main` jest usuwany z `cast_other`.
+
+## Wyszukiwarka okienkowa (Ubuntu)
+
+Uruchom:
+
+```bash
+python3 search_gui.py
+```
+
+Aplikacja otwiera lokalny interfejs w domyślnej przeglądarce. Wymaga tylko Pythona 3 i przeglądarki; nie wymaga Tkinter ani dodatkowych pakietów. Serwer nasłuchuje wyłącznie na `127.0.0.1`, na automatycznie wybranym porcie. Pozostaw terminal uruchomiony; Ctrl+C zatrzymuje aplikację. Opcja `--no-browser` wyłącza automatyczne otwieranie przeglądarki (adres pojawi się w terminalu).
+
+Wczytuje lokalne pliki JSON z `data/movies/ROK/` i `data/series/ROK/`.
+Domyślną ścieżkę wyznacza względem skryptu, więc możesz uruchomić go z dowolnego katalogu.
+Inny katalog danych podasz przez `--data-dir /ścieżka/do/data`.
+
+- „Lokacja zawiera” szuka fragmentu tekstu w dowolnym pojedynczym elemencie `locations`.
+- „Opis zawiera” szuka fragmentu w `description`.
+- Wielkość liter nie ma znaczenia. Wzorce są zwykłym tekstem, nie wyrażeniami regularnymi.
+- Oba wypełnione pola muszą pasować. Puste pola nie ograniczają wyników.
+- Filtr pozwala wybrać filmy, seriale lub obie grupy. Przycisk „Szukaj” lub Enter uruchamia wyszukiwanie.
+- Wybierz wynik myszą lub strzałkami, aby zobaczyć tytuł, lata produkcji, reżyserów, obsadę główną z rolami, opis i lokacje. Panel szczegółów można przewijać i kopiować z niego tekst.
+- „Wyczyść” przywraca pełną listę. Aby wczytać nowo pobrane dane, uruchom aplikację ponownie.
+
+Wyszukiwarka działa lokalnie, bez dostępu do sieci. Błędne pliki pomija, pokazując ich liczbę na dole okna i szczegóły w terminalu.
+
+Przyciski „Wszystkie”, „Filmy”, „Seriale” od razu filtrują wyniki. Sortowanie pozwala wybrać tytuł A–Z lub rok produkcji od najnowszych / najstarszych. Dla zakresu lat używany jest pierwszy rok; brak roku umieszcza wynik na końcu.

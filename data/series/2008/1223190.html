@@ -1,0 +1,933 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - DORĘCZYCIEL</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>DORĘCZYCIEL</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1223190" selected >1</option><option value="1223190_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1223190_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1223190_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2008</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2009. 03. 01</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film obyczajowy</div></li>
+<li><div class="film_tech3">Barwny, 14 odcinków x 44 min <br /><br />
+Okres zdjęciowy: 6 listopada 2007 - 8 marca 2008.<br />
+Lokacje: Warszawa (Zoo, Centrum Olimpijskie, Park Morskie Oko, Instytut Weterynarii - filmowe mieszkanie Janka i komisariat, tereny dawnej fabryki wódek "Koneser" - filmowa firma kurierska "Błysk"),</div></li>
+</ul>
+<p class="opis">Główny wątek nowego serialu obyczajowego koncentruje się wokół życiowych perypetii niepełnosprawnego umysłowo czterdziestolatka, Janka Kaniewskiego, który nagle zostaje sam na świecie i musi stawić czoło nowej rzeczywistości. Pomagają mu przyjaciele i napotkani na drodze życzliwi ludzie. Ale naiwny, łatwowierny mężczyzna, przyjmujący wszystko za dobrą monetę, będzie też obiektem niewybrednych żartów, zostanie uwikłany w różne intrygi, padnie ofiarą ludzi mających na uwadze jedynie własne interesy, stanie się kozłem ofiarnym krętaczy i manipulantów. Mimo rozczarowań, wielu przykrości i niepowodzeń Janek nie podda się jednak, usiłując za wszelką cenę być normalnym człowiekiem, odnaleźć swoje miejsce na ziemi, osiągnąć szczęście i spokój. [TVP]<br /><br />
+<strong>Opis postaci:</strong><br />
+<strong>Janek Kaniewski (Artur Barciś):</strong> Kawaler. Lat 40. Lekko opóźniony w rozwoju, w sposób niedostrzegalny na pierwszy rzut oka. To opóźnienie w rozwoju przejawia się przede wszystkim w jego prostolinijności. 
+Janek jest entuzjastą. Nie bardzo zna wartość pieniędzy. Żyjąc pod kloszem jaki stworzyła mu matka, nie stykał się ze złem w tym najprostszym, codziennym wydaniu. 
+To czyni go w wielu sytuacjach bezbronnym, ale też daje mu niezwykłą siłę. Po prostu nie uważa zła za coś naturalnego. 
+Choć nie jest całkiem normalny, ma wszystkie potrzeby normalnego człowieka. Przed wszystkim zaś ogromną potrzebę miłości. Nie rozumie, że miłość ofiarowywana przez niego może być traktowana jako coś gorszego, bo on sam nie czuje się gorszy. 
+Poczucie odpowiedzialności to właściwie jego druga natura. Jest ekspertem od uprawy roślinności tropikalnej. Ta bezużyteczna na co dzień wiedza okaże się istotna. 
+Potrafi sprawić, że ludzie opowiadają mu rzeczy, o których sami nawet przed sobą głośno się nie przyznają. Janek rozumie emocje i ma dobry słuch emocjonalny, choć nie zawsze rozumie opowiadane mu historie na poziomie racjonalnego dyskursu. Ale ta niedoskonałość połączona z naturalną empatią sprawia, że Janek potrafi dostrzec w opowiadanej mu historii to, co  emocjonalnie jest najważniejsze. To czyni z niego domorosłego psychologa potrafiącego otworzyć drugiego człowieka.
+Przy Janku ludzie czują się bezpiecznie. Ponieważ jest "głupszy", nie stanowi zagrożenia.
+Janek sprawia, że ludzie patrzą przez chwilę na świat jego oczami i patrzą na swoje życie z jego perspektywy. To drugie sprawia, że ich życie przestaje im się wydawać takie złe. To pierwsze - że ostrzej widzą, co w życiu jest ważne, a co nie.
+Janek zadaje pytania. Jak dziecko. Wprost i po prostu. Ponieważ nie myśli abstrakcyjnie, często pyta "dlaczego?", "po co?", "ale tak naprawdę o co ci chodzi?". I nie zadawalają go odpowiedzi ideologiczne lub składające się z abstraktów, których po prostu nie rozumie.<br />
+<strong>Zbyk Lewicki (Radosław Pazura):</strong> Lat 40, kawaler. Jest przystojny i ma powodzenie u kobiet. "Przyjaciel" Janka od dzieciństwa. Poczucie przyzwoitości i litość nie pozwala mu powiedzieć Jankowi, żeby się od niego odczepił, ale najchętniej udałby, że wyjeżdża gdzieś daleko i zerwał wszelkie kontakty. Po śmierci matki Janka załatwia mu pracę doręczyciela w firmie kurierskiej. Ku jego zdumieniu, to właśnie Janek - przez swoje kontakty z "klientami" - pomaga mu ponownie stanąć na nogi.
+Przezwisko Zbyk, wzięło się z dzieciństwa, gdy obronił Janka, atakując bykiem dużo większego i starszego chłopaka. W świadomości chłopaka dwa zasłyszane wtedy w ostrej traumie określenia "walnął go z byka" i "zabili by go bez Zbyszka" - zlały się w jedno.<br />
+<strong>Marysia Sawicka (Lucyna Malec):</strong> Samotna, atrakcyjna  matka z kilkuletnim synem, Krzysiem. Pracuje w agencji PR, choć nie jest to jej ulubione miejsce i ulubione środowisko. Zraniona w poprzednim związku, trzyma mężczyzn na dystans. Drażni ją zainteresowanie jakie okazuje jej Janek, który odkąd zobaczył ja po raz pierwszy, jest przekonany, że to właśnie ona jest tą jego "właściwą". <br />
+<strong>pani Hania (Anna Dymna):</strong> Ciepła, energiczna, dostojna i kochająca ludzi. Pomaga Marysi i w prowadzeniu domu i wychowywaniu syna. Od chwili kiedy poznała Janka, mimo jego odmienności, darzy go wielka sympatią, uważając go za wartościowego człowieka. Usiłuje przekonać Marysię, że Janek jest świetnym towarzyszem dla niej i jej synka. Zaprzyjaźnia się z Januszem, ojcem Zbyka.<br />
+<strong>Diana Albrecht (Barbara Kałużna):</strong> Piękna i mądra.  Asystentka szefa w firmie kurierskiej "Błysk", z którym ma potajemny romans. Diana nie ma specjalnego szczęścia do mężczyzn, romantycznie wierzy, że spotka kiedyś prawdziwego mężczyznę, ale na razie nie szuka partnera na stałe. Diana jest realistką mocno stąpającą po ziemi. Odebrała dość konserwatywne wychowanie i choć ceni dobry seks, ma dość oleju w głowie, by nie mylić udanej nocy z udanym życiem. Zauroczona Zbykiem, wiedząc, że ma narzeczoną. stara się o nim nie myśleć <br />
+<strong>Ala Rojek (Magdalena Kacprzak):</strong> Ładna dziewczyna z sąsiedztwa, obdarzona wrednawym charakterkiem. Janek podkochiwał się w niej od dzieciństwa.
+W wyniku nieszczęśliwego wypadku straciła nogę.  Przeciwieństwo Janka. Swe kalectwo uważa za dowód niesprawiedliwości świata i usprawiedliwienie dla wszelkich swych działań. Lubi manipulować, brać na litość, szantażować swoją ułomnością. Samolubna i choć na pozór bardzo miła, nie lubi ani ludzi, ani świata. Ani siebie. <br />
+<strong>Zyga (Jacek Lenartowicz):</strong> Żul podwórkowy, bezrobotny cwaniak, "kolega" Janka i Ali z piaskownicy. Kocha się w Ali i chce z nią być. A ponieważ zamierza się z nią ożenić, posłusznie szuka pracy, bo to jeden z warunków, który stawia Ala, żeby mógł się do niej zbliżyć. Po różnych przygodach, dzięki Jankowi, który wstawia się za nim u Gradonia, znajduje pracę w firmie kurierskiej "Błysk". Oraz, dodatkowe zajęcie, kiedy okazuje się, że świetnie "dogaduje" się z czworonogami osób, którym dostarcza przesyłki. <br />
+<strong>Rafał Kmiecik (Waldemar Błaszczyk):</strong> Ma podejrzane kontakty i nie jest to "miły miś". Rafał to typowa cwana gapa. Jednocześnie potrafi być bezwzględnym i cynicznym graczem. Nie ma żadnych oporów, by zmienić front gdy tego wymaga sytuacja i własny interes. Rafał nieźle zarabia (i na firmie i na innych interesach), ale nie pogardzi żadnym groszem. <br />
+<strong>Krystyna Gradoń (Elżbieta Kępińska):</strong> Żona Big Bossa. Lat ok. 60, żyje w luksusowej rezydencji, ale jest przeważnie sama. Jej mąż, Fryderyk, zajęty interesami najczęściej nocuje w mieszkaniu znajdującym się w siedzibie firmy bądź jest w podróży. Krystyna ma wspaniały ogród z roślinami tropikalnymi, w specjalnie wybudowanej "pomarańczarni". Zaprzyjaźnia się z Jankiem i z czasem staje się jego powiernicą i doradcą od spraw trudnych. <br />
+<strong>Fryderyk Gradoń (Jan Machulski):</strong> Potentat zwany potocznie Big Bossem. Wygląda jak przedwojenny przedsiębiorca i tak się nosi. Lubi podkreślać swój konserwatyzm i że to dzięki niemu odnosi sukcesy. Ma poczucie misji. Ogromnie ceni lojalność.	 Początkowo zazdrosny o dobre kontakty swojej żony z Jankiem, z czasem sam ma do niego "słabość". <br />
+<strong>Helena Górska (Natalia Strzelecka):</strong> Oficjalna narzeczona Zbyka, atrakcyjna, niezbyt sympatyczna i zaborcza.  Lubi wygodne życie. Zbyka kocha, ale jest o niego chorobliwie zazdrosna. Przekonana, że Zbyk ma romans z Dianą, wyzywa ją od najgorszych i robi jej karczemną awanturę, w firmie kurierskiej.  Nie potrafi przyjąć do wiadomości, że jej narzeczony może mieć jej serdecznie dosyć. <br />
+<strong>profesor Janusz Lewicki (Jerzy Schejbal):</strong> Ojciec Zbyka. Wdowiec, lat 72.  Czuje się odpowiedzialny za szczęście Janka i ma swoją tajemnicę związana z Jankiem i jego mamą. Zaprzyjaźnia się z panią Hanią - pomocą "domową" Marysi.<br />
+<strong>Bernard Rudacki (Emilian Kamiński):</strong> Znany muzyk, podstarzały, łysiejący "król" country, obdarzony kiepskim gustem i prawie byłą żoną, która za nim nie przepada. Będąc w kiepskiej kondycji psychicznej po odejściu żony i  z powodu ogólnego kryzysu, w Janku znajduje spowiednika.<br />
+<strong>Justi (Sylwia Gliwa):</strong> Modelka pracująca w agencji reklamowej. Atrakcyjna i przebojowa. Przekonana, że Janek jest kimś ważnym w agencji, prześpi się z nim, a potem myśląc, że jest potencjalnym milionerem, będzie mu wmawiać, że jest z nim w ciąży.<br />
+<strong>Boogie (Grzegorz Kwiecień):</strong> Przezwisko Boogie. Młody account executive w prężnej firmie reklamowej. Lubi sprawdzać swoje pomysły na Janku, bo "reklama musi być zrozumiała nawet dla debili".<br />
+<strong>Robby (Przemysław Chojęta):</strong> Lat 27. Jankowi każe się nazywać z angielska Robby, za plecami nazywany jest Robuś. Robert to doręczyciel-dręczyciel, wykorzystuje Janka i lubi go ośmieszać.</p><div class="galeria_mala"><a href="index.php?fotos=1623190_1&galeria=1523190"><img class="bezcienia" src="../z1/90i/23190_1.jpg" height="60"></a><a href="index.php?fotos=1623190_2&galeria=1523190"><img class="bezcienia" src="../z1/90i/23190_2.jpg" height="60"></a><a href="index.php?fotos=1623190_3&galeria=1523190"><img class="bezcienia" src="../z1/90i/23190_3.jpg" height="60"></a><a href="index.php?fotos=1623190_4&galeria=1523190"><img class="bezcienia" src="../z1/90i/23190_4.jpg" height="60"></a><a href="index.php?fotos=1623190_5&galeria=1523190"><img class="bezcienia" src="../z1/90i/23190_5.jpg" height="60"></a><a href="index.php?fotos=1623190_6&galeria=1523190"><img class="bezcienia" src="../z1/90i/23190_6.jpg" height="60"></a><a href="index.php/1523190" title="Galeria zdjęć (34)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223190" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223190','ekipa_skrocona1223190','ekipa1223190','ekipa_schowaj1223190','ekipa_schowaj_krotki1223190','ekipa_schowaj_pelny1223190','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223190" class="jslink" onclick="pzf('ekipa_skrocona1223190','ekipa_pelna1223190','ekipa1223190','ekipa_schowaj1223190','ekipa_schowaj_pelny1223190','ekipa_schowaj_krotki1223190','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223190"1223190" class="jslink" onclick="pzz('ekipa1223190','ekipa_schowaj1223190')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223190" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223190">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114515">Maciej Wojtyszko</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1125439">Ewa Taraszkiewicz-Dejmek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1147751">Aneta Wróbel-Wojtyszko</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133517">Adam Wojtyszko</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1163325">Tomasz Gawron</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1159933">Katarzyna Rosłaniec</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1136719">Ewa Andrzejewska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125439">Ewa Taraszkiewicz-Dejmek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1139144">Maria Wojtyszko</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1147751">Aneta Wróbel-Wojtyszko</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Pomysł</div><div class="ekipa_osoba"><a href="index.php/1123274">Maciej Strzembosz</a></div><div class="ekipa_opis"> filmu</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1133642">Waldemar Szmidt</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1126634">Piotr Łukasiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1151201">Wojciech Suleżycki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator Steadicam</div><div class="ekipa_osoba"><a href="index.php/1157021">Konrad Gut</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator CCU</div><div class="ekipa_osoba"><a href="index.php/1127194">Mirosław Krawiec</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora obrazu</div><div class="ekipa_osoba"><a href="index.php/1146590">Marcin Cierluk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163329">Konrad Kazyaka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161579">Błażej Kitowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1149664">Filip Kwiatkowski</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1139227">Marek Bystrosz</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1156396">Robert Drabek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153376">Marcin Krajenta</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155961">Sebastian Stecko</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1124302">Paweł Dylik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1133645">Radosław Poręba</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Krany kamerowe</div><div class="ekipa_osoba"><a href="index.php/117154">Piotr Szyma</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Obsługa agregatu</div><div class="ekipa_osoba"><a href="index.php/1116577">Mirosław Bielecki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1153726">Paweł Trol</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153822">Łukasz Wiśniewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1138735">Marcelina Początek-Kunikowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/1139770">Piotr Kopeć</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1138735">Marcelina Początek-Kunikowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116101">Zdzisław Kobyliński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1116101">Zdzisław Kobyliński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136485">Piotr Cieśliński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Pomoc rekwizytorska</div><div class="ekipa_osoba"><a href="index.php/1154599">Paweł Kierzkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162072">Marcin Wąsowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo budowy dekoracji</div><div class="ekipa_osoba"><a href="index.php/1135985">Zbigniew Tomaszewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1156777">Małgorzata Grabowska-Kozera</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1156778">Dorota Zalewska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1119365">Monika Komorowska</a></div><div class="ekipa_opis"> w napisach nazwisko: Komornicka</div><div class="ekipa_osoba"><a href="index.php/1155757">Marta Ostrowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129563">Beata Dąbska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116760">Jerzy Satanowski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba"><a href="index.php/1132902">Marcin Majerczyk</a></div><div class="ekipa_opis"> gitara</div><div class="ekipa_osoba"><a href="index.php/1115124">Robert Majewski</a></div><div class="ekipa_opis"> trąbka</div><div class="ekipa_osoba"><a href="index.php/1125297">Mariusz Mielczarek</a></div><div class="ekipa_opis"> saksofon</div></li>
+<li><div class="ekipa_funkcja">Dyrygent</div><div class="ekipa_osoba"><a href="index.php/116760">Jerzy Satanowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/117267">Małgorzata Przedpełska-Bieniek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126803">Sebastian Brański</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150531">Michał Robaczewski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129374">Marcin Ejsmund</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-5</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis wyroznienie"> odcinki: 6-14</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1115870">Wiesław Znyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora dźwięku</div><div class="ekipa_osoba"><a href="index.php/1135541">Marcin Jachyra</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126879">Jarosław Kiełbowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1123825">Piotr Faryński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty synchroniczne</div><div class="ekipa_osoba"><a href="index.php/117691">Włodzimierz Kazimierczak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125691">Marcin Pilich</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1129374">Marcin Ejsmund</a></div><div class="ekipa_opis"> odcinki: 1-5</div><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis"> odcinki: 6-14</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11635">Ewa Smal</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1119292">Hanna Kobus</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div><div class="ekipa_osoba"><a href="index.php/1119293">Iwona Rudnicka</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Asystent montażysty</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1163324">Kinga Tanana-Zuba Stachurska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1150100">Magdalena Danilewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163328">Joanna Sadowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161051">Małgorzata Głodowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1133910">Marek Russ</a></div><div class="ekipa_opis"> ds. zwierząt</div><div class="ekipa_osoba"><a href="index.php/1154377">Maciej Mystkowski</a></div><div class="ekipa_opis"> ds. pojazdów</div><div class="ekipa_osoba"><a href="index.php/1124725">Andrzej Tarasewicz</a></div><div class="ekipa_opis"> ds. medycznych</div></li>
+<li><div class="ekipa_funkcja">Koordynacja kaskaderska</div><div class="ekipa_osoba"><a href="index.php/115412">Robert Brzeziński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/115412">Robert Brzeziński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1140463">Robert Brzeziński jr</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125985">Jacek Długosz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128581">Grzegorz Jurek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128400">Paweł Pliszka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1143023">Andrzej Poneta</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty pirotechniczne</div><div class="ekipa_osoba"><a href="index.php/115839">Janusz Bykowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1120093">Witold Gajzler</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1158034">Marta Starz-Lipecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1163331">Archetyp</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138812">Anna Chojnacka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/115425">Krzysztof Wellman</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1155444">Beros Film</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114914">Roman Strumiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152203">Dana Catering</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153904">Rafał Tokarski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162134">Bernadetta Strumińska</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1158062">Paweł Trzos</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1133378">Krzysztof Szaro</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1134509">Waldemar Węglewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129686">Marian Wolski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157838">Tomasz Przeździecki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111910">Paweł Mantorski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112755">Joanna Pindelska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1140755">Krzysztof Mrowiec</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155817">Katarzyna Bastkowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1163326">Beata Barańska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158904">Iwona Bokun</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1126458">Daniel Adamski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1138563">Dariusz Kielak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156919">Ake Sawaryn</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/118283">Małgorzata Zdziarska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/1136776">Elżbieta Gawarska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1131280">Ewa Kowalik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123274">Maciej Strzembosz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1135074">Dorota Hawliczek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1127535">Anna Skowrońska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123275">Studio A</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis wyroznienie"> Janek Kaniewski</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112095">Elżbieta Kępińska</a></div><div class="ekipa_opis wyroznienie"> Krystyna Gradoń</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis wyroznienie"> Hanna Gorzkowska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis wyroznienie"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis wyroznienie"> Ala Rojek</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis wyroznienie"> Marysia Sawicka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis wyroznienie"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis wyroznienie"> Zyga</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis wyroznienie"> Janusz Lewicki, ojciec Zbyka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223190">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/114515">Maciej Wojtyszko</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/1136719">Ewa Andrzejewska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1125439">Ewa Taraszkiewicz-Dejmek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1139144">Maria Wojtyszko</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1147751">Aneta Wróbel-Wojtyszko</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1133642">Waldemar Szmidt</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1138735">Marcelina Początek-Kunikowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/1138735">Marcelina Początek-Kunikowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1116101">Zdzisław Kobyliński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1156777">Małgorzata Grabowska-Kozera</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/116760">Jerzy Satanowski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1126803">Sebastian Brański</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150531">Michał Robaczewski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129374">Marcin Ejsmund</a></div><div class="ekipa_opis"> odcinki: 1-5</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126546">Marcin Kijo</a></div><div class="ekipa_opis"> odcinki: 6-14</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/11635">Ewa Smal</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1163324">Kinga Tanana-Zuba Stachurska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/111910">Paweł Mantorski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112755">Joanna Pindelska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1123274">Maciej Strzembosz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1135074">Dorota Hawliczek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1127535">Anna Skowrońska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1123275">Studio A</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112095">Elżbieta Kępińska</a></div><div class="ekipa_opis"> Krystyna Gradoń</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1223190" class="jslink" onclick="pzz1('varia1223190','varia_schowaj1223190')">pokaż</span></div></h2>
+<table id="varia1223190" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">PIOSENKA NA USPOKOJENIE  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/116760">Jerzy Satanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1163330">Zofia Bezdomny (pseud.)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+          
+        </td><td class="varia_osoba"><a href="index.php/11797">Artur Barciś</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/112566">Emilian Kamiński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">TYLKO Z TOBĄ JESTEM SOBĄ  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/116760">Jerzy Satanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1163330">Zofia Bezdomny (pseud.)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/112566">Emilian Kamiński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">MOJA DAISY TO STOKROTKA  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/116760">Jerzy Satanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1163330">Zofia Bezdomny (pseud.)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/112566">Emilian Kamiński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">ŚNIADANIE O PORANKU  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/116760">Jerzy Satanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1163330">Zofia Bezdomny (pseud.)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/112566">Emilian Kamiński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">BYŁEM TAM NIEJEDEN RAZ  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+          
+        </td><td class="varia_osoba"><a href="index.php/1116023">Dominik Łoś</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1122675">Paweł Tucholski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1163330">Zofia Bezdomny (pseud.)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+          
+        </td><td class="varia_osoba"><a href="index.php/1116023">Dominik Łoś</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1122675">Paweł Tucholski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">MIŁOŚĆ I NIENAWIŚĆ  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/116760">Jerzy Satanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1163330">Zofia Bezdomny (pseud.)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/112566">Emilian Kamiński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">SPOTKAJMY SIĘ  
+    </td></tr>
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/116760">Jerzy Satanowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1163330">Zofia Bezdomny (pseud.)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/112566">Emilian Kamiński</a></td><td class="varia_osoba_opis"></td></tr>
+</table><div class="podzbior"><h1>PRACA (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Bohatera poznajemy w dniu pogrzebu jego matki. Zagubiony, bezradny jak dziecko Janek początkowo nie zdaje sobie sprawy z tragicznej sytuacji, w jakiej się znalazł. Stracił bliską mu osobę, która była jedyną dla niego ostoją i całe swoje życie podporządkowała opiece nad upośledzonym synem. W uroczystości pogrzebowej uczestniczą znajomi oraz rodzina, która liczy na spadek po zmarłej. Ciotka z Augustowa szybko wyjeżdża, kiedy dowiaduje się, że nieboszczka Łucja Kaniewska na krótko przed śmiercią zmieniła wszystkie wcześniej sporządzone postanowienia spadkowe, czyniąc syna jedynym spadkobiercą. 
+Dramatyczna sytuacja Janka spędza sen z powiek jego kumplowi z dzieciństwa, Zbykowi, i jego ojcu, Januszowi, którzy szczerze martwią się o sąsiada. Janusz uważa, że mają obowiązek zająć się nim, poszukać dla niego jakiegoś zajęcia, co Janek przyjmuje z entuzjazmem. Bardzo chce iść do pracy, jeszcze tylko nie wie do jakiej. Na prośbę ojca Zbyk odwiedza swego znajomego, Rafała, właściciela firmy kurierskiej, który zgadza się przyjąć upośledzonego pracownika, zwłaszcza że Janek ma grupę inwalidzką i pracodawcy przysługuje z tego tytułu ulga podatkowa. 
+Już pierwszego dnia w pracy Janek dostaje kombinezon, rower i rusza z przesyłką. Nikt nie wie, że szef tylko go sprawdza, ale nowy pracownik spisuje się całkiem dobrze. Oszołomiony pierwszym sukcesem Janek zapomina się przebrać i wychodzi z pracy w kombinezonie, zostawiając swoje ubranie, w którym ma klucze od mieszkania. Kiedy późnym wieczorem wraca do firmy, już nikogo tam nie ma, ale ochroniarz otwiera mu drzwi. Nagle dzwoni telefon. Janek przyjmuje ważne zlecenie i bez porozumienia z kimkolwiek rusza w drogę. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223191" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223191','ekipa_skrocona1223191','ekipa1223191','ekipa_schowaj1223191','ekipa_schowaj_krotki1223191','ekipa_schowaj_pelny1223191','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223191" class="jslink" onclick="pzf('ekipa_skrocona1223191','ekipa_pelna1223191','ekipa1223191','ekipa_schowaj1223191','ekipa_schowaj_pelny1223191','ekipa_schowaj_krotki1223191','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223191"1223191" class="jslink" onclick="pzz('ekipa1223191','ekipa_schowaj1223191')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223191" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223191">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/112095">Elżbieta Kępińska</a></div><div class="ekipa_opis"> Krystyna Gradoń</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/1135008">Anna Iberszer</a></div><div class="ekipa_opis"> Karolina Kmiecik, żona Rafała</div><div class="ekipa_osoba"><a href="index.php/11745">Ewa Kania</a></div><div class="ekipa_opis"> Rojkowa, matka Ali</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/1138848">Przemysław Chojęta</a></div><div class="ekipa_opis"> Robert "Robby", doręczyciel w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/118826">Dorota Zięciowska</a></div><div class="ekipa_opis"> Basia, ciotka Janka</div><div class="ekipa_osoba"><a href="index.php/1118991">Piotr Furman</a></div><div class="ekipa_opis"> proboszcz</div><div class="ekipa_osoba"><a href="index.php/1132691">Bartłomiej Magdziarz</a></div><div class="ekipa_opis"> Izydor, syn cioci Basi</div><div class="ekipa_osoba"><a href="index.php/116977">Monika Goździk</a></div><div class="ekipa_opis"> notariusz</div><div class="ekipa_osoba"><a href="index.php/1145719">Anna Kozak</a></div><div class="ekipa_opis"> sprzedawczyni</div><div class="ekipa_osoba"><a href="index.php/113334">Andrzej Szopa</a></div><div class="ekipa_opis"> sprzedawca</div><div class="ekipa_osoba"><a href="index.php/1125375">Rafał Cieszyński</a></div><div class="ekipa_opis"> Marek Kowal, kurier w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1149899">Grzegorz Milczarczyk</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1150962">Krzysztof Broda-Żurawski</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1163321">Józef Stępień</a></div><div class="ekipa_opis"> organista</div><div class="ekipa_osoba"><a href="index.php/1149704">Elżbieta Socha</a></div><div class="ekipa_opis"> matka dziewczynki</div><div class="ekipa_osoba"><a href="index.php/1157688">Marta Gajda</a></div><div class="ekipa_opis"> dziewczynka</div><div class="ekipa_osoba"><a href="index.php/1143450">Tomasz Augustynowicz</a></div><div class="ekipa_opis"> ochroniarz</div><div class="ekipa_osoba"><a href="index.php/1163322">Jan Pąk</a></div><div class="ekipa_opis"> uczeń</div><div class="ekipa_osoba"><a href="index.php/1163323">Michał Orłowski</a></div><div class="ekipa_opis"> uczeń</div><div class="ekipa_osoba"><a href="index.php/111520">Maja Komorowska</a></div><div class="ekipa_opis"> Łucja Kaniewska, matka Janka; tylko głos</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223191">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>URODZINY (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Sądząc, że Krystyna nie żyje, Janek wchodzi do jej domu przez okno. Mimo dziwacznego początku znajomości Janek i Gradoniowa zaprzyjaźniają się. 
+Janek dowozi Gradoniowi przesyłkę od żony. Fryderyk jest zazdrosny o przyjaźń Krystyny z Jankiem. W rzeczywistości martwi się, że Janek przypomina jego żonie jakiegoś tajemniczego Andrzeja. 
+Nadchodzi dzień urodzin Janka. W dodatku tego dnia mężczyzna ma dostać swoją pierwszą wypłatę. Zyga i Władek dowiadują się o tym i Władek postanawia okraść solenizanta. Zaczyna go śledzić. 
+Rafał urządza Jankowi awanturę o to, że ten samowolnie odebrał zlecenie od Krystyny. Janek boi się, że straci pracę. Ma się stawić na dywaniku u Gradonia. 
+Podróżując z kolejną przesyłką, Janek zaplątuje się między uczestników zagubionej wycieczki szkolnej zwiedzającej Warszawę. Dociera do Gradonia wraz z grupą dzieci. Fryderyk początkowo prosi Janka, żeby ten trzymał się z daleka od jego żony, ale po kilku chwilach orientuje się, że Kaniewski nie stanowi zagrożenia dla jego małżeństwa. Zapewnia też, że wcale nie chce go zwolnić. 
+Janek dostaje wypłatę, ale niestety zostaje okradziony przez Władka. Dociera do mieszkania Janusza, gdzie czekają na niego Janusz i Zbyk, którzy przygotowali dla niego małe przyjęcie urodzinowe. Janusz i Zbyk próbują odzyskać pieniądze Janka, ale Władek zdążył już gdzieś je schować. 
+Podczas przyjęcia urodzinowego Janek wyciąga wróżbę, z której wynika, że jeszcze w tym roku weźmie ślub. Jest zachwycony tą perspektywą. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223245" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223245','ekipa_skrocona1223245','ekipa1223245','ekipa_schowaj1223245','ekipa_schowaj_krotki1223245','ekipa_schowaj_pelny1223245','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223245" class="jslink" onclick="pzf('ekipa_skrocona1223245','ekipa_pelna1223245','ekipa1223245','ekipa_schowaj1223245','ekipa_schowaj_pelny1223245','ekipa_schowaj_krotki1223245','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223245"1223245" class="jslink" onclick="pzz('ekipa1223245','ekipa_schowaj1223245')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223245" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223245">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/114061">Władysław Kowalski</a></div><div class="ekipa_opis"> Juraś Milczek</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> Fryderyk Gradoń</div><div class="ekipa_osoba"><a href="index.php/112095">Elżbieta Kępińska</a></div><div class="ekipa_opis"> Krystyna Gradoń</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/11745">Ewa Kania</a></div><div class="ekipa_opis"> Rojkowa, matka Ali</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/1126577">Wojciech Skibiński</a></div><div class="ekipa_opis"> Władek</div><div class="ekipa_osoba"><a href="index.php/1138848">Przemysław Chojęta</a></div><div class="ekipa_opis"> Robert "Robby", doręczyciel w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1125375">Rafał Cieszyński</a></div><div class="ekipa_opis"> Marek Kowal, kurier w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1145025">Katarzyna Maria Zielińska</a></div><div class="ekipa_opis"> nauczycielka</div><div class="ekipa_osoba"><a href="index.php/1145719">Anna Kozak</a></div><div class="ekipa_opis"> sprzedawczyni</div><div class="ekipa_osoba"><a href="index.php/113334">Andrzej Szopa</a></div><div class="ekipa_opis"> sprzedawca</div><div class="ekipa_osoba"><a href="index.php/1141190">Jarosław Szczepaniak</a></div><div class="ekipa_opis"> ochroniarz biura podróży</div><div class="ekipa_osoba"><a href="index.php/1113785">Artur Pontek</a></div><div class="ekipa_opis"> szofer Gradonia</div><div class="ekipa_osoba"><a href="index.php/1163322">Jan Pąk</a></div><div class="ekipa_opis"> uczeń</div><div class="ekipa_osoba"><a href="index.php/1163323">Michał Orłowski</a></div><div class="ekipa_opis"> uczeń</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223245">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>OŚWIADCZYNY (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Janek wyznaje Dianie, że ma zamiar oświadczyć się Ali. 
+Zyga kupuje od Ali swetry, które dziewczyna zrobiła, żeby zarobić trochę pieniędzy. Ala jest mu bardzo wdzięczna, chociaż dziwi się, skąd Zyga ma tyle forsy. 
+Janek dostarcza przesyłkę Bernardowi Rudackiemu. Okazuje się, że gwiazdor muzyki country jest w depresji po rozstaniu z żoną. Janek zaskarbia sobie sympatię Bernarda, który zwierza mu się, że nie cierpi życia, które wiódł do tej pory. Janek radzi mu, żeby zaczął wszystko od nowa. 
+Konflikt między Dianą i Rafałem narasta. 
+Janek oświadcza się Ali. Dziewczyna odrzuca oświadczyny, chociaż jest wzruszona dobrymi intencjami Janka. Podczas rozmowy Ala dowiaduje się, że Władek okradł Janka. 
+Janek dzwoni do Diany, która przeżywa rozstanie z Rafałem. Postanawiają pójść razem na jakąś imprezę i zatopić smutki w alkoholu. Trafiają na dancing, gdzie odbywa się konkurs taneczny. Świetnie się bawią i wygrywają konkurs. Podchmielona Diana całuje Janka. 
+Ala urządza Zydze awanturę: połączyła fakty i wie już, skąd Zyga miał pieniądze na swetry: on i Władek okradli Janka. 
+Janek wyciąga Zbyka z łóżka i prosi go o pomoc. Chce oświadczyć się Dianie, ale sam najwyraźniej nie umie tego zrobić. Chce, żeby Zbyk oświadczył się w jego imieniu. 
+Skruszony Zyga przeprasza Alę, że przyczynił się do okradzenia Janka. Wyznaje Ali, że ją kocha. 
+Zbyk idzie do Diany. Jest pod wrażeniem urody dziewczyny. Spędza u niej pół nocy. Diana odrzuca oświadczyny Janka. 
+Ala oddaje Jankowi pieniądze z jego wypłaty. 
+W drodze do pracy Janek zauważa na ulicy Marysię. Jest przekonany, że wreszcie znalazł tę jedyną. Marysia znika jednak w tłumie. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223290" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223290','ekipa_skrocona1223290','ekipa1223290','ekipa_schowaj1223290','ekipa_schowaj_krotki1223290','ekipa_schowaj_pelny1223290','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223290" class="jslink" onclick="pzf('ekipa_skrocona1223290','ekipa_pelna1223290','ekipa1223290','ekipa_schowaj1223290','ekipa_schowaj_pelny1223290','ekipa_schowaj_krotki1223290','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223290"1223290" class="jslink" onclick="pzz('ekipa1223290','ekipa_schowaj1223290')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223290" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223290">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/114061">Władysław Kowalski</a></div><div class="ekipa_opis"> Juraś Milczek</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/112566">Emilian Kamiński</a></div><div class="ekipa_opis"> piosenkarz Bernard Rudacki</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/1138848">Przemysław Chojęta</a></div><div class="ekipa_opis"> Robert "Robby", doręczyciel w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1125375">Rafał Cieszyński</a></div><div class="ekipa_opis"> Marek Kowal, kurier w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126577">Wojciech Skibiński</a></div><div class="ekipa_opis"> Władek</div><div class="ekipa_osoba"><a href="index.php/1149899">Grzegorz Milczarczyk</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1150962">Krzysztof Broda-Żurawski</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/111623">Karol Stępkowski</a></div><div class="ekipa_opis"> kierownik klubu</div><div class="ekipa_osoba"><a href="index.php/1129983">Ewa Kwiatkowska</a></div><div class="ekipa_opis"> kelnerka</div><div class="ekipa_osoba"><a href="index.php/1121096">Maciej Gąsiorek</a></div><div class="ekipa_opis"> wodzirej; w napisach nazwisko: Gąsiorowski</div><div class="ekipa_osoba"><a href="index.php/1123217">Krystyna Rutkowska-Ulewicz</a></div><div class="ekipa_opis"> sąsiadka</div><div class="ekipa_osoba"><a href="index.php/1146522">Elżbieta Gruca</a></div><div class="ekipa_opis"> szatniarka</div><div class="ekipa_osoba"><a href="index.php/115412">Robert Brzeziński</a></div><div class="ekipa_opis"> kierowca</div><div class="ekipa_osoba"><a href="index.php/1128581">Grzegorz Jurek</a></div><div class="ekipa_opis"> kierowca</div><div class="ekipa_osoba"><a href="index.php/1146889">Arkadiusz Kulka</a></div><div class="ekipa_opis"> selekcjoner</div><div class="ekipa_osoba"><a href="index.php/111520">Maja Komorowska</a></div><div class="ekipa_opis"> Łucja Kaniewska, matka Janka; tylko głos</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223290">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WAŻNA PRZESYŁKA (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Jadąc ze Zbykiem od Diany, na przejściu dla pieszych, Janek  widzi nieznajomą kobietę. Święcie przekonany, że oto właśnie ujrzał "Tę Właściwą", rezygnuje z poślubienia Diany i tłumaczy jej, że  postanowił odnaleźć, kobietę z przejścia, nawet jeśli miałby jej szukać parę dni... Zdezorientowana Diana, prosi go tylko, o jedno - żeby, zanim zrobi cokolwiek, skonsultował wszystko ze Zbykiem. Szef  chwali Janka za jego pracę i zleca mu odpowiedzialne zadanie dostarczenia bardzo ważnej przesyłki, do konkretnej godziny.  Zachwycony Janek spełnia polecenie. Ale najpierw jedzie do Jurasia zwanego "Milczkiem". Okazuje się, że umarła jego żona. 
+Zbyk rozmawia z ojcem, który wyczuwa, że z powodu Diany, w głowie jego syna kiełkuje myśl o rozstaniu z długoletnią partnerką, Heleną, za która, on co prawda nie przepada, ale do której się przyzwyczaił. Zyga idzie na szkolenie dla akwizytorów, ale okazuje się, że za wstęp trzeba zapłacić. Janek przychodzi Zydze z pomocą: śpiewa na ulicy i zbiera potrzebną sumę do kapelusza. 
+Janek jadąc z ważną przesyłką, ratuje spod kół samochodu, chłopca, którego matką, jak się okazuje, jest kobieta z przejścia dla pieszych.  "Ta właściwa" - Marysia. Wdzięczna kobieta zaprasza go na kawę do domu. Janek doskonale dogaduje się z chłopcem, czym zaczyna budzić nieufność Marysi.
+Zyga wraca ze szkolenia z odkurzaczem, który ma sprzedać. Okazuje się, że znalezienie przez Zygę pracy było warunkiem postawionym mu przez Alę, który miał spełnić zanim pójdą ze sobą do łóżka. Ala jednak wciąż wymawia się od spełnienia warunków umowy.
+Władek uświadamia Zydze, że takie same odkurzacze można kupić na bazarku za o wiele mniejszą sumę. Władek proponuje, żeby sprzedali odkurzacz Jankowi, ale Zyga po raz pierwszy staje w obronie Janka. Rezygnuje z pracy akwizytora. 
+Zbyk postanawia zająć się sprawami spadkowymi Janka.
+Janek, który zasiedział się u Marysi pospiesznie jedzie rowerem z bardzo ważną przesyłką. Nie zauważa nadjeżdżającego z naprzeciwka samochodu i wpada prosto pod jego koła...</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223312" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223312','ekipa_skrocona1223312','ekipa1223312','ekipa_schowaj1223312','ekipa_schowaj_krotki1223312','ekipa_schowaj_pelny1223312','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223312" class="jslink" onclick="pzf('ekipa_skrocona1223312','ekipa_pelna1223312','ekipa1223312','ekipa_schowaj1223312','ekipa_schowaj_pelny1223312','ekipa_schowaj_krotki1223312','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223312"1223312" class="jslink" onclick="pzz('ekipa1223312','ekipa_schowaj1223312')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223312" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223312">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div class="ekipa_osoba"><a href="index.php/114061">Władysław Kowalski</a></div><div class="ekipa_opis"> Juraś Milczek</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div class="ekipa_osoba"><a href="index.php/112566">Emilian Kamiński</a></div><div class="ekipa_opis"> piosenkarz Bernard Rudacki</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/115466">Elżbieta Zającówna</a></div><div class="ekipa_opis"> Jolanta Rudacka, żona Bernarda</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/1153986">Grzegorz Kwiecień</a></div><div class="ekipa_opis"> "Boogie", brat Justi</div><div class="ekipa_osoba"><a href="index.php/1138848">Przemysław Chojęta</a></div><div class="ekipa_opis"> Robert "Robby", doręczyciel w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126577">Wojciech Skibiński</a></div><div class="ekipa_opis"> Władek</div><div class="ekipa_osoba"><a href="index.php/1140729">Magdalena Szmyt</a></div><div class="ekipa_opis"> pani w berecie</div><div class="ekipa_osoba"><a href="index.php/1148257">Jacek Zawada</a></div><div class="ekipa_opis"> facet w garniturku</div><div class="ekipa_osoba"><a href="index.php/1146721">Wojciech Cacko-Zagórski</a></div><div class="ekipa_opis"> emeryt</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> kloszard</div><div class="ekipa_osoba"><a href="index.php/1163438">Cyprian Szewczak</a></div><div class="ekipa_opis"> Krzyś Sawicki, syn Marysi</div><div class="ekipa_osoba"><a href="index.php/1114302">Andrzej Dębski</a></div><div class="ekipa_opis"> prowadzący</div><div class="ekipa_osoba"><a href="index.php/1137213">Anna Sroka</a></div><div class="ekipa_opis"> sekretarka</div><div class="ekipa_osoba"><a href="index.php/1163439">Ewa Misiukiewicz</a></div><div class="ekipa_opis"> młoda kobieta</div><div class="ekipa_osoba"><a href="index.php/1122675">Paweł Tucholski</a></div><div class="ekipa_opis"> chłopak zbierający na piwo</div><div class="ekipa_osoba"><a href="index.php/1116023">Dominik Łoś</a></div><div class="ekipa_opis"> chłopak zbierający na piwo</div><div class="ekipa_osoba">Rafał Sendyka</div><div class="ekipa_opis"> robotnik</div><div class="ekipa_osoba"><a href="index.php/1113431">Bene Rychter</a></div><div class="ekipa_opis"> robotnik</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223312">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>BOOGIE (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Janka potrącił samochód prowadzony przez Boogiego. Tymczasem torbę kurierską, z bardzo ważną przesyłką znalazł kloszard. Opróżnienie jej przynosi zaskakujące skutki. Boogie postanawia zająć się nieprzytomnym Jankiem, głównie ze strachu przed policja. 
+Po nieudanej próbie zbliżenia się z Zygą, Ala dochodzi do wniosku, że wcale do siebie nie pasują i zrywa ze zdezorientowanym chłopakiem. 
+Rafała odwiedzają mafiosi. Zgubiona przez Janka paczka ma związek z  nielegalną i podejrzaną działalnością Rafała w firmie. Zastraszony i wściekły Kmiecik zwalnia Janka z pracy.
+Kloszardem i jego paczką zainteresowała się  policja. 
+W czasie pobytu w szpitalu Janek zostaje pomylony z innym pacjentem noszącym to samo nazwisko. Imiennik Janka to dość znany przed laty pisarz, który ponieważ nie ma dobrego pomysłu na powieść próbuje się zabić, Wszystko wyjaśnia się, kiedy Janek powstrzymuje Kaniewskiego nr 2 przed popełnieniem samobójstwa. 
+Janek asystuje Boogiemu podczas wymyślania haseł reklamowych. Okazuje się, że ma do tego talent.
+Torturowany Rafał nasyła mafiosów na Janka. Gangsterzy porywają ze szpitala nie tego Kaniewskiego. 
+Janka odwiedzają w szpitalu wszyscy jego "starzy" i nowi przyjaciele. Boogie przekazuje rewelacyjną, dla Janka, wiadomość od szefa agencji reklamowej, w której pracuje.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223313" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223313','ekipa_skrocona1223313','ekipa1223313','ekipa_schowaj1223313','ekipa_schowaj_krotki1223313','ekipa_schowaj_pelny1223313','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223313" class="jslink" onclick="pzf('ekipa_skrocona1223313','ekipa_pelna1223313','ekipa1223313','ekipa_schowaj1223313','ekipa_schowaj_pelny1223313','ekipa_schowaj_krotki1223313','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223313"1223313" class="jslink" onclick="pzz('ekipa1223313','ekipa_schowaj1223313')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223313" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223313">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/1153986">Grzegorz Kwiecień</a></div><div class="ekipa_opis"> "Boogie", brat Justi</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> inspektor Piotr Kozak</div><div class="ekipa_osoba"><a href="index.php/1163438">Cyprian Szewczak</a></div><div class="ekipa_opis"> Krzyś Sawicki, syn Marysi</div><div class="ekipa_osoba"><a href="index.php/1146721">Wojciech Cacko-Zagórski</a></div><div class="ekipa_opis"> emeryt</div><div class="ekipa_osoba"><a href="index.php/1117684">Krzysztof Dracz</a></div><div class="ekipa_opis"> Maks, szef "Boogiego"</div><div class="ekipa_osoba"><a href="index.php/1115938">Jan Janga-Tomaszewski</a></div><div class="ekipa_opis"> kloszard "Muzyk"</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> biznesmen na pogotowiu</div><div class="ekipa_osoba"><a href="index.php/1115417">Witold Wieliński</a></div><div class="ekipa_opis"> sierżant Królikowski</div><div class="ekipa_osoba"><a href="index.php/118599">Witold Bieliński</a></div><div class="ekipa_opis"> gangster</div><div class="ekipa_osoba"><a href="index.php/1115064">Adam Biedrzycki</a></div><div class="ekipa_opis"> gangster</div><div class="ekipa_osoba"><a href="index.php/1116630">Mieczysław Morański</a></div><div class="ekipa_opis"> pisarz Jan Kaniewski</div><div class="ekipa_osoba"><a href="index.php/1115229">Aleksander Trąbczyński</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/1116661">Hanna Chojnacka</a></div><div class="ekipa_opis"> pielęgniarka</div><div class="ekipa_osoba"><a href="index.php/1136175">Agnieszka Drumińska</a></div><div class="ekipa_opis"> pielęgniarka</div><div class="ekipa_osoba"><a href="index.php/1128592">Agnieszka Fajlhauer</a></div><div class="ekipa_opis"> matka na pogotowiu</div><div class="ekipa_osoba">Wiktoria Chojnacka</div><div class="ekipa_opis"> dziewczynka z koralikiem w uchu</div><div class="ekipa_osoba"><a href="index.php/1138527">Włodzimierz Midak</a></div><div class="ekipa_opis"> emeryt na pogotowiu</div><div class="ekipa_osoba"><a href="index.php/1140729">Magdalena Szmyt</a></div><div class="ekipa_opis"> pani w berecie</div><div class="ekipa_osoba"><a href="index.php/1148257">Jacek Zawada</a></div><div class="ekipa_opis"> facet w garniturku</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223313">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>REKLAMA (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Janek zostaje przyjęty do agencji reklamowej i będzie pomagał Boogiemu w wymyślaniu haseł. Przygnębiony faktem, że nie będzie już jeździć na swoim ukochanym rowerze, Janek rozpoczyna nową pracę, wzbudzając duże zainteresowanie w agencji. Nikt nie wie, kim jest, a po firmie zaczyna chodzić plotka, że to geniusz, który stanowi dla nich potencjalne zagrożenie. Poznaje Justi, która zaprasza go na imprezę do domu. 
+Po przesłuchaniu kloszarda policjanci zaczynają poszukiwania Janka.
+Pani Hania, pracująca u Marysi i Krzysia, zaprzyjaźnia się z Januszem, ojcem Zbyka i będzie mu pomagać w sprzątaniu mieszkania. 
+Policjanci szukają Janka w domu, a ponieważ "wszystkie mendy z okolicy" go kryją, zaczynają podejrzewać, że Janek jest ważnym przestępcą.
+Wspólnik Zbyka proponuje mu zrobienie interesu na giełdzie. Zbyk jednak nie ma pieniędzy. Helena radzi mu, żeby zainteresował się sprawami spadkowymi Janka.
+Janek wymyśla świetne i chwytliwe hasło dotyczące świątecznej promocji w supermarkecie. Kiedy jednak na spotkaniu z przedstawicielem klienta, dociera do niego, że hasło wykorzystuje tematykę religijną, wycofuje się z pomysłu i sam tłumaczy klientowi, że to nieetyczne. Po raz kolejny okazuje się, że dziecięca naiwność i szczerość Janka powoduje problemy w jego życiu. Wylatuje z agencji. 
+Mimo to, idzie na imprezę do Justi. Dziewczyna, przekonana, że awansuje dzięki Jankowi, zaciąga go do łóżka. Rano, kiedy Janek wyjawia jej, że stracił pracę, wyrzuca go z mieszkania.
+Helena szpera w papierach Janka. Zdumiona, odkrywa w nich niezwykle interesujący dokument. Policjanci tymczasem trafiają wreszcie na ślad Janka.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223314" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223314','ekipa_skrocona1223314','ekipa1223314','ekipa_schowaj1223314','ekipa_schowaj_krotki1223314','ekipa_schowaj_pelny1223314','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223314" class="jslink" onclick="pzf('ekipa_skrocona1223314','ekipa_pelna1223314','ekipa1223314','ekipa_schowaj1223314','ekipa_schowaj_pelny1223314','ekipa_schowaj_krotki1223314','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223314"1223314" class="jslink" onclick="pzz('ekipa1223314','ekipa_schowaj1223314')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223314" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223314">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/112095">Elżbieta Kępińska</a></div><div class="ekipa_opis"> Krystyna Gradoń</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> Fryderyk Gradoń</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/1135595">Sylwia Gliwa</a></div><div class="ekipa_opis"> Justi, pracownica agencji reklamowej</div><div class="ekipa_osoba"><a href="index.php/1135008">Anna Iberszer</a></div><div class="ekipa_opis"> Karolina Kmiecik, żona Rafała</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1153986">Grzegorz Kwiecień</a></div><div class="ekipa_opis"> "Boogie", brat Justi</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> inspektor Piotr Kozak</div><div class="ekipa_osoba"><a href="index.php/1117684">Krzysztof Dracz</a></div><div class="ekipa_opis"> Maks, szef "Boogiego"</div><div class="ekipa_osoba"><a href="index.php/1163438">Cyprian Szewczak</a></div><div class="ekipa_opis"> Krzyś Sawicki, syn Marysi</div><div class="ekipa_osoba"><a href="index.php/1115417">Witold Wieliński</a></div><div class="ekipa_opis"> sierżant Królikowski</div><div class="ekipa_osoba"><a href="index.php/118894">Jacek Kawalec</a></div><div class="ekipa_opis"> Mirek Wierzba, wspólnik Zbyka</div><div class="ekipa_osoba"><a href="index.php/117193">Aleksander Mikołajczak</a></div><div class="ekipa_opis"> Edward Dybowski, klient agencji reklamowej</div><div class="ekipa_osoba"><a href="index.php/1136175">Agnieszka Drumińska</a></div><div class="ekipa_opis"> pielęgniarka</div><div class="ekipa_osoba"><a href="index.php/1126577">Wojciech Skibiński</a></div><div class="ekipa_opis"> Władek</div><div class="ekipa_osoba"><a href="index.php/118599">Witold Bieliński</a></div><div class="ekipa_opis"> gangster</div><div class="ekipa_osoba"><a href="index.php/1115064">Adam Biedrzycki</a></div><div class="ekipa_opis"> gangster</div><div class="ekipa_osoba"><a href="index.php/1131194">Błażej Wójcik</a></div><div class="ekipa_opis"> fotograf</div><div class="ekipa_osoba"><a href="index.php/1160625">Izabela Czyż</a></div><div class="ekipa_opis"> pracownica agencji reklamowej</div><div class="ekipa_osoba"><a href="index.php/1163664">Dorota Glac</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1160238">Adrianna Kornecka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163665">Helena Świegocka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162546">Natalia Bednarczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1163666">Monika Gapińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129075">Michał Ziembicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1158261">Michał Głowacki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155357">Dawid Andriyan</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Łukasz Woźniakowski</div><div class="ekipa_opis">&nbsp;</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223314">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KAMELEON (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Przeżywający rozterki uczuciowe z powodu dwóch kobiet, Janek, odwiedza Janusza Lewickiego. Opowiada mu o wizycie w domu Justi. Ojciec Zbyka daje Jankowi kolejny list od matki, w którym być może znajdzie odpowiedź na pytanie czym jest miłość. 
+Przygnębiony historią z Justi i faktem, że nie ma pracy, Janek postanawia złożyć wizytę Marysi. Mama Krzysia, jednak nie jest zachwycona obecnością Janka. Udaje przed Jankiem, że jej szef - Patryk jest jej narzeczonym. Niespodziewanie jednak Patryk naprawdę zaprasza Marysię na randkę. 
+Marysia jednak z trudem znosi zaloty swojego szefa, a kiedy ten proponuje jej wspólne wyjście na imprezę firmową, po której ma nadzieję, że spędzą razem noc, Marysia informuje Patryka, że nie wie co na to powie jej narzeczony - Janek...
+Firma kurierska "Błysk" popada w tarapaty - policjanci wciąż nie mogąc znaleźć Janka, po kolei przesłuchują pracowników. Kiedy Kmiecik się o tym dowiaduje, zabiera wypłaty dla pracowników i odjeżdża na lotnisko...  
+Policjanci, na podstawie zeznań, budują interesujący portret psychologiczny Janka - "oszust, o tysiącu twarzy, podrywacz, głupek, dobry człowiek". W końcu wpadają na trop kto jest głównym podejrzanym w aferze narkotykowej. I, że nie jest to Janek.
+Janek odwiedza swoich dawnych stałych klientów. Przez chwilę jest zatrudniony przy promocji nowej płyty króla country, ale po popełnieniu kolejnego błędu z powodu swojej "prawdomówności", Bernard rezygnuje z jego pomocy. Za to zarabia pieniądze u Gradoniowej, której czyści basen. Żona Big Bossa prosi męża o to, żeby z powrotem przyjął Janka do pracy.
+Dokument, na ślad którego wpadła narzeczona Zbyka - Helena, okazuje się patentem rodziny Kaniewskich na "Złote karmelki". Zbyk i jego ojciec dowiadują się, że to nie jest tylko dokument o wartości zabytkowej, ale prawdopodobnie ma też moc prawną. Helena widzi w tym szansę na zysk dla Zbyka.
+Pani Hania, sprzątając u Lewickiego,  przypadkowo wyrzuca do śmieci listy mamy Janka. Okazuje się, że autorem tych listów jest osoba żyjąca...
+Janek pozbawiony środków do życia prosi Zbyka o to, żeby ten oddał mu jego rentę. Słysząc prawdę na temat co stało się z jego pieniędzmi, i nie rozumiejąc ze stało się to dla jego dobra, czuje się oszukany przez najbliższego przyjaciela.   
+Policjanci aresztują Janka. Janek wzbrania się, mówiąc, że jest niewinny i  że to wszystko wina Justi. Zdumieni  policjanci zabierają go na komisariat.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223315" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223315','ekipa_skrocona1223315','ekipa1223315','ekipa_schowaj1223315','ekipa_schowaj_krotki1223315','ekipa_schowaj_pelny1223315','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223315" class="jslink" onclick="pzf('ekipa_skrocona1223315','ekipa_pelna1223315','ekipa1223315','ekipa_schowaj1223315','ekipa_schowaj_pelny1223315','ekipa_schowaj_krotki1223315','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223315"1223315" class="jslink" onclick="pzz('ekipa1223315','ekipa_schowaj1223315')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223315" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223315">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/112095">Elżbieta Kępińska</a></div><div class="ekipa_opis"> Krystyna Gradoń</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/112566">Emilian Kamiński</a></div><div class="ekipa_opis"> piosenkarz Bernard Rudacki</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/1135008">Anna Iberszer</a></div><div class="ekipa_opis"> Karolina Kmiecik, żona Rafała</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1153986">Grzegorz Kwiecień</a></div><div class="ekipa_opis"> "Boogie", brat Justi</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> inspektor Piotr Kozak</div><div class="ekipa_osoba"><a href="index.php/1115417">Witold Wieliński</a></div><div class="ekipa_opis"> sierżant Królikowski</div><div class="ekipa_osoba"><a href="index.php/1126577">Wojciech Skibiński</a></div><div class="ekipa_opis"> Władek</div><div class="ekipa_osoba"><a href="index.php/1135921">Wojciech Mecwaldowski</a></div><div class="ekipa_opis"> Patryk, szef Marysi Sawickiej</div><div class="ekipa_osoba"><a href="index.php/1125375">Rafał Cieszyński</a></div><div class="ekipa_opis"> Marek Kowal, kurier w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1138848">Przemysław Chojęta</a></div><div class="ekipa_opis"> Robert "Robby", doręczyciel w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1135145">Katarzyna Stanisławska</a></div><div class="ekipa_opis"> Dagmara</div><div class="ekipa_osoba"><a href="index.php/11540">Jerzy Molga</a></div><div class="ekipa_opis"> profesor Haliżak</div><div class="ekipa_osoba"><a href="index.php/1163438">Cyprian Szewczak</a></div><div class="ekipa_opis"> Krzyś Sawicki, syn Marysi</div><div class="ekipa_osoba"><a href="index.php/111520">Maja Komorowska</a></div><div class="ekipa_opis"> Łucja Kaniewska, matka Janka; tylko głos</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223315">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>PRZESŁUCHANIA (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Dzięki interwencji pani psycholog policjanci rezygnują z zatrzymania Janka. 
+Gradoń przejmuje firmę kurierską i z powrotem go zatrudnia. 
+Marysia umawia się z Kaniewskim na kawę. Janek myśli, że jest to zaproszenie na randkę i, sądząc, że Marysia darzy go uczuciem, próbuje pocałować ukochaną. 
+Zbyk zastanawia się, czy wykorzystać naiwność Janka i zainwestować jego pieniądze z patentu na złote karmelki w niepewny interes wskazany przez wspólnika. 
+Rafał zostaje zatrzymany przez policję. Przyznaje się do kontaktów z mafią. 
+Janek odkrywa, że listy od mamy były preparowane przez profesora i panią Hanię. 
+Zyga chce oświadczyć się Ali, więc aby uzbierać pieniądze na pierścionek zaręczynowy, oddaje krew. 
+Ala po zerwaniu z Zygą postanawia znaleźć sobie innego chłopaka. Jednak nowo poznany Radek ucieka przerażony, kiedy odkrywa, że Ala ma sztuczną nogę. 
+Wracając z nieudanej randki, Janek spotyka Alę, która wypłakuje mu się na ramieniu. Całą sytuację widzi Zyga, który próbuje pobić Janka, ale traci przytomność. Po odzyskaniu przytomności oświadcza się Ali. 
+Janek boleśnie odczuwa samotność. Prosi zdumionego Janusza o kolejny list od mamy. Mówi, że przecież nadal mogą udawać, że te listy naprawdę pochodzą od jego matki. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223576" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223576','ekipa_skrocona1223576','ekipa1223576','ekipa_schowaj1223576','ekipa_schowaj_krotki1223576','ekipa_schowaj_pelny1223576','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223576" class="jslink" onclick="pzf('ekipa_skrocona1223576','ekipa_pelna1223576','ekipa1223576','ekipa_schowaj1223576','ekipa_schowaj_pelny1223576','ekipa_schowaj_krotki1223576','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223576"1223576" class="jslink" onclick="pzz('ekipa1223576','ekipa_schowaj1223576')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223576" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223576">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/11745">Ewa Kania</a></div><div class="ekipa_opis"> Rojkowa, matka Ali</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> Fryderyk Gradoń</div><div class="ekipa_osoba"><a href="index.php/111932">Olgierd Łukaszewicz</a></div><div class="ekipa_opis"> poeta</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Rafał Kmiecik, prezes firmy kurierskiej  "Błysk", szef Janka</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> inspektor Piotr Kozak</div><div class="ekipa_osoba"><a href="index.php/1115417">Witold Wieliński</a></div><div class="ekipa_opis"> sierżant Królikowski</div><div class="ekipa_osoba"><a href="index.php/1135921">Wojciech Mecwaldowski</a></div><div class="ekipa_opis"> Patryk, szef Marysi Sawickiej</div><div class="ekipa_osoba"><a href="index.php/1125375">Rafał Cieszyński</a></div><div class="ekipa_opis"> Marek Kowal, kurier w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1138848">Przemysław Chojęta</a></div><div class="ekipa_opis"> Robert "Robby", doręczyciel w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1149899">Grzegorz Milczarczyk</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1150962">Krzysztof Broda-Żurawski</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1163438">Cyprian Szewczak</a></div><div class="ekipa_opis"> Krzyś Sawicki, syn Marysi</div><div class="ekipa_osoba"><a href="index.php/112353">Justyna Kulczycka</a></div><div class="ekipa_opis"> pani psycholog</div><div class="ekipa_osoba"><a href="index.php/113645">Andrzej Piszczatowski</a></div><div class="ekipa_opis"> profesor prawa</div><div class="ekipa_osoba"><a href="index.php/118894">Jacek Kawalec</a></div><div class="ekipa_opis"> Mirek Wierzba, wspólnik Zbyka</div><div class="ekipa_osoba"><a href="index.php/1114299">Miłogost Reczek</a></div><div class="ekipa_opis"> taksówkarz</div><div class="ekipa_osoba"><a href="index.php/1124082">Katarzyna Skarżanka</a></div><div class="ekipa_opis"> pielęgniarka PCK</div><div class="ekipa_osoba"><a href="index.php/1133107">Bernard Kierat</a></div><div class="ekipa_opis"> reporter</div><div class="ekipa_osoba"><a href="index.php/1135961">Ewelina Żak</a></div><div class="ekipa_opis"> Ewelina Kruk, koleżanka Marysi</div><div class="ekipa_osoba"><a href="index.php/1144980">Michał Bieliński</a></div><div class="ekipa_opis"> kelner</div><div class="ekipa_osoba"><a href="index.php/1122727">Roman Holc</a></div><div class="ekipa_opis"> ochroniarz</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223576">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>DZIECKO (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Po zerwaniu z Zygą Ala postanawia znaleźć sobie innego chłopaka. Idzie do dyskoteki, z której wychodzi w towarzystwie Arka. Kiedy chłopak odkrywa, że Ala ma sztuczną nogę, wyrzuca ją z samochodu. 	
+Janek sądząc, że Marysia darzy go uczuciem próbuje ja pocałować. Ale wzburzona dziewczyna wychodzi z kawiarni. 
+Zyga wyznaje Ali, że oddawał krew, bo chciał uzbierać pieniądze na pierścionek zaręczynowy. Ala przyjmuje oświadczyny. 
+Wielka fotografia Janka pojawia się na okładce gazety. W brukowcu jest napisane o nowym milionerze, który posiada patent na najpopularniejsze cukierki w Polsce. 
+Janek wyznaje Zydze, że to z jego winy Ala jako dziecko wpadła pod tramwaj i straciła nogę. Janek nieświadomie wsypuje Zbyka, mówiąc Helenie o tym, że przyjaciel spędził noc u Diany. 
+U Janka zjawia się Justi, która informuje, że jest z nim w ciąży. 
+Po sprawdzeniu dokumentów okazuje się, że dziadek prezesa koncernu cukierniczego wygrał w karty patent na cukierki. Prezes wysyła swojego mecenasa, żeby załatwił sprawę z Jankiem. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223619" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223619','ekipa_skrocona1223619','ekipa1223619','ekipa_schowaj1223619','ekipa_schowaj_krotki1223619','ekipa_schowaj_pelny1223619','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223619" class="jslink" onclick="pzf('ekipa_skrocona1223619','ekipa_pelna1223619','ekipa1223619','ekipa_schowaj1223619','ekipa_schowaj_pelny1223619','ekipa_schowaj_krotki1223619','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223619"1223619" class="jslink" onclick="pzz('ekipa1223619','ekipa_schowaj1223619')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223619" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223619">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/1135595">Sylwia Gliwa</a></div><div class="ekipa_opis"> Justi, pracownica agencji reklamowej</div><div class="ekipa_osoba"><a href="index.php/112790">Jan Machulski</a></div><div class="ekipa_opis"> Fryderyk Gradoń</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1116016">Mateusz Damięcki</a></div><div class="ekipa_opis"> podrywacz Arek</div><div class="ekipa_osoba"><a href="index.php/1125375">Rafał Cieszyński</a></div><div class="ekipa_opis"> Marek Kowal, kurier w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1149899">Grzegorz Milczarczyk</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1150962">Krzysztof Broda-Żurawski</a></div><div class="ekipa_opis"> kurier</div><div class="ekipa_osoba"><a href="index.php/1163438">Cyprian Szewczak</a></div><div class="ekipa_opis"> Krzyś Sawicki, syn Marysi</div><div class="ekipa_osoba"><a href="index.php/1110421">Stanisław Penksyk</a></div><div class="ekipa_opis"> Wiesiek</div><div class="ekipa_osoba"><a href="index.php/113645">Andrzej Piszczatowski</a></div><div class="ekipa_opis"> profesor prawa</div><div class="ekipa_osoba"><a href="index.php/119208">Andrzej Grąziewicz</a></div><div class="ekipa_opis"> Kot-Bury, prezes firmy cukierniczej</div><div class="ekipa_osoba"><a href="index.php/1129648">Jarosław Budnik</a></div><div class="ekipa_opis"> mecenas Kota-Burego</div><div class="ekipa_osoba"><a href="index.php/1168562">Wiktoria Gorodeckaja</a></div><div class="ekipa_opis"> Jola, sekretarka Kota-Burego</div><div class="ekipa_osoba"><a href="index.php/1145719">Anna Kozak</a></div><div class="ekipa_opis"> sprzedawczyni</div><div class="ekipa_osoba"><a href="index.php/113334">Andrzej Szopa</a></div><div class="ekipa_opis"> sprzedawca</div><div class="ekipa_osoba"><a href="index.php/1140756">Grzegorz Stosz</a></div><div class="ekipa_opis"> barman</div><div class="ekipa_osoba"><a href="index.php/1164006">Paweł Aigner</a></div><div class="ekipa_opis"> lump Franek, kolega Zygi</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223619">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KINDERBAL (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Janek pomaga Zydze oswoić się z pracą kuriera. Okazuje się, że Zyga ma podejście do zwierząt i oprócz rozwożenia paczek będzie wyprowadzał psy chorych lub zabieganych klientów. 
+Prawnik wysłany przez firmę cukierniczą informuje Janka, że jego roszczenia są bezpodstawne. Wypłaca mu 6 tysięcy złotych na pokrycie dotychczasowych strat. 
+W wyniku nieporozumienia podczas rozmowy z Jankiem Diana dochodzi do wniosku, że Zbyk spodziewa się dziecka z Heleną. Helena sądzi, że przez robienie awantur Zbyk stara się na nowo zaskarbić sobie jej uczucia. 
+Janek oświadcza się Justi. Kiedy wspomina o tym, że jednak nie zostanie milionerem, Justi stwierdza, że wcale nie jest w ciąży i odrzuca oświadczyny Janka. 
+Po odrzuconych przez Justi oświadczynach Janek oddaje Zydze pierścionek zaręczynowy. Chciałby, żeby Zyga dał go Ali. 
+Krzyś postanawia zaprosić Janka na swoje przyjęcie urodzinowe. Mówi kolegom, że Janek jest jego ojcem. 
+Niespodziewanie u Janka pojawiają się dalecy krewni: ciotka Basia i jej dorosły syn Izydor. Chłopak ma zamiar zdawać na UW, więc ciotka proponuje Jankowi zamianę mieszkań: ona i Izydor zamieszkaliby w Warszawie, a Janek w ich mieszkaniu w Augustowie. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1223674" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1223674','ekipa_skrocona1223674','ekipa1223674','ekipa_schowaj1223674','ekipa_schowaj_krotki1223674','ekipa_schowaj_pelny1223674','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1223674" class="jslink" onclick="pzf('ekipa_skrocona1223674','ekipa_pelna1223674','ekipa1223674','ekipa_schowaj1223674','ekipa_schowaj_pelny1223674','ekipa_schowaj_krotki1223674','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1223674"1223674" class="jslink" onclick="pzz('ekipa1223674','ekipa_schowaj1223674')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1223674" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1223674">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11797">Artur Barciś</a></div><div class="ekipa_opis"> Janek Kaniewski</div><div class="ekipa_osoba"><a href="index.php/11278">Anna Dymna</a></div><div class="ekipa_opis"> Hanna Gorzkowska</div><div class="ekipa_osoba"><a href="index.php/1129259">Barbara Kałużna</a></div><div class="ekipa_opis"> Diana Albrecht, dyspozytorka w "Błysku"</div><div class="ekipa_osoba"><a href="index.php/1126780">Magdalena Kacprzak</a></div><div class="ekipa_opis"> Ala Rojek</div><div class="ekipa_osoba"><a href="index.php/112095">Elżbieta Kępińska</a></div><div class="ekipa_opis"> Krystyna Gradoń</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> Marysia Sawicka</div><div class="ekipa_osoba"><a href="index.php/1157622">Natalia Strzelecka</a></div><div class="ekipa_opis"> Helena Górska, partnerka Zbyka</div><div class="ekipa_osoba"><a href="index.php/1135595">Sylwia Gliwa</a></div><div class="ekipa_opis"> Justi, pracownica agencji reklamowej</div><div class="ekipa_osoba"><a href="index.php/118826">Dorota Zięciowska</a></div><div class="ekipa_opis"> Basia, ciotka Janka</div><div class="ekipa_osoba"><a href="index.php/1114499">Jerzy Schejbal</a></div><div class="ekipa_opis"> Janusz Lewicki, ojciec Zbyka</div><div class="ekipa_osoba"><a href="index.php/1116309">Radosław Pazura</a></div><div class="ekipa_opis"> Zbigniew "Zbyk" Lewicki</div><div class="ekipa_osoba"><a href="index.php/1119537">Jacek Lenartowicz</a></div><div class="ekipa_opis"> Zyga</div><div class="ekipa_osoba"><a href="index.php/1153986">Grzegorz Kwiecień</a></div><div class="ekipa_opis"> "Boogie", brat Justi</div><div class="ekipa_osoba"><a href="index.php/1163438">Cyprian Szewczak</a></div><div class="ekipa_opis"> Krzyś Sawicki, syn Marysi</div><div class="ekipa_osoba"><a href="index.php/119208">Andrzej Grąziewicz</a></div><div class="ekipa_opis"> Kot-Bury, prezes firmy cukierniczej</div><div class="ekipa_osoba"><a href="index.php/1129648">Jarosław Budnik</a></div><div class="ekipa_opis"> mecenas Kota-Burego</div><div class="ekipa_osoba"><a href="index.php/111404">Jacek Kałucki</a></div><div class="ekipa_opis"> detektyw</div><div class="ekipa_osoba"><a href="index.php/1135145">Katarzyna Stanisławska</a></div><div class="ekipa_opis"> Dagmara</div><div class="ekipa_osoba"><a href="index.php/1168562">Wiktoria Gorodeckaja</a></div><div class="ekipa_opis"> Jola, sekretarka Kota-Burego</div><div class="ekipa_osoba"><a href="index.php/111848">Mirosława Krajewska</a></div><div class="ekipa_opis"> starsza pani</div><div class="ekipa_osoba"><a href="index.php/1115128">Sławomir Głazek</a></div><div class="ekipa_opis"> jubiler</div><div class="ekipa_osoba"><a href="index.php/1125340">Joanna Górniak</a></div><div class="ekipa_opis"> Jadzia, żona jubilera</div><div class="ekipa_osoba"><a href="index.php/1132691">Bartłomiej Magdziarz</a></div><div class="ekipa_opis"> Izydor, syn cioci Basi</div><div class="ekipa_osoba"><a href="index.php/1149697">Anna Kędziora</a></div><div class="ekipa_opis"> prostytutka Sandra</div><div class="ekipa_osoba"><a href="index.php/1164007">Konrad Miklaszewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1164008">Jan Butruk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152875">Daniel Buchman</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154854">Mateusz Borkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1164009">Kinga Szkudlarek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154780">Sandra Szkudlarek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1141593">Michał Chmielarski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1223674">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1223190" selected >1</option><option value="1223190_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1223190_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1223190_2"></a> 
+</nav><div id="czasgen">2026.05.08 04:32:54</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

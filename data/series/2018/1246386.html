@@ -1,0 +1,768 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - OKO ZA OKO</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>OKO ZA OKO</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1246386" selected >1</option><option value="1246386_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1246386_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1246386_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2018</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2018. 10. 03</div></li>
+<li><div class="film_tech3">Barwny, 18 odcinków x ok. 43-47 min<br /><br />
+<strong>Seria 1:</strong> Odcinki 1-18. Emisja: 3 października - 29 listopada 2018.<br />
+<strong>Seria 2:</strong> Odcinki 19-. Emisja: jesień 2019.<br /><br />
+Lokacje: Warszawa, m.in. Szpital Świętej Elżbiety - Mokotowskie Centrum Medyczne przy ulicy Goszczyńskiego 8.<br /><br /></div></li>
+</ul>
+<p class="opis">Serial obyczajowy serial rozgrywający się w środowisku warszawskich prawników. Głównymi bohaterami produkcji jest małżeństwo Anny i Macieja Wysockich. Ona jest wziętym adwokatem, a on ostrym prokuratorem. Poznajemy ich w dniu, w którym ich związek kończy się bardzo burzliwym rozwodem. Ich prywatny spór zaogniają kolejne, niekiedy bardzo ostre konfrontacje. Dochodzi do nich na gruncie zawodowym pomiędzy niezwykle skutecznym i nieprzejednanym prokuratorem a wybijającą się na niezależność zdolną adwokat. Prywatnie byli małżonkowie, choć skłóceni ze sobą, dla dobra ich dzieci, Zuzanny i Franciszka, utrzymują stały kontakt. Inni bohaterowie to prokurator Izabela Gryc i mecenasa Konstanty Litwicki, którzy rywalizują ze sobą przy tych samych sprawach sądowych. Gdy ich drogi się krzyżują iskrzy niemiłosiernie. Tytułowa dewiza nawiązuje do rozgrywających się na różnych poziomach konfliktów, w których naprzeciw siebie stają niegdyś szczęśliwi małżonkowie Anna i Maciej Wysoccy, ich współpracownicy Izabela Gryc i Konstanty Litwicki oraz strony postępowań, jakie prowadzą ci prawnicy. W rozgrywce tej drugiej pary, oprócz argumentów oskarżenia i obrony, ścierają się cięty język i twardy charakter Izabeli z urokiem osobistym i nieprzeciętnym tupetem Konstantego. Ich twardej rywalizacji towarzyszy specyficzny "flirt" oparty na wzajemnych uszczypliwościach, impertynencjach i prowokujących wyzwaniach. W każdej ze spraw, w której prawnicy stoją po przeciwnych stronach, analizując dowody i poszukując argumentów muszą rozwiązać tę samą zagadkę. Choć grają przeciw sobie, każde z nich musi przede wszystkim poznać prawdę i liczą na to, że będzie ona po ich stronie i zapewni im wygraną w sądzie. W tle toczy się zagadkowa sprawa, w jaką uwikłana została kancelaria adwokacka należąca do Marii Zakrzewskiej-Witt, szefowej, mentorki i przyjaciółki mecenas Anny Wysockiej. Zarzuty, jakie postawiono Marii i akcja prokuratury, kierowana przez Macieja Wysockiego, są dla Anny szokiem. Jest pewna, że sprawa została sfingowana, ale próbując wszystko wyjaśnić napotyka na coraz bardziej niepokojące i tajemnicze tropy. [Na podstawie materiałów prasowych opracował <b><a href="mailto:robert.kufel@interia.pl ">Robert Kufel</a></b>]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1246386" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1246386','ekipa_skrocona1246386','ekipa1246386','ekipa_schowaj1246386','ekipa_schowaj_krotki1246386','ekipa_schowaj_pelny1246386','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1246386" class="jslink" onclick="pzf('ekipa_skrocona1246386','ekipa_pelna1246386','ekipa1246386','ekipa_schowaj1246386','ekipa_schowaj_pelny1246386','ekipa_schowaj_krotki1246386','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1246386"1246386" class="jslink" onclick="pzz('ekipa1246386','ekipa_schowaj1246386')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1246386" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1246386">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1149401">Krzysztof Kasior</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1140571">Aleksandra Olipra</a></div><div class="ekipa_opis"> biurowy; odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11163132">Paulina Ziółkowska</a></div><div class="ekipa_opis"> biurowy; odcinki: 4-18</div><div class="ekipa_osoba"><a href="index.php/1170750">Ewa Żukowska</a></div><div class="ekipa_opis"> planowy; odcinki: 11-12</div><div class="ekipa_osoba"><a href="index.php/11125719">Łukasz Czajka</a></div><div class="ekipa_opis"> planowy; odcinki: 13-14</div><div class="ekipa_osoba"><a href="index.php/1166078">Józef Grzymała</a></div><div class="ekipa_opis"> planowy; odcinki: 15-18</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1143315">Marzena Pawlak</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1169832">Jarosław Kamiński</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 3-6, 17-18; w napisach odcinków 1-18 także określenie funkcji scenarzysta wiodący</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1149401">Krzysztof Kasior</a></div><div class="ekipa_opis wyroznienie"> odcinek: 2</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1163885">Łukasz Czapski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 7-8, 11-12</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11171701">Martyna Butrym</a></div><div class="ekipa_opis wyroznienie"> odcinki: 9-10</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11126233">Jan Borowiec</a></div><div class="ekipa_opis wyroznienie"> odcinki: 13-14</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1146752">Jacek Wereśniak</a></div><div class="ekipa_opis wyroznienie"> odcinki: 15-16</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125369">Wiktor Zdrojewski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1155546">Tomasz Poręba</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 3</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1163812">Damian Grabarski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1169945">Mateusz Golis</a></div><div class="ekipa_opis"> odcinki: 1, 3</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora kamery</div><div class="ekipa_osoba"><a href="index.php/11163133">Grzegorz Głuszek</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11132390">Piotr Pawluk</a></div><div class="ekipa_opis"> odcinki: 1-10</div><div class="ekipa_osoba"><a href="index.php/11135132">Dominika Garbarczyk</a></div><div class="ekipa_opis"> odcinki: 4-18</div><div class="ekipa_osoba"><a href="index.php/11171703">Tomasz Dacz</a></div><div class="ekipa_opis"> odcinki: 9-18</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1136093">Jan Biały</a></div><div class="ekipa_opis"> mistrz; odcinki: 1-12, 17-18</div><div class="ekipa_osoba"><a href="index.php/1199762">Krzysztof Malinowski</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1173626">Piotr Pękala</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11170824">Grzegorz Czaplewski</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11137559">Bartłomiej Ryży</a></div><div class="ekipa_opis"> odcinki: 4-18; w odcinkach 15-16 określenie funkcji: mistrz; w napisach imię: Bartek</div><div class="ekipa_osoba"><a href="index.php/1146870">Michał Joel</a></div><div class="ekipa_opis"> odcinki: 4-14 w odcinkach 13-14 określenie funkcji: mistrz</div><div class="ekipa_osoba"><a href="index.php/11171702">Łukasz Hrycenko</a></div><div class="ekipa_opis"> odcinki: 9-18</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1143147">Studio Interfilm</a></div><div class="ekipa_opis"> zdjęciowy, oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/1171143">Jacek Wierzbicki</a></div><div class="ekipa_opis"> zdjęciowy, oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/1126745">Paweł Górski</a></div><div class="ekipa_opis"> zdjęciowy, oświetleniowy</div></li>
+<li><div class="ekipa_funkcja">Postprodukcja obrazu</div><div class="ekipa_osoba"><a href="index.php/11130516">Studio Online</a></div><div class="ekipa_opis"> w napisach odcinków 4-18: Studio Online 2018</div><div class="ekipa_osoba"><a href="index.php/1171495">Andrzej Niski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1164792">Marta Purchała</a></div><div class="ekipa_opis"> koordynacja</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/11121122">Ajith Krishnamoorthy Nair</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konforming</div><div class="ekipa_osoba"><a href="index.php/11132119">Tomasz Przywóski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132871">Stanisław Porczyk</a></div><div class="ekipa_opis wyroznienie"> w napisach imię: Stach</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/11162933">Jan Miklusz</a></div><div class="ekipa_opis"> odcinki: 4-14</div><div class="ekipa_osoba"><a href="index.php/11164329">Zofia Kochan</a></div><div class="ekipa_opis"> odcinki: 9-14</div><div class="ekipa_osoba"><a href="index.php/11150162">Joanna Gruszecka</a></div><div class="ekipa_opis"> odcinki: 15-18</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1169526">Mariusz Markiewicz</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11158743">Mikołaj Siciński</a></div><div class="ekipa_opis"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11153359">Małgorzata Skorupa</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11160167">Magdalena Sekrecka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/11171195">Ewa Tusińska</a></div><div class="ekipa_opis"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/11150492">Małgorzata Zelek</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11169931">Margarita Makar</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1161288">Rafał Kowalski</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1178008">Katarzyna Białobrzeska</a></div><div class="ekipa_opis"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja">Opracowanie muzyczne</div><div class="ekipa_osoba"><a href="index.php/11165692">Bartłomiej Persich</a></div><div class="ekipa_opis"> odcinki: 1-3, 15-18; w napisach odcinków 1-3 imię: Bartek</div><div class="ekipa_osoba"><a href="index.php/11171194">Eryk Sarniak</a></div><div class="ekipa_opis"> odcinki: 4-5, 9-10</div><div class="ekipa_osoba"><a href="index.php/114997">Zbigniew Zbrowski</a></div><div class="ekipa_opis"> odcinki: 6-8, 11-14</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1127211">Robert Czyżewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11122252">Szymon Dobrzyń</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11171193">Szymon Krysiak</a></div><div class="ekipa_opis wyroznienie"> odcinki: 4-18</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1170161">Jan Russ</a></div><div class="ekipa_opis wyroznienie"> odcinki: 6-18; w napisach odcinków 6-12 nazwisko: Rus</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1133526">Marcin Weber</a></div><div class="ekipa_opis wyroznienie"> odcinki: 17-18</div><div class="ekipa_osoba"><a href="index.php/1132360">DSM Digital Soundmakers</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/1157652">Dreamsound</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1150998">Kacper Habisiak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1150999">Marcin Kasiński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Montaż dialogów</div><div class="ekipa_osoba"><a href="index.php/1173923">Tomasz Maciątek</a></div><div class="ekipa_opis"> odcinki: 1-16</div><div class="ekipa_osoba"><a href="index.php/11130427">Adam Szlenda</a></div><div class="ekipa_opis"> odcinki: 1-16</div><div class="ekipa_osoba"><a href="index.php/1129695">Bartłomiej Bogacki</a></div><div class="ekipa_opis"> odcinki: 17-18</div></li>
+<li><div class="ekipa_funkcja">Efekty dźwiękowe</div><div class="ekipa_osoba"><a href="index.php/11130426">Alicja Nowak</a></div><div class="ekipa_opis"> montaż</div><div class="ekipa_osoba"><a href="index.php/11121897">Filip Krzyżykowski</a></div><div class="ekipa_opis"> montaż</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1146045">Michał Bagiński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128630">Marceli Majer</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-3</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1166559">Monika Sirojc</a></div><div class="ekipa_opis wyroznienie"> odcinki: 4-6, 9-10, 15-17</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1147633">Paweł Potocki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 7-8, 11-14, 18</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/11160960">Bernard Kawecki</a></div><div class="ekipa_opis"> w napisach określenie funkcji: asystent montażu</div><div class="ekipa_osoba"><a href="index.php/11161467">Michał Kopczyński</a></div><div class="ekipa_opis"> w napisach określenie funkcji: asystent montażu</div><div class="ekipa_osoba"><a href="index.php/11170825">Piotr Spychalski</a></div><div class="ekipa_opis"> w napisach określenie funkcji: asystent montażu</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11127575">Patrycja Puławska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-3</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1152783">Anna Kołyga</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-3</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11164494">Dorota Herman</a></div><div class="ekipa_opis wyroznienie"> odcinki: 4-18</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1184417">Joanna Darnikiewicz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja">Charakteryzator II</div><div class="ekipa_osoba"><a href="index.php/11166230">Magdalena Dziewiątkowska</a></div><div class="ekipa_opis"> odcinki: 1-3</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/11170828">Marcin Waszkiewicz</a></div><div class="ekipa_opis"> prawnicza; odcinki: 1-3, 5-6</div></li>
+<li><div class="ekipa_funkcja">Redakcja</div><div class="ekipa_osoba"><a href="index.php/11170827">Katarzyna Zaradkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1157190">Karolina Baranowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11130483">Iwona Niezgoda</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11170826">Dawid Mlekicki</a></div><div class="ekipa_opis"> social media</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1158370">Marta Gostkiewicz</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11130305">Magdalena Rzymanek</a></div><div class="ekipa_opis"> odcinki: 4-12</div><div class="ekipa_osoba"><a href="index.php/11130306">Tomasz Paczkowski</a></div><div class="ekipa_opis"> odcinki: 4-12</div><div class="ekipa_osoba"><a href="index.php/1171009">Karina Szymczuk</a></div><div class="ekipa_opis"> odcinki: 9-12, 15-18</div><div class="ekipa_osoba"><a href="index.php/11125959">Bartosz Stawiarski</a></div><div class="ekipa_opis"> odcinki: 9-18</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/1129630">Paweł Sadaj</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie graficzne</div><div class="ekipa_osoba"><a href="index.php/1129630">Paweł Sadaj</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ubezpieczenie filmu</div><div class="ekipa_osoba"><a href="index.php/11156196">Monika Żuczkowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/11139979">Agencja Mastershot</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/1137355">Barbara Bartosiewicz</a></div><div class="ekipa_opis"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1153379">Paweł Gottlid</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/11170656">Dorota Drewnicka</a></div><div class="ekipa_opis"> odcinki: 1-3, 17-18</div><div class="ekipa_osoba"><a href="index.php/1160293">Grzegorz Kuran</a></div><div class="ekipa_opis"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11101813">Joanna Mokosa-Rykalska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1140571">Aleksandra Olipra</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11163132">Paulina Ziółkowska</a></div><div class="ekipa_opis"> odcinki: 13-18</div><div class="ekipa_osoba"><a href="index.php/1168316">Dagmara Puławska</a></div><div class="ekipa_opis"> ds. obiektów</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/11150537">Kinga Jurek</a></div><div class="ekipa_opis"> odcinki: 1-8</div><div class="ekipa_osoba"><a href="index.php/11150006">Anna Draus</a></div><div class="ekipa_opis"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1178002">Maciej Rost</a></div><div class="ekipa_opis"> odcinki; 1-3</div><div class="ekipa_osoba"><a href="index.php/1149596">Marcin Siadaczko</a></div><div class="ekipa_opis"> odcinki: 4-12</div><div class="ekipa_osoba"><a href="index.php/1149453">Krzysztof Rostkowski</a></div><div class="ekipa_opis"> odcinki: 6-8</div><div class="ekipa_osoba"><a href="index.php/1127891">Remigiusz Kubiak</a></div><div class="ekipa_opis"> odcinek: 12</div><div class="ekipa_osoba"><a href="index.php/11156628">Artur Nowacki</a></div><div class="ekipa_opis"> odcinki: 13-17</div><div class="ekipa_osoba"><a href="index.php/11172322">Michał Sergiej</a></div><div class="ekipa_opis"> odcinki: 15-18</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/11163321">Dominik Dardziński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/11132126">Jagna Kaczmarek</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/11134399">Adrianna Bartkowska</a></div><div class="ekipa_opis"> odcinki: 4-12, 16-18</div><div class="ekipa_osoba"><a href="index.php/11166720">Maciej Adamek</a></div><div class="ekipa_opis"> odcinki: 9-17</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/116836">Barbara Głogowska</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div class="ekipa_osoba"><a href="index.php/114731">Ewa Prokop</a></div><div class="ekipa_opis"> odcinki: 4-18</div></li>
+<li><div class="ekipa_funkcja">Producent realizujący</div><div class="ekipa_osoba"><a href="index.php/1163011">Urszula Kołodziej</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115507">Tadeusz Lampka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca producencka</div><div class="ekipa_osoba"><a href="index.php/1128347">Ewa Krajczyńska-Śmietana</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nadzór producencki</div><div class="ekipa_osoba"><a href="index.php/11170829">Katarzyna Makarewicz</a></div><div class="ekipa_opis"> Polsat</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128180">Artrama</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zlecenie</div><div class="ekipa_osoba"><a href="index.php/1122087">Polsat</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis wyroznienie"> mecenas Anna Wysocka, była żona Macieja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis wyroznienie"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis wyroznienie"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis wyroznienie"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis wyroznienie"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis wyroznienie"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1246386">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1149401">Krzysztof Kasior</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/1143315">Marzena Pawlak</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1169832">Jarosław Kamiński</a></div><div class="ekipa_opis"> odcinki: 1, 3-6, 17-18; w napisach odcinków 1-18 także określenie funkcji scenarzysta wiodący</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1149401">Krzysztof Kasior</a></div><div class="ekipa_opis"> odcinek: 2</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1163885">Łukasz Czapski</a></div><div class="ekipa_opis"> odcinki: 7-8, 11-12</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11171701">Martyna Butrym</a></div><div class="ekipa_opis"> odcinki: 9-10</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11126233">Jan Borowiec</a></div><div class="ekipa_opis"> odcinki: 13-14</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1146752">Jacek Wereśniak</a></div><div class="ekipa_opis"> odcinki: 15-16</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1125369">Wiktor Zdrojewski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1155546">Tomasz Poręba</a></div><div class="ekipa_opis"> odcinki: 1, 3</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1132871">Stanisław Porczyk</a></div><div class="ekipa_opis"> w napisach imię: Stach</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/11153359">Małgorzata Skorupa</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11160167">Magdalena Sekrecka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1127211">Robert Czyżewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11122252">Szymon Dobrzyń</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11171193">Szymon Krysiak</a></div><div class="ekipa_opis"> odcinki: 4-18</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1170161">Jan Russ</a></div><div class="ekipa_opis"> odcinki: 6-18; w napisach odcinków 6-12 nazwisko: Rus</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1133526">Marcin Weber</a></div><div class="ekipa_opis"> odcinki: 17-18</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1128630">Marceli Majer</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1166559">Monika Sirojc</a></div><div class="ekipa_opis"> odcinki: 4-6, 9-10, 15-17</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1147633">Paweł Potocki</a></div><div class="ekipa_opis"> odcinki: 7-8, 11-14, 18</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/11127575">Patrycja Puławska</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1152783">Anna Kołyga</a></div><div class="ekipa_opis"> odcinki: 1-3</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11164494">Dorota Herman</a></div><div class="ekipa_opis"> odcinki: 4-18</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1184417">Joanna Darnikiewicz</a></div><div class="ekipa_opis"> odcinki: 4-18</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/11101813">Joanna Mokosa-Rykalska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/115507">Tadeusz Lampka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/1128180">Artrama</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, była żona Macieja</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1246386" class="jslink" onclick="pzz1('varia1246386','varia_schowaj1246386')">pokaż</span></div></h2>
+<table id="varia1246386" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">DACH  
+    </td></tr><tr><td colspan="3" class="varia_opis">odcinki: 3, 5</td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+          
+        </td><td class="varia_osoba"><a href="index.php/11119641">Bartosz Zielony</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/11145638">Katarzyna Chrzanowska</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+          
+        </td><td class="varia_osoba"><a href="index.php/1194902">Patrycja Kosiarkiewicz</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/11145637">Łukasz Bartoszak</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+          
+        </td><td class="varia_osoba"><a href="index.php/11137999">Sound'n'Grace</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/1170286">Kaja Walden</a></td><td class="varia_osoba_opis"></td></tr>
+</table><div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Anna i Maciej Wysoccy spotykają się w sądzie na własnej sprawie rozwodowej. Anna ma dowody na niewierność męża, ale Maciej, który nie chce się pogodzić się z jej odejściem i nie zamierza poddać się bez walki, to twardy przeciwnik. Podczas burzliwej rozprawy gotów jest zagrać naprawdę ostro. Jednak, gdy nagle na sali sądowej pojawia się Natalia, która sprawia, że jego serce w jednej chwili mięknie i mężczyzna wycofuje się z ataku. Przegrany, z trudem przyjmuje swoją porażkę, powtarzając, że Anna jeszcze do niego wróci. Tymczasem ona musi poradzić sobie z emocjami rozżalonej rozpadem rodziny nastoletniej córki Zuzi i kilkuletniego synka Franka. Otuchy dodaje jej szefowa Maria, która jest dla niej jak matka. Anna nawet nie podejrzewa, że wkrótce sama będzie jedynym wsparciem dla swojej mentorki i przyjaciółki, a swoją pierwszą sprawę o morderstwo będzie musiała prowadzić zdana wyłącznie na siebie i jeszcze mniej od niej doświadczonego kolegę Konstantego Litwickiego. Do kancelarii adwokackiej wkracza bowiem nagle CBA z prokuratorem Maciejem Wysockim na czele, który aresztuje Marię Zakrzewską-Witt. Zaszokowana Anna myśli, że były mąż odgrywa się na niej wykorzystując swoją pozycję, a nim zdąży ochłonąć i zastanowić się jak ratować przyjaciółkę i kancelarię w opustoszałym biurze zjawia się żona oskarżonego o morderstwo znanego biznesmena Gajewskiego. Konstanty Litwicki, którego nic nie jest w stanie zbić z tropu, wbrew Annie przyjmuje tę sprawę. Wszystko wskazuje na to, że Gajewski zamordował swoją kochankę, choć twierdzi, że został wrobiony w zbrodnię, więc prokurator Wysocki jest pewny swej wygranej przeciwko takiemu żółtodziobowi jak Konstanty. Ale gdy Anna staje do walki brak doświadczenia w sprawach karnych dwójka adwokatów nadrabia determinacją, kreatywnością i wnikliwością, a dodatkowo motywuje ich rywalizacja, w której do głosu często dochodzą uczucia. Podczas gdy między Anną i Maciejem wciąż utrzymuje się napięcie i ciągle grają emocje, Konstanty, któremu wpadła w oko Izabela Gryc, próbuje zrobić wrażenie na nieprzystępnej asystentce prokuratora, licytując się z nią na cięte riposty i śmiałe wyzwania.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247496" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247496','ekipa_skrocona1247496','ekipa1247496','ekipa_schowaj1247496','ekipa_schowaj_krotki1247496','ekipa_schowaj_pelny1247496','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247496" class="jslink" onclick="pzf('ekipa_skrocona1247496','ekipa_pelna1247496','ekipa1247496','ekipa_schowaj1247496','ekipa_schowaj_pelny1247496','ekipa_schowaj_krotki1247496','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247496"1247496" class="jslink" onclick="pzz('ekipa1247496','ekipa_schowaj1247496')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247496" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247496">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/11136291">Karolina Szymczak</a></div><div class="ekipa_opis"> Patrycja, sekretarka w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1147847">Marzena Oberkorn</a></div><div class="ekipa_opis"> mecenas Maria Zakrzewska-Witt, szefowa Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy", mentorka i przyjaciółka Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> Paulina Gajewska, żona Witolda</div><div class="ekipa_osoba"><a href="index.php/113296">Grzegorz Gadziomski</a></div><div class="ekipa_opis"> Witold Gajewski, prezes firmy "Plastic Crown"</div><div class="ekipa_osoba"><a href="index.php/1164090">Gabriel Piotrowski</a></div><div class="ekipa_opis"> Oliwier Popławski, masażysta w fitness clubie "Primetime"</div><div class="ekipa_osoba"><a href="index.php/1127710">Karolina Jóźwiak</a></div><div class="ekipa_opis"> sędzia Wydziału Rodzinnego Sądu Okręgowego w Warszawie prowadząca rozprawę rozwodową Anny i Macieja Wysockich</div><div class="ekipa_osoba"><a href="index.php/1152211">Weronika Asińska</a></div><div class="ekipa_opis"> Magda, masażysta w fitness clubie "Primetime"</div><div class="ekipa_osoba"><a href="index.php/11170379">Annie Ostrowska</a></div><div class="ekipa_opis"> Krystyna, osadzona w areszcie śledczym w jednej celi razem z mecenas Marią Zakrzewską-Witt</div><div class="ekipa_osoba"><a href="index.php/1140017">Andrzej Hausner</a></div><div class="ekipa_opis"> mecenas Łukasz Żak, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11170830">Rafał Remba</a></div><div class="ekipa_opis"> mecenas Eryk, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1154155">Dominika Dawidowicz</a></div><div class="ekipa_opis"> mecenas Olga, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11140621">Adam Sławiński</a></div><div class="ekipa_opis"> starszy aspirant Łukasz Nawrocki, funkcjonariusz Centralnego Biura Antykorupcyjnego</div><div class="ekipa_osoba"><a href="index.php/11144536">Arkadiusz Świetlik</a></div><div class="ekipa_opis"> sierżant Służby Więziennej, strażnik w areszcie śledczym, w którym osadzona została mecenas Maria Zakrzewska-Witt</div><div class="ekipa_osoba"><a href="index.php/11170831">Marek Nasarzewski</a></div><div class="ekipa_opis"> Jarosław Kamowski, ps. "Orzeł", mafioso, diler narkotyków</div><div class="ekipa_osoba"><a href="index.php/1177611">Agnieszka Ruta</a></div><div class="ekipa_opis"> Sylwia Zarzycka, kobieta zamordowana przez Romana Cichego, byłego dyrektora ds. marketingu w firmie "Plastic Crown"</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247496">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">47 min</div></li>
+</ul>
+<p class="opis">Anna i Maciej Wysoccy zostają wezwani do szkoły, gdzie Franek pobił się z kolegą. Oboje zdają sobie sprawę, że syn przeżywa rozpad ich małżeństwa. Maciek próbuje wzbudzić w Annie poczucie winy, że to wszystko przez jej decyzję o rozwodzie. Usiłuje ją też przekonać, że powinna zrezygnować z prowadzenia sprawy Gajewskiego i wrócić do spraw rozwodowych, w których dotąd się specjalizowała. To tylko prowokuje Annę by dać ex-małżonkowi nauczkę. Nakazuje mu do końca dnia zająć się synem, które to zadanie szybko przerasta zapracowanego prokuratora, a nawet jego asystentkę. Tymczasem Anna odwiedza w areszcie Marię. Zastaje ją w nienajlepszym stanie i zatajając prawdziwą sytuację w kancelarii uspokaja, że wszystko jest w porządku. Wysocka postanawia jak najszybciej wyciągnąć Marię z aresztu i bezzwłocznie składa w sądzie odpowiedni wniosek. Z wyjaśnień Zakrzewskiej-Witt wynika, że pieniądze, które uznano za łapówkę dla niej, są depozytem od klienta, w który wchodziło również jej wynagrodzenie. Gdy Wysocki zatrzymuje i przesłuchuje Romana Cichego - mężczyznę, który po zwolnieniu chciał zemścić się na Gajewskim, detektyw współpracujący z adwokatami wpada na nowy, obiecujący trop. Konstanty Litwicki także dokonuje paru odkryć, które pozwalają jemu i Annie połączyć pewne fakty.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247497" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247497','ekipa_skrocona1247497','ekipa1247497','ekipa_schowaj1247497','ekipa_schowaj_krotki1247497','ekipa_schowaj_pelny1247497','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247497" class="jslink" onclick="pzf('ekipa_skrocona1247497','ekipa_pelna1247497','ekipa1247497','ekipa_schowaj1247497','ekipa_schowaj_pelny1247497','ekipa_schowaj_krotki1247497','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247497"1247497" class="jslink" onclick="pzz('ekipa1247497','ekipa_schowaj1247497')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247497" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247497">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/1147847">Marzena Oberkorn</a></div><div class="ekipa_opis"> mecenas Maria Zakrzewska-Witt, szefowa Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy", mentorka i przyjaciółka Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> Paulina Gajewska, żona Witolda</div><div class="ekipa_osoba"><a href="index.php/113296">Grzegorz Gadziomski</a></div><div class="ekipa_opis"> Witold Gajewski, prezes firmy "Plastic Crown"</div><div class="ekipa_osoba"><a href="index.php/1129299">Jakub Kotyński</a></div><div class="ekipa_opis"> Roman Cichy, były dyrektor ds. marketingu w "Plastic Crown"</div><div class="ekipa_osoba"><a href="index.php/1177009">Kacper Dziubałko</a></div><div class="ekipa_opis"> Mieszko Gajewski, syn Pauliny i Witolda</div><div class="ekipa_osoba"><a href="index.php/11170379">Annie Ostrowska</a></div><div class="ekipa_opis"> Krystyna, osadzona w areszcie śledczym w jednej celi razem z mecenas Marią Zakrzewską-Witt</div><div class="ekipa_osoba"><a href="index.php/11170968">Maciej Staniszewski</a></div><div class="ekipa_opis"> partner Krystyny, osadzonej w areszcie śledczym w jednej celi razem z mecenas Marią Zakrzewską-Witt</div><div class="ekipa_osoba"><a href="index.php/1113274">Danuta Borsuk</a></div><div class="ekipa_opis"> Gabriela Mikuta, matka Jana Kazimierza</div><div class="ekipa_osoba"><a href="index.php/1170649">Mateusz Sacharzewski</a></div><div class="ekipa_opis"> Jan Kazimierz Mikuta, syn Gabrieli</div><div class="ekipa_osoba"><a href="index.php/1164090">Gabriel Piotrowski</a></div><div class="ekipa_opis"> Oliwier Popławski, masażysta w fitness clubie "Primetime"</div><div class="ekipa_osoba"><a href="index.php/11158117">Patryk Janas</a></div><div class="ekipa_opis"> przystojniak w barze</div><div class="ekipa_osoba"><a href="index.php/11144536">Arkadiusz Świetlik</a></div><div class="ekipa_opis"> sierżant Służby Więziennej, strażnik w areszcie śledczym, w którym osadzona została mecenas Maria Zakrzewska-Witt</div><div class="ekipa_osoba"><a href="index.php/11170969">Piotr Swędzikowski</a></div><div class="ekipa_opis"> mężczyzna</div><div class="ekipa_osoba"><a href="index.php/11170831">Marek Nasarzewski</a></div><div class="ekipa_opis"> Jarosław Kamowski, ps. "Orzeł", mafioso, diler narkotyków</div><div class="ekipa_osoba"><a href="index.php/11140621">Adam Sławiński</a></div><div class="ekipa_opis"> starszy aspirant Łukasz Nawrocki, funkcjonariusz Centralnego Biura Antykorupcyjnego</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247497">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Po śmierci Oliviera trwa śledztwo. Tym razem dowody prowadzą Macieja Wysockiego do baru "Hawajska Bryza". Prokurator odkrywa, że młody trener był uczulony na orzeszki arachidowe i że zmarł, bo alergen trafił do jego posiłku. Konstanty Litwicki bada za to nowy trop, który wiąże się z Józefem Rowickim, konkurentem Gajewskiego z rynku plastiku. Tymczasem Anna odbiera telefon ze szkoły z informacją, że Zuza poszła na wagary i zniknęła. Stan zdrowia Marii Zakrzewskiej-Witt, która nadal przebywa w areszcie, gwałtownie się pogarsza.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247538" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247538','ekipa_skrocona1247538','ekipa1247538','ekipa_schowaj1247538','ekipa_schowaj_krotki1247538','ekipa_schowaj_pelny1247538','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247538" class="jslink" onclick="pzf('ekipa_skrocona1247538','ekipa_pelna1247538','ekipa1247538','ekipa_schowaj1247538','ekipa_schowaj_pelny1247538','ekipa_schowaj_krotki1247538','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247538"1247538" class="jslink" onclick="pzz('ekipa1247538','ekipa_schowaj1247538')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247538" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247538">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1147847">Marzena Oberkorn</a></div><div class="ekipa_opis"> mecenas Maria Zakrzewska-Witt, szefowa Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy", mentorka i przyjaciółka Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> Paulina Gajewska, żona Witolda</div><div class="ekipa_osoba"><a href="index.php/113296">Grzegorz Gadziomski</a></div><div class="ekipa_opis"> Witold Gajewski, prezes firmy "Plastic Crown"</div><div class="ekipa_osoba"><a href="index.php/11158024">Aleksander Mackiewicz</a></div><div class="ekipa_opis"> Ernest Duchnicki, ps. "Motyl", gangster, który doprowadził do aresztowania mecenas Marii Zakrzewskiej-Witt i przyczynił się do jej śmierci</div><div class="ekipa_osoba"><a href="index.php/1177009">Kacper Dziubałko</a></div><div class="ekipa_opis"> Mieszko Gajewski, syn Pauliny i Witolda</div><div class="ekipa_osoba"><a href="index.php/11149833">Kuba Dyniewicz</a></div><div class="ekipa_opis"> Mieszko Gajewski, syn Pauliny i Witolda</div><div class="ekipa_osoba"><a href="index.php/1129299">Jakub Kotyński</a></div><div class="ekipa_opis"> Roman Cichy, były dyrektor ds. marketingu w "Plastic Crown"</div><div class="ekipa_osoba"><a href="index.php/11170379">Annie Ostrowska</a></div><div class="ekipa_opis"> Krystyna, osadzona w areszcie śledczym w jednej celi razem z mecenas Marią Zakrzewską-Witt</div><div class="ekipa_osoba"><a href="index.php/1157285">Jarosław Karpuk</a></div><div class="ekipa_opis"> sędzia Wydziału Karnego Sądu Okręgowego w Warszawie prowadzący rozprawę przeciwko Witoldowi Gajewskiemu</div><div class="ekipa_osoba"><a href="index.php/1125712">Marek Bogucki</a></div><div class="ekipa_opis"> Józef Rowicki, prezes firmy "Rylex" konkurencyjnej dla "Plastic Crown"</div><div class="ekipa_osoba"><a href="index.php/11148261">Katarzyna Gąsińska</a></div><div class="ekipa_opis"> Luiza Śniadko, recepcjonistka w hotelu & SPA "Kormoran"</div><div class="ekipa_osoba"><a href="index.php/1152211">Weronika Asińska</a></div><div class="ekipa_opis"> Magda, masażysta w fitness clubie "Primetime"</div><div class="ekipa_osoba"><a href="index.php/11120694">Witold Sosulski</a></div><div class="ekipa_opis"> Igor Strzelecki, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11156737">Jan Wieteska</a></div><div class="ekipa_opis"> Antoni, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1125520">Beata Łuczak</a></div><div class="ekipa_opis"> sąsiadka Kaliny, koleżanki Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11170970">Amelia Wróblewska</a></div><div class="ekipa_opis"> Kalina, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1113274">Danuta Borsuk</a></div><div class="ekipa_opis"> Gabriela Mikuta, matka Jana Kazimierza</div><div class="ekipa_osoba"><a href="index.php/1170649">Mateusz Sacharzewski</a></div><div class="ekipa_opis"> Jan Kazimierz Mikuta, syn Gabrieli</div><div class="ekipa_osoba"><a href="index.php/11144536">Arkadiusz Świetlik</a></div><div class="ekipa_opis"> sierżant Służby Więziennej, strażnik w areszcie śledczym, w którym osadzona została mecenas Maria Zakrzewska-Witt</div><div class="ekipa_osoba"><a href="index.php/1145069">Łukasz Dąbrowski</a></div><div class="ekipa_opis"> Jarosław Kamowski, ps. "Orzeł", mafioso, diler narkotyków</div><div class="ekipa_osoba"><a href="index.php/1164090">Gabriel Piotrowski</a></div><div class="ekipa_opis"> Oliwier Popławski, masażysta w fitness clubie "Primetime"</div><div class="ekipa_osoba"><a href="index.php/11160744">Kacper Kozioł</a></div><div class="ekipa_opis"> chłopak, sąsiad Jarosława Kamowskiego, ps. "Orzeł", mafiosa, dilera narkotyków</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247538">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Maciej Wysocki kolejny raz spotyka się z Natalią, swoją kochanką, przez którą rozpadło się jego małżeństwo. Anna bierze udział w pogrzebie Marii, na którym zjawia się także Jan, syn zmarłej. Kilka godzin później z Wysocką kontaktuje się też "Marek" - ostatni klient mecenas Zakrzewskiej-Witt, który zdeponował w jej sejfie sporą ilość gotówki. Mężczyzna umawia się z prawniczką w parku i nagle podczas spotkania umiera. Tuż przed śmiercią zdradza jednak, że Marię wrobiono w przestępstwo. Kilka godzin później mecenas Wysocka zostaje brutalnie zaatakowana. Tymczasem Zuza wchodzi w szkole w konflikt z jednym z kolegów - Igorem.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247539" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247539','ekipa_skrocona1247539','ekipa1247539','ekipa_schowaj1247539','ekipa_schowaj_krotki1247539','ekipa_schowaj_pelny1247539','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247539" class="jslink" onclick="pzf('ekipa_skrocona1247539','ekipa_pelna1247539','ekipa1247539','ekipa_schowaj1247539','ekipa_schowaj_pelny1247539','ekipa_schowaj_krotki1247539','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247539"1247539" class="jslink" onclick="pzz('ekipa1247539','ekipa_schowaj1247539')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247539" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247539">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/11136291">Karolina Szymczak</a></div><div class="ekipa_opis"> Patrycja, sekretarka w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1147847">Marzena Oberkorn</a></div><div class="ekipa_opis"> mecenas Maria Zakrzewska-Witt, szefowa Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy", mentorka i przyjaciółka Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1136174">Bartłomiej Morawski</a></div><div class="ekipa_opis"> ksiądz odprawiający uroczystości pogrzebowe mecenas Marii Zakrzewskiej-Witt</div><div class="ekipa_osoba"><a href="index.php/11158024">Aleksander Mackiewicz</a></div><div class="ekipa_opis"> Ernest Duchnicki, ps. "Motyl", gangster, który doprowadził do aresztowania mecenas Marii Zakrzewskiej-Witt i przyczynił się do jej śmierci</div><div class="ekipa_osoba"><a href="index.php/11120694">Witold Sosulski</a></div><div class="ekipa_opis"> Igor Strzelecki, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11156737">Jan Wieteska</a></div><div class="ekipa_opis"> Antoni, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11171196">Paweł Koryciński</a></div><div class="ekipa_opis"> uczeń Szkoły Podstawowej nr 100 w Warszawie</div><div class="ekipa_osoba"><a href="index.php/1121948">Joanna Żurawska-Federowicz</a></div><div class="ekipa_opis"> Wanda Kamowska, matka Jarosława i Filipa; w napisach nazwisko: Joanna Fedorowicz-Żurawska</div><div class="ekipa_osoba">Oskar Dębski</div><div class="ekipa_opis"> Filip Kamowski, chłopiec cierpiący na wrodzoną ślepotę Lebera, syn Wandy i brat Jarosława</div><div class="ekipa_osoba"><a href="index.php/11160744">Kacper Kozioł</a></div><div class="ekipa_opis"> chłopak, sąsiad Jarosława Kamowskiego, ps. "Orzeł", mafiosa, dilera narkotyków</div><div class="ekipa_osoba"><a href="index.php/11170970">Amelia Wróblewska</a></div><div class="ekipa_opis"> Kalina, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> prof. dr hab. n. med. Paweł Bińczyc, lekarz chirurg, ordynator Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie, oskarżony o nieumyślne doprowadzenie do śmierci swojej pacjentki Eweliny Piaseckiej</div><div class="ekipa_osoba"><a href="index.php/11141097">Witold Komuda</a></div><div class="ekipa_opis"> Marcin Marek vel Marek Zawierucha, mężczyzna skazany za pedofilię zamordowany w parku przez Jarosława Kamowskiego, ps. "Orzeł, mafiosa, dilera narkotyków</div><div class="ekipa_osoba"><a href="index.php/1145069">Łukasz Dąbrowski</a></div><div class="ekipa_opis"> Jarosław Kamowski, ps. "Orzeł", mafioso, diler narkotyków; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247539">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Prokurator Maciej Wysocki nadal szuka "Motyla" - bandyty, który doprowadził do aresztowania Marii Zakrzewskiej-Witt i w efekcie przyczynił się do jej śmierci. Tymczasem do prokuratury trafia rodzina kobiety, która zmarła po operacji guza wątroby. Bliscy chorej oskarżają o jej śmierć chirurga, prof. dr hab. n. med. Pawła Bińczyca. Lekarz prosi o pomoc Annę Wysocką i Konstantego Litwickiego. Wkrótce mecenas Litwicki postanawia namówić Izę Gryc na kolejny, ryzykowny zakład.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247629" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247629','ekipa_skrocona1247629','ekipa1247629','ekipa_schowaj1247629','ekipa_schowaj_krotki1247629','ekipa_schowaj_pelny1247629','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247629" class="jslink" onclick="pzf('ekipa_skrocona1247629','ekipa_pelna1247629','ekipa1247629','ekipa_schowaj1247629','ekipa_schowaj_pelny1247629','ekipa_schowaj_krotki1247629','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247629"1247629" class="jslink" onclick="pzz('ekipa1247629','ekipa_schowaj1247629')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247629" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247629">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/11136291">Karolina Szymczak</a></div><div class="ekipa_opis"> Patrycja, sekretarka w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> prof. dr hab. n. med. Paweł Bińczyc, lekarz chirurg, ordynator Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie, oskarżony o nieumyślne doprowadzenie do śmierci swojej pacjentki Eweliny Piaseckiej</div><div class="ekipa_osoba"><a href="index.php/1143917">Klaudiusz Kaufmann</a></div><div class="ekipa_opis"> Karol Piasecki, syn Eweliny Piaseckiej, pacjentki Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie operowanej przez ordynatora prof. dr hab. n. med. Pawła Bińczyca, która zmarła w wyniku wstrząsu anafilaktycznego po dożylnym podaniu penicyliny; w napisach nazwisko aktora: Kaufman</div><div class="ekipa_osoba"><a href="index.php/1167851">Justyna Kacprzycka</a></div><div class="ekipa_opis"> Marta Piasecka, żona Karola i synowa Eweliny Piaseckiej, pacjentki Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie operowanej przez ordynatora prof. dr hab. n. med. Pawła Bińczyca, która zmarła w wyniku wstrząsu anafilaktycznego po dożylnym podaniu penicyliny</div><div class="ekipa_osoba"><a href="index.php/1152266">Konrad Pawicki</a></div><div class="ekipa_opis"> doktor Jerzy Karaś, lekarz chirurg na Oddziale Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie asystujący prof. dr hab. n. med. Pawłowi Bińczycowi podczas zabiegu operacyjnego Eweliny Piaseckiej, która zmarła w wyniku wstrząsu anafilaktycznego po dożylnym podaniu penicyliny</div><div class="ekipa_osoba"><a href="index.php/11141097">Witold Komuda</a></div><div class="ekipa_opis"> Marcin Marek vel Marek Zawierucha, mężczyzna skazany za pedofilię zamordowany w parku przez Jarosława Kamowskiego, ps. "Orzeł, mafiosa, dilera narkotyków</div><div class="ekipa_osoba"><a href="index.php/11158024">Aleksander Mackiewicz</a></div><div class="ekipa_opis"> Ernest Duchnicki, ps. "Motyl", gangster, który doprowadził do aresztowania mecenas Marii Zakrzewskiej-Witt i przyczynił się do jej śmierci</div><div class="ekipa_osoba"><a href="index.php/1145069">Łukasz Dąbrowski</a></div><div class="ekipa_opis"> Jarosław Kamowski, ps. "Orzeł", mafioso, diler narkotyków</div><div class="ekipa_osoba"><a href="index.php/11120694">Witold Sosulski</a></div><div class="ekipa_opis"> Igor Strzelecki, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11171196">Paweł Koryciński</a></div><div class="ekipa_opis"> uczeń Szkoły Podstawowej nr 100 w Warszawie</div><div class="ekipa_osoba"><a href="index.php/11156737">Jan Wieteska</a></div><div class="ekipa_opis"> Antoni, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba">Alicja Kołasińska</div><div class="ekipa_opis"> "Blachara", dziewczyna Ernesta Duchnickiego, ps. "Motyl", gangstera, który doprowadził do aresztowania mecenas Marii Zakrzewskiej-Witt i przyczynił się do jej śmierci</div><div class="ekipa_osoba"><a href="index.php/1149154">Małgorzata Zawadzka</a></div><div class="ekipa_opis"> Ewa, pielęgniarka operacyjna na Bloku Operacyjnym Szpitala Wilanowskiego w Warszawie, kochanka prof. dr. hab. n. med. Pawła Bińczyca</div><div class="ekipa_osoba"><a href="index.php/1145021">Irena Orłowska</a></div><div class="ekipa_opis"> Krystyna, pielęgniarka na Oddziale Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie</div><div class="ekipa_osoba"><a href="index.php/11119799">Małgorzata Ziółkowska</a></div><div class="ekipa_opis"> lekarz anestezjolog w Szpitalu Wilanowskim w Warszawie</div><div class="ekipa_osoba">Dominika Bilska</div><div class="ekipa_opis"> dziewczyna w barze podrywana przez mecenasa Konstantego Litwickiego</div><div class="ekipa_osoba">Dominika Typa</div><div class="ekipa_opis"> dziewczyna w barze podrywana przez mecenasa Konstantego Litwickiego</div><div class="ekipa_osoba"><a href="index.php/11163095">Luiza Stankiewicz</a></div><div class="ekipa_opis"> dziewczyna w barze podrywana przez mecenasa Konstantego Litwickiego</div><div class="ekipa_osoba"><a href="index.php/1110743">Wojciech Cygan</a></div><div class="ekipa_opis"> sąsiad Karola i Marty Piaseckich</div><div class="ekipa_osoba"><a href="index.php/1148113">Przemysław Gąsiorowicz</a></div><div class="ekipa_opis"> pacjent Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie</div><div class="ekipa_osoba"><a href="index.php/11126777">Aleksandra Długosz</a></div><div class="ekipa_opis"> Katarzyna Duchnicka, matka Janki i była żona Ernesta, ps. "Motyl", gangstera, który doprowadził do aresztowania mecenas Marii Zakrzewskiej-Witt i przyczynił się do jej śmierci; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247629">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Detektyw ustala, że profesora Bińczyca mogła wrobić podczas operacji pielęgniarka, z którą miał romans. Tymczasem Izabela i "Szlaban" próbują zdobyć dowody na to, że chirurg bierze od pacjentów łapówki, a odkrywają, że lekarz jest prawdopodobnie narkomanem. Zuza ma coraz większe problemy przez Igora - kolegę ze szkoły, który publicznie ją ośmiesza i upokarza.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247630" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247630','ekipa_skrocona1247630','ekipa1247630','ekipa_schowaj1247630','ekipa_schowaj_krotki1247630','ekipa_schowaj_pelny1247630','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247630" class="jslink" onclick="pzf('ekipa_skrocona1247630','ekipa_pelna1247630','ekipa1247630','ekipa_schowaj1247630','ekipa_schowaj_pelny1247630','ekipa_schowaj_krotki1247630','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247630"1247630" class="jslink" onclick="pzz('ekipa1247630','ekipa_schowaj1247630')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247630" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247630">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/11136291">Karolina Szymczak</a></div><div class="ekipa_opis"> Patrycja, sekretarka w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> prof. dr hab. n. med. Paweł Bińczyc, lekarz chirurg, ordynator Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie, oskarżony o nieumyślne doprowadzenie do śmierci swojej pacjentki Eweliny Piaseckiej</div><div class="ekipa_osoba"><a href="index.php/1152266">Konrad Pawicki</a></div><div class="ekipa_opis"> doktor Jerzy Karaś, lekarz chirurg na Oddziale Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie asystujący prof. dr hab. n. med. Pawłowi Bińczycowi podczas zabiegu operacyjnego Eweliny Piaseckiej, która zmarła w wyniku wstrząsu anafilaktycznego po dożylnym podaniu penicyliny</div><div class="ekipa_osoba"><a href="index.php/1149154">Małgorzata Zawadzka</a></div><div class="ekipa_opis"> Ewa, pielęgniarka operacyjna na Bloku Operacyjnym Szpitala Wilanowskiego w Warszawie, kochanka prof. dr. hab. n. med. Pawła Bińczyca</div><div class="ekipa_osoba"><a href="index.php/1145021">Irena Orłowska</a></div><div class="ekipa_opis"> Krystyna, pielęgniarka na Oddziale Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie</div><div class="ekipa_osoba"><a href="index.php/1143917">Klaudiusz Kaufmann</a></div><div class="ekipa_opis"> Karol Piasecki, syn Eweliny Piaseckiej, pacjentki Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie operowanej przez ordynatora prof. dr hab. n. med. Pawła Bińczyca, która zmarła w wyniku wstrząsu anafilaktycznego po dożylnym podaniu penicyliny; w napisach nazwisko aktora: Kaufman</div><div class="ekipa_osoba"><a href="index.php/1167851">Justyna Kacprzycka</a></div><div class="ekipa_opis"> Marta Piasecka, żona Karola i synowa Eweliny Piaseckiej, pacjentki Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie operowanej przez ordynatora prof. dr hab. n. med. Pawła Bińczyca, która zmarła w wyniku wstrząsu anafilaktycznego po dożylnym podaniu penicyliny</div><div class="ekipa_osoba"><a href="index.php/1126645">Krystyna Maksymowicz</a></div><div class="ekipa_opis"> Elżbieta, ciotka Karola Piaseckiego, syna Eweliny Piaseckiej, pacjentki Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie operowanej przez ordynatora prof. dr hab. n. med. Pawła Bińczyca, która zmarła w wyniku wstrząsu anafilaktycznego po dożylnym podaniu penicyliny</div><div class="ekipa_osoba"><a href="index.php/11120694">Witold Sosulski</a></div><div class="ekipa_opis"> Igor Strzelecki, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11137903">Mikołaj Bańdo</a></div><div class="ekipa_opis"> pacjent Oddziału Chirurgii Przewodu Pokarmowego Szpitala Wilanowskiego w Warszawie</div><div class="ekipa_osoba"><a href="index.php/11171202">Pola Gilder</a></div><div class="ekipa_opis"> Adrianna, uczennica Szkoły Podstawowej nr 100 w Warszawie, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11171203">Gabriela Podgórska</a></div><div class="ekipa_opis"> Karolina, uczennica Szkoły Podstawowej nr 100 w Warszawie, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11156737">Jan Wieteska</a></div><div class="ekipa_opis"> Antoni, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1125185">Paweł Lipnicki</a></div><div class="ekipa_opis"> lekarz, biegły sądowy zeznający w Sądzie Okręgowym w Warszawie w procesie prof. dr. hab. n. med. Pawła Bińczyca</div><div class="ekipa_osoba"><a href="index.php/112245">Piotr Binder</a></div><div class="ekipa_opis"> sędzia Wydziału Karnego Sądu Okręgowego w Warszawie</div><div class="ekipa_osoba"><a href="index.php/11148784">Michał Danielewicz</a></div><div class="ekipa_opis"> Patryk Kolski, student i barman w klubie "Karuzela", którego stałym bywalcem był prof. dr. hab. n. med. Paweł Bińczyc; w napisach nazwisko: Danilewicz</div><div class="ekipa_osoba"><a href="index.php/1154347">Sławomir Doliniec</a></div><div class="ekipa_opis"> komisarz Kamil Napieralski, policjant, mąż Beaty i kochanek Moniki Butny</div><div class="ekipa_osoba"><a href="index.php/1136783">Lidia Niewęgłowska</a></div><div class="ekipa_opis"> Teresa Grzybalska, matka Beaty, żony komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/1170791">Magdalena Majtyka</a></div><div class="ekipa_opis"> Monika Butny, dobra znajoma prokurator Izabeli Gryc, kochanka komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/115033">Andrzej Baranowski</a></div><div class="ekipa_opis"> sąsiad Beaty i Kamila Napieralskich</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247630">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Natalia chce zamieszkać z Maciejem, ale jej kochanek nie wita tego pomysłu z entuzjazmem. Dziewczynie jest z tego powodu bardzo przykro. Franek opowiada Annie o problemach, które ma w szkole jego siostra. Zszokowana Wysocka postanawia interweniować w szkole, do której chodzi córka, a towarzyszący jej Maciej wdaje się od razu w konflikt z matką Igora, który prześladuje jego córkę - znaną dziennikarką Kingą Strzelecką. Tymczasem Konstanty Litwicki niepokoi się, bo ojciec nagle przestał odpowiadać na jego telefony. Prokuratura Okręgowa w Warszawie zajmuje się nową sprawą - morderstwem Beaty, żony policjanta, komisarza Kamila Napieralskiego. Kobieta zginęła od strzału w serce, z broni męża. Jedną z podejrzanych jest Monika Butny... która okazuje się dobrą znajomą Izabeli Gryc.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247707" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247707','ekipa_skrocona1247707','ekipa1247707','ekipa_schowaj1247707','ekipa_schowaj_krotki1247707','ekipa_schowaj_pelny1247707','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247707" class="jslink" onclick="pzf('ekipa_skrocona1247707','ekipa_pelna1247707','ekipa1247707','ekipa_schowaj1247707','ekipa_schowaj_pelny1247707','ekipa_schowaj_krotki1247707','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247707"1247707" class="jslink" onclick="pzz('ekipa1247707','ekipa_schowaj1247707')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247707" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247707">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/11136291">Karolina Szymczak</a></div><div class="ekipa_opis"> Patrycja, sekretarka w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1146449">Piotr Bajtlik</a></div><div class="ekipa_opis"> Mateusz, trener piłki nożnej, adorator Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1154347">Sławomir Doliniec</a></div><div class="ekipa_opis"> komisarz Kamil Napieralski, policjant, mąż Beaty i kochanek Moniki Butny</div><div class="ekipa_osoba"><a href="index.php/1170791">Magdalena Majtyka</a></div><div class="ekipa_opis"> Monika Butny, dobra znajoma prokurator Izabeli Gryc, kochanka komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/11120694">Witold Sosulski</a></div><div class="ekipa_opis"> Igor Strzelecki, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1163016">Anna Matecka</a></div><div class="ekipa_opis"> Kinga Strzelecka, dziennikarka, matka Igora, ucznia Szkoły Podstawowej nr 100 w Warszawie, kolegi Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11156737">Jan Wieteska</a></div><div class="ekipa_opis"> Antoni, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1136783">Lidia Niewęgłowska</a></div><div class="ekipa_opis"> Teresa Grzybalska, matka Beaty, żony komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/115033">Andrzej Baranowski</a></div><div class="ekipa_opis"> sąsiad Beaty i Kamila Napieralskich</div><div class="ekipa_osoba"><a href="index.php/1175856">Bartosz Wesołowski</a></div><div class="ekipa_opis"> Tomasz Król, skazany za rozboje, śledztwo w sprawie którego prowadził komisarz Kamil Napieralski</div><div class="ekipa_osoba"><a href="index.php/1150814">Marcin Chabowski</a></div><div class="ekipa_opis"> Paweł Podsiadlik, były policjant prowadzący przed laty śledztwo w sprawie Moniki Butny, która zamordowała swojego męża</div><div class="ekipa_osoba"><a href="index.php/11146538">Tomasz Czaplarski</a></div><div class="ekipa_opis"> Witold, policjant prowadzący czynności dochodzeniowo-śledcze na miejscu morderstwa Beaty Napieralskiej</div><div class="ekipa_osoba"><a href="index.php/11171202">Pola Gilder</a></div><div class="ekipa_opis"> Adrianna, uczennica Szkoły Podstawowej nr 100 w Warszawie, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11171203">Gabriela Podgórska</a></div><div class="ekipa_opis"> Karolina, uczennica Szkoły Podstawowej nr 100 w Warszawie, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11154364">Sara Nowacka</a></div><div class="ekipa_opis"> Beata Napieralska, córka Teresy Grzybalskiej i żona komisarza Kamila Napieralskiego</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247707">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Anna Wysocka spotyka się z Janem Marią Zakrzewskim-Witt, synem Marii, na odczytaniu jej testamentu. Mężczyzna zostaje właścicielem kancelarii, w której m.in. ona pracuje. Kilka godzin później mecenas Jan Maria Zakrzewski-Witt spotyka w siedzibie Sądu Okręgowego prokuratora Macieja Wysockiego. Ich rozmowa niemal kończy się bójką. Prokurator Wysocki kontynuuje śledztwo dotyczące śmierci Beaty Napieralskiej, żony policjanta. Przesłuchuje w tej sprawie Monikę Butny, który mogła obserwować dom ofiary i miała motyw by ją zamordować. Mąż zmarłej zaczyna grozić Monice, dziewczynie, z którą miał romans i która odwiedziła jego żonę tuż przed śmiercią. Podczas procesu toczącego się przed Sądem Okręgowym w Warszawie na światło dzienne wychodzą nowe fakty. Monika Butny zostaje uniewinniona a w stan oskarżenia o zamordowanie swojej żony Beaty zostaje postawiony jej mąż Kamil Napieralski.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247783" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247783','ekipa_skrocona1247783','ekipa1247783','ekipa_schowaj1247783','ekipa_schowaj_krotki1247783','ekipa_schowaj_pelny1247783','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247783" class="jslink" onclick="pzf('ekipa_skrocona1247783','ekipa_pelna1247783','ekipa1247783','ekipa_schowaj1247783','ekipa_schowaj_pelny1247783','ekipa_schowaj_krotki1247783','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247783"1247783" class="jslink" onclick="pzz('ekipa1247783','ekipa_schowaj1247783')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247783" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247783">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/11136291">Karolina Szymczak</a></div><div class="ekipa_opis"> Patrycja, sekretarka w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1146449">Piotr Bajtlik</a></div><div class="ekipa_opis"> Mateusz, trener piłki nożnej, adorator Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1154347">Sławomir Doliniec</a></div><div class="ekipa_opis"> komisarz Kamil Napieralski, policjant, mąż Beaty i kochanek Moniki Butny</div><div class="ekipa_osoba"><a href="index.php/1170791">Magdalena Majtyka</a></div><div class="ekipa_opis"> Monika Butny, dobra znajoma prokurator Izabeli Gryc, kochanka komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/1136783">Lidia Niewęgłowska</a></div><div class="ekipa_opis"> Teresa Grzybalska, matka Beaty, żony komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/11154364">Sara Nowacka</a></div><div class="ekipa_opis"> Beata Napieralska, córka Teresy Grzybalskiej i żona komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/1182342">Piotr Bulcewicz</a></div><div class="ekipa_opis"> Adrian Kalinowski, komendant zmiany Straży Ochrony Kolei, przyjaciel Mikołaja Rębisza, kibica drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11127652">Michał Hołub</a></div><div class="ekipa_opis"> Mikołaj Rębisz, kibic drużyny piłkarskiej Szarża Północ, przyjaciel Adriana Kalinowskiego</div><div class="ekipa_osoba"><a href="index.php/11132285">Kordian Rekowski</a></div><div class="ekipa_opis"> kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11171594">Andrzej Kurnicki</a></div><div class="ekipa_opis"> kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/1150814">Marcin Chabowski</a></div><div class="ekipa_opis"> Paweł Podsiadlik, były policjant prowadzący przed laty śledztwo w sprawie Moniki Butny, która zamordowała swojego męża</div><div class="ekipa_osoba"><a href="index.php/11171202">Pola Gilder</a></div><div class="ekipa_opis"> Adrianna, uczennica Szkoły Podstawowej nr 100 w Warszawie, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11171203">Gabriela Podgórska</a></div><div class="ekipa_opis"> Karolina, uczennica Szkoły Podstawowej nr 100 w Warszawie, koleżanka Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1163016">Anna Matecka</a></div><div class="ekipa_opis"> Kinga Strzelecka, dziennikarka, matka Igora, ucznia Szkoły Podstawowej nr 100 w Warszawie, kolegi Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11120694">Witold Sosulski</a></div><div class="ekipa_opis"> Igor Strzelecki, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1113996">Piotr Rzymyszkiewicz</a></div><div class="ekipa_opis"> sędzia Wydziału Karnego Sądu Okręgowego w Warszawie prowadzący rozprawę przeciwko Monice Butny</div><div class="ekipa_osoba"><a href="index.php/1154022">Katarzyna Joda</a></div><div class="ekipa_opis"> Inga Kośmider, ratownik medyczny w karetce pogotowia ratunkowego biorąca udział w akcji reanimacyjnej Beaty Napieralskiej, potem szantażowana przez jej męża komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/11146538">Tomasz Czaplarski</a></div><div class="ekipa_opis"> Witold, policjant prowadzący czynności dochodzeniowo-śledcze na miejscu morderstwa Beaty Napieralskiej</div><div class="ekipa_osoba">Wojciech Karkau</div><div class="ekipa_opis"> starszy posterunkowy, policjant eskortujący Monikę Butny na przesłuchanie do siedziby Prokuratury Okręgowej w Warszawie</div><div class="ekipa_osoba"><a href="index.php/118398">Mariola Kukuła</a></div><div class="ekipa_opis"> sąsiadka Ingi Kośmider, ratownik medycznej w karetce pogotowia ratunkowego biorącej udział w akcji reanimacyjnej Beaty Napieralskiej, potem szantażowanej przez jej męża komisarza Kamila Napieralskiego</div><div class="ekipa_osoba"><a href="index.php/1169207">Anna Król</a></div><div class="ekipa_opis"> Michalina Dróżdż, kobieta w sprawie przeciwko której przed laty śledztwo prowadził komisarz Kamil Napieralski, także jego kochanka</div><div class="ekipa_osoba"><a href="index.php/11171596">Patrycja Zdziebko</a></div><div class="ekipa_opis"> Lucyna Wolniak, kobieta w sprawie przeciwko której przed laty śledztwo prowadził komisarz Kamil Napieralski, także jego kochanka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247783">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Konstanty Litwicki wpada w panikę, bo zamieszkały przez niego apartament formalnie należący do jego ojca Romualda zajmuje komornik. Anna Wysocka odkrywa, że jej nowy szef - syn Marii - od kilku lat ma "problem" z hazardem i związał się z mafią. Natalia oznajmia Maciejowi, że jest w ciąży. Wysocki z tego faktu wcale się nie cieszy. W pracy prokurator bada z kolei sprawę morderstwa 22-letniego Rafała Kostrzewskiego, który zginął od uderzenia w głowę. A głównego podejrzanego - Mikołaja Rębisza - reprezentuje Anna, którą zatrudnia przyjaciel chłopaka - Adrian Kalinowski. Tymczasem matka zmarłego Mikołaja opowiada Izabeli Gryc o swojej córce - Sylwii - która wyjechała do pracy za granicę i nagle zniknęła. Prokurator Gryc postanawia dziewczynę odszukać. O pomoc prosi starszego aspiranta Jarosława Watę.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247784" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247784','ekipa_skrocona1247784','ekipa1247784','ekipa_schowaj1247784','ekipa_schowaj_krotki1247784','ekipa_schowaj_pelny1247784','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247784" class="jslink" onclick="pzf('ekipa_skrocona1247784','ekipa_pelna1247784','ekipa1247784','ekipa_schowaj1247784','ekipa_schowaj_pelny1247784','ekipa_schowaj_krotki1247784','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247784"1247784" class="jslink" onclick="pzz('ekipa1247784','ekipa_schowaj1247784')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247784" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247784">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/11136291">Karolina Szymczak</a></div><div class="ekipa_opis"> Patrycja, sekretarka w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1146449">Piotr Bajtlik</a></div><div class="ekipa_opis"> Mateusz, trener piłki nożnej, adorator Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1182342">Piotr Bulcewicz</a></div><div class="ekipa_opis"> Adrian Kalinowski, komendant zmiany Straży Ochrony Kolei, przyjaciel Mikołaja Rębisza, kibica drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11127652">Michał Hołub</a></div><div class="ekipa_opis"> Mikołaj Rębisz, kibic drużyny piłkarskiej Szarża Północ, przyjaciel Adriana Kalinowskiego</div><div class="ekipa_osoba"><a href="index.php/1151429">Wiesława Siemianowska</a></div><div class="ekipa_opis"> Kostrzewska, matka Rafała i Sylwii</div><div class="ekipa_osoba"><a href="index.php/1150457">Barbara Sienkiewicz</a></div><div class="ekipa_opis"> matka Mikołaja Rębisza, kibica drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11152531">Marta Parzychowska</a></div><div class="ekipa_opis"> Małgorzata, przyjaciółka Sylwii Kostrzewskiej, siostry Rafała</div><div class="ekipa_osoba"><a href="index.php/1154093">Paweł Bodych</a></div><div class="ekipa_opis"> Sebastian Skrzynecki ps. "Bastion", kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11120694">Witold Sosulski</a></div><div class="ekipa_opis"> Igor Strzelecki, uczeń Szkoły Podstawowej nr 100 w Warszawie, kolega Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1163016">Anna Matecka</a></div><div class="ekipa_opis"> Kinga Strzelecka, dziennikarka, matka Igora, ucznia Szkoły Podstawowej nr 100 w Warszawie, kolegi Zuzanny Wysockiej, córki Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11130349">Lena Kowalska</a></div><div class="ekipa_opis"> przygodna kochanka mecenasa Konstantego Litwickiego</div><div class="ekipa_osoba"><a href="index.php/11132285">Kordian Rekowski</a></div><div class="ekipa_opis"> kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11171594">Andrzej Kurnicki</a></div><div class="ekipa_opis"> kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/1145935">Jacek Reda</a></div><div class="ekipa_opis"> Józef, technik kryminalistyki</div><div class="ekipa_osoba"><a href="index.php/11169976">Michał Wołczyk</a></div><div class="ekipa_opis"> starszy sierżant Michał Puławski, policjant asystujący Stefanowi Pająkowi, komornikowi sądowemu przy Sądzie Rejonowym w Warszawie, w zajęciu apartamentu należącego do Romualda Litwickiego, ojca Konstantego</div><div class="ekipa_osoba"><a href="index.php/11146270">Adam Lisewski</a></div><div class="ekipa_opis"> kibic drużyny piłkarskiej Stalowi Południe</div><div class="ekipa_osoba">Leonardo Marques</div><div class="ekipa_opis"> Latynos, klient baru podrywający prokurator Izabelę Gryc</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247784">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>10</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Izabela Gryc odkrywa, że Adrian Kalinowski pracuje w pobliżu miejsca, gdzie zniknęła Sylwia - w Straży Ochrony Kolei. Pani prokurator jest pewna, że problemy dziewczyny łączą się ze śmiercią jej brata. Tymczasem "Szlaban" poruszony rozmową z matką Rafała i Sylwii jest gotów na wszystko by zaginioną dziewczynę odszukać. Z kolei mecenas Anna Wysocka dowiaduje się w końcu, że kochanka Macieja jest w ciąży. I sama postanawia spędzić wieczór z Mateuszem, trenerem piłki nożnej, który od dawna ją adoruje. Doskonale bawi się w jego towarzystwie, aż do chwili, kiedy przychodzi opamiętanie. Konstanty Litwicki podsłuchuje przypadkiem w kancelarii rozmowę nowego szefa z "biznesmenami", którzy... planują oszustwo.</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1247785" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1247785','ekipa_skrocona1247785','ekipa1247785','ekipa_schowaj1247785','ekipa_schowaj_krotki1247785','ekipa_schowaj_pelny1247785','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1247785" class="jslink" onclick="pzf('ekipa_skrocona1247785','ekipa_pelna1247785','ekipa1247785','ekipa_schowaj1247785','ekipa_schowaj_pelny1247785','ekipa_schowaj_krotki1247785','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1247785"1247785" class="jslink" onclick="pzz('ekipa1247785','ekipa_schowaj1247785')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1247785" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1247785">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1139868">Dominika Łakomska</a></div><div class="ekipa_opis"> mecenas Anna Wysocka, adwokat, była żona Macieja</div><div class="ekipa_osoba"><a href="index.php/1144620">Łukasz Konopka</a></div><div class="ekipa_opis"> Maciej Wysocki, prokurator Prokuratury Okręgowej w Warszawie, były mąż Anny</div><div class="ekipa_osoba"><a href="index.php/1170286">Kaja Walden</a></div><div class="ekipa_opis"> Izabela Gryc prokurator Prokuratury Okręgowej w Warszawie, asystentka Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1172986">Maciej Kosmala</a></div><div class="ekipa_opis"> mecenas Konstanty Litwicki, adwokat w Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/11158229">Alicja Wieniawa-Narkiewicz</a></div><div class="ekipa_opis"> Zuzanna Wysocka, córka Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/11141010">Bartosz Pytka</a></div><div class="ekipa_opis"> Franciszek Wysocki, syn Anny i Macieja</div><div class="ekipa_osoba"><a href="index.php/1137618">Arkadiusz Brykalski</a></div><div class="ekipa_opis"> mecenas Jan Maria Zakrzewski-Witt, syn mecenas Marii Zakrzewskiej-Witt, po jej śmierci właściciel Kancelarii Adwokackiej "Zakrzewska-Witt i Partnerzy"</div><div class="ekipa_osoba"><a href="index.php/1116089">Sebastian Konrad</a></div><div class="ekipa_opis"> starszy aspirant Jarosław Wata ps. "Szlaban", policjant</div><div class="ekipa_osoba"><a href="index.php/1117764">Wojciech Słupiński</a></div><div class="ekipa_opis"> detektyw Hubert Cisło</div><div class="ekipa_osoba">Enrico Buscema</div><div class="ekipa_opis"> Gigi, barman w barze</div><div class="ekipa_osoba"><a href="index.php/1171624">Weronika Jaskółka</a></div><div class="ekipa_opis"> Natalia Kot, kochanka prokuratora Macieja Wysockiego</div><div class="ekipa_osoba"><a href="index.php/1146449">Piotr Bajtlik</a></div><div class="ekipa_opis"> Mateusz, trener piłki nożnej, adorator Anny Wysockiej</div><div class="ekipa_osoba"><a href="index.php/1182342">Piotr Bulcewicz</a></div><div class="ekipa_opis"> Adrian Kalinowski, komendant zmiany Straży Ochrony Kolei, przyjaciel Mikołaja Rębisza, kibica drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11127652">Michał Hołub</a></div><div class="ekipa_opis"> Mikołaj Rębisz, kibic drużyny piłkarskiej Szarża Północ, przyjaciel Adriana Kalinowskiego</div><div class="ekipa_osoba"><a href="index.php/11136745">Weronika Bartold</a></div><div class="ekipa_opis"> Sylwia Kostrzewska, siostra Rafała</div><div class="ekipa_osoba"><a href="index.php/1151429">Wiesława Siemianowska</a></div><div class="ekipa_opis"> Kostrzewska, matka Rafała i Sylwii</div><div class="ekipa_osoba"><a href="index.php/1154093">Paweł Bodych</a></div><div class="ekipa_opis"> Sebastian Skrzynecki ps. "Bastion", kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11132285">Kordian Rekowski</a></div><div class="ekipa_opis"> kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/11171594">Andrzej Kurnicki</a></div><div class="ekipa_opis"> kibic drużyny piłkarskiej Szarża Północ</div><div class="ekipa_osoba"><a href="index.php/1150296">Jacek Zienkiewicz</a></div><div class="ekipa_opis"> Witold Nawrocki, właściciel sklepu z koszulkami drużyn piłkarskich</div><div class="ekipa_osoba"><a href="index.php/11152531">Marta Parzychowska</a></div><div class="ekipa_opis"> Małgorzata, przyjaciółka Sylwii Kostrzewskiej, siostry Rafała</div><div class="ekipa_osoba"><a href="index.php/1159308">Dariusz Dłużewski</a></div><div class="ekipa_opis"> sędzia Wydziału Karnego Sądu Okręgowego w Warszawie</div><div class="ekipa_osoba">Leonardo Marques</div><div class="ekipa_opis"> Latynos, klient baru podrywający prokurator Izabelę Gryc</div><div class="ekipa_osoba"><a href="index.php/11141610">Sandra Kościelniak</a></div><div class="ekipa_opis"> dziewczyna więziona wraz z Sylwią Kostrzewską</div><div class="ekipa_osoba"><a href="index.php/11160744">Kacper Kozioł</a></div><div class="ekipa_opis"> chłopak, sąsiad Jarosława Kamowskiego, ps. "Orzeł", mafiosa, dilera narkotyków; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1247785">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1246386" selected >1</option><option value="1246386_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1246386_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1246386_2"></a> 
+</nav><div id="czasgen">2026.05.08 01:01:07</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - SZPILKI NA GIEWONCIE</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>SZPILKI NA GIEWONCIE</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1226090" selected >1</option><option value="1226090_2">2</option><option value="1226090_3">3</option><option value="1226090_4">4</option><option value="1226090_5">5</option><option value="1226090_6">6</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1226090_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1226090_6"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010-2012</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2010. 09. 02</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film obyczajowy</div></li>
+<li><div class="film_tech3">Barwny, odcinki x ok. 43 min <br /><br />
+Lokacje: Zakopane, Warszawa.<br /><br />
+<strong>Seria 1:</strong> Odcinki 1-13. Okres zdjęciowy: 22 lutego - 8 czerwca 2010. Emisja: 2 września - 25 listopada 2010.<br />
+<strong>Seria 2:</strong> Odcinki 14-26. Okres zdjęciowy: 8 grudnia 2010 - 26 marca 2011. Emisja: 24 lutego - 19 maja 2011.<br />
+<strong>Seria 3:</strong> Odcinki 27-39 . Emisja: 1 września - 24 listopada 2011.<br />
+<strong>Seria 4:</strong> Odcinki 40-52. Okres zdjęciowy rozpoczął się 3 stycznia 2012. Emisja: 1 marca - 24 maja 2012.</div></li>
+</ul>
+<p class="opis">Historia wielkomiejskiej dziewczyny z Warszawy, pracującej w agencji reklamowej, która na skutek niezbyt wybrednych awansów szefa, musi wyjechać ze stolicy.
+Zostaje przerzucona do malutkiego oddziału tej firmy w Zakopanem.
+Bohaterka najpierw z całego serca nienawidzi góralszczyzny i tęskni do życia w stolicy. Sytuacja zmienia się, gdy spotyka na swojej drodze pewnego GOPR-owca.</p><div class="galeria_mala"><a href="index.php?fotos=1626090_1&galeria=1526090"><img class="bezcienia" src="../z1/90i/26090_1.jpg" height="60"></a><a href="index.php?fotos=1626090_2&galeria=1526090"><img class="bezcienia" src="../z1/90i/26090_2.jpg" height="60"></a><a href="index.php?fotos=1626090_3&galeria=1526090"><img class="bezcienia" src="../z1/90i/26090_3.jpg" height="60"></a><a href="index.php?fotos=1626090_4&galeria=1526090"><img class="bezcienia" src="../z1/90i/26090_4.jpg" height="60"></a><a href="index.php?fotos=1626090_5&galeria=1526090"><img class="bezcienia" src="../z1/90i/26090_5.jpg" height="60"></a><a href="index.php?fotos=1626090_6&galeria=1526090"><img class="bezcienia" src="../z1/90i/26090_6.jpg" height="60"></a><a href="index.php/1526090" title="Galeria zdjęć (117)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226090" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226090','ekipa_skrocona1226090','ekipa1226090','ekipa_schowaj1226090','ekipa_schowaj_krotki1226090','ekipa_schowaj_pelny1226090','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226090" class="jslink" onclick="pzf('ekipa_skrocona1226090','ekipa_pelna1226090','ekipa1226090','ekipa_schowaj1226090','ekipa_schowaj_pelny1226090','ekipa_schowaj_krotki1226090','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226090"1226090" class="jslink" onclick="pzz('ekipa1226090','ekipa_schowaj1226090')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226090" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226090">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1142152">Robert Wichrowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-18, 23-26</div><div class="ekipa_osoba wyroznienie"><a href="index.php/119177">Filip Zylber</a></div><div class="ekipa_opis wyroznienie"> odcinki: 19-22, 27-39</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 40-52</div></li>
+<li><div class="ekipa_funkcja">Reżyseria (II ekipa)</div><div class="ekipa_osoba"><a href="index.php/1118401">Rafał Sisicki</a></div><div class="ekipa_opis"> odcinki: 23-26</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1149738">Marta Masłowska</a></div><div class="ekipa_opis"> odcinki: 1, 40-52</div><div class="ekipa_osoba"><a href="index.php/1128330">Aleksander Dembski</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1126683">Michał Gadomski</a></div><div class="ekipa_opis"> odcinki: 2-26</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> odcinki: 2-39</div><div class="ekipa_osoba"><a href="index.php/115090">Krzysztof Zbieranek</a></div><div class="ekipa_opis"> odcinki: 14-</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1128330">Aleksander Dembski</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1149738">Marta Masłowska</a></div><div class="ekipa_opis"> odcinki: 7-13</div><div class="ekipa_osoba"><a href="index.php/1168000">Tymoteusz Drożdż</a></div><div class="ekipa_opis"> odcinki: 14-39</div><div class="ekipa_osoba"><a href="index.php/1146520">Natalia Szyguła</a></div><div class="ekipa_opis"> odcinki: 40-52</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1160859">Viola Borcuch</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-39</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1149808">Paweł Czajor</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-13</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113922">Monika Skowrońska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1138732">Radosław Figura</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-20</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1152216">Paweł Trześniowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 2, 4, 7, 11, 15, 18</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1159604">Anita Nawrocka</a></div><div class="ekipa_opis wyroznienie"> odcinki: 3, 6, 9, 12, 16, 19-20</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113866">Wojciech Lepianka</a></div><div class="ekipa_opis wyroznienie"> odcinki: 21-26</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1152326">Maciej Prykowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 27, 29-30, 33, 37-39</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1171027">Rafał Skarżycki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 28, 31-32, 36</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1147830">Ewa Bulanda</a></div><div class="ekipa_opis wyroznienie"> odcinki: 34-35</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129413">Agnieszka Olejnik</a></div><div class="ekipa_opis wyroznienie"> odcinki: 40-52</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1161020">Monika Zięba</a></div><div class="ekipa_opis wyroznienie"> odcinki: 40-52</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenariuszowa</div><div class="ekipa_osoba"><a href="index.php/1113866">Wojciech Lepianka</a></div><div class="ekipa_opis"> odcinki: 17-20</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125014">Jacek Fabrowicz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-26</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128262">Dominik Struss</a></div><div class="ekipa_opis wyroznienie"> odcinki: 27-39</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124570">Marek Traskowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Zdjęcia (II ekipa)</div><div class="ekipa_osoba"><a href="index.php/1133642">Waldemar Szmidt</a></div><div class="ekipa_opis"> odcinki: 23-26</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1130262">Rafał Michalski</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1143601">Artur Zdral</a></div><div class="ekipa_opis"> odcinki: 1-13, 19-26</div><div class="ekipa_osoba"><a href="index.php/1122476">Janusz Sus</a></div><div class="ekipa_opis"> odcinki: 2-7</div><div class="ekipa_osoba"><a href="index.php/1167328">Albert Lenart</a></div><div class="ekipa_opis"> odcinki: 8-13</div><div class="ekipa_osoba"><a href="index.php/1143577">Piotr Chłopecki</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1128899">Rafał Paradowski</a></div><div class="ekipa_opis"> odcinki; 14-18</div><div class="ekipa_osoba"><a href="index.php/1123682">Jarosław Wnuk</a></div><div class="ekipa_opis"> odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1140036">Andrzej Glacel</a></div><div class="ekipa_opis"> odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1116897">Romuald Lewandowski</a></div><div class="ekipa_opis"> odcinki: 27-39</div><div class="ekipa_osoba"><a href="index.php/1154383">Kacper Zieliński</a></div><div class="ekipa_opis"> odcinki: 27-39</div><div class="ekipa_osoba"><a href="index.php/1150831">Marcin Piechura</a></div><div class="ekipa_opis"> odcinki: 28-39</div><div class="ekipa_osoba"><a href="index.php/1166799">Maksymilian Pawlikowski</a></div><div class="ekipa_opis"> odcinki: 14-18, 27-39</div><div class="ekipa_osoba"><a href="index.php/1126634">Piotr Łukasiewicz</a></div><div class="ekipa_opis"> odcinki: 19-26</div><div class="ekipa_osoba"><a href="index.php/1152193">Tomasz Sobański</a></div><div class="ekipa_opis"> odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1127213">Ryszard Żuchowski</a></div><div class="ekipa_opis"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Operator Steadicam</div><div class="ekipa_osoba"><a href="index.php/1140036">Andrzej Glacel</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora Steadicam</div><div class="ekipa_osoba"><a href="index.php/1149214">Sławomir Wierzbicki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator CCU</div><div class="ekipa_osoba"><a href="index.php/1159087">Robert Lis</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1127417">Marcin Szulski</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1125376">Paweł Semeniuk</a></div><div class="ekipa_opis"> odcinki: 2-26</div><div class="ekipa_osoba"><a href="index.php/1151422">Artur Tereba</a></div><div class="ekipa_opis"> odcinki: 27-39</div><div class="ekipa_osoba"><a href="index.php/1143459">Łukasz Kowalczyk</a></div><div class="ekipa_opis"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora obrazu</div><div class="ekipa_osoba"><a href="index.php/1139818">Dominik Męczyński</a></div><div class="ekipa_opis"> ostrzyciel</div></li>
+<li><div class="ekipa_funkcja">Krany kamerowe</div><div class="ekipa_osoba"><a href="index.php/1144071">Marcin Guzak</a></div><div class="ekipa_opis"> odcinki: 3</div><div class="ekipa_osoba"><a href="index.php/1161476">Paweł Magolon</a></div><div class="ekipa_opis"> odcinki: 3</div><div class="ekipa_osoba"><a href="index.php/1149880">Leszek Kowalski</a></div><div class="ekipa_opis"> odcinki: 3</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1158852">Adam Kot</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba">Yrjo Almonkari</div><div class="ekipa_opis"> w napisach imię: Jerzy; odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1155556">Katarzyna Świetlikowska</a></div><div class="ekipa_opis"> odcinki: 2-7</div><div class="ekipa_osoba"><a href="index.php/1159842">Sebastian Wiśniewski</a></div><div class="ekipa_opis"> odcinki: 8-</div><div class="ekipa_osoba"><a href="index.php/1139818">Dominik Męczyński</a></div><div class="ekipa_opis"> odcinki: 1-39</div><div class="ekipa_osoba"><a href="index.php/1151422">Artur Tereba</a></div><div class="ekipa_opis"> odcinki: 2-26</div><div class="ekipa_osoba"><a href="index.php/1160389">Kamil Lampart</a></div><div class="ekipa_opis"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Zdjęcia specjalne</div><div class="ekipa_osoba"><a href="index.php/1122476">Janusz Sus</a></div><div class="ekipa_opis"> establishingi; odcinki: 2-</div><div class="ekipa_osoba"><a href="index.php/1160854">Łukasz Żal</a></div><div class="ekipa_opis"> establishingi; odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1166799">Maksymilian Pawlikowski</a></div><div class="ekipa_opis"> estabishingi; odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1140278">Xawery Zylber</a></div><div class="ekipa_opis"> establishingi; odcinki: 27-39</div><div class="ekipa_osoba"><a href="index.php/1173545">Wojciech Węgrzyn</a></div><div class="ekipa_opis"> establishingi; odcinki: 27-39</div><div class="ekipa_osoba"><a href="index.php/1154554">Łukasz Sakiewicz</a></div><div class="ekipa_opis"> establishingi; odcinki: 27-39</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1145878">Hubert Stawicki</a></div><div class="ekipa_opis"> mistrz; odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1121882">Ryszard Kozak</a></div><div class="ekipa_opis"> mistrz; odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1128148">Paweł Skrobot</a></div><div class="ekipa_opis"> mistrz; odcinki: 14-26</div><div class="ekipa_osoba"><a href="index.php/1118385">Piotr Lipiec</a></div><div class="ekipa_opis"> mistrz; odcinki: 27-</div><div class="ekipa_osoba"><a href="index.php/1128618">Maciej Garwoliński</a></div><div class="ekipa_opis"> mistrz; odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1140856">Paweł Rosłon</a></div><div class="ekipa_opis"> w napisach jedynie pseudonim "Blitz";  odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1153753">Dariusz Barwiejuk</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1153992">Paweł Borowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1164172">Artur Ostrowski</a></div><div class="ekipa_opis"> odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1131244">Jacek Tomborek</a></div><div class="ekipa_opis"> odcinki: 14-26</div><div class="ekipa_osoba"><a href="index.php/1162280">Artur Nowak</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1159454">Arkadiusz Borowski</a></div><div class="ekipa_opis"> odcinki: 1-39</div><div class="ekipa_osoba"><a href="index.php/1150269">Łukasz Cichecki</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1169282">Maciej Gamdzyk</a></div><div class="ekipa_opis"> odcinki: 14-26</div><div class="ekipa_osoba"><a href="index.php/1153579">Filip Lipiec</a></div><div class="ekipa_opis"> odcinki: 27-</div></li>
+<li><div class="ekipa_funkcja">Grip</div><div class="ekipa_osoba"><a href="index.php/1141281">Krzysztof Szulim</a></div><div class="ekipa_opis"> odcinki: 1, 14, 27-</div><div class="ekipa_osoba"><a href="index.php/1170130">Artur Rojkowski</a></div><div class="ekipa_opis"> asystent; odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1118023">Janusz Kopiowski</a></div><div class="ekipa_opis"> odcinki: 2-26, 40-</div><div class="ekipa_osoba"><a href="index.php/1163748">Jan Jakub Wiatrzyk</a></div><div class="ekipa_opis"> asystent; odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1164722">Bartosz Hamiec</a></div><div class="ekipa_opis"> współpraca; odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1161476">Paweł Magolon</a></div><div class="ekipa_opis"> współpraca; odcinki: 14-39</div><div class="ekipa_osoba"><a href="index.php/1135528">Jarosław Bajer</a></div><div class="ekipa_opis"> współpraca; odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1158440">EBH Polska</a></div><div class="ekipa_opis"> zdjęciowy</div><div class="ekipa_osoba"><a href="index.php/1154029">Paisa Films</a></div><div class="ekipa_opis"> zdjęciowy</div><div class="ekipa_osoba"><a href="index.php/1122099">Heliograf</a></div><div class="ekipa_opis"> oświetleniowy</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1155222">Paweł Syrzycki</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1173547">Kamil Górakowski</a></div><div class="ekipa_opis"> odcinki: 27-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110624">Barbara Koseska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-4</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1120320">Anna Koseska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 5-</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba">Michael Austrup</div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1144245">Jarosław Borys</a></div><div class="ekipa_opis"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/1110624">Barbara Koseska</a></div><div class="ekipa_opis"> odcinki: 1-4</div><div class="ekipa_osoba"><a href="index.php/1120320">Anna Koseska</a></div><div class="ekipa_opis"> odcinki: 5-26</div><div class="ekipa_osoba"><a href="index.php/1171592">Dorota Rakowiecka</a></div><div class="ekipa_opis"> odcinki: 14-39</div><div class="ekipa_osoba"><a href="index.php/1142955">Magda Widelska-Władyka</a></div><div class="ekipa_opis"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1123388">Marek Rażniewski</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/113948">Edward Koralewski</a></div><div class="ekipa_opis"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja">Rekwizytor planu</div><div class="ekipa_osoba"><a href="index.php/1121357">Andrzej Rażniewski</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1135413">Rafał Michalak</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1162884">Arkadiusz Barański</a></div><div class="ekipa_opis"> odcinki: 14-</div></li>
+<li><div class="ekipa_funkcja">Współpraca rekwizytorska</div><div class="ekipa_osoba"><a href="index.php/1171698">Jarosław Małachowski</a></div><div class="ekipa_opis"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja">Budowa dekoracji</div><div class="ekipa_osoba"><a href="index.php/1147559">Robert Łączyński</a></div><div class="ekipa_opis"> odcinki: 2-</div><div class="ekipa_osoba"><a href="index.php/1147560">Robert Kochowicz</a></div><div class="ekipa_opis"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126169">Beata Frankowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/1123200">Elżbieta Ciszewska</a></div><div class="ekipa_opis"> odcinki: 14-</div><div class="ekipa_osoba"><a href="index.php/1155635">Ewa Kania</a></div><div class="ekipa_opis"> odcinki: 27-39</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1170133">Katarzyna Tercz</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1153269">Olga Kieszkowska</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1126174">Anna Janowska</a></div><div class="ekipa_opis"> odcinki: 27-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1159080">Filip Kuncewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie muzyczne</div><div class="ekipa_osoba"><a href="index.php/1139181">Anna Malarowska</a></div><div class="ekipa_opis"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140924">Adam Wilk</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dźwięk (II ekipa)</div><div class="ekipa_osoba"><a href="index.php/1150531">Michał Robaczewski</a></div><div class="ekipa_opis"> odcinki: 23-26</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1154823">Mariusz Andrasik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1159211">Piotr Wilk</a></div><div class="ekipa_opis"> odcinki: 1-13, 27-</div><div class="ekipa_osoba"><a href="index.php/1129410">Kazimierz Jastrzębski</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1157836">Bogdan Ratajczak</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1146728">Radosław Kobyliński</a></div><div class="ekipa_opis"> odcinki: 14-26, 40-</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/1127693">Bartłomiej Woźniak</a></div><div class="ekipa_opis"> odcinki: 1-7</div><div class="ekipa_osoba"><a href="index.php/1134494">Wojciech Błaszczyk</a></div><div class="ekipa_opis"> odcinki: 8-9, 12-</div><div class="ekipa_osoba"><a href="index.php/1145930">Karol Mańka</a></div><div class="ekipa_opis"> odcinki: 10-11</div><div class="ekipa_osoba"><a href="index.php/1154029">Paisa Films</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1154029">Paisa Films</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1160255">Kamil Czwartosz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-7, 16-17, 27, 29, 31, 33, 35, 37,  39-40, 42, 44, 46, 48, 51-52</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1137756">Adam Kwiatek</a></div><div class="ekipa_opis wyroznienie"> odcinki: 8-15, 18-26, 28, 30, 32, 34, 36, 38</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1116091">Sławomir Filip</a></div><div class="ekipa_opis wyroznienie"> odcinki: 41, 43, 45, 47, 49-50</div><div class="ekipa_osoba"><a href="index.php/1170253">Marcin Mikołajczyk</a></div><div class="ekipa_opis"> odcinki: 19, 21, 23, 25, 27-28, 32, 36</div><div class="ekipa_osoba"><a href="index.php/1159086">Piotr Gorszczyński</a></div><div class="ekipa_opis"> odcinki: 20, 22, 24, 26-27, 30, 34, 38</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1159086">Piotr Gorszczyński</a></div><div class="ekipa_opis"> odcinki: 2-</div><div class="ekipa_osoba"><a href="index.php/1170253">Marcin Mikołajczyk</a></div><div class="ekipa_opis"> odcinki: 14-39</div></li>
+<li><div class="ekipa_funkcja">On-line</div><div class="ekipa_osoba"><a href="index.php/1160255">Kamil Czwartosz</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Montaż on-line</div><div class="ekipa_osoba"><a href="index.php/1159086">Piotr Gorszczyński</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Montaż on-line</div><div class="ekipa_osoba"><a href="index.php/1170253">Marcin Mikołajczyk</a></div><div class="ekipa_opis"> w napisach określenie funkcji: Montaż on-line</div></li>
+<li><div class="ekipa_funkcja">Studio montażu</div><div class="ekipa_osoba"><a href="index.php/1154029">Paisa Films</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nadzór charakteryzatorski</div><div class="ekipa_osoba"><a href="index.php/1155550">Mirela Zawiszewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1161051">Małgorzata Głodowska</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1151300">Anna Mrowiec</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1, 8-13, 40-</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1155550">Mirela Zawiszewska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 2-</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1129385">Iwona Kajszczak</a></div><div class="ekipa_opis wyroznienie"> odcinki: 2-7, 14-26</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1158725">Justyna Osińska</a></div><div class="ekipa_opis wyroznienie"> odcinki: 14-39</div></li>
+<li><div class="ekipa_funkcja">Charakteryzacja (II ekipa)</div><div class="ekipa_osoba"><a href="index.php/1156793">Kamila Gass</a></div><div class="ekipa_opis"> odcinki: 23-26</div><div class="ekipa_osoba"><a href="index.php/1124686">Katarzyna Warchoł</a></div><div class="ekipa_opis"> odcinki: 23-26</div></li>
+<li><div class="ekipa_funkcja">Charakteryzator II</div><div class="ekipa_osoba"><a href="index.php/1147160">Katarzyna Wilk</a></div><div class="ekipa_opis"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1170136">Natalia Schabowska</a></div><div class="ekipa_opis"> odcinki: 2-26</div><div class="ekipa_osoba"><a href="index.php/1173007">Olga Dackiewicz</a></div><div class="ekipa_opis"> odcinki: 27-39</div><div class="ekipa_osoba"><a href="index.php/1169350">Małgorzata Malicka</a></div><div class="ekipa_opis"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Make-up bus</div><div class="ekipa_osoba"><a href="index.php/1124063">Konrad Orłowski</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1172391">Rafał Roborzyński</a></div><div class="ekipa_opis"> odcinki: 27-</div><div class="ekipa_osoba"><a href="index.php/1170338">Tadeusz Daroch</a></div><div class="ekipa_opis"> kierowca; odcinki: 2-39</div></li>
+<li><div class="ekipa_funkcja">Fryzury</div><div class="ekipa_osoba"><a href="index.php/1152990">Maciej Majcher</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1139589">Sławomir Cherubiński</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1137355">Barbara Bartosiewicz</a></div><div class="ekipa_opis"> odcinki: 2-39</div><div class="ekipa_osoba"><a href="index.php/1170331">Iwona Walkosz-Berda</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1171942">Elżbieta Wiązowska</a></div><div class="ekipa_opis"> odcinki: 14-39</div><div class="ekipa_osoba"><a href="index.php/1144545">Agencja Aktorska Absolwent</a></div><div class="ekipa_opis"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja">Efekty komputerowe</div><div class="ekipa_osoba"><a href="index.php/1170334">Tomasz Melnicki</a></div><div class="ekipa_opis"> odcinki: 2-</div><div class="ekipa_osoba"><a href="index.php/1175787">Goodmedia</a></div><div class="ekipa_opis"> symulacje; odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1144329">Bartosz Rzepecki</a></div><div class="ekipa_opis"> odcinki: 1-39</div><div class="ekipa_osoba"><a href="index.php/1156483">Robert Pałka</a></div><div class="ekipa_opis"> odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1171455">Fotos-Art</a></div><div class="ekipa_opis"> odcinki: 40-</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/1169505">Ewa Pfanhauser</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1141279">Michał Czubak</a></div><div class="ekipa_opis"> animacja</div><div class="ekipa_osoba"><a href="index.php/1159080">Filip Kuncewicz</a></div><div class="ekipa_opis"> muzyka; odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1171944">Mikołaj Ramus</a></div><div class="ekipa_opis"> muzyka; odcinki: 14-</div><div class="ekipa_osoba"><a href="index.php/1142584">Michał Jelonek</a></div><div class="ekipa_opis"> skrzypce; odcinki: 1-13</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/1125021">Jarosław Nowikowski</a></div><div class="ekipa_opis"> odcinki: 3, 7</div><div class="ekipa_osoba"><a href="index.php/1145260">Anna Komorowska</a></div><div class="ekipa_opis"> odcinki: 7, 24-26</div><div class="ekipa_osoba"><a href="index.php/1172704">Katarzyna Pułkośnik</a></div><div class="ekipa_opis"> odcinki: 23</div><div class="ekipa_osoba"><a href="index.php/1141462">Agnieszka Pawłowska</a></div><div class="ekipa_opis"> odcinki: 23</div><div class="ekipa_osoba"><a href="index.php/1152747">Marek Łojek</a></div><div class="ekipa_opis"> odcinki: 24-26</div></li>
+<li><div class="ekipa_funkcja">Napisy</div><div class="ekipa_osoba"><a href="index.php/1159086">Piotr Gorszczyński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1170134">Elżbieta Bohnak</a></div><div class="ekipa_opis"> ds. gwary</div><div class="ekipa_osoba"><a href="index.php/1124063">Konrad Orłowski</a></div><div class="ekipa_opis"> ds. samochodów; odcinki: 14-</div><div class="ekipa_osoba"><a href="index.php/1120463">Henryk Gerlach</a></div><div class="ekipa_opis"> ds. kolejnictwa</div></li>
+<li><div class="ekipa_funkcja">Redakcja dramaturgii</div><div class="ekipa_osoba"><a href="index.php/1152326">Maciej Prykowski</a></div><div class="ekipa_opis"> odcinki: 47-</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1155225">Dorota Rebczyńska</a></div><div class="ekipa_opis"> odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1161906">Magdalena Wierzbicka</a></div><div class="ekipa_opis"> odcinki: 14-26</div><div class="ekipa_osoba"><a href="index.php/1173546">Justyna Durmaj</a></div><div class="ekipa_opis"> odcinki: 27-</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1130744">Sławomir Elwich</a></div><div class="ekipa_opis"> koordynacja; odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1134509">Waldemar Węglewski</a></div><div class="ekipa_opis"> koordynacja; odcinki: 1, 14-</div><div class="ekipa_osoba"><a href="index.php/1161400">Rafał Bielecki</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1161227">Andrzej Przybyszewski</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1152233">Zbigniew Szadkowski</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1170336">Jerzy Rogala</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1157565">Artur Bartosiak</a></div><div class="ekipa_opis"> odcinki: 14-26</div><div class="ekipa_osoba"><a href="index.php/1171949">Janusz Wielgolewski</a></div><div class="ekipa_opis"> odcinki: 14-26</div><div class="ekipa_osoba"><a href="index.php/1163386">Zbigniew Łukasiewicz</a></div><div class="ekipa_opis"> odcinki: 14-</div><div class="ekipa_osoba"><a href="index.php/1170335">Wojciech Cieślik</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1175788">Dariusz Łysiak</a></div><div class="ekipa_opis"> odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1173630">Wiesław Urbaniak</a></div><div class="ekipa_opis"> odcinki: 27-39</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1153904">Rafał Tokarski</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1155560">Krzysztof Gąsowski</a></div><div class="ekipa_opis"> odcinki: 2-</div><div class="ekipa_osoba"><a href="index.php/1170337">Marcin Pomaski</a></div><div class="ekipa_opis"> odcinki: 2-26</div><div class="ekipa_osoba"><a href="index.php/1159854">Michał Szczęsny</a></div><div class="ekipa_opis"> odcinki: 2-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Organizacja produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128555">Bożena Krakówka</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-26</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1173542">Marta Kapczyńska-Czwartosz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 27-</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/1156120">Marta Kapczyńska</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div class="ekipa_osoba"><a href="index.php/1110802">Mirosław Nycz</a></div><div class="ekipa_opis"> odcinki: 1, 14-</div><div class="ekipa_osoba"><a href="index.php/1162283">Maja Włodarczyk</a></div><div class="ekipa_opis"> odcinki: 2-13</div><div class="ekipa_osoba"><a href="index.php/1160427">Paweł Czwartosz</a></div><div class="ekipa_opis"> odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1121751">Anna Ćwiach</a></div><div class="ekipa_opis"> odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1166632">Agnieszka Sajecka</a></div><div class="ekipa_opis"> odcinki: 14-39</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1166632">Agnieszka Sajecka</a></div><div class="ekipa_opis"> odcinki: 2-13</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1122743">Janusz Filipek</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1123825">Piotr Faryński</a></div><div class="ekipa_opis"> odcinki: 2-</div><div class="ekipa_osoba"><a href="index.php/1160383">Konrad Nadrowski</a></div><div class="ekipa_opis"> odcinki: 1-26</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1144245">Jarosław Borys</a></div><div class="ekipa_opis"> odcinki: 1</div><div class="ekipa_osoba"><a href="index.php/1170132">Łukasz Borys</a></div><div class="ekipa_opis"> odcinki: 1-39</div><div class="ekipa_osoba"><a href="index.php/1170332">Krzysztof Banasiewicz</a></div><div class="ekipa_opis"> odcinki: 2-26, 40-</div><div class="ekipa_osoba"><a href="index.php/1175786">Sławomir Marczewski</a></div><div class="ekipa_opis"> odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1161740">Mateusz Janczak</a></div><div class="ekipa_opis"> odcinki: 27-39</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1161206">Anna Tomeczek</a></div><div class="ekipa_opis"> odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1162070">Katarzyna Biała</a></div><div class="ekipa_opis"> odcinki: 14-26</div><div class="ekipa_osoba"><a href="index.php/1158375">Monika Tuchalska</a></div><div class="ekipa_opis"> odcinki: 27-39</div><div class="ekipa_osoba"><a href="index.php/1156115">Beata Bystrosz</a></div><div class="ekipa_opis"> odcinki: 40-</div><div class="ekipa_osoba"><a href="index.php/1129419">Natalia Łozowska</a></div><div class="ekipa_opis"> II ekipa; odcinki: 23-26</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/1170131">Jolanta Kłosińska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Księgowość</div><div class="ekipa_osoba"><a href="index.php/1162284">Irena Wasiak</a></div><div class="ekipa_opis"> Paisa Films; odcinki: 1-13</div><div class="ekipa_osoba"><a href="index.php/1166759">Dariusz Grzech</a></div><div class="ekipa_opis"> Paisa Films; odcinki: 14-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent kreatywny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1152301">Małgorzata Retei</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-26</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110814">Marek Brodzki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 27-</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128555">Bożena Krakówka</a></div><div class="ekipa_opis wyroznienie"> odcinki: 27-</div></li>
+<li><div class="ekipa_funkcja">Producent nadzorujący</div><div class="ekipa_osoba"><a href="index.php/1113932">Jarosław Sander</a></div><div class="ekipa_opis"> Polsat</div><div class="ekipa_osoba"><a href="index.php/1170160">Beata Barcz</a></div><div class="ekipa_opis"> Polsat; od odcinka 14</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122410">Maciej Ślesicki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1154029">Paisa Films</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zlecenie</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122087">Polsat</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1133346">Magdalena Schejbal</a></div><div class="ekipa_opis wyroznienie"> Ewa Drawska; odcinki: 1-39</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1133392">Wojciech Błach</a></div><div class="ekipa_opis wyroznienie"> Artur Zamojski, współpracownik Ewy;  odcinki: 1-39</div><div class="ekipa_osoba"><a href="index.php/1128848">Anita Jancia</a></div><div class="ekipa_opis"> Hanka Walica, współpracownica Ewy;  odcinki: 1-18, 20-35, 39, 42-44, 47, 50</div><div class="ekipa_osoba wyroznienie"><a href="index.php/117624">Małgorzata Pieczyńska</a></div><div class="ekipa_opis wyroznienie"> Aniela Gut, gospodyni Ewy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1157040">Krzysztof Wieszczek</a></div><div class="ekipa_opis wyroznienie"> Bartek Bachleda</div><div class="ekipa_osoba"><a href="index.php/1117541">Piotr Zelt</a></div><div class="ekipa_opis"> Patryk Koliba, współpracownik Ewy;  odcinki: 1-36, 38-52</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226090">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1142152">Robert Wichrowski</a></div><div class="ekipa_opis"> odcinki: 1-18, 23-26</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/119177">Filip Zylber</a></div><div class="ekipa_opis"> odcinki: 19-22, 27-39</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113582">Radosław Piwowarski</a></div><div class="ekipa_opis"> odcinki: 40-52</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/1160859">Viola Borcuch</a></div><div class="ekipa_opis"> odcinki: 1-39</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1149808">Paweł Czajor</a></div><div class="ekipa_opis"> odcinki: 1-13</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113922">Monika Skowrońska</a></div><div class="ekipa_opis"> odcinki: 40-</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1138732">Radosław Figura</a></div><div class="ekipa_opis"> odcinki: 1-20</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1152216">Paweł Trześniowski</a></div><div class="ekipa_opis"> odcinki: 2, 4, 7, 11, 15, 18</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1159604">Anita Nawrocka</a></div><div class="ekipa_opis"> odcinki: 3, 6, 9, 12, 16, 19-20</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1113866">Wojciech Lepianka</a></div><div class="ekipa_opis"> odcinki: 21-26</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1152326">Maciej Prykowski</a></div><div class="ekipa_opis"> odcinki: 27, 29-30, 33, 37-39</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1171027">Rafał Skarżycki</a></div><div class="ekipa_opis"> odcinki: 28, 31-32, 36</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1147830">Ewa Bulanda</a></div><div class="ekipa_opis"> odcinki: 34-35</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129413">Agnieszka Olejnik</a></div><div class="ekipa_opis"> odcinki: 40-52</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1161020">Monika Zięba</a></div><div class="ekipa_opis"> odcinki: 40-52</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1125014">Jacek Fabrowicz</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128262">Dominik Struss</a></div><div class="ekipa_opis"> odcinki: 27-39</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1124570">Marek Traskowski</a></div><div class="ekipa_opis"> odcinki: 40-</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1110624">Barbara Koseska</a></div><div class="ekipa_opis"> odcinki: 1-4</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1120320">Anna Koseska</a></div><div class="ekipa_opis"> odcinki: 5-</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1126169">Beata Frankowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/1159080">Filip Kuncewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1140924">Adam Wilk</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1160255">Kamil Czwartosz</a></div><div class="ekipa_opis"> odcinki: 1-7, 16-17, 27, 29, 31, 33, 35, 37,  39-40, 42, 44, 46, 48, 51-52</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1137756">Adam Kwiatek</a></div><div class="ekipa_opis"> odcinki: 8-15, 18-26, 28, 30, 32, 34, 36, 38</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1116091">Sławomir Filip</a></div><div class="ekipa_opis"> odcinki: 41, 43, 45, 47, 49-50</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1151300">Anna Mrowiec</a></div><div class="ekipa_opis"> odcinki: 1, 8-13, 40-</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1155550">Mirela Zawiszewska</a></div><div class="ekipa_opis"> odcinki: 2-</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1129385">Iwona Kajszczak</a></div><div class="ekipa_opis"> odcinki: 2-7, 14-26</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1158725">Justyna Osińska</a></div><div class="ekipa_opis"> odcinki: 14-39</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Organizacja produkcji</div><div class="ekipa_osoba"><a href="index.php/1128555">Bożena Krakówka</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1173542">Marta Kapczyńska-Czwartosz</a></div><div class="ekipa_opis"> odcinki: 27-</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent kreatywny</div><div class="ekipa_osoba"><a href="index.php/1152301">Małgorzata Retei</a></div><div class="ekipa_opis"> odcinki: 1-26</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1110814">Marek Brodzki</a></div><div class="ekipa_opis"> odcinki: 27-</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/1128555">Bożena Krakówka</a></div><div class="ekipa_opis"> odcinki: 27-</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1122410">Maciej Ślesicki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1154029">Paisa Films</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zlecenie</div><div class="ekipa_osoba"><a href="index.php/1122087">Polsat</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1133346">Magdalena Schejbal</a></div><div class="ekipa_opis"> Ewa Drawska; odcinki: 1-39</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1133392">Wojciech Błach</a></div><div class="ekipa_opis"> Artur Zamojski, współpracownik Ewy;  odcinki: 1-39</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/117624">Małgorzata Pieczyńska</a></div><div class="ekipa_opis"> Aniela Gut, gospodyni Ewy</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1157040">Krzysztof Wieszczek</a></div><div class="ekipa_opis"> Bartek Bachleda</div><div style="display:block;" /></li>
+</ul>
+</div>
+<div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Bohaterką serialu jest 29-letnia Ewa Drawska, warszawianka, stworzenie absolutnie miejskie, ewentualnie plażowe. I to nie bałtycko-plażowe, ale śródziemnomorsko lub karaibsko. Prowadzi życie łatwe, lekkie i przyjemne - kocha plotki z przyjaciółkami, zakupy, jazdę po mieście w kabriolecie i... pracę. Gdy ją poznajemy - w pierwszym odcinku tego serialu - Ewa pracuje w dziale reklamy ogólnopolskiej gazety i mieszka w nowoczesnym, świetnie urządzonym mieszkaniu ze swoim partnerem - Grzegorzem. On oświadcza się Ewie, ale ona nie jest pewna czy powinna teraz wychodzić za mąż. Tymczasem jej przełożony napastuje ją w pracy. Ewa oburzona zachowaniem Rafała usiłuje wymóc na prezesie firmy - Marku, aby go zwolnił. Ale niestety w wyniku intrygi swojego szefa to Ewa... trafia do małego oddziału firmy w Zakopanem, aby poprawić tam wyniki sprzedaży. To jest ostatnie miejsce na ziemi, w którym pragnęłaby się znaleźć. "Pańcia", "Warszawka", "blond farbowany desant" - takimi epitetami witają na pokładzie nową szefową koledzy z regionalnego oddziału. Obawiają się, że Ewa zabierze im ulubiony święty spokój i zmusi do morderczego wysiłku. A jej zależy jedynie na tym, by szybko poprawić wyniki sprzedaży i wrócić do stolicy. Nie zdaje sobie sprawy z tego, że przewrotny los zmusi ją do tego, żeby zakochała się w tym mieście. I w jednym z jego mieszkańców... Przygody bohaterki serialu dowodzą, że nie wszystko jest takie, jak nam się wydaje i że czasem to, co wydawało się być karą, może okazać się nagrodą. I odwrotnie. Ewa odkrywa, że świat, który znała do tej pory, był światem pozbawionym głębszych wartości. Nabiera przekonania, że wprawdzie Zakopane ma swoje wady (bo ma!), ale czymże one są w porównaniu z widokiem na Giewont i ukochanym mężczyzną u boku...</p><div class="galeria_mala"><a href="index.php?fotos=1626196_1&galeria=1526196"><img class="bezcienia" src="../z1/96i/26196_1.jpg" height="60"></a><a href="index.php?fotos=1626196_2&galeria=1526196"><img class="bezcienia" src="../z1/96i/26196_2.jpg" height="60"></a><a href="index.php?fotos=1626196_3&galeria=1526196"><img class="bezcienia" src="../z1/96i/26196_3.jpg" height="60"></a><a href="index.php?fotos=1626196_4&galeria=1526196"><img class="bezcienia" src="../z1/96i/26196_4.jpg" height="60"></a><a href="index.php?fotos=1626196_5&galeria=1526196"><img class="bezcienia" src="../z1/96i/26196_5.jpg" height="60"></a><a href="index.php?fotos=1626196_6&galeria=1526196"><img class="bezcienia" src="../z1/96i/26196_6.jpg" height="60"></a><a href="index.php/1526196" title="Galeria zdjęć (26)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226196" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226196','ekipa_skrocona1226196','ekipa1226196','ekipa_schowaj1226196','ekipa_schowaj_krotki1226196','ekipa_schowaj_pelny1226196','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226196" class="jslink" onclick="pzf('ekipa_skrocona1226196','ekipa_pelna1226196','ekipa1226196','ekipa_schowaj1226196','ekipa_schowaj_pelny1226196','ekipa_schowaj_krotki1226196','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226196"1226196" class="jslink" onclick="pzz('ekipa1226196','ekipa_schowaj1226196')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226196" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226196">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1168104">Joanna Orleańska</a></div><div class="ekipa_opis"> Diana Sroka, kochanka Grzegorza</div><div class="ekipa_osoba"><a href="index.php/1156098">Lidia Sadowa</a></div><div class="ekipa_opis"> Aneta, przyjaciółka Ewy</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1134800">Marcin Kwaśny</a></div><div class="ekipa_opis"> Rafał Kocuj</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1170124">Jan Chyc</a></div><div class="ekipa_opis"> góral</div><div class="ekipa_osoba"><a href="index.php/1170125">Sławomir Zięba-Drzymalski</a></div><div class="ekipa_opis"> członek kapeli góralskiej</div><div class="ekipa_osoba">Jan Gąsienica Brzeg</div><div class="ekipa_opis"> góral</div><div class="ekipa_osoba">Wojciech Łukaszczyk</div><div class="ekipa_opis"> góral</div><div class="ekipa_osoba">Krzysztof Gocał</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135060">Agata Załęcka</a></div><div class="ekipa_opis"> Mariola, sekretarka Marka</div><div class="ekipa_osoba"><a href="index.php/1170129">Paweł Stopka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1166177">Piotr Mankiewicz</a></div><div class="ekipa_opis"> pasażer pociągu; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226196">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Ewa poznaje redaktor naczelną dziennika "Tu i Teraz", Elizę. Dla Elizy Ewa jest konkurencją, bo przecież Królowa w zakopiańskiej gazecie jest tylko jedna. Eliza zaprasza Ewę na pogawędkę o pracownikach jej działu. Po czym z pełną satysfakcją opowiada im, co ich nowa szefowa myśli o nich. Do Zakopanego przyjeżdża matka Ewy, Barbara zaniepokojona nagłą decyzją córki o ślubie. Barbara jest zachwycona Zakopanem. Bywała tu jako studentka i ma wspaniałe wspomnienia. Barbara poznaje Anielę - gospodynię Ewy. Od tej pory kobiety stają się najlepszymi przyjaciółkami. Spotyka również Bartka w czasie wyprawy z córką na targ. Jest nim oczarowana i usiłuje nakłonić Ewę, by spotkała się z tym mężczyzną. Tymczasem Wika namawia Patryka do sfingowania umów na umieszczenie reklamy w gazecie. Pozornie podniesie to wyniki, a oni podstępem pozbędą się Ewki. Wciągają w to również Hankę. Tylko Artur odmawia współpracy. Czy Ewa odkryje, że jej pracownicy sfałszowali umowy, zanim będzie za późno?</p><div class="galeria_mala"><a href="index.php?fotos=1626195_1&galeria=1526195"><img class="bezcienia" src="../z1/95i/26195_1.jpg" height="60"></a><a href="index.php?fotos=1626195_2&galeria=1526195"><img class="bezcienia" src="../z1/95i/26195_2.jpg" height="60"></a><a href="index.php?fotos=1626195_3&galeria=1526195"><img class="bezcienia" src="../z1/95i/26195_3.jpg" height="60"></a><a href="index.php?fotos=1626195_4&galeria=1526195"><img class="bezcienia" src="../z1/95i/26195_4.jpg" height="60"></a><a href="index.php?fotos=1626195_5&galeria=1526195"><img class="bezcienia" src="../z1/95i/26195_5.jpg" height="60"></a><a href="index.php?fotos=1626195_6&galeria=1526195"><img class="bezcienia" src="../z1/95i/26195_6.jpg" height="60"></a><a href="index.php?fotos=1626195_7&galeria=1526195"><img class="bezcienia" src="../z1/95i/26195_7.jpg" height="60"></a><a href="index.php/1526195" title="Galeria zdjęć (15)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226195" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226195','ekipa_skrocona1226195','ekipa1226195','ekipa_schowaj1226195','ekipa_schowaj_krotki1226195','ekipa_schowaj_pelny1226195','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226195" class="jslink" onclick="pzf('ekipa_skrocona1226195','ekipa_pelna1226195','ekipa1226195','ekipa_schowaj1226195','ekipa_schowaj_pelny1226195','ekipa_schowaj_krotki1226195','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226195"1226195" class="jslink" onclick="pzz('ekipa1226195','ekipa_schowaj1226195')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226195" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226195">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/1134800">Marcin Kwaśny</a></div><div class="ekipa_opis"> Rafał Kocuj</div><div class="ekipa_osoba"><a href="index.php/1168104">Joanna Orleańska</a></div><div class="ekipa_opis"> Diana Sroka, kochanka Grzegorza</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226195">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Ewa postanawia porozmawiać z pracownikami na temat podrobionych umów. Uświadamia im, że jest to przestępstwo i mogą zostać w każdej chwili zwolnieni. Tymczasem jej mama idzie na spotkanie z Jędrkiem Skorupą, miłością z młodzieńczych lat. Barbara chce się dowiedzieć, dlaczego Jędrek nie czekał na nią w umówionym miejscu 30 lat temu. Barbara i Jędrek tłumaczą sobie nieporozumienia sprzed lat. Nagle na Barbarę napada żona Jędrka, Lucyna. Tymczasem Wika pod wpływem rozmowy z Ewą ucieka w góry i ulega wypadkowi. Artur zgłasza zniknięcie Wiki Bartkowi, który okazuje się ratownikiem górskim. Wyruszają na akcję poszukiwania zaginionej dziewczyny. Barbara postanawia wyjechać z Zakopanego. Wie, że jej młodzieńcza miłość pozostanie niespełniona, a Jędrek ma teraz swoje życie. Tymczasem w górach trwa akcja ratownicza. Ewa dołącza do ratowników - jest zdenerwowana na Wikę, bo uważa, że dziewczyna zachowała się nieodpowiedzialnie. Z powodu jej zachowania Bartek wystawia Ewę z karetki. Zostawi samą na szlaku? Tymczasem Jędrek przyjeżdża do pensjonatu Anieli szukać Barbary.</p><div class="galeria_mala"><a href="index.php?fotos=1626213_1&galeria=1526213"><img class="bezcienia" src="../z1/13i/26213_1.jpg" height="60"></a><a href="index.php?fotos=1626213_2&galeria=1526213"><img class="bezcienia" src="../z1/13i/26213_2.jpg" height="60"></a><a href="index.php?fotos=1626213_3&galeria=1526213"><img class="bezcienia" src="../z1/13i/26213_3.jpg" height="60"></a><a href="index.php?fotos=1626213_4&galeria=1526213"><img class="bezcienia" src="../z1/13i/26213_4.jpg" height="60"></a><a href="index.php?fotos=1626213_5&galeria=1526213"><img class="bezcienia" src="../z1/13i/26213_5.jpg" height="60"></a><a href="index.php?fotos=1626213_6&galeria=1526213"><img class="bezcienia" src="../z1/13i/26213_6.jpg" height="60"></a><a href="index.php/1526213" title="Galeria zdjęć (10)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226213" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226213','ekipa_skrocona1226213','ekipa1226213','ekipa_schowaj1226213','ekipa_schowaj_krotki1226213','ekipa_schowaj_pelny1226213','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226213" class="jslink" onclick="pzf('ekipa_skrocona1226213','ekipa_pelna1226213','ekipa1226213','ekipa_schowaj1226213','ekipa_schowaj_pelny1226213','ekipa_schowaj_krotki1226213','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226213"1226213" class="jslink" onclick="pzz('ekipa1226213','ekipa_schowaj1226213')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226213" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226213">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/115986">Stanisław Jaskułka</a></div><div class="ekipa_opis"> ratownik Mariusz</div><div class="ekipa_osoba"><a href="index.php/116593">Maciej Kozłowski</a></div><div class="ekipa_opis"> Jędrek Skorupa</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/112872">Dorota Pomykała</a></div><div class="ekipa_opis"> Lucyna Skorupa, żona Jędrka</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1147701">Filip Rojek</a></div><div class="ekipa_opis"> Eryk, barman w restauracji Jędrka</div><div class="ekipa_osoba"><a href="index.php/1156098">Lidia Sadowa</a></div><div class="ekipa_opis"> Aneta, przyjaciółka Ewy</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div><div class="ekipa_osoba"><a href="index.php/1165026">Wiesław Teodorowicz</a></div><div class="ekipa_opis"> listonosz</div><div class="ekipa_osoba"><a href="index.php/1170339">Joanna Woźnicka</a></div><div class="ekipa_opis"> recepcjonistka w szpitalu</div><div class="ekipa_osoba"><a href="index.php/1120077">Andrzej Blacha</a></div><div class="ekipa_opis"> ratownik</div><div class="ekipa_osoba"><a href="index.php/1152760">Robert Janik</a></div><div class="ekipa_opis"> ratownik</div><div class="ekipa_osoba"><a href="index.php/1170266">Jakub Poburka</a></div><div class="ekipa_opis"> ratownik</div><div class="ekipa_osoba">Andrzej Mikler</div><div class="ekipa_opis"> ratownik</div><div class="ekipa_osoba"><a href="index.php/1122550">Paweł Zadarnowski</a></div><div class="ekipa_opis"> ratownik</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226213">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Ewa składa oficjalną skargę na Bartka w siedzibie Ratownictwa Górskiego za pozostawienie jej samej na szlaku. Postanawia również zorganizować rozmowę kwalifikacyjną dla nowych kandydatów do pracy w biurze reklamy. Wika, Hanka, Patryk i Artur usiłują przeprosić Ewę za podrobione umowy, ale ich nowa szefowa pozostaje nieubłagana. Pracownicy zabierają ją na Pęksowe Brzysko i przed kościołem obiecują poprawę. Tłumaczą również, dlaczego mają takie trudności w zdobywaniu umów. Po rozmowie z Arturem, Ewa postanawia przeprosić Bartka za swoje zachowanie. Eliza szantażuje Ewę - grozi jej, że jeśli Drawska nie wyjedzie z Zakopanego, to ona wyjawi szefostwu sprawę umów. W tej sytuacji Ewa decyduje się wracać do Warszawy. Nic nie wie o tym, że jej narzeczony, Grzegorz ma romans z jej najlepszą przyjaciółką, Dianą...</p><div class="galeria_mala"><a href="index.php?fotos=1626285_1&galeria=1526285"><img class="bezcienia" src="../z1/85i/26285_1.jpg" height="60"></a><a href="index.php?fotos=1626285_2&galeria=1526285"><img class="bezcienia" src="../z1/85i/26285_2.jpg" height="60"></a><a href="index.php?fotos=1626285_3&galeria=1526285"><img class="bezcienia" src="../z1/85i/26285_3.jpg" height="60"></a><a href="index.php?fotos=1626285_4&galeria=1526285"><img class="bezcienia" src="../z1/85i/26285_4.jpg" height="60"></a><a href="index.php?fotos=1626285_5&galeria=1526285"><img class="bezcienia" src="../z1/85i/26285_5.jpg" height="60"></a><a href="index.php?fotos=1626285_6&galeria=1526285"><img class="bezcienia" src="../z1/85i/26285_6.jpg" height="60"></a><a href="index.php/1526285" title="Galeria zdjęć (6)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226285" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226285','ekipa_skrocona1226285','ekipa1226285','ekipa_schowaj1226285','ekipa_schowaj_krotki1226285','ekipa_schowaj_pelny1226285','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226285" class="jslink" onclick="pzf('ekipa_skrocona1226285','ekipa_pelna1226285','ekipa1226285','ekipa_schowaj1226285','ekipa_schowaj_pelny1226285','ekipa_schowaj_krotki1226285','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226285"1226285" class="jslink" onclick="pzz('ekipa1226285','ekipa_schowaj1226285')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226285" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226285">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/115986">Stanisław Jaskułka</a></div><div class="ekipa_opis"> ratownik Mariusz</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/1134800">Marcin Kwaśny</a></div><div class="ekipa_opis"> Rafał Kocuj</div><div class="ekipa_osoba"><a href="index.php/1168104">Joanna Orleańska</a></div><div class="ekipa_opis"> Diana Sroka, kochanka Grzegorza</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1156098">Lidia Sadowa</a></div><div class="ekipa_opis"> Aneta, przyjaciółka Ewy</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div><div class="ekipa_osoba"><a href="index.php/1170342">Marlena Muranowicz</a></div><div class="ekipa_opis"> dziewczyna</div><div class="ekipa_osoba"><a href="index.php/1110712">Krzysztof Bochenek</a></div><div class="ekipa_opis"> właściciel pensjonatu</div><div class="ekipa_osoba"><a href="index.php/1118023">Janusz Kopiowski</a></div><div class="ekipa_opis"> mężczyzna; w napisach imię: Jan</div><div class="ekipa_osoba"><a href="index.php/1158994">Maja Bohosiewicz</a></div><div class="ekipa_opis"> dziewczyna</div><div class="ekipa_osoba"><a href="index.php/1144207">Monika Obara</a></div><div class="ekipa_opis"> kobieta z dzieckiem</div><div class="ekipa_osoba"><a href="index.php/1123230">Kajetan Wolniewicz</a></div><div class="ekipa_opis"> góral</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226285">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">W finale poprzedniego odcinka Ewa niespodziewanie wróciła do swojego warszawskiego mieszkania i zastała Grzegorza w łóżku z Dianą. Każe byłemu narzeczonemu wyprowadzić się z domu, po czym postanawia wrócić do Zakopanego. W Warszawie nie ma czego szukać. Jej najbliższa przyjaciółka, Diana jest teraz jej wrogiem. Facet ją zdradził, a w warszawskim oddziale gazety czyha na nią Rafał. Barbara wspiera córkę w jej zamiarach, w duchu dziękując za rozwój sprawy. Nigdy bowiem nie lubiła Grzegorza. Jędrek dzwoni do Barbary i powiadamia ją, że przyjechał do Warszawy. Marek nakłania Ewę do tego, aby zwolniła swoich pracowników, ale ona ich broni. Wraca do Zakopanego. Na imprezie urządzonej przez Biuro Reklamy dochodzi do konfrontacji pomiędzy Elizą a Ewą. Ewa wie, że Eliza nie spocznie, póki nie doprowadzi do jej wyjazdu z Zakopanego na dobre. Wychodzi wzburzona z knajpy. Za Ewą wybiega Bartek.</p><div class="galeria_mala"><a href="index.php?fotos=1626286_1&galeria=1526286"><img class="bezcienia" src="../z1/86i/26286_1.jpg" height="60"></a><a href="index.php?fotos=1626286_2&galeria=1526286"><img class="bezcienia" src="../z1/86i/26286_2.jpg" height="60"></a><a href="index.php?fotos=1626286_3&galeria=1526286"><img class="bezcienia" src="../z1/86i/26286_3.jpg" height="60"></a><a href="index.php?fotos=1626286_4&galeria=1526286"><img class="bezcienia" src="../z1/86i/26286_4.jpg" height="60"></a><a href="index.php?fotos=1626286_5&galeria=1526286"><img class="bezcienia" src="../z1/86i/26286_5.jpg" height="60"></a><a href="index.php?fotos=1626286_6&galeria=1526286"><img class="bezcienia" src="../z1/86i/26286_6.jpg" height="60"></a><a href="index.php?fotos=1626286_7&galeria=1526286"><img class="bezcienia" src="../z1/86i/26286_7.jpg" height="60"></a><a href="index.php/1526286" title="Galeria zdjęć (8)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226286" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226286','ekipa_skrocona1226286','ekipa1226286','ekipa_schowaj1226286','ekipa_schowaj_krotki1226286','ekipa_schowaj_pelny1226286','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226286" class="jslink" onclick="pzf('ekipa_skrocona1226286','ekipa_pelna1226286','ekipa1226286','ekipa_schowaj1226286','ekipa_schowaj_pelny1226286','ekipa_schowaj_krotki1226286','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226286"1226286" class="jslink" onclick="pzz('ekipa1226286','ekipa_schowaj1226286')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226286" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226286">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/116593">Maciej Kozłowski</a></div><div class="ekipa_opis"> Jędrek Skorupa</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/1134800">Marcin Kwaśny</a></div><div class="ekipa_opis"> Rafał Kocuj</div><div class="ekipa_osoba"><a href="index.php/1168104">Joanna Orleańska</a></div><div class="ekipa_opis"> Diana Sroka, kochanka Grzegorza</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1156098">Lidia Sadowa</a></div><div class="ekipa_opis"> Aneta, przyjaciółka Ewy</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226286">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+<li><div class="film_tech3">Odcinek dedykowany pamięci <a href="index.php/116593">Macieja Kozłowskiego</a>.</div></li>
+</ul>
+<p class="opis">Do Zakopanego przyjeżdża Grzegorz, aby prosić Ewę o wybaczenie. W pensjonacie Anieli zastaje Ewę całującą się z Bartkiem, mimo to stara się nakłonić byłą narzeczoną do powrotu. Ewa obnaża kłamstwa Elizy przed pracownikami i stara się, aby tym razem ich współpraca przebiegała bez zarzutów. Pracownicy nie wiedzą, która z nich kłamie. Przypadkiem Ewa odkrywa sekret Anieli. W konsekwencji tego właścicielka pensjonatu chce, aby Ewa wyprowadziła się. Dziewczyna nie daje za wygraną i zmusza Anielę do rozmowy - kobieta opowiada jej tragiczną historię swojej rodziny. Jej syn i mąż zginęli w wypadku w Nowym Jorku, gdy 11. września 2001 roku dokonano terrorystycznego zamachu. Ich ciał nigdy nie odnaleziono. Aniela wciąż żyje nadzieją, że oni wrócą.</p><div class="galeria_mala"><a href="index.php?fotos=1626418_1&galeria=1526418"><img class="bezcienia" src="../z1/18i/26418_1.jpg" height="60"></a><a href="index.php?fotos=1626418_2&galeria=1526418"><img class="bezcienia" src="../z1/18i/26418_2.jpg" height="60"></a><a href="index.php?fotos=1626418_3&galeria=1526418"><img class="bezcienia" src="../z1/18i/26418_3.jpg" height="60"></a><a href="index.php?fotos=1626418_4&galeria=1526418"><img class="bezcienia" src="../z1/18i/26418_4.jpg" height="60"></a><a href="index.php?fotos=1626418_5&galeria=1526418"><img class="bezcienia" src="../z1/18i/26418_5.jpg" height="60"></a><a href="index.php?fotos=1626418_6&galeria=1526418"><img class="bezcienia" src="../z1/18i/26418_6.jpg" height="60"></a><a href="index.php/1526418" title="Galeria zdjęć (6)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226418" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226418','ekipa_skrocona1226418','ekipa1226418','ekipa_schowaj1226418','ekipa_schowaj_krotki1226418','ekipa_schowaj_pelny1226418','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226418" class="jslink" onclick="pzf('ekipa_skrocona1226418','ekipa_pelna1226418','ekipa1226418','ekipa_schowaj1226418','ekipa_schowaj_pelny1226418','ekipa_schowaj_krotki1226418','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226418"1226418" class="jslink" onclick="pzz('ekipa1226418','ekipa_schowaj1226418')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226418" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226418">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/115986">Stanisław Jaskułka</a></div><div class="ekipa_opis"> ratownik Mariusz</div><div class="ekipa_osoba"><a href="index.php/116593">Maciej Kozłowski</a></div><div class="ekipa_opis"> Jędrek Skorupa</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1142105">Marcin Sitek</a></div><div class="ekipa_opis"> Sławek Walica, mąż Hanki</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div><div class="ekipa_osoba"><a href="index.php/1161696">Bożena Leśniewska</a></div><div class="ekipa_opis"> pacjentka</div><div class="ekipa_osoba">Bogusław Libera</div><div class="ekipa_opis"> góral pod Gubałówką</div><div class="ekipa_osoba"><a href="index.php/1111931">Dorota Piasecka</a></div><div class="ekipa_opis"> Cyganka</div><div class="ekipa_osoba"><a href="index.php/1162283">Maja Włodarczyk</a></div><div class="ekipa_opis"> turystka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226418">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Marek i Rafał, zaproszeni przez Elizę, przyjeżdżają do Zakopanego. Eliza stara się wywrzeć na nich jak najlepsze wrażenie, w tym celu przygotowuje napięty plan atrakcji zakopiańskich. Jednocześnie namawia pracowników do bojkotowania pracy, aby obniżyć wyniki. Chce tym skompromitować Ewę i spowodować jej zwolnienie. W Rafale znajduje doskonałego wspólnika swojego misternego planu zemsty. Ewa zostaje wystawiona na liczne próby skompromitowania i ośmieszenia, ale dzielnie towarzyszy jej i wspiera Bartek. Tymczasem Diana i Grzegorz przyjeżdżają do Zakopanego, aby błagać Ewę o wybaczenie. Ewa mówi Bartkowi, że rozstała się z Grzegorzem tym razem na pewno. Jadą razem do pensjonatu Anieli. Jednak gdy Bartek zastaje pod pensjonatem Grzegorza, bez słowa odjeżdża. Ewa ucieka od wszystkiego i decyduje się przenocować u Artura. On jest jedyną osobą, która wydaje się jej przyjazna. Aniela zaniepokojona zniknięciem Ewy dzwoni do Barbary.</p><div class="galeria_mala"><a href="index.php?fotos=1626419_1&galeria=1526419"><img class="bezcienia" src="../z1/19i/26419_1.jpg" height="60"></a><a href="index.php?fotos=1626419_2&galeria=1526419"><img class="bezcienia" src="../z1/19i/26419_2.jpg" height="60"></a><a href="index.php?fotos=1626419_3&galeria=1526419"><img class="bezcienia" src="../z1/19i/26419_3.jpg" height="60"></a><a href="index.php?fotos=1626419_4&galeria=1526419"><img class="bezcienia" src="../z1/19i/26419_4.jpg" height="60"></a><a href="index.php?fotos=1626419_5&galeria=1526419"><img class="bezcienia" src="../z1/19i/26419_5.jpg" height="60"></a><a href="index.php?fotos=1626419_6&galeria=1526419"><img class="bezcienia" src="../z1/19i/26419_6.jpg" height="60"></a><a href="index.php?fotos=1626419_7&galeria=1526419"><img class="bezcienia" src="../z1/19i/26419_7.jpg" height="60"></a><a href="index.php/1526419" title="Galeria zdjęć (14)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226419" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226419','ekipa_skrocona1226419','ekipa1226419','ekipa_schowaj1226419','ekipa_schowaj_krotki1226419','ekipa_schowaj_pelny1226419','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226419" class="jslink" onclick="pzf('ekipa_skrocona1226419','ekipa_pelna1226419','ekipa1226419','ekipa_schowaj1226419','ekipa_schowaj_pelny1226419','ekipa_schowaj_krotki1226419','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226419"1226419" class="jslink" onclick="pzz('ekipa1226419','ekipa_schowaj1226419')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226419" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226419">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/115986">Stanisław Jaskułka</a></div><div class="ekipa_opis"> ratownik Mariusz</div><div class="ekipa_osoba"><a href="index.php/116593">Maciej Kozłowski</a></div><div class="ekipa_opis"> Jędrek Skorupa</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/1134800">Marcin Kwaśny</a></div><div class="ekipa_opis"> Rafał Kocuj</div><div class="ekipa_osoba"><a href="index.php/1168104">Joanna Orleańska</a></div><div class="ekipa_opis"> Diana Sroka, kochanka Grzegorza</div><div class="ekipa_osoba"><a href="index.php/112872">Dorota Pomykała</a></div><div class="ekipa_opis"> Lucyna Skorupa, żona Jędrka</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div><div class="ekipa_osoba"><a href="index.php/1170125">Sławomir Zięba-Drzymalski</a></div><div class="ekipa_opis"> członek kapeli góralskiej</div><div class="ekipa_osoba"><a href="index.php/1121121">Józef Gąsienica Brzega</a></div><div class="ekipa_opis"> góral</div><div class="ekipa_osoba"><a href="index.php/1170124">Jan Chyc</a></div><div class="ekipa_opis"> góral</div><div class="ekipa_osoba"><a href="index.php/1170618">Tadeusz Kluś</a></div><div class="ekipa_opis"> członek kapeli góralskiej</div><div class="ekipa_osoba"><a href="index.php/1140856">Paweł Rosłon</a></div><div class="ekipa_opis"> góral; w napisach jedynie pseudonim "Blitz"</div><div class="ekipa_osoba">Edyta Furtak</div><div class="ekipa_opis"> kelnerka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226419">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Artur prowadzi Ewę na wycieczkę w góry. Uważa, że da jej to dystans do wszystkiego i trochę uspokoi jej nerwy. Podczas rozmowy z nim Ewa cały czas opowiada o swoich problemach z Bartkiem i Grzegorzem. Artur zniecierpliwiony jej wiecznym marudzeniem na jeden temat, mówi, że czasami też chciałby z nią porozmawiać o swoich kłopotach z facetami. Ewa domyśla się, że Artur jest gejem. Przysięga zachować tajemnicę. Tymczasem Barbara i Aniela dostrzegają Lucynę na Krupówkach. Ukryte za murem, słyszą, że Jędrek zniknął, a jego żona podejrzewa, że to sprawka tej "flądry" z Warszawy. Marek żąda wyjaśnień od Elizy w związku z tym, co ostatnio dzieje się w jej biurze. Eliza wykręca się i zrzuca winę za niedociągnięcia na Ewę i jej głupich pracowników. Po rozmowie z Patrykiem Marek domyśla się, że to raczej Eliza była powodem całego zamieszania w redakcji. Grzegorz nie doczekawszy się na Ewę, wraca do Warszawy. Eliza szukając możliwości zaszkodzenia Ewie, idzie do siedziby ratowników. Proponuje Bartkowi redagowanie kolumny w dzienniku "Tu i Teraz" i on zgadza się. Tymczasem Ewa i Artur wracają z gór. Ewa chce stawić czoło wszystkiemu i idzie na rozmowę z Markiem, Rafałem i Elizą. Jest przygotowana na to, że zostanie zwolniona. Jednak Marek podejmuje decyzję o zatrzymaniu Ewy i Elizy, ale żąda od Ewy zwolnienia pracowników - Wiki, Hanki, Patryka i Artura. Postanowiła, że nie będzie spotykać się na razie z żadnym mężczyzną, mimo to Ewa umawia się z Bartkiem.</p><div class="galeria_mala"><a href="index.php?fotos=1626473_1&galeria=1526473"><img class="bezcienia" src="../z1/73i/26473_1.jpg" height="60"></a><a href="index.php?fotos=1626473_2&galeria=1526473"><img class="bezcienia" src="../z1/73i/26473_2.jpg" height="60"></a><a href="index.php?fotos=1626473_3&galeria=1526473"><img class="bezcienia" src="../z1/73i/26473_3.jpg" height="60"></a><a href="index.php?fotos=1626473_4&galeria=1526473"><img class="bezcienia" src="../z1/73i/26473_4.jpg" height="60"></a><a href="index.php/1526473" title="Galeria zdjęć (4)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226473" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226473','ekipa_skrocona1226473','ekipa1226473','ekipa_schowaj1226473','ekipa_schowaj_krotki1226473','ekipa_schowaj_pelny1226473','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226473" class="jslink" onclick="pzf('ekipa_skrocona1226473','ekipa_pelna1226473','ekipa1226473','ekipa_schowaj1226473','ekipa_schowaj_pelny1226473','ekipa_schowaj_krotki1226473','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226473"1226473" class="jslink" onclick="pzz('ekipa1226473','ekipa_schowaj1226473')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226473" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226473">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1159574">Ewa Audykowska</a></div><div class="ekipa_opis"> barmanka Marysia</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/115986">Stanisław Jaskułka</a></div><div class="ekipa_opis"> ratownik Mariusz</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/1134800">Marcin Kwaśny</a></div><div class="ekipa_opis"> Rafał Kocuj</div><div class="ekipa_osoba"><a href="index.php/1168104">Joanna Orleańska</a></div><div class="ekipa_opis"> Diana Sroka, kochanka Grzegorza</div><div class="ekipa_osoba"><a href="index.php/112872">Dorota Pomykała</a></div><div class="ekipa_opis"> Lucyna Skorupa, żona Jędrka</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1147701">Filip Rojek</a></div><div class="ekipa_opis"> Eryk, barman w restauracji Jędrka</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226473">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Eliza kontynuuje swoją misję "uwolnienia" Zakopanego od Ewy i namawia Niedźwiedzia, żeby pomógł jej "wyrwać" Bartka z rąk tej dziewczyny. Ewa powiadamia pracowników, że Marek kazał ich zwolnić, jednocześnie prosi, aby zorganizowali dla niego podobną rozmowę kwalifikacyjną jak dla niej. W ramach pocieszenia zaprasza pracowników na przyjęcie do pensjonatu Anieli. Lucyna też się tam zjawia, bo szuka Jędrka. Oskarża Barbarę o zabranie jej męża. Marek i Ewa przeprowadzają casting na nowych pracowników. Marek orientuje się, że kandydaci zostali podstawieni, ale mimo to pozwala Ewie zatrzymać Wikę, Hankę, Patryka i Artura w swoim zespole. Jest to ich ostatnia szansa. Tymczasem Eliza przy pomocy swojej przyjaciółki, Anny i Niedźwiedzia knuje intrygę, w której Anna ma udawać dziewczynę Bartka. Bartek próbuje wytłumaczyć ukochanej, że nie zna tej kobiety, ale Ewa mu nie wierzy.</p><div class="galeria_mala"><a href="index.php?fotos=1626581_1&galeria=1526581"><img class="bezcienia" src="../z1/81i/26581_1.jpg" height="60"></a><a href="index.php?fotos=1626581_2&galeria=1526581"><img class="bezcienia" src="../z1/81i/26581_2.jpg" height="60"></a><a href="index.php?fotos=1626581_3&galeria=1526581"><img class="bezcienia" src="../z1/81i/26581_3.jpg" height="60"></a><a href="index.php?fotos=1626581_4&galeria=1526581"><img class="bezcienia" src="../z1/81i/26581_4.jpg" height="60"></a><a href="index.php?fotos=1626581_5&galeria=1526581"><img class="bezcienia" src="../z1/81i/26581_5.jpg" height="60"></a><a href="index.php?fotos=1626581_6&galeria=1526581"><img class="bezcienia" src="../z1/81i/26581_6.jpg" height="60"></a><a href="index.php?fotos=1626581_7&galeria=1526581"><img class="bezcienia" src="../z1/81i/26581_7.jpg" height="60"></a><a href="index.php/1526581" title="Galeria zdjęć (8)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226581" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226581','ekipa_skrocona1226581','ekipa1226581','ekipa_schowaj1226581','ekipa_schowaj_krotki1226581','ekipa_schowaj_pelny1226581','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226581" class="jslink" onclick="pzf('ekipa_skrocona1226581','ekipa_pelna1226581','ekipa1226581','ekipa_schowaj1226581','ekipa_schowaj_pelny1226581','ekipa_schowaj_krotki1226581','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226581"1226581" class="jslink" onclick="pzz('ekipa1226581','ekipa_schowaj1226581')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226581" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226581">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1118894">Renata Dancewicz</a></div><div class="ekipa_opis"> Anna, przyjaciółka Elizy</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/112872">Dorota Pomykała</a></div><div class="ekipa_opis"> Lucyna Skorupa, żona Jędrka</div><div class="ekipa_osoba"><a href="index.php/1147701">Filip Rojek</a></div><div class="ekipa_opis"> Eryk, barman w restauracji Jędrka</div><div class="ekipa_osoba"><a href="index.php/1120188">Tomasz Schimscheiner</a></div><div class="ekipa_opis"> Marek Stawski, szef Ewy</div><div class="ekipa_osoba"><a href="index.php/1140756">Grzegorz Stosz</a></div><div class="ekipa_opis"> Adam</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div><div class="ekipa_osoba"><a href="index.php/1170125">Sławomir Zięba-Drzymalski</a></div><div class="ekipa_opis"> członek kapeli góralskiej</div><div class="ekipa_osoba"><a href="index.php/1121121">Józef Gąsienica Brzega</a></div><div class="ekipa_opis"> członek kapeli góralskiej</div><div class="ekipa_osoba"><a href="index.php/1170124">Jan Chyc</a></div><div class="ekipa_opis"> członek kapeli góralskiej</div><div class="ekipa_osoba"><a href="index.php/1170618">Tadeusz Kluś</a></div><div class="ekipa_opis"> członek kapeli góralskiej</div><div class="ekipa_osoba"><a href="index.php/1159916">Łukasz Tatarek</a></div><div class="ekipa_opis"> Lolek</div><div class="ekipa_osoba"><a href="index.php/1170733">Mateusz Siedlecki</a></div><div class="ekipa_opis"> Bolek</div><div class="ekipa_osoba"><a href="index.php/1170734">Dawid Ozdoba</a></div><div class="ekipa_opis"> harnaś boy</div><div class="ekipa_osoba"><a href="index.php/1170735">Maciej Kuchta</a></div><div class="ekipa_opis"> harnaś boy</div><div class="ekipa_osoba"><a href="index.php/1150621">Adrian Woźny</a></div><div class="ekipa_opis"> konferansjer</div><div class="ekipa_osoba"><a href="index.php/115277">Jacek Czyż</a></div><div class="ekipa_opis"> góral</div><div class="ekipa_osoba"><a href="index.php/1148691">Magdalena Waligórska</a></div><div class="ekipa_opis"> seksbomba</div><div class="ekipa_osoba"><a href="index.php/1144207">Monika Obara</a></div><div class="ekipa_opis"> kobieta z dzieckiem</div><div class="ekipa_osoba"><a href="index.php/1158994">Maja Bohosiewicz</a></div><div class="ekipa_opis"> dziewczyna</div><div class="ekipa_osoba"><a href="index.php/1118023">Janusz Kopiowski</a></div><div class="ekipa_opis"> mężczyzna; w napisach imię: Jan</div><div class="ekipa_osoba"><a href="index.php/1149738">Marta Masłowska</a></div><div class="ekipa_opis"> turystka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226581">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>10</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2010</div></li>
+</ul>
+<p class="opis">Do biura gazety przychodzi Olga - żona Patryka. Oskarża Ewę, że Patryk za dużo pracuje i nie dostaje za to odpowiednich pieniędzy. Szczególnie nie ma go wieczorami. Żąda wyjaśnień, dlaczego Ewa tak wykorzystuje jej męża. Tymczasem Patryk odwiedza Andżelę - prostytutkę w agencji towarzyskiej, a żonę okłamuje, że późne powroty do domu spowodowane są pracą. Do biura przychodzi Bartek z bukietem kwiatów. Chce porozmawiać z Ewą, ale dochodzi do dosyć ostrej sprzeczki między zakochanymi. Słyszą to pracownicy biura i dochodzą do wniosku, że jednak między Bartkiem a Ewą musi być coś więcej, niż tylko przelotna znajomość. Nikt kto się nie kocha, nie kłóci się tak na zabój. Barbara przed wyjazdem do Warszawy prosi Ewę, żeby ta pomogła Anieli urządzić pogrzeb jej męża i syna. Aniela musi pożegnać się ze swoimi bliskimi, aby rozpocząć nowe życie. Rozmowa Ewy z Anielą jest bardzo emocjonalna, ale w końcu właścicielka pensjonatu zgadza się na symboliczny pogrzeb. Eliza, wciąż szukając okazji do zranienia Ewy, zaczyna interesować się Bartkiem.</p><div class="galeria_mala"><a href="index.php?fotos=1626582_1&galeria=1526582"><img class="bezcienia" src="../z1/82i/26582_1.jpg" height="60"></a><a href="index.php?fotos=1626582_2&galeria=1526582"><img class="bezcienia" src="../z1/82i/26582_2.jpg" height="60"></a><a href="index.php?fotos=1626582_3&galeria=1526582"><img class="bezcienia" src="../z1/82i/26582_3.jpg" height="60"></a><a href="index.php?fotos=1626582_4&galeria=1526582"><img class="bezcienia" src="../z1/82i/26582_4.jpg" height="60"></a><a href="index.php?fotos=1626582_5&galeria=1526582"><img class="bezcienia" src="../z1/82i/26582_5.jpg" height="60"></a><a href="index.php/1526582" title="Galeria zdjęć (5)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1226582" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1226582','ekipa_skrocona1226582','ekipa1226582','ekipa_schowaj1226582','ekipa_schowaj_krotki1226582','ekipa_schowaj_pelny1226582','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1226582" class="jslink" onclick="pzf('ekipa_skrocona1226582','ekipa_pelna1226582','ekipa1226582','ekipa_schowaj1226582','ekipa_schowaj_pelny1226582','ekipa_schowaj_krotki1226582','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1226582"1226582" class="jslink" onclick="pzz('ekipa1226582','ekipa_schowaj1226582')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1226582" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1226582">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1150118">Monika Fronczek</a></div><div class="ekipa_opis"> prostytutka Angela</div><div class="ekipa_osoba"><a href="index.php/1111251">Katarzyna Gniewkowska</a></div><div class="ekipa_opis"> Barbara Drawska, matka Ewy</div><div class="ekipa_osoba"><a href="index.php/1128127">Sylwia Juszczak</a></div><div class="ekipa_opis"> Olga Koliba, żona Patryka</div><div class="ekipa_osoba"><a href="index.php/1152715">Joanna Kulig</a></div><div class="ekipa_opis"> Wika Bura, współpracownica Ewy</div><div class="ekipa_osoba"><a href="index.php/1122347">Izabela Kuna</a></div><div class="ekipa_opis"> Eliza Morawska, redaktor naczelna pisma</div><div class="ekipa_osoba"><a href="index.php/1159295">Marcin Rogacewicz</a></div><div class="ekipa_opis"> Grzegorz Zwoliński, chłopak Ewy</div><div class="ekipa_osoba"><a href="index.php/1115803">Bartłomiej Topa</a></div><div class="ekipa_opis"> Janek Zaborowski "Niedźwiedź"</div><div class="ekipa_osoba">Sylwiusz Maciejewski</div><div class="ekipa_opis"> dresiarz</div><div class="ekipa_osoba"><a href="index.php/1161594">Michał Kasprzak</a></div><div class="ekipa_opis"> dresiarz</div><div class="ekipa_osoba"><a href="index.php/1170802">Agata Myśliwiec</a></div><div class="ekipa_opis"> laska</div><div class="ekipa_osoba"><a href="index.php/1170887">Zuzanna Paluch</a></div><div class="ekipa_opis"> laska</div><div class="ekipa_osoba"><a href="index.php/1160443">Dariusz Klimek</a></div><div class="ekipa_opis"> ksiądz</div><div class="ekipa_osoba"><a href="index.php/1110239">Lech Dyblik</a></div><div class="ekipa_opis"> właściciel zakładu pogrzebowego</div><div class="ekipa_osoba">Stanisław Malacina</div><div class="ekipa_opis"> nastolatek</div><div class="ekipa_osoba">Mateusz Kadzik</div><div class="ekipa_opis"> nastolatek</div><div class="ekipa_osoba">Tadeusz Stopka</div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba">Agata Wądrzyk</div><div class="ekipa_opis"> fryzjerka</div><div class="ekipa_osoba"><a href="index.php/1152974">Michał Kościuk</a></div><div class="ekipa_opis"> mężczyzna</div><div class="ekipa_osoba"><a href="index.php/1121301">Szymon Kuśmider</a></div><div class="ekipa_opis"> mężczyzna</div><div class="ekipa_osoba"><a href="index.php/11123314">Krzysztof Olszewski</a></div><div class="ekipa_opis"> ministrant; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1226582">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1226090" selected >1</option><option value="1226090_2">2</option><option value="1226090_3">3</option><option value="1226090_4">4</option><option value="1226090_5">5</option><option value="1226090_6">6</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1226090_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1226090_6"></a> 
+</nav><div id="czasgen">2026.05.08 04:40:32</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

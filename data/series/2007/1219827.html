@@ -1,0 +1,869 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - JA WAM POKAŻĘ</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>JA WAM POKAŻĘ</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1219827" selected >1</option><option value="1219827_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1219827_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1219827_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2007</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2007. 09. 02</div></li>
+<li><div class="film_tech3">Barwny, 13 odcinków x ok. 45 min</div></li>
+</ul><div class="galeria_mala"><a href="index.php?fotos=1619827_1&galeria=1519827"><img class="bezcienia" src="../z1/27i/19827_1.jpg" height="60"></a><a href="index.php?fotos=1619827_2&galeria=1519827"><img class="bezcienia" src="../z1/27i/19827_2.jpg" height="60"></a><a href="index.php?fotos=1619827_3&galeria=1519827"><img class="bezcienia" src="../z1/27i/19827_3.jpg" height="60"></a><a href="index.php?fotos=1619827_4&galeria=1519827"><img class="bezcienia" src="../z1/27i/19827_4.jpg" height="60"></a><a href="index.php/1519827" title="Galeria zdjęć (4)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219827" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219827','ekipa_skrocona1219827','ekipa1219827','ekipa_schowaj1219827','ekipa_schowaj_krotki1219827','ekipa_schowaj_pelny1219827','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219827" class="jslink" onclick="pzf('ekipa_skrocona1219827','ekipa_pelna1219827','ekipa1219827','ekipa_schowaj1219827','ekipa_schowaj_pelny1219827','ekipa_schowaj_krotki1219827','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219827"1219827" class="jslink" onclick="pzz('ekipa1219827','ekipa_schowaj1219827')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219827" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219827">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1121327">Denis Delić</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/113459">Sylwester Radzikowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156831">Ludwik Plater-Zyberk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/1142006">Grażyna Duda</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1135241">Katarzyna Grochola</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1131279">Tomasz Kępski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123826">Tomasz Kuzio</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1135216">Piotr Bujnowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1152016">Maciej Lisiecki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1133435">Michał Pruski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1125312">Artur Stankiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1151529">Marcin Boguszewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1128148">Paweł Skrobot</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1116476">Jerzy Grzywacz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156832">Kajetan Bogucki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1150221">Andrzej Kasparewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wózkarz</div><div class="ekipa_osoba"><a href="index.php/1124302">Paweł Dylik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1128242">Sebastian Frąc</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1157776">Dawid Lukić</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1156829">Aleksandra Kierzkowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/1135764">Grzegorz Jaśniak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156833">Konrad Bogdański</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1135413">Rafał Michalak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156834">Małgorzata Walczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126169">Beata Frankowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/1139688">Aleksandra Staszko</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1155635">Ewa Kania</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1130413">Monika Ugrewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156838">Luiza Szamałek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153600">Aneta Balińska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1125324">Grzegorz Daroń</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba"><a href="index.php/113481">Orkiestra Polskiego Radia</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyrygent</div><div class="ekipa_osoba"><a href="index.php/1125324">Grzegorz Daroń</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/114997">Zbigniew Zbrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Realizacja nagrań</div><div class="ekipa_osoba"><a href="index.php/1123134">Tadeusz Mieczkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dźwięk na planie</div><div class="ekipa_osoba"><a href="index.php/1118675">Paweł Łuczyc-Wyhowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1152987">Rafał Ronkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124544">Arkadiusz Wośkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1129897">Łukasz Rydzewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1149770">Aleksandra Zawrotniak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124908">Wojciech Chudziński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1140640">Paweł Sitkiewicz</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-3, 5, 7, 9, 11, 13</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1127197">Krzysztof Boroń</a></div><div class="ekipa_opis wyroznienie"> odcinki: 4, 6, 8, 10, 12</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1156298">Janusz Niedochodowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1139771">Anna Nobel-Nobielska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1133940">Adriana Klemenska</a></div><div class="ekipa_opis"> w napisach nazwisko: Klemeńska</div><div class="ekipa_osoba"><a href="index.php/1156799">Magdalena Kakietek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157775">Sylwia Dynerowicz</a></div><div class="ekipa_opis"> odcinki: 10-12</div></li>
+<li><div class="ekipa_funkcja">Obróbka graficzna</div><div class="ekipa_osoba"><a href="index.php/1157777">Sławomir Niedochodowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1135112">Piotr Bartuszek</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1151779">Agencja Merito</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1139321">Ewelina Kiliszek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1144329">Bartosz Rzepecki</a></div><div class="ekipa_opis"> w napisach imię: Bartłomiej</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/1156840">Krzysztof Karnicki</a></div><div class="ekipa_opis"> "Postprodukcja FilmGarden"</div></li>
+<li><div class="ekipa_funkcja">Tresura</div><div class="ekipa_osoba"><a href="index.php/1153164">Agata Kordos</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1122743">Janusz Filipek</a></div><div class="ekipa_opis"> szef</div><div class="ekipa_osoba"><a href="index.php/1156843">Wojciech Bludnik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156842">Bartek Brust</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1154278">Waldemar Kowalski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156841">Ksawery Miernowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156846">Zbigniew Piracki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156845">Tadeusz Kozak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156844">Marek Barach</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1156290">Jędrzej Pilarski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Redakcja</div><div class="ekipa_osoba"><a href="index.php/1116837">Hanna Probulska-Dzisiów</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114889">Wojciech Jędrkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118706">Anna Trzepańska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1136134">Małgorzata Kozioł</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1140405">Karolina Samojłowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1126428">Adam Zaręba</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111751">Alina Polańska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1110266">Anna Siemieniuk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156830">Jadwiga Dziuma</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1143168">Jakub Kowalski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/112611">Tomasz Bek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1156837">Andrzej Górzyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156836">Artur Jarosz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1156835">Hubert Ludwiczak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1146465">Joanna Pawluśkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1139754">Marzena Popławska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153270">Beata Święcicka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1157185">Patrycja Satkiewicz</a></div><div class="ekipa_opis"> odcinki: 10-12</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent wykonawczy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117371">Kajtek Kowalski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126870">Jacek Samojłowicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117371">Kajtek Kowalski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja wykonawcza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122857">Dzielnica Łacińska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1144331">Film Media</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis wyroznienie"> Judyta Kozłowska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis wyroznienie"> Tosia, córka Judyty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis wyroznienie"> Filip, chłopak Tosi</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis wyroznienie"> Adam, partner Judyty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis wyroznienie"> Hanna, matka Judyty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis wyroznienie"> Karol, ojciec Judyty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis wyroznienie"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis wyroznienie"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis wyroznienie"> Krzysztof, partner Uli</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis wyroznienie"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis wyroznienie"> pan Czesio</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis wyroznienie"> redaktor naczelny</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis wyroznienie"> Jagoda</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis wyroznienie"> Irenka, sekretarka redaktora naczelnego</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219827">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1121327">Denis Delić</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1135241">Katarzyna Grochola</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1131279">Tomasz Kępski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1123826">Tomasz Kuzio</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1156829">Aleksandra Kierzkowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1126169">Beata Frankowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/1125324">Grzegorz Daroń</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1140640">Paweł Sitkiewicz</a></div><div class="ekipa_opis"> odcinki: 1-3, 5, 7, 9, 11, 13</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1127197">Krzysztof Boroń</a></div><div class="ekipa_opis"> odcinki: 4, 6, 8, 10, 12</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1139771">Anna Nobel-Nobielska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/1135112">Piotr Bartuszek</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1118706">Anna Trzepańska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1136134">Małgorzata Kozioł</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent wykonawczy</div><div class="ekipa_osoba"><a href="index.php/1117371">Kajtek Kowalski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1126870">Jacek Samojłowicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1117371">Kajtek Kowalski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja wykonawcza</div><div class="ekipa_osoba"><a href="index.php/1122857">Dzielnica Łacińska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1144331">Film Media</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba">Telewizja Polska - Agencja Filmowa</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis"> Adam, partner Judyty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Pierwowzory<div class="sterowanie"><span id="pierwowzory_schowaj1219827" class="jslink" onclick="pzz1('pierwowzory1219827','pierwowzory_schowaj1219827')">schowaj</span></div></h2>
+<table id="pierwowzory1219827" class="varia_table">
+<tr><td colspan="2" class="varia_rodzaj">Pierwowzór</td></tr><tr><td colspan="2" class="varia_tytul">JA WAM POKAŻĘ!  
+      
+    </td></tr><tr><td colspan="2" class="varia_funkcja">Powieść</td></tr><tr><td class="varia_funkcja">Autor</td><td class="varia_osoba"><a href="index.php/1135241">Katarzyna Grochola</a></td></tr></table>
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj1219827" class="jslink" onclick="pzz1('varia1219827','varia_schowaj1219827')">pokaż</span></div></h2>
+<table id="varia1219827" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">IN A MANNER OF SPEAKING  
+    </td></tr><tr><td colspan="3" class="varia_opis"><strong>Tekst piosenki:</strong><br /> Nie mów mi za dużo, starczy kilka słów<br /> Każdy znak od ciebie czytam tak jak z nut<br /> Kiedy do mnie milczysz wszystko mówisz mi<br /> Kiedy mówisz duzo w głowie placza się<br /> Mysli co nie służa, ich nie moge zniesć<br /> Nie proś, nie zrozumiem - ja chcę czuć<br /> <br /> Ref:<br /> Nie, juz nie mów nic,<br /> Juz nie mów nic, co nic nie znaczy<br /> Nie, juz nie mów nic<br /> Nie, nie mów nic, co znaczy każda rzecz<br /> <br /> Nie chcę mówić dużo, nie znam tylu słów<br /> Mimo to wciaż mówię, mimo to wciaż jestem tu<br /> Nie musze pamiętać...<br /> Lubię zapach twoich kłamstw<br /> Więc kiedy mówisz dużo, wtedy uczę się<br /> Jak nie tracac głowy własne serce jesć<br /> Choć jak w srodku snu, w mej twarzy nie ma ust<br /> <br /> Ref:<br /> Nie, juz nie mów nic,<br /> Juz nie mów nic, co nic nie znaczy<br /> Nie, juz nie mów nic<br /> Nie, nie mów nic, co znaczy każdą rzecz<br /> <br /> Nie, juz nie mów nic,<br /> Juz nie mów nic, co nic nie znaczy<br /> Nie, juz nie mów mi<br /> Nie, nie mów mi, co znaczy wszystko</td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba">Tuxedomoon (zespół)</td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1119874">Jacek Sut</a></td><td class="varia_osoba_opis">tekst polski</td></tr>
+
+<tr><td class="varia_funkcja">Aranżacja  
+        </td><td class="varia_osoba"><a href="index.php/1125324">Grzegorz Daroń</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1115714">Edyta Jungowska</a></td><td class="varia_osoba_opis"></td></tr>
+</table>
+<h2>JA WAM POKAŻĘ w internecie</h2>
+<ul class="point">
+<li><a href="http://jawampokaze-serial.pl/pl/o-serialu/fabula/" target="_blank">Oficjalna strona serialu</a></li>
+</ul>
+
+<h2>Patrz także:<div class="sterowanie"><span id="klamry_schowaj1219827" class="jslink" onclick="pzz1('klamry1219827','klamry_schowaj1219827')">schowaj</span></div></h2>
+<ul class="klamry" id="klamry1219827">
+<li><div class="rok">2004</div><div class="tytul"><a href="index.php/1212511">NIGDY W ŻYCIU!</a></div><div class="wyroznik">Film fabularny / Ryszard Zatorski</div></li>
+<li><div class="rok">2006</div><div class="tytul"><a href="index.php/1215825">JA WAM POKAŻĘ!</a></div><div class="wyroznik">Film fabularny / Denis Delić</div></li>
+</ul>
+<div class="podzbior"><h1>1</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">46 min</div></li>
+</ul>
+<p class="opis">Poranek w domu Judyty, dzwoni budzik. Zaspana, ale szczęśliwa i zakochana wstaje jako pierwsza, szykuje śniadanie i pędzi do sklepu po świeże pieczywo dla ukochanego Adama i córki Tosi.
+Tego dnia w pracy (redakcja pisma "Inna") czeka na nią niemiła niespodzianka, ponieważ w gabinecie redaktora naczelnego siedzi naburmuszona matka z dzieckiem. Okazuje się, że jest to jedna z czytelniczek pisma, której Judyta udzieliła porady. Kobieta ma pretensje o to,  że zastosowała się do porad Judyty mówiących o tym, że "wspólne dziecko może cementować związek". W efekcie rozpadł się jej związek z mężem, który odszedł z inną. Naczelny próbuje załagodzić konflikt.
+Tosia (córka Judyty i Eksia) przychodzi na spotkanie z ojcem (byłym mężem Judyty), który jak zwykle nie ma dla niej czasu i daje jej pieniądze.
+Judyta wyjeżdża z Adamem na długi weekend nad morze, żeby wypocząć we dwoje. 
+Eksio spędza weekend na hazardowej grze w karty w klubie z kolegami. Jola (nowa żona Eksia) przy rodzinnym śniadaniu robi wymówki mężowi w związku z jego częstymi "służbowymi" wyjazdami. Zdenerwowana informuje, że nie jest jego służącą i od dziś nie będzie mu więcej prała i prasowała koszul. 
+Tosia prowadzi swojego chłopaka Filipa pod dom ojca i ostrzega go, że nigdy nie pozwoli Filipowi na to, żeby zostawił ją dla dwa razy młodszej kobiety, tak jak zrobił to jej ojciec. W tym czasie z domu wychodzi ojciec. Tosia z Filipem chowają się za drzewa i stają się świadkami czułego pożegnania Joli z Eksiem. Kiedy tylko Jola znika z pola widzenia Eksia, ten dzwoni do kolegów i umawia się na grę w karty. 
+Rodzice Judyty postanawiają odwiedzić córkę w jej domu. Nie wiedzą, że nikogo tam nie ma. Martwią się o nią tak, jakby nadal była małą dziewczynką. 
+Judyta z Adamem wybierają się do restauracji nad brzegiem morza, gdzie dosiada się do nich jakiś pan. Nieznajomy, jak się okazuje samotny i trochę nieszczęśliwy, jest niezwykle rozmowny więc mijają długie godziny, podczas których cała trójka pije wódkę. 
+Judyta z ukochanym wracają do kwatery, gdzie mimo skromnych warunków spędzają romantyczną noc.
+Tymczasem Tosia i Filip też spędzają romantyczny wieczór w domu Judyty pod jej nieobecność. Ula, sąsiadka i przyjaciółka Judyty obserwuje dom i postanawia, że powiadomi ją o amorach córki po powrocie.
+Rankiem szczęśliwi Judyta i Adam idą na spacer nad morze, gdzie w niezwykłej scenerii sieci rybackich nad brzegiem Bałtyku, Adam prosi Judytę o rękę. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219834" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219834','ekipa_skrocona1219834','ekipa1219834','ekipa_schowaj1219834','ekipa_schowaj_krotki1219834','ekipa_schowaj_pelny1219834','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219834" class="jslink" onclick="pzf('ekipa_skrocona1219834','ekipa_pelna1219834','ekipa1219834','ekipa_schowaj1219834','ekipa_schowaj_pelny1219834','ekipa_schowaj_krotki1219834','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219834"1219834" class="jslink" onclick="pzz('ekipa1219834','ekipa_schowaj1219834')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219834" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219834">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis"> Adam, partner Judyty</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1150222">Dominika Buczek</a></div><div class="ekipa_opis"> "metalówa" z dzieckiem</div><div class="ekipa_osoba"><a href="index.php/111156">Zbigniew Buczkowski</a></div><div class="ekipa_opis"> samotny mężczyzna w Sopocie</div><div class="ekipa_osoba"><a href="index.php/1137892">Tomasz Zaród</a></div><div class="ekipa_opis"> mecenas, przyjaciel Tomasza Kozłowskiego</div><div class="ekipa_osoba"><a href="index.php/1132823">Zbigniew Dziduch</a></div><div class="ekipa_opis"> dyrektor Zaleski, przyjaciel Tomasza   Kozłowskiego</div><div class="ekipa_osoba">Emilia Gołdyń</div><div class="ekipa_opis"> recepcjonistka</div><div class="ekipa_osoba"><a href="index.php/119233">Anna Majcher</a></div><div class="ekipa_opis"> kelnerka</div><div class="ekipa_osoba"><a href="index.php/1133416">Małgorzata Talarczyk</a></div><div class="ekipa_opis"> gospodyni Dreptułowa</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219834">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>2</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Adam po powrocie znad morza organizuje specjalną kolację, żeby w rodzinnym gronie z udziałem rodziców Judyty oraz jej córki Tosi oficjalnie poprosić ukochaną o rękę. Rodzice są zaskoczeni, a Tosi pomysł wyraźnie się nie podoba, bo ciągle liczy na to, że mama wróci do Eksia. Uroczysta kolacja zmienia się w rodzinne nieporozumienia. 
+Eksio właśnie wraca z "delegacji". Zaskoczony odkrywa, że w domu jest zupełnie pusto, nie ma Joli, dziecka, mebli i innych sprzętów. Żona odeszła z dzieckiem.
+Tosia dyskutując z Filipem o związkach i rozstaniach dochodzi do wniosku, że Filip nie jest dla niej odpowiednim partnerem, ponieważ hipotetycznie mógłby się spotykać z Ewką, jej koleżanką ze szkoły. Na nic zdają się zapewnienia Filipa, że Ewka mu się nie podoba. Obrażona Tosia odchodzi.
+Judyta dowiaduje się od córki, że Jola zostawiła Eksia. W redakcji jest trudna sytuacja finansowa więc naczelny  zapowiada redukcję etatów. Jedynym ratunkiem dla zwiększenia nakładu czasopisma i niedopuszczenia do zwolnień jest załączenie do czasopisma wyjątkowego i oryginalnego insertu. To zadanie zostaje powierzone Judycie, która awansuje na szefa działu reportażu.
+Judyta po powrocie z pracy informuje domowników o awansie. Adam też ma nowinę. Dostał propozycję wyjazdu do Ameryki na półroczne stypendium, o które starał się od kilku lat. Przerażona perspektywą rozstania z ukochanym Judyta udaje, że wszystko jest w porządku.
+Tosia pomaga ojcu sprzątać mieszkanie i prasować ubrania. Przy okazji mimochodem przekazuje wiadomość o wyjeździe Adama, dając Eksiowi do zrozumienia, że teraz powinien częściej odwiedzać samotną Judytę. 
+Przed domem Judyty pojawia się pan Czesio, jej sąsiad, który opowiada, że ostatnio odwiedziło go UFO. Twierdzi, że chcą go porwać do Ameryki. Pan Czesio dostaje od Judyty wyproszone 5 zł na "kanapkę".  
+W domu Adam szykuje się do wyjazdu. Sąsiadka Ula w rozmowie ze swoim mężem, zastanawia się czy Krzyś wyjechałby przed swoim ślubem, tak jak chce to zrobić Adam. Tymczasem Eksio odnajduje Jolę i na kolanach prosi ją, żeby do niego wróciła. Jola nie zmienia zdania. 
+Judyta urządza pożegnalny obiad dla Adama, zapraszając przyjaciół i rodzinę. W czasie obiadu jak zwykle dochodzi do nieporozumień rodzinnych.
+Judyta żegna się z Adamem. Oboje obiecują tęsknić, pisać i dzwonić do siebie. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219846" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219846','ekipa_skrocona1219846','ekipa1219846','ekipa_schowaj1219846','ekipa_schowaj_krotki1219846','ekipa_schowaj_pelny1219846','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219846" class="jslink" onclick="pzf('ekipa_skrocona1219846','ekipa_pelna1219846','ekipa1219846','ekipa_schowaj1219846','ekipa_schowaj_pelny1219846','ekipa_schowaj_krotki1219846','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219846"1219846" class="jslink" onclick="pzz('ekipa1219846','ekipa_schowaj1219846')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219846" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219846">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis"> Adam, partner Judyty</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219846">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>3</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Po wyjeździe Adama rodzice odwiedzają Judytę. Nie chcą, żeby ich córka znowu cierpiała przez kolejny nieudany związek. Judyta ma dość ich narzekań i stwierdza, że to przecież tylko pół roku. Judyta, nie mogąc sobie znaleźć miejsca w domu próbuje napisać e-maila do Adama, ale go nie wysyła, bo nie jest zdecydowana co napisać.
+Tosia z Eksiem spotykają się na wspólnym obiedzie i wybierają się na zakupy. Tosia martwi się o ojca, który jednak ma nadzieję, że wyprowadzka Joli jest tylko chwilowa. Tosia po maturze chce zdawać na psychologię, żeby w przyszłości naprawiać w związkach nieporozumienia, jakie dotknęły jej rodziców. 
+Naczelny, analizując wspólnie z Judytą badania nad rozwiedzionymi rodzinami zleca jej napisanie reportażu o przeżyciach rozwódki po rozstaniu. Przypomina też o wiszącym nad nią zadaniu znalezienia pomysłu na insert. 
+Dzięki pomysłowi Tosi Judyta w zadanym reportażu postanawia opisać swoje własne życie rozwódki. Naczelnemu podoba się tekst, ale uważa, że jest mało prawdopodobne, żeby mężczyzna mógł się tak zachować jak ten opisany w artykule. Nie wie, że Judyta napisała o Eksiu więc domaga się przerobienia artykułu tak, żeby rozwódka ułożyła sobie szczęśliwe życie z innym mężczyzną i pozostała w przyjaźni z byłym mężem. 
+Eksio odwozi Tosię do domu, gdzie spotykają się z Judytą. Eksio stara się być bardzo miły dla byłej żony, która podpytuje go o Jolę. Eksio odjeżdża i tradycyjnie umawia się na karty z kolegami.
+Judyta z pomocą przyjaciółki Uli robi porządki w domu, bo to jest najlepsze na chandrę i samotność. Tymczasem Tosia odkrywa wśród papierów listy od ojca - niektóre z nich są romantyczne, inne zaś pełne pretensji przypominają charakterem pozwy rozwodowe. 
+Tosia jest smutna z powodu kłótni z Filipem, który bierze sprawy w swoje ręce i przed szkołą trzyma transparent: "Kocham Tosię" i wyznaje jej miłość. Postawa Filipa sprawia, że dziewczyna wszystko mu wybacza. Zachęcani aplauzem innych uczniów, namiętnie całują się przed wejściem do szkoły, ale podchodzi do nich ochroniarz i zabrania takiego zachowania. Dochodzi do przepychanki, podczas której ochroniarz przewraca się i łamie rękę. Judyta zostaje wezwana do dyrektorki, Tosia zostaje zawieszona w prawach ucznia i nie wiadomo, czy zostanie dopuszczona do matury. W domu, w czasie kłótni Tosia krzyczy, że jest niewinna i ma żal, że Judyta nie jest po jej stronie. Tosia zamyka się w swoim pokoju i z nikim nie chce rozmawiać. Judyta w liście do Adama żali się, że od jego wyjazdu spadają na nią same kłopoty i nie wie, czy sobie poradzi z tym w pojedynkę. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219847" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219847','ekipa_skrocona1219847','ekipa1219847','ekipa_schowaj1219847','ekipa_schowaj_krotki1219847','ekipa_schowaj_pelny1219847','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219847" class="jslink" onclick="pzf('ekipa_skrocona1219847','ekipa_pelna1219847','ekipa1219847','ekipa_schowaj1219847','ekipa_schowaj_pelny1219847','ekipa_schowaj_krotki1219847','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219847"1219847" class="jslink" onclick="pzz('ekipa1219847','ekipa_schowaj1219847')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219847" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219847">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1135406">Michał Piela</a></div><div class="ekipa_opis"> Eugeniusz Bomba, woźny w liceum Tośki</div><div class="ekipa_osoba"><a href="index.php/114193">Ewa Złotowska</a></div><div class="ekipa_opis"> dyrektorka liceum Tośki</div><div class="ekipa_osoba"><a href="index.php/113415">Magdalena Celówna</a></div><div class="ekipa_opis"> pedagog w liceum Tośki</div><div class="ekipa_osoba"><a href="index.php/1157170">Dominika Hankiewicz</a></div><div class="ekipa_opis"> koleżanka Tośki</div><div class="ekipa_osoba"><a href="index.php/1157171">Malwina Buss</a></div><div class="ekipa_opis"> koleżanka Tośki</div><div class="ekipa_osoba"><a href="index.php/1157172">Aleksandra Nasiorowska</a></div><div class="ekipa_opis"> koleżanka Tośki</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219847">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>4</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">44 min</div></li>
+</ul>
+<p class="opis">Judyta powiadamia Eksia o sytuacji z Tosią, która w telefonicznej rozmowie z Filipem informuje go, że od teraz sprawą jej zawieszenia w prawach ucznia zajmie się ojciec. Pedagog i dyrektorka ze szkoły Tosi, podczas rozmowy z Eksiem wnioskują, że przyczyną agresji dziewczyny jest z pewnością rozpad małżeństwa rodziców. 
+Judyta i Eksio spotykają się w kawiarni, aby porozmawiać o córce. Zdenerwowana Judyta zamawia lampkę koniaku i wypija ją jednym tchem, co przez przypadek widzi siedząca tuż obok Pani Pedagog. Teraz dyrektorka i pedagog są pewne, że zachowanie Tosi to wynik problemów rodzinnych, rozwodu rodziców i pijaństwa matki. Postanawiają dać wychowance ostatnią szansę. Na wspólnym spotkaniu z rodzicami oznajmiają Tosi, że warunkowo przywrócą jej prawa ucznia, jeśli zorganizuje szkolne jasełka, a obydwoje rodziców będą w ciągłym kontakcie ze szkołą. Pozostawiona sama z Dyrektorką i Pedagog, Judyta wysłuchuje opinii na temat jej domniemanego alkoholizmu. 
+Wieczorem Tosia niezadowolona z faktu, że matka zarekwirowała jej telefon komórkowy, robi w domu awanturę. Judyta sugeruje, że to Filip ma zły wpływ na Tosię więc odebranie komórki ograniczy im kontakt. Tosia w złości zarzuca matce, że nie ma pojęcia o miłości i że tak naprawdę Adam jest gorszą kopią jej ojca. Nocą Judyta i Adam komunikują się przez pocztę elektroniczną. 
+Judyta przynosi naczelnemu poprawiony tekst o wesołej rozwódce. Niestety, tym razem artykuł jest dla niego zbyt prawdziwy więc prosi Judytę o kolejną korektę.
+Tosia spotyka się z ojcem, relacjonuje mu szczegółowo wydarzenia z walki ze szkolnym ochroniarzem. Skarży się, że matka skonfiskowała jej telefon. Eksio bez wahania oddaje jej jedną ze swoich komórek. 
+Filip zakrada się po linie do okna Tosi. Judyta przypadkowo znajduje się pod drzwiami pokoju córki, która oskarży matkę o podsłuchiwanie. Podczas ostrej wymiany zdań Tosia wyjawia, że komórkę dostała od ojca. Judyta jest wściekła, że Eksio nie przestrzega ich wspólnych ustaleń.
+Przychodzi wieczór i matka z córką dochodzą do porozumienia. Tosia żali się Judycie, że dyrektorka szkoły zagroziła Filipowi sprawą karną.
+Judyta postanawia spotkać się z Eksiem, Tosią i Filipem w kawiarni. Podczas oczekiwania na spóźnionego Filipa, Tosia opowiada rodzicom o trudnej sytuacji rodzinnej chłopca. Filip ma piątkę rodzeństwa, które sam wychowuje, jego ojciec płaci wysokie alimenty, ale nie interesuje się dziećmi, a matka umarła podczas porodu. Rodzice Tosi postanawiają poręczyć za Filipa u dyrekcji szkoły. 
+Tosia jadąc z matką autem informuje ją, że chce zrobić 18 urodziny w gronie rodzinnym. W tym samym momencie samochód łapie gumę, uderza w niego koparka i tworzy się korek. W bagażniku nie ma zapasowego koła. Dzwoni Eksio i mówi, ze zajmie się naprawą samochodu, choć Judyta nie jest zachwycona oferowaną przez niego pomocą.
+Tosia oświadcza Judycie, że na święta nie pojedzie do Adama. Ula radzi Judycie, żeby napisała Adamowi prawdę, że nie spędzą razem świąt.
+Tosia zaprasza ojca do domu Judyty na wspólny, rodzinny obiad. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219848" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219848','ekipa_skrocona1219848','ekipa1219848','ekipa_schowaj1219848','ekipa_schowaj_krotki1219848','ekipa_schowaj_pelny1219848','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219848" class="jslink" onclick="pzf('ekipa_skrocona1219848','ekipa_pelna1219848','ekipa1219848','ekipa_schowaj1219848','ekipa_schowaj_pelny1219848','ekipa_schowaj_krotki1219848','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219848"1219848" class="jslink" onclick="pzz('ekipa1219848','ekipa_schowaj1219848')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219848" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219848">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis"> Adam, partner Judyty</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/114193">Ewa Złotowska</a></div><div class="ekipa_opis"> dyrektorka liceum Tośki</div><div class="ekipa_osoba"><a href="index.php/113415">Magdalena Celówna</a></div><div class="ekipa_opis"> pedagog w liceum Tośki</div><div class="ekipa_osoba"><a href="index.php/1157170">Dominika Hankiewicz</a></div><div class="ekipa_opis"> koleżanka Tośki</div><div class="ekipa_osoba"><a href="index.php/1157171">Malwina Buss</a></div><div class="ekipa_opis"> koleżanka Tośki</div><div class="ekipa_osoba"><a href="index.php/1157172">Aleksandra Nasiorowska</a></div><div class="ekipa_opis"> koleżanka Tośki</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129661">Karolina Muszalak</a></div><div class="ekipa_opis"> Kasia, sekretarka Tomasza</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219848">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>5</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Eksio odwiedza Judytę, zwierza jej się z problemów małżeńskich z Jolą. Byłą żonę Eksia rozśmiesza propozycja przyjaźni, którą jej oferuje. Tosia widząc rozmawiających rodziców, wymyka się do Uli, która wyjaśnia nastolatce, że nie powinna wtrącać się w życie uczuciowe matki. Dziewczyny jednak to nie przekonuje, bo za wszelką cenę chce by rodzice się zeszli. Judyta, odprowadzając Eksia do furtki słyszy, że teraz będą się częściej spotykać - oczywiście dla dobra córki.
+Pan Czesio twierdzi, że UFO podgląda go z satelity. Chwali się też, że ma Internet, w którym może oglądać Murzynki i mulatki. Judyta jest przerażona. Czyżby pomyślała o Adamie, mulatkach i Murzynkach, które z pewnością mógłby spotkać będąc w Ameryce?
+Tosia odwiedza dziadka. Prosi go, aby przekonał mamę, żeby nie wyjeżdżała na święta do Adama. Ojciec Judyty dzwoni do matki i proponuje naradę w tej sprawie. 
+Judyta rozmawia z Ulą o mężczyznach. Wspomina także o rozmowie z Panem Czesiem i zauważa, że jego alkoholowe wizje w tajemniczy sposób przekładają się na wydarzenia mające miejsce w jej życiu.
+Samotny, zrozpaczony Eksio dzwoni do Joli i przekonuje ją, żeby spędzili wspólnie Święta Bożego Narodzenia. Jola jednak jest nieugięta.
+Następnego dnia Eksio przywozi z naprawy samochód Judyty. Wypytuje Tosię, czy mama zgodziła się na wspólne święta. Judyta dopiero teraz uświadamia sobie, że urodziny Tosi wypadają w Wigilię...
+Judyta spotyka się z Eksiem w kawiarni. Siadając przy stoliku zauważa jak obcy mężczyzna pokazuje kciukiem uznanie Eksiowi gratulując mu takiej kobiety. Eksio jest zmuszony zareagować, podchodzi do mężczyzny i wręcza mu banknot, tak by nie zauważyła tego Judyta. Następnie jednym uderzeniem zwala go na podłogę. Wieczorem, przy kieliszku wina Judyta przyznaje się Uli, że zaimponowało jej zachowanie byłego męża.
+Judyta na prośbę Eksia pomaga mu wybrać prezent na 18 urodziny córki. Przy okazji informuje go, że razem z Tosią wyjeżdżają na święta do Ameryki do Adama. 
+Tosia kasuje z laptopa matki listy od Adama. Chwilę później ogłasza strajk: nie będzie sprzątać, myć naczyń i ścielić łóżka - chyba że matka zmieni decyzję odnośnie wyjazdu. Judyta pisze e-maila do Adama, stara się go poinformować, że chyba nie przyjedzie, ale po chwili tchórzy, zmienia tekst  i na temat świąt nie pisze ani słowa.
+Filip przychodzi do Tosi, lokalizuje w komputerze groźnego wirusa, który niszczy pliki i zrywa połączenie Internetowe. Na prośbę Tosi kopiuje go na CD. 
+Do Judyty przyjeżdżają w odwiedziny rodzice i podczas wspólnej kolacji razem z Tosią, wymuszają na Judycie decyzję rezygnacji z wyjazdu do Ameryki.
+Dzwoni Adam, który mówi, że odlicza dni do przyjazdu ukochanej z córką. Judyta nie potrafi mu powiedzieć, że nie przyjedzie. Zrozpaczona nie może sobie znaleźć miejsca w domu. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219849" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219849','ekipa_skrocona1219849','ekipa1219849','ekipa_schowaj1219849','ekipa_schowaj_krotki1219849','ekipa_schowaj_pelny1219849','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219849" class="jslink" onclick="pzf('ekipa_skrocona1219849','ekipa_pelna1219849','ekipa1219849','ekipa_schowaj1219849','ekipa_schowaj_pelny1219849','ekipa_schowaj_krotki1219849','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219849"1219849" class="jslink" onclick="pzz('ekipa1219849','ekipa_schowaj1219849')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219849" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219849">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis"> Adam, partner Judyty</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba">Aneta Stokowska</div><div class="ekipa_opis"> ekspedientka</div><div class="ekipa_osoba"><a href="index.php/1133348">Roman Bugaj</a></div><div class="ekipa_opis"> facet w skórze</div><div class="ekipa_osoba">Mieszko Kubik</div><div class="ekipa_opis"> brat Filipa</div><div class="ekipa_osoba"><a href="index.php/1155271">Rafał Sierhej</a></div><div class="ekipa_opis"> brat Filipa</div><div class="ekipa_osoba"><a href="index.php/1157219">Dominika Sierhej</a></div><div class="ekipa_opis"> siostra Filipa</div><div class="ekipa_osoba">Miriam Laskowska</div><div class="ekipa_opis"> siostra Filipa</div><div class="ekipa_osoba">Adam Sobczyk</div><div class="ekipa_opis"> brat Filipa</div><div class="ekipa_osoba"><a href="index.php/1151183">Katarzyna Krzesińska</a></div><div class="ekipa_opis"> siostra Filipa</div><div class="ekipa_osoba"><a href="index.php/1137761">Iwona Rejzner</a></div><div class="ekipa_opis"> długonoga</div><div class="ekipa_osoba"><a href="index.php/1157222">Amanda Mrowiec</a></div><div class="ekipa_opis"> długonoga</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1168417">Hanna Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219849">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>6</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">45 min</div></li>
+</ul>
+<p class="opis">Naczelny w końcu akceptuje artykuł Judyty na temat wesołej rozwódki, ale tekst zostanie umieszczony dopiero na piątej kolumnie. Agnieszka, kuzynka Judyty, prosi ją, żeby zaopiekowała się przez kilka dni jej nieletnim synem Piotrusiem. 
+Judyta wychodzi z redakcji, żeby spotkać się z Agnieszką. Jej nieobecność kryje niezadowolona z tego Jagoda. Jednak naczelny wzywa Judytę do gabinetu. Prosi ją o wyjaśnienie nieobecności i przypomina, że minął już termin przedstawienia pomysłu na insert.
+Judyta kolejny raz próbuje napisać e-maila do Adama, że nie przyjedzie, ale nie potrafi go właściwie zredagować.
+Ula dyskutuje z Krzysiem na temat artykułu przeczytanego w "Innej" na temat kłamstwa. Jej mąż uważa, że kłamstwo ma krótkie nogi i prędzej czy później wyjdzie na jaw. Ula jednak sądzi, że są sytuacje, kiedy można kłamać mając dobre intencje. 
+Naczelny gratuluje Judycie świetnego artykułu o "Wesołej Rozwódce" i przyznaje, że umieszczenie go na piątej kolumnie nie było dobrym pomysłem. Podkreśla, że do redakcji przyszła duża ilość listów od czytelników (wręcza ją Judycie). 
+Judyta odbiera z dworca Piotrusia i przyjeżdża do domu. Jest zdziwiona widokiem umazanego we krwi Filipa, który odcina misiowi mieczem głowę. To Tosia ćwiczy z Filipem w roli Heroda scenę z Jasełek.
+Jest sobota. Judyta wychodzi do pracy i prosi Tosię, żeby pilnowała Piotrusia. Podczas jej nieobecności Filip, Piotruś i Tosia ćwiczą kolejną scenę do Jasełek. Wchodzi pan Czesio, który na polecenie Judyty dogląda dzieci.
+Judyta wracając późną nocą do domu spotyka pana Czesia, ale nie chce z nim rozmawiać,  bo boi się jego kolejnych wizji.
+Judyta dzwoni do Adama, ale słyszy w słuchawce, że abonent jest poza zasięgiem. 
+Piotruś pomaga Tosi w usuwaniu elektronicznej poczty z komputera Judyty, w zamian dostaje rolę w szkolnych Jasełkach. 
+Judyta z pomocą Uli redaguje wiadomość do Adama. Piszą, że Judyta nie przyjedzie, ponieważ musi spędzić święta z całą rodziną i z bardzo chorym wujkiem Stachem, dla którego mogą to być ostatnie święta. W trakcie wielokrotnego poprawiania tekstu, wiadomość niechcący zostaje wysłana. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219850" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219850','ekipa_skrocona1219850','ekipa1219850','ekipa_schowaj1219850','ekipa_schowaj_krotki1219850','ekipa_schowaj_pelny1219850','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219850" class="jslink" onclick="pzf('ekipa_skrocona1219850','ekipa_pelna1219850','ekipa1219850','ekipa_schowaj1219850','ekipa_schowaj_pelny1219850','ekipa_schowaj_krotki1219850','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219850"1219850" class="jslink" onclick="pzz('ekipa1219850','ekipa_schowaj1219850')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219850" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219850">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis"> Adam, partner Judyty</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba">Maksymilian Pawłowski</div><div class="ekipa_opis"> Piotrek Hański, siostrzeniec Judyty</div><div class="ekipa_osoba"><a href="index.php/1115284">Katarzyna Trzcińska</a></div><div class="ekipa_opis"> Agnieszka Hańska, kuzynka Judyty, matka  Piotrka</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba">Tomasz Worobiej</div><div class="ekipa_opis"> redaktor</div><div class="ekipa_osoba"><a href="index.php/1140602">Magdalena Karel</a></div><div class="ekipa_opis"> kelnerka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219850">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>7</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Judyta spotyka rodziców w centrum handlowym podczas świątecznych zakupów. Każde z nich robi zakupy osobno w tajemnicy przed sobą wzajemnie.
+Tosia z Filipem jeżdżą na łyżwach po lodowisku. Tosia przekonuje chłopaka, żeby przyszedł do nich na święta, ale on odmawia, ponieważ spędzi je z rodzeństwem. 
+Eksio ubiera choinkę w swoim pustym domu. Jest mu przykro, że zostaje sam na święta.
+Tymczasem Agnieszka razem z mężem wyjeżdża na kilka miesięcy do Londynu i prosi Judytę, żeby znowu zajęła się Piotrusiem. Judyta z niechęcią ulega.
+Eksio przychodzi do Joli w nadziei, że ta zgodzi się spędzić z nim wspólne święta. Jednak Jola postanawia wyjechać na ten czas do Krakowa do rodziców.
+Judyta proponuje naczelnemu talon na karpia jako insert, ale pomysł nie zyskał aprobaty więc bohaterka musi wymyślić coś innego.
+Dzwoni Adam. Judyta cieszy się, że Adam rozumie, że nie będą mogli zobaczyć się w święta. 
+W redakcji odbywa się uroczysta Wigilia. Filip z Tosią i z Piotrusiem w sklepie z zabawkami wybierają prezenty dla jego rodzeństwa. 
+Judyta, wychodząc z pracy spotyka w korytarzu matkę z dzieckiem, która kilka miesięcy wcześniej miała pretensje, że przez porady Judyty rozpadł się jej związek. Tym razem kobieta dziękuje jej za tamte słowa. Okazuje się, że mąż wrócił do rodziny, a dziecko jest jej największym życiowym sukcesem. 
+Filip wręcza Tosi zestaw krótkofalówek, dzięki nim będą zawsze w kontakcie..
+Trwają przygotowania do Wigilii. Tosia z Ojcem ubierają choinkę. Gościem honorowym rodziny jest ciocia Hania z Anglii. 
+Trwa Wigilia, wszyscy rozdają sobie prezenty. Tosia widząc uradowanego Eksia i zadowoloną mamę chowa przed nią telefon komórkowy, żeby Adam nie przerwał tej sielanki.  Adam dzwoni na telefon domowy. Odbiera Eksio. W głosie Adama słychać żal i zaskoczenie jego obecnością. Judyta tłumaczy się, dlaczego święta spędza w domu, a nie u wuja Stacha, jak mu pisała. Połączenie się urywa. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219851" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219851','ekipa_skrocona1219851','ekipa1219851','ekipa_schowaj1219851','ekipa_schowaj_krotki1219851','ekipa_schowaj_pelny1219851','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219851" class="jslink" onclick="pzf('ekipa_skrocona1219851','ekipa_pelna1219851','ekipa1219851','ekipa_schowaj1219851','ekipa_schowaj_pelny1219851','ekipa_schowaj_krotki1219851','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219851"1219851" class="jslink" onclick="pzz('ekipa1219851','ekipa_schowaj1219851')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219851" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219851">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba">Maksymilian Pawłowski</div><div class="ekipa_opis"> Piotrek Hański, siostrzeniec Judyty</div><div class="ekipa_osoba"><a href="index.php/1115284">Katarzyna Trzcińska</a></div><div class="ekipa_opis"> Agnieszka Hańska, kuzynka Judyty, matka  Piotrka</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/112243">Zofia Merle</a></div><div class="ekipa_opis"> Hania, ciotka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1150222">Dominika Buczek</a></div><div class="ekipa_opis"> "metalówa" z dzieckiem; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219851">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>8</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Przedstawienie Tosi w szkole odniosło sukces, wszyscy są zachwyceni. Szczęśliwa Tosia chce wspólnie z rodzicami uczcić swój debiut reżyserski w domu. Ojciec jednak ku rozpaczy Tosi z przykrością stwierdza, że musi jechać na ważne biznesowe spotkanie. W rzeczywistości jedzie na dworzec kolejowy  po Jolę. 
+Tosia odkrywa w skrytce pocztowej list Adama do Judyty. Ukrywa go w regale z książkami. 
+Eksio błaga Jolę, żeby do niego wróciła, mówi, że dziecko powinno mieć ojca. Jola znowu odmawia i informuje Eksia, że rozpoczyna pracę i do póki się nie urządzi syn zostanie z jej rodzicami w Krakowie. Eksio oferuje pomoc w remoncie mieszkania.
+Judyta dostaje od naczelnego ostateczny termin (do następnego dnia) na przedstawienie propozycji insertu.
+W domu Piotruś próbuje naprawić pocztę e-mailową Judyty, przy okazji ogląda w internetowym sklepie zoologicznym egzotyczne zwierzęta (gekony, legwany itp.). Namawia ciotkę, żeby dała mu pieniądze na zwierzątko. Judyta kategorycznie odmawia więc małolat nie do końca uruchamia pocztę licząc, że ciotka się złamie.
+Judyta stara się wysłać Adamowi e-maila, ale Internet nadal nie działa.
+Piotruś z Tosią wracają razem ze szkoły. Tosia po raz kolejny odbiera listy od Adama i chowa je do kieszeni, upewniając się, żeby Piotruś tego nie widział.
+Judyta prosi małolata o naprawę swojego komputera. Piotruś podłącza pendrive z programem antywirusowym, naprawia urządzenie i instruuje ciotkę jak ma usunąć wirusy z komputera w pracy. Judyta jest zachwycona funkcjami przenośnego dysku. Piotruś podarowuje go jej w prezencie wraz ze smyczą i prosi, żeby nosiła go cały czas przy sobie. Mija termin podania przez Judytę pomysłu na insert. Judyta dotykając przypadkowo smyczy z pendrivem desperacko przedstawia swoją propozycję insertu, którym ma być właśnie pendrive (zwany przez nią wkładadełkiem). Długo tłumaczy zaletę swojego pomysłu. W końcu wątpliwości naczelnego co do funkcjonalności i zainteresowania czytelników urządzeniem zostają rozwiane. Szef uznaje pomysł z wkładadełkiem za fantastyczny.
+Tymczasem w redakcji pojawia się tajemnicza postać z małym pieskiem i cały czas przesiaduje w gabinecie naczelnego. 
+Tosia z Filipem oglądają w kinie scenę romantycznego ślubu zawartego w warunkach wojennych. Tosia uważa, że rodzice żałują swojej decyzji dotyczącej rozstania. Twierdzi, że trzeba im troszeczkę pomóc, żeby mogli być znowu razem. Filip odradza dziewczynie wtrącania się w sprawy dorosłych. 
+Pan Czesio pod nieobecność Judyty przynosi list polecony z Ameryki i przekazuje go Tosi. Dziewczyna ukrywa list wśród pozostałych przesyłek Adama, następnie kasuje z laptopa matki nowe e-maile.
+Tajemniczą postacią w redakcji okazuje się nowy naczelny - Artur Kochasz, który swoją pracę zaczyna od cenzury prowadzonej korespondencji elektronicznej ze służbowych komputerów. Judyta poznaje go, kiedy znikają z jej poczty wszystkie prywatne e-maile. 
+Judyta z biura dzwoni do Adama, w hotelowym pokoju Adama telefon odbiera sprzątaczka co wywołuje niepokój Judyty. 
+Judyta stara się dowiedzieć od naczelnego, kim jest i co właściwie tu robi. Okazuje się, że jego nominacja to nagroda za genialny insert. Wydawnictwo postanowiło nagrodzić Kochasza za pomysł pendrive. Judyta nie może tego zrozumieć, bo to przecież był jej pomysł więc postanawia walczyć o swoje prawa autorskie.
+Judyta dostaje od Adama niepokojącą wiadomość: "Musimy się zastanowić nad przyszłością naszego związku". Zrozpaczona Judyta chce natychmiast wyjaśnić nieporozumienie, ale zabezpieczenia komputerowe założone przez Kochasza w biurze nie pozwalają jej wysłać e-maila. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219852" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219852','ekipa_skrocona1219852','ekipa1219852','ekipa_schowaj1219852','ekipa_schowaj_krotki1219852','ekipa_schowaj_pelny1219852','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219852" class="jslink" onclick="pzf('ekipa_skrocona1219852','ekipa_pelna1219852','ekipa1219852','ekipa_schowaj1219852','ekipa_schowaj_pelny1219852','ekipa_schowaj_krotki1219852','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219852"1219852" class="jslink" onclick="pzz('ekipa1219852','ekipa_schowaj1219852')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219852" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219852">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba">Maksymilian Pawłowski</div><div class="ekipa_opis"> Piotrek Hański, siostrzeniec Judyty</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div class="ekipa_osoba"><a href="index.php/114354">Paweł Królikowski</a></div><div class="ekipa_opis"> redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1157628">Angelika Gajdanowicz</a></div><div class="ekipa_opis"> sekretarka w redakcji</div><div class="ekipa_osoba"><a href="index.php/114193">Ewa Złotowska</a></div><div class="ekipa_opis"> dyrektorka liceum Tośki</div><div class="ekipa_osoba"><a href="index.php/113415">Magdalena Celówna</a></div><div class="ekipa_opis"> pedagog w liceum Tośki</div><div class="ekipa_osoba"><a href="index.php/11238">Hanna Stankówna</a></div><div class="ekipa_opis"> pani Welczas</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/11100">Tadeusz Szymków</a></div><div class="ekipa_opis"> Artur Kochasz, nowy redaktor naczelny; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219852">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>9</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Judyta przygnębiona przychodzi do Uli i żali się, że nie rozumie zachowania Adama, cała sytuacja jest dla niej niejasna. 
+W redakcji na zebraniu Kochasz podkreśla potrzebę rozwoju czasopisma, mówi o sukcesie insertu. Judyta jest wściekła z powodu pominięcia jej jako głównej pomysłodawczyni insertu. Nowy naczelny szuka rozwiązania, które mogłoby jeszcze zwiększyć nakład. Irenka wymyśla nowy dział w czasopiśmie - modę pogrzebową. 
+Judyta wychodząc do pracy prosi Tosię, żeby odebrała ze szkoły Piotrusia. Tosia mając w perspektywie popołudniowe spotkanie z ojcem, daje małolatowi klucze do domu pod warunkiem, że nikomu o tym nie powie. 
+W redakcji Kochasz prosi o spotkanie z Judytą.
+Tosia nadal knując swoją intrygę przekonuje ojca, że powinien wpaść do nich na niedzielny obiad. Mówi, że skoro ojciec jest sam i mama jest sama, to powinni częściej się spotykać. 
+Naczelny na zebraniu w redakcji wspomina o niedocenianych i niedostrzeganych pracownikach, ma na myśli Irenkę, którą awansuje na swoją asystentkę. Podczas zebrania sekretarka informuje Judytę, że dzwonili z policji, bo jej dziecko zostało aresztowane. Judyta jedzie na komisariat, gdzie okazuje się, że został aresztowany Piotruś za jazdę tramwajem bez ważnego biletu i legitymacji.
+Judyta za namową Uli ćwiczy jogę, żeby się odstresować po wizycie na komisariacie. 
+Judyta zostaje wezwana do szkoły Piotrusia. Pani Welczas, wychowawczyni dziecka wyciąga wniosek, że skoro przychodzi po niego ciotka a rodzice są za granicą, to jest zaniedbywany i zdemoralizowany. Nauczycielka ma na myśli koszulki z napisami, w których Piotruś przychodzi do szkoły np.: "Będę księdzem, tak jak mój ojciec". 
+Tosia pyta się Filipa jak radzi sobie z piątką rodzeństwa, ponieważ ona zupełnie nie wie jak postępować z Piotrusiem. Rozmawiając przechodzą do tematu ojca Tosi. Tosia ma nadzieję, że ojciec znowu będzie mieszkał z nimi. Filip pyta, co z Adamem. Dziewczyna stwierdza, że Adam rozstał się z jej matką. 
+Eksio nadzoruje remont u Joli. Eksio montuje zmywarkę, rozmawiając z pluszowym smokiem o zaletach zmywarki, Jola przez przypadek słyszy słowa:  "jeszcze trochę popracuję nad nią i będzie zmywać i szorować". Eksio przekazuje Joli wyremontowane mieszkanie. Jola po tym, co wcześniej usłyszała przekonuje go, że jemu potrzebna jest gosposia a nie żona. Nie chce słyszeć o ponownym wspólnym życiu. Eksio poddaje się.
+Judyta i Tosia robią porządki. Tosia czyta list Judyty do czytelniczki, dotyczący miłych chwil w małżeństwie. Tosia pyta matkę, czy pamięta jakieś wspaniałe chwile z jej tatą. Judyta z rozczuleniem opowiada jej o takich chwilach, ale jednocześnie daje do zrozumienia córce, że to tylko wspomnienia i nie ma do nich powrotu. [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219853" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219853','ekipa_skrocona1219853','ekipa1219853','ekipa_schowaj1219853','ekipa_schowaj_krotki1219853','ekipa_schowaj_pelny1219853','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219853" class="jslink" onclick="pzf('ekipa_skrocona1219853','ekipa_pelna1219853','ekipa1219853','ekipa_schowaj1219853','ekipa_schowaj_pelny1219853','ekipa_schowaj_krotki1219853','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219853"1219853" class="jslink" onclick="pzz('ekipa1219853','ekipa_schowaj1219853')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219853" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219853">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba">Maksymilian Pawłowski</div><div class="ekipa_opis"> Piotrek Hański, siostrzeniec Judyty</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/1147641">Anna Prus</a></div><div class="ekipa_opis"> Jolka, partnerka Tomasza</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div class="ekipa_osoba"><a href="index.php/11100">Tadeusz Szymków</a></div><div class="ekipa_opis"> Artur Kochasz, nowy redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1157628">Angelika Gajdanowicz</a></div><div class="ekipa_opis"> sekretarka w redakcji</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/11708">Ryszard Jabłoński</a></div><div class="ekipa_opis"> policjant</div><div class="ekipa_osoba"><a href="index.php/1125361">Izabela Dąbrowska</a></div><div class="ekipa_opis"> kobieta na policji</div><div class="ekipa_osoba"><a href="index.php/11238">Hanna Stankówna</a></div><div class="ekipa_opis"> pani Welczas</div><div class="ekipa_osoba"><a href="index.php/111829">Henryk Gołębiewski</a></div><div class="ekipa_opis"> robotnik Zdzisio</div><div class="ekipa_osoba"><a href="index.php/116">Jerzy Braszka</a></div><div class="ekipa_opis"> robotnik Jerzy</div><div class="ekipa_osoba"><a href="index.php/1119916">Radosław Krzyżowski</a></div><div class="ekipa_opis"> Adam, partner Judyty; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219853">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>10</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Kochasz proponuje Judycie lunch, ale Judyta odmawia. 
+Ojciec Judyty namawia matkę, żeby przeprowadziła się do niego, ale ona mówi, że bez ślubu nie będzie mieszkać z żadnym mężczyzną. Ojciec proponuje zatem wizytę i prosi żeby została jego żoną i nie mówiła o niczym ich córce. 
+Kochasz postanawia odwiedzić Judytę w domu, gdzie wręcza jej olbrzymi bukiet róż. 
+Tosia odwiedza ojca, którego zastaje leżącego na kanapie z pustą butelką po whisky. Dziewczyna daje do zrozumienia, że jej matka też jest bardzo samotna. 
+Kochaszowi bardzo podoba się dom Judyty, pyta czy został w całości urządzony przez Judytę i jej męża. Jutka zaprzecza mówiąc, że dom urządziła z córką. Robi się wieczór i Kochasz opuszcza dom Judyty. Jutka lituje się nad nowym naczelnym i odwozi go do domu.
+Do domu przychodzi Tosia, Piotruś informuje ją o nowym kochanku ciotki (chodzi o Kochasza). Tosia nie chce słuchać. 
+Ula zaczepia wracającą do domu Judytę. Pokazuje przyjaciółce obrazki dzieci niepełnosprawnych i mówi, że szuka patrona medialnego oraz sali na wystawę. Judyta podsuwa pomysł, żeby to jej gazeta objęła patronat nad wystawą, a Kochasz ma do niej słabość i na pewno się zgodzi..
+Judyta wraca do domu, w drzwiach spotyka wściekłą Tosię która krzyczy: "Ty mi więcej nie mów o moralności". Judyta zbulwersowana zachowaniem Tosi. Zasypia nad laptopem, na ekranie brak nowych wiadomości. 
+Judyta wchodzi do biura, w korytarzu spotyka Kochasza i Irenkę, jest spóźniona 15 minut. Prosi Kochasza o spotkanie w sprawie patronatu wystawy.
+Judyta po pracy wpada do ojca i pyta czy nie ma przez przypadek jakiś znajomych w telewizji, bo potrzebuje wsparcia medialnego do wystawy. Przypadkiem zauważa, że jest u niego bardzo czysto, podejrzewa, że ma kogoś do sprzątania, kiedy znajduje na fotelu damski szlafrok jest przekonana, że ojciec kogoś ma.
+Odwiedzając Ulę, opowiada o swoich spostrzeżeniach dotyczących ojca i zastanawia się czy powiedzieć matce o swoich podejrzeniach. 
+Judyta odwiedza matkę, zauważa, leżąca na wierzchu męską koszulę. Rozmawiając kolejny raz z Ulą przyznaje się, że sytuacja z rodzicami ją przerasta.
+W domu dzwoni  telefon, Tosia przekazuje matce słuchawkę mówiąc, że "to ten twój". Judyta  jest tak podekscytowana telefonem Adama, że nie pozwala mu dojść do słowa. Jednak po drugiej stronie kabla jest Kochasz, który nie może wydusić z siebie żadnego słowa słysząc wyznania miłosne Jutki. Zdezorientowana Tosia słysząc monolog matki, uświadamia jej, że wyznała miłość Kochaszowi. Rozhisteryzowana Judyta nie może uwierzyć... [TVP]</p>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1219854" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1219854','ekipa_skrocona1219854','ekipa1219854','ekipa_schowaj1219854','ekipa_schowaj_krotki1219854','ekipa_schowaj_pelny1219854','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1219854" class="jslink" onclick="pzf('ekipa_skrocona1219854','ekipa_pelna1219854','ekipa1219854','ekipa_schowaj1219854','ekipa_schowaj_pelny1219854','ekipa_schowaj_krotki1219854','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1219854"1219854" class="jslink" onclick="pzz('ekipa1219854','ekipa_schowaj1219854')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1219854" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1219854">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1115714">Edyta Jungowska</a></div><div class="ekipa_opis"> Judyta Kozłowska</div><div class="ekipa_osoba"><a href="index.php/1150518">Julia Kamińska</a></div><div class="ekipa_opis"> Tosia, córka Judyty</div><div class="ekipa_osoba"><a href="index.php/1148787">Tomasz Wlaziński</a></div><div class="ekipa_opis"> Filip, chłopak Tosi</div><div class="ekipa_osoba">Maksymilian Pawłowski</div><div class="ekipa_opis"> Piotrek Hański, siostrzeniec Judyty</div><div class="ekipa_osoba"><a href="index.php/1114853">Tomasz Sapryk</a></div><div class="ekipa_opis"> Tomasz Kozłowski, były mąż Judyty</div><div class="ekipa_osoba"><a href="index.php/11929">Krzysztof Kowalewski</a></div><div class="ekipa_opis"> Karol, ojciec Judyty</div><div class="ekipa_osoba"><a href="index.php/111924">Marta Lipińska</a></div><div class="ekipa_opis"> Hanna, matka Judyty</div><div class="ekipa_osoba"><a href="index.php/1111601">Aleksandra Konieczna</a></div><div class="ekipa_opis"> Ula, przyjaciółka Judyty</div><div class="ekipa_osoba"><a href="index.php/1122859">Waldemar Błaszczyk</a></div><div class="ekipa_opis"> Krzysztof, partner Uli</div><div class="ekipa_osoba"><a href="index.php/1114668">Andrzej Grabowski</a></div><div class="ekipa_opis"> pan Czesio</div><div class="ekipa_osoba"><a href="index.php/11100">Tadeusz Szymków</a></div><div class="ekipa_opis"> Artur Kochasz, nowy redaktor naczelny</div><div class="ekipa_osoba"><a href="index.php/1115285">Hanna Śleszyńska</a></div><div class="ekipa_opis"> Jagoda</div><div class="ekipa_osoba"><a href="index.php/1123961">Agnieszka Włodarczyk</a></div><div class="ekipa_opis"> Irenka, sekretarka redaktora naczelnego</div><div class="ekipa_osoba"><a href="index.php/1140788">Agata Pruchniewska</a></div><div class="ekipa_opis"> ekspedientka</div><div class="ekipa_osoba"><a href="index.php/1137496">Hanna Kochańska</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis"> redaktorka</div><div class="ekipa_osoba"><a href="index.php/1133558">Agnieszka Dulęba-Kasza</a></div><div class="ekipa_opis"> redaktorka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1219854">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1219827" selected >1</option><option value="1219827_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1219827_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1219827_2"></a> 
+</nav><div id="czasgen">2026.05.08 04:22:32</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

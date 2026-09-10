@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - W LABIRYNCIE</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>W LABIRYNCIE</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="125274" selected >1</option><option value="125274_2">2</option><option value="125274_3">3</option><option value="125274_4">4</option><option value="125274_5">5</option><option value="125274_6">6</option><option value="125274_7">7</option><option value="125274_8">8</option><option value="125274_9">9</option><option value="125274_10">10</option><option value="125274_11">11</option><option value="125274_12">12</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/125274_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/125274_12"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988-1990</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">1988. 12. 25</div></li>
+<li><div class="film_tech1">Gatunek:</div><div class="film_tech2"> Film obyczajowy</div></li>
+<li><div class="film_tech3">Barwny, 120 odcinków x ok. 25 min<br /><br />
+Lokacje: (autorami listy są "pizza_adoloran" i inni uczestnicy forum "Telewizja" w serwisie Gazeta.pl):<br />
+<ul>
+<li>Mieszkanie Racewiczów: Rozbrat 32/34 (Powiśle)</li>
+<li>Mieszkanie Durajów: blok przy Ludnej (Powiśle)</li>
+<li>Mieszkanie Sucheckich: róg Zdrojowej i Cyganeczki (Sadyba)</li>
+<li>Mieszkanie Pani Marii: Andersa między Stawkami i Świętojerską</li>
+<li>Instytut: teren szpitala na Lindleya</li>
+<li>Przychodnia AA: Gocław, ul. Abrahama</li>
+<li>Boisko Staszka i Piotrka: obecny teren basenu "Wodnik", na tyłach przychodni AA (Gocław)</li>
+<li>Miejsce spoczynku Wojtka Sucheckiego: Powązki</li>
+<li>Miejsce spoczynku Izabeli Świtonik: Cmentarz Wólka Węglowa (Północny)</li>
+<li>Willa Siedleckich: Algierska (Gocław)</li>
+<li>Miejsce pracy Krystyny Duraj: Lotnisko Okęcie</li>
+<li>Miejsce pracy Joanny Racewicz: TVP, ul. Woronicza (Mokotów)</li>
+<li>Miejsce studiów Maćka Derbicha i Marioli Kaczorek: AM (Szpital na Banacha, Ochota)</li>
+<li>Butik Wandy Paciorek: Marszałkowska, nad Trasą Łazienkowską</li>
+<li>Poczta, przed którą Renata drze list od Ewy: Marszałkowska nad Trasą, vis a vis butiku</li>
+<li>Miejsce spotkania Saleha Moutara przez Racewiczów: róg Marszałkowskiej i Świętokrzyskiej</li>
+<li>Miejsce wystawy prasy opozycyjnej, na którą idą Dorota i Marek: Rynek Starego Miasta</li>
+<li>Mieszkanie Racewicza: Osiedle "Za Żelazną Bramą"</li>
+<li>Miejsce spotkania Marty z ojcem/Doroty z Markiem: kawiarnia Trou Madame w Łazienkach Królewskich</li>
+<li>Spacery pana Leona i pani Marii: Łazienki oraz Park Kultury na Powiślu</li>
+<li>Miejsce spotkań różnych bohaterów (Marta, Bajbus, Ostoja, pani Janina itp.) park przy Rozbrat</li>
+<li>Spacer Pana Leona, Hanisza i Mirona: Ludna, Solec (Powiśle)</li>
+<li>Miejsce dorabiania przez Renatę kluczy: Marszałkowska, naprzeciwko kina "Luna"</li>
+<li>Miejsce niedoszłego romansu Racewiczowej i Burkata: Kazimierz Dolny, Dom Prasy</li>
+<li>Szkoła Marty: liceum im. Batorego (Powiśle)</li>
+<li>Miejsce spotkań Leona z Marią i Marty z ojcem: kawiarnia "Wilanowska" (Al. Ujazdowskie)</li>
+<li>Szkoła Igora: LO im. Reja przy Królewskiej</li>
+<li>Miejsce badań pani Janiny: Instytut Onkologii (Ursynów)</li>
+<li>Kino, w którym Racewiczowie obejrzeli film: Wars na Rynku Nowego Miasta</li>
+<li>Miejsce spotkań Renaty, Edka, Glinickiego i innych, miejsce pracy Izy: Kawiarnia Hotelu Europejskiego, Krakowskie Przedmieście</li>
+<li>Miejsce, w którym Renata pokazuje ojcu sztuczne kwiaty: dół gmachu Intraco, ul. Stawki</li>
+<li>Sklep "Grześ", przed którym Janina spotyka Ostoję: róg Ludnej i Orłowicza (Powiśle)</li>
+<li>Miejsce, w którym Igor i Marta idą na lody: pawilon przy ul. Grójeckiej (Ochota)</li>
+<li>Restauracja, w której jedzą Renata z ojcem oraz Racewicz z Danutą: Mekong, ul. Wspólna</li>
+<li>Blok, spod którego Dorota dzwoni z automatu telefonicznego: Afrykańska (Saska Kępa)</li>
+<li>Ślub Marka i Doroty/wypadek Siedleckich: Plac Bernadyński</li>
+<li>Miejsce porwania Mateuszka: sklep osiedlowy przy ul. Bernardyńskiej</li>
+<li>Miejsce, w którym Staszek jeździ z Piotrkiem na deskorolce: pod Stadionem X-lecia</li>
+<li>Kawiarnia, w której Mariola umawia Hanisza i Duraja z kolegą w sprawie pracy: Ambasador, Aleje Ujazdowskie</li>
+<li>Hotel, w którym zatrzymał się Białek: Forum</li>
+<li>Policyjna izba dziecka (najpierw Marta, potem Staszek): Wiśniowa 44 (Mokotów)</li>
+<li>Miejsce spaceru Racewiczowej i Burkata: Park Skaryszewski (Praga)</li>
+<li>Miejsce, w którym Renata i Glinicki widzą Igora z Martą: róg Świętokrzyskiej i Jana Pawła II</li>
+<li>Miejsce konferencji, w której uczestniczy prof. Sędłak (podpisujący zgodę na wydanie leku dla Mateuszka) - pałac w Jabłonnie pod Warszawą</li>
+</ul></div></li>
+</ul>
+<p class="opis">Codzienne kłopoty, rzadkie radości, czarne i białe charaktery, lawiranci, krętacze i ludzie porządni aż do przesady. Namiastka polskiego luksusu. Środowisko naukowców, biznesmenów na polską miarę. Modne ciuchy. Pomysł zrealizowania serialu-rzeki powstał w lutym 1988 roku. Jego emisję rozpoczęto na początku 1989 r. Jest to pierwsza polska telenowela, która robiona była "z marszu", co tydzień powstawał jeden 30-minutowy odcinek. Po trzech latach, w czerwcu 1991 r., zakończono emisję serialu. Był on chwalony, krytykowany i jednocześnie oglądany. W pewnym okresie - wg ankietowych obliczeń - frekwencja osiągnęła 16 milionów widzów.</p><div class="galeria_mala"><a href="index.php?fotos=165274_1&galeria=155274"><img class="bezcienia" src="../z1/74i/5274_1.jpg" height="60"></a><a href="index.php?fotos=165274_2&galeria=155274"><img class="bezcienia" src="../z1/74i/5274_2.jpg" height="60"></a><a href="index.php?fotos=165274_3&galeria=155274"><img class="bezcienia" src="../z1/74i/5274_3.jpg" height="60"></a><a href="index.php?fotos=165274_4&galeria=155274"><img class="bezcienia" src="../z1/74i/5274_4.jpg" height="60"></a><a href="index.php?fotos=165274_5&galeria=155274"><img class="bezcienia" src="../z1/74i/5274_5.jpg" height="60"></a><a href="index.php?fotos=165274_6&galeria=155274"><img class="bezcienia" src="../z1/74i/5274_6.jpg" height="60"></a><a href="index.php?fotos=165274_7&galeria=155274"><img class="bezcienia" src="../z1/74i/5274_7.jpg" height="60"></a><a href="index.php/155274" title="Galeria zdjęć (101)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki125274" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna125274','ekipa_skrocona125274','ekipa125274','ekipa_schowaj125274','ekipa_schowaj_krotki125274','ekipa_schowaj_pelny125274','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny125274" class="jslink" onclick="pzf('ekipa_skrocona125274','ekipa_pelna125274','ekipa125274','ekipa_schowaj125274','ekipa_schowaj_pelny125274','ekipa_schowaj_krotki125274','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj125274"125274" class="jslink" onclick="pzz('ekipa125274','ekipa_schowaj125274')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa125274" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna125274">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116472">Paweł Karpiński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/117631">Krzysztof Rogala</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112679">Helena Białecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/111581">Zorika Zarzycka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113459">Sylwester Radzikowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113189">Kamila Zys</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118134">Adam Burzyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118885">Kamilla Chołoniewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113135">Wojciech Niżyński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116472">Paweł Karpiński</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dialogi</div><div class="ekipa_osoba"><a href="index.php/1113135">Wojciech Niżyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/116472">Paweł Karpiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118409">Wojciech Warecki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Michał P. Czarny</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118065">Zygmunt Dziwer</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1118060">Łukasz Fryde</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118061">Maciej Lis</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118062">Jerzy Pisarek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118063">Tadeusz Raczyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118064">Tadeusz Blikowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118117">Tomasz Małek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117686">Stanisław Świątek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117343">Tadeusz Głowiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118411">Adam Ratajczyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Andrzej Wiączek</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111320">Lucyna Krzemińska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/11764">Tomasz Kowalkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113573">Katarzyna Ragu</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113236">Waldemar Weiss</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118856">Adam Magajewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111982">Ewa Kowalska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113439">Anna Iskierka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dekoratorska</div><div class="ekipa_osoba"><a href="index.php/114721">Zenon Wilk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118285">Tadeusz Kołdyj</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112221">Stefan Witkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/116933">Tomasz Zarychta</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117088">Janusz Skolik</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117087">Henryk Jabłoński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113111">Wiesława Starska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111384">Hanna Ćwikło</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/111384">Hanna Ćwikło</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/116832">Roman Zarzycki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1112956">Bożena Sujkowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1111516">Izabela Izbińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/114841">Anna Płochocka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Małgorzata Waszczyk</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118414">Małgorzata Roguska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1114110">Krzysztof Marzec</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Wykonanie muzyki</div><div class="ekipa_osoba"><a href="index.php/1110909">Tomasz Bielski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Dariusz Musiałkowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Tomasz Pilewski</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja muzyczna</div><div class="ekipa_osoba"><a href="index.php/114997">Zbigniew Zbrowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca dźwiękowa</div><div class="ekipa_osoba"><a href="index.php/1118056">Bolesław Kujawski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118057">Roman Brański</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113988">Jacek Nowakowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117723">Michał Gola</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117727">Jacek Złotkowski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114346">Roman Tomczak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117768">Andrzej Martyniak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114877">Grzegorz Szkarłat</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118058">Wiesław Kolankiewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116791">Alicja Torbus-Wosińska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1118059">Adam Lipiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112449">Małgorzata Rodowicz-Szaszewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115418">Dorota Seweryńska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1112297">Maja Gawińska-Łyczkowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba">Małgorzata Kowalska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114122">Małgorzata Papierowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118415">Monika Motyczyńska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ewolucje kaskaderskie</div><div class="ekipa_osoba"><a href="index.php/1120072">Jacek Jeleń</a></div><div class="ekipa_opis"> nie występuje w napisach</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba">Zbigniew Szreniawski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Ewa Paulo</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116196">Jerzy Syta</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Ludwik Kosmal</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Roman Czekanowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Marcin Rawicz</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Irmina Wiśniewska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Jarosław Macias</div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111389">Tadeusz Drewno</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Organizacja produkcji</div><div class="ekipa_osoba"><a href="index.php/111390">Halina Cichomska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111698">Alina Kłobukowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111391">Halina Słobodzin</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114138">Stanisław Szymański</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118050">Andrzej Cebula</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1112299">Jolanta Borewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113968">Stanisława Deczkowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1110237">Ewa Radczuk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1110266">Anna Siemieniuk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11646">Danuta Cieplińska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/118794">Roman Sawka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118418">Marek Maliszewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115754">Anna Podkańska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/113189">Kamila Zys</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112355">Barbara Dąbkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1118043">Interpress Film</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1117720">PAI-Film</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1126642">Agnieszka Michalska</a></div><div class="ekipa_opis wyroznienie"> Ewa Glinicka; w odcinkach 1-52</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111162">Marek Kondrat</a></div><div class="ekipa_opis wyroznienie"> Adam Racewicz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113290">Piotr Skarga</a></div><div class="ekipa_opis wyroznienie"> Jan Duraj</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112031">Sławomira Łozińska</a></div><div class="ekipa_opis wyroznienie"> Joanna Racewicz, żona Adama,  dziennikarka tv</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115930">Renata Pękul</a></div><div class="ekipa_opis wyroznienie"> Krystyna Duraj, żona Jana</div><div class="ekipa_osoba wyroznienie"><a href="index.php/112286">Wiesław Drzewicz</a></div><div class="ekipa_opis wyroznienie"> Leon Guttman</div><div class="ekipa_osoba wyroznienie"><a href="index.php/115394">Małgorzata Lorentowicz</a></div><div class="ekipa_opis wyroznienie"> Anna Suchecka, żona profesora</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111163">Piotr Pawłowski</a></div><div class="ekipa_opis wyroznienie"> profesor Jerzy Suchecki</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis wyroznienie"> Paweł Hanisz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1135158">Marta Klubowicz-Różycka</a></div><div class="ekipa_opis wyroznienie"> Dorota Wanat</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis wyroznienie"> Marek Siedlecki</div><div class="ekipa_osoba"><a href="index.php/11671">Leonard Andrzejewski</a></div><div class="ekipa_opis"> Stanisław, dziadek Igora</div><div class="ekipa_osoba"><a href="index.php/113079">Michał Anioł</a></div><div class="ekipa_opis"> Stefan, przyjaciel Pawła Hanisza,  wykładowca na Wydziale Farmacji</div><div class="ekipa_osoba"><a href="index.php/1114849">Piotr Antczak</a></div><div class="ekipa_opis"> mężczyzna w lokalu, w którym bawił się  Racewicz z delegacją Anglików</div><div class="ekipa_osoba"><a href="index.php/1110789">Wojciech Asiński</a></div><div class="ekipa_opis"> gość na przyjęciu u Durajów</div><div class="ekipa_osoba"><a href="index.php/1114675">Bogusław Augustyn</a></div><div class="ekipa_opis"> Andrzej Wilkowski, milicjant prowadzący śledztwo w sprawie serii napadów na osiedlu Durajów</div><div class="ekipa_osoba"><a href="index.php/111765">Ryszard Bacciarelli</a></div><div class="ekipa_opis"> doktor Gorczyca, chirurg dziecięcy  opiekujący się synkiem Ewy</div><div class="ekipa_osoba"><a href="index.php/1142">Bogdan Baer</a></div><div class="ekipa_opis"> Tomasz Glinicki, ojciec Renaty</div><div class="ekipa_osoba"><a href="index.php/1118111">Hanna Bakuła</a></div><div class="ekipa_opis"> malarka, z którą wywiad przeprowadziła  Joanna Racewicz</div><div class="ekipa_osoba"><a href="index.php/113780">Andrzej Balcerzak</a></div><div class="ekipa_opis"> Kazimierz Piętak, pracownik Instytutu, sąsiad Sucheckich</div><div class="ekipa_osoba"><a href="index.php/116435">Stanisław Banasiuk</a></div><div class="ekipa_opis"> pracownik Instytutu</div><div class="ekipa_osoba"><a href="index.php/1111678">Czesław Baranowski</a></div><div class="ekipa_opis"> Stefan, uczestnik mitingów "Anonimowych Alkoholików"</div><div class="ekipa_osoba"><a href="index.php/112959">Roman Bartosiewicz</a></div><div class="ekipa_opis"> 2 role: docent Karol Włodarczyk, wicedyrektor Instytutu (odcinki: 18-19, 30, 33, 35-36); doktor Jaskuła, pracownik Instytutu (odcinki: 103-104, 111-112, 114, 118-119); w niektórych odcinkach nazwisko: Bartoszewicz</div><div class="ekipa_osoba"><a href="index.php/111027">Włodzimierz Bednarski</a></div><div class="ekipa_opis"> właściciel willi wynajmowanej przez Hellera</div><div class="ekipa_osoba"><a href="index.php/118112">Halina Bednarz</a></div><div class="ekipa_opis"> sąsiadka Durajów</div><div class="ekipa_osoba"><a href="index.php/112840">Renata Berger</a></div><div class="ekipa_opis"> 2 role: ciężarna oczekująca na badanie  USG (odcinek: 19); Krystyna, uczestniczka mitingów  "Anonimowych Alkoholików" (odcinki: 60-61, 63, 82)</div><div class="ekipa_osoba"><a href="index.php/118599">Witold Bieliński</a></div><div class="ekipa_opis"> Andrzej, syn pani Marii; w odcinkach 118-120</div><div class="ekipa_osoba"><a href="index.php/113278">Dariusz Biskupski</a></div><div class="ekipa_opis"> Prus, najprawdopodobniej syn Leona  Guttmana</div><div class="ekipa_osoba"><a href="index.php/117339">Małgorzata Bogdańska</a></div><div class="ekipa_opis"> Hania, sekretarka dyrektora Instytutu</div><div class="ekipa_osoba"><a href="index.php/1110658">Małgorzata Boratyńska</a></div><div class="ekipa_opis"> pielęgniarka na oddziale, na którym pracowała Agata Wieczorek, a hospitalizowany był Franciszek Hanisz</div><div class="ekipa_osoba"><a href="index.php/1118377">Alicja Borkowska</a></div><div class="ekipa_opis"> 2 role: laborantka adorowana przez Marka Siedleckiego (odcinek: 69); studentka farmacji (odcinki: 85-86)</div><div class="ekipa_osoba"><a href="index.php/11390">Lucyna Brusikiewicz</a></div><div class="ekipa_opis"> koleżanka Krystyny Duraj spotkana przez Jana pod kasą LOTu</div><div class="ekipa_osoba"><a href="index.php/1114913">Dariusz Buchowiecki</a></div><div class="ekipa_opis"> 2 role: kolega taksówkarza Edzia, znajomego Renaty Glinickiej (odcinek: 27); bandzior, człowiek "Seweryna" (odcinki: 73-74)</div><div class="ekipa_osoba"><a href="index.php/111156">Zbigniew Buczkowski</a></div><div class="ekipa_opis"> lekarz pogotowia przy zwłokach dziecka wydobytych z rzeki</div><div class="ekipa_osoba"><a href="index.php/1113863">Jolanta Bujnowska</a></div><div class="ekipa_opis"> Jola, gość na przyjęciu u Durajów</div><div class="ekipa_osoba"><a href="index.php/11274">Janusz Bukowski</a></div><div class="ekipa_opis"> Grzegorz Białek, ojciec Marty</div><div class="ekipa_osoba"><a href="index.php/1118329">Karol Bulenda</a></div><div class="ekipa_opis"> Igor Świtonik</div><div class="ekipa_osoba"><a href="index.php/11241">Janusz Bylczyński</a></div><div class="ekipa_opis"> pisarz Franiciszek Hanisz, przybrany ojciec  Pawła</div><div class="ekipa_osoba"><a href="index.php/112624">Andrzej Chichłowski</a></div><div class="ekipa_opis"> 2 role: pracownik Instytutu, przyjaciel Racewicza (odcinek: 8); oficer MO prowadzący śledztwo w sprawie Moutara, a później w sprawie zabójstwa Myszorka (odcinki: 57, 59, 61, 91-93)</div><div class="ekipa_osoba"><a href="index.php/1113328">Magdalena Chilmon</a></div><div class="ekipa_opis"> stewardessa, koleżanka Krystyny Duraj</div><div class="ekipa_osoba"><a href="index.php/115043">Janusz Chlebowski</a></div><div class="ekipa_opis"> Henio, kierowca Myszorka; w napisach imię: Jan</div><div class="ekipa_osoba"><a href="index.php/116031">Krystyna Chmielewska</a></div><div class="ekipa_opis"> Jola, właścicielka kwiaciarni, znajoma Renaty Glinickiej</div><div class="ekipa_osoba"><a href="index.php/112064">Anna Chodakowska</a></div><div class="ekipa_opis"> Renata Glinicka, przyrodnia siostra Ewy</div><div class="ekipa_osoba">Jan Chołoniewski</div><div class="ekipa_opis"> Mateusz, synek Ewy</div><div class="ekipa_osoba"><a href="index.php/115728">Jolanta Czaplińska</a></div><div class="ekipa_opis"> kobieta w kolejce do bioenergoterapeuty Marka</div><div class="ekipa_osoba"><a href="index.php/1118048">Teresa Czarnecka</a></div><div class="ekipa_opis"> lekarz ginekolog stwierdzająca u Ewy Glinickiej ciążę, także pracująca na oddziale doktora Kubiaka</div><div class="ekipa_osoba"><a href="index.php/1118237">Mariola Daszkiewicz</a></div><div class="ekipa_opis"> pracownica obsługi sympozjum lekarskiego w Jabłonnej</div><div class="ekipa_osoba"><a href="index.php/1119100">Wojciech Dąbrowski</a></div><div class="ekipa_opis"> Wasyluk, dyrektor departamentu w  ministerstwie zdrowia</div><div class="ekipa_osoba"><a href="index.php/115058">Ewa Decówna</a></div><div class="ekipa_opis"> prawniczka Maria Sokólska, przyjaciółka  Racewiczów, ich pełnomocnik w sprawie  dotyczącej mieszkania</div><div class="ekipa_osoba">Zygmunt Dębiński</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116643">Dorota Dobrowolska</a></div><div class="ekipa_opis"> pielęgniarka na oddziale doktora Gorczycy</div><div class="ekipa_osoba"><a href="index.php/11585">Paweł Maria Dolewski</a></div><div class="ekipa_opis"> kolega scenografa Julka</div><div class="ekipa_osoba"><a href="index.php/1112633">Cezary Domagała</a></div><div class="ekipa_opis"> 2 role: Jacek, gość na przyjęciu u Hellera (odcinek: 38); Maciek Derbich, siostrzeniec Anny  Sucheckiej, student farmacji (odcinki: 54-63, 65-66, 68, 70, 73-77, 81-86, 89-94)</div><div class="ekipa_osoba"><a href="index.php/112817">Ewa Domańska</a></div><div class="ekipa_opis"> studentka farmacji</div><div class="ekipa_osoba"><a href="index.php/113294">Jacek Domański</a></div><div class="ekipa_opis"> oficer UOP</div><div class="ekipa_osoba"><a href="index.php/1113353">Jerzy Dominik</a></div><div class="ekipa_opis"> członek angielskiej delegacji, gość Instytutu</div><div class="ekipa_osoba"><a href="index.php/1119101">Zenon Dondajewski</a></div><div class="ekipa_opis"> minister Franciszek Bożogrodzki wręczający Instytutowi nagrodę za Adoloran</div><div class="ekipa_osoba"><a href="index.php/1114153">Katarzyna Dowbor</a></div><div class="ekipa_opis"> spikerka tv, koleżanka Joanny  Racewiczowej</div><div class="ekipa_osoba"><a href="index.php/1117531">Ryszard Dreger</a></div><div class="ekipa_opis"> pan Rysio, instytutowa "złota rączka"</div><div class="ekipa_osoba"><a href="index.php/1117994">Henryk Drygalski</a></div><div class="ekipa_opis"> docent Mielcarek, zastępca dyrektora Instytutu</div><div class="ekipa_osoba"><a href="index.php/117291">Hanna Dunowska</a></div><div class="ekipa_opis"> recepcjonistka w "Domu Prasy" w Kazimierzu</div><div class="ekipa_osoba"><a href="index.php/1114883">Maria Durys</a></div><div class="ekipa_opis"> bileterka na dworcu, na którym został zatrzymany "Bajbus"</div><div class="ekipa_osoba"><a href="index.php/1133310">Grażyna Dyląg</a></div><div class="ekipa_opis"> Iza Świtonik, koleżanka Renaty Glinickiej, matka Igora</div><div class="ekipa_osoba"><a href="index.php/118479">Joanna Fekecz</a></div><div class="ekipa_opis"> 2 role: urzędniczka, u której Grzegorz Białek zdobył akt własności mieszkania (odcinek: 49); studentka farmacji (odcinki: 54-55, 61-62, 65)</div><div class="ekipa_osoba"><a href="index.php/11579">Marek Frąckowiak</a></div><div class="ekipa_opis"> 2 role: lekarz w szpitalu opatrujący ranną Olę Duraj (odcinek: 2), bandyta napadający na  panią Bożenkę (odcinek: 103)</div><div class="ekipa_osoba"><a href="index.php/1118419">Elżbieta Gaertner</a></div><div class="ekipa_opis"> Halina Derbich, cioteczna siostra Anny Sucheckiej, matka Maćka</div><div class="ekipa_osoba"><a href="index.php/1118239">Marek Gajewski</a></div><div class="ekipa_opis"> znajomy Joanny Racewicz</div><div class="ekipa_osoba">Dariusz Gajzler</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1117057">Maria Garbowska</a></div><div class="ekipa_opis"> pani Władzia, gosposia Hanisza  i Sucheckich</div><div class="ekipa_osoba"><a href="index.php/11112">Anna Garwolińska</a></div><div class="ekipa_opis"> ciężarna Wiesia, dziewczyna leżąca na  porodówce z Ewą próbująca popełnić  samobójstwo</div><div class="ekipa_osoba"><a href="index.php/113385">Stanisław Gawlik</a></div><div class="ekipa_opis"> przedstawiciel dyrekcji i rady zakładowej  Instytutu wręczający upominek z okazji dnia  kobiet</div><div class="ekipa_osoba"><a href="index.php/1119332">Agata Gawrońska</a></div><div class="ekipa_opis"> kobieta przed sklepem zainteresowana losem pozostawionego w wózku Mateusza, syna Ewy Glinickiej</div><div class="ekipa_osoba"><a href="index.php/115720">Aleksander Gawroński</a></div><div class="ekipa_opis"> taksówkarz wiozący Renatę Glinicką; w napisach imię: Andrzej</div><div class="ekipa_osoba"><a href="index.php/11244">Andrzej Gawroński</a></div><div class="ekipa_opis"> mężczyzna podwożący Igora do Warszawy</div><div class="ekipa_osoba"><a href="index.php/113298">Grzegorz Gierak</a></div><div class="ekipa_opis"> milicjant na festiwalu punkrockowym, na którym bawili się Marta i "Bajbus"</div><div class="ekipa_osoba"><a href="index.php/111531">Antonina Girycz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111705">Marian Glinka</a></div><div class="ekipa_opis"> ojciec Staszka, kolegi Piotrka Racewicza</div><div class="ekipa_osoba"><a href="index.php/1110659">Jolanta Gogolewska</a></div><div class="ekipa_opis"> kobieta oczekująca na lotnisku na rodzinę przylatującą z Londynu</div><div class="ekipa_osoba"><a href="index.php/118631">Anna Gornostaj</a></div><div class="ekipa_opis"> Asia Błażyńska, koleżanka Krystyny  Durajowej</div><div class="ekipa_osoba"><a href="index.php/113281">Andrzej Grabarczyk</a></div><div class="ekipa_opis"> kapitan MO, a następnie policji prowadzący śledztwo w sprawie Moutara, a później w sprawie zabójstwa Myszorka oraz porwania Mateusza, syna Ewy Glinickiej</div><div class="ekipa_osoba"><a href="index.php/11800">Piotr Grabowski</a></div><div class="ekipa_opis"> Robert Heller, właściciel firmy "Farmahel"</div><div class="ekipa_osoba"><a href="index.php/1118420">Agnieszka Grankowska</a></div><div class="ekipa_opis"> studentka farmacji</div><div class="ekipa_osoba"><a href="index.php/112761">Jerzy Gudejko</a></div><div class="ekipa_opis"> doktor Marczyk, ortopeda, lekarz Doroty</div><div class="ekipa_osoba">Marek Hancke</div><div class="ekipa_opis"> kolega Igora</div><div class="ekipa_osoba"><a href="index.php/113516">Tadeusz Hanusek</a></div><div class="ekipa_opis"> 2 role: Sitek, zastępca do spraw produkcji w firmie "Farmahel" (odcinki: 31, 38); oficer milicji przeprowadzający  konfrontację (odcinek: 70)</div><div class="ekipa_osoba"><a href="index.php/111889">Andrzej Herder</a></div><div class="ekipa_opis"> zagraniczny znajomy Siedleckiego  proponujący Markowi wyjazd</div><div class="ekipa_osoba"><a href="index.php/111525">Eugenia Herman</a></div><div class="ekipa_opis"> Janina Czerska, matka Krystyny Duraj</div><div class="ekipa_osoba"><a href="index.php/118064">Jacek Hilchen</a></div><div class="ekipa_opis"> pracownik Instytutu; w napisach nazwisko: Hilhen</div><div class="ekipa_osoba"><a href="index.php/113071">Barbara Horawianka</a></div><div class="ekipa_opis"> Maria Jarosz, laborantka w pracowni</div><div class="ekipa_osoba"><a href="index.php/1115687">Stanisław Iżyłowski</a></div><div class="ekipa_opis"> pracownik Instytutu robiący inwentaryzację w laboratorium</div><div class="ekipa_osoba"><a href="index.php/11708">Ryszard Jabłoński</a></div><div class="ekipa_opis"> 2 role: aktor w filmie oglądanym przez Martę i "Bajbusa" (odcinek: 20); technik naprawiający sprzęt w laboratorium (odcinki: 92, 110)</div><div class="ekipa_osoba"><a href="index.php/116918">Elżbieta Jagielska</a></div><div class="ekipa_opis"> Fornalowa, sąsiadka Durajów</div><div class="ekipa_osoba"><a href="index.php/1118220">Joanna Jarzębska</a></div><div class="ekipa_opis"> gość na przyjęciu u Hanisza</div><div class="ekipa_osoba"><a href="index.php/1119102">Józef Józefczyk</a></div><div class="ekipa_opis"> doktor Korowicz, lekarz opiekujący się Borg-Siedlecką w szpitalu</div><div class="ekipa_osoba"><a href="index.php/1113467">Małgorzata Jóźwiak</a></div><div class="ekipa_opis"> gość na przyjęciu u Hanisza</div><div class="ekipa_osoba"><a href="index.php/1113273">Sławomir Jóźwik</a></div><div class="ekipa_opis"> Marian, brat Marka Siedleckiego</div><div class="ekipa_osoba"><a href="index.php/111402">Jan Jurewicz</a></div><div class="ekipa_opis"> szef firmy detektywistycznej wynajętej przez Racewicza do odnalezienia Moutara oraz przez Danutę Mayer do ochrony przed podglądaczem</div><div class="ekipa_osoba"><a href="index.php/11222">Krzysztof Kalczyński</a></div><div class="ekipa_opis"> członek angielskiej delegacji, gość Instytutu</div><div class="ekipa_osoba"><a href="index.php/111157">Józef Kalita</a></div><div class="ekipa_opis"> Szczepan "Miron", przyjaciel Hanisza z  powstania warszawskiego</div><div class="ekipa_osoba"><a href="index.php/114341">Witold Kałuski</a></div><div class="ekipa_opis"> gość na przyjęciu u Hanisza</div><div class="ekipa_osoba"><a href="index.php/113090">Dorota Kamińska</a></div><div class="ekipa_opis"> Danuta Mayer, koleżanka Joanny  Racewicz</div><div class="ekipa_osoba">Mirosław Kania</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/117771">Eugeniusz Karczewski</a></div><div class="ekipa_opis"> kościelny w kościele, w którym ślub brali Dorota i Marek</div><div class="ekipa_osoba"><a href="index.php/111235">Irena Karel</a></div><div class="ekipa_opis"> Bożena Rybicka, laborantka w pracowni, później sekretarka Stopczyka</div><div class="ekipa_osoba"><a href="index.php/1118115">Agnieszka Karpińska</a></div><div class="ekipa_opis"> Justyna, wnuczka pani Marii</div><div class="ekipa_osoba"><a href="index.php/1118045">Zofia Karpińska</a></div><div class="ekipa_opis"> Ola, córka Durajów</div><div class="ekipa_osoba"><a href="index.php/1110739">Stefan Każuro</a></div><div class="ekipa_opis"> mężczyzna obserwujący Danutę Mayer</div><div class="ekipa_osoba"><a href="index.php/1118058">Wiesław Kolankiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11748">Krzysztof Kołbasiuk</a></div><div class="ekipa_opis"> Jurek Sewer, przyjaciel Doroty</div><div class="ekipa_osoba"><a href="index.php/115985">Piotr Komorowski</a></div><div class="ekipa_opis"> ochroniarz w dyskotece</div><div class="ekipa_osoba"><a href="index.php/1114851">Aleksandra Koncewicz</a></div><div class="ekipa_opis"> milicjantka w milicyjnej Izbie Dziecka</div><div class="ekipa_osoba"><a href="index.php/1115091">Elżbieta Korczakowska</a></div><div class="ekipa_opis"> kasjerka w banku, u której Racewicz sprawdzał stan swojego konta</div><div class="ekipa_osoba"><a href="index.php/113741">Zbigniew Korepta</a></div><div class="ekipa_opis"> współpasażer Ewy w pociągu do Krotoszyna</div><div class="ekipa_osoba">Kinga Korzeniowska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118129">Zdzisław Korzeniowski</a></div><div class="ekipa_opis"> milicjant na parkingu na Okęciu</div><div class="ekipa_osoba"><a href="index.php/116035">Wojciech Kostecki</a></div><div class="ekipa_opis"> doktor Kubiak, ginekolog prowadzący ciążę  Ewy</div><div class="ekipa_osoba"><a href="index.php/1114884">Mirosław Kowalczyk</a></div><div class="ekipa_opis"> 2 role: gość na przyjęciu u Durajów (odcinek: 25); goryl Myszorka (odcinki: 82-83)</div><div class="ekipa_osoba"><a href="index.php/111150">Helena Kowalczykowa</a></div><div class="ekipa_opis"> salowa na oddziale doktora Kubiaka</div><div class="ekipa_osoba"><a href="index.php/111205">Halina Kowalska</a></div><div class="ekipa_opis"> Wanda Paciorek, matka "Bajbusa"</div><div class="ekipa_osoba"><a href="index.php/1110416">Andrzej Krucz</a></div><div class="ekipa_opis"> student farmacji</div><div class="ekipa_osoba"><a href="index.php/113302">Grzegorz Kucias</a></div><div class="ekipa_opis"> milicjant zatrzymujący "Bajbusa" na dworcu, później zawiadamiający Renatę o śmierci Izy; w napisach niektórych odcinków nazwisko: Macias</div><div class="ekipa_osoba"><a href="index.php/115300">Jan Kulczycki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113700">Joanna Kurowska</a></div><div class="ekipa_opis"> nauczycielka Piotrka Racewicza; w napisach imię: Anna</div><div class="ekipa_osoba"><a href="index.php/114742">Barbara Lanton</a></div><div class="ekipa_opis"> urzędniczka w Biurze Adresowym</div><div class="ekipa_osoba"><a href="index.php/111243">Czesław Lasota</a></div><div class="ekipa_opis"> przedstawiciel dyrekcji i rady zakładowej  Instytutu wręczający upominek z okazji dnia  kobiet</div><div class="ekipa_osoba">Mirosław Lasota</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118219">Danuta Lato</a></div><div class="ekipa_opis"> Barbara, narzeczona Białka</div><div class="ekipa_osoba"><a href="index.php/1118422">Ewa Latocha</a></div><div class="ekipa_opis"> nauczycielka muzyki dająca lekcje Oli Duraj</div><div class="ekipa_osoba"><a href="index.php/113303">Tadeusz Lempkowski</a></div><div class="ekipa_opis"> naukowiec z Szwajcarii wizytujący Instytut</div><div class="ekipa_osoba">Marta Lewandowska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba">Klaudia Link</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118490">Krystyna Lipińska</a></div><div class="ekipa_opis"> Hela, pracownica szklarni Tomasza Glinickiego</div><div class="ekipa_osoba"><a href="index.php/115233">Mariusz Lipiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111661">Teresa Lipowska</a></div><div class="ekipa_opis"> pielęgniarka na oddziale doktora Kubiaka</div><div class="ekipa_osoba"><a href="index.php/118541">Krystyna Liskowacka</a></div><div class="ekipa_opis"> żona Tomasza Glinickiego</div><div class="ekipa_osoba"><a href="index.php/118292">Jerzy Lustyk</a></div><div class="ekipa_opis"> Julek, scenograf tv</div><div class="ekipa_osoba"><a href="index.php/11247">Gustaw Lutkiewicz</a></div><div class="ekipa_opis"> Henryk Ostoja-Ostojałowski, sąsiad  Racewiczów</div><div class="ekipa_osoba"><a href="index.php/115923">Ryszard Łabędź</a></div><div class="ekipa_opis"> Zygmunt Cichy, znajomy Marioli Kaczorek</div><div class="ekipa_osoba"><a href="index.php/1118049">Joanna Ładyńska</a></div><div class="ekipa_opis"> kelnerka</div><div class="ekipa_osoba"><a href="index.php/111148">Katarzyna Łaniewska</a></div><div class="ekipa_opis"> Robakowa, matka porywaczki Mateusza</div><div class="ekipa_osoba"><a href="index.php/117627">Ludmiła Łączyńska</a></div><div class="ekipa_opis"> pani Stasia, handlarka w Instytucie</div><div class="ekipa_osoba"><a href="index.php/117142">Leon Łochowski</a></div><div class="ekipa_opis"> listonosz z listem poleconym dla Joanny Racewicz</div><div class="ekipa_osoba"><a href="index.php/1116023">Dominik Łoś</a></div><div class="ekipa_opis"> Staszek, kolega Piotrka Racewicza</div><div class="ekipa_osoba"><a href="index.php/1118195">Małgorzata Machalica</a></div><div class="ekipa_opis"> sąsiadka Durajów</div><div class="ekipa_osoba"><a href="index.php/114826">Wojciech Machnicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1199206">Andrzej Machnowski</a></div><div class="ekipa_opis"> ksiądz udzielający ślubu Dorocie i Markowi</div><div class="ekipa_osoba"><a href="index.php/112424">Zygmunt Maciejewski</a></div><div class="ekipa_opis"> profesor Witold Reiter, kuzyn Haniszów</div><div class="ekipa_osoba">Iwona Madej</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/116796">Barbara Majewska</a></div><div class="ekipa_opis"> kobieta pytana przez Pawła Hanisza jak dojechać do ulicy Szarotki</div><div class="ekipa_osoba"><a href="index.php/1118423">Lucyna Malec</a></div><div class="ekipa_opis"> urzędniczka Telekomunikacji</div><div class="ekipa_osoba"><a href="index.php/118221">Mirosława Maludzińska</a></div><div class="ekipa_opis"> portierka w akademiku, w którym kiedyś mieszkała Ewa</div><div class="ekipa_osoba"><a href="index.php/1118196">Ewa Małachowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113268">Marzena Manteska</a></div><div class="ekipa_opis"> Nina Przetakiewiczówna, kuzynka Ostoi  opiekująca się Borg-Siedlecką</div><div class="ekipa_osoba"><a href="index.php/112907">Tomasz Marzecki</a></div><div class="ekipa_opis"> cinkciarz zaczepiający Renatę Glinicką</div><div class="ekipa_osoba"><a href="index.php/112375">Leopold Matuszczak</a></div><div class="ekipa_opis"> 2 role: milicjant informujący  Paciorkową o zatrzymaniu "Bajbusa"  (odcinek 34); Roman, przyjaciel Leona  Guttmana, kombatant (odcinek: 73)</div><div class="ekipa_osoba"><a href="index.php/112235">Kazimierz Mazur</a></div><div class="ekipa_opis"> pan Kazio, dozorca w bloku Durajów</div><div class="ekipa_osoba">Tadeusz Mazurek</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113871">Marlena Miarczyńska</a></div><div class="ekipa_opis"> ciężarna oczekująca na badanie USG</div><div class="ekipa_osoba"><a href="index.php/112507">Wiesław Michnikowski</a></div><div class="ekipa_opis"> Czesław Kulczycki, przyjaciel Guttmana</div><div class="ekipa_osoba"><a href="index.php/1113182">Katarzyna Miernicka</a></div><div class="ekipa_opis"> Julia Rudzka, studentka farmacji</div><div class="ekipa_osoba"><a href="index.php/112365">Teresa Mikołajczuk</a></div><div class="ekipa_opis"> szefowa wzorcowni odzieży; w napisach nazwisko: Mikołajczyk</div><div class="ekipa_osoba"><a href="index.php/119135">Jowita Miondlikowska</a></div><div class="ekipa_opis"> Marta, córka Joanny Racewicz</div><div class="ekipa_osoba"><a href="index.php/1115729">Agnieszka Mirowska</a></div><div class="ekipa_opis"> Viola, żona Moutara</div><div class="ekipa_osoba"><a href="index.php/118354">Zbigniew Modej</a></div><div class="ekipa_opis"> Wojtek Suchecki, narzeczony Ewy</div><div class="ekipa_osoba">Jacek Morawski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112343">Czesław Mroczek</a></div><div class="ekipa_opis"> profesor Musiałowicz, wykładowca na Wydziale Farmacji</div><div class="ekipa_osoba"><a href="index.php/113332">Andrzej Mrowiec</a></div><div class="ekipa_opis"> Stefan Myszorek, antykwariusz - paser</div><div class="ekipa_osoba">Mirosława Mróz</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/113304">Włodzimierz Nakwaski</a></div><div class="ekipa_opis"> lekarz na oddziale chirurgii, na który trafiła Ewa Glinicka</div><div class="ekipa_osoba"><a href="index.php/11663">Ryszard Nawrocki</a></div><div class="ekipa_opis"> policjant prowadzący śledztwo w sprawie Igora oraz napadu na panią Bożenkę</div><div class="ekipa_osoba"><a href="index.php/111164">Leon Niemczyk</a></div><div class="ekipa_opis"> docent Józef Stopczyk</div><div class="ekipa_osoba"><a href="index.php/1113960">Andrzej Niemirski</a></div><div class="ekipa_opis"> bandzior, człowiek "Seweryna"</div><div class="ekipa_osoba"><a href="index.php/118067">Bogdan Niewinowski</a></div><div class="ekipa_opis"> pasażer autobusu do Kazimierza</div><div class="ekipa_osoba"><a href="index.php/1113135">Wojciech Niżyński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/116505">Czesław Nogacki</a></div><div class="ekipa_opis"> Wiktor Świtonik, ojciec Igora</div><div class="ekipa_osoba"><a href="index.php/111161">Jerzy Zygmunt Nowak</a></div><div class="ekipa_opis"> kierownik recepcji w hotelu "Forum"</div><div class="ekipa_osoba"><a href="index.php/1118157">Waldemar Obłoza</a></div><div class="ekipa_opis"> rolnik Klimczak, pasażer autobusu do  Kazimierza</div><div class="ekipa_osoba"><a href="index.php/1114995">Maciej Orłoś</a></div><div class="ekipa_opis"> Andrzej Kurek, prowadzący spotkania  "Anonimowych Alkoholików"</div><div class="ekipa_osoba"><a href="index.php/1115089">Kazimierz Orzechowski</a></div><div class="ekipa_opis"> ksiądz Kazimierz, przyjaciel Sucheckich</div><div class="ekipa_osoba"><a href="index.php/114279">Maria Pabisz-Korzeniowska</a></div><div class="ekipa_opis"> Stasiakowa, siostra oddziałowa na oddziale niemowlęcym, na który miał trafić synek Ewy; w napisach nazwisko: Pabiś-Korzeniowska</div><div class="ekipa_osoba"><a href="index.php/1113584">Wojciech Pastuszko</a></div><div class="ekipa_opis"> recepcjonista w Hotelu Europejskim</div><div class="ekipa_osoba">Leszek Pawlik</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115131">Grzegorz Pawłowski</a></div><div class="ekipa_opis"> Bohdan "Bodzio" Sokół, student farmacji, kolega Maćka Derbicha</div><div class="ekipa_osoba"><a href="index.php/115432">Zofia Perczyńska</a></div><div class="ekipa_opis"> "Nutka", znajoma Szczepana z czasów  powstania warszawskiego</div><div class="ekipa_osoba"><a href="index.php/1114404">Marta Pietrasik</a></div><div class="ekipa_opis"> pielęgniarka na oddziale niemowlęcym, na który miał trafić synek Ewy</div><div class="ekipa_osoba"><a href="index.php/118300">Zbigniew Plato</a></div><div class="ekipa_opis"> profesor Radoszewski, recenzent pracy habilitacyjnej Racewicza</div><div class="ekipa_osoba"><a href="index.php/113269">Hanna Polk</a></div><div class="ekipa_opis"> pielęgniarka na oddziale, na którym pracowała Agata Wieczorek, a hospitalizowany był Franciszek Hanisz</div><div class="ekipa_osoba"><a href="index.php/1115366">Lidia Popiel</a></div><div class="ekipa_opis"> Tamara, młoda żona kompozytora Jerzego  Marii Podoleckiego</div><div class="ekipa_osoba"><a href="index.php/115784">Ryszard Pracz</a></div><div class="ekipa_opis"> 2 role: lekarz konsultujący stan zdrowia  synka Ewy (odcinek: 43), profesor prowadzący testy  Adoloranu (odcinek: 55)</div><div class="ekipa_osoba"><a href="index.php/117013">Marek Prałat</a></div><div class="ekipa_opis"> bioenergoterapeuta Marek u którego pomocy szukała Janina Czerska</div><div class="ekipa_osoba"><a href="index.php/112351">Eugeniusz Priwieziencew</a></div><div class="ekipa_opis"> grabarz na pogrzebie Franciszka Hanisza</div><div class="ekipa_osoba"><a href="index.php/112418">Sylwester Przedwojewski</a></div><div class="ekipa_opis"> Kubicz, pacjent leżący w szpitalu razem z  Franciszkiem Haniszem</div><div class="ekipa_osoba">Katarzyna Przybyłowska</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1113763">Małgorzata Puzio-Sobczyńska</a></div><div class="ekipa_opis"> koleżanka Igora</div><div class="ekipa_osoba"><a href="index.php/114024">Jan Pyjor</a></div><div class="ekipa_opis"> lekarz opiekujący się Tomaszem Glinickim w szpitalu</div><div class="ekipa_osoba"><a href="index.php/113270">Maria Quoos-Morawska</a></div><div class="ekipa_opis"> Agata Wieczorek, koleżanka Ewy</div><div class="ekipa_osoba"><a href="index.php/111296">Barbara Rachwalska</a></div><div class="ekipa_opis"> ciotka Ewy</div><div class="ekipa_osoba"><a href="index.php/1118158">Tomasz Raczek</a></div><div class="ekipa_opis"> szef Joanny Racewiczowej w tv</div><div class="ekipa_osoba"><a href="index.php/114744">Aniceta Raczek-Ochnicka</a></div><div class="ekipa_opis"> Grażyna, pracownica dziekanatu Wydziału Farmacji</div><div class="ekipa_osoba"><a href="index.php/1118921">Beata Rakowska</a></div><div class="ekipa_opis"> Ewa Glinicka; w odcinkach 106, 110-120</div><div class="ekipa_osoba">Marcin Remberk</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115133">Bożena Robakowska</a></div><div class="ekipa_opis"> kobieta w parku zaczepiająca Ewę Glinicką</div><div class="ekipa_osoba"><a href="index.php/111598">Małgorzata Rożniatowska</a></div><div class="ekipa_opis"> urzędniczka Telekomunikacji przyjmująca  reklamację Racewicza</div><div class="ekipa_osoba"><a href="index.php/112570">Zdzisław Rychter</a></div><div class="ekipa_opis"> taksówkarz Edzio, znajomy Renaty Glinickiej</div><div class="ekipa_osoba"><a href="index.php/115525">Zofia Rysiówna</a></div><div class="ekipa_opis"> pani Lena, stara aktorka, której pomagała Marta</div><div class="ekipa_osoba"><a href="index.php/114570">Agata Rzeszewska</a></div><div class="ekipa_opis"> Monika Szczerbicka, koleżanka Joanny Racewicz</div><div class="ekipa_osoba"><a href="index.php/1113585">Wojciech Sanejko</a></div><div class="ekipa_opis"> pracownik Instytutu na naradzie u Stopczyka</div><div class="ekipa_osoba"><a href="index.php/115039">Bogusław Sar</a></div><div class="ekipa_opis"> pan Jacek, pracownik obsługi sympozjum lekarskiego w Jabłonnej</div><div class="ekipa_osoba"><a href="index.php/118807">Piotr Siejka</a></div><div class="ekipa_opis"> gość na prywatce u Agaty Wieczorek</div><div class="ekipa_osoba">Agnieszka Sierant</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/115302">Witold Skaruch</a></div><div class="ekipa_opis"> profesor Sędłak, konsultant krajowy w  dziedzinie leków</div><div class="ekipa_osoba"><a href="index.php/113310">Jacek Skiba</a></div><div class="ekipa_opis"> Andrzej, syn pani Marii; w odcinkach 8, 12, 21, 28, 33, 89-90</div><div class="ekipa_osoba"><a href="index.php/113289">Wojciech Skibiński</a></div><div class="ekipa_opis"> właściciel punktu dorabiania kluczy</div><div class="ekipa_osoba"><a href="index.php/113308">Piotr Skowroński</a></div><div class="ekipa_opis"> mąż ciężarnej oczekującej na badanie USG</div><div class="ekipa_osoba"><a href="index.php/113311">Elżbieta Skrętowska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1114887">Zdzisław Sobociński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118047">Tomasz Sobota</a></div><div class="ekipa_opis"> Piotrek, syn Racewiczów</div><div class="ekipa_osoba"><a href="index.php/112042">Lech Sołuba</a></div><div class="ekipa_opis"> posterunkowy w Siedlcach</div><div class="ekipa_osoba"><a href="index.php/115519">Tatiana Sosna-Sarno</a></div><div class="ekipa_opis"> 2 role: sędzia orzekająca o spadku Białka (odcinek: 45);  prokurator prowadząca śledztwo w sprawie toksycznych odpadów (odcinki: 98, 100)</div><div class="ekipa_osoba"><a href="index.php/112236">Karol Strasburger</a></div><div class="ekipa_opis"> David Mayer, mąż Danuty, dziennikarz  amerykański</div><div class="ekipa_osoba"><a href="index.php/1116645">Zofia Streer</a></div><div class="ekipa_opis"> babcia Igora</div><div class="ekipa_osoba">Agnieszka Subicz</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115188">Iwona Sul</a></div><div class="ekipa_opis"> stewardessa adorowana przez Wernera</div><div class="ekipa_osoba">Artur Szachowski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115424">Roman Szafrański</a></div><div class="ekipa_opis"> Saleh Moutar, Arab wynajmujący mieszkanie  Racewicza</div><div class="ekipa_osoba"><a href="index.php/112136">Maciej Szary</a></div><div class="ekipa_opis"> dramaturg Bogdan, przyjaciel Hanisza</div><div class="ekipa_osoba"><a href="index.php/118244">Irena Szczurowska</a></div><div class="ekipa_opis"> Bańczakowa, matka narkomana prosząca Joannę Racewicz o pomoc</div><div class="ekipa_osoba">Dorota Szpetkowska</div><div class="ekipa_opis"> dziennikarka realizująca program o porwaniu Mateusza, syna Ewy Glinickiej</div><div class="ekipa_osoba"><a href="index.php/1111132">Janina Szydłowska</a></div><div class="ekipa_opis"> gość na przyjęciu u Hanisza</div><div class="ekipa_osoba"><a href="index.php/1115430">Jakub Szyliński</a></div><div class="ekipa_opis"> 2 role: gość na przyjęciu u Hellera (odcinki: 38, 42); student farmacji (odcinki: 54-55, 61-62, 65, 90-91)</div><div class="ekipa_osoba"><a href="index.php/1128152">Barbara Szyszko</a></div><div class="ekipa_opis"> pielęgniarka w szpitalu, w którym po porwaniu badany był Mateusz, syn Ewy Glinickiej</div><div class="ekipa_osoba"><a href="index.php/1110681">Robert Śliwowski</a></div><div class="ekipa_opis"> milicjant w milicyjnej Izbie Dziecka</div><div class="ekipa_osoba"><a href="index.php/114661">Bogdan Śmigielski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111020">Leszek Teleszyński</a></div><div class="ekipa_opis"> Krzysztof Werner, pilot LOTu</div><div class="ekipa_osoba"><a href="index.php/1115765">Jan Tomaszewicz</a></div><div class="ekipa_opis"> "goryl" pani Wandy Paciorek</div><div class="ekipa_osoba"><a href="index.php/1118429">Marzena Tomaszko</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118046">Maciej Tuszyński</a></div><div class="ekipa_opis"> Jacek "Bajbus", kolega Marty</div><div class="ekipa_osoba"><a href="index.php/111601">Kazimiera Utrata</a></div><div class="ekipa_opis"> sąsiadka Racewicza na ul. Grzybowskiej</div><div class="ekipa_osoba"><a href="index.php/111051">Mieczysław Voit</a></div><div class="ekipa_opis"> Siedlecki, ojciec Marka</div><div class="ekipa_osoba"><a href="index.php/1113998">Maria Wadecka</a></div><div class="ekipa_opis"> stewardessa Beata, koleżanka Krystyny Duraj</div><div class="ekipa_osoba">Małgorzata Walczak</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/114513">Zdzisław Wardejn</a></div><div class="ekipa_opis"> dramaturg Janusz Burkat</div><div class="ekipa_osoba"><a href="index.php/118771">Ewa Wawrzoń</a></div><div class="ekipa_opis"> Grażyna Borg-Siedlecka, matka Marka, była  prokurator przesłuchująca w czasie stanu  wojennego Dorotę</div><div class="ekipa_osoba"><a href="index.php/118219">Jolanta Wesołowska</a></div><div class="ekipa_opis"> pacjentka ze złamaną nogą leżąca na jednej sali z Ewą Glinicką</div><div class="ekipa_osoba"><a href="index.php/117535">Włodzimierz Wilkosz</a></div><div class="ekipa_opis"> Włodzimierz Lipiec, inspektor z komendy stołecznej prowadzący śledztwo w sprawie porwania Mateusza, syna Ewy Glinickiej</div><div class="ekipa_osoba"><a href="index.php/1115187">Maciej Winkler</a></div><div class="ekipa_opis"> gość na prywatce u Agaty Wieczorek</div><div class="ekipa_osoba"><a href="index.php/111624">Andrzej Wiśniewski</a></div><div class="ekipa_opis"> lekarz w Wojskowym Instytucie Medycyny Lotnicznej badający Krystynę Duraj</div><div class="ekipa_osoba"><a href="index.php/1118238">Magdalena Włodarczyk</a></div><div class="ekipa_opis"> Niusia, pielęgniarka na oddziale doktora Gorczycy</div><div class="ekipa_osoba"><a href="index.php/11665">Danuta Wodyńska</a></div><div class="ekipa_opis"> Karasek, kobieta wynajmująca pokoje</div><div class="ekipa_osoba"><a href="index.php/1113291">Anna Wojton</a></div><div class="ekipa_opis"> Mariola Kaczorek, laborantka w pracowni,  później studentka farmacji</div><div class="ekipa_osoba"><a href="index.php/112648">Krystyna Wolańska</a></div><div class="ekipa_opis"> pielęgniarka na oddziale chirurgii, na który trafiła Ewa Glinicka</div><div class="ekipa_osoba"><a href="index.php/117477">Marek Wójcicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/119231">Tadeusz Wójcik</a></div><div class="ekipa_opis"> policjant wręczający Racewiczowi nagrodę za odnalezienie brylantów</div><div class="ekipa_osoba"><a href="index.php/1114376">Bożena Wróbel</a></div><div class="ekipa_opis"> Beata Rudecka, nowa sekretarka Davida Mayera</div><div class="ekipa_osoba"><a href="index.php/115627">Anna Wróblówna</a></div><div class="ekipa_opis"> Kociołkowa, kandydatka do pracy w agencji opiekunek</div><div class="ekipa_osoba"><a href="index.php/1112376">Sylwia Wysocka</a></div><div class="ekipa_opis"> Elżbieta, synowa pani Marii; w odcinku 8 pada  inne imię bohaterki: Monika</div><div class="ekipa_osoba"><a href="index.php/113052">Kazimierz Wysota</a></div><div class="ekipa_opis"> doktor Witold Zych, przyjaciel Duraja,  lekarz prowadzący Franciszka Hanisza</div><div class="ekipa_osoba">Aleksander Załęski</div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1118433">Magdalena Zaremba</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/111581">Zorika Zarzycka</a></div><div class="ekipa_opis"> rejestratorka w przychodni, w której Ewa robiła test ciążowy, a także odbywały się mitingi "Anonimowych Alkoholików"</div><div class="ekipa_osoba"><a href="index.php/111630">Kazimierz Zarzycki</a></div><div class="ekipa_opis"> kompozytor Jerzy Maria Podolecki, z którym wywiad przeprowadziła Joanna Racewicz</div><div class="ekipa_osoba"><a href="index.php/115613">Jerzy Zass</a></div><div class="ekipa_opis"> mecenas Szwarc, prawnik reprezentujący Białka, a później Maćka Derbicha</div><div class="ekipa_osoba"><a href="index.php/117856">Barbara Zielińska</a></div><div class="ekipa_opis"> Czesia, porywaczka Mateusza</div><div class="ekipa_osoba"><a href="index.php/1118222">Witold Żaboklicki</a></div><div class="ekipa_opis"> 2 role: gość na przyjęciu u Hanisza (odcinek: 40); Akindu, student farmacji (odcinki: 59-63, 75-76, 85-86, 90-91)</div><div class="ekipa_osoba"><a href="index.php/111068">Andrzej Żółkiewski</a></div><div class="ekipa_opis"> Rysio, instruktor w klubie żeglarskim, do którego należał Piotrek Racewicz</div><div class="ekipa_osoba"><a href="index.php/112679">Helena Białecka</a></div><div class="ekipa_opis"> krawcowa Helena; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1120075">Monika Gajzler</a></div><div class="ekipa_opis"> dziewczyna w parku; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/116506">Mariusz Jeliński</a></div><div class="ekipa_opis"> dziennikarz Mariusz, kolega Joanny Racewicz; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11745">Ewa Kania</a></div><div class="ekipa_opis"> pracownica dziekanatu Wydziału Farmacji, na którym studiowała Ewa; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/116472">Paweł Karpiński</a></div><div class="ekipa_opis"> realizator tv; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1139284">Janusz R. Kowalczyk</a></div><div class="ekipa_opis"> kolega Jurka Sewera, wychodzący wraz z nim z wystawy podziemnej prasy; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1121283">Beata Kuroczycka</a></div><div class="ekipa_opis"> modelka na pokazie kolekcji mody Danuty Mayer; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1114749">Dorota Lanton</a></div><div class="ekipa_opis"> nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1118096">Krzysztof Łapiński</a></div><div class="ekipa_opis"> pracownik Instytutu na naradzie u Stopczyka; nie  występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1114110">Krzysztof Marzec</a></div><div class="ekipa_opis"> występuje w roli samego siebie, prowadzącego program telewizyjny "Tik-Tak", w którym wystąpiła Ola Duraj; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/112172">Robert Rogalski</a></div><div class="ekipa_opis"> urzędnik USC udzielający ślubu pani Marii i Guttmanowi; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1115365">Agnieszka Różańska</a></div><div class="ekipa_opis"> sekretarka w sądzie dla nieletnich, gdzie pracował Jurek Sewer; nie  występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1124890">Marzena Weselińska</a></div><div class="ekipa_opis"> kelnerka w kawiarni, w której Marek czekał na Dorotę; nie występuje w  napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona125274">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/116472">Paweł Karpiński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/1113135">Wojciech Niżyński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116472">Paweł Karpiński</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/1118065">Zygmunt Dziwer</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/111320">Lucyna Krzemińska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/111982">Ewa Kowalska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1113439">Anna Iskierka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/113111">Wiesława Starska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111384">Hanna Ćwikło</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1114110">Krzysztof Marzec</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/111127">Lech Brański</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1118058">Wiesław Kolankiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116791">Alicja Torbus-Wosińska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/115418">Dorota Seweryńska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1112297">Maja Gawińska-Łyczkowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/111389">Tadeusz Drewno</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/1118043">Interpress Film</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1117720">PAI-Film</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1126642">Agnieszka Michalska</a></div><div class="ekipa_opis"> Ewa Glinicka; w odcinkach 1-52</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111162">Marek Kondrat</a></div><div class="ekipa_opis"> Adam Racewicz</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/113290">Piotr Skarga</a></div><div class="ekipa_opis"> Jan Duraj</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112031">Sławomira Łozińska</a></div><div class="ekipa_opis"> Joanna Racewicz, żona Adama,  dziennikarka tv</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1115930">Renata Pękul</a></div><div class="ekipa_opis"> Krystyna Duraj, żona Jana</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/112286">Wiesław Drzewicz</a></div><div class="ekipa_opis"> Leon Guttman</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/115394">Małgorzata Lorentowicz</a></div><div class="ekipa_opis"> Anna Suchecka, żona profesora</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111163">Piotr Pawłowski</a></div><div class="ekipa_opis"> profesor Jerzy Suchecki</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116504">Jan Jankowski</a></div><div class="ekipa_opis"> Paweł Hanisz</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1135158">Marta Klubowicz-Różycka</a></div><div class="ekipa_opis"> Dorota Wanat</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1111607">Dariusz Kordek</a></div><div class="ekipa_opis"> Marek Siedlecki</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Varia<div class="sterowanie"><span id="varia_schowaj125274" class="jslink" onclick="pzz1('varia125274','varia_schowaj125274')">pokaż</span></div></h2>
+<table id="varia125274" class="varia_table hidden" >
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">W LABIRYNCIE  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1113135">Wojciech Niżyński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+          
+        </td><td class="varia_osoba"><a href="index.php/1114110">Krzysztof Marzec</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/116472">Paweł Karpiński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/118336">Grzegorz Markowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">JEŹDŹCY  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1115739">Kazimierz Staszewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1115738">Kult (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1115738">Kult (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">NIEJEDEN  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1115739">Kazimierz Staszewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1115738">Kult (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1115738">Kult (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">DO ANI  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1115739">Kazimierz Staszewski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/1115738">Kult (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1115738">Kult (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">DEMON  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/1113135">Wojciech Niżyński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+          
+        </td><td class="varia_osoba"><a href="index.php/1114115">Fatum (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja"></td><td class="varia_osoba"><a href="index.php/116472">Paweł Karpiński</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/1114115">Fatum (zespół)</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td colspan="3" class="varia_rodzaj">Piosenka</td></tr><tr><td colspan="3" class="varia_tytul">AUTOPORTRET WITKACEGO  
+    </td></tr>
+<tr><td class="varia_funkcja">Słowa  
+        </td><td class="varia_osoba"><a href="index.php/117411">Jacek Kaczmarski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Muzyka  
+        </td><td class="varia_osoba"><a href="index.php/114813">Przemysław Gintrowski</a></td><td class="varia_osoba_opis"></td></tr>
+
+<tr><td class="varia_funkcja">Wykonanie  
+        </td><td class="varia_osoba"><a href="index.php/114813">Przemysław Gintrowski</a></td><td class="varia_osoba_opis"></td></tr>
+</table><div class="podzbior"><h1>PRZERWANE BADANIA (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">27 min</div></li>
+</ul>
+<p class="opis">W pierwszym odcinku serialu poznajemy pracowników Instytutu Farmakologii, gdzie toczy się akcja telenoweli, ich problemy zawodowe i prywatne. Młoda absolwentka medycyny, Ewa Glinicka, po śmierci narzeczonego rozpoczyna pracę w Instytucie. Dyrektor wstrzymuje interesujące badania nad adoloranem, aby w ten sposób odegrać się na swoim przeciwniku naukowym i politycznym, docenie Duraju.</p><span class="clear"></span></div><div class="podzbior"><h1>SPOTKANIE PO LATACH (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">29 min</div></li>
+</ul>
+<p class="opis">Krystyna Duraj i Joanna Racewicz zwierzają się sobie z rodzinnych kłopotów. Krystyna nie może już znieść zazdrości męża. Joanna przekonuje ją, że trzeba przetrwać trudny okres. Powołuje się na własne doświadczenia - jej mąż był przed laty zakochany w swojej studentce, a jednak są razem do dziś. Adam Racewicz po powrocie z delegacji zastaje w Instytucie nową pracownicę. To właśnie Ewa była ową studentką.</p><span class="clear"></span></div><div class="podzbior"><h1>GDZIE JEST LANCET (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">27 min</div></li>
+</ul>
+<p class="opis">Ewa odwiedza Janka Duraja, odnosi mu do domu materiały potrzebne do jego pracy naukowej. Krystyna Durajowa, z zawodu stewardesa, przez przypadek nie poleciała w zaplanowany rejs. Nieoczekiwanie wraca do domu i obecność Ewy interpretuje jednoznacznie, jako schadzkę.</p><span class="clear"></span></div><div class="podzbior"><h1>POWRÓT (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">26 min</div></li>
+</ul>
+<p class="opis">Adam Racewicz uświadamia sobie, że mimo upływu lat Ewa wciąż nie jest mu obojętna. Ona jednak uważa ich dawny związek za skończony. Duraj postanawia kontynuować przerwane przez dyrekcję badania. Pomaga mu w tym laborantka Mariola. Szef przyłapuje ich na "zakazanej" pracy nad adoloranem. Wybucha awantura. W pracowni zjawia się Paweł Hanisz, który był przez dłuższy czas na stypendium za granicą. To właśnie na jego miejsce została przyjęta Ewa.</p><span class="clear"></span></div><div class="podzbior"><h1>SIÓDMY TYDZIEŃ (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">28 min</div></li>
+</ul>
+<p class="opis">Ewa spotyka się ze swą przyjaciółką Agatą w szpitalu. Podejrzewa, że jest w ciąży, chciałaby zrobić badania. W tym samym szpitalu leży ojciec Pawła Hanisza, ciężko chory na serce. Odwiedza go syn, potem razem z napotkaną koleżanką wracają do domu. Widzi to profesorowa Suchecka, matka zmarłego narzeczonego Ewy, i ma pretensje do dziewczyny, że zapomniała już o jej synu. Pani Maria opowiada o zadawnionych przyczynach niechęci, jaką czują do siebie Stopczyk i Duraj. Gutman dowiaduje się od leżącego w szpitalu Janisza o spodziewanej wizycie w Polsce ich wspólnego kolegi z czasów powstania warszawskiego, który mieszka obecnie w Kanadzie. Lekarz informuje Pawła o ciężkim stanie zdrowia jego ojca. Ewa dowiaduje się, że jej podejrzenia były słuszne - jest w siódmym tygodniu ciąży.</p><span class="clear"></span></div><div class="podzbior"><h1>CIĄŻA (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">26 min</div></li>
+</ul>
+<p class="opis">Ewa idzie na grób narzeczonego. Chce symbolicznie podzielić się ze zmarłym wiadomością, że urodzi jego dziecko. Dyrektor Stopczyk bezskutecznie próbuje wymusić na Marioli napisanie oświadczenia, w którym oskarżyłaby doktora Duraja o zmuszanie jej do pracy nad jego prywatnymi projektami. Stan zdrowia pana Hanisza pogarsza się, Paweł stara się sprowadzić ze Szwajcarii lek dla ojca. Przy okazji wywiadu telewizyjnego Joanna poznaje znanego pisarza, który wyraźnie zaczyna ją adorować. Życzliwa koleżanka donosi, że widziała jej męża w kawiarni w towarzystwie młodej dziewczyny. Po usilnych namowach Ewa rzeczywiście spotyka się z Adamem. Informuje go, że jest w ciąży i zamierza urodzić dziecko zmarłego narzeczonego. Nagle w kawiarni zjawia się Joanna.</p><span class="clear"></span></div><div class="podzbior"><h1>KŁOPOTY Z ZAPALANIEM (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">27 min</div></li>
+</ul>
+<p class="opis">Paweł Hanisz postanwia zostać w Polsce na stałe, aby opiekować się chorym ojcem. Ponownie zgłasza się do Instytutu, skąd wyjechał na stypendium. Dowiaduje się, że na jego miejsce przyjęto już innego pracownika. Tak poznaje Ewę Glinicką. Janek Duraj ma stałe kłopoty z uruchomieniem swojego malucha.</p><span class="clear"></span></div><div class="podzbior"><h1>SAMA W PUSTYM DOMU (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">27 min</div></li>
+</ul>
+<p class="opis">Podczas nieobecności dyrektora Stopczyka Janek Duraj chce kontynuować badania nad adoloranem, Mariola jednak boi się ryzykować.
+Stan zdrowia Franciszka Hanisza poprawia się. Paweł ma więcej czasu dla przyjaciół, toteż wytrwale podejmuje próby zbliżenia się do Ewy. Joanna Racewiczowa umawia się na randkę z pisarzem Burkatem. Robi to w odruchu odwetu za randki Adama z Ewą.
+Ewa, która mieszka z rodzicami swego nieżyjącego narzeczonego w obszernej willi, nie może znieść zachowania jego matki, czuwającej nad każdym jej krokiem. Podczas nieobecności niedoszłych teściów Ewie robi się słabo, spada ze schodów. [PAT]</p><span class="clear"></span></div><div class="podzbior"><h1>SŁOMIANY WDOWIEC (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1988</div></li>
+<li><div class="film_tech3">26 min</div></li>
+</ul>
+<p class="opis">Janek Duraj dowiaduje się, że przebywającą na wczasach Krystynę odwiedził kolega z pracy, przystojny kapitan Werner, który również wypoczywał w tej okolicy. Podejrzewa zdradę i w ramach "rewanżu" umawia się na randkę z Mariolą. 
+Ewa Glinicka, silnie potłuczona po upadku ze schodów, leży w szpitalu. Odwiedza ją Adam Racewicz. Podczas serdecznej, szczerej rozmowy dowiaduje się, że Ewa przed pięcioma laty poroniła jego dziecko. [PAT]</p><span class="clear"></span></div><div class="podzbior"><h1>KWIATEK DLA EWY (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1989</div></li>
+<li><div class="film_tech3">26 min</div></li>
+</ul>
+<p class="opis">Ewa wraca ze szpitala, coraz częściej odwiedza ją Paweł. Ku zaniepokojeniu profesorowej Sucheckiej nawiązuje się między nimi nić sympatii. Racewiczowa umawia się na randkę z Burkatem, ale nie posuwa się do zdrady męża. W instytucie zespół docenta Racewicza kontynuuje badania nad nowym lekiem, adoloranem. Pod nieobecność Krystyny do Janka Duraja wpada przemoczona Mariola. W chwili, gdy dziewczyna się przebiera, do mieszkania wchodzi teściowa Janka. Jej mina zwiastuje najgorsze. [PAT]</p><span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="125274" selected >1</option><option value="125274_2">2</option><option value="125274_3">3</option><option value="125274_4">4</option><option value="125274_5">5</option><option value="125274_6">6</option><option value="125274_7">7</option><option value="125274_8">8</option><option value="125274_9">9</option><option value="125274_10">10</option><option value="125274_11">11</option><option value="125274_12">12</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/125274_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/125274_12"></a> 
+</nav><div id="czasgen">2026.05.08 02:59:39</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

@@ -1,0 +1,638 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - PODZIEMNY FRONT</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>PODZIEMNY FRONT</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">1965</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">1965. 04. 17</div></li>
+<li><div class="film_tech3">Czarno-biały, 7 odcinków x ok. 25 min<br /><br />
+W czołówce tekst: Treść filmu osnuto na tle akcji lewicowych organizacji podziemnych, między innymi batalionu AL "Czwartacy".</div></li>
+</ul>
+<p class="opis">W serialu została przedstawiona walka z hitlerowskim okupantem oddziału Czwartaków z podziemnej organizacji Armii Ludowej. Każdy odcinek jest zamkniętą całością.</p><div class="galeria_mala"><a href="index.php?fotos=164611_1&galeria=154611"><img class="bezcienia" src="../z1/11i/4611_1.jpg" height="60"></a><a href="index.php/154611" title="Galeria zdjęć (1)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124611" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124611','ekipa_skrocona124611','ekipa124611','ekipa_schowaj124611','ekipa_schowaj_krotki124611','ekipa_schowaj_pelny124611','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124611" class="jslink" onclick="pzf('ekipa_skrocona124611','ekipa_pelna124611','ekipa124611','ekipa_schowaj124611','ekipa_schowaj_pelny124611','ekipa_schowaj_krotki124611','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124611"124611" class="jslink" onclick="pzz('ekipa124611','ekipa_schowaj124611')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124611" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124611">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1115279">Seweryn Nowicki</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-2</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111835">Hubert Drapella</a></div><div class="ekipa_opis wyroznienie"> odcinki: 3-7</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1115721">Andrzej Zakrzewski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca reżyserska</div><div class="ekipa_osoba"><a href="index.php/113585">Jan Budkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1131410">Adam Swendrak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112679">Helena Białecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118403">Jerzy Bednarczyk</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118178">Bohdan Czeszko</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/118402">Tadeusz Pietrzak</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11129">Wacław Dybowski</a></div><div class="ekipa_opis wyroznienie"> odcinki: 1-3, 5-7</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111076">Karol Chodura</a></div><div class="ekipa_opis wyroznienie"> odcinek 4</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/11637">Wiesław Pyda</a></div><div class="ekipa_opis"> odcinki: 1-3, 5-7</div><div class="ekipa_osoba"><a href="index.php/11129">Wacław Dybowski</a></div><div class="ekipa_opis"> odcinek 4</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1116554">Jerzy Snoch</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1116440">Józef Kasprzak</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Laboratorium</div><div class="ekipa_osoba"><a href="index.php/11219">Wytwórnia Filmów Dokumentalnych</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113883">Wiesław Śniadecki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/1114822">Biruta Wasilkowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca scenograficzna</div><div class="ekipa_osoba"><a href="index.php/112938">Barbara Kozakiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Atelier</div><div class="ekipa_osoba"><a href="index.php/11219">Wytwórnia Filmów Dokumentalnych</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie muzyczne</div><div class="ekipa_osoba"><a href="index.php/1116843">Marek Lusztig</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113244">Małgorzata Jaworska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11645">Maria Orłowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1115360">Krystyna Kowalczyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11264">Romualda Baszkiewicz</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/1115857">Lidia Łopatowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/113013">Jan Szymański</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/113039">Edward Kłosowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca produkcyjna</div><div class="ekipa_osoba"><a href="index.php/1131411">Włodzimierz Zambrzycki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/112411">Jacek Moczydłowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/119314">Zespół Filmowy Studio</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/114464">Czesław Byszewski</a></div><div class="ekipa_opis wyroznienie"> Ryszard, dowódca "Czwartaków"</div><div class="ekipa_osoba wyroznienie"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis wyroznienie"> standartenführer doktor Heinrich von  Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba wyroznienie"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis wyroznienie"> pułkownik "Stary", dowódca AL</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124611">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1115279">Seweryn Nowicki</a></div><div class="ekipa_opis"> odcinki: 1-2</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111835">Hubert Drapella</a></div><div class="ekipa_opis"> odcinki: 3-7</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba"><a href="index.php/118403">Jerzy Bednarczyk</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118178">Bohdan Czeszko</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/118402">Tadeusz Pietrzak</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/11129">Wacław Dybowski</a></div><div class="ekipa_opis"> odcinki: 1-3, 5-7</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111076">Karol Chodura</a></div><div class="ekipa_opis"> odcinek 4</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/113883">Wiesław Śniadecki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/113244">Małgorzata Jaworska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/11645">Maria Orłowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/11264">Romualda Baszkiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/113013">Jan Szymański</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/119314">Zespół Filmowy Studio</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/114464">Czesław Byszewski</a></div><div class="ekipa_opis"> Ryszard, dowódca "Czwartaków"</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von  Kniprode, dowódca Gestapo w Warszawie</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div style="display:block;" /></li>
+</ul>
+</div>
+
+<h2>Nagrody<div class="sterowanie"><span id="nagrody_schowaj124611" class="jslink" onclick="pzz('nagrody124611','nagrody_schowaj124611')">schowaj</span></div></h2>
+<ul class="nagrody" id="nagrody124611" style="display:block;">
+<li><div class="nagrody_data">1966</div><div class="nagrody-nazwa">Nagroda Ministra Kultury i Sztuki  
+      
+      
+      
+      
+     <br /><span class="nagrody-opis">III stopnia</span></div><div class="nagrody-osoba"><a href="index.php/118403">Jerzy Bednarczyk</a></div><div class="nagrody-osoba"><a href="index.php/118178">Bohdan Czeszko</a></div><div class="nagrody-osoba"><a href="index.php/111835">Hubert Drapella</a></div><div class="nagrody-osoba"><a href="index.php/117950">Kazimierz Fabisiak</a></div><div class="nagrody-osoba"><a href="index.php/118402">Tadeusz Pietrzak</a></div></li>
+<li><div class="nagrody_data">1973</div><div class="nagrody-nazwa">Nagroda Ministra Obrony Narodowej  
+     <br /><span class="nagrody-opis">II stopnia</span></div><div class="nagrody-osoba"><a href="index.php/11377">Stanisław Mikulski</a></div></li>
+</ul>
+
+<h2>Patrz także:<div class="sterowanie"><span id="klamry_schowaj124611" class="jslink" onclick="pzz1('klamry124611','klamry_schowaj124611')">schowaj</span></div></h2>
+<ul class="klamry" id="klamry124611">
+<li><div class="rok">1965</div><div class="tytul"><a href="index.php/124570">POWRÓT DOKTORA VON KNIPRODE</a></div><div class="wyroznik">Film fabularny - telewizyjny / Hubert Drapella</div></li>
+</ul>
+<div class="podzbior"><h1>M-XIV ODPOWIADA (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">26 min</div></li>
+</ul>
+<p class="opis">Akcja odwetowa oddziału M-XIV na kasyno oficerów Wehrmachtu w Warszawie.</p><div class="galeria_mala"><a href="index.php?fotos=164612_1&galeria=154612"><img class="bezcienia" src="../z1/12i/4612_1.jpg" height="60"></a><a href="index.php?fotos=164612_2&galeria=154612"><img class="bezcienia" src="../z1/12i/4612_2.jpg" height="60"></a><a href="index.php?fotos=164612_3&galeria=154612"><img class="bezcienia" src="../z1/12i/4612_3.jpg" height="60"></a><a href="index.php?fotos=164612_4&galeria=154612"><img class="bezcienia" src="../z1/12i/4612_4.jpg" height="60"></a><a href="index.php?fotos=164612_5&galeria=154612"><img class="bezcienia" src="../z1/12i/4612_5.jpg" height="60"></a><a href="index.php?fotos=164612_6&galeria=154612"><img class="bezcienia" src="../z1/12i/4612_6.jpg" height="60"></a><a href="index.php/154612" title="Galeria zdjęć (7)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124612" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124612','ekipa_skrocona124612','ekipa124612','ekipa_schowaj124612','ekipa_schowaj_krotki124612','ekipa_schowaj_pelny124612','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124612" class="jslink" onclick="pzf('ekipa_skrocona124612','ekipa_pelna124612','ekipa124612','ekipa_schowaj124612','ekipa_schowaj_pelny124612','ekipa_schowaj_krotki124612','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124612"124612" class="jslink" onclick="pzz('ekipa124612','ekipa_schowaj124612')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124612" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124612">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/114464">Czesław Byszewski</a></div><div class="ekipa_opis"> Ryszard, dowódca "Czwartaków"</div><div class="ekipa_osoba"><a href="index.php/1112032">Zbigniew Cynkutis</a></div><div class="ekipa_opis"> Antek Balcer</div><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div class="ekipa_osoba"><a href="index.php/1111653">Krystyna Stypułkowska</a></div><div class="ekipa_opis"> Marysia, łączniczka AL</div><div class="ekipa_osoba"><a href="index.php/11923">Tadeusz Białoszczyński</a></div><div class="ekipa_opis"> stryj von Kniprodego</div><div class="ekipa_osoba"><a href="index.php/117986">Zbigniew Dobrzyński</a></div><div class="ekipa_opis"> Konrad, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11244">Andrzej Gawroński</a></div><div class="ekipa_opis"> Gustaw, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/111180">Jerzy Kozakiewicz</a></div><div class="ekipa_opis"> podoficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/112249">Jadwiga Kuryluk</a></div><div class="ekipa_opis"> matka Antka Balcera</div><div class="ekipa_osoba"><a href="index.php/11540">Jerzy Molga</a></div><div class="ekipa_opis"> Zygmunt, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/111572">Stanisław Niwiński</a></div><div class="ekipa_opis"> Tolek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11658">Józef Nowak</a></div><div class="ekipa_opis"> podoficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/117937">Mieczysław Stoor</a></div><div class="ekipa_opis"> Klaus, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/113639">Saturnin Żórawski</a></div><div class="ekipa_opis"> tajniak pod kasynem</div><div class="ekipa_osoba"><a href="index.php/111846">Józef Duriasz</a></div><div class="ekipa_opis"> untersturmführer Johansen, oficer Gestapo; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> Marcin, żołnierz AL; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Rysiek, żołnierz AL; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11277">Marian Łącz</a></div><div class="ekipa_opis"> barman w kasynie; nie występuje w  napisach</div><div class="ekipa_osoba"><a href="index.php/118192">Wawrzyniec Trybała-Olszewski</a></div><div class="ekipa_opis"> oficer niemiecki na ulicy; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124612">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>POSTE RESTANTE (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">25 min</div></li>
+</ul>
+<p class="opis">Wywiad "Czwartaków" likwiduje zdrajcę, który wydał jednego z członków organizacji.</p><div class="galeria_mala"><a href="index.php?fotos=164613_1&galeria=154613"><img class="bezcienia" src="../z1/13i/4613_1.jpg" height="60"></a><a href="index.php?fotos=164613_2&galeria=154613"><img class="bezcienia" src="../z1/13i/4613_2.jpg" height="60"></a><a href="index.php?fotos=164613_3&galeria=154613"><img class="bezcienia" src="../z1/13i/4613_3.jpg" height="60"></a><a href="index.php?fotos=164613_4&galeria=154613"><img class="bezcienia" src="../z1/13i/4613_4.jpg" height="60"></a><a href="index.php?fotos=164613_5&galeria=154613"><img class="bezcienia" src="../z1/13i/4613_5.jpg" height="60"></a><a href="index.php?fotos=164613_6&galeria=154613"><img class="bezcienia" src="../z1/13i/4613_6.jpg" height="60"></a><a href="index.php/154613" title="Galeria zdjęć (6)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124613" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124613','ekipa_skrocona124613','ekipa124613','ekipa_schowaj124613','ekipa_schowaj_krotki124613','ekipa_schowaj_pelny124613','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124613" class="jslink" onclick="pzf('ekipa_skrocona124613','ekipa_pelna124613','ekipa124613','ekipa_schowaj124613','ekipa_schowaj_pelny124613','ekipa_schowaj_krotki124613','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124613"124613" class="jslink" onclick="pzz('ekipa124613','ekipa_schowaj124613')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124613" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124613">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/117986">Zbigniew Dobrzyński</a></div><div class="ekipa_opis"> Konrad, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div class="ekipa_osoba"><a href="index.php/117937">Mieczysław Stoor</a></div><div class="ekipa_opis"> Klaus, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/112956">Edward Wichura</a></div><div class="ekipa_opis"> Rybaczek "Rybak", donosiciel Gestapo</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Irena, łączniczka AL</div><div class="ekipa_osoba"><a href="index.php/114464">Czesław Byszewski</a></div><div class="ekipa_opis"> Ryszard, dowódca "Czwartaków"</div><div class="ekipa_osoba"><a href="index.php/1110999">Bronisław Dardziński</a></div><div class="ekipa_opis"> inspektor na poczcie</div><div class="ekipa_osoba"><a href="index.php/111846">Józef Duriasz</a></div><div class="ekipa_opis"> untersturmführer Johansen, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/11244">Andrzej Gawroński</a></div><div class="ekipa_opis"> Gustaw, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11155">Ryszarda Hanin</a></div><div class="ekipa_opis"> Elza, współpracownica Gestapo</div><div class="ekipa_osoba"><a href="index.php/111572">Stanisław Niwiński</a></div><div class="ekipa_opis"> Tolek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/1111653">Krystyna Stypułkowska</a></div><div class="ekipa_opis"> Marysia, łączniczka AL</div><div class="ekipa_osoba"><a href="index.php/115731">Zbigniew Skowroński</a></div><div class="ekipa_opis"> barman w knajpie</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Piegus", żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11232">Bogusz Bilewski</a></div><div class="ekipa_opis"> gość w knajpie; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1112032">Zbigniew Cynkutis</a></div><div class="ekipa_opis"> Antek Balcer; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> Marcin, żołnierz AL; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11938">Teodor Gendera</a></div><div class="ekipa_opis"> żołnierz niemiecki w knajpie; nie występuje  w napisach</div><div class="ekipa_osoba"><a href="index.php/11281">Cezary Julski</a></div><div class="ekipa_opis"> Hermann, kat na Gestapo; nie występuje w  napisach</div><div class="ekipa_osoba"><a href="index.php/11247">Gustaw Lutkiewicz</a></div><div class="ekipa_opis"> żołnierz niemiecki w knajpie; nie występuje  w napisach</div><div class="ekipa_osoba"><a href="index.php/11942">Bogdan Łysakowski</a></div><div class="ekipa_opis"> żołnierz AL towarzyszący Konradowi podczas wyroku na "Rybaku"; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/119372">Mirosław Majchrowski</a></div><div class="ekipa_opis"> pijak Leon na poczcie; nie występuje w  napisach</div><div class="ekipa_osoba"><a href="index.php/1111545">Stefan Rydel</a></div><div class="ekipa_opis"> tajniak niemiecki na poczcie; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1141517">Kazimierz Stankiewicz</a></div><div class="ekipa_opis"> gość w knajpie; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/113725">Janusz Sykutera</a></div><div class="ekipa_opis"> lekarz SS; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/113017">Stefan Śródka</a></div><div class="ekipa_opis"> gość przy barze w knajpie; nie występuje w  napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124613">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>SPOTKANIE Z MORDERCĄ (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">24 min <br />
+Lokacje: Warszawa (ul. Suzina - scena śmierci Johansena),</div></li>
+</ul>
+<p class="opis">Członek organizacji, "Rysiek", zabija gestapowca Johansena - mordercę jego matki.</p><div class="galeria_mala"><a href="index.php?fotos=164614_1&galeria=154614"><img class="bezcienia" src="../z1/14i/4614_1.jpg" height="60"></a><a href="index.php?fotos=164614_2&galeria=154614"><img class="bezcienia" src="../z1/14i/4614_2.jpg" height="60"></a><a href="index.php?fotos=164614_3&galeria=154614"><img class="bezcienia" src="../z1/14i/4614_3.jpg" height="60"></a><a href="index.php?fotos=164614_4&galeria=154614"><img class="bezcienia" src="../z1/14i/4614_4.jpg" height="60"></a><a href="index.php?fotos=164614_5&galeria=154614"><img class="bezcienia" src="../z1/14i/4614_5.jpg" height="60"></a><a href="index.php?fotos=164614_6&galeria=154614"><img class="bezcienia" src="../z1/14i/4614_6.jpg" height="60"></a><a href="index.php/154614" title="Galeria zdjęć (7)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124614" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124614','ekipa_skrocona124614','ekipa124614','ekipa_schowaj124614','ekipa_schowaj_krotki124614','ekipa_schowaj_pelny124614','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124614" class="jslink" onclick="pzf('ekipa_skrocona124614','ekipa_pelna124614','ekipa124614','ekipa_schowaj124614','ekipa_schowaj_pelny124614','ekipa_schowaj_krotki124614','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124614"124614" class="jslink" onclick="pzz('ekipa124614','ekipa_schowaj124614')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124614" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124614">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111846">Józef Duriasz</a></div><div class="ekipa_opis"> untersturmführer Johansen, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Rysiek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba"><a href="index.php/111572">Stanisław Niwiński</a></div><div class="ekipa_opis"> Tolek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Piegus", żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/114464">Czesław Byszewski</a></div><div class="ekipa_opis"> Ryszard, dowódca "Czwartaków"</div><div class="ekipa_osoba"><a href="index.php/111203">Iga Cembrzyńska</a></div><div class="ekipa_opis"> Wanda, siostra Ryśka</div><div class="ekipa_osoba"><a href="index.php/1110759">Helena Grossówna</a></div><div class="ekipa_opis"> pani Zofia, matka Ryśka</div><div class="ekipa_osoba"><a href="index.php/11244">Andrzej Gawroński</a></div><div class="ekipa_opis"> Gustaw, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11540">Jerzy Molga</a></div><div class="ekipa_opis"> Zygmunt, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/112507">Wiesław Michnikowski</a></div><div class="ekipa_opis"> torturowany krawiec</div><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div class="ekipa_osoba"><a href="index.php/117942">Leon Pietraszkiewicz</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/112340">Zdzisław Salaburski</a></div><div class="ekipa_opis"> 2 role: gestapowiec Franz; wartownik na poczcie</div><div class="ekipa_osoba"><a href="index.php/117937">Mieczysław Stoor</a></div><div class="ekipa_opis"> Klaus, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/111169">Hugo Krzyski</a></div><div class="ekipa_opis"> generał niemiecki; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/112567">Jan Mayzel</a></div><div class="ekipa_opis"> konspirator, kolega Ryśka; nie występuje w  napisach</div><div class="ekipa_osoba"><a href="index.php/1111083">Jerzy Nasierowski</a></div><div class="ekipa_opis"> konspirator, kolega Ryśka; nie występuje w  napisach</div><div class="ekipa_osoba"><a href="index.php/111175">Adam Perzyk</a></div><div class="ekipa_opis"> dozorca; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11884">Jerzy Szpunar</a></div><div class="ekipa_opis"> robotnik Felek, sąsiad Ryśka; nie występuje  w napisach</div><div class="ekipa_osoba"><a href="index.php/118440">Kazimierz Wilamowski</a></div><div class="ekipa_opis"> ojciec Ryśka; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124614">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>O ŻYCIE WROGA (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">26 min</div></li>
+</ul>
+<p class="opis">Oddział Czwartaków ratuje życie niemieckiemu robotnikowi, który sprzyja polskim akcjom sabotażowym.</p><div class="galeria_mala"><a href="index.php?fotos=164615_1&galeria=154615"><img class="bezcienia" src="../z1/15i/4615_1.jpg" height="60"></a><a href="index.php?fotos=164615_2&galeria=154615"><img class="bezcienia" src="../z1/15i/4615_2.jpg" height="60"></a><a href="index.php?fotos=164615_3&galeria=154615"><img class="bezcienia" src="../z1/15i/4615_3.jpg" height="60"></a><a href="index.php?fotos=164615_4&galeria=154615"><img class="bezcienia" src="../z1/15i/4615_4.jpg" height="60"></a><a href="index.php/154615" title="Galeria zdjęć (4)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124615" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124615','ekipa_skrocona124615','ekipa124615','ekipa_schowaj124615','ekipa_schowaj_krotki124615','ekipa_schowaj_pelny124615','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124615" class="jslink" onclick="pzf('ekipa_skrocona124615','ekipa_pelna124615','ekipa124615','ekipa_schowaj124615','ekipa_schowaj_pelny124615','ekipa_schowaj_krotki124615','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124615"124615" class="jslink" onclick="pzz('ekipa124615','ekipa_schowaj124615')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124615" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124615">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11243">Stefan Friedmann</a></div><div class="ekipa_opis"> Rysiek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/117950">Kazimierz Fabisiak</a></div><div class="ekipa_opis"> Schmidt, majster w fabryce samolotów</div><div class="ekipa_osoba"><a href="index.php/11540">Jerzy Molga</a></div><div class="ekipa_opis"> Zygmunt, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Piegus", żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/114464">Czesław Byszewski</a></div><div class="ekipa_opis"> Ryszard, dowódca "Czwartaków"</div><div class="ekipa_osoba"><a href="index.php/11280">Czesław Jaroszyński</a></div><div class="ekipa_opis"> żołnierz niemiecki w fabryce</div><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div class="ekipa_osoba"><a href="index.php/113870">Józef Para</a></div><div class="ekipa_opis"> Mereck, inżynier w fabryce samolotów</div><div class="ekipa_osoba"><a href="index.php/117937">Mieczysław Stoor</a></div><div class="ekipa_opis"> Klaus, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/11286">Zbigniew Koczanowicz</a></div><div class="ekipa_opis"> robotnik Franek; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11177">Włodzimierz Kwaskowski</a></div><div class="ekipa_opis"> Schultz, strażnik w fabryce; nie występuje w  napisach</div><div class="ekipa_osoba"><a href="index.php/112340">Zdzisław Salaburski</a></div><div class="ekipa_opis"> gestapowiec Franz; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124615">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>NIM NADEJDZIE ŚWIT (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">25 min</div></li>
+</ul>
+<p class="opis">Do transportu wojskowego, na który planowano zamach, doczepiono wagony z więźniami. Aby ich uratować, poświęca swe życie jeden z członków organizacji - Marcin.</p><div class="galeria_mala"><a href="index.php?fotos=164616_1&galeria=154616"><img class="bezcienia" src="../z1/16i/4616_1.jpg" height="60"></a><a href="index.php?fotos=164616_2&galeria=154616"><img class="bezcienia" src="../z1/16i/4616_2.jpg" height="60"></a><a href="index.php?fotos=164616_3&galeria=154616"><img class="bezcienia" src="../z1/16i/4616_3.jpg" height="60"></a><a href="index.php?fotos=164616_4&galeria=154616"><img class="bezcienia" src="../z1/16i/4616_4.jpg" height="60"></a><a href="index.php?fotos=164616_5&galeria=154616"><img class="bezcienia" src="../z1/16i/4616_5.jpg" height="60"></a><a href="index.php/154616" title="Galeria zdjęć (5)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124616" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124616','ekipa_skrocona124616','ekipa124616','ekipa_schowaj124616','ekipa_schowaj_krotki124616','ekipa_schowaj_pelny124616','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124616" class="jslink" onclick="pzf('ekipa_skrocona124616','ekipa_pelna124616','ekipa124616','ekipa_schowaj124616','ekipa_schowaj_pelny124616','ekipa_schowaj_krotki124616','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124616"124616" class="jslink" onclick="pzz('ekipa124616','ekipa_schowaj124616')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124616" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124616">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/114464">Czesław Byszewski</a></div><div class="ekipa_opis"> Ryszard, dowódca "Czwartaków"</div><div class="ekipa_osoba"><a href="index.php/11229">Jan Englert</a></div><div class="ekipa_opis"> Marcin, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div class="ekipa_osoba"><a href="index.php/11535">Krzysztof Chamiec</a></div><div class="ekipa_opis"> komendant Pawiaka</div><div class="ekipa_osoba"><a href="index.php/11244">Andrzej Gawroński</a></div><div class="ekipa_opis"> Gustaw, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11276">Janusz Kłosiński</a></div><div class="ekipa_opis"> Niemiec, dyżurny ruchu</div><div class="ekipa_osoba"><a href="index.php/112733">Jerzy Karaszkiewicz</a></div><div class="ekipa_opis"> żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/1110319">Zygmunt Listkiewicz</a></div><div class="ekipa_opis"> radiotelegrafista AL</div><div class="ekipa_osoba"><a href="index.php/11540">Jerzy Molga</a></div><div class="ekipa_opis"> Zygmunt, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/111572">Stanisław Niwiński</a></div><div class="ekipa_opis"> Tolek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11283">Lech Ordon</a></div><div class="ekipa_opis"> knajpiarz</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Piegus", żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/112257">Janusz Ziejewski</a></div><div class="ekipa_opis"> dozorca</div><div class="ekipa_osoba"><a href="index.php/117986">Zbigniew Dobrzyński</a></div><div class="ekipa_opis"> Konrad, żołnierz AL; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/112415">Mariusz Gorczyński</a></div><div class="ekipa_opis"> oficer SS; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11629">Andrzej Krasicki</a></div><div class="ekipa_opis"> niemiecki kolejarz; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/112340">Zdzisław Salaburski</a></div><div class="ekipa_opis"> gestapowiec Franz; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/117937">Mieczysław Stoor</a></div><div class="ekipa_opis"> Klaus, oficer Gestapo; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/112905">Krzysztof Świętochowski</a></div><div class="ekipa_opis"> żołnierz AL; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124616">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>PRZEPRAWA (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">25 min</div></li>
+</ul>
+<p class="opis">Akcja filmu toczy się we wrześniu 1944 roku i dotyczy przeprawy powstańców z Warszawy na drugi brzeg Wisły.</p><div class="galeria_mala"><a href="index.php?fotos=164617_1&galeria=154617"><img class="bezcienia" src="../z1/17i/4617_1.jpg" height="60"></a><a href="index.php?fotos=164617_2&galeria=154617"><img class="bezcienia" src="../z1/17i/4617_2.jpg" height="60"></a><a href="index.php?fotos=164617_3&galeria=154617"><img class="bezcienia" src="../z1/17i/4617_3.jpg" height="60"></a><a href="index.php?fotos=164617_4&galeria=154617"><img class="bezcienia" src="../z1/17i/4617_4.jpg" height="60"></a><a href="index.php?fotos=164617_5&galeria=154617"><img class="bezcienia" src="../z1/17i/4617_5.jpg" height="60"></a><a href="index.php?fotos=164617_6&galeria=154617"><img class="bezcienia" src="../z1/17i/4617_6.jpg" height="60"></a><a href="index.php/154617" title="Galeria zdjęć (6)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124617" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124617','ekipa_skrocona124617','ekipa124617','ekipa_schowaj124617','ekipa_schowaj_krotki124617','ekipa_schowaj_pelny124617','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124617" class="jslink" onclick="pzf('ekipa_skrocona124617','ekipa_pelna124617','ekipa124617','ekipa_schowaj124617','ekipa_schowaj_pelny124617','ekipa_schowaj_krotki124617','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124617"124617" class="jslink" onclick="pzz('ekipa124617','ekipa_schowaj124617')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124617" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124617">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/117986">Zbigniew Dobrzyński</a></div><div class="ekipa_opis"> Konrad, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/111507">Marian Opania</a></div><div class="ekipa_opis"> Wicek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11470">Ewa Wiśniewska</a></div><div class="ekipa_opis"> Irena, łączniczka AL</div><div class="ekipa_osoba"><a href="index.php/112415">Mariusz Gorczyński</a></div><div class="ekipa_opis"> oficer SS</div><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba"><a href="index.php/112733">Jerzy Karaszkiewicz</a></div><div class="ekipa_opis"> żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11540">Jerzy Molga</a></div><div class="ekipa_opis"> Zygmunt, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/1110319">Zygmunt Listkiewicz</a></div><div class="ekipa_opis"> radiotelegrafista AL</div><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div class="ekipa_osoba"><a href="index.php/117942">Leon Pietraszkiewicz</a></div><div class="ekipa_opis"> lekarz</div><div class="ekipa_osoba"><a href="index.php/117937">Mieczysław Stoor</a></div><div class="ekipa_opis"> Klaus, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/111890">Konrad Morawski</a></div><div class="ekipa_opis"> oficer AL</div><div class="ekipa_osoba"><a href="index.php/117828">Zygmunt Rzuchowski</a></div><div class="ekipa_opis"> major AK</div><div class="ekipa_osoba"><a href="index.php/112905">Krzysztof Świętochowski</a></div><div class="ekipa_opis"> żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11669">Bohdan Ejmont</a></div><div class="ekipa_opis"> kapitan WP; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/1111536">Henryk Grynberg</a></div><div class="ekipa_opis"> Natan, powstaniec w furażerce z biało-czerwoną naszywką; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/111184">Tadeusz Kosudarski</a></div><div class="ekipa_opis"> powstaniec; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/114659">Klemens Mielczarek</a></div><div class="ekipa_opis"> żołnierz WP; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/111599">Janusz Paluszkiewicz</a></div><div class="ekipa_opis"> żołnierz WP; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/118217">Tadeusz Ross</a></div><div class="ekipa_opis"> żołnierz AL; nie występuje w napisach</div><div class="ekipa_osoba"><a href="index.php/11710">Tomasz Zaliwski</a></div><div class="ekipa_opis"> radiotelegrafista w sztabie AL; rola  dubbingowana przez nieznanego aktora; nie  występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124617">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>OSTATNI POJEDYNEK (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+<li><div class="film_tech3">29 min</div></li>
+</ul>
+<p class="opis">Wojna zbliża się ku końcowi. Żołnierze Armii Ludowej organizują zamach na szefa warszawskiego Gestapo, doktora Kniprode, który jednak ucieka.</p><div class="galeria_mala"><a href="index.php?fotos=164618_1&galeria=154618"><img class="bezcienia" src="../z1/18i/4618_1.jpg" height="60"></a><a href="index.php?fotos=164618_2&galeria=154618"><img class="bezcienia" src="../z1/18i/4618_2.jpg" height="60"></a><a href="index.php?fotos=164618_3&galeria=154618"><img class="bezcienia" src="../z1/18i/4618_3.jpg" height="60"></a><a href="index.php/154618" title="Galeria zdjęć (3)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki124618" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna124618','ekipa_skrocona124618','ekipa124618','ekipa_schowaj124618','ekipa_schowaj_krotki124618','ekipa_schowaj_pelny124618','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny124618" class="jslink" onclick="pzf('ekipa_skrocona124618','ekipa_pelna124618','ekipa124618','ekipa_schowaj124618','ekipa_schowaj_pelny124618','ekipa_schowaj_krotki124618','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj124618"124618" class="jslink" onclick="pzz('ekipa124618','ekipa_schowaj124618')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa124618" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna124618">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/111638">Jan Kreczmar</a></div><div class="ekipa_opis"> standartenführer doktor Heinrich von Kniprode, dowódca Gestapo w Warszawie</div><div class="ekipa_osoba"><a href="index.php/11377">Stanisław Mikulski</a></div><div class="ekipa_opis"> Stefan, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/11159">Ryszard Pietruski</a></div><div class="ekipa_opis"> major Paweł, dowódca oddziału WP</div><div class="ekipa_osoba"><a href="index.php/1111653">Krystyna Stypułkowska</a></div><div class="ekipa_opis"> Marysia, łączniczka AL</div><div class="ekipa_osoba"><a href="index.php/117937">Mieczysław Stoor</a></div><div class="ekipa_opis"> Klaus, oficer Gestapo</div><div class="ekipa_osoba"><a href="index.php/115030">Tadeusz Grabowski</a></div><div class="ekipa_opis"> żołnierz WP</div><div class="ekipa_osoba"><a href="index.php/112294">Zygmunt Kęstowicz</a></div><div class="ekipa_opis"> Mechowski, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/112733">Jerzy Karaszkiewicz</a></div><div class="ekipa_opis"> żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/116964">Mieczysław Milecki</a></div><div class="ekipa_opis"> pułkownik "Stary", dowódca AL</div><div class="ekipa_osoba"><a href="index.php/111572">Stanisław Niwiński</a></div><div class="ekipa_opis"> Tolek, żołnierz AL</div><div class="ekipa_osoba"><a href="index.php/112340">Zdzisław Salaburski</a></div><div class="ekipa_opis"> gestapowiec Franz</div><div class="ekipa_osoba"><a href="index.php/11628">Jerzy Turek</a></div><div class="ekipa_opis"> "Piegus", żołnierz AL</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona124618">
+</ul>
+</div>
+<span class="clear"></span></div><div id="czasgen">2026.05.08 02:58:56</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>

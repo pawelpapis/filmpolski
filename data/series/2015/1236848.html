@@ -1,0 +1,813 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8CK1765D2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-X8CK1765D2');
+	</script>
+
+	<meta charset="UTF-8" />
+<title>FilmPolski.pl - MĄŻ CZY NIE MĄŻ</title>	<meta name="description"  content="Baza filmu polskiego" />
+	<meta name="keywords" content="" />
+	<link href="css/main.css?v=240312a" type="text/css" rel="stylesheet" media="all" />
+    <meta name=viewport content="width=device-width">
+
+<!--[if lt IE 7]><style type="text/css">@import "css/ie.css";</style><![endif]-->
+<!--[if IE 5]><style type="text/css">@import "css/ie5.css";</style><![endif]-->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+
+<link rel="image_src" href="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:title" content="FilmPolski.pl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.filmpolski.pl/fp/index.php" />
+<meta property="og:image" content="https://www.filmpolski.pl/fp/img1/logofilmpolski.png" />
+<meta property="og:site_name" content="FilmPolski" />
+<meta property="og:description" content="Baza filmu polskiego" />
+<meta property="fb:admins" content="1732470877" />
+
+<!--[if lt IE 9]>
+	<script>
+	var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+	"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+	"progress,section,time,video").split(',');
+	for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+	}
+	</script>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/fp/js/kryt.js"></script>
+<script type="text/javascript" src="/fp/js/pokzdj.js"></script>
+
+<link rel="search" type="application/opensearchdescription+xml" href="/fp/filmpolski.xml" title="filmpolski.pl" />
+
+<![if !IE]>
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	if (window.pageYOffset >1000)
+	{
+		document.getElementById('dogory_lewe').classList.remove('hidden');
+		document.getElementById('dogory_prawe').classList.remove('hidden');
+	}
+	else	
+	{
+		document.getElementById('dogory_lewe').classList.add('hidden');
+		document.getElementById('dogory_prawe').classList.add('hidden');
+	}
+}
+</script>
+<![endif]>
+  
+</head>
+<body id="poczatek">
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="qeQAkPi5"></script>
+
+
+<div id="kontener">
+
+<div id="naglowek">
+
+<style type="text/css">
+
+#szuktip {
+	display:none;
+	border:black 1px solid;
+	position:absolute;
+	top:110px;
+	left:550px;
+	width:390px;
+	z-index:1000;
+	background-color:#DDDDDB;
+	padding:0 5px;
+	border-radius:0 0 10px 0;
+	moz-border-radius:0 0 10px 0;
+	webkit-border-radius:0 0 10px 0;
+	font-size:12px;
+	cursor: pointer;
+}
+
+#szuktip h1 {
+	font-weight:bold;
+	margin-bottom:12px;
+	margin-left:-5px;
+	width:385px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding:1px 0 0 15px;
+	background-color:#566da1;
+}
+
+#szuktip strong {
+	color:#0B3273;
+}
+
+#szuktip p {
+	margin-bottom:4px;
+	text-indent:10px;
+}
+
+#szuktip h1 .x {
+	float:right;
+	cursor:pointer;
+	padding:0 8px;
+	border-left:#FFFFFF 1px solid;
+	background-color:#660000;
+}
+
+#szuktipico {
+	position:absolute;
+	top:43px;
+	left:660px;
+	cursor:help;
+}
+
+
+</style>
+
+
+<script>
+
+function pokaz_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'block';
+}
+
+function schowaj_tip(id)
+{
+	var element = document.getElementById(id);
+	element.style.display = 'none';
+}
+
+</script>
+
+<div id="szuktip" onclick="schowaj_tip('szuktip')">
+<h1>Wyszukiwanie<span class="x" title="zamknij podpowiedź">x</span></h1>
+<p>Proszę wpisać poszukiwane słowo lub jego fragment.</p>
+<p>Opcja <strong>fragment</strong> pozwala wyszukać każde wystąpienie poszukiwanego wyrażenia.</p>
+<p>Opcja <strong>początek</strong> pozwala wyszukać wszystkie tytuły i&nbsp;nazwiska rozpoczynające się od wyszukiwanego wyrażenia.<p>
+<p>Opcja <strong>dokładnie</strong> wyszukuje tylko te filmy i osoby, których tytuły, imiona i/lub nazwiska są takie same jak wyszukiwane wyrażenie.</p>
+<p><strong>WAŻNE!</strong><br />W tytułach filmów w wyszukiwarce nie uwzględniamy występujących w nich znaków przestankowych.<br />
+Proszę pamiętać, że każda osoba wpisana jest do bazy w formie „nazwisko, imię”. Wyszukując osoby w opcji początek należy wpisać jej nazwisko lub jego początkowy fragment, w opcji dokładnie należy wpisać np. Kowalski, Jan (nie Jan Kowalski). W tej opcji wpisanie przecinka i spacji JEST KONIECZNE.</p>
+
+
+</div>
+
+<img id="szuktipico" src="img1/tip.png" onClick="pokaz_tip('szuktip')" title="objaśnienia">
+
+<a href="index.php"><img id="logo" src="img1/logo-oryginal.png?ua" alt="Strona główna"/></a>
+<script type="text/javascript" src="js/szukanie.js"></script>
+
+<div id="search-etykieta">Szukaj w bazie</div>
+<form id="search-form" action="index.php" method="get">
+	
+	<fieldset id="wyszukiwarka" > 
+		<input type="search" id="search-text" name="szukaj" placeholder="nazwisko osoby lub tytuł filmu" required x-webkit-speech />
+        <select id="search-select" name="rodzaj" onChange="zapiszRodzajSzukania(this);">
+<option value="1" selected>fragment</option><option value="2">początek</option><option value="3">dokładnie</option>			
+        </select>
+		<input type="submit" id="search-submit" value="" />
+
+	</fieldset>
+    
+</form>
+
+
+</div>
+
+
+
+<div id="menu1">
+
+<ol id="menu2">
+
+<li class="menuitem1"><a href="index.php"><img src="img1/home.png"></a></li>
+<li class="menuitem"><a href="index.php?kalendarium=09.10">Kalendarium</a></li>
+<li class="menuitem"><a href="index.php?filmy_z_roku=2026&typ=2">Filmy z roku</a></li>
+<li class="menuitem"><a href="index.php?kino=1">Filmoteka</a></li>
+<li class="menuitem"><a href="/rec/index.php/slowo">Film w prasie polskiej</a></li>
+<li class="menuitem"><a href="http://cybra.lodz.pl/dlibra/collectiondescription/128" target="_blank">Biblioteka Scenariuszy Filmowych</a></li>
+
+</ol>
+
+</div>
+<div id="content">
+<div id="sidebar">
+
+<div class="br kontener"><h1>SERWIS TWORZY</h1><div class="notatka_boczna"><a href="http://www.filmschool.lodz.pl" target="_blank"><img class="logoszkoly" src="img1/logo.png"></a></div></div><div class="br kontener"><h1>OSTATNIE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">1</div> <a class="tytul" href="index.php/1214188">PIERWSZA MIŁOŚĆ (sezon 2026/2027; Polsat)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1228177">KOMISARZ ALEX (seria 27; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1268392">GRA Z CIENIEM (seria 2; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271529">ZARAZ WRACAM (seria 3; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1219811">BARWY SZCZĘŚCIA (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275696">FELICITA (serial tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/127130">KLAN (sezon 2026/2027; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275590">KRÓL MACIUŚ PIERWSZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/129215">M JAK MIŁOŚĆ (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1234315">NA SYGNALE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/128104">NA DOBRE I NA ZŁE (sezon 2026/2027; TVP 2)</a></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275489">CZAS NIEDOKONANY (serial tv; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1222272">OJCIEC MATEUSZ (seria 36; TVP 1)</a></strong></li>
+<li class="w1"><div class="dzien">10</div> <strong><a class="tytul" href="index.php/1275271">PIONEK (serial tv; SkyShowtime)</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1264941">1670 (sezon 3; Netflix)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274842">KANDYDACI ŚMIERCI (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275467">KLARA. REWOLUCJA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1274194">PEJZAŻ W KOLORZE SEPII</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275535">ODZYSKANY</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274980">AREK. MAMA. PANORAMA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1274489">PUCIO KOCHA ZWIERZAKI (film animowany)</a></li>
+<li class="w1"><div class="dzien">28</div> <a class="tytul" href="index.php/1273311">JULIA PIROTTE. PIĘKNO I SIŁA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1270008">SPRAWIEDLIWI. TRÓJMIASTO (seria 4; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1240918">SPRAWIEDLIWI. WYDZIAŁ KRYMINALNY (seria 21; TV4)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1269940">SZPITAL ŚW. ANNY (seria 4; TVN)</a></li>
+<li class="w1"><div class="dzien">31</div> <a class="tytul" href="index.php/1265579">UROCZYSKO (seria 6; TV4)</a></li>
+</ol></div></div><div class="br kontener"><h1>ZMARLI</h1><div class="notatka_boczna"><p style="text-align: center; font-size: 110%; margin-bottom: 0;"><a href="index.php/1127826"><img src="zmarli/wploc.jpg"><br><strong>Witold Płóciennik<br />(1970 - 2026)</strong></a></p>
+<h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">6</div> <strong><a class="tytul"href="index.php/11105505">Krystyna Piaseczna</a></strong></li>
+<li class="w1"><div class="dzien">7</div> <strong><a class="tytul"href="index.php/1121933">Janina Potudin</a></strong></li>
+<li class="w1"><div class="dzien">8</div> <strong><a class="tytul"href="index.php/1120780">Marek Pakowski</a></strong></li>
+<li class="w1"><div class="dzien">?</div> <strong><a class="tytul"href="index.php/116253">Krystyna Tolewska</a></strong></li>
+</ol>
+<h2>Sierpień</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul"href="index.php/1126576">Zbigniew Święch</a></li>
+<li class="w1"><div class="dzien">4</div> <a class="tytul"href="index.php/1156737">Andrzej Morozowski</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul"href="index.php/111985">Irmina Romanis</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul"href="index.php/1126423">Jacek Czerwiński</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul"href="index.php/1124902">Anna Kaczmarczyk</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul"href="index.php/115769">Jarosław Abramow-Newerly</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1116276">Tomasz Szarota</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul"href="index.php/1124846">Andrzej Zaborski</a></li>
+<li class="w1"><div class="dzien">13</div> <a class="tytul"href="index.php/116919">Wiesław Adamowski</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul"href="index.php/1115712">Edward Etler</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/113511">Jan Frycz</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul"href="index.php/116624">Joanna Rawik</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184761">Mustapha Derkaoui</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul"href="index.php/1184966">Grażyna Dłużniewska</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/11125043">Ignacy Karpowicz</a></li>
+<li class="w1"><div class="dzien">22</div> <a class="tytul"href="index.php/1124155">Wojciech Zieliński</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul"href="index.php/1127755">Mariusz Łukomski</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11135030">Bogusław Bukała</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/11152977">Bronisław Kawęcki</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul"href="index.php/1127826">Witold Płóciennik</a></li>
+</ol></div></div><div class="br kontener"><h1>10 września</h1><div class="notatka_boczna"><h2>Urodzili się:</h2><ol><li class="w1"><span class="rok">1906</span> <a href="index.php/119357">Antoni Bohdziewicz</a></li></ol><h2>Premiery:</h2><ol><li class="w1"><span class="rok">1985</span> <a href="index.php/121346">DOM WARIATÓW</a></li></ol><br /><div class="wiecej"><a href="index.php?kalendarium=09.10">więcej...</a></div></div></div><div class="br kontener"><h1>PLANOWANE PREMIERY</h1><div class="notatka_boczna"><h2>Wrzesień</h2>
+<ol>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275388">100 DNI. MISJA ZEUS</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1272921">BEZ KOŃCA (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275485">DZIEŃ DZIECKA KSIĘDZA JANA KACZKOWSKIEGO (film dokumentalny)</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1275543">MISTYCZKA</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1227271">RODZINKA.PL (seria 19; TVP 2)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul" href="index.php/1275592">BYĆ JAK CZTERDZIESTOLATEK (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1271197">LALKA (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">17</div> <a class="tytul">SŁONECZNA. POZA CISZĄ (serial tv; TVP VOD)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1275551">MA TO SENS</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul" href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul" href="index.php/1275593">WRÓG LUDU (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">25</div> <a class="tytul" href="index.php/1275132">HOT SPOT</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul" href="index.php/1271156">LALKA</a></li>
+</ol>
+<h2>Październik</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul" href="index.php/1275547">ZMORA (serial tv; HBO Max)</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1273434">MŁODE GLINY (seria 2; TVN)</a></li>
+<li class="w1"><div class="dzien">7</div> <a class="tytul" href="index.php/1275398">MNIEJ OBCY (Netflix)</a></li>
+<li class="w1"><div class="dzien">9</div> <a class="tytul" href="index.php/1271236">KLARNET</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">WNUCZKA PICASSA (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul" href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul">SCENY Z ŻYCIA MAŁŻEŃSKIEGO (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">20</div> <a class="tytul">SOR (serial tv; TVP 2 - Prime Video)</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li>
+<li class="w1"><div class="dzien">23</div> <a class="tytul" href="index.php/1275399">SYRENKA PICASSA</a></li>
+<li class="w1"><div class="dzien">26</div> <a class="tytul">KOCHANY, NAJUKOCHAŃCZY (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Listopad</h2>
+<ol>
+<li class="w1"><div class="dzien">2</div> <a class="tytul">WSZYSTKO CZERWONE (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1275450">LACHTARA. TĘSKNOTA</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1271140">NIESAMOWITE PRZYGODY SKARPETEK 4. DO ROBOTY! (film animowany)</a></li>
+<li class="w1"><div class="dzien">6</div> <a class="tytul" href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li>
+<li class="w1"><div class="dzien">11</div> <a class="tytul" href="index.php/1273637">NASZA REWOLUCJA</a></li>
+<li class="w1"><div class="dzien">16</div> <a class="tytul">KSIĄŻKA WSZYSTKICH RZECZY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">18</div> <a class="tytul">PRAWO BESTII (serial tv; Netflix)</a></li>
+<li class="w1"><div class="dzien">27</div> <a class="tytul" href="index.php/1273543">VIOLETTA VILLAS</a></li>
+<li class="w1"><div class="dzien">30</div> <a class="tytul">WOJNA PELOPONESKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Grudzień</h2>
+<ol>
+<li class="w1"><div class="dzien">4</div> <a class="tytul">CHMURKA I BURZA (film animowany)</a></li>
+<li class="w1"><div class="dzien">14</div> <a class="tytul">BRITNEY (spektakl Teatru tv; TVP 1)</a></li>
+<li class="w1"><div class="dzien">21</div> <a class="tytul">MONIQUE UCIEKA (spektakl Teatru tv; TVP 1)</a></li>
+</ol>
+<h2>Styczeń 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">8</div> <a class="tytul">BEREK, CZYLI WOJNA SĄSIEDZKA</a></li>
+<li class="w1"><div class="dzien">8</div> <a class="tytul" href="index.php/1275395">DZIKI, DZIKI WSCHÓD</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul">NARZECZONY NA NIBY 2</a></li>
+<li class="w1"><div class="dzien">15</div> <a class="tytul" href="index.php/1274489">PUCIO 3 (film animowany)</a></li>
+<li class="w1"><div class="dzien">29</div> <a class="tytul" href="index.php/1273520">ADAM</a></li>
+</ol>
+<h2>Luty 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1271350">EGZAMIN '84</a></li>
+<li class="w1"><div class="dzien">5</div> <a class="tytul">ZAGINIONE</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul">CO WYSZEPTAŁ NAM DESZCZ</a></li>
+<li class="w1"><div class="dzien">12</div> <a class="tytul" href="index.php/1275486">WANDA</a></li>
+</ol>
+<h2>Marzec 2027</h2>
+<ol>
+<li class="w1"><div class="dzien">5</div> <a class="tytul" href="index.php/1268351">KOCHANIE, MAMY PROBLEM!</a></li>
+<li class="w1"><div class="dzien">19</div> <a class="tytul" href="index.php/1274604">EXOTIC</a></li>
+</ol></div></div><div class="br kontener"><h1>NAJNOWSZE AKTUALIZACJE W BAZIE</h1><div class="notatka_boczna"><h2>Filmy</h2><ul><li><a href="index.php/1275397">FLUIDY</a></li><li><a href="index.php/1275710">LIST DO PUTINA</a></li><li><a href="index.php/1275271">PIONEK</a></li><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zdjęcia</h2><ul><li><a href="index.php/1267920">PRZEZ ŚCIANĘ</a></li></ul><h2>Zwiastuny</h2><ul><li><a href="index.php/1275388">100 DNI. MISJA ZEUS</a></li><li><a href="index.php/1272921">BEZ KOŃCA</a></li><li><a href="index.php/1270955">CZAS, KTÓRY NIE NADSZEDŁ</a></li><li><a href="index.php/1274604">EXOTIC</a></li><li><a href="index.php/1275132">HOT SPOT</a></li><li><a href="index.php/1271301">JAK ŻYĆ, ŻEBY NIE ZWARIOWAĆ</a></li><li><a href="index.php/1274673">KALAFIOR PRZEZNACZENIA</a></li><li><a href="index.php/1271156">LALKA</a></li><li><a href="index.php/1271197">LALKA</a></li><li><a href="index.php/1275551">MA TO SENS</a></li><li><a href="index.php/1275543">MISTYCZKA</a></li><li><a href="index.php/1275398">MNIEJ OBCY</a></li><li><a href="index.php/1273323">POWIEDZ MI, CO CZUJESZ</a></li><li><a href="index.php/1273388">PRZEPIS NA ŚWIĘTA</a></li></ul></div></div><div class="br kontener"><h1>REDAKCJA</h1><div class="notatka_boczna">Jarosław Czembrowski (red. nacz.)<br />Agata Chróścicka<br />Jarosław Grzechowiak<br />Iwona Marchewka<br />Monika Sarwińska<br />Katarzyna Mąka-Malatyńska (filmoteka)<br />Wojciech Krupa (oprogramowanie)<br />Aleksandra Bednarz (oprawa graficzna)<br /><br />Rada naukowa:<br />dr hab. Katarzyna Mąka – Malatyńska<br />dr Anna Zarychta<br />dr hab. Monika Talarczyk<br />dr Marek Rudnicki<br /><br />Biblioteka PWSFTviT<br />ul. Targowa 61/63<br />90-323 Łódź<br />Tel.: 42 6345875<br />e-mail: <a href="mailto:filmpolski@filmschool.lodz.pl">filmpolski@filmschool.lodz.pl</a><br /></div></div><div class="br kontener"><h1>WSPIERAJĄ NAS</h1><div class="notatka_boczna"><a href="https://pisf.pl" target="_blank"><img class="logo" src="img1/pisf_nowe.png" width="200"></a><br /><a href="https://www.sfp.org.pl/" target="_blank"><img class="logo" src="img1/sfp.png" width="200"></a><br /><a href="https://www.zapa.org.pl/" target="_blank"><img class="logo" src="img1/zapa.png" width="90"></a></div></div><div class="br kontener"><h1>WSPIERAMY</h1><div class="notatka_boczna"><a href="https://etiudy.filmschool.lodz.pl/" target="_blank"><img class="logo" src="img1/archiwum_logo.png" width="200"></a></div></div>
+</div>  <!-- sidebar -->
+
+<div id="tresc">
+
+<script type="text/javascript" src="js/chowaj.js"></script>
+
+
+<article id="film">
+
+<div class="wazny_banner"><a href="https://filmpolski.pl/fp/index.php?premium"><img src="imgnews/male/987.jpg"></a></div>
+
+<h1>MĄŻ CZY NIE MĄŻ</h1><div class="koniecnaglowka"></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1236848" selected >1</option><option value="1236848_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1236848_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1236848_2"></a> 
+</nav>
+<ul class="tech">
+<li><b>Serial fabularny</b></li>
+<li><div class="film_tech1">Produkcja:</div><div class="film_tech2"> Polska</div></li>
+<li><div class="film_tech1">Rok produkcji:</div><div class="film_tech2">2015</div></li>
+<li><div class="film_tech1">Premiera:</div><div class="film_tech2">2015. 03. 01</div></li>
+<li><div class="film_tech3">Barwny, 13 odcinków x ok. 25 min<br /><br />
+Serial jest polską wersją kanadyjskiego serialu "Un Sur 2".<br /><br />
+Emisja: 1 marca - 24 maja 2015.</div></li>
+</ul>
+<p class="opis">Marta i Michał przez lata byli kochającą się parą. Stworzyli wspaniałą rodzinę, razem mieszkali, pracowali i wychowywali córkę – Zuzię. Nigdy nie podjęli decyzji o małżeństwie, bo formalności miały dla nich znaczenie drugorzędne. Status żony i męża nie był im potrzebny - i tak byli parą, pełną parą! Pewnego dnia, Michał odszedł do innej kobiety. Teraz wraca z podkulonym ogonem, błaga o wybaczenie, obiecuje gwiazdki z nieba...<br />
+Czy pierwsza miłość dostanie drugą szansę?</p><div class="galeria_mala"><a href="index.php?fotos=1636848_1&galeria=1536848"><img class="bezcienia" src="../z1/48i/36848_1.jpg" height="60"></a><a href="index.php?fotos=1636848_2&galeria=1536848"><img class="bezcienia" src="../z1/48i/36848_2.jpg" height="60"></a><a href="index.php?fotos=1636848_3&galeria=1536848"><img class="bezcienia" src="../z1/48i/36848_3.jpg" height="60"></a><a href="index.php?fotos=1636848_4&galeria=1536848"><img class="bezcienia" src="../z1/48i/36848_4.jpg" height="60"></a><a href="index.php?fotos=1636848_5&galeria=1536848"><img class="bezcienia" src="../z1/48i/36848_5.jpg" height="60"></a><a href="index.php?fotos=1636848_6&galeria=1536848"><img class="bezcienia" src="../z1/48i/36848_6.jpg" height="60"></a><a href="index.php?fotos=1636848_7&galeria=1536848"><img class="bezcienia" src="../z1/48i/36848_7.jpg" height="60"></a><a href="index.php/1536848" title="Galeria zdjęć (17)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastuny (2)<div class="sterowanie"><span id="trailery_schowaj1236848" class="jslink" onclick="pzz('trailery1236848','trailery_schowaj1236848')">pokaż</span></div></h2><div id="trailery1236848" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm_z.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+<div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm_z2.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1236848" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1236848','ekipa_skrocona1236848','ekipa1236848','ekipa_schowaj1236848','ekipa_schowaj_krotki1236848','ekipa_schowaj_pelny1236848','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1236848" class="jslink" onclick="pzf('ekipa_skrocona1236848','ekipa_pelna1236848','ekipa1236848','ekipa_schowaj1236848','ekipa_schowaj_pelny1236848','ekipa_schowaj_krotki1236848','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1236848"1236848" class="jslink" onclick="pzz('ekipa1236848','ekipa_schowaj1236848')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1236848" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1236848">
+<li><div class="ekipa_funkcja wyroznienie">Reżyseria</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1165676">Paweł Maślona</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Reżyser II</div><div class="ekipa_osoba"><a href="index.php/1129499">Marta A. Zygadło</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1147171">Piotr Fiedziukiewicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1148122">Jakub Mazurek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent reżysera</div><div class="ekipa_osoba"><a href="index.php/11138915">Daniel Kempiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11132181">Marta Borys</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Casting (reżyseria obsady)</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenariusz</div><div class="ekipa_osoba wyroznienie">Donald Bouthillette</div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie">Daniel Chiasson</div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11139114">Leon Majer</a></div><div class="ekipa_opis wyroznienie"> wersja polska</div></li>
+<li><div class="ekipa_funkcja">Dialogi</div><div class="ekipa_osoba"><a href="index.php/11139114">Leon Majer</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11135321">Piotr Rowicki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Zdjęcia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11112252">Cezary Stolecki</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Operator kamery</div><div class="ekipa_osoba"><a href="index.php/1125663">Łukasz Baka</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1168987">Andrzej Cichocki</a></div><div class="ekipa_opis"> odcinki: 1-7</div><div class="ekipa_osoba"><a href="index.php/11112253">Jakub Stolecki</a></div><div class="ekipa_opis"> odcinki: 6-</div></li>
+<li><div class="ekipa_funkcja">Operator CCU</div><div class="ekipa_osoba"><a href="index.php/1133438">Seweryn Kukliński</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca operatorska</div><div class="ekipa_osoba"><a href="index.php/1133283">Sławomir Pietrzyk</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1144199">Sebastian Ronowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Oświetlenie</div><div class="ekipa_osoba"><a href="index.php/1169282">Maciej Gamdzyk</a></div><div class="ekipa_opis"> mistrz</div><div class="ekipa_osoba"><a href="index.php/1154166">Piotr Szukalski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1159082">Leszek Miłek</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124060">Dariusz Wadas</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1135110">Jarosław Góralczyk</a></div><div class="ekipa_opis"> w napisach imię: Jacek</div><div class="ekipa_osoba"><a href="index.php/1159454">Arkadiusz Borowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Grip</div><div class="ekipa_osoba"><a href="index.php/1132829">Paweł Traut</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1169351">Krzysztof Bogdan</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162101">Master Grip Film</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Obsługa agregatu</div><div class="ekipa_osoba"><a href="index.php/1152980">Robert Krawczyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Sprzęt</div><div class="ekipa_osoba"><a href="index.php/1187465">Gamma TV Studio</a></div><div class="ekipa_opis"> zdjęciowy</div><div class="ekipa_osoba"><a href="index.php/1137264">Marek Kloska</a></div><div class="ekipa_opis"> zdjęciowy</div><div class="ekipa_osoba"><a href="index.php/1137263">Gabriel Kossowski</a></div><div class="ekipa_opis"> zdjęciowy</div><div class="ekipa_osoba"><a href="index.php/1122099">Heliograf</a></div><div class="ekipa_opis"> oświetleniowy</div><div class="ekipa_osoba"><a href="index.php/1162099">Dźwiękowe Pole</a></div><div class="ekipa_opis"> dźwiękowy</div><div class="ekipa_osoba"><a href="index.php/1132545">Monika Krzanowska</a></div><div class="ekipa_opis"> dźwiękowy</div><div class="ekipa_osoba"><a href="index.php/1165274">Safe Trans</a></div><div class="ekipa_opis"> agregat</div><div class="ekipa_osoba"><a href="index.php/1166143">Jacek Kucharski</a></div><div class="ekipa_opis"> agregat</div><div class="ekipa_osoba"><a href="index.php/1157207">Klimex</a></div><div class="ekipa_opis"> podnośniki</div></li>
+<li><div class="ekipa_funkcja">Korekcja barwna</div><div class="ekipa_osoba"><a href="index.php/1154428">Wiktor Sasim</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Scenografia</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1177974">Ineza Bodył-Plaskota</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Scenograf II</div><div class="ekipa_osoba"><a href="index.php/1154412">Piotr Tomaszewski</a></div><div class="ekipa_opis"> plan</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dekoracja wnętrz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1155542">Maria Koper</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizyty</div><div class="ekipa_osoba"><a href="index.php/1117216">Dariusz Lipiński</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1136128">Arkadiusz Jaworski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Rekwizytor planu</div><div class="ekipa_osoba"><a href="index.php/1153724">Lech Lewandowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo budowy dekoracji</div><div class="ekipa_osoba"><a href="index.php/1115879">Jarosław Pieńkowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Budowa dekoracji</div><div class="ekipa_osoba"><a href="index.php/1149979">Wiesław Dziurny</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1138655">Paweł Dziurny</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11138918">Jerzy Dziurny</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11135658">Janusz Maciaś</a></div><div class="ekipa_opis"> w napisach nazwisko: Macias</div><div class="ekipa_osoba"><a href="index.php/1120658">Zbigniew Koc</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kostiumy</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1139688">Aleksandra Staszko</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Kostiumograf II</div><div class="ekipa_osoba"><a href="index.php/1161225">Krystyna Gwiazdowicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca kostiumograficzna</div><div class="ekipa_osoba"><a href="index.php/11138920">Anna Szuszlik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Muzyka</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11107129">Igor Michał Przebindowski</a></div><div class="ekipa_opis wyroznienie"> w napisach imię: Ygor</div></li>
+<li><div class="ekipa_funkcja">Opracowanie muzyczne</div><div class="ekipa_osoba"><a href="index.php/1135879">Patrycja Bukowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Dźwięk</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1132545">Monika Krzanowska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1150531">Michał Robaczewski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Asystent operatora dźwięku</div><div class="ekipa_osoba"><a href="index.php/1142677">Michał Pracz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1170373">Jan Rey</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Opracowanie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1138252">Aleksandra Janikowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zgranie dźwięku</div><div class="ekipa_osoba"><a href="index.php/1129583">Dariusz Stanek</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Efekty synchroniczne</div><div class="ekipa_osoba"><a href="index.php/1129897">Łukasz Rydzewski</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1115757">Andrzej Chuszno</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11138923">Katarzyna Rydzewska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Udźwiękowienie</div><div class="ekipa_osoba"><a href="index.php/1177979">BTI Studios</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Montaż</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1168111">Tymoteusz Wiskirski</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca montażowa</div><div class="ekipa_osoba"><a href="index.php/1132933">Jacek Kołtunowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1171703">Robert Kozłowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Studio montażu</div><div class="ekipa_osoba"><a href="index.php/1177979">BTI Studios</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Charakteryzacja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1141277">Dominika Dylewska</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Charakteryzator II</div><div class="ekipa_osoba"><a href="index.php/1174732">Żaneta Wardaszka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Współpraca charakteryzatorska</div><div class="ekipa_osoba"><a href="index.php/11123541">Anna Śliwa</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Make-up bus</div><div class="ekipa_osoba"><a href="index.php/1152980">Robert Krawczyk</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Redakcja</div><div class="ekipa_osoba"><a href="index.php/1170738">Anna Gronowska</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nadzór scenariuszowy</div><div class="ekipa_osoba"><a href="index.php/1177778">Barbara Palka</a></div><div class="ekipa_opis"> TVN</div><div class="ekipa_osoba"><a href="index.php/1167933">Dominika Kamińska</a></div><div class="ekipa_opis"> TVN</div></li>
+<li><div class="ekipa_funkcja">Statyści</div><div class="ekipa_osoba"><a href="index.php/1157695">Krzysztof Zygmuntowicz</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/11127487">Katarzyna Jaroń</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1174419">Agencja Talent</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Koordynacja kaskaderska</div><div class="ekipa_osoba"><a href="index.php/1120072">Jacek Jeleń</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Konsultacja</div><div class="ekipa_osoba"><a href="index.php/1129165">Kamil Miondlikowski</a></div><div class="ekipa_opis"> ds. pojazdów grających</div></li>
+<li><div class="ekipa_funkcja">Opieka medyczna</div><div class="ekipa_osoba"><a href="index.php/1124725">Andrzej Tarasewicz</a></div><div class="ekipa_opis"> na planie</div></li>
+<li><div class="ekipa_funkcja">Czołówka</div><div class="ekipa_osoba"><a href="index.php/11138921">Katarzyna Kaczmarek</a></div><div class="ekipa_opis"> realizacja planszy czołowej i logotypu</div><div class="ekipa_osoba"><a href="index.php/11138922">Maciej Żuk</a></div><div class="ekipa_opis"> realizacja planszy czołowej i logotypu</div><div class="ekipa_osoba"><a href="index.php/1150989">Mariusz Radomski</a></div><div class="ekipa_opis"> realizacja planszy czołowej i logotypu</div><div class="ekipa_osoba"><a href="index.php/11126146">Dash Dot Creations</a></div><div class="ekipa_opis"> realizacja planszy czołowej i logotypu</div></li>
+<li><div class="ekipa_funkcja">Fotosy</div><div class="ekipa_osoba"><a href="index.php/1150455">Piotr Litwic</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1161912">Hubert Komerski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Public relations</div><div class="ekipa_osoba"><a href="index.php/1155589">Joanna Górska</a></div><div class="ekipa_opis"> TVN</div><div class="ekipa_osoba"><a href="index.php/1166532">Ewelina Wiśniewska</a></div><div class="ekipa_opis"> TVN</div><div class="ekipa_osoba"><a href="index.php/1168460">Olga Kwiecińska</a></div><div class="ekipa_opis"> Akson Studio</div><div class="ekipa_osoba"><a href="index.php/11134184">Marta Polaczuk</a></div><div class="ekipa_opis"> Akson Studio</div><div class="ekipa_osoba"><a href="index.php/1155843">Anna Kowalska</a></div><div class="ekipa_opis"> komunikacja ds. serialu; TVN</div></li>
+<li><div class="ekipa_funkcja">Biuro reklamy</div><div class="ekipa_osoba"><a href="index.php/11138917">Andrzej Moliński</a></div><div class="ekipa_opis"> obsługa; TVN</div></li>
+<li><div class="ekipa_funkcja">Obsługa prawna</div><div class="ekipa_osoba"><a href="index.php/1155379">Magdalena Kruszewska</a></div><div class="ekipa_opis"> TVN</div></li>
+<li><div class="ekipa_funkcja">Efekty specjalne</div><div class="ekipa_osoba"><a href="index.php/1140852">Jacek Skrobisz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Ochrona planu</div><div class="ekipa_osoba"><a href="index.php/11138924">Taranis</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Catering</div><div class="ekipa_osoba"><a href="index.php/1157724">Plan Bar</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1134009">Danuta Zarębska</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1151188">Sebastian Puzio</a></div><div class="ekipa_opis"> obsługa barobusu</div></li>
+<li><div class="ekipa_funkcja">Transport</div><div class="ekipa_osoba"><a href="index.php/1126756">Marek Druś</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1124586">Jerzy Bartosiak</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1153920">Andrzej Wierzbicki</a></div><div class="ekipa_opis">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1122944">Artur Piątkiewicz</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Kierownictwo produkcji</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1110919">Paweł Gabryś</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div><div class="ekipa_osoba"><a href="index.php/1162067">Beata Dunikowska</a></div><div class="ekipa_opis"> TVN</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji II</div><div class="ekipa_osoba"><a href="index.php/113821">Anna Przybyszewska</a></div><div class="ekipa_opis"> biuro</div><div class="ekipa_osoba"><a href="index.php/1144010">Maria Czech</a></div><div class="ekipa_opis"> biuro</div><div class="ekipa_osoba"><a href="index.php/1148404">Przemysław Segeń</a></div><div class="ekipa_opis"> obiekty</div><div class="ekipa_osoba"><a href="index.php/1128774">Monika Lang</a></div><div class="ekipa_opis"> ds. postprodukcji</div></li>
+<li><div class="ekipa_funkcja">Kierownictwo planu</div><div class="ekipa_osoba"><a href="index.php/1158869">Adam Goik</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Dyżurny planu</div><div class="ekipa_osoba"><a href="index.php/1155233">Jarosław Wysocki</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Script (Sekretariat planu)</div><div class="ekipa_osoba"><a href="index.php/1147805">Agnieszka Pater</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Administracja</div><div class="ekipa_osoba"><a href="index.php/1134309">Gabriela Ciechanowiecka</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Nadzór producencki</div><div class="ekipa_osoba"><a href="index.php/1116792">Małgorzata Fogel-Gabryś</a></div><div class="ekipa_opis"> Akson Studio</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Producent</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis wyroznienie"> Akson Studio</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1159129">Katarzyna Dobrzyńska</a></div><div class="ekipa_opis wyroznienie"> TVN</div></li>
+<li><div class="ekipa_funkcja">Producent nadzorujący</div><div class="ekipa_osoba"><a href="index.php/1135695">Dariusz Gąsiorowski</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Produkcja</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis wyroznienie">&nbsp;</div></li>
+<li><div class="ekipa_funkcja">Zlecenie</div><div class="ekipa_osoba"><a href="index.php/1124990">TVN</a></div><div class="ekipa_opis">&nbsp;</div></li>
+<li><div class="ekipa_funkcja wyroznienie">Obsada aktorska</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1133346">Magdalena Schejbal</a></div><div class="ekipa_opis wyroznienie"> Marta Dobosz</div><div class="ekipa_osoba wyroznienie"><a href="index.php/1128233">Marcin Perchuć</a></div><div class="ekipa_opis wyroznienie"> Michał Jarecki</div><div class="ekipa_osoba wyroznienie"><a href="index.php/11124292">Magdalena Żak</a></div><div class="ekipa_opis wyroznienie"> Zuzia Jarecka, córka Marty i Michała</div><div class="ekipa_osoba"><a href="index.php/1114827">Krzysztof Stelmaszyk</a></div><div class="ekipa_opis"> Karol Dobosz, ojciec Marty</div><div class="ekipa_osoba"><a href="index.php/1134372">Magdalena Boczarska</a></div><div class="ekipa_opis"> Ewa, przyjaciółka Marty</div><div class="ekipa_osoba"><a href="index.php/1141572">Mirosław Kotowicz</a></div><div class="ekipa_opis"> Czarek Winnicki, przyjaciel Michała</div><div class="ekipa_osoba"><a href="index.php/1139292">Monika Pikuła</a></div><div class="ekipa_opis"> Kinga Winnicka, żona Czarka; odcinki: 1, 3, 5-8, 11</div><div class="ekipa_osoba"><a href="index.php/118348">Ewa Telega</a></div><div class="ekipa_opis"> Misia;dcinki: 1-3, 5, 7-13</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1236848">
+<li><div class="ekipa_funkcja">Reżyseria</div><div class="ekipa_osoba"><a href="index.php/1165676">Paweł Maślona</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Casting (reżyseria obsady)</div><div class="ekipa_osoba"><a href="index.php/1113539">Ewa Brodzka</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenariusz</div><div class="ekipa_osoba">Donald Bouthillette</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba">Daniel Chiasson</div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11139114">Leon Majer</a></div><div class="ekipa_opis"> wersja polska</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Zdjęcia</div><div class="ekipa_osoba"><a href="index.php/11112252">Cezary Stolecki</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Scenografia</div><div class="ekipa_osoba"><a href="index.php/1177974">Ineza Bodył-Plaskota</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dekoracja wnętrz</div><div class="ekipa_osoba"><a href="index.php/1155542">Maria Koper</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kostiumy</div><div class="ekipa_osoba"><a href="index.php/1139688">Aleksandra Staszko</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Muzyka</div><div class="ekipa_osoba"><a href="index.php/11107129">Igor Michał Przebindowski</a></div><div class="ekipa_opis"> w napisach imię: Ygor</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Dźwięk</div><div class="ekipa_osoba"><a href="index.php/1132545">Monika Krzanowska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1150531">Michał Robaczewski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Montaż</div><div class="ekipa_osoba"><a href="index.php/1168111">Tymoteusz Wiskirski</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Charakteryzacja</div><div class="ekipa_osoba"><a href="index.php/1141277">Dominika Dylewska</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Kierownictwo produkcji</div><div class="ekipa_osoba"><a href="index.php/1110919">Paweł Gabryś</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Producent</div><div class="ekipa_osoba"><a href="index.php/1124645">Michał Kwieciński</a></div><div class="ekipa_opis"> Akson Studio</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1159129">Katarzyna Dobrzyńska</a></div><div class="ekipa_opis"> TVN</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Produkcja</div><div class="ekipa_osoba"><a href="index.php/1124646">Akson Studio</a></div><div class="ekipa_opis">&nbsp;</div><div style="display:block;" /></li>
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1133346">Magdalena Schejbal</a></div><div class="ekipa_opis"> Marta Dobosz</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/1128233">Marcin Perchuć</a></div><div class="ekipa_opis"> Michał Jarecki</div><div style="display:block;" /><div class="ekipa_osoba"><a href="index.php/11124292">Magdalena Żak</a></div><div class="ekipa_opis"> Zuzia Jarecka, córka Marty i Michała</div><div style="display:block;" /></li>
+</ul>
+</div>
+<div class="podzbior"><h1>KLUCZE (1)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Poznajemy parę, która swój związek buduje na nowo. Marta i Michał przez lata byli kochającą się parą. Stworzyli wspaniałą rodzinę, razem mieszkali, pracowali i wychowywali córkę - Zuzię. Nigdy nie podjęli decyzji o małżeństwie, bo formalności miały dla nich znaczenie drugorzędne. Status żony i męża nie był im potrzebny - łączyło ich bardzo wiele. Wspólna córka, wspólny dom i wspólny biznes! Pewnego dnia, Michał odszedł do innej kobiety. Teraz wraca i prosi Martę o drugą szansę. Czy ją dostanie? W odcinku poznamy również tatę Marty, przyjaciela Michała - Czarka oraz przyjaciółkę Marty - Ewę. Czarek wraz z żoną kibicują powrotowi Michała do Marty. Chcą, aby był szczęśliwy i mógł wreszcie opuścić ich kanapę, którą już od jakiegoś czasu - "tymczasowo"- zajmuje. Z kolei Ewa jest względem Michała podejrzliwa i nieufna. Boi się, że jeśli jej przyjaciółka wróci do Michała to znowu będzie miała złamane serce. Decyzja ostatecznie należy do Marty. A ta decyduje się przyjąć Michała z powrotem … Mężczyzna wprowadza się na piętro ich wspólnego domu, na skrupulatnie określonych warunkach. Zaczyna się!</p><div class="galeria_mala"><a href="index.php?fotos=1636992_1&galeria=1536992"><img class="bezcienia" src="../z1/92i/36992_1.jpg" height="60"></a><a href="index.php?fotos=1636992_2&galeria=1536992"><img class="bezcienia" src="../z1/92i/36992_2.jpg" height="60"></a><a href="index.php?fotos=1636992_3&galeria=1536992"><img class="bezcienia" src="../z1/92i/36992_3.jpg" height="60"></a><a href="index.php?fotos=1636992_4&galeria=1536992"><img class="bezcienia" src="../z1/92i/36992_4.jpg" height="60"></a><a href="index.php?fotos=1636992_5&galeria=1536992"><img class="bezcienia" src="../z1/92i/36992_5.jpg" height="60"></a><a href="index.php?fotos=1636992_6&galeria=1536992"><img class="bezcienia" src="../z1/92i/36992_6.jpg" height="60"></a><a href="index.php/1536992" title="Galeria zdjęć (22)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1236992" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1236992','ekipa_skrocona1236992','ekipa1236992','ekipa_schowaj1236992','ekipa_schowaj_krotki1236992','ekipa_schowaj_pelny1236992','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1236992" class="jslink" onclick="pzf('ekipa_skrocona1236992','ekipa_pelna1236992','ekipa1236992','ekipa_schowaj1236992','ekipa_schowaj_pelny1236992','ekipa_schowaj_krotki1236992','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1236992"1236992" class="jslink" onclick="pzz('ekipa1236992','ekipa_schowaj1236992')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1236992" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1236992">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1143628">Mirosław Haniszewski</a></div><div class="ekipa_opis"> klient</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1236992">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>SCHODY (2)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Minęło kilka dni odkąd Michał wprowadził się do mieszkania na górze. Mieszkanie nadal nie zostało urządzone. W kranie nie ma wody, nie ma kuchni, nie ma szafy na ubrania, ani łóżka. Właściwie to nie ma w tym mieszkaniu za wiele... A Michał nie ma też funduszy, żeby je urządzić. Prosi Martę by zgodziła się na jego powrót do pracy w ich sklepie budowlanym - Złota Rączka. Z finansowej opresji ratuje go oczywiście przyjaciel, Czarek, pożyczając mu pieniądze. Marta również ulega i wypłaca Michałowi pensję. Jarecki chce kupić używany samochód, by móc dojeżdżać do pracy. Prosi Czarka, żeby razem pojechali do komisu by dobić targu ze sprzedawcą. Negocjacje się nie udają i Michał ostatecznie decyduje, że może do pracy dojeżdżać autobusem, a pieniądze wyda inaczej... Tymczasem Ewa i Marta zastanawiają się nad byłą Michała. Dziewczyny zżera ciekawość jaka była "ta Roma", jak wyglądała, czy naprawdę między nimi wszystko skończone... Ku zaskoczeniu Marty, na piętrze Michała, jako pierwszy zostaje wyremontowany pokój dla Zuzi. Ale na tym nie koniec niespodzianek... W rzeczach Michała przypadkiem trafia na zdjęcie jego "byłej"…</p><div class="galeria_mala"><a href="index.php?fotos=1637046_1&galeria=1537046"><img class="bezcienia" src="../z1/46i/37046_1.jpg" height="60"></a><a href="index.php?fotos=1637046_2&galeria=1537046"><img class="bezcienia" src="../z1/46i/37046_2.jpg" height="60"></a><a href="index.php?fotos=1637046_3&galeria=1537046"><img class="bezcienia" src="../z1/46i/37046_3.jpg" height="60"></a><a href="index.php?fotos=1637046_4&galeria=1537046"><img class="bezcienia" src="../z1/46i/37046_4.jpg" height="60"></a><a href="index.php?fotos=1637046_5&galeria=1537046"><img class="bezcienia" src="../z1/46i/37046_5.jpg" height="60"></a><a href="index.php?fotos=1637046_6&galeria=1537046"><img class="bezcienia" src="../z1/46i/37046_6.jpg" height="60"></a><a href="index.php/1537046" title="Galeria zdjęć (16)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237046" class="jslink" onclick="pzz('trailery1237046','trailery_schowaj1237046')">pokaż</span></div></h2><div id="trailery1237046" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm2.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237046" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237046','ekipa_skrocona1237046','ekipa1237046','ekipa_schowaj1237046','ekipa_schowaj_krotki1237046','ekipa_schowaj_pelny1237046','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237046" class="jslink" onclick="pzf('ekipa_skrocona1237046','ekipa_pelna1237046','ekipa1237046','ekipa_schowaj1237046','ekipa_schowaj_pelny1237046','ekipa_schowaj_krotki1237046','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237046"1237046" class="jslink" onclick="pzz('ekipa1237046','ekipa_schowaj1237046')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237046" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237046">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1142502">Bartłomiej Chowaniec</a></div><div class="ekipa_opis"> sprzedawca auta; w napisach imię: Bartosz</div><div class="ekipa_osoba"><a href="index.php/1126784">Norbert Kaczorowski</a></div><div class="ekipa_opis"> klient</div><div class="ekipa_osoba"><a href="index.php/11129865">Anna Czartoryska-Niemczycka</a></div><div class="ekipa_opis"> Roma Jarecka, żona Michała; w odcinkach 2-3 w rzeczywistoście nie wystąpiła</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237046">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>ŻADNE CUDO (3)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Marta zabiera z mieszkania Michała zdjęcie jego "byłej". Wraz z Ewą i Misią próbuje się dowiedzieć czegoś o Romie. Poszukiwania zaczynają 
+od popularnego serwisu społecznościowego. W czasie poszukiwań dość złośliwie komentują rywalkę Marty, badając jak pod mikroskopem każdy fragment jej ciała. <br />
+Zbliżają się urodziny Karola i Zuzia planuje wyprawić uroczystą rodzinną kolację dla dziadka. Ma nadzieję, że takie spotkanie może zbliżyć do siebie na nowo jej rodziców. W swój plan angażuje Karola, który wyjątkowo godzi się na urodzinowe zamieszanie wokół swojej osoby. Zuzia namawia Michała, aby przyrządził 
+na przyjęcie urodzinowe swój słynny koktajl cytrynowy. Michał w tym celu pożycza od Marty wyciskarkę do soku. Niestety ją psuje. Dlatego przeczuwa nadciągającą awanturę, wie bowiem, że sprzęt ten ma dla Marty wartość sentymentalną - dostała ją od swojej nieżyjącej już mamy. Próby naprawienia wyciskarki do soku kończą się porażką i szczerą rozmową Michała z Martą na temat naprawiania ich związku. Marta dowiaduje się również dlaczego Michał od niej odszedł i dlaczego teraz postanowił wrócić…</p><div class="galeria_mala"><a href="index.php?fotos=1637095_1&galeria=1537095"><img class="bezcienia" src="../z1/95i/37095_1.jpg" height="60"></a><a href="index.php?fotos=1637095_2&galeria=1537095"><img class="bezcienia" src="../z1/95i/37095_2.jpg" height="60"></a><a href="index.php?fotos=1637095_3&galeria=1537095"><img class="bezcienia" src="../z1/95i/37095_3.jpg" height="60"></a><a href="index.php?fotos=1637095_4&galeria=1537095"><img class="bezcienia" src="../z1/95i/37095_4.jpg" height="60"></a><a href="index.php?fotos=1637095_5&galeria=1537095"><img class="bezcienia" src="../z1/95i/37095_5.jpg" height="60"></a><a href="index.php?fotos=1637095_6&galeria=1537095"><img class="bezcienia" src="../z1/95i/37095_6.jpg" height="60"></a><a href="index.php/1537095" title="Galeria zdjęć (11)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237095" class="jslink" onclick="pzz('trailery1237095','trailery_schowaj1237095')">pokaż</span></div></h2><div id="trailery1237095" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm3.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237095" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237095','ekipa_skrocona1237095','ekipa1237095','ekipa_schowaj1237095','ekipa_schowaj_krotki1237095','ekipa_schowaj_pelny1237095','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237095" class="jslink" onclick="pzf('ekipa_skrocona1237095','ekipa_pelna1237095','ekipa1237095','ekipa_schowaj1237095','ekipa_schowaj_pelny1237095','ekipa_schowaj_krotki1237095','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237095"1237095" class="jslink" onclick="pzz('ekipa1237095','ekipa_schowaj1237095')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237095" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237095">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11129865">Anna Czartoryska-Niemczycka</a></div><div class="ekipa_opis"> Roma Jarecka, żona Michała; w odcinkach 2-3 w rzeczywistoście nie wystąpiła</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237095">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>FOTEL (4)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Marta i Michał odbyli wreszcie poważną rozmowę na temat swojego związku, ale żadne z nich nie czuje z tego powodu ulgi. Jest wręcz inaczej, niepokój i niepewność co z nimi dalej będzie jest coraz silniejsza. Michał znowu radzi się Czarka, a Marta omawia całość sprawy z Ewą. Czarek uważa, że Michał niepotrzebnie posypał sól na ranę, kolejny raz radzi mu by nie dał się prowokować kobiecie i trzymał "mordę na kłódkę" przy następnej poważnej rozmowie. By jakoś pocieszyć przyjaciela Czarek oferuje Michałowi prezent - nowoczesny fotel z masażem. Prezent jest przechodni, Czarek dostał fotel od sąsiada w spadku ale oczywiście fotel nie został zaakceptowany przez Kingę, wiec Czarek musi się go pozbyć. A Michał przecież nie ma na czym siedzieć w tym swoim skromnym mieszkanku na pięterku. 
+Ewa i Marta mają swoją kolejną babską rozmowę o facetach. Ewa jest zaniepokojona tym, że Marta zaczyna "odpuszczać" Michałowi i coraz częściej mówi o tym, że znowu czuje do niego pożądanie. Szczególnie, kiedy widzi go w czarnej podkoszulce… Jednak by za łatwo nie ulec pokusie Marta otacza się przeróżnymi poradnikami dotyczącymi związków. To tam szuka porad i wskazówek co dalej robić ze swoim skomplikowanym życiem uczuciowym. 
+Tymczasem Zuzia zaczyna zachowywać się trochę dziwnie. Jest zbyt grzeczna, zbyt miła, zbyt perfekcyjna. A przecież nie ma perfekcyjnych nastolatek! Marta i Michał są zaniepokojeni…Czy bycie idealną córką to kolejny fortel Zuzi, który ma zbliżyć do siebie jej rodziców?</p><div class="galeria_mala"><a href="index.php?fotos=1637163_1&galeria=1537163"><img class="bezcienia" src="../z1/63i/37163_1.jpg" height="60"></a><a href="index.php?fotos=1637163_2&galeria=1537163"><img class="bezcienia" src="../z1/63i/37163_2.jpg" height="60"></a><a href="index.php?fotos=1637163_3&galeria=1537163"><img class="bezcienia" src="../z1/63i/37163_3.jpg" height="60"></a><a href="index.php?fotos=1637163_4&galeria=1537163"><img class="bezcienia" src="../z1/63i/37163_4.jpg" height="60"></a><a href="index.php?fotos=1637163_5&galeria=1537163"><img class="bezcienia" src="../z1/63i/37163_5.jpg" height="60"></a><a href="index.php?fotos=1637163_6&galeria=1537163"><img class="bezcienia" src="../z1/63i/37163_6.jpg" height="60"></a><a href="index.php/1537163" title="Galeria zdjęć (10)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237163" class="jslink" onclick="pzz('trailery1237163','trailery_schowaj1237163')">pokaż</span></div></h2><div id="trailery1237163" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm4.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div><span class="clear"></span></div><div class="podzbior"><h1>KOMÓRKA (5)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Do życia Michała próbuje wrócić Roma - jego była kochanka. Nie pomaga to, że Michał ją ignoruje. Roma wciąż zasypuje go smsami, informując, że zamierza wkrótce przyjechać. Michał oczywiście woli to ignorować niż wyznać byłej kochance prawdę. A prawda jest taka, że wrócił do domu, do Marty oraz do swojej córki i próbuje naprawić to, co popsuł. W końcu Michał nie ma innego wyjścia… Chcąc uniknąć kontaktu z byłą kochanką daje swój telefon "na przechowanie" Czarkowi. I to jest błąd, bo Czarek nie potrafi się powstrzymać i miesza się w sprawy Michała. Najlepszy przyjaciel ma oczywiście dobre intencje, ale niestety jego zachowanie tylko pogarsza sytuację i wpędza go w nowe kłopoty! Tymczasem Marta od przeprosin Michała jest pogodniejsza i w lepszej formie. Chce, by zostali przyjaciółmi. Jednak pod jednym warunkiem: muszą być ze sobą całkowicie szczerzy, bo tylko w ten sposób będą mogli odbudować nadszarpnięte zaufanie. Michał postanawia, więc wyznać Marcie prawdę o sms-ach, którymi bombarduje go Roma. To ciężka próba dla ich relacji - próba, która może się niemal skończyć katastrofą. Lekcja jest jasna: nie każda prawda jest lekarstwem na wszystko. Pewne rzeczy lepiej zachować dla siebie, o czym Michał przekona się na własnej skórze…</p><div class="galeria_mala"><a href="index.php?fotos=1637285_1&galeria=1537285"><img class="bezcienia" src="../z1/85i/37285_1.jpg" height="60"></a><a href="index.php?fotos=1637285_2&galeria=1537285"><img class="bezcienia" src="../z1/85i/37285_2.jpg" height="60"></a><a href="index.php?fotos=1637285_3&galeria=1537285"><img class="bezcienia" src="../z1/85i/37285_3.jpg" height="60"></a><a href="index.php?fotos=1637285_4&galeria=1537285"><img class="bezcienia" src="../z1/85i/37285_4.jpg" height="60"></a><a href="index.php?fotos=1637285_5&galeria=1537285"><img class="bezcienia" src="../z1/85i/37285_5.jpg" height="60"></a><a href="index.php?fotos=1637285_6&galeria=1537285"><img class="bezcienia" src="../z1/85i/37285_6.jpg" height="60"></a><a href="index.php/1537285" title="Galeria zdjęć (9)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237285" class="jslink" onclick="pzz('trailery1237285','trailery_schowaj1237285')">pokaż</span></div></h2><div id="trailery1237285" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm5.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237285" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237285','ekipa_skrocona1237285','ekipa1237285','ekipa_schowaj1237285','ekipa_schowaj_krotki1237285','ekipa_schowaj_pelny1237285','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237285" class="jslink" onclick="pzf('ekipa_skrocona1237285','ekipa_pelna1237285','ekipa1237285','ekipa_schowaj1237285','ekipa_schowaj_pelny1237285','ekipa_schowaj_krotki1237285','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237285"1237285" class="jslink" onclick="pzz('ekipa1237285','ekipa_schowaj1237285')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237285" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237285">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/11129865">Anna Czartoryska-Niemczycka</a></div><div class="ekipa_opis"> Roma Jarecka, żona Michała; w odcinkach 2-3 w rzeczywistoście nie wystąpiła</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237285">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>MIŁOSNE CIERPIENIA (6)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Marta czuje coraz większy niepokój. Telefony i smsy Romy do Michała spędzają jej sen z powiek i rozniecają w niej coraz mocniejsze negatywne emocje. W cała sprawę zostaje zaangażowana przyjaciółka Ewka, która wybudzona w środku nocy odbiera telefon od Marty i wysłuchuje jak okropnym człowiekiem musi być Roma. Dodatkowo świadomość, że Michał z Romą oficjalnie nie zerwał doprowadza Martę do szału. Marta zwierza się przyjaciółce, że z jednej strony chciałaby wiedzieć wszystko o pięknej dziewczynie ze zdjęcia, a jednocześnie nie chce nawet słyszeć jej imienia. Nieświadomy tego Michał próbuje być szczery wobec Marty i niefrasobliwie wspomina o filmiku od Romy. Proponuje aby żona go obejrzała, bo w końcu szczerość i mówienie prawdy to jej główny warunek. Marta unosi się honorem i odmawia, ale jednocześnie zżera ją ciekawość. Widząc reakcję Marty Michał próbuje zatrzeć po niej każdy możliwy ślad. Kasuje smsy, historię połączeń i decyduje się na usunięcie tatuażu z "Romą" na ramieniu. Ten zabieg kosmetyczny będzie kosztował Michała dużo bólu, nerwów, pieniędzy i… utratę włosów. 
+Marta w końcu zmienia zdanie i w towarzystwie Ewy, oczywiście po kilku kieliszkach wiśniówki, decyduje się zobaczyć video od Romy. Dla dziewczyn przesłanie filmu jest jasne: Roma nie odpuści swojej zdobyczy. Żeby skutecznie zniechęcić kobietę Michał proponuje strategię, która początkowo nie bardzo przekonuje Martę. Ostatecznie  zgadza się zrealizować pomysł Michała, ale rezultat ich wspólnych działań przerasta ich oczekiwania…</p><div class="galeria_mala"><a href="index.php?fotos=1637286_1&galeria=1537286"><img class="bezcienia" src="../z1/86i/37286_1.jpg" height="60"></a><a href="index.php?fotos=1637286_2&galeria=1537286"><img class="bezcienia" src="../z1/86i/37286_2.jpg" height="60"></a><a href="index.php?fotos=1637286_3&galeria=1537286"><img class="bezcienia" src="../z1/86i/37286_3.jpg" height="60"></a><a href="index.php?fotos=1637286_4&galeria=1537286"><img class="bezcienia" src="../z1/86i/37286_4.jpg" height="60"></a><a href="index.php?fotos=1637286_5&galeria=1537286"><img class="bezcienia" src="../z1/86i/37286_5.jpg" height="60"></a><a href="index.php?fotos=1637286_6&galeria=1537286"><img class="bezcienia" src="../z1/86i/37286_6.jpg" height="60"></a><a href="index.php/1537286" title="Galeria zdjęć (10)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237286" class="jslink" onclick="pzz('trailery1237286','trailery_schowaj1237286')">pokaż</span></div></h2><div id="trailery1237286" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm6.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237286" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237286','ekipa_skrocona1237286','ekipa1237286','ekipa_schowaj1237286','ekipa_schowaj_krotki1237286','ekipa_schowaj_pelny1237286','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237286" class="jslink" onclick="pzf('ekipa_skrocona1237286','ekipa_pelna1237286','ekipa1237286','ekipa_schowaj1237286','ekipa_schowaj_pelny1237286','ekipa_schowaj_krotki1237286','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237286"1237286" class="jslink" onclick="pzz('ekipa1237286','ekipa_schowaj1237286')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237286" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237286">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1124450">Marzena Gryzińska</a></div><div class="ekipa_opis"> kosmetyczka</div><div class="ekipa_osoba"><a href="index.php/11132181">Marta Borys</a></div><div class="ekipa_opis"> recepcjonistka</div><div class="ekipa_osoba"><a href="index.php/1128303">Robert Ostolski</a></div><div class="ekipa_opis"> Harley</div><div class="ekipa_osoba"><a href="index.php/11131670">Kosma Konach</a></div><div class="ekipa_opis"> Filip, chłopak Zuzi</div><div class="ekipa_osoba"><a href="index.php/11129865">Anna Czartoryska-Niemczycka</a></div><div class="ekipa_opis"> Roma Jarecka, żona Michała; w odcinkach 2-3 w rzeczywistoście nie wystąpiła</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237286">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>TAJNY PATENT (7)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Miasteczko huczy od plotek. "Marta i Michał spędzili razem noc!" "Marta nie spała w domu!" "Marta i Michał wrócili do siebie!" Jednak rzeczywistość nie wygląda tak różowo. Pomimo, że Michał jest przekonany, że wszystko zmierza w dobrym kierunku, Marta ma już wątpliwości czy aby sprawy nie posuwają się zbyt szybko. Kobieta uważa, że wisi nad nimi widmo Romy. Wszędzie czuje jej obecność i potrzebuje czasu, żeby się od tego wyzwolić. Sytuacji, wbrew pozorom, nie poprawia fakt, że Michał w łóżku zrobił coś, czego nigdy wcześniej, przez tyle lat ich związku, nie robił. Nasuwa się pytanie: Czyżby tego - bardzo zresztą przyjemnego - "patentu" nauczyła go podczas rejsu Roma? Ów "patent" staje się zresztą tematem rozmów. Szczególnie zainteresowany jest Czarek, który bardzo chciałby ożywić swoje życie seksualne z Kingą. Michał wyjawia wreszcie swój sekret Karolowi, który jak się niespodziewanie okazuje, nie jest niewinnym wdowcem, ale ma tajemniczą partnerkę. Marta w końcu przyznaje się Ewie, co tak naprawdę czuje do Michała. Ta świadomość wprowadza ja w lekkie zakłopotanie… Czy Michał pomoże się jej odnaleźć, a może skomplikuje sytuacje jeszcze bardziej?</p><div class="galeria_mala"><a href="index.php?fotos=1637327_1&galeria=1537327"><img class="bezcienia" src="../z1/27i/37327_1.jpg" height="60"></a><a href="index.php?fotos=1637327_2&galeria=1537327"><img class="bezcienia" src="../z1/27i/37327_2.jpg" height="60"></a><a href="index.php?fotos=1637327_3&galeria=1537327"><img class="bezcienia" src="../z1/27i/37327_3.jpg" height="60"></a><a href="index.php?fotos=1637327_4&galeria=1537327"><img class="bezcienia" src="../z1/27i/37327_4.jpg" height="60"></a><a href="index.php?fotos=1637327_5&galeria=1537327"><img class="bezcienia" src="../z1/27i/37327_5.jpg" height="60"></a><a href="index.php?fotos=1637327_6&galeria=1537327"><img class="bezcienia" src="../z1/27i/37327_6.jpg" height="60"></a><a href="index.php/1537327" title="Galeria zdjęć (11)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237327" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237327','ekipa_skrocona1237327','ekipa1237327','ekipa_schowaj1237327','ekipa_schowaj_krotki1237327','ekipa_schowaj_pelny1237327','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237327" class="jslink" onclick="pzf('ekipa_skrocona1237327','ekipa_pelna1237327','ekipa1237327','ekipa_schowaj1237327','ekipa_schowaj_pelny1237327','ekipa_schowaj_krotki1237327','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237327"1237327" class="jslink" onclick="pzz('ekipa1237327','ekipa_schowaj1237327')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237327" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237327">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1125782">Agnieszka Łopacka</a></div><div class="ekipa_opis"> klientka</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237327">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>KOŃ TROJAŃSKI (8)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Po gorącej nocy którą spędzili ze sobą Marta i Michał ani śladu. Relacje między nimi są znowu chłodne i napięte. Marta zachowuje bezpieczny dystans. Natomiast Michał cierpliwie czeka na lepsze czasy wspierając ją w codziennych obowiązkach w sklepie. Kiedy pada sklepowy system komputerowy Michał od razu angażuje się w rozwiązanie problemu i prosi Czarka o polecenie najlepszego specjalisty. Mężczyzna nie wydaje się być zadowolony, kiedy w sklepie pojawia się Bartek (w tej roli Krzysztof Wach) - szaleńczo przystojny i szarmancki informatyk. Temperatura powietrza nagle wzrasta. Bartek flirtuje z Martą na oczach Michała. Czy kobieta ulegnie urokowi młodego informatyka? Michał z niepokojem obserwuje sytuację i robi Czarkowi wyrzuty, że przysłał mu "Brada Pitta informatyki" - tego nie robi się przyjacielowi! Mimo wszystko postanawia nie interweniować i poczekać na rozwój wypadków… Michał i Marta, pochłonięci swoimi problemami nie mają świadomości, że Zuzia w szkole również wpadła w tarapaty. Rozmowy z nauczycielami bierze na siebie - jako "dobry dziadek" - Karol. Jak się okazuje ostatecznie nie załagadza sytuacji, przeprowadzając bardzo kontrowersyjną rozmowę na temat zachowania Zuzi z samym dyrektorem. Marta nie może się oprzeć czarowi Bartka i decyduje się w końcu z nim spotkać "U Misi". W restauracji zastaje Bartka w towarzystwie innej kobiety.</p>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237426" class="jslink" onclick="pzz('trailery1237426','trailery_schowaj1237426')">pokaż</span></div></h2><div id="trailery1237426" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm8.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237426" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237426','ekipa_skrocona1237426','ekipa1237426','ekipa_schowaj1237426','ekipa_schowaj_krotki1237426','ekipa_schowaj_pelny1237426','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237426" class="jslink" onclick="pzf('ekipa_skrocona1237426','ekipa_pelna1237426','ekipa1237426','ekipa_schowaj1237426','ekipa_schowaj_pelny1237426','ekipa_schowaj_krotki1237426','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237426"1237426" class="jslink" onclick="pzz('ekipa1237426','ekipa_schowaj1237426')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237426" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237426">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1168181">Krzysztof Wach</a></div><div class="ekipa_opis"> Bartek Kubiak</div><div class="ekipa_osoba"><a href="index.php/1121097">Katarzyna Łukaszyńska</a></div><div class="ekipa_opis"> wuefistka</div><div class="ekipa_osoba"><a href="index.php/113288">Maciej Robakiewicz</a></div><div class="ekipa_opis"> Kazimierz Paluch, dyrektor liceum</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237426">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>PIKNIK (9)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Marta w ostatniej chwili zrezygnowała z randki z Bartkiem. "U Misi" zastała Bartka siedzącego przy stoliku z Ewą - żywo pochłoniętych rozmową. Przyjaciółka tłumaczy się, że mężczyzna jest wyraźnie zafascynowany Martą i jego uwaga podczas ich przypadkowej rozmowy była skupiona wyłącznie na jej osobie. Marta daje tej znajomości jeszcze jedną szansę. Bartek zjawia się ponownie w sklepie w ramach "serwisu gwarancyjnego" i niespodziewanie proponuje Michałowi intratne zlecenie - remont jego "chatki" w Borach Tucholskich. Podjęcie się go oznacza dla Michała wyjazd na dwa tygodnie, a tym samym rozłąkę z Zuzią i Martą. Michał zdaje sobie sprawę, że nie ma wpływu na decyzje Marty i jego obecność niczego nie zmieni w obecnej sytuacji. Przyjmuje propozycję, Marta nie protestuje. Bartek wykorzystuje tę sytuację ale czy uda mu się zawrócić w głowie Marcie? Czy po powrocie Michał będzie jeszcze miał szansę odzyskać uczucia Marty?</p><div class="galeria_mala"><a href="index.php?fotos=1637448_1&galeria=1537448"><img class="bezcienia" src="../z1/48i/37448_1.jpg" height="60"></a><a href="index.php?fotos=1637448_2&galeria=1537448"><img class="bezcienia" src="../z1/48i/37448_2.jpg" height="60"></a><a href="index.php?fotos=1637448_3&galeria=1537448"><img class="bezcienia" src="../z1/48i/37448_3.jpg" height="60"></a><a href="index.php?fotos=1637448_4&galeria=1537448"><img class="bezcienia" src="../z1/48i/37448_4.jpg" height="60"></a><a href="index.php?fotos=1637448_5&galeria=1537448"><img class="bezcienia" src="../z1/48i/37448_5.jpg" height="60"></a><a href="index.php?fotos=1637448_6&galeria=1537448"><img class="bezcienia" src="../z1/48i/37448_6.jpg" height="60"></a><a href="index.php/1537448" title="Galeria zdjęć (8)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237448" class="jslink" onclick="pzz('trailery1237448','trailery_schowaj1237448')">pokaż</span></div></h2><div id="trailery1237448" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<object type="application/x-shockwave-flash" data="/fp/player_flv_maxi.swf" width="640" height="360">
+<param name="movie" value="/fp/player_flv_maxi.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="FlashVars" value="flv=/media/mcnm9.flv&amp;showfullscreen=1&amp;showiconplay=1&amp;iconplaybgalpha=40&amp;showstop=1&amp;showvolume=1&amp;width=640&amp;height=360" />
+</object>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237448" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237448','ekipa_skrocona1237448','ekipa1237448','ekipa_schowaj1237448','ekipa_schowaj_krotki1237448','ekipa_schowaj_pelny1237448','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237448" class="jslink" onclick="pzf('ekipa_skrocona1237448','ekipa_pelna1237448','ekipa1237448','ekipa_schowaj1237448','ekipa_schowaj_pelny1237448','ekipa_schowaj_krotki1237448','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237448"1237448" class="jslink" onclick="pzz('ekipa1237448','ekipa_schowaj1237448')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237448" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237448">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1168181">Krzysztof Wach</a></div><div class="ekipa_opis"> Bartek Kubiak</div><div class="ekipa_osoba"><a href="index.php/1163411">Lena Czaplicka</a></div><div class="ekipa_opis"> Iza</div><div class="ekipa_osoba"><a href="index.php/1114854">Jerzy Słonka</a></div><div class="ekipa_opis"> klient</div><div class="ekipa_osoba"><a href="index.php/1143628">Mirosław Haniszewski</a></div><div class="ekipa_opis"> klient</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237448">
+</ul>
+</div>
+<span class="clear"></span></div><div class="podzbior"><h1>WYPRAWA (10)</h1><div class="koniecnaglowka"></div>
+<ul class="tech">
+<li><b>Odcinek serialu</b></li>
+</ul>
+<p class="opis">Bartek proponuje Marcie wspólny wyjazd na tydzień do luksusowego hotelu na Seszelach. Ani on, ani Marta nie chcą już ukrywać swojego związku. Bartek, bez wiedzy Marty, postanawia skonfrontować się z Michałem i "wszystko po męsku wyjaśnić". Michał nie ma ochoty na walkę. Przyjmuje do wiadomości plany Marty i Bartka, a sam zachęca Zuzię do wspólnej wyprawy na Rysy - szlakiem, który 15 lat temu pokonali z Martą. Rozpoczynają się przygotowania do dwóch skrajnie różnych wyjazdów. Marta z sentymentem reaguje na plany Michała i Zuzi. Rozmowy z Zuzią o wyprawie w góry, sprawiają, że do Marty wracają piękne wspomnienia sprzed lat. Przypomina sobie szczególne miejsce na szlaku, w którym 15 lat temu … było "bardzo dużo miłości". Zaczyna zazdrościć córce wyprawy i jest bliska decyzji o przyłączeniu się do rodzinny … Kiedy Michałowi wydaje się, że jest już na dobrej drodze do rodzinnego szczęścia, nagle będzie musiał dokonać bardzo trudnego wyboru…</p><div class="galeria_mala"><a href="index.php?fotos=1637516_1&galeria=1537516"><img class="bezcienia" src="../z1/16i/37516_1.jpg" height="60"></a><a href="index.php?fotos=1637516_2&galeria=1537516"><img class="bezcienia" src="../z1/16i/37516_2.jpg" height="60"></a><a href="index.php?fotos=1637516_3&galeria=1537516"><img class="bezcienia" src="../z1/16i/37516_3.jpg" height="60"></a><a href="index.php?fotos=1637516_4&galeria=1537516"><img class="bezcienia" src="../z1/16i/37516_4.jpg" height="60"></a><a href="index.php?fotos=1637516_5&galeria=1537516"><img class="bezcienia" src="../z1/16i/37516_5.jpg" height="60"></a><a href="index.php?fotos=1637516_6&galeria=1537516"><img class="bezcienia" src="../z1/16i/37516_6.jpg" height="60"></a><a href="index.php/1537516" title="Galeria zdjęć (11)"><img class="bezcienia" src="img1/do_galerii.png"></a></a></div>
+<h2>Zwiastun<div class="sterowanie"><span id="trailery_schowaj1237516" class="jslink" onclick="pzz('trailery1237516','trailery_schowaj1237516')">pokaż</span></div></h2><div id="trailery1237516" style="display: none;"><div style="margin:10px auto 0 20px; width:640px; height:360px;">
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Ed5uR-hZs-4" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<h2>Ekipa
+<div class="sterowanie">
+<span id="ekipa_schowaj_krotki1237516" class="jslink" style="font-weight:bolder; font-size:1.3em;" onclick="pzf('ekipa_pelna1237516','ekipa_skrocona1237516','ekipa1237516','ekipa_schowaj1237516','ekipa_schowaj_krotki1237516','ekipa_schowaj_pelny1237516','ekipa','1')">pełna</span>
+ | 
+<span id="ekipa_schowaj_pelny1237516" class="jslink" onclick="pzf('ekipa_skrocona1237516','ekipa_pelna1237516','ekipa1237516','ekipa_schowaj1237516','ekipa_schowaj_pelny1237516','ekipa_schowaj_krotki1237516','ekipa','0')">skrócona</span>
+ | 
+<span id="ekipa_schowaj1237516"1237516" class="jslink" onclick="pzz('ekipa1237516','ekipa_schowaj1237516')">schowaj</span>
+</div>
+</h2>
+
+<div id="ekipa1237516" style="display: block;">
+
+<ul class="ekipa" id="ekipa_pelna1237516">
+<li><div class="ekipa_funkcja">Obsada aktorska</div><div class="ekipa_osoba"><a href="index.php/1168181">Krzysztof Wach</a></div><div class="ekipa_opis"> Bartek Kubiak</div><div class="ekipa_osoba"><a href="index.php/1121301">Szymon Kuśmider</a></div><div class="ekipa_opis"> doktor Pospiechal</div><div class="ekipa_osoba"><a href="index.php/11139485">Artur Kaźmiruk</a></div><div class="ekipa_opis"> klient; nie występuje w napisach</div></li>
+</ul>
+
+<ul class="ekipa hidden" id="ekipa_skrocona1237516">
+</ul>
+</div>
+<span class="clear"></span></div>
+<nav class="odcinki">
+<span class="pusta"></span> 
+<span class="pusta"></span> 
+<form action="index.php" class="skok_do_strony" method="get">
+<select title="skocz do strony" name="film" class="strona" onchange="this.form.submit();"><option value="1236848" selected >1</option><option value="1236848_2">2</option></select></form>
+ <a class="nastepna"  title="nastepna" href="index.php/1236848_2"></a> 
+ <a class="ostatnia" title="ostatnia" href="index.php/1236848_2"></a> 
+</nav><div id="czasgen">2026.05.08 01:28:38</div>
+</article>
+
+</div>   <!-- tresc -->
+
+</div>   <!-- content -->
+
+<div style="clear:both"></div>
+
+<div id="stopka">
+<strong>&copy; 1998-2026 Państwowa Wyższa Szkoła Filmowa, Telewizyjna i Teatralna im. Leona Schillera w Łodzi.</strong><br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> jest bazą danych chronioną przepisami 
+Ustawy z dnia 27 lipca 2001 r. o ochronie baz danych 
+(<a href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011281402/U/D20011402Lj.pdf" target="_blank">Dz.  U. 2001 nr 128 poz. 1402</a>).
+Kopiowanie treści zawartych w serwisie bez zgody redakcji zabronione. 
+Kopiowanie i wykorzystywanie fotosów oraz materiałów audiowizualnych zamieszczonych w serwisie bezwzględnie zabronione, z zastrzeżeniem wyjątków 
+przewidzianych przez prawo.
+Cytowanie fragmentów treści zawartych w serwisie wymaga zgody redakcji. W każdym przypadku konieczne jest podanie źródła w podpisie 
+pod cytowanym fragmentem. 
+W przypadku portali internetowych żródło musi być linkiem do serwisu <a href="https://filmpolski.pl">filmpolski.pl</a>.<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> działa na podstawie art. 2 Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000).<br />
+Internetowa Baza Filmu Polskiego <a href="https://filmpolski.pl">filmpolski.pl</a> współpracuje z TVN w zakresie publikacji promocyjnych materiałów audiowizualnych. <a href="http://s.tvn.pl/pdf/polityka_prywatnosci.pdf" 
+target="_blank">Administratorem danych pozyskanych w związku z emisją tych materiałów jest TVN</a>.<br /><br />
+<a href="https://filmpolski.pl/fp/doc/regulamin_pakiet_premium.pdf" target="_blank">Informacja o zasadach publikacji linków i danych adresowych w serwisie filmpolski.pl w ramach pakietu premium</a>.
+<br /><br />
+Ta strona używa plików cookie. Zapisywanie plików cookies można zablokować, zmieniając ustawienia przeglądarki.
+</div>
+
+<div id="dogory_lewe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+<div id="dogory_prawe" class="hidden"><a href="#poczatek"><img src="img1/dogory.png" alt="powrót na początek strony" title="powrót na początek strony"/></a></div>
+
+</div>  <!-- kontener -->
+
+</body>
+</html>
