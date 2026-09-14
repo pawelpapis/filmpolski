@@ -155,3 +155,29 @@ Inny katalog danych podasz przez `--data-dir /ścieżka/do/data`.
 Wyszukiwarka działa lokalnie, bez dostępu do sieci. Błędne pliki pomija, pokazując ich liczbę na dole okna i szczegóły w terminalu.
 
 Przyciski „Wszystkie”, „Filmy”, „Seriale” od razu filtrują wyniki. Sortowanie pozwala wybrać tytuł A–Z lub rok produkcji od najnowszych / najstarszych. Dla zakresu lat używany jest pierwszy rok; brak roku umieszcza wynik na końcu.
+
+## Connections — graf współpracy
+
+```bash
+python3 connections.py
+```
+
+Lokalna aplikacja webowa, działająca bez internetu i dodatkowych pakietów.
+Obsługuje też `--no-browser` i `--data-dir /ścieżka/do/data`, tak jak `search_gui.py`.
+
+Wybierz perspektywę aktora lub reżysera, wyszukaj nazwisko i kliknij osobę.
+Reżyser widzi aktorów, z którymi współpracował; aktor widzi innych aktorów oraz
+reżyserów. Filtr przełącza filmy, seriale lub obie grupy. Graf pokazuje najczęstsze
+powiązania (10–50 na każdą rolę), a liczby na połączeniach oznaczają liczbę wspólnych
+produkcji. Kliknięcie węzła lub pozycji rankingu wyświetla wspólne tytuły.
+Węzły i tło można przeciągać, graf przybliżać kółkiem lub przyciskami, a jego
+wysokość zmieniać uchwytem w prawym dolnym rogu. „Dopasuj graf” przywraca widok całości.
+
+Liczenie obejmuje `cast_main` i `cast_other`. Osoby łączone są po `id`, a przy jego
+braku po nazwisku i imieniu (osoby bez ID o identycznych nazwach mogą zostać scalone).
+Produkcje są deduplikowane przez loader wyszukiwarki po `film_id`; wybierana jest
+kopia z najnowszego rocznika. Jeden serial to jeden projekt, niezależnie od liczby
+odcinków i roczników. Rodzaj produkcji wynika z katalogu `movies` / `series`.
+Wspólna obsada oznacza udział w tym samym tytule, niekoniecznie wspólną scenę lub odcinek.
+Osoba pracująca w obu rolach może mieć dwa powiązania, liczone osobno dla każdej roli.
+Wyniki zależą od kompletności lokalnych danych. Po dodaniu danych uruchom aplikację ponownie.
